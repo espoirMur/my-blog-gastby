@@ -24,15 +24,12 @@ const Bio = () => {
       site {
         siteMetadata {
           author
-          social {
-            twitter
-          }
         }
       }
     }
   `)
 
-  const { author, social } = data.site.siteMetadata
+  const { author } = data.site.siteMetadata
   return (
     <div
       style={{
@@ -52,15 +49,18 @@ const Bio = () => {
         imgStyle={{
           borderRadius: `50%`,
         }}
-      />
+      />{" "}
       <p>
-        Written by <strong>{author}</strong> who lives and works in San
-        Francisco building useful things.
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
-      </p>
+        Written by <strong> {author} </strong> , a Engineer from DRC{" "}
+        <span class="flag-icon flag-icon-cd"></span> who is currently living and
+        working in Rwanda <span class="flag-icon flag-icon-cd"> . </span>
+        {` `} You Can find his Resume
+        <a
+          href={`https://drive.google.com/file/d/18vMKkRFF3vWu1dy8DmZ9jDB1Ly3L1J0m/view`}
+        >
+          here{" "}
+        </a>{" "}
+      </p>{" "}
     </div>
   )
 }
