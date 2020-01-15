@@ -48,6 +48,10 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+  createPage({
+    path: `/about`,
+    component: require.resolve("./src/components/about.js"),
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
