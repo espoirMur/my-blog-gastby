@@ -17,11 +17,13 @@ export default class AboutMe extends Component {
         <NavBar></NavBar>
         <div id="content">
           <div id="about">
-            <h1>
-              <div style={{ float: "left", "margin-bottom": "20px" }}>
-                Zach Saucier
-              </div>
-            </h1>
+            <div class="my-details">
+              <span>Murhabazi B. Espoir</span>
+              <img
+                src="http://3rdpartyservicesofflorida.com/wp-content/uploads/2015/03/blank-profile.jpg"
+                alt="my-profile"
+              ></img>
+            </div>
             <h3 style={{ clear: "both" }} class="subhead">
               <a href="https://plus.google.com/108495471566196018473/posts">
                 Zach
