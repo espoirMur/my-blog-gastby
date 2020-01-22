@@ -104,12 +104,29 @@ body {
   text-transform: uppercase;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .my-details img {
-    margin-left: -215px;
+    margin-left: -245px;
   }
   .my-name {
     margin-top: 150px;
-    margin-left: 15px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .my-details img {
+    margin-left: -215px;
+  }
+}
+
+@media (max-width: 320px) {
+  .my-details img {
+    margin-left: -180px;
+  }
+  .my-name {
+    font-size: 3.5em;
+    margin-top: 150px;
+    margin-left: 20px;
   }
 }
