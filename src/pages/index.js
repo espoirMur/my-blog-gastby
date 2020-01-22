@@ -24,13 +24,13 @@ export default class AboutMe extends Component {
                 alt="my-profile"
               ></img>
             </div>
-            <h3 style={{ clear: "both" }} class="subhead">
+            <div style={{ clear: "both" }} class="subhead">
               <a href="https://plus.google.com/108495471566196018473/posts">
                 Zach
               </a>{" "}
               is an enthusiastic, young, self-taught web applications developer
               currently studying at the University of Georgia.
-            </h3>
+            </div>
             <p id="pleft">
               He does freelance work, writes for{" "}
               <a href="https://css-tricks.com/css-animation-tricks/">CSS</a>{" "}
