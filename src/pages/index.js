@@ -18,7 +18,7 @@ export default class AboutMe extends Component {
         <div id="content">
           <div id="about">
             <div class="my-details">
-              <span>Murhabazi B. Espoir</span>
+              <div class="my-name">Espoir Mur</div>
               <img
                 src="http://3rdpartyservicesofflorida.com/wp-content/uploads/2015/03/blank-profile.jpg"
                 alt="my-profile"
