@@ -1,0 +1,21 @@
+.navigation-links {
+  text-align: right;
+}
+.navigation-links li {
+  color: #eee;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  -webkit-transition: all 0.8s; /* Safari prior 6.1 */
+  transition: all 0.8s;
+}
+
+.navigation-links li.active {
+  background-color: #141414;
+}
+
+.navigation-links li:hover {
+  background-color: #141414;
+  color: #eee;
+  cursor: pointer;
+}

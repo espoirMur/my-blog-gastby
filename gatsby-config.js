@@ -5,10 +5,11 @@ module.exports = {
     description: `My Home on the internet`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      github: 'espoirMur',
+      github: "espoirMur",
     },
   },
-  plugins: [{
+  plugins: [
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
@@ -25,7 +26,8 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [{
+        plugins: [
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
@@ -57,11 +59,11 @@ module.exports = {
       options: {
         name: `Gatsby Starter Blog`,
         short_name: `GatsbyJS`,
-        start_url: `/`,
+        start_url: `/about`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/espoir.png`,
       },
     },
     `gatsby-plugin-react-helmet`,

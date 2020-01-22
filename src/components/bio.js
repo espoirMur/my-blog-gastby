@@ -54,13 +54,7 @@ const Bio = () => {
         Written by <strong> {author} </strong> , a Engineer from DRC{" "}
         <span class="flag-icon flag-icon-cd"></span> who is currently living and
         working in Rwanda <span class="flag-icon flag-icon-cd"> . </span>
-        {` `} You Can find his Resume
-        <a
-          href={`https://drive.google.com/file/d/18vMKkRFF3vWu1dy8DmZ9jDB1Ly3L1J0m/view`}
-        >
-          here{" "}
-        </a>{" "}
-      </p>{" "}
+      </p>
     </div>
   )
 }
