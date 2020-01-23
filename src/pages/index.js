@@ -20,54 +20,37 @@ export default class AboutMe extends Component {
             <div class="my-details">
               <div class="my-name">Espoir Mur</div>
               <img
-                src="http://3rdpartyservicesofflorida.com/wp-content/uploads/2015/03/blank-profile.jpg"
+                src="../../content/assets/profile-pic.jpg"
                 alt="my-profile"
               ></img>
             </div>
             <div style={{ clear: "both" }} class="subhead">
-              <a href="https://plus.google.com/108495471566196018473/posts">
-                Zach
-              </a>{" "}
-              is an enthusiastic, young, self-taught web applications developer
-              currently studying at the University of Georgia.
+              Here is Espoir, a Python and Javascript Software Engineer who is
+              passionate about backend architectures, especially how to build
+              scalable APIs, how to build pipelines to collect data from those
+              APIs and how to build machine learning models that get insight
+              from the data collected. He is In-between Software Engineering and
+              Data Science. He holds a Bachelor's Degree in Computer Engineering
+              with 3 years of experience in Software Engineering. He is a native
+              French speaker.
             </div>
-            <p id="pleft">
-              He does freelance work, writes for{" "}
-              <a href="https://css-tricks.com/css-animation-tricks/">CSS</a>{" "}
-              <a href="https://css-tricks.com/controlling-css-animations-transitions-javascript/">
-                Tricks
-              </a>
-              , worked at{" "}
-              <a href="http://deltadatasoft.com/">Delta Data Software</a> as a
-              front-end developer, and is continuously working on personal
-              projects to up his game.
-            </p>
             <p id="pright">
-              Look for some of his work &amp; experiments on{" "}
-              <a href="https://codepen.io/Zeaklous">CodePen</a>,{" "}
-              <a href="http://stackoverflow.com/users/2065702/zeaklous">
-                StackOverflow
+              I love sharing my knowledge on ,
+              <a href="https://stackoverflow.com/users/4683950/espoir-murhabazi">
+                &nbsp; StackOverflow
               </a>
-              , <a href="https://cssdeck.com/user/Zeaklous">CSS Deck</a>, or a
-              bit of his recent work below.
+              , <a href="https://dev.to/espoir"> The PracticalDev </a>
+              and <a href="https://github.com/espoirMur"> Github </a>
             </p>
             <ul>
               <li>
-                <a href="https://cssdeck.com/labs/css-only-full-page-slider">
-                  CSS Only Full Page Slider
+                <a href="https://stackoverflow.com/questions/34818723/export-notebook-to-pdf-without-code/45029786#45029786">
+                  My best Answer on StackOverflow
                 </a>
-              </li>
-              <li>
-                <a href="https://codepen.io/Zeaklous/pen/alpEm">
-                  CSS3 Circular Questionnaire (Plugin in development)
-                </a>
-              </li>
-              <li>
-                <a href="https://zachsaucier.com/TumblrBook.html">TumblrBook</a>
               </li>
             </ul>
             <p>
-              Feel free to contact him at zachsaucier[at]gmail.com if you'd like
+              Feel free to contact him at espoir.mur[at]gmail.com if you'd like
               for him to work for you!
             </p>
           </div>
