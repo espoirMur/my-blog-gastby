@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import NavBar from "../components/navbar"
 import "../../static/css/about.css"
 import { rhythm } from "../utils/typography"
+import myProfile from "../../content/assets/profile-pic.jpg"
 
 export default class AboutMe extends Component {
   render() {
@@ -19,25 +20,25 @@ export default class AboutMe extends Component {
           <div id="about">
             <div class="my-details">
               <div class="my-name">Espoir Mur</div>
-              <img
-                src="../../content/assets/profile-pic.jpg"
-                alt="my-profile"
-              ></img>
+              <img src={myProfile} alt="my-profile"></img>
             </div>
             <div style={{ clear: "both" }} class="subhead">
-              Here is Espoir, a Python and Javascript Software Engineer who is
-              passionate about backend architectures, especially how to build
-              scalable APIs, how to build pipelines to collect data from those
-              APIs and how to build machine learning models that get insight
-              from the data collected. He is In-between Software Engineering and
-              Data Science. He holds a Bachelor's Degree in Computer Engineering
-              with 3 years of experience in Software Engineering. He is a native
-              French speaker.
+              <p>
+                Hey, Internet !! It's me Espoir Murhabazi a Software Engineer
+                from DRC but currently based in Rwanda! I am in between Software
+                Engineering and Data Science. Python is my favorite language ,
+                but I also do JavaScript and sometimes Java(my first love).
+              </p>
+              <p>
+                When not coding , you can find my playing fantasy football,
+                listening to Rumba music from DRC or just spending time with my
+                family!
+              </p>
             </div>
             <p id="pright">
-              I love sharing my knowledge on ,
+              I love sharing my knowledge on , &nbsp;
               <a href="https://stackoverflow.com/users/4683950/espoir-murhabazi">
-                &nbsp; StackOverflow
+                StackOverflow
               </a>
               , <a href="https://dev.to/espoir"> The PracticalDev </a>
               and <a href="https://github.com/espoirMur"> Github </a>
@@ -50,8 +51,8 @@ export default class AboutMe extends Component {
               </li>
             </ul>
             <p>
-              Feel free to contact him at espoir.mur[at]gmail.com if you'd like
-              for him to work for you!
+              Feel free to contact me at espoir.mur[at]gmail.com if you'd like
+              me to work for you!
             </p>
           </div>
         </div>
