@@ -63,7 +63,7 @@ class Layout extends Component {
         <NavBar></NavBar>
         <header>{header}</header>
         <main>{children}</main>
-        <footer>© {new Date().getFullYear()}, Built by Espy Mur</footer>
+        <footer>© {new Date().getFullYear()}, Build by Espy Mur</footer>
       </div>
     )
   }

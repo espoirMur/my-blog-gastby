@@ -5,6 +5,9 @@ import { rhythm } from "../utils/typography"
 import myProfile from "../../content/assets/profile-pic.jpg"
 
 export default class AboutMe extends Component {
+  componentDidMount() {
+    document.title = "Hey, it's me Welcome"
+  }
   render() {
     return (
       <div
@@ -30,7 +33,7 @@ export default class AboutMe extends Component {
                 but I also do JavaScript and sometimes Java(my first love).
               </p>
               <p>
-                When not coding , you can find my playing fantasy football,
+                When not coding , you can find me playing fantasy football,
                 listening to Rumba music from DRC or just spending time with my
                 family!
               </p>
@@ -56,7 +59,7 @@ export default class AboutMe extends Component {
             </p>
           </div>
         </div>
-        <footer>© {new Date().getFullYear()}, Built by Espy Mur</footer>
+        <footer>© {new Date().getFullYear()}, Build by Espy Mur</footer>
       </div>
     )
   }
