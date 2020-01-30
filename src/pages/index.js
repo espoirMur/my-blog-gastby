@@ -6,7 +6,7 @@ import myProfile from "../../content/assets/profile-pic.jpg"
 
 export default class AboutMe extends Component {
   componentDidMount() {
-    document.title = "Hey, it's me Welcome"
+    document.title = "Hey, it's me! Welcome"
   }
   render() {
     return (
