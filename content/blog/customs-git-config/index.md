@@ -14,7 +14,7 @@ In this blog post, I would like to share with you four customs GitHub settings I
 
 ## The problem 
 
-You are working on a project, and they have a standard commit message template you have to for your commits, or like me, you don't like writing your commit message in the default git editor, Vim. I had headaches when trying to quit Vim once I have finished editing my commit message.
+You are working on a project, and they have a standard commit message template you have to use for your commits, or like me, you don't like writing your commit message in the default git editor, Vim. I had headaches when trying to quit Vim once I have finished editing my commit message.
 
 ## The solution
 
@@ -35,7 +35,7 @@ On this level, the settings are followed with `--global` argument.
 
 `git config --global`
 
-- Repository Level on Local level: this only applied to the git repository you are working on.
+- Repository Level or Local level: this only applied to the git repository you are working on.
 Setting global configuration is useful for settings on project level when you want to follow a certain standard for the project.
 
 For this, you use the `--local` argument.
@@ -56,6 +56,7 @@ Like every relationship in the real world, once you meet a new person, you have 
 There comes user.name, and user.email config that needs to be made globally here are the commands:
 
 `git config --global user.name "John Doe"`
+
 `git config --global user.email johndoe@example.com`
 
 Side note: 
