@@ -1,5 +1,6 @@
 .navigation-links {
   text-align: right;
+  text-decoration: none;
 }
 .navigation-links li {
   color: #eee;
@@ -8,9 +9,11 @@
   border-radius: 20px;
   -webkit-transition: all 0.8s; /* Safari prior 6.1 */
   transition: all 0.8s;
+  text-decoration: none;
 }
 
 .navigation-links li.active {
+  text-decoration: underline;
   background-color: #141414;
 }
 
@@ -18,4 +21,5 @@
   background-color: #141414;
   color: #eee;
   cursor: pointer;
+  text-decoration: underline;
 }

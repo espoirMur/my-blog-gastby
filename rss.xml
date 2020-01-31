@@ -1,37 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My ideas' home]]></title><description><![CDATA[My Home on the internet]]></description><link>https:murhabazi.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 30 Jan 2020 09:56:43 GMT</lastBuildDate><item><title><![CDATA[My Customs Git Configurations]]></title><description><![CDATA[Git is a powerful tool, and you cannot call yourself a modern software engineer if you are not using Git or any other subversion system…]]></description><link>https:murhabazi.com/customs-git-config/</link><guid isPermaLink="false">https:murhabazi.com/customs-git-config/</guid><pubDate>Thu, 30 Jan 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/e421796cbd1d2c8171c9273e2162020a/7459a/customizing.jpg&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAECAwQF/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgAB/9oADAMBAAIQAxAAAAHqvLVZAQV//8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAIQMEMTL/2gAIAQEAAQUCpYO7DkZT7LtGs//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABkQAAIDAQAAAAAAAAAAAAAAAAAhAQIQMf/aAAgBAQAGPwJFmK053P/EABoQAQADAQEBAAAAAAAAAAAAAAEAESExQVH/2gAIAQEAAT8h0rtbmWetp8jIAUcYkaO0EwfTs9s//9oADAMBAAIAAwAAABDs/wD/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQMBAT8QxH//xAAXEQADAQAAAAAAAAAAAAAAAAAAAREx/9oACAECAQE/EMHaf//EABwQAQADAQADAQAAAAAAAAAAAAEAESExQVFxkf/aAAgBAQABPxC8NsF9D7yVdUQkzPiNSTUgRFh+NfqVDZAAhosFjZQrs//Z&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;Customizing a house&quot;
-        title=&quot;Customizing a house&quot;
-        src=&quot;/static/e421796cbd1d2c8171c9273e2162020a/88218/customizing.jpg&quot;
-        srcset=&quot;/static/e421796cbd1d2c8171c9273e2162020a/7237a/customizing.jpg 148w,
-/static/e421796cbd1d2c8171c9273e2162020a/0cfdf/customizing.jpg 295w,
-/static/e421796cbd1d2c8171c9273e2162020a/88218/customizing.jpg 590w,
-/static/e421796cbd1d2c8171c9273e2162020a/7459a/customizing.jpg 640w&quot;
-        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My ideas' home]]></title><description><![CDATA[My Home on the internet]]></description><link>https:murhabazi.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 31 Jan 2020 12:04:05 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[title: My Customs Git Configurations
+description: “customizing git settings.”
+tags: git, beginners
+published: false Configurations Git is a…]]></description><link>https:murhabazi.com/customs-git-config/</link><guid isPermaLink="false">https:murhabazi.com/customs-git-config/</guid><content:encoded>&lt;hr&gt;
+&lt;p&gt;title: My Customs Git Configurations
+description: “customizing git settings.”
+tags: git, beginners
+published: false&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.lynda.com/course/514200/514200-636141225565412095-16x9.jpg&quot; alt=&quot;Configurations&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Git is a powerful tool, and you cannot call yourself a modern software engineer if you are not using Git or any other subversion system unless you are an old school guy who writes code alone and shares it in a zip file. Trust me!! Those guys still exist in my local village.&lt;/p&gt;
-&lt;p&gt;If you are reading this, it means you have the internet, and you use git at work or for personal project, and sometimes you need to make customizations to make your life easier.&lt;/p&gt;
-&lt;p&gt;In this blog post, I would like to share with you four customs GitHub settings I found, and that may be usefully for you.&lt;/p&gt;
+&lt;p&gt;If you are reading this, it means you have the internet, and you use git at work or for personal projects, and sometimes you need to make customizations to make your life easier.&lt;/p&gt;
+&lt;p&gt;In this blog post, I would like to share with you four custom GitHub settings I found, and that may be useful for you.&lt;/p&gt;
 &lt;h2&gt;The problem&lt;/h2&gt;
-&lt;p&gt;You are working on a project, and they have a standard commit message template you have to for your commits, or like me, you don’t like writing your commit message in the default git editor, Vim. I had headaches when trying to quit Vim once I have finished editing my commit message.&lt;/p&gt;
+&lt;p&gt;You are working on a project, and the team has a standard commit message template you have to use for your commits, or like me, you don’t like writing your commit messages in the default git editor, Vim. I had headaches while trying to quit Vim; once I have finished editing my commit message.&lt;/p&gt;
 &lt;h2&gt;The solution&lt;/h2&gt;
 &lt;p&gt;If you have ever faced one of the problems above, Git comes to your rescue with &lt;code class=&quot;language-text&quot;&gt;git config&lt;/code&gt; where you can customize your default settings.&lt;/p&gt;
 &lt;h3&gt;Configuration levels&lt;/h3&gt;
@@ -47,19 +28,19 @@ On this level, the settings are followed with &lt;code class=&quot;language-text
 &lt;/ul&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git config --global&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Repository Level on Local level: this only applied to the git repository you are working on.
-Setting global configuration is useful for settings on project level when you want to follow a certain standard for the project.&lt;/li&gt;
+&lt;li&gt;Repository Level or Local level: this only applied to the git repository you are working on.
+Setting global configuration is useful for settings on the project level when you want to follow a certain standard for the project.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;For this, you use the &lt;code class=&quot;language-text&quot;&gt;--local&lt;/code&gt; argument.&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git config --local&lt;/code&gt;&lt;/p&gt;
 &lt;h3&gt;Customs useful configurations&lt;/h3&gt;
 &lt;p&gt;Once we know all levels for git configuration, let see which settings you can set up.&lt;/p&gt;
 &lt;h4&gt;Tell Git who you are&lt;/h4&gt;
-&lt;p&gt;Like every relationship in the real world, once you meet a new person, you have to introduce yourself. The same applies to Git; before the first commit, you have to set up your username and email.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/WgQsaZsqasE2NhiMWO/giphy.gif&quot; alt=&quot;Introducing ourself&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Like in real-world relationships, once you meet a new person, you have to introduce yourself. The same applies to Git; before the first commit, you have to set up your username and email.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/Y0mC3y5G53PsQ/giphy.gif&quot; alt=&quot;Introducing ourself&quot;&gt;&lt;/p&gt;
 &lt;p&gt;There comes user.name, and user.email config that needs to be made globally here are the commands:&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git config --global user.name &amp;quot;John Doe&amp;quot;&lt;/code&gt;
-&lt;code class=&quot;language-text&quot;&gt;git config --global user.email johndoe@example.com&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git config --global user.name &amp;quot;John Doe&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git config --global user.email johndoe@example.com&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Side note:
 As said &lt;a href=&quot;https://dev.to/msaracevic/comment/bdhb&quot;&gt;here&lt;/a&gt; If you use Github only in your laptop, you can set up your email like this :&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git config --global user.email &amp;quot;:USERNAME@users.noreply.github.com&amp;quot;&lt;/code&gt;&lt;/p&gt;
@@ -67,42 +48,16 @@ As said &lt;a href=&quot;https://dev.to/msaracevic/comment/bdhb&quot;&gt;here&lt
 &lt;p&gt;But if you use bitBucket, Gitlab and any other subversion system you can set up the email local per project. &lt;/p&gt;
 &lt;h4&gt;Change your default editor&lt;/h4&gt;
 &lt;p&gt;By default, Git uses Vim as the text editor for commits messages, rebase and merge messages.
-If like me you have never used Vim because you find it challenging to use, the next &lt;code class=&quot;language-text&quot;&gt;core.editor&lt;/code&gt; command comes to your rescue.&lt;/p&gt;
+If like me you have never used Vim because you find it challenging to use, the next &lt;code class=&quot;language-text&quot;&gt;core.editor&lt;/code&gt; the command comes to your rescue.&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git config --global core.editor &amp;quot;code -w&amp;quot;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;With this command, you can tell Git to use a text editor installed on your laptop which is available via command line.&lt;/p&gt;
 &lt;p&gt;For everyone who started to code after 2016, I guess the de facto choice for the editor is VSCode, but old school guys can use &lt;code class=&quot;language-text&quot;&gt;nano&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;sublime text&lt;/code&gt; or like our grandparents in code will keep &lt;code class=&quot;language-text&quot;&gt;vim&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;emacs.&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Ps note the -w argument after the editor name :
+&lt;p&gt;Note the -w argument after the editor name :
 That force Git to wait for your commit message that is typing type on your custom editor otherwise Git will close and assuming there is an empty message. Thanks to this &lt;a href=&quot;https://stackoverflow.com/a/11702707/4683950&quot;&gt;StackOverflow&lt;/a&gt; answer&lt;/p&gt;
 &lt;h4&gt;All commits should wear the same uniform:&lt;/h4&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 500px;&quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/22fc2a39f7920a050a598c7bc8b50d47/c635c/uniform.jpg&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBP/EABYBAQEBAAAAAAAAAAAAAAAAAAIAA//aAAwDAQACEAMQAAAB0ym+a1ihv//EABoQAAIDAQEAAAAAAAAAAAAAAAIDAAEREgT/2gAIAQEAAQUCYzJRsgurmnBUWe+gkD1//8QAFhEBAQEAAAAAAAAAAAAAAAAAAAIR/9oACAEDAQE/AWy//8QAFxEBAAMAAAAAAAAAAAAAAAAAAAESE//aAAgBAgEBPwGsM3//xAAeEAACAQMFAAAAAAAAAAAAAAAAAQIhIlERMTJBQv/aAAgBAQAGPwK2W2DWrRdRkn6yKPTObR//xAAaEAACAgMAAAAAAAAAAAAAAAABEQAhMUFR/9oACAEBAAE/IXkrDaBi4meRRbgosLNwXRVgw0iGrU//2gAMAwEAAgADAAAAEGf/AP/EABcRAAMBAAAAAAAAAAAAAAAAAAABETH/2gAIAQMBAT8QbhbT/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQARQf/aAAgBAgEBPxAQyXy//8QAHhABAAICAgMBAAAAAAAAAAAAAQARITFBUWGRoeH/2gAIAQEAAT8QvmZEDbR+9RIwd2PrEHeSWpk6UMxLvxohOV5KMDxzLwvsAS/U/9k=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;uniform&quot;
-        title=&quot;uniform&quot;
-        src=&quot;/static/22fc2a39f7920a050a598c7bc8b50d47/c635c/uniform.jpg&quot;
-        srcset=&quot;/static/22fc2a39f7920a050a598c7bc8b50d47/7237a/uniform.jpg 148w,
-/static/22fc2a39f7920a050a598c7bc8b50d47/0cfdf/uniform.jpg 295w,
-/static/22fc2a39f7920a050a598c7bc8b50d47/c635c/uniform.jpg 500w&quot;
-        sizes=&quot;(max-width: 500px) 100vw, 500px&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;If you work on a structured project that has the same template for commit message the &lt;code class=&quot;language-text&quot;&gt;commit.template&lt;/code&gt; command can help.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.eduquepsp.education/wp-content/uploads/2018/06/epspbanner.jpg&quot; alt=&quot;uniform&quot;&gt;
+&lt;em&gt;Source : &lt;a href=&quot;https://www.eduquepsp.education/&quot;&gt;national-education-DRC&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;If you work on a structured project that has the same template for commit message the &lt;code class=&quot;language-text&quot;&gt;commit.template&lt;/code&gt; a command can help.&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git config --local commit.template ~/.commit-message.md&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;I prefer setting this local on projects and having one global for my project.&lt;/p&gt;
 &lt;h4&gt;They don’t deserve to be on Git&lt;/h4&gt;
