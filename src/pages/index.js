@@ -28,9 +28,18 @@ export default class AboutMe extends Component {
             <div style={{ clear: "both" }} class="subhead">
               <p>
                 Hey, Internet !! It's me Espoir Murhabazi a Software Engineer
-                from DRC but currently based in Rwanda! I am in between Software
-                Engineering and Data Science. Python is my favorite language ,
-                but I also do JavaScript and sometimes Java(my first love).
+                from DRC but currently based in Rwanda! I am in love with Python
+                language and community. I greatly value clean and maintainable
+                code, great software, but I know when I need to be a
+                perfectionist and when it stands in a way of product delivery. I
+                like to break things, to find new ways to break things, to solve
+                hard problems, to put things under test and stress, and to have
+                my mind blown by an interesting question.
+              </p>
+              <p>
+                I am also interest in Data Science , and Machine Learning
+                especially Recommendations Engines and Neural Machine
+                Translation.
               </p>
               <p>
                 When not coding , you can find me playing fantasy football,
