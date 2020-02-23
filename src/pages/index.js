@@ -29,12 +29,10 @@ export default class AboutMe extends Component {
               <p>
                 Hey, Internet !! It's me Espoir Murhabazi a Software Engineer
                 from DRC but currently based in Rwanda! I am in love with Python
-                language and community. I greatly value clean and maintainable
-                code, great software, but I know when I need to be a
-                perfectionist and when it stands in a way of product delivery. I
-                like to break things, to find new ways to break things, to solve
-                hard problems, to put things under test and stress, and to have
-                my mind blown by an interesting question.
+                language but I also write Javascript and sometimes Java. I
+                greatly value clean and maintainable code, great software, but I
+                know when I need to be a perfectionist and when it stands in a
+                way of product delivery.
               </p>
               <p>
                 I am also interest in Data Science , and Machine Learning
@@ -42,9 +40,10 @@ export default class AboutMe extends Component {
                 Translation.
               </p>
               <p>
-                When not coding , you can find me playing fantasy football,
-                listening to Rumba music from DRC or just spending time with my
-                family!
+                When not coding , you can find me watching football and
+                supporting ManCity, tweaking my FPL team, listening to Congolese
+                Music, helping people to learn about the Bible or just spending
+                time with my family!
               </p>
             </div>
             <p id="pright">
@@ -52,8 +51,9 @@ export default class AboutMe extends Component {
               <a href="https://stackoverflow.com/users/4683950/espoir-murhabazi">
                 StackOverflow
               </a>
-              , <a href="https://dev.to/espoir"> The PracticalDev </a>
-              and <a href="https://github.com/espoirMur"> Github </a>
+              , <a href="https://dev.to/espoir"> The PracticalDev </a>,{" "}
+              <a href="https://github.com/espoirMur"> Github </a> , and during
+              local meetups at different communities
             </p>
             <ul>
               <li>
@@ -63,12 +63,13 @@ export default class AboutMe extends Component {
               </li>
             </ul>
             <p>
-              Feel free to contact me at espoir.mur[at]gmail.com if you'd like
-              me to work for you!
+              Feel free to contact me at espoir.mur[at]gmail.com for any inquiry
             </p>
           </div>
         </div>
-        <footer>© {new Date().getFullYear()}, Build by Espy Mur</footer>
+        <footer>
+          © {new Date().getFullYear()}, Build by Espy Mur Using Gastby
+        </footer>
       </div>
     )
   }
