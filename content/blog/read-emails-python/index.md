@@ -5,69 +5,62 @@ description: "Tutorails on how to read emails in Python"
 ---
 ### The Problem
 
-Recently I received a strange requirement from the person am working with.
-He said that I have to write a script that connect to a specific mailbox check everytime if there is a new emails , read it and get the attachement and do some data analysis from that attachement.
-I was super excited and I asked myself , is it possible to read emails using python? 
-I started googling and I found that it is possible to read emails using pyhton.
-In the following blog post I am going to explain how I manage to read emails from an IMAP mail server and how I download the attachment and save them into a  specific folder.
-If you are familiar with Python this tutorial is for you. In order to complete this tutorial you need to have python 3.6 installed in your laptop and virtual environement installed.
+Recently I received a requirement from a client of mine.
+He said that I had to write a script that connects to a specific mailbox check every time if there are new emails, read them, and get the attachments and perform some data analysis on those attachments.
+I was super excited about that, and I asked myself, is it possible to read emails using Python? 
+I started googling, and I was lucky to find that it is possible to read emails using Python.
+In the following blog post, I will explain how I manage to read emails from an IMAP mail server and how I download the attachments and save them into a  specific folder.
+If you are familiar with Python, this tutorial is for you. To complete this tutorial, you need to have python 3.6 installed in your laptop and virtual environment installed.
 
-#### First thing first create the project and initialise your virtual environement
+#### First thing first create the project and initialize your virtual environement
 
 Let us create a project we will be using :
-Naviguate to your command line and type the following code :
+Navigate to your command line and type the following code :
 `mkdir read_emails_project & cd read_emails_project`
 
-Once in the project let initialise git :
+Once in the project, let initialize git :
 
 `git init`
 
-Once git is initialised let us create a virtual environement:
+Once we initialized git, let us create a virtual environment:
 `virtualenv -p python .venv`
 
-You can actiavte the virtual environement with the following lines :
+You can activate the virtual environment with the following lines :
 
 `source .venv/bin/activate`
 
-It's not a must to use virtual environement you can use your prefered environement manager , for me I prefer to use virtual environements.
+It's not a must to use a virtual environment. You can use your preferred environment manager; for me, I prefer to use virtual environments.
 
-Once you are set up we can start with serious things.
+Once you complete the setup up, we can start with the exciting part of the project.
+#### Never Write credentials into code, use Environements variables 
 
-#### Never Write credentials into code Use Environements variables 
-
-Since we are reading mails from an inbox we will need emails credientials. Where to read those crendials from?
-One thing is sure we are not putting them into the code , this is BAD PRACTISE you can be jailed for putting credentials or secret codes into a code base.
-
-We will be using .env file that will be secret to us and we will never share it with anyone online , even putting it in a private git repository.
-
+Since we are reading emails from an inbox, we will need email credentials. From where are we reading those credentials?
+One thing is sure we are not putting them into the code, this is BAD PRACTISE !!! The developer community can put you in jail for writing credentials or secret codes directly into a codebase.
+We will be using .env file that will be secret to us, and we will never share it with anyone online, even putting it in a private git repository.
 let us create the .env file 
-
 `touch .env`
-
-And create a gitignore file to tell git to ignore this file 
-
+And create a gitignore file to tell git which files we are ignoring.
 `touch .gitignore`
-
 open the .gitignore and add the following line to it to ignore the env file :
 ```
     .venv
     env
 ```
-In those lines we are telling git to ingore our env files and our virtualenvironements.
+In those lines, we are telling git to ignore our env files and our virtual environments.
 
-Now we can populate the env file with our crentatials :
+Now we can populate the env file with our credentials :
 
 ```
 USER_EMAIL='your@email.com'
-USER_PASSWORD='your secret password'
+USER_PASSWORD='your secret password.'
 ```
-Once our emails credentails are created , let us write a function that will be reading it .
-for this we will be using a pyhton package called [python-dotenv](https://github.com/theskumar/python-dotenv)
+We create our email credentials; let us write a method that reads them from there.
+For this, we will be using a Python package called [python-dotenv](https://github.com/theskumar/python-dotenv)
 
 let install it with :
 `pip install -U python-dotenv`
 
-let us write a function that read and return those environements : 
+let us write a function that reads and return those environment variables : 
 
 You can create a file name `utils.py` and add the following code : 
 
@@ -94,17 +87,16 @@ def read_credentails():
                          refer to the sample')
 ```
 
-From that function you can noticed that we are using `load_env` function that load the environement variables from our .env files and expose them to system environment variables so we can be able to read them from that.
-The function return those environement variables so that we can be able to use them easily.
-In the next section we are going to do do serious stuff which envolves reading mails and download attachments.
+From that function, you can notice that we are using `load_env` function that load the environment variables from our .env files and expose them to system environment variables so we can be able to read them from there.
+After reading the environment, variables from the function return them as a tuple.
+In the next section, we are going to perform the most exciting part of this tutorial it envolves reading mails and download attachments.
 
-#### Reading emails 
+#### Reading emails:
 
-I was happy to find that Python has a build in feature to that enable us to connect to a mailbox .
-It comes in the `imaplib` module and has utils to parse emails in the `email`
-module.
+I was happy to find that Python has a built-in feature that enables us to connect to a mailbox. It comes in the `imaplib` module.
+It also has utils to parse emails in the `email` module.
 
-let create a file `readaing_emails_scripts.py` inside it we are going to perform all the magic we need .
+Let create a file `reading_emails_scripts.py` inside it; we are going to perform all the magic we need.
 
 Let us import the module we need :
 
@@ -115,16 +107,16 @@ from .utils import read_credentails
 ```
 
 We are importing the : 
-- message_from_bytes function from emails module, it will helps us to read the emails which comes as bytes and convert it to text.
-- IMAP4_SSL : class which is the main class that will help us to perform all the operations
-Note that we are using IMAP4 protocol to read mails IMAP4 is an mail protocol used to access a mailbox on a remote server from a local email client. IMAP can be more complex, but provide more convenience for syncing across multiple devices.
+- message_from_bytes function from the email module. It will help us to read the emails which come as bytes and convert them to text.
+- IMAP4_SSL: class which is the main class that will help us to perform all the operations
+Note that we are using IMAP4 protocol to read mails IMAP4 is a mail protocol used to access a mailbox on a remote server from a local email client. IMAP can be more complex but provide more convenience for syncing across multiple devices.
 You can read more about emails protocol [here](https://www.navigator.ca/support/imap-pop3-smtp/) 
-- our read_credentials function which is self explanatory.
+- our read_credentials function, which we introduced in the previous section.
 
-I have create a funtion that perform the operation and return a generator with all mails found in the mail box , here it's is :
+I have create a funtion that perform the operation and return a generator with all mails found in the mail box , here it is :
 
 ```python
-def get_filter_unseen_emails(email_address, password):
+def get_unseen_emails(email_address, password):
     """
     Filter the email and return unseen emails
     Args:
@@ -140,32 +132,34 @@ def get_filter_unseen_emails(email_address, password):
         if retcode == 'OK' and messages[0]:
             for index, num in enumerate(messages[0].split()):
                 typ, data = mail_connection.fetch(num, '(RFC822)')
-                msg = message_from_bytes(data[0][1])
+                message = message_from_bytes(data[0][1])
                 typ, data = mail_connection.store(num, '+FLAGS', '\\Seen')
-                yield msg
+                yield message
 ```
-You can see that we are instaciating a secure mail_connection from the IMAP4SSL class.
-We will be using the mail_connection object to perform all operatiosn we want to our mailbox.
+You can see that we are instaciating a secure mail_connection from the IMAP4SSL class and using it with the python context manager.
+We will be using the mail_connection object to perform all the operations we want to our mailbox.
 
-After instanciating we login to the mail box with our credentials , then we list all the mailbox names we have eg : In google we have INBOX, SPAM, UPDATES, FORUMS , SPAMS etc
-The we select only inbox folder , and from inbox we filter only unseen messages or coming from your address email.
-Note that you can make any specific search in your inbox and even complicated queries you may think about.
+After instantiating we log in to the mailbox with our credentials, then we list all the mailbox names we have, e.g.: In Google, we have INBOX, SPAM, UPDATES, FORUMS, SPAMS, etc
+We select only inbox folder, and from the inbox, we filter only unseen messages or coming from your address email.
+Note that you can search for anything in your inbox and even complicated queries.
 
-The serach return retcodes with messaes and their IDS 
+The search return retcodes with messages and their IDS 
 Note that : 
->Message ids are assigned by the server, and are implementation dependent. The IMAP4 >protocol makes a distinction between sequential ids for messages at a given point in time >during a transaction and UID identifiers for messages, but not all servers seem to bother.
+>The server assigned messages id to emails, and are implementation-dependent. The IMAP4 >protocol makes a distinction between sequential ids for messages at a given point in time >during a transaction and UID identifiers for messages, but not all servers seem to bother.
 
-Once have messages ids we can fetch ids and the hearders format we are looking for.
-We are using RFC822 to fetch  the entire message as an RFC 2822 fromated message.
-RFC 2822 is a protocol for standard messages send between computers , you can read more about it [here](https://tools.ietf.org/html/rfc2822.html)
+Once we have messages ids, we can fetch ids and the format of the headers we want.
+We are using RFC822 to fetch the entire message as an RFC 2822 formatted message.
+RFC 2822 is a protocol for standard messages send between computers; you can read more about it [here](https://tools.ietf.org/html/rfc2822.html)
 
-The next line we are using the message_from_bytes function from the email module to convert the bytes we received as a message.
+In the next line, we are using the message_from_bytes function from the email module to convert the bytes we received as a message.
 
-Next we mark the message as seen by using the store method
+Then we mark the message as seen by using the store method
+and we yield the results to our iterator (add an explanation of that )
 
-and we yied the results to our iterator (add an explantion of that )
+Once we have retrieved the emails, let us check the function that gets attachment from that email.
 
-Once we have retrieve the emails let us check the function that get attachement from that email.
+### Getting attachement from the email:
+
 ```pyhton
 def get_mail_attachments(message, condition_check):
     """
@@ -189,14 +183,19 @@ def get_mail_attachments(message, condition_check):
 This function take the email object yield by the  last function and a filter function which tell which extension we can filter from the email, iterate over all his part using walk() method, for each part we check if the main type is not multipart , and content disposition is  None
 (Need to check this)
 
-if none of those condition is satisfied we get the file name and return the byte stream from the email.
+If none of those conditions is satisfied, we get the file name and return the byte stream from the email.
 
-#### Putting everything together:*
+#### Putting everything together:
 We now have all the building block of the applicaiton let put them in the main function:
+
+create a file called `run.py` and add the following code inside: 
+
 ```python
+from utils import read_credentails
+from reading_emails_scripts import get_mail_attachments, get_unseen_emails
 if __name__ == "__main__":
  email_address, password = read_credentails()
-    messages = get_filter_unseen_emails(email_address, password)
+    messages = get_unseen_emails(email_address, password)
     if messages:
         for message in messages:
             attachment = get_mail_attachments(message,
@@ -205,10 +204,21 @@ if __name__ == "__main__":
                 with open('./data/xml_files/{}'.format(attachment[0]), 'wb') as file:
                     file.write(attachment[1])
 ```
+We can see that call read credentails which return the credentials from the .env file,
+We call the get_unseen_emails method which return our messages , we check if the message have attachements with get_mail_attachment function and if there is an attachement we save it to a folder we like.
 
-And we are done
+### Conclusion 
+
+In this tutorial, we went through the whole process of reading emails with Python, we saw how to download attachments from emails, and we put everything together to have a full working script.
+
+It's also a good practice to write unit tests to test the code you are writing because I believe that something that is not tested is broken.
+
+In the next part, we will see how you can write unit tests for this piece of code. So stay tuned for more.
+
+You can check the code form this tutorial at this GitHub repository.
+
+Cheers!
 
 REFerence
 https://pymotw.com/2/imaplib/
 
-https://medium.com/@sdoshi579/to-read-emails-and-download-attachments-in-python-6d7d6b60269
