@@ -14,11 +14,9 @@
 
 .navigation-links li.active {
   text-decoration: underline;
-  background-color: #141414;
 }
 
 .navigation-links li:hover {
-  background-color: #141414;
   color: #eee;
   cursor: pointer;
   text-decoration: underline;
