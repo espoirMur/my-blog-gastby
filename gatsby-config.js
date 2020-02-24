@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `My ideas' home`,
     author: `Espoir Murhabazi`,
-    description: `My Home on the internet`,
-    siteUrl: `https:murhabazi.com`,
+    description: `Murhabazi Buzina Espoir Home on the internet`,
+    siteUrl: `https://www.murhabazi.com/`,
     social: {
       github: "espoirMur",
     },
@@ -71,6 +71,12 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/blog/*`],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

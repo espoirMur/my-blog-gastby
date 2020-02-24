@@ -10,4 +10,4 @@ This site is still under construction , come back after few days you will see so
 - [] Migrate all blogs from the old website
 - [x] Buy a new domain 
 - [x] Setup the domain and add SSL
-- [] Optimize search for the new website
+- [] search engine opttimazation for the new website check [this](https://gregberge.com/blog/gatsby-seo)
