@@ -6,9 +6,6 @@ import myProfile from "../../content/assets/profile-pic.jpg"
 import SEO from "../components/seo"
 
 export default class AboutMe extends Component {
-  componentDidMount() {
-    document.title = "Hey, it's me! Welcome"
-  }
   render() {
     return (
       <main>
