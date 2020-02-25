@@ -21,6 +21,7 @@ Things I need to get done In the first 100 days of 2020
 - [ ] Put 3 baselines models for Congolese languages on masakhane
 - [ ] Finish one blog
 - [ ] migrate the old blog to the new one and set up google analytic ans SEO
+- [ ] Complete the 2 course of Algorithms and Data Structure from Coursera
 
 
 Talk I need to attend to this year :
@@ -29,3 +30,11 @@ Pycon Africa
 Data Science Africa
 Deep learning Indaba
 NeurIps... Only if I finished the deep learning project on time
+
+
+I have 2 free days in a week, One should be algorithms and Data Structure and Another one for another one for Data Science And NLP
+
+
+Another 3 days will be concentrated to work !
+
+And weekend will be to catch up with what I didn't completed
