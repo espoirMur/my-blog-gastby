@@ -12,7 +12,7 @@ export default class AboutMe extends Component {
   render() {
     return (
       <main>
-        <SEO title="Home page" />
+        <SEO title="Murhabazi Buzina Espoir Home" />
         <div
           style={{
             marginLeft: `auto`,
