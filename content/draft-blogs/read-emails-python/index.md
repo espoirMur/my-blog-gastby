@@ -161,7 +161,8 @@ In the next line, we are using the message_from_bytes function from the email mo
 
 Then we mark the message as seen by using the store method
 and we yield the results.
-This means the function will return a iteraror which is an object we can iterate over.
+This means the function will return a iteraror which is an object we can iterate over. Find more about iterator and generator in python [here]([https://stackoverflow.com/questions/9884132/what-exactly-are-iterator-iterable-and-iteration](https://stackoverflow.com/questions/9884132/what-exactly-are-iterator-iterable-and-iteration)) and [here]([https://www.programiz.com/python-programming/generator](https://www.programiz.com/python-programming/generator)).
+
 Once we have retrieved the emails, let us check the function that gets attachment from that email.
 
 ### Getting attachement from the email:
@@ -187,7 +188,6 @@ def get_mail_attachments(message, condition_check):
             return part.get_filename(), part.get_payload(decode=1)
 ```
 This function take the email object yield by the  last function and a filter function which tell which extension we can filter from the email, iterate over all his part using walk() method, for each part we check if the main type is not multipart , and content disposition is  None
-(Need to check this)
 
 If none of those conditions is satisfied, we get the file name and return the byte stream from the email.
 
@@ -229,5 +229,5 @@ REFerence
 https://pymotw.com/2/imaplib/
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0OTQwNDk5NF19
+eyJoaXN0b3J5IjpbLTk1NjU5MDUxNV19
 -->
