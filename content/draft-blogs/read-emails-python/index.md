@@ -93,7 +93,7 @@ def read_credentails():
                          refer to the sample')
 ```
 
-From that function, you can notice that we are using `load_env` function that load the environment variables from our .env files and expose them to system environment variables so we can be able to read them from there.
+From that function, you can notice that we are using `load_env` function, it loads the environment variables from our .env files and expose them to system environment variables so we can be able to read them from there.
 After reading the environment, variables from the function return them as a tuple.
 In the next section, we are going to perform the most exciting part of this tutorial it envolves reading mails and download attachments.
 
@@ -229,5 +229,5 @@ REFerence
 https://pymotw.com/2/imaplib/
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzE4Mjc4MjNdfQ==
+eyJoaXN0b3J5IjpbMTI0NjE0NTIyMF19
 -->
