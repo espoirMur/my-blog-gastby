@@ -35,12 +35,18 @@ Once you complete the setup up, we can start with the exciting part of the proje
 #### Never Write credentials into code, use Environements variables 
 
 Since we are reading emails from an inbox, we will need email credentials. From where are we reading those credentials?
-One thing is sure we are not putting them into the code, this is BAD PRACTISE !!! The developer community can put you in jail for writing credentials or secret codes directly into a codebase.
+One thing is sure we are not putting them into the code, this is BAD PRACTISE !!! 
+The developer community can put you in jail for writing credentials or secret codes directly into a codebase.
 We will be using .env file that will be secret to us, and we will never share it with anyone online, even putting it in a private git repository.
-let us create the .env file 
+
+Let us create the .env file 
+
 `touch .env`
+
 And create a gitignore file to tell git which files we are ignoring.
+
 `touch .gitignore`
+
 open the .gitignore and add the following line to it to ignore the env file :
 ```
     .venv
@@ -222,3 +228,6 @@ Cheers!
 REFerence
 https://pymotw.com/2/imaplib/
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTEyNzE4Mjc4MjNdfQ==
+-->
