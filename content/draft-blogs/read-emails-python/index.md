@@ -160,7 +160,8 @@ RFC 2822 is a protocol for standard messages send between computers; you can rea
 In the next line, we are using the message_from_bytes function from the email module to convert the bytes we received as a message.
 
 Then we mark the message as seen by using the store method
-and we yield the results to our iterator (add an explanation of that )
+and we yield the results to our iterator. 
+
 
 Once we have retrieved the emails, let us check the function that gets attachment from that email.
 
@@ -229,5 +230,5 @@ REFerence
 https://pymotw.com/2/imaplib/
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3MzA0MDU0XX0=
+eyJoaXN0b3J5IjpbLTE5OTIyNTMyNDBdfQ==
 -->
