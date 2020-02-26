@@ -221,7 +221,7 @@ It's also a good practice to write unit tests to test the code you are writing b
 
 In the next part, we will see how you can write unit tests for this piece of code. So stay tuned for more.
 
-You can check the code form this tutorial at this GitHub repository.
+You can check the code form this tutorial at this [Github repository]().
 
 Cheers!
 
@@ -229,5 +229,5 @@ REFerence
 https://pymotw.com/2/imaplib/
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1NjU5MDUxNV19
+eyJoaXN0b3J5IjpbLTE0MjQ2MjYxNzRdfQ==
 -->
