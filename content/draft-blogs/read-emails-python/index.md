@@ -100,7 +100,7 @@ In the next section, we are going to perform the most exciting part of this tuto
 #### Reading emails:
 
 I was happy to find that Python has a built-in feature that enables us to connect to a mailbox. It comes in the `imaplib` module.
-It also has utils to parse emails in the `email` module.
+It also has a module to parse emails.
 
 Let create a file `reading_emails_scripts.py` inside it; we are going to perform all the magic we need.
 
@@ -229,5 +229,5 @@ REFerence
 https://pymotw.com/2/imaplib/
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0NjE0NTIyMF19
+eyJoaXN0b3J5IjpbLTU3MzA0MDU0XX0=
 -->
