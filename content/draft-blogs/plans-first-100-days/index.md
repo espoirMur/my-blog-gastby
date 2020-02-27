@@ -38,3 +38,27 @@ I have 2 free days in a week, One should be algorithms and Data Structure and An
 Another 3 days will be concentrated to work !
 
 And weekend will be to catch up with what I didn't completed
+
+
+Day 1 of Reccurent Neural Network :
+
+Materials so hard from fast.ai , a lot abstraction , Did I miss the basics or ?
+Is their approach which is not good for me? Or the because their code is not pythonic? may be
+
+Let me try dl2.ai course and check how it will goes
+
+The book looks great but it could be better to combine both on next time
+
+Or combine it with MIT deep learning 
+
+https://www.youtube.com/watch?v=njKP3FqW3Sk&list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI
+
+Another resources
+
+Day One of DS and Algorithm with Java::
+
+Everything went well get understand the first 45 minutes
+
+Will resume tomorrow :
+
+Keep it up...

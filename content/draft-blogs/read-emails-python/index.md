@@ -11,6 +11,7 @@ I was super excited about that, and I asked myself, is it possible to read email
 I started googling, and I was lucky to find that it is possible to read emails using Python.
 In the following blog post, I will explain how I manage to read emails from an IMAP mail server and how I download the attachments and save them into a  specific folder.
 If you are familiar with Python, this tutorial is for you. To complete this tutorial, you need to have python 3.6 installed in your laptop and virtual environment installed.
+If you want to learn more about virtual environements in pyhton please follow [this](https://gist.github.com/pandafulmanda/730a9355e088a9970b18275cb9eadef3) tutorial or [this one](https://realpython.com/python-virtual-environments-a-primer/).
 
 #### First thing first create the project and initialize your virtual environement
 
@@ -24,7 +25,6 @@ Once in the project, let initialize git :
 
 Once we initialized git, let us create a virtual environment:
 `virtualenv -p python .venv`
-
 You can activate the virtual environment with the following lines :
 
 `source .venv/bin/activate`
@@ -50,7 +50,7 @@ And create a gitignore file to tell git which files we are ignoring.
 open the .gitignore and add the following line to it to ignore the env file :
 ```
     .venv
-    env
+    .env
 ```
 In those lines, we are telling git to ignore our env files and our virtual environments.
 
@@ -102,14 +102,13 @@ In the next section, we are going to perform the most exciting part of this tuto
 I was happy to find that Python has a built-in feature that enables us to connect to a mailbox. It comes in the `imaplib` module.
 It also has a module to parse emails.
 
-Let create a file `reading_emails_scripts.py` inside it; we are going to perform all the magic we need.
+Let create a file `read_emails_scripts.py` inside it; we are going to perform all the magic we need.
 
 Let us import the module we need :
 
 ```python
 from email import message_from_bytes
 from imaplib import IMAP4_SSL
-from .utils import read_credentails
 ```
 
 We are importing the : 
@@ -117,9 +116,8 @@ We are importing the :
 - IMAP4_SSL: class which is the main class that will help us to perform all the operations
 Note that we are using IMAP4 protocol to read mails IMAP4 is a mail protocol used to access a mailbox on a remote server from a local email client. IMAP can be more complex but provide more convenience for syncing across multiple devices.
 You can read more about emails protocol [here](https://www.navigator.ca/support/imap-pop3-smtp/) 
-- our read_credentials function, which we introduced in the previous section.
 
-I have create a funtion that perform the operation and return a generator with all mails found in the mail box , here it is :
+I have create a function that perform the operation and return a generator with all mails found in the mail box , here it is :
 
 ```python
 def get_unseen_emails(email_address, password):
@@ -142,9 +140,8 @@ def get_unseen_emails(email_address, password):
                 typ, data = mail_connection.store(num, '+FLAGS', '\\Seen')
                 yield message
 ```
-You can see that we are instaciating a secure mail_connection from the IMAP4SSL class and using it with the python context manager.
+You can see that we are instantiating a secure mail_connection from the IMAP4SSL class and using it with the python context manager. The IMAP4_SSL constructor get one string parameter which is the mail provider imap server address , for Gmail it's : `imap.gmail.com`.
 We will be using the mail_connection object to perform all the operations we want to our mailbox.
-
 After instantiating we log in to the mailbox with our credentials, then we list all the mailbox names we have, e.g.: In Google, we have INBOX, SPAM, UPDATES, FORUMS, SPAMS, etc
 We select only inbox folder, and from the inbox, we filter only unseen messages or coming from your address email.
 Note that you can search for anything in your inbox and even complicated queries.
@@ -165,7 +162,7 @@ This means the function will return a iteraror which is an object we can iterate
 
 Once we have retrieved the emails, let us check the function that gets attachment from that email.
 
-### Getting attachement from the email:
+### Getting attachment from the email:
 
 ```pyhton
 def get_mail_attachments(message, condition_check):
@@ -198,7 +195,7 @@ create a file called `run.py` and add the following code inside:
 
 ```python
 from utils import read_credentails
-from reading_emails_scripts import get_mail_attachments, get_unseen_emails
+from read_emails_scripts import get_mail_attachments, get_unseen_emails
 if __name__ == "__main__":
  email_address, password = read_credentails()
     messages = get_unseen_emails(email_address, password)
@@ -224,8 +221,8 @@ In the next part, we will see how you can write unit tests for this piece of cod
 You can check the code form this tutorial at this [Github repository]([https://github.com/espoirMur/read_emails_with_python](https://github.com/espoirMur/read_emails_with_python)).
 
 Cheers!
-### Refrences: 
 
+#### References :
 - Python Module of the week [imaplib](https://pymotw.com/2/imaplib/)
 - [Read Emails and Download attachments ](https://medium.com/@sdoshi579/to-read-emails-and-download-attachments-in-python-6d7d6b60269)
 - [Read only new emails in Python on StackOverflow](https://stackoverflow.com/a/29629741/4683950)
