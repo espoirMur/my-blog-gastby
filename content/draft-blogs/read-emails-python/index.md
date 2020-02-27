@@ -224,10 +224,12 @@ In the next part, we will see how you can write unit tests for this piece of cod
 You can check the code form this tutorial at this [Github repository]([https://github.com/espoirMur/read_emails_with_python](https://github.com/espoirMur/read_emails_with_python)).
 
 Cheers!
+### Refrences: 
 
-REFerence
-https://pymotw.com/2/imaplib/
+- Python Module of the week [imaplib](https://pymotw.com/2/imaplib/)
+- [Read Emails and Download attachments ](https://medium.com/@sdoshi579/to-read-emails-and-download-attachments-in-python-6d7d6b60269)
+- [Read only new emails in Python on StackOverflow](https://stackoverflow.com/a/29629741/4683950)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwNTcwNjE3M119
+eyJoaXN0b3J5IjpbLTY2MzYyNDYzNF19
 -->
