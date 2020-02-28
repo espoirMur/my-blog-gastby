@@ -207,8 +207,8 @@ if __name__ == "__main__":
                 with open('./data/xml_files/{}'.format(attachment[0]), 'wb') as file:
                     file.write(attachment[1])
 ```
-We can see that call read credentails which return the credentials from the .env file,
-We call the get_unseen_emails method which return our messages , we check if the message have attachements with get_mail_attachment function and if there is an attachement we save it to a folder we like.
+We can see that call read credentials which return the credentials from the .env file,
+We call the get_unseen_emails method which return our messages , we check if the message have attachements with get_mail_attachment function and if there is an attachment we save it to a folder we like.
 
 ### Conclusion 
 

@@ -62,3 +62,8 @@ Everything went well get understand the first 45 minutes
 Will resume tomorrow :
 
 Keep it up...
+
+Day 2 of recurent neural network everyting went smoothl, I watched the video about RNN 
+Got the intuition , read the book, got some intuition but got stuck on the data preparation part , that is where I will start on Monday
+
+Tomorrow I will resume with DS and Algorithms
