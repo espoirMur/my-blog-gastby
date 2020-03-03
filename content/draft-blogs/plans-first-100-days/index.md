@@ -63,7 +63,15 @@ Will resume tomorrow :
 
 Keep it up...
 
-Day 2 of recurent neural network everyting went smoothl, I watched the video about RNN 
+Day 2 of recurrent neural network everything went smoothly, I watched the video about RNN 
 Got the intuition , read the book, got some intuition but got stuck on the data preparation part , that is where I will start on Monday
 
 Tomorrow I will resume with DS and Algorithms
+
+Day 2 DS and Algorithms Union Find Algorithm Implementation
+
+Things are not going to the peace I want but a least I found usefull ressources to use .
+
+Day 3 of RNN at least some progress where made:
+I learned about word embeding and preprocessing text and how we do world representation.
+I didn't get everything at 100 % but I made some progress.
