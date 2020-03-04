@@ -70,8 +70,17 @@ Tomorrow I will resume with DS and Algorithms
 
 Day 2 DS and Algorithms Union Find Algorithm Implementation
 
-Things are not going to the peace I want but a least I found usefull ressources to use .
+Things are not going to the peace I want but a least I found useful resources to use .
 
 Day 3 of RNN at least some progress where made:
-I learned about word embeding and preprocessing text and how we do world representation.
+I learned about word embedding and preprocessing text and how we do world representation.
 I didn't get everything at 100 % but I made some progress.
+
+
+Day 3 of DS and algorithm :
+
+One good step in the right direction but things are not moving fast.
+
+I found one video, went on implementing it and things seems to go well
+
+https://www.youtube.com/watch?v=Gz-K8HLkzeM
