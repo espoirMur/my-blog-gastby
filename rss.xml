@@ -1,4 +1,203 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My ideas' home]]></title><description><![CDATA[Murhabazi Buzina Espoir Home on the internet]]></description><link>https://www.murhabazi.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 03 Mar 2020 10:04:02 GMT</lastBuildDate><item><title><![CDATA[My Customs Git Configurations]]></title><description><![CDATA[Configurations Git is a powerful tool, and you cannot call yourself a modern software engineer if you are not using Git or any other…]]></description><link>https://www.murhabazi.com/customs-git-config/</link><guid isPermaLink="false">https://www.murhabazi.com/customs-git-config/</guid><pubDate>Thu, 30 Jan 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://cdn.lynda.com/course/514200/514200-636141225565412095-16x9.jpg&quot; alt=&quot;Configurations&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My ideas' home]]></title><description><![CDATA[Murhabazi Buzina Espoir Home on the internet]]></description><link>https://www.murhabazi.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 04 Mar 2020 17:51:45 GMT</lastBuildDate><item><title><![CDATA[Reading Emails from a Mailbox with python]]></title><description><![CDATA[The Problem  Recently I received a request from my client. 
+He requested that I  write a script that connects to a specific mailbox, check…]]></description><link>https://www.murhabazi.com/read-emails-python/</link><guid isPermaLink="false">https://www.murhabazi.com/read-emails-python/</guid><pubDate>Fri, 14 Feb 2020 22:12:03 GMT</pubDate><content:encoded>&lt;h3&gt;The Problem&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1f0a7d33aa206088d396fdfffcd8ce0f/31edf/cover-image.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAE/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAcTAuqGoCP/EABwQAAICAgMAAAAAAAAAAAAAAAECAAMEEhMhQv/aAAgBAQABBQJHPJRbpDkIJ7J7LGf/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAVEQEBAAAAAAAAAAAAAAAAAAAQQf/aAAgBAgEBPwGH/8QAGxAAAgEFAAAAAAAAAAAAAAAAAAECEBESIUH/2gAIAQEABj8CRjK50izVP//EABwQAAICAgMAAAAAAAAAAAAAAAERACExUWGRof/aAAgBAQABPyE25vuWDkisYhJHxGhaWpvg+YAcz//aAAwDAQACAAMAAAAQ6B//xAAXEQEBAQEAAAAAAAAAAAAAAAABABEh/9oACAEDAQE/EE7Y3//EABcRAAMBAAAAAAAAAAAAAAAAAAABEWH/2gAIAQIBAT8QbUQun//EABsQAQADAQADAAAAAAAAAAAAAAEAESExUWGB/9oACAEBAAE/EDQS+bemCcy9iq+Yh1kupJYYnYEWrZWuyv3Z/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;email&quot;
+        title=&quot;email&quot;
+        src=&quot;/static/1f0a7d33aa206088d396fdfffcd8ce0f/88218/cover-image.jpg&quot;
+        srcset=&quot;/static/1f0a7d33aa206088d396fdfffcd8ce0f/7237a/cover-image.jpg 148w,
+/static/1f0a7d33aa206088d396fdfffcd8ce0f/0cfdf/cover-image.jpg 295w,
+/static/1f0a7d33aa206088d396fdfffcd8ce0f/88218/cover-image.jpg 590w,
+/static/1f0a7d33aa206088d396fdfffcd8ce0f/77d57/cover-image.jpg 885w,
+/static/1f0a7d33aa206088d396fdfffcd8ce0f/5a917/cover-image.jpg 1180w,
+/static/1f0a7d33aa206088d396fdfffcd8ce0f/31edf/cover-image.jpg 6240w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Recently I received a request from my client.
+He requested that I  write a script that connects to a specific mailbox, check if there are new emails, read them, and download the attachments and perform some data analysis on those attachments.
+I was super excited about this task, and I asked myself; is it possible to read emails using Python?
+I started googling, and I was lucky to find that it is possible to read emails using Python.&lt;/p&gt;
+&lt;p&gt;In this blog post, I will explain how I managed to read emails from an IMAP mail server, and how I downloaded the attachments and saved them into a  specific folder.&lt;/p&gt;
+&lt;p&gt;If you are familiar with Python, this tutorial is for you. To complete this tutorial, you need to have python 3.6 installed in your laptop and virtual environment installed.&lt;/p&gt;
+&lt;h4&gt;First things first; create the project and initialize your virtual environment&lt;/h4&gt;
+&lt;p&gt;Let us create a project we will be using :
+Navigate to your command line and type the following lines of code :
+&lt;code class=&quot;language-text&quot;&gt;mkdir read_emails_project &amp;amp; cd read_emails_project&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Once in the project, let’s initialize git :&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git init&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Once we initialized git, let’s create a virtual environment:
+&lt;code class=&quot;language-text&quot;&gt;virtualenv -p python .venv&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You can activate the virtual environment with the following line of code :&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;source .venv/bin/activate&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It’s not a must to use a virtual environment. You can use your preferred environment manager; I just prefer to use virtual environments.&lt;/p&gt;
+&lt;p&gt;Once you complete the setup, we can start with the exciting part of the project.&lt;/p&gt;
+&lt;h4&gt;Never Write secrete credentials into code, use environment variables&lt;/h4&gt;
+&lt;p&gt;Since we are reading emails from an inbox, we will need email credentials. From where are we reading those credentials?
+One thing for sure; we are not putting them into the code, this is a BAD PRACTISE !!!
+The developer community can punish you for writing credentials or secret code directly into a codebase.
+We will be using &lt;code class=&quot;language-text&quot;&gt;.env&lt;/code&gt; file, whose content will be known to us only, and we will never share it with anyone online, even putting it in a private git repository.&lt;/p&gt;
+&lt;p&gt;Let us create the &lt;code class=&quot;language-text&quot;&gt;.env&lt;/code&gt; file &lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;touch .env&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;And create a gitignore file to tell git which files to ignore.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;touch .gitignore&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;open the .gitignore and add the following lines  it to ignore the &lt;code class=&quot;language-text&quot;&gt;.env&lt;/code&gt; file :&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    .venv
+    env&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In those lines, we are instructing git to ignore our &lt;code class=&quot;language-text&quot;&gt;.env&lt;/code&gt; files and our virtual environments.&lt;/p&gt;
+&lt;p&gt;Now we can populate the &lt;code class=&quot;language-text&quot;&gt;.env&lt;/code&gt; file with our credentials :&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;USER_EMAIL=&amp;#39;your@email.com&amp;#39;
+USER_PASSWORD=&amp;#39;your secret password.&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We have recorded  our email credentials in the &lt;code class=&quot;language-text&quot;&gt;.env&lt;/code&gt; file; let us now write a method that reads them from there.
+For this task, we will be using a Python package called &lt;a href=&quot;https://github.com/theskumar/python-dotenv&quot;&gt;python-dotenv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;let’s install it with :
+&lt;code class=&quot;language-text&quot;&gt;pip install -U python-dotenv&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;let us write a function that reads and returns those environment variables : &lt;/p&gt;
+&lt;p&gt;You can create a file with a name &lt;code class=&quot;language-text&quot;&gt;utils.py&lt;/code&gt; and add the following lines of code : &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; os
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; dotenv &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; load_dotenv
+
+&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;read_credentails&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token triple-quoted-string string&quot;&gt;&quot;&quot;&quot;
+    Return user’s credentials from the environment variables file and 
+    raise a an exception if the credentials are not present 
+    
+    Raises:
+        NotImplementedError: [description]
+    &quot;&quot;&quot;&lt;/span&gt;
+    load_dotenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    USER_EMAIL &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;USER_EMAIL&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    USER_PASSWORD &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;USER_PASSWORD&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; USER_EMAIL &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; USER_PASSWORD&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; USER_EMAIL&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; USER_PASSWORD
+    &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;raise&lt;/span&gt; ValueError&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&apos;Please add a &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;env &lt;span class=&quot;token builtin&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; write the credentials it it &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                         refer to the sample&apos;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;From that function, you can notice that we are using the &lt;code class=&quot;language-text&quot;&gt;load_env&lt;/code&gt; function, it loads the environment variables from our &lt;code class=&quot;language-text&quot;&gt;.env&lt;/code&gt; files and exposes them to system environment variables so we can be able to read them from there.
+After reading the environment variables, the function returns them as a tuple.
+In the next section, we are going to perform the most exciting part of this tutorial; it involves reading emails and downloading attachments.&lt;/p&gt;
+&lt;h4&gt;Reading emails:&lt;/h4&gt;
+&lt;p&gt;I was happy to find that Python has a built-in feature that enables us to connect to a mailbox. It is in the &lt;code class=&quot;language-text&quot;&gt;imaplib&lt;/code&gt; module.
+It also has a module to parse emails.&lt;/p&gt;
+&lt;p&gt;Let’s create a file &lt;code class=&quot;language-text&quot;&gt;reading_emails_scripts.py&lt;/code&gt; inside it; we are about to perform all the magic we need.&lt;/p&gt;
+&lt;p&gt;Let us import the modules we need :&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; email &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; message_from_bytes
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; imaplib &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; IMAP4_SSL
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;utils &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; read_credentails&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We are importing the : &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;message&lt;em&gt;from&lt;/em&gt;bytes function from the email module. It will help us to read the emails which come as bytes and convert them to text.&lt;/li&gt;
+&lt;li&gt;IMAP4_SSL: class which is the main class that will help us to perform all the operations.
+Note that we are using IMAP4 protocol to read emails, IMAP4 is a mail protocol used to access a mailbox on a remote server from a local email client. IMAP can be more complex but provides more conveniences for syncing across multiple devices.
+You can read more about emails protocol &lt;a href=&quot;https://www.navigator.ca/support/imap-pop3-smtp/&quot;&gt;here&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;our read_credentials function, which we introduced in the previous section.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I have created a function that perform the operation and return a generator with all mails found in the mailbox , here it is :&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;get_unseen_emails&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;email_address&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; password&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token triple-quoted-string string&quot;&gt;&quot;&quot;&quot;
+    Filter the email and return unseen emails
+    Args:
+        email_address (string): recipient email
+        password (password): recipient password
+    &quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; IMAP4_SSL&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;your_imap_server&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; mail_connection&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        mail_connection&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;login&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;email_address&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; password&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        mail_connection&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        mail_connection&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;INBOX&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;retcode&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; messages&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; mail_connection&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;search&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&apos;(OR (UNSEEN) (FROM your.email@gmail.com))&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; retcode &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;OK&apos;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;and&lt;/span&gt; messages&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; index&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; num &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;messages&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;split&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                typ&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; mail_connection&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;fetch&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;num&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;(RFC822)&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+                message &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; message_from_bytes&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+                typ&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; mail_connection&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;store&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;num&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;+FLAGS&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;\\Seen&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;token keyword&quot;&gt;yield&lt;/span&gt; message&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can see that we are instantiating a secure mail&lt;em&gt;connection from the IMAP4SSL class and using it with the python context manager.
+We will be using the mail&lt;/em&gt;connection object to perform all the operations we want to our mailbox.&lt;/p&gt;
+&lt;p&gt;After instantiating, we log in to the mailbox with our credentials, then we list all the mailbox categories we have, e.g.: In Google, we have INBOX, SPAM, UPDATES, FORUMS, SPAMS, etc
+We select only the inbox folder, and from the inbox, we filter only unseen messages or emails coming from your email address.
+Note that you can search for anything in your inbox and even complicated queries.&lt;/p&gt;
+&lt;p&gt;The search returns retcodes with messages and their IDS
+Note that : &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The server assigned messages id to emails, and are implementation-dependent. The IMAP4 &gt;protocol makes a distinction between sequential ids for messages at a given point in time &gt;during a transaction and UID identifiers for messages, but not all servers seem to bother.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Once we have messages ids, we can fetch ids and the format of the headers we want.
+We are using RFC822 to fetch the entire message as an RFC 2822 formatted message.
+RFC 2822 is a protocol for standard messages sent between computers; you can read more about it &lt;a href=&quot;https://tools.ietf.org/html/rfc2822.html&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In the next line, we are using the message&lt;em&gt;from&lt;/em&gt;bytes function from the email module to convert the bytes we received as a message.&lt;/p&gt;
+&lt;p&gt;Then we mark the message as seen by using the store method
+and we yield the results.
+This means the function will return an iterator which is an object we can iterate over. Find more about iterators and generators in python &lt;a href=&quot;%5Bhttps://stackoverflow.com/questions/9884132/what-exactly-are-iterator-iterable-and-iteration%5D(https://stackoverflow.com/questions/9884132/what-exactly-are-iterator-iterable-and-iteration)&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;%5Bhttps://www.programiz.com/python-programming/generator%5D(https://www.programiz.com/python-programming/generator)&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Once we have retrieved the emails, let us create the function that gets attachments from that email.&lt;/p&gt;
+&lt;h3&gt;Getting attachment from the email:&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;get_mail_attachments&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;message&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; condition_check&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token triple-quoted-string string&quot;&gt;&quot;&quot;&quot;
+    Get attachments files from mail
+    Args:
+        message (email ): email object to retrieve attachment from
+        condition_check ([function]): the function to use when filtering the
+        email should return specific condition we are filtering
+    Returns:
+        [filename, file]: the file name, input stream from the files
+    &quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; part &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; message&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;walk&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; part&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_content_maintype&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;multipart&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;continue&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; part&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Content-Disposition&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;continue&lt;/span&gt;
+        file_name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; part&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_filename&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; condition_check&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;file_name&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; part&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_filename&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; part&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_payload&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;decode&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This function takes the email object yielded by the  last function and a filter function which tells which extension we can filter from the email, iterate over all his part using the walk() method. For each part we check if the main type is not multipart , and content disposition is  None&lt;/p&gt;
+&lt;p&gt;If none of those conditions is satisfied, we get the file name and return the byte stream from the email.&lt;/p&gt;
+&lt;h4&gt;Putting everything together:&lt;/h4&gt;
+&lt;p&gt;We now have all the building blocks of the application. Let’s put them in the main function:&lt;/p&gt;
+&lt;p&gt;create a file called &lt;code class=&quot;language-text&quot;&gt;run.py&lt;/code&gt; and add the following code inside: &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; utils &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; read_credentails
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; reading_emails_scripts &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; get_mail_attachments&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; get_unseen_emails
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; __name__ &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;__main__&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+ email_address&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; password &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; read_credentails&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    messages &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; get_unseen_emails&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;email_address&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; password&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; messages&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; message &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; messages&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            attachment &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; get_mail_attachments&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;message&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                                              &lt;span class=&quot;token keyword&quot;&gt;lambda&lt;/span&gt; x&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; x&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;endswith&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;.xml&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; attachment&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;./data/xml_files/{}&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;attachment&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;wb&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;token builtin&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;write&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;attachment&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can see that; we call read&lt;em&gt;credentials which returns the credentials from the .env file,
+We call the get&lt;/em&gt;unseen&lt;em&gt;emails method which returns our messages , we check if the message has attachments with get&lt;/em&gt;mail_attachment function and if there is an attachment we save it to a folder of our choice.&lt;/p&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;In this tutorial, we went through the whole process of reading emails with Python, we saw how to download attachments from emails, and we put everything together to have a fully working script.&lt;/p&gt;
+&lt;p&gt;It’s also a good practice to write unit tests to test the code you are writing because I believe that something that is not tested is broken.&lt;/p&gt;
+&lt;p&gt;In the next part, we will see how you can write unit tests for this piece of code. So stay tuned for more.&lt;/p&gt;
+&lt;p&gt;You can check the code for this tutorial from this &lt;a href=&quot;%5Bhttps://github.com/espoirMur/read_emails_with_python%5D(https://github.com/espoirMur/read_emails_with_python)&quot;&gt;Github repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;
+&lt;h4&gt;References :&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Python Module of the week &lt;a href=&quot;https://pymotw.com/2/imaplib/&quot;&gt;imaplib&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@sdoshi579/to-read-emails-and-download-attachments-in-python-6d7d6b60269&quot;&gt;Read Emails and Download attachments &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/a/29629741/4683950&quot;&gt;Read only new emails in Python on StackOverflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[My Customs Git Configurations]]></title><description><![CDATA[Configurations Git is a powerful tool, and you cannot call yourself a modern software engineer if you are not using Git or any other…]]></description><link>https://www.murhabazi.com/customs-git-config/</link><guid isPermaLink="false">https://www.murhabazi.com/customs-git-config/</guid><pubDate>Thu, 30 Jan 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://cdn.lynda.com/course/514200/514200-636141225565412095-16x9.jpg&quot; alt=&quot;Configurations&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Git is a powerful tool, and you cannot call yourself a modern software engineer if you are not using Git or any other subversion system unless you are an old school guy who writes code alone and shares it in a zip file. Trust me!! Those guys still exist in my local village.&lt;/p&gt;
 &lt;p&gt;If you are reading this, it means you have the internet, and you use git at work or for personal projects, and sometimes you need to make customizations to make your life easier.&lt;/p&gt;
 &lt;p&gt;In this blog post, I would like to share with you four custom GitHub settings I found, and that may be useful for you.&lt;/p&gt;
