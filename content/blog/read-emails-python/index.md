@@ -10,11 +10,14 @@ description: "Tutorials on how to read emails in Python"
 Recently I received a request from my client. 
 He requested that I  write a script that connects to a specific mailbox, check if there are new emails, read them, and download the attachments and perform some data analysis on those attachments.
 I was super excited about this task, and I asked myself; is it possible to read emails using Python? 
+
+### The solution
 I started googling, and I was lucky to find that it is possible to read emails using Python.
 
 In this blog post, I will explain how I managed to read emails from an IMAP mail server, and how I downloaded the attachments and saved them into a  specific folder.
 
 If you are familiar with Python, this tutorial is for you. To complete this tutorial, you need to have python 3.6 installed in your laptop and virtual environment installed.
+
 
 #### First things first; create the project and initialize your virtual environment
 
