@@ -84,3 +84,14 @@ One good step in the right direction but things are not moving fast.
 I found one video, went on implementing it and things seems to go well
 
 https://www.youtube.com/watch?v=Gz-K8HLkzeM
+
+Day 4 of RNN:
+
+Another good progress was made, I manage to understand the shape of the input and the output
+next is to check how we load data and the random sampling thing and perplexity
+
+
+Day 4 of Ds and Algorithm
+
+I am failing on this java thing and it's taking me so much time to work with java, learning..
+Should I give up???

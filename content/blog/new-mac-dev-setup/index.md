@@ -1,3 +1,9 @@
+---
+title: Setup a new Macbook for software development
+date: "2020-02-14T22:12:03.284Z"
+description: "how I setup my macbook for development"
+---
+
 This guide helps to setup a new macbook and make it ready for software development.
 
 ## Make it yours : (Change the Laptop Name):
@@ -84,8 +90,8 @@ They are the most important software I use :
 - slack is my office
 - zoom is my phone
 - google chrome and  vscode are my axes 
-- and spotify
-They are the most important software for me , evrything else can be installed from google chrome
+- and Spotify
+They are the most important software for me , everything else can be installed from google chrome
 
 ## Programing Softwares
 
@@ -102,11 +108,11 @@ For me as,  I'm a pyhton developer I will install everything related to python :
 ``` brew install --ignore-dependencies https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb ```
 #### JavaScript
 
-Node the lastest version ```brew install node```
+Node the latest version ```brew install node```
 
-### Sycnhronise .zshrc file
+### Synchronize .zshrc file
 
-To avoid rewriting the settings each time , I setup a new macbook laptop , let me keep them synchronize to google drive.
+To avoid rewriting the settings each time , I setup a new macbook, let me keep them synchronize to google drive.
 
 - I made sure I have Google drive sync installed in my laptop
 - Check if a folder Called Google Drive is in The home directory

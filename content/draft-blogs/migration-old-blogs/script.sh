@@ -14,6 +14,7 @@
     echo $time
     filename=${filename//[[:digit:]]/''} # remove the time
     filename=${filename:3} # remove the remaining dash
+    # remove .md extension
     echo $time, $filename
     # sed -i '5s/.*/ Good Morning /' $file
     mkdir $2/$filename

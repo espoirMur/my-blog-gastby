@@ -100,7 +100,7 @@ def read_credentails():
                          refer to the sample')
 ```
 
-From that function, you can notice that we are using the `load_env` function, it loads the environment variables from our `.env` files and exposes them to system environment variables so we can be able to read them from there.
+From that function, you can notice that we are using the `load_env` function, it loads the environment variables from our `.env` file and exposes them to system environment variables so we can be able to read them from there.
 After reading the environment variables, the function returns them as a tuple.
 In the next section, we are going to perform the most exciting part of this tutorial; it involves reading emails and downloading attachments.
 
@@ -192,7 +192,7 @@ def get_mail_attachments(message, condition_check):
             continue
         file_name = part.get_filename()
         if condition_check(file_name):
-            return part.get_filename(), part.get_payload(decode=1)
+            yield part.get_filename(), part.get_payload(decode=1)
 ```
 This function takes the email object yielded by the  last function and a filter function which tells which extension we can filter from the email, iterate over all his part using the walk() method. For each part we check if the main type is not multipart , and content disposition is  None
 
@@ -211,11 +211,12 @@ if __name__ == "__main__":
     messages = get_unseen_emails(email_address, password)
     if messages:
         for message in messages:
-            attachment = get_mail_attachments(message,
+            attachments = get_mail_attachments(message,
                                               lambda x: x.endswith('.xml'))
-            if attachment:
-                with open('./data/xml_files/{}'.format(attachment[0]), 'wb') as file:
-                    file.write(attachment[1])
+            for attachment in attachments:
+                if attachment:
+                    with open('./data/xml_files/{}'.format(attachment[0]), 'wb') as file:
+                        file.write(attachment[1])
 ```
 We can see that; we call read_credentials which returns the credentials from the .env file,
 We call the get_unseen_emails method which returns our messages , we check if the message has attachments with get_mail_attachment function and if there is an attachment we save it to a folder of our choice.
