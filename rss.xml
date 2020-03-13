@@ -1,4 +1,81 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My ideas' home]]></title><description><![CDATA[Murhabazi Buzina Espoir Home on the internet]]></description><link>https://www.murhabazi.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 08 Mar 2020 14:29:03 GMT</lastBuildDate><item><title><![CDATA[Reading Emails from a Mailbox with python]]></title><description><![CDATA[The Problem  Recently I received a request from my client. 
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My ideas' home]]></title><description><![CDATA[Murhabazi Buzina Espoir Home on the internet]]></description><link>https://www.murhabazi.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 13 Mar 2020 14:03:14 GMT</lastBuildDate><item><title><![CDATA[Setup a new Macbook for software development]]></title><description><![CDATA[This guide helps to setup a new macbook and make it ready for software development. Make it yours : (Change the Laptop Name): I use the…]]></description><link>https://www.murhabazi.com/new-mac-dev-setup/</link><guid isPermaLink="false">https://www.murhabazi.com/new-mac-dev-setup/</guid><pubDate>Sun, 08 Mar 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This guide helps to setup a new macbook and make it ready for software development.&lt;/p&gt;
+&lt;h2&gt;Make it yours : (Change the Laptop Name):&lt;/h2&gt;
+&lt;p&gt;I use the following command to change the macbook name in case it’s promping a wrong username:&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;sudo scutil --set HostName name-you-want&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Developers Tools&lt;/h2&gt;
+&lt;h3&gt;Xcode&lt;/h3&gt;
+&lt;p&gt;The first step is to install developer tools on the new laptop wihout installing Xcode (it’s very large cannot afford to download it)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open the terminal&lt;/li&gt;
+&lt;li&gt;type the following one and follow the prompt :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;xcode-select --install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;follow &lt;a href=&quot;http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/&quot;&gt;this link&lt;/a&gt; for a precise step by step guide .&lt;/p&gt;
+&lt;h3&gt;Terminal&lt;/h3&gt;
+&lt;p&gt;The second step is to get rid of the default mac terminal  and install a powerfull and customizable terminal;
+my choice is  a combinaison of zsh and &lt;a href=&quot;https://www.iterm2.com/documentation.html&quot;&gt;iterm2&lt;/a&gt;, for &lt;a href=&quot;https://www.zsh.org/&quot;&gt;zsh&lt;/a&gt; customization I use &lt;a href=&quot;https://ohmyz.sh/&quot;&gt;oh-my-zsh&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;let install it we need curl :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For iterm2
+&lt;code class=&quot;language-text&quot;&gt;brew cask install iterm2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;For Zsh  and zsh completions
+&lt;code class=&quot;language-text&quot;&gt;brew install zsh zsh-completions&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;And oh my zsh c: &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;sh -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And now we can customize it as we need &lt;/p&gt;
+&lt;p&gt;The default configuration can be edited and customized from the file .zshrc
+More about the terminal configuration can be found &lt;a href=&quot;https://dev.to/deepu105/configure-a-beautiful-terminal-on-unix-with-zsh-4mcb&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For customization i prefer using dracula theme for both vscode and iterm, it like a universal theme&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Package Manager Homebrew&lt;/h3&gt;
+&lt;p&gt;Third step is to install package manager homebrew:
+About homebrew:&lt;/p&gt;
+&lt;p&gt; &lt;em&gt;Homebrew  a free and open-source software package management system
+that simplifies the installation of software on Apple’s macOS operating system&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt; I will need this software to install most of the software I’m going to work with.&lt;/p&gt;
+&lt;p&gt; From &lt;a href=&quot;https://brew.sh/&quot;&gt;their official site&lt;/a&gt;  it’s said that :&lt;/p&gt;
+&lt;p&gt;_&lt;em&gt;Homebrew installs the stuff you need that Apple didn’t.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;that is the reason why it’s not embedeed directly with ios like apt-get in linux or ubuntu os.&lt;/p&gt;
+&lt;p&gt;let us install it.
+As homebrew is written in ruby we will install it with this simple comand:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Once homebrew is installed we can install everything according to your needs.&lt;/p&gt;
+&lt;h2&gt;Useful Softwares&lt;/h2&gt;
+&lt;p&gt;I run the following comand to install the first set of softwares I need to work on my new laptop:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt; brew cask install slack zoomus google-chrome visual-studio-code spotify google-backup-and-sync&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;They are the most important software I use :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;slack is my office&lt;/li&gt;
+&lt;li&gt;zoom is my phone&lt;/li&gt;
+&lt;li&gt;google chrome and  vscode are my axes &lt;/li&gt;
+&lt;li&gt;and Spotify
+They are the most important software for me , everything else can be installed from google chrome&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Programing Softwares&lt;/h2&gt;
+&lt;h3&gt;Python&lt;/h3&gt;
+&lt;p&gt;For me as,  I’m a pyhton developer I will install everything related to python :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;let install python3 and python 2&lt;/li&gt;
+&lt;li&gt;python 2 I  use &lt;code class=&quot;language-text&quot;&gt;brew install python@2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;python 3 I’m a big fan of python 3.6.5 because for now it’s the only version supported by tensorflow.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;brew install --ignore-dependencies https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;JavaScript&lt;/h4&gt;
+&lt;p&gt;Node the latest version &lt;code class=&quot;language-text&quot;&gt;brew install node&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Synchronize .zshrc file&lt;/h3&gt;
+&lt;p&gt;To avoid rewriting the settings each time , I setup a new macbook, let me keep them synchronize to google drive.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I made sure I have Google drive sync installed in my laptop&lt;/li&gt;
+&lt;li&gt;Check if a folder Called Google Drive is in The home directory&lt;/li&gt;
+&lt;li&gt;Create a folder for configuration with : &lt;code class=&quot;language-text&quot;&gt;mkdir -p ~/Google\ Drive/ohmyzsh-conf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Make a copy for the existing file in case : &lt;code class=&quot;language-text&quot;&gt;cp ~/.zshrc ~/.zshrc.copy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Move the original file to the google drive folder : &lt;code class=&quot;language-text&quot;&gt;mv .zshrc ~/Google\ Drive/ohmyzsh-conf/.zshrc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Make a symbolic link from that file with the original configuration : &lt;code class=&quot;language-text&quot;&gt;ln -s ~/Google\ Drive/ohmyzsh-conf/.zshrc .zshrc&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Reading Emails from a Mailbox with python]]></title><description><![CDATA[The Problem  Recently I received a request from my client. 
 He requested that I  write a script that connects to a specific mailbox, check…]]></description><link>https://www.murhabazi.com/read-emails-python/</link><guid isPermaLink="false">https://www.murhabazi.com/read-emails-python/</guid><pubDate>Fri, 14 Feb 2020 22:12:03 GMT</pubDate><content:encoded>&lt;h3&gt;The Problem&lt;/h3&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -199,83 +276,6 @@ We call the get&lt;/em&gt;unseen&lt;em&gt;emails method which returns our messag
 &lt;li&gt;Python Module of the week &lt;a href=&quot;https://pymotw.com/2/imaplib/&quot;&gt;imaplib&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://medium.com/@sdoshi579/to-read-emails-and-download-attachments-in-python-6d7d6b60269&quot;&gt;Read Emails and Download attachments &lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/a/29629741/4683950&quot;&gt;Read only new emails in Python on StackOverflow&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Setup a new Macbook for software development]]></title><description><![CDATA[This guide helps to setup a new macbook and make it ready for software development. Make it yours : (Change the Laptop Name): I use the…]]></description><link>https://www.murhabazi.com/new-mac-dev-setup/</link><guid isPermaLink="false">https://www.murhabazi.com/new-mac-dev-setup/</guid><pubDate>Fri, 14 Feb 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This guide helps to setup a new macbook and make it ready for software development.&lt;/p&gt;
-&lt;h2&gt;Make it yours : (Change the Laptop Name):&lt;/h2&gt;
-&lt;p&gt;I use the following command to change the macbook name in case it’s promping a wrong username:&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;sudo scutil --set HostName name-you-want&lt;/code&gt;&lt;/p&gt;
-&lt;h2&gt;Developers Tools&lt;/h2&gt;
-&lt;h3&gt;Xcode&lt;/h3&gt;
-&lt;p&gt;The first step is to install developer tools on the new laptop wihout installing Xcode (it’s very large cannot afford to download it)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Open the terminal&lt;/li&gt;
-&lt;li&gt;type the following one and follow the prompt :&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;xcode-select --install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;follow &lt;a href=&quot;http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/&quot;&gt;this link&lt;/a&gt; for a precise step by step guide .&lt;/p&gt;
-&lt;h3&gt;Terminal&lt;/h3&gt;
-&lt;p&gt;The second step is to get rid of the default mac terminal  and install a powerfull and customizable terminal;
-my choice is  a combinaison of zsh and &lt;a href=&quot;https://www.iterm2.com/documentation.html&quot;&gt;iterm2&lt;/a&gt;, for &lt;a href=&quot;https://www.zsh.org/&quot;&gt;zsh&lt;/a&gt; customization I use &lt;a href=&quot;https://ohmyz.sh/&quot;&gt;oh-my-zsh&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;let install it we need curl :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;For iterm2
-&lt;code class=&quot;language-text&quot;&gt;brew cask install iterm2&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;For Zsh  and zsh completions
-&lt;code class=&quot;language-text&quot;&gt;brew install zsh zsh-completions&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;And oh my zsh c: &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;sh -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;And now we can customize it as we need &lt;/p&gt;
-&lt;p&gt;The default configuration can be edited and customized from the file .zshrc
-More about the terminal configuration can be found &lt;a href=&quot;https://dev.to/deepu105/configure-a-beautiful-terminal-on-unix-with-zsh-4mcb&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;For customization i prefer using dracula theme for both vscode and iterm, it like a universal theme&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Package Manager Homebrew&lt;/h3&gt;
-&lt;p&gt;Third step is to install package manager homebrew:
-About homebrew:&lt;/p&gt;
-&lt;p&gt; &lt;em&gt;Homebrew  a free and open-source software package management system
-that simplifies the installation of software on Apple’s macOS operating system&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt; I will need this software to install most of the software I’m going to work with.&lt;/p&gt;
-&lt;p&gt; From &lt;a href=&quot;https://brew.sh/&quot;&gt;their official site&lt;/a&gt;  it’s said that :&lt;/p&gt;
-&lt;p&gt;_&lt;em&gt;Homebrew installs the stuff you need that Apple didn’t.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;that is the reason why it’s not embedeed directly with ios like apt-get in linux or ubuntu os.&lt;/p&gt;
-&lt;p&gt;let us install it.
-As homebrew is written in ruby we will install it with this simple comand:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Once homebrew is installed we can install everything according to your needs.&lt;/p&gt;
-&lt;h2&gt;Useful Softwares&lt;/h2&gt;
-&lt;p&gt;I run the following comand to install the first set of softwares I need to work on my new laptop:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt; brew cask install slack zoomus google-chrome visual-studio-code spotify google-backup-and-sync&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;They are the most important software I use :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;slack is my office&lt;/li&gt;
-&lt;li&gt;zoom is my phone&lt;/li&gt;
-&lt;li&gt;google chrome and  vscode are my axes &lt;/li&gt;
-&lt;li&gt;and Spotify
-They are the most important software for me , everything else can be installed from google chrome&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Programing Softwares&lt;/h2&gt;
-&lt;h3&gt;Python&lt;/h3&gt;
-&lt;p&gt;For me as,  I’m a pyhton developer I will install everything related to python :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;let install python3 and python 2&lt;/li&gt;
-&lt;li&gt;python 2 I  use &lt;code class=&quot;language-text&quot;&gt;brew install python@2&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;python 3 I’m a big fan of python 3.6.5 because for now it’s the only version supported by tensorflow.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;brew install --ignore-dependencies https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb&lt;/code&gt;&lt;/p&gt;
-&lt;h4&gt;JavaScript&lt;/h4&gt;
-&lt;p&gt;Node the latest version &lt;code class=&quot;language-text&quot;&gt;brew install node&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;Synchronize .zshrc file&lt;/h3&gt;
-&lt;p&gt;To avoid rewriting the settings each time , I setup a new macbook, let me keep them synchronize to google drive.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;I made sure I have Google drive sync installed in my laptop&lt;/li&gt;
-&lt;li&gt;Check if a folder Called Google Drive is in The home directory&lt;/li&gt;
-&lt;li&gt;Create a folder for configuration with : &lt;code class=&quot;language-text&quot;&gt;mkdir -p ~/Google\ Drive/ohmyzsh-conf&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Make a copy for the existing file in case : &lt;code class=&quot;language-text&quot;&gt;cp ~/.zshrc ~/.zshrc.copy&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Move the original file to the google drive folder : &lt;code class=&quot;language-text&quot;&gt;mv .zshrc ~/Google\ Drive/ohmyzsh-conf/.zshrc&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Make a symbolic link from that file with the original configuration : &lt;code class=&quot;language-text&quot;&gt;ln -s ~/Google\ Drive/ohmyzsh-conf/.zshrc .zshrc&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[My Customs Git Configurations]]></title><description><![CDATA[Configurations Git is a powerful tool, and you cannot call yourself a modern software engineer if you are not using Git or any other…]]></description><link>https://www.murhabazi.com/customs-git-config/</link><guid isPermaLink="false">https://www.murhabazi.com/customs-git-config/</guid><pubDate>Thu, 30 Jan 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://cdn.lynda.com/course/514200/514200-636141225565412095-16x9.jpg&quot; alt=&quot;Configurations&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Git is a powerful tool, and you cannot call yourself a modern software engineer if you are not using Git or any other subversion system unless you are an old school guy who writes code alone and shares it in a zip file. Trust me!! Those guys still exist in my local village.&lt;/p&gt;
 &lt;p&gt;If you are reading this, it means you have the internet, and you use git at work or for personal projects, and sometimes you need to make customizations to make your life easier.&lt;/p&gt;
