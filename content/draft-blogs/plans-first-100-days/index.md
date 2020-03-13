@@ -19,14 +19,14 @@ Things I need to get done In the first 100 days of 2020
 - [ ] Learning about recommendations systems and write a blog post 
 - [ ] Organize a hackathons for all Congolese leaving in Kigali
 - [ ] Put 3 baselines models for Congolese languages on masakhane
-- [ ] Finish one blog
+- [x] Finish one blog
 - [ ] migrate the old blog to the new one and set up google analytic ans SEO
 - [ ] Complete the 2 course of Algorithms and Data Structure from Coursera
 
 
 Talk I need to attend to this year :
 
-Pycon Africa
+PyCon Africa
 Data Science Africa
 Deep learning Indaba
 NeurIps... Only if I finished the deep learning project on time
@@ -95,3 +95,31 @@ Day 4 of Ds and Algorithm
 
 I am failing on this java thing and it's taking me so much time to work with java, learning..
 Should I give up???
+
+Day 5 : The goal is to prepare the text RNN
+Follow the tutorial and understand almost everything about text processing
+it goes well, done with the tutorial, finally I managed to prepare data for training a simple RNN , the word embedding stuff still confusing me...
+
+But I will do something...
+
+Day 6 of RNN :
+
+Today , it was not like yesterday, I found myself lost and not training my neural network, I need more info and to make this done.. at least I should make the forward pass.
+
+Failure at 3 Pm : spend a lot time without understanding the input
+
+Need to come back
+
+Day 7 of RNN:
+
+Thing start getting clear and understood the input shapes except one thing, why the hidden state need to have where comes the dimension of the hiden state?
+
+https://medium.com/towards-artificial-intelligence/whirlwind-tour-of-rnns-a11effb7808f
+
+
+Day 8 : I review cross entropy function and learn how to apply it .
+The main question was how to apply it for RNN what is the correct class label at a given time step
+
+Day 9 : The light about the correct label at each step comes now I am able to continue, let us get blocked again into BPTT
+BPTT the intution was well understood via a good video and I understand the problem of vanishing gradient and exploding gradient.
+The next step is to implement BPTT
