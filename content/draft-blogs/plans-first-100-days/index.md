@@ -121,5 +121,31 @@ Day 8 : I review cross entropy function and learn how to apply it .
 The main question was how to apply it for RNN what is the correct class label at a given time step
 
 Day 9 : The light about the correct label at each step comes now I am able to continue, let us get blocked again into BPTT
-BPTT the intution was well understood via a good video and I understand the problem of vanishing gradient and exploding gradient.
+BPTT the intuition was well understood via a good video and I understand the problem of vanishing gradient and exploding gradient.
 The next step is to implement BPTT
+
+Day 10 : Implementing BPTT from scratch: Ehhehheehe again other problem will start 
+should I thing I should start from implementing backward propagation and then move to BPTT 
+Let take the Coming 2 days to implement Backward propagation using ANN
+Then I will get back to LSTM
+
+Day 11 RNN : Implementing Forward propagation for ANN and architecture, got bored at the moment when I should calculate the backward propagation for RNN, I will get back to this later tomorrow.
+
+DAY 12 RNN : Backward propagation , what is wrong with this? is it the code or me trying to learn...
+
+Should I get back to the basics or ?
+
+Day 13 RNN : Went back to the basics, read [this chapter](http://neuralnetworksanddeeplearning.com/chap2.html) and things start getting clear, 
+I think I have enough information to compelete coding bp from scratch
+Today the intutinion comes an I manage to develop a good intution, tommorow I will check other approach and plot results with graphs
+
+Day 14 RNN : Train the model, but the accuracy is increasing instead of decreasing, need to learn more about his
+it's decreasing but not in the right way...
+
+Day 15 RNN : Lost track but let me get back today.
+
+Day 16 RNN: Back to the code...
+The previous implementation was not wrong at all, it gives me an intuition on how backward propagation works in details now, I need to go back to RNN to discover things by myself.
+I will have to write it with pen and paper and implement it.
+
+Day 17 : What did I do, I seems to understand the equation of BPTT now tomorow I will try to implement it with code
