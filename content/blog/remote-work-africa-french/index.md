@@ -13,9 +13,7 @@ Photo Aeriènne de Goma, Crédit : <a href="https://twitter.com/clarice_butsapu"
 En parcourant l'internet, je n'ai pas pu trouver un bon article donnant certaines astuces pour le travail à distance dans le contexte Africain et précisément congolais. 
 En Afrique dans certains pays, avoir un bon internet et un courant stable est un dilemme de tout le jour. 
  
-__*Une idée, une motivation qui m’a poussé à rédiger cet article enfin de partage avec vous.*__
-
-
+Une idée, une motivation qui m’a poussé à rédiger cet article enfin de partage avec vous.
 
 Dans cet article je partagerai mon expérience ainsi que les différentes leçons apprises durant mes quatre années de travail à la maison et j'espère pouvoir aider certains amis et petits frères et sœurs qui ont les mêmes problèmes. 
  
@@ -90,7 +88,7 @@ Nous n'avons pas besoin d'exigence pour ce qui est de la marque de la chaise ou 
 
 ### Éviter les distractions inutiles de la maison
 
-![Me Having Life](./pictures/working-from-home.gif)
+![Working from home and having family life.](./pictures/working-from-home.gif)
 <div align="center">
 Working from home and having family life. 
 Source :  <a href="www.bbc.com" target="_blank">Bbc</a>
