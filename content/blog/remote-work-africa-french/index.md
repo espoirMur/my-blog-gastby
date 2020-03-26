@@ -8,9 +8,7 @@ description: "Conseils pour remote à distance en Afrique"
 <div align="center">
 Photo Aeriènne de Goma, Crédit : <a href="https://twitter.com/clarice_butsapu" target="_blank">Clarice Butsapu Twitter</a>
 </div>
-
-
-
+</br>
  De nos jours travailler à la maison est devenue une nécessité, étant développeurs est la seule façon de travailler en cette période de crise de la pandémie. 
 En parcourant l'internet, je n'ai pas pu trouver un bon article donnant certaines astuces pour le travail à distance dans le contexte Africain et précisément congolais. 
 En Afrique dans certains pays, avoir un bon internet et un courant stable est un dilemme de tout le jour. 
@@ -48,6 +46,7 @@ Nous avons compris au moins l’apport de télétravail, passons maintenant à s
 <div align="center">
 Vendeur des Megas Kinshasa Source :  <a href="www.rfi.fr" target="_blank">RFI</a>
 </div>
+</br>
 
 Comme pour télétravailler nous avons besoin d'une bonne connection internet , c'est donc la première chose que nous devons nous rassurer de ne pas manquer. Ce n'est pas professionnel de donner à ses collègues des prétextes de manque de connexion internet, ou de la lenteur de la connexion pour n'avoir pas fini le travail à faire. Toutes ces excuses n'ont pas leur place dans le monde professionnel. C’est du bulshit.
 
@@ -62,7 +61,7 @@ Il est également conseillé d'avoir au moins 2 ou 3 fournisseurs de relaie, car
 <div align="center">
 Delestages en Afrique
 </div>
-
+</br>
 
 Dans certains pays, l'électricité n'est plus du tout un problème sérieux; la population a facilement de l'électricité 24 heures sur 24; dans d'autres pourtant cela reste encore un sérieux problème d'actualité.
 Tout comme pour l'internet, il est évident que vos collègues ne prendront jamais en compte des excuses de délestage ou de manque d'énergie pour cause du retard de travail.
@@ -82,12 +81,21 @@ Le reste d'astuces sont valables peu importe le pays où l'on travaille :
 <div align="center">
 Me Working from Somewhere
 </div>
+</br>
+
 
 Le télétravail donne la flexibilité de travailler n'importe où , mais tous les endroit ne favorisent pas la productivité .
 Personnellement j'ai tendance à somnoler si je travaille sur mon lit ou sur le fauteuil de mon salon, mais je me concentre beaucoup plus si je suis assis confortablement sur ma table de bureau .
 Nous n'avons pas besoin d'exigence pour ce qui est de la marque de la chaise ou de son prix pour travailler, il nous faut tout simplement un espace qui nous facilite de travailler convenablement; nous avons des très bons menuisiers qui peuvent nous fabriquer des chaises confortable à moins de 50 USD.
 
 ### Éviter les distractions inutiles de la maison
+
+![Me Having Life](./pictures/working-from-home.gif)
+<div align="center">
+Working from home and having family life. 
+Source :  <a href="www.bbc.com" target="_blank">Bbc</a>
+</div>
+</br>
 
 Je pense que c’est la partie la plus difficile à gérer surtout lorsque l'on travaille à la maison et que des enfants ou de petits frères veuillent tout le temps s'amuser avec nous pendant que nous sommes disponible à tout moment.
 
@@ -110,6 +118,7 @@ Nous n’avons pas besoin d’avoir le tout dernier Airpods pro ou les derniers 
 <div align="center">
 Me having a life at Gisenyi Beach
 </div>
+</br>
 
 Un très grand problème avec le remote work est l'isolement social. A force de passer la plupart du temps à travailler à la maison, il y'a risque d'oublier la vie sociale. Une conséquence à long terme est la dépression. Croyez moi la dépression est réelle, je me rappelle avoir quitté mon remote work parce que je me suis retrouvé seul sans collègues et déprimé.
 
@@ -141,7 +150,7 @@ Rappelle toi:  *ventre creux n’a point d’oreil*
 <div align="center">
 Local Food Credit:  <a href="https://twitter.com/Ensapu1" target="_blank"> Esther Nsapu</a> on Twitter
 </div>
-
+</br>
 
 ### Les autres astuces en rapport au professionnalisme dans le monde réel reste aussi valable en remote work :
 
@@ -152,7 +161,7 @@ Local Food Credit:  <a href="https://twitter.com/Ensapu1" target="_blank"> Esthe
 Celles-là ne sont que quelques astuces que j’ai pu trouvé. Vous n'êtes pas obligé(e) de les suivre à la lettre, ils ont marché pour moi mais ne marcheront peut être pas pour vous, avec quelques révisions et ajustements vous pouvez avoir une version valide pour vous.
 Mais je suis sur qu’il y en a plein qui marchent avec vous , n'hésitez pas à nous le faire savoir en commentaire.
 
-Big thanks à tous le monde qui a participé de pret ou de loin à la rédaction de l'article : Ma petite soeur[ Ndeze Josephine](https://twitter.com/JosephineNdeze), mon grand [Bosco B](https://twitter.com/BBasabana), Brian, 
+Big thanks à tous le monde qui a participé de pret ou de loin à la rédaction de l'article : Ma petite soeur[ Ndeze Josephine](https://twitter.com/JosephineNdeze), mon grand [Bosco B](https://twitter.com/BBasabana), Brian.
 
 
-Take care, Stay Home , Stay Safe , Wash your hands..
+In mean time : Take care, Stay Home , Stay Safe , Wash your hands..
