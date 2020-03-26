@@ -13,7 +13,7 @@ Photo Aeriènne de Goma, Crédit : <a href="https://twitter.com/clarice_butsapu"
 En parcourant l'internet, je n'ai pas pu trouver un bon article donnant certaines astuces pour le travail à distance dans le contexte Africain et précisément congolais. 
 En Afrique dans certains pays, avoir un bon internet et un courant stable est un dilemme de tout le jour. 
  
-*__Une idée, une motivation qui m’a poussé à rédiger cet article enfin de partage avec vous.__*
+__*Une idée, une motivation qui m’a poussé à rédiger cet article enfin de partage avec vous.*__
 
 
 
