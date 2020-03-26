@@ -1,4 +1,260 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My ideas' home]]></title><description><![CDATA[Murhabazi Buzina Espoir Home on the internet]]></description><link>https://www.murhabazi.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 25 Mar 2020 15:04:31 GMT</lastBuildDate><item><title><![CDATA[Setup a new Macbook for software development]]></title><description><![CDATA[This guide helps to setup a new macbook and make it ready for software development. Make it yours : (Change the Laptop Name): I use the…]]></description><link>https://www.murhabazi.com/new-mac-dev-setup/</link><guid isPermaLink="false">https://www.murhabazi.com/new-mac-dev-setup/</guid><pubDate>Sun, 08 Mar 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This guide helps to setup a new macbook and make it ready for software development.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My ideas' home]]></title><description><![CDATA[Murhabazi Buzina Espoir Home on the internet]]></description><link>https://www.murhabazi.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 26 Mar 2020 15:49:38 GMT</lastBuildDate><item><title><![CDATA[Quelques meilleurs conseils pour un travail efficace à distance, une réalité africaine]]></title><description><![CDATA[Photo Aeriènne de Goma, Crédit : Clarice Butsapu Twitter  De nos jours travailler à la maison est devenue une nécessité, étant développeurs…]]></description><link>https://www.murhabazi.com/remote-work-africa-french/</link><guid isPermaLink="false">https://www.murhabazi.com/remote-work-africa-french/</guid><pubDate>Thu, 26 Mar 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/895691833b55b2e32f249a454da05c48/e937d/cover_picture_bkv_home.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEEA//EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAGd5pKiMr//xAAZEAEAAwEBAAAAAAAAAAAAAAABAAIRAxD/2gAIAQEAAQUC0s74sox6hP/EABYRAQEBAAAAAAAAAAAAAAAAAAARIf/aAAgBAwEBPwGMf//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAECAQE/Aar/xAAZEAACAwEAAAAAAAAAAAAAAAAAIQIQMRH/2gAIAQEABj8CRptSTOH/xAAbEAEAAwEAAwAAAAAAAAAAAAABABEhMUFRYf/aAAgBAQABPyG/9NyBfrkHNUK0TxcsRSlxWxyf/9oADAMBAAIAAwAAABBTL//EABcRAAMBAAAAAAAAAAAAAAAAAAABEUH/2gAIAQMBAT8QlYQf/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERQf/aAAgBAgEBPxC3pR//xAAdEAEAAgICAwAAAAAAAAAAAAABABEhMUFxgdHw/9oACAEBAAE/EKQKosugeItas8B+xFAWu47QAm0xvjZmMAgKtAHUvLXt7n//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Photo Aeriènne de Goma Crédit Clarice Butsapu Twitter&quot;
+        title=&quot;Photo Aeriènne de Goma Crédit Clarice Butsapu Twitter&quot;
+        src=&quot;/static/895691833b55b2e32f249a454da05c48/88218/cover_picture_bkv_home.jpg&quot;
+        srcset=&quot;/static/895691833b55b2e32f249a454da05c48/7237a/cover_picture_bkv_home.jpg 148w,
+/static/895691833b55b2e32f249a454da05c48/0cfdf/cover_picture_bkv_home.jpg 295w,
+/static/895691833b55b2e32f249a454da05c48/88218/cover_picture_bkv_home.jpg 590w,
+/static/895691833b55b2e32f249a454da05c48/77d57/cover_picture_bkv_home.jpg 885w,
+/static/895691833b55b2e32f249a454da05c48/e937d/cover_picture_bkv_home.jpg 1024w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;em&gt;Photo Aeriènne de Goma, Crédit : &lt;a href=&quot;https://twitter.com/clarice_butsapu&quot;&gt;Clarice Butsapu Twitter&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt; De nos jours travailler à la maison est devenue une nécessité, étant développeurs est la seule façon de travailler en cette période de crise de la pandémie.
+En parcourant l’internet, je n’ai pas pu trouver un bon article donnant certaines astuces pour le travail à distance dans le contexte Africain et précisément congolais.
+En Afrique dans certains pays, avoir un bon internet et un courant stable est un dilemme de tout le jour. &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Une idée, une motivation qui m’a poussé à rédiger cet article enfin de partage avec vous.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Dans cet article je partagerai mon expérience ainsi que les différentes leçons apprises durant mes quatre années de travail à la maison et j’espère pouvoir aider certains amis et petits frères et sœurs qui ont les mêmes problèmes. &lt;/p&gt;
+&lt;p&gt;Mais avant tout, laissez-moi me présenter : Je suis Espoir Murhabazi développeur FullStack indépendant avec une expérience de travail à distance que les anglais appelé “Remote work”. &lt;/p&gt;
+&lt;p&gt;Je vais d’abord, en premier lieu, dans cet article définir le terme &lt;strong&gt;télétravail&lt;/strong&gt; ou &lt;strong&gt;Remote Work&lt;/strong&gt; et après, présenter ses avantages.
+Le télétravail est une combinaison de deux mot télé et travail. Télé comme dans télévision, téléphone veut dire à distance; En terme plus simple le télétravail veut dire travailler à distance.
+Wikipédia définit comme : &lt;em&gt;Le télétravail, ou telecommuting en anglais, est une activité professionnelle effectuée en tout ou partie à distance du lieu où le résultat du travail est attendu. Il s’oppose au travail sur site, à savoir le travail effectué dans les locaux de son employeur. Le télétravail peut s’effectuer depuis le domicile, un télécentre, un bureau satellite ou de manière nomade (lieux de travail différents selon l’activité à réaliser), dans le cadre du travail salarié, mais aussi depuis des espaces partagés (coworking), dans le cadre du télétravail indépendant.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Les professionnels ne devraient pas attendre COVID-19 pour constater les avantages du télétravail, L’indépendance, Un gain de temps, Hausse de la qualité de vie, Une meilleure conciliation entre le travail et la vie de famille, Réduction de frais pour l’entreprise, Personnes handicapées. &lt;/p&gt;
+&lt;p&gt;Mais aussi le télétravail est trop lucratif pour les développeurs qui travaillent depuis les pays africains car il nous permet d’être rémunéré aux standards internationaux tout en vivant dans nos pays africains où le coût de la vie reste relativement faible. &lt;/p&gt;
+&lt;h2&gt;Comment cela est-il possible ?&lt;/h2&gt;
+&lt;p&gt;Actuellement avec internet et téléphonie nous pouvons être en contact avec des personnes de l’autre bout du monde dans un clic.
+Le monde professionnel utilise les outils comme Slack, Zoom, Skype pour nous permettre de créer des bureaux virtuels où d’espace de travail collaboratif qui ne nécessite pas la présence physique.
+Nous avons compris au moins l’apport de télétravail, passons maintenant à sur quelques astuces pour survivre dans le monde de travail à distance. &lt;/p&gt;
+&lt;h2&gt;Astuces pour survivre&lt;/h2&gt;
+&lt;h3&gt;Avoir toujours une bonne connexion internet&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/656a84f4e62a961eea871e7a6449f527/dfccc/vendeurs_megas_rdc.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.29032258064516%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EABUBAQEAAAAAAAAAAAAAAAAAAAIB/9oADAMBAAIQAxAAAAHBiUwXRJJR/8QAGxAAAQQDAAAAAAAAAAAAAAAAAQACAxEUMkP/2gAIAQEAAQUChfTBM6soobc1/8QAFREBAQAAAAAAAAAAAAAAAAAAEEH/2gAIAQMBAT8Bh//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABoQAAICAwAAAAAAAAAAAAAAAAABEBESMYH/2gAIAQEABj8Cbypl2aGdj//EABwQAAICAgMAAAAAAAAAAAAAAAERADEhURBBYf/aAAgBAQABPyGljXsNYGL4ZpW4zl3DOzP/2gAMAwEAAgADAAAAEBjv/8QAFxEBAQEBAAAAAAAAAAAAAAAAAREAQf/aAAgBAwEBPxBJXHQ3/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAB/9oACAECAQE/EF2dv//EAB0QAQACAgIDAAAAAAAAAAAAAAEAESExQVGBscH/2gAIAQEAAT8QQ5JAbS+iHVzT2dZitNHG7fkQoKaJQzm8GXzqYzF5n//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Vendeur des Megas Kinshasa Source : rfi.fr&quot;
+        title=&quot;Vendeur des Megas Kinshasa Source : rfi.fr&quot;
+        src=&quot;/static/656a84f4e62a961eea871e7a6449f527/88218/vendeurs_megas_rdc.jpg&quot;
+        srcset=&quot;/static/656a84f4e62a961eea871e7a6449f527/7237a/vendeurs_megas_rdc.jpg 148w,
+/static/656a84f4e62a961eea871e7a6449f527/0cfdf/vendeurs_megas_rdc.jpg 295w,
+/static/656a84f4e62a961eea871e7a6449f527/88218/vendeurs_megas_rdc.jpg 590w,
+/static/656a84f4e62a961eea871e7a6449f527/77d57/vendeurs_megas_rdc.jpg 885w,
+/static/656a84f4e62a961eea871e7a6449f527/5a917/vendeurs_megas_rdc.jpg 1180w,
+/static/656a84f4e62a961eea871e7a6449f527/dfccc/vendeurs_megas_rdc.jpg 1240w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;em&gt;Vendeur des Megas Kinshasa Source : &lt;a href=&quot;www.rfi.fr&quot;&gt;rfi&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Comme pour télétravailler nous avons besoin d’une bonne connection internet , c’est donc la première chose que nous devons nous rassurer de ne pas manquer. Ce n’est pas professionnel de donner à ses collègues des prétextes de manque de connexion internet, ou de la lenteur de la connexion pour n’avoir pas fini le travail à faire. Toutes ces excuses n’ont pas leur place dans le monde professionnel. C’est du bulshit.&lt;/p&gt;
+&lt;p&gt;Le meilleur moyen de contourner cela, c’est de se préparer en avance en calculant avec exactitude  la quantité des forfaits internet que l’on dépense mensuellement afin cherchez un fournisseur d’accès Internet avec la meilleure offre qualité-prix.&lt;/p&gt;
+&lt;p&gt;Il est également conseillé d’avoir au moins 2 ou 3 fournisseurs de relaie, car en cas d’urgence il est possible d’utiliser toutes les connexions en même temps. J’ai moi-même l’expérience d’avoir été contraint d’utiliser à la fois les connexions Airtel, Orange, MTN Rwanda et Airtel Rwanda.&lt;/p&gt;
+&lt;h3&gt;Accès à l’électricité&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/46e8070822e3b14d36486ed3c9b3a5a5/2a7f3/delestage_afrique.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 46.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAIBAwQF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAeNZCTSmkT//xAAbEAABBAMAAAAAAAAAAAAAAAABAAMQERIhQf/aAAgBAQABBQKtNAZ0uGP/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAYEAACAwAAAAAAAAAAAAAAAAAAESAiMf/aAAgBAQAGPwJstkf/xAAcEAACAgIDAAAAAAAAAAAAAAAAARFBECExYbH/2gAIAQEAAT8hU3g1Vjad3hLCouD/2gAMAwEAAgADAAAAELTf/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERUf/aAAgBAwEBPxBvCH//xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQIBAT8Qka//xAAbEAEAAwADAQAAAAAAAAAAAAABABEhMUFxsf/aAAgBAQABPxAdVQXdX2QDwzpe2rPaiLSbDh5PvODwn//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Delestage En Afrique&quot;
+        title=&quot;Delestage En Afrique&quot;
+        src=&quot;/static/46e8070822e3b14d36486ed3c9b3a5a5/88218/delestage_afrique.jpg&quot;
+        srcset=&quot;/static/46e8070822e3b14d36486ed3c9b3a5a5/7237a/delestage_afrique.jpg 148w,
+/static/46e8070822e3b14d36486ed3c9b3a5a5/0cfdf/delestage_afrique.jpg 295w,
+/static/46e8070822e3b14d36486ed3c9b3a5a5/88218/delestage_afrique.jpg 590w,
+/static/46e8070822e3b14d36486ed3c9b3a5a5/2a7f3/delestage_afrique.jpg 750w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;em&gt;Delestages en Afrique&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Dans certains pays, l’électricité n’est plus du tout un problème sérieux; la population a facilement de l’électricité 24 heures sur 24; dans d’autres pourtant cela reste encore un sérieux problème d’actualité.
+Tout comme pour l’internet, il est évident que vos collègues ne prendront jamais en compte des excuses de délestage ou de manque d’énergie pour cause du retard de travail.&lt;/p&gt;
+&lt;p&gt;Voici donc quelques astuces pour palier à ce problème : &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Investir dans un laptop ayant une bonne autonomie de la batterie. Il n’est pas nécessaire d’avoir le tout dernier macbook pro pour bien travailler, les chinois nous ont facilité la tâche avec de très bonnes batteries performantes à moindre coût.&lt;/li&gt;
+&lt;li&gt;Comme pour l’accès à internet,  il faut avoir des alternatifs pour les sources d’électricité, l’investissement dans un kit solaire avec batteries pourrait rassurer quelques heures d’autonomie. Nos amis Nigérians utilisent des groupes électrogènes et ça marche bien chez eux.&lt;/li&gt;
+&lt;li&gt;Repérer des endroits calmes dans son entourage où l’on peut facilement avoir accès au courant et à internet, telle qu’une bibliothèque, un cyber café, un resto ou bar, etc. L’endroit peut ne pas être  fancy ou chic mais juste une place où l’on peut s’asseoir confortablement et travailler calmement.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Une fois que les problèmes d’électricité  et d’internet  seront résolus, la moitié des problèmes que les jeunes africains rencontrent pour le remote work aura été résolu.
+Le reste d’astuces sont valables peu importe le pays où l’on travaille :&lt;/p&gt;
+&lt;h3&gt;Avoir un endroit confortable où l’on peut s’asseoir tranquillement et coder :&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e98031b102dbe112acfb8dec1a232a78/d280c/Me_working.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAD/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/aAAwDAQACEAMQAAABNikwZLSQ/8QAGxABAQABBQAAAAAAAAAAAAAAAQACAxESITP/2gAIAQEAAQUCfTmBu2Zizpl3f//EABYRAAMAAAAAAAAAAAAAAAAAAAEQEf/aAAgBAwEBPwGFf//EABURAQEAAAAAAAAAAAAAAAAAABAh/9oACAECAQE/AYf/xAAcEAABAwUAAAAAAAAAAAAAAAABAAIQAxESMWH/2gAIAQEABj8CrDqcBDjY5Faj/8QAHBAAAgICAwAAAAAAAAAAAAAAABEBITFRQWHB/9oACAEBAAE/IXnZ9E5mUdhkAbl0hGknbI4VR//aAAwDAQACAAMAAAAQcM//xAAXEQADAQAAAAAAAAAAAAAAAAABEBEx/9oACAEDAQE/EBPF/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQEQ/9oACAECAQE/ELUuf//EAB0QAAICAgMBAAAAAAAAAAAAAAERACExUUFhcYH/2gAIAQEAAT8QNjAuv6i6gS1go3NRh6MECVmVdBuDi9HPnyClgZWBP//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Me working At Klab&quot;
+        title=&quot;Me working At Klab&quot;
+        src=&quot;/static/e98031b102dbe112acfb8dec1a232a78/88218/Me_working.jpg&quot;
+        srcset=&quot;/static/e98031b102dbe112acfb8dec1a232a78/7237a/Me_working.jpg 148w,
+/static/e98031b102dbe112acfb8dec1a232a78/0cfdf/Me_working.jpg 295w,
+/static/e98031b102dbe112acfb8dec1a232a78/88218/Me_working.jpg 590w,
+/static/e98031b102dbe112acfb8dec1a232a78/77d57/Me_working.jpg 885w,
+/static/e98031b102dbe112acfb8dec1a232a78/5a917/Me_working.jpg 1180w,
+/static/e98031b102dbe112acfb8dec1a232a78/d280c/Me_working.jpg 3264w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;em&gt;Me working Somewhere&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Le télétravail donne la flexibilité de travailler n’importe où , mais tous les endroit ne favorisent pas la productivité .
+Personnellement j’ai tendance à somnoler si je travaille sur mon lit ou sur le fauteuil de mon salon, mais je me concentre beaucoup plus si je suis assis confortablement sur ma table de bureau .
+Nous n’avons pas besoin d’exigence pour ce qui est de la marque de la chaise ou de son prix pour travailler, il nous faut tout simplement un espace qui nous facilite de travailler convenablement; nous avons des très bons menuisiers qui peuvent nous fabriquer des chaises confortable à moins de 50 USD.&lt;/p&gt;
+&lt;h3&gt;Éviter les distractions inutiles de la maison&lt;/h3&gt;
+&lt;p&gt;Je pense que c’est la partie la plus difficile à gérer surtout lorsque l’on travaille à la maison et que des enfants ou de petits frères veuillent tout le temps s’amuser avec nous pendant que nous sommes disponible à tout moment.&lt;/p&gt;
+&lt;p&gt;La solution réside dans l’anticipation, informer les gens que tu es occupé et  les éduquer à respecter tes heures de travail. &lt;/p&gt;
+&lt;p&gt;Au départ ils prendront sûrement du temps pour s’adapter mais après un bon moment ils s’habitueront à votre horaire, ainsi ils sauront qu’à tel ou tel autre moment de la journée, le papa ou le frère ou encore la soeur travaille et il ne veut pas être dérangé.&lt;/p&gt;
+&lt;h3&gt;Investir dans de bons equipments audio:&lt;/h3&gt;
+&lt;p&gt;Comme le travail à distance demande de passer la plupart du ton temps à appeler des collègues via Skype, Zoom ou autre application,  un tres bon equipement audio s’avère important. &lt;/p&gt;
+&lt;p&gt;Des très bons écouteurs avec un bon micro aideront à bien parler avec ses collègues et toujours être professionnel lors des appels.
+Elles aideront également à s’isoler dans un endroit où il y a trop de monde et à éviter les dérangements inutiles.&lt;/p&gt;
+&lt;p&gt;Nous n’avons pas besoin d’avoir le tout dernier Airpods pro ou les derniers  écouteurs Bose, à moins de 10 ou 20 $, nous pouvons obtenir des très bons écouteurs avec un bon microphone.&lt;/p&gt;
+&lt;h3&gt;Avoir une vie Sociale&lt;/h3&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4ddfbc99f85a09d7e3d1968e9469a0cb/a25a8/me_having_life.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 111.61971830985915%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAWABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQD/8QAFwEBAQEBAAAAAAAAAAAAAAAAAQIDBP/aAAwDAQACEAMQAAAB1m0jKoTEtjKdxl1//8QAHBAAAgEFAQAAAAAAAAAAAAAAAQIAAxESEyEi/9oACAEBAAEFAuTPZCljR9JfGpuvF4xXKBAJ/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAEDECH/2gAIAQMBAT8BqPRpH//EABcRAQADAAAAAAAAAAAAAAAAAAACEBH/2gAIAQIBAT8BYlX/xAAbEAACAwEBAQAAAAAAAAAAAAAAAQIRQTESIf/aAAgBAQAGPwL1ZHFZwUW9JfLS4YOCwcsOH//EAB4QAQADAQABBQAAAAAAAAAAAAEAETEhUUFhkaHw/9oACAEBAAE/IecM2I7Wyp8/uRqPowDh7q9JUnR1kXkFc4R9zQbfMuJhpIBj4n//2gAMAwEAAgADAAAAEIgnA//EABoRAAMBAAMAAAAAAAAAAAAAAAABETEhYcH/2gAIAQMBAT8Qcb2FORXr0QeI/8QAGxEAAQQDAAAAAAAAAAAAAAAAAAEQETEhQfD/2gAIAQIBAT8QRI0SMa6m/8QAHRABAQACAgMBAAAAAAAAAAAAAREAITFhQVFx8P/aAAgBAQABPxCaDTarDFhzgJoP52uNxB2zG/V24AGhxXrLZavJ9JjwhjSN7ytB7KYcdGBA/UPGQot3Y3n/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Me Having Life&quot;
+        title=&quot;Me Having Life&quot;
+        src=&quot;/static/4ddfbc99f85a09d7e3d1968e9469a0cb/88218/me_having_life.jpg&quot;
+        srcset=&quot;/static/4ddfbc99f85a09d7e3d1968e9469a0cb/7237a/me_having_life.jpg 148w,
+/static/4ddfbc99f85a09d7e3d1968e9469a0cb/0cfdf/me_having_life.jpg 295w,
+/static/4ddfbc99f85a09d7e3d1968e9469a0cb/88218/me_having_life.jpg 590w,
+/static/4ddfbc99f85a09d7e3d1968e9469a0cb/a25a8/me_having_life.jpg 852w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;em&gt;Me Having Life at Gisenyi Beach&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Un très grand problème avec le remote work est l’isolement social. A force de passer la plupart du temps à travailler à la maison, il y’a risque d’oublier la vie sociale. Une conséquence à long terme est la dépression. Croyez moi la dépression est réelle, je me rappelle avoir quitté mon remote work parce que je me suis retrouvé seul sans collègues et déprimé.&lt;/p&gt;
+&lt;p&gt;Pour pallier à cela voici certains astuces que je vous suggère:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mettre des limites entre les heures de travail et les heures de repos, d’habitude si je commence à travailler à 9h je m’efforce à tout finir à 21h . Car je sais que mon cerveaux ne se concentre pas au delà de 21 même les grands bugs savent qu’ils ne peuvent pas être résolus à cette heure.&lt;/li&gt;
+&lt;li&gt;Trouve toi une activité extra professionnelle : personnellement j’aime le foot et la première league, mes week-ends sont pour le football et ainsi je vais dans la ville et je m’amuse avec les amis.&lt;/li&gt;
+&lt;li&gt;C’est aussi bien de trouver un club qui peut être de lecture ou de n’importe quoi mais ou les gens se retrouvent régulièrement physiquement pour discuter des sujets qui importent pour eux.
+Personnellement l’Église et la Religion m’aident car je sais que mes dimanches sont réservés à Dieu, je pars au culte, j’ai des amis, on rigole un peu et on oublie les soucis de la vie.&lt;/li&gt;
+&lt;li&gt;Avoir une petite amie peut aussi aider, comme soutien émotionnel&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Prend soin de ton corps.&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Un esprit sain dans un corps sain.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Les media et les films nous ont vendu l’idée que le geek c’est une personne qui es gros et qui passe sont temps à coder, manger la pizza et boire du coca. Mes chers amis, c’est juste une idée reçu et dans la plupart du temps, c’est faux.&lt;/p&gt;
+&lt;p&gt;Aie une bonne hygiène de vie, moi personnellement je commence ma journée par 30 push ups et 30 abdominaux. L’important n’est pas le nombre mais la répétition et la constance dans ces habitudes.
+A me voir je suis aussi slim que Wizzy Calipha mais ça m’aide à garder la forme.&lt;/p&gt;
+&lt;p&gt;Selon ton programme, prends le temps de préparer un bon petit déjeuner et un bon dîner ou si tu vis avec la famille, prends le temps de savourer la nourriture de maman ou de ton partenaire.&lt;/p&gt;
+&lt;p&gt;Rappelle toi:  &lt;em&gt;ventre creux n’a point d’oreil&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7fac11e7171b974d47b7d6e2fe55b366/e937d/home_food.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIEAQX/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAZKeS2axof/EABgQAAMBAQAAAAAAAAAAAAAAAAABAhES/9oACAEBAAEFAplpO6uGqRoqw60//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGBAAAwEBAAAAAAAAAAAAAAAAABEhEAH/2gAIAQEABj8CaF2ZWyZ//8QAGhAAAwEAAwAAAAAAAAAAAAAAAAERQSFxof/aAAgBAQABPyGCs2sMSMHUtJfso/QdK1z2f//aAAwDAQACAAMAAAAQLD//xAAWEQADAAAAAAAAAAAAAAAAAAAAARH/2gAIAQMBAT8QqIj/xAAWEQADAAAAAAAAAAAAAAAAAAAQEVH/2gAIAQIBAT8QVH//xAAdEAEAAwACAwEAAAAAAAAAAAABABEhMbFRcYGh/9oACAEBAAE/EDetiwdzc+tIGvD6in6BJgTUYL/jMiw5Bw7lggXNpn//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Local Food&quot;
+        title=&quot;Local Food&quot;
+        src=&quot;/static/7fac11e7171b974d47b7d6e2fe55b366/88218/home_food.jpg&quot;
+        srcset=&quot;/static/7fac11e7171b974d47b7d6e2fe55b366/7237a/home_food.jpg 148w,
+/static/7fac11e7171b974d47b7d6e2fe55b366/0cfdf/home_food.jpg 295w,
+/static/7fac11e7171b974d47b7d6e2fe55b366/88218/home_food.jpg 590w,
+/static/7fac11e7171b974d47b7d6e2fe55b366/77d57/home_food.jpg 885w,
+/static/7fac11e7171b974d47b7d6e2fe55b366/e937d/home_food.jpg 1024w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;em&gt;Local Food Credit: Esther Nsapu &lt;a href=&quot;https://twitter.com/Ensapu1&quot;&gt;Twitter&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Les autres astuces en rapport au professionnalisme dans le monde réel reste aussi valable en remote work :&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;La ponctualité a toujours sa place, toujours bon de se connecter 10 minutes dans un appel zoom pour éviter les soucis technique et être toujours la personne qu’on attend dans un call.&lt;/li&gt;
+&lt;li&gt;Comme la communication se passe par écrit, c’est toujours bon d’éviter de faire des fautes d’orthographe, d’être clair et concis dans ses communications écrites (mails ou slack messages).&lt;/li&gt;
+&lt;li&gt;Etc…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Celles-là ne sont que quelques astuces que j’ai pu trouvé. Vous n’êtes pas obligé(e) de les suivre à la lettre, ils ont marché pour moi mais ne marcheront peut être pas pour vous, avec quelques révisions et ajustements vous pouvez avoir une version valide pour vous.
+Mais je suis sur qu’il y en a plein qui marchent avec vous , n’hésitez pas à nous le faire savoir en commentaire.&lt;/p&gt;
+&lt;p&gt;Take care, Stay Home , Stay Safe , Wash your hands..&lt;/p&gt;
+&lt;p&gt;Big thanks à tous le monde qui a participé de pret ou de loin à la rédaction de l’article : Ma petite soeur Ndeze Josephine, mon grand Bosco B, Brian, &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Setup a new Macbook for software development]]></title><description><![CDATA[This guide helps to setup a new macbook and make it ready for software development. Make it yours : (Change the Laptop Name): I use the…]]></description><link>https://www.murhabazi.com/new-mac-dev-setup/</link><guid isPermaLink="false">https://www.murhabazi.com/new-mac-dev-setup/</guid><pubDate>Sun, 08 Mar 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This guide helps to setup a new macbook and make it ready for software development.&lt;/p&gt;
 &lt;h2&gt;Make it yours : (Change the Laptop Name):&lt;/h2&gt;
 &lt;p&gt;I use the following command to change the macbook name in case it’s promping a wrong username:&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;sudo scutil --set HostName name-you-want&lt;/code&gt;&lt;/p&gt;
