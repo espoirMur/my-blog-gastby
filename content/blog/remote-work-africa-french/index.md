@@ -4,11 +4,12 @@ date: "2020-03-26T22:12:03.284Z"
 description: "Conseils pour remote à distance en Afrique"
 ---
 
-![Photo Aeriènne de Goma Crédit Clarice Butsapu Twitter](./pictures/cover_picture_bkv_home.jpg)
+![Photo Aeriènne de Goma ](./pictures/cover_picture_bkv_home.jpg)
 <div align="center">
 Photo Aeriènne de Goma, Crédit : <a href="https://twitter.com/clarice_butsapu" target="_blank">Clarice Butsapu Twitter</a>
 </div>
 </br>
+
  De nos jours travailler à la maison est devenue une nécessité, étant développeurs est la seule façon de travailler en cette période de crise de la pandémie. 
 En parcourant l'internet, je n'ai pas pu trouver un bon article donnant certaines astuces pour le travail à distance dans le contexte Africain et précisément congolais. 
 En Afrique dans certains pays, avoir un bon internet et un courant stable est un dilemme de tout le jour. 
@@ -159,7 +160,7 @@ Local Food Credit:  <a href="https://twitter.com/Ensapu1" target="_blank"> Esthe
 Celles-là ne sont que quelques astuces que j’ai pu trouvé. Vous n'êtes pas obligé(e) de les suivre à la lettre, ils ont marché pour moi mais ne marcheront peut être pas pour vous, avec quelques révisions et ajustements vous pouvez avoir une version valide pour vous.
 Mais je suis sur qu’il y en a plein qui marchent avec vous , n'hésitez pas à nous le faire savoir en commentaire.
 
-Big thanks à tous le monde qui a participé de pret ou de loin à la rédaction de l'article : Ma petite soeur[ Ndeze Josephine](https://twitter.com/JosephineNdeze), mon grand [Bosco B](https://twitter.com/BBasabana), Brian.
+Big thanks à tous le monde qui a participé de pret ou de loin à la rédaction de l'article : Ma petite soeur[ Ndeze Josephine](https://twitter.com/JosephineNdeze), mon grand [Bosco B](https://twitter.com/BBasabana), Brian ainsi Karl Musingo.
 
 
 In mean time : Take care, Stay Home , Stay Safe , Wash your hands..

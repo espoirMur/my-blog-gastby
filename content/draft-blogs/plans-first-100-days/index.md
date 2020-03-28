@@ -149,3 +149,6 @@ The previous implementation was not wrong at all, it gives me an intuition on ho
 I will have to write it with pen and paper and implement it.
 
 Day 17 : What did I do, I seems to understand the equation of BPTT now tomorow I will try to implement it with code
+
+Day 18 : Went back to the math of BPTT and learn something but distractions was to many today, I didn't finished what I started !
+
