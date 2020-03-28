@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My ideas' home]]></title><description><![CDATA[Murhabazi Buzina Espoir Home on the internet]]></description><link>https://www.murhabazi.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 26 Mar 2020 17:11:58 GMT</lastBuildDate><item><title><![CDATA[Quelques meilleurs conseils pour un travail efficace à distance, une réalité africaine]]></title><description><![CDATA[De nos jours travailler à la maison est devenue une nécessité, étant développeurs est la seule façon de travailler en cette période de crise…]]></description><link>https://www.murhabazi.com/remote-work-africa-french/</link><guid isPermaLink="false">https://www.murhabazi.com/remote-work-africa-french/</guid><pubDate>Thu, 26 Mar 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My ideas' home]]></title><description><![CDATA[Murhabazi Buzina Espoir Home on the internet]]></description><link>https://www.murhabazi.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 28 Mar 2020 19:40:31 GMT</lastBuildDate><item><title><![CDATA[Quelques meilleurs conseils pour un travail efficace à distance, une réalité africaine]]></title><description><![CDATA[De nos jours travailler à la maison est devenue une nécessité, étant développeurs est la seule façon de travailler en cette période de crise…]]></description><link>https://www.murhabazi.com/remote-work-africa-french/</link><guid isPermaLink="false">https://www.murhabazi.com/remote-work-africa-french/</guid><pubDate>Thu, 26 Mar 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
     &gt;
@@ -8,8 +8,8 @@
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;Photo Aeriènne de Goma Crédit Clarice Butsapu Twitter&quot;
-        title=&quot;Photo Aeriènne de Goma Crédit Clarice Butsapu Twitter&quot;
+        alt=&quot;Photo Aeriènne de Goma &quot;
+        title=&quot;Photo Aeriènne de Goma &quot;
         src=&quot;/static/895691833b55b2e32f249a454da05c48/88218/cover_picture_bkv_home.jpg&quot;
         srcset=&quot;/static/895691833b55b2e32f249a454da05c48/7237a/cover_picture_bkv_home.jpg 148w,
 /static/895691833b55b2e32f249a454da05c48/0cfdf/cover_picture_bkv_home.jpg 295w,
@@ -229,7 +229,7 @@ Local Food Credit:  &lt;a href=&quot;https://twitter.com/Ensapu1&quot; target=&q
 &lt;/ul&gt;
 &lt;p&gt;Celles-là ne sont que quelques astuces que j’ai pu trouvé. Vous n’êtes pas obligé(e) de les suivre à la lettre, ils ont marché pour moi mais ne marcheront peut être pas pour vous, avec quelques révisions et ajustements vous pouvez avoir une version valide pour vous.
 Mais je suis sur qu’il y en a plein qui marchent avec vous , n’hésitez pas à nous le faire savoir en commentaire.&lt;/p&gt;
-&lt;p&gt;Big thanks à tous le monde qui a participé de pret ou de loin à la rédaction de l’article : Ma petite soeur&lt;a href=&quot;https://twitter.com/JosephineNdeze&quot;&gt; Ndeze Josephine&lt;/a&gt;, mon grand &lt;a href=&quot;https://twitter.com/BBasabana&quot;&gt;Bosco B&lt;/a&gt;, Brian.&lt;/p&gt;
+&lt;p&gt;Big thanks à tous le monde qui a participé de pret ou de loin à la rédaction de l’article : Ma petite soeur&lt;a href=&quot;https://twitter.com/JosephineNdeze&quot;&gt; Ndeze Josephine&lt;/a&gt;, mon grand &lt;a href=&quot;https://twitter.com/BBasabana&quot;&gt;Bosco B&lt;/a&gt;, Brian ainsi Karl Musingo.&lt;/p&gt;
 &lt;p&gt;In mean time : Take care, Stay Home , Stay Safe , Wash your hands..&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Setup a new Macbook for software development]]></title><description><![CDATA[This guide helps to setup a new macbook and make it ready for software development. Make it yours : (Change the Laptop Name): I use the…]]></description><link>https://www.murhabazi.com/new-mac-dev-setup/</link><guid isPermaLink="false">https://www.murhabazi.com/new-mac-dev-setup/</guid><pubDate>Sun, 08 Mar 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This guide helps to setup a new macbook and make it ready for software development.&lt;/p&gt;
 &lt;h2&gt;Make it yours : (Change the Laptop Name):&lt;/h2&gt;
 &lt;p&gt;I use the following command to change the macbook name in case it’s promping a wrong username:&lt;/p&gt;
