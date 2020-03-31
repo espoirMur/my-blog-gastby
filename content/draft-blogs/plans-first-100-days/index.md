@@ -152,3 +152,12 @@ Day 17 : What did I do, I seems to understand the equation of BPTT now tomorow I
 
 Day 18 : Went back to the math of BPTT and learn something but distractions was to many today, I didn't finished what I started !
 
+Day 19 : Math equations drive me crazy end up opening almost 10 taps, end up in a wrong tutorials not explaining the things in a right way.
+
+Will come back tommorow , let me take a break
+
+https://kharshit.github.io/blog/2019/02/22/backpropagation-through-time
+
+And this
+
+https://github.com/go2carter/nn-learn/blob/master/grad-deriv-tex/rnn-grad-deriv.pdf
