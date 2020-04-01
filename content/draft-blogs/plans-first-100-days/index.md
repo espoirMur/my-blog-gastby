@@ -161,3 +161,14 @@ https://kharshit.github.io/blog/2019/02/22/backpropagation-through-time
 And this
 
 https://github.com/go2carter/nn-learn/blob/master/grad-deriv-tex/rnn-grad-deriv.pdf
+
+Day 20 :
+
+The derivates become clear after many research from other sources
+but the pdf is now understandable
+
+Next step tommorow will be to update the fork and post it, contribute to research.
+
+https://kharshit.github.io/blog/2019/02/22/backpropagation-through-time
+
+https://stats.stackexchange.com/questions/238496/why-back-propagate-through-time-in-a-rnn

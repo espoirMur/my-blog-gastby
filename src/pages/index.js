@@ -28,11 +28,12 @@ export default class AboutMe extends Component {
               <div style={{ clear: "both" }} class="subhead">
                 <p>
                   Hey, Internet !! It's me Espoir Murhabazi, a Software Engineer
-                  from DRC, but currently based in Rwanda! I am in love with
-                  Python language, but I also write Javascript and sometimes
-                  Java. I greatly value clean and maintainable code, great
-                  software, but I know when I need to be a perfectionist and
-                  when it stands in the way of product delivery.
+                  from DRC, but currently based in Rwanda! I am in a serious
+                  relationship with Python language, but I also write Javascript
+                  and sometimes Java. I greatly value clean and maintainable
+                  code, great software, but I know when I need to be a
+                  perfectionist and when it stands in the way of product
+                  delivery.
                 </p>
                 <p>
                   I am also interested in Data Science and Machine Learning
