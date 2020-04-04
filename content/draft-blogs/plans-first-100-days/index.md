@@ -172,3 +172,5 @@ Next step tommorow will be to update the fork and post it, contribute to researc
 https://kharshit.github.io/blog/2019/02/22/backpropagation-through-time
 
 https://stats.stackexchange.com/questions/238496/why-back-propagate-through-time-in-a-rnn
+Day 21 :
+Finally updated the questions and contribute to research , the last step will be to resume the algo implementation

@@ -21,4 +21,22 @@ Remaining days : 29
 
 Day 2 :
 
+Write an algorithm to determine if a number is "happy".
 
+A happy number is a number defined by the following process: Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1. Those numbers for which this process ends in 1 are happy numbers.
+
+This one was very difficult for me , it required a lot of thinking , I come up with a brute force approach but it didn't work at the first time.
+It required some tricks
+
+Day 3 : Maximum subarray problem 
+Result : Failure....
+I feel discouraged.... but I will not give up.
+
+My solution pass 50 % of tests
+tommorow if I get time I will come back to the wikipedia solution
+
+Day 4 : Back to the winning streak I come with a working solution after few attempt.
+
+It was similar to insertion sort algorithm.
+
+https://leetcode.com/problems/move-zeroes/
