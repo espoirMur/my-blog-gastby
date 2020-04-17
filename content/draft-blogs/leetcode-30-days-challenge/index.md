@@ -40,3 +40,36 @@ Day 4 : Back to the winning streak I come with a working solution after few atte
 It was similar to insertion sort algorithm.
 
 https://leetcode.com/problems/move-zeroes/
+
+Day 5 : I didn't even get intution on the solution
+
+Day 6 : Back to the wining streak
+https://leetcode.com/problems/group-anagrams/submissions/
+
+Day 7 : 
+Nothing done , the problem was difficult
+
+Day 8 : Back to the winning streak with linked list, but again it was an easy problem
+https://leetcode.com/problems/middle-of-the-linked-list/submissions/
+
+Day 9 : This is a simple problem but lot  of folks comes up with simple solution
+
+Day 10:
+
+Day 10: 
+Tree solution a simple problem .
+I got the intuition but I was lazy to implement it.
+
+Day 11:
+Went back to the winning streak and everything was nice
+
+Day 12: It was a medium problem but the solution didn't comes trought..
+
+Day 13 : Solve the problem but it takes too long to get solved.
+
+Day 15: https://www.youtube.com/watch?v=tSRFtR3pv74
+
+This problem, the intuition didn't comes, watched the videos and sound pretty easy , need to practice more on this....
+
+
+Day 16 : Another medium level question, the intuition didn't come trought but manage to learn and read about recursion from it...

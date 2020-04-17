@@ -174,3 +174,26 @@ https://kharshit.github.io/blog/2019/02/22/backpropagation-through-time
 https://stats.stackexchange.com/questions/238496/why-back-propagate-through-time-in-a-rnn
 Day 21 :
 Finally updated the questions and contribute to research , the last step will be to resume the algo implementation
+
+Day 22 : 
+We get back where we left , and I am glad I found self explanatory results about RNN from scratch I will start from them.
+
+Day 23 : Nothing done today, I feel bored , unmotivated....  A day to forget....
+
+Dat 24: Looks like I lost track, after spending 2 days without checking my code, I got lost in the equations
+
+Day 25: Manage to train my model and the accuracy was decreasing but I am keep getting weird results, I will check them tommorow but at least I am on a right track.
+
+Find another OOP blog post , I will give it a try tommorow.
+https://github.com/pangolulu/rnn-from-scratch
+
+Day 27 :
+
+Finally trained my model and get good result, and that was awesome I should celebrate ....
+
+Refractor the code using python data science cookie cutter and.
+
+Tomorrow I can start doing some predictions with it...
+
+Day 28:
+
