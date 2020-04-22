@@ -73,3 +73,14 @@ This problem, the intuition didn't comes, watched the videos and sound pretty ea
 
 
 Day 16 : Another medium level question, the intuition didn't come trought but manage to learn and read about recursion from it...
+
+Day 17 : After Looking for a solution I gave up because time execepted but I will resume once I find time
+
+Day 18 : Solved a meduim problem after trying it in 3 hours , 8 think today I should celebrate..
+
+Day 19 : 
+Solved another meduim proble
+
+Day 20: Another meduim problem I solved before but this time I fail to find a solution
+
+(subarray with sum equal K)

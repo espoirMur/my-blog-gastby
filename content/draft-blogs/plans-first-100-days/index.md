@@ -197,3 +197,4 @@ Tomorrow I can start doing some predictions with it...
 
 Day 28:
 
+I got blocked on something related to predictions, I asked a question on stack exchange , I got something I will be reviewing it tommorow
