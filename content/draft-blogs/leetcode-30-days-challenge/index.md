@@ -84,3 +84,6 @@ Solved another meduim proble
 Day 20: Another meduim problem I solved before but this time I fail to find a solution
 
 (subarray with sum equal K)
+
+Day 26 : Worked on meduim problem about dynamic programing solve it and 
+I worked , I learn a lot about dynamic programing .
