@@ -64,7 +64,11 @@ export default class AboutMe extends Component {
                 </li>
               </ul>
               <p>
-                Feel free to contact me at : <a target="_blank" href="https://mailhide.io/e/kSXIE">{{result.shortenUrlComposed}}</a> for any inquiry!
+                Checkout my email address:{" "}
+                <a target="_blank" href="https://mailhide.io/e/kSXIE">
+                  https://mailhide.io/e/kSXIE
+                </a>
+                For any inquiry
               </p>
             </div>
           </div>
