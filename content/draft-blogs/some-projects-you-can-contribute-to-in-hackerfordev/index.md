@@ -1,12 +1,14 @@
-The year is over and the biggest party of open source is almost there ...
+The year is over and the biggest party of open source is almost there  it coming in the next <div data-type="countdown" data-id="2184718" class="tickcounter" style="width: 100%; position: relative; padding-bottom: 25%"><a href="//www.tickcounter.com/countdown/2184718/hacktoberfest" title="Hacktoberfest">Hacktoberfest</a><a href="//www.tickcounter.com/" title="Countdown">Countdown</a></div><script>(function(d, s, id) { var js, pjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//www.tickcounter.com/static/js/loader.js"; pjs.parentNode.insertBefore(js, pjs); }(document, "script", "tickcounter-sdk"));</script> days...
 
 this year has been an amazing year for me because I got time to contribute to some open source project and had my pull request pushed on some amazing projects with many stars , and it help me to put some green dot on my github profile..
 
-actually hackforbest is the most exciting festival where people got the opportunity to contribute to open source and get some swags for recognition ..
+https://hacktoberfest.digitalocean.com/
+
+actually Hacktoberfest is the most exciting festival where people got the opportunity to contribute to open source and get some swags for recognition ..
 
 in the following blog post I will list some open source projects you can contribute to during this time and will explain why you need to check out for them
 
-- kratec flask restful cookie cutter
+- Kratec flask restful cookie cutter
 
 About the project :
 
@@ -82,7 +84,7 @@ They shared their network provider, their internet speed, and some shared their 
 
 How to contribute : 
 
-There are differents ways to contribute : if you want to dive into optical character recogniton you can help us in getting the internet speed from the fast.com .
+There are different ways to contribute : if you want to dive into optical character recognition you can help us in getting the internet speed from the fast.com .
 
 If you want to get into data analysis , I have collected a bunch of question you can answer using data visualization or simple pandas queries.
 
@@ -90,13 +92,22 @@ You can check the project readme to learn more about it.
 
 Tech Stack : Python, Tweepy , Pandas
 
+- pIndo
+
+- https://github.com/jpadilla/django-dotenv/issues/46
+- Django Conf Project 
+
+I need four more projects to complete my listing 
+
 - my project balobi nini 
 
 - nzembo
 
-- pIndoÒ
+I have also two open source project I always hack on on my github , feel free to have a look on them . 
 
-I need four more projects to complete my listing 
-
+If you have any other open source project you know a beginner may be interested in feel free to share it with us .
 
 Another way of contributing to open  source is by answering questions on stack overflow , you will be suprise by amount of topic you can learn in a short period of time.  I have tried tzo years ago and I was supprised to the the amount of people I have helped on the plateform and even today people are still comming back to me to ask one or 2 questions about the answer I put there a long time ago.
+
+
+https://dev.to/surajv/5-mistakes-that-can-be-avoided-as-a-beginner-in-foss-contribution-22gc
