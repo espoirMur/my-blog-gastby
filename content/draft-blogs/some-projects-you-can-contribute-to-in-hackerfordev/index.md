@@ -2,7 +2,8 @@
 
 This year has been an amazing year for me because I got time to contribute to some open source project and had my pull request merged on  amazing projects with many stars , and it help me to put some green dot on my github profile..
 
-I don't want to brag about my open source contribution which are very small comparing to what have been done in the open source community , but I want to show you which open source project you can contribute to during this period, to get those green dot on  your github profile so that when a recruiter ask you for some sample of your work you can have something to show him. 
+I don't want to brag about my open source contribution which are very small comparing to what have been done in the open source community , but I want to show you which open source project you can contribute to during this period . They are not the biggest party in the festival, but they can train you to drink beers, to dress and to dance before attending biggest venues. 
+By contributing to those projects you can get those green dot on  your github profile so that when a recruiter ask you for some sample of your work you can have something to show him. 
 
 ## But why October? 
 
@@ -14,7 +15,7 @@ The reason why I wrote this post today it's because we are in October which is t
 
 This project is a cookie-cutter , a template for creating flask applications.
 
-It has a structured way to make flask-restful application, it is a good starting point for building flask applications, it comes with some basic features all application share in common such as user authentication , token based authentication and user management system. 
+It has a structured way to make flask-restful applications, it is a good starting point for building flask applications, it comes with some basic features all application share in common such as user authentication , token based authentication and user management system. 
 
 It also has all the settings needed for a flask backend such as database setup, celery configurations, docker compose etc.
 
@@ -31,7 +32,7 @@ As the all software project this one is not yet completed , it need some improve
 
 This is my favorite project , this project aims to apply the modern neural machine translation technics to africans languages . With this we are building the next google translate for African languages. 
 
-If you are an African , care for African languages , and an NLP enthusiasts I will definitely recommend to have a look to this project . It has a good opening community.
+If you are an African , you care for African languages , and you are a NLP enthusiasts I will definitely recommend to have a look to this project . It has a good opening community. You should definitely join this project.
 
 _Tech Stack used_:
 
@@ -44,6 +45,8 @@ The project is well documented you can go to [this](https://github.com/masakhane
 We have a [starter notebook ](https://github.com/masakhane-io/masakhane-mt/blob/master/starter_notebook.ipynb), you can grab it, it is self explanatory and by running it for your local language you can have  a first benchmark for it.
 
 ### [PyTube](https://github.com/nficano/pytube) : 
+
+This is an amazing tool and by contributing to it you will be helping a lot of developers around.
 
 From the project readme you can read that: 
 
@@ -66,7 +69,7 @@ I have opened [this issue](https://github.com/nficano/pytube/issues/593) on the 
 The project name is a concatenation of chat and statistics.
 
 It is a python3 project  that convert chat logs from various messaging platforms into pandas DataFrames. It can also generate histograms and word clouds from the chat logs. 
-If you are  an intermediate python developer who are interest in data, NLP and text analysis this can help you to forge you knowledge in those topic.
+If you are  an intermediate python developer who are interest in data, NLP and text analysis this can help you to forge you knowledge in those topics.
 It can help you to find the most active users, get the most topics your friends are discussing about in a Whatsapp group or a telegram channel. 
 
 _Tech Stack used_:
@@ -79,12 +82,11 @@ I have open a [issue about](https://github.com/MasterScrat/Chatistics/issues/64)
 
 ### [Speed Rwanda](https://github.com/kenessajr/speed-rw): 
 
-A few month ago a friend of mine [Remy Muhire](https://twitter.com/kenessajr?lang=en)
-Started a twitter thread where Rwandans networks users could post their internet speed in text format and a screenshot of from fast.com. 
+A few month ago a friend of mine [Remy Muhire](https://twitter.com/kenessajr?lang=en) started a twitter thread where Rwandans networks users could post their internet speed in text format and a screenshot of from fast.com. 
 
 We collected more than 2 hundred tweets from Rwandans. 
 
-They shared their network provider, their internet speed, and some shared their location. 
+They shared their network provider, their internet speed (in text and as a screenshot), and some shared their location. 
 
 _Tech Stack_:
  
@@ -95,8 +97,9 @@ _How to contribute_:
 There are different ways to contribute : if you want to dive into optical character recognition you can help us in getting the internet speed from the fast.com network speed screenshot.
 
 If you want to get into data analysis , I have collected a bunch of question you can answer using data visualization or simple pandas queries.
-
 You can check the project readme to learn more about it.
+
+If you want to play with regex, you can also help us to extract the speed int the tweets. 
 
 ### Pindo
 
@@ -112,7 +115,7 @@ The project is actively looking for contributor, if you are a beginner and what 
 
 ### Django-dotenv: 
 
-This project is a tools that helps to read .env files in a django project 
+This project is a tool that helps to read .env files in a django project 
 
 _Tech Stack_:
  
@@ -126,7 +129,7 @@ I have opened [an issue ](https://github.com/jpadilla/django-dotenv/issues/46) y
 ### Python and Django Conferences website (DjangoConf and EuroPython)
 
 
-Other project that can give you exposure are django conference websites, the project are written in python and are maintained with the best Django developers in the world. Working on those projects can give you your quickstart in your Django learning path. 
+Other project that can give you exposure are django conference websites, the project are written in python and are maintained with the best Django developers in the world. Working on those projects can give you your kickstart in your Django learning path. 
 
 _Tech Stack_:
  
@@ -138,7 +141,7 @@ Here are the link to [the site ](https://github.com/djangocon) also the [EuroPyt
 
 
 ### My Project 
-I have also two open source project I always hack on on my github , feel free to have a look on them, balobi nini , nzembo
+I have also two open source project I always hack on on my github , feel free to have a look on them, [balobi nini](https://github.com/espoirMur/balobi_nini) , [nzembo](https://github.com/kisanola/nzembo)
 
 _Tech Stack_:
 
@@ -150,7 +153,9 @@ Reach out to me , I will tell you how you can contribute.
 
 ### StackOverflow Questions
 
-Another way of contributing to open  source is by answering questions on stack overflow , you will be surprise by amount of topic you can learn in a short period of time.  I have tried tzo years ago and I was surprised to the the amount of people I have helped on the platform and even today people are still coming back to me to ask one or 2 questions about the answer I put there a long time ago.
+[Put a tag for my reputation here]
+
+Another way of contributing to open  source is by answering questions on stack overflow , you will be surprise by amount of topic you can learn in a short period of time.  I have tried two years ago and I was surprised to the the amount of people I have helped on the platform and even today people are still coming back to me to ask one or 2 questions about the answers I put there a long time ago.
 
 _Tech Stack_:
 
