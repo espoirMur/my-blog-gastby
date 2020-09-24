@@ -1,184 +1,194 @@
-# Hacktoberfest is almost there , Python developers here are some venues for parties 
+# Hacktoberfest is almost there, Python developers here are some venues for parties.
 
-This year has been an amazing year for me because I got time to contribute to some open source project and had my pull request merged on  amazing projects with many stars , and it help me to put some green dot on my github profile..
 
-I don't want to brag about my open source contribution which are very small comparing to what have been done in the open source community , but I want to show you which open source project you can contribute to during this period . They are not the biggest party in the festival, but they can train you to drink beers, to dress and to dance before attending biggest venues. 
-By contributing to those projects you can get those green dot on  your github profile so that when a recruiter ask you for some sample of your work you can have something to show him. 
+This year has been fantastic because I got time to contribute to some open-source project and had my pull request merged on amazing projects with many stars. It helps me to put some green dot on my GitHub profile…
 
-## But why October? 
+I don’t want to brag about my open source contributions, which are very small comparing to what has been done in the open-source community. Instead, I want to show you which open source project you can contribute to during this period. They are not the biggest party at the festival, but they can train you to drink beers, dress, and dance before attending the most prominent venues.
 
-The reason why I wrote this post today it's because we are in October which is the open source month. DigitalOcean in partnership with dev.to organize [Hacktoberfest](https://hacktoberfest.digitalocean.com/) , the most exciting open source festival where people got the opportunity to contribute to open source and get some swags  and other awards for recognition ..
+By contributing to those projects, you can get those green dots on your GitHub profile so that when a recruiter asks you for some sample of your work, you can have something to show him.
 
-## Can you tell us about the venues ? : 
 
-### [Kratec flask restful](https://github.com/karec/cookiecutter-flask-restful) cookie-cutter
+## But why October?
+The reason why I wrote this post today it’s because we are in October, which is the open-source month. DigitalOcean, in partnership with dev.to, organizes Hacktoberfest. During the most exciting open-source festival, people got the opportunity to contribute to open source and get some swags and other awards for recognition.
 
-This project is a cookie-cutter , a template for creating flask applications.
 
-It has a structured way to make flask-restful applications, it is a good starting point for building flask applications, it comes with some basic features all application share in common such as user authentication , token based authentication and user management system. 
+## Can you tell us about the venues? : 
 
-It also has all the settings needed for a flask backend such as database setup, celery configurations, docker compose etc.
+### [Kratec flask restful cookie-cutter](https://github.com/karec/cookiecutter-flask-restful)
 
-_Tech Stack_:
+This project is a cookie-cutter, a template for creating flask applications.
+
+It has a structured way to make flask-restful applications. It is a good starting point for building flask applications. It has some basic features all application share in commons such as user authentication, token-based authentication, and user management system. 
+
+It also has all the settings needed for a flask backend, such as database setup, celery configurations, docker-compose, etc.
+
+_**Tech Stack**_:
  
 The project is build using Flask and Python 3.6.
-If you are familiar with that stack this can be a good start for you.
+If you are familiar with that stack, this can be a good start for you.
 
-_How You can contribute_:
+_**How You can contribute**_:
 
-As the all software project this one is not yet completed , it need some improvements . You can make it PEP8 (put a link to pep8 ) compliant by setting up linter to make sur it follows all the style included in pep8. It has some opened issues you can a look to. 
+As for all the software projects, this one is not yet completed. It needs some improvements. You can make it [PEP8](https://realpython.com/python-pep8/) compliant by setting up linter to make sure it follows all the styles included in pep8. It has some open issues you can look to. 
+
 
 ### [Masakhane](https://github.com/masakhane-io/masakhane-mt) :
 
-This is my favorite project , this project aims to apply the modern neural machine translation technics to africans languages . With this we are building the next google translate for African languages. 
+This is my favorite project; this project aims to apply the modern neural machine translation technics to African languages. With this, we are building the next google translate for African languages. 
 
-If you are an African , you care for African languages , and you are a NLP enthusiasts I will definitely recommend to have a look to this project . It has a good opening community. You should definitely join this project.
+If you are an African, you care for African languages, and you are an NLP enthusiast I will definitely recommend to have a look at this project. It has a good opening community. You should definitely join this project.
 
-_Tech Stack used_:
+_**Tech stack used**_:
 
 Python, Keras, PyTorch
 
-_How to Contribute_:
+_**How to Contribute**_:
  
-The project is well documented you can go to [this](https://github.com/masakhane-io/masakhane-mt#how-can-i-contribute) section in the readme you will find many way how you can contribute. 
+The project is well documented; you can go to [this](https://github.com/masakhane-io/masakhane-mt#how-can-i-contribute) section in the readme; you will find many ways how you can contribute. 
 
-We have a [starter notebook ](https://github.com/masakhane-io/masakhane-mt/blob/master/starter_notebook.ipynb), you can grab it, it is self explanatory and by running it for your local language you can have  a first benchmark for it.
+We have a [starter notebook ](https://github.com/masakhane-io/masakhane-mt/blob/master/starter_notebook.ipynb), you can grab it, it is self-explanatory, and by running it for your local language, you can have the first benchmark for it.
+
 
 ### [PyTube](https://github.com/nficano/pytube) : 
 
-This is an amazing tool and by contributing to it you will be helping a lot of developers around.
+This is a fantastic tool, and by contributing to it, you will be helping many developers around.
+From the project readme, you can read that: 
+>PyTube is a very serious, lightweight, dependency-free Python library (and command-line utility) for downloading YouTube Videos.
 
-From the project readme you can read that: 
+In simple terms, this project helps you to download a Youtube video or a full Youtube playlist video by providing its URL using python code.
 
-PyTube is a very serious, lightweight, dependency-free Python library (and command-line utility) for downloading YouTube Videos.
-
-In simple term this project help you to download a Youtube video   or a full Youtube playlist video by providing it url using python code.
-
-_Tech Stack used_:
+_**Tech stack used**_:
  
 Python
 
-_How to contribute_:
+_**How to contribute**_:
  
-The project is actually looking for contributor , it have around 30 open issue as of now, you can pick one and start investigating on it. 
-I have opened [this issue](https://github.com/nficano/pytube/issues/593) on the project, you can have a look on it. It is beginner friendly and if you have a beginner to intermediate knowledge in Python you are good to go .
+The project is actually looking for contributors. It has around 30 open issues as of now; you can pick one and start investigating it. 
+I have opened [this issue](https://github.com/nficano/pytube/issues/593) on the project, you can look at it. It is beginner-friendly, and if you have a beginner to intermediate knowledge in Python, you are good to go.
 
 
 ### [Chatistics](https://github.com/MasterScrat/Chatistics)
 
 The project name is a concatenation of chat and statistics.
+It is a python3 project that converts chat logs from various messaging platforms into pandas DataFrames. It can also generate histograms and word clouds from the chat logs. 
+Suppose you are an intermediate python developer who is interested in data, NLP, and text analysis. In that case, this can help you to forge your knowledge in those topics.
+It can help you find the most active users and get the most topics your friends discuss in a Whatsapp group or a telegram channel. 
 
-It is a python3 project  that convert chat logs from various messaging platforms into pandas DataFrames. It can also generate histograms and word clouds from the chat logs. 
-If you are  an intermediate python developer who are interest in data, NLP and text analysis this can help you to forge you knowledge in those topics.
-It can help you to find the most active users, get the most topics your friends are discussing about in a Whatsapp group or a telegram channel. 
-
-_Tech Stack used_:
+_**Tech stack used**_:
  Python 
 
-_How to contribute_:
+_**How to contribute**_:
  
-The project has 18 opened issues , and you can think about other feature you can add in the project. 
-I have open a [issue about](https://github.com/MasterScrat/Chatistics/issues/64) a feature some may need , you can have a look on it. 
+The project has 18 open issues, and you can think about other features you can add. 
+I have opened a [issue about](https://github.com/MasterScrat/Chatistics/issues/64) a feature some may need, you can look at it. 
 
 ### [Speed Rwanda](https://github.com/kenessajr/speed-rw): 
 
-A few month ago a friend of mine [Remy Muhire](https://twitter.com/kenessajr?lang=en) started a twitter thread where Rwandans networks users could post their internet speed in text format and a screenshot of from fast.com. 
+A few months ago, a friend of mine [Remy Muhire](https://twitter.com/kenessajr?lang=en) started a twitter thread where Rwandans users could post their internet speed in text format and a screenshot of from fast.com. 
 
 We collected more than 2 hundred tweets from Rwandans. 
 
 They shared their network provider, their internet speed (in text and as a screenshot), and some shared their location. 
 
-_Tech Stack_:
+_**Tech Stack**_:
  
-Python, Tweepy , Pandas
+Python, Tweepy, Pandas
 
-_How to contribute_:
+_**How to contribute**_:
  
-There are different ways to contribute : if you want to dive into optical character recognition you can help us in getting the internet speed from the fast.com network speed screenshot.
+There are different ways to contribute to: 
 
-If you want to get into data analysis , I have collected a bunch of question you can answer using data visualization or simple pandas queries.
+suppose you want to dive into optical character recognition. In that case, you can help us get the internet speed from the fast.com network speed screenshot.
+
+If you want to get into data analysis, I have collected many questions you can answer using data visualization or simple pandas queries.
 You can check the project readme to learn more about it.
 
-If you want to play with regex, you can also help us to extract the speed int the tweets. 
+If you want to play with regex, you can also help us extract the tweets' speed. 
 
 ### Pindo
 
-Pindo is the communication platform for humans and machines , it helps to send messages mails and text in bluk, it's similar to Nexmo or Twillo. 
+Pindo is the communication platform for humans and machines. It helps to send messages, emails, and text in bulk. It’s similar to Nexmo or Twillo. 
 
-_Tech Stack_:
+_**Tech Stack**_:
 
 Python
 
-_How to contribute_:
+_**How to contribute**_:
  
-The project is actively looking for contributor, if you are a beginner and what to work on a CLI project , you can reach out to [Remy Muhire](https://twitter.com/kenessajr?lang=en) he can tell you how you can help .
+The project is actively looking for a contributor. If you are a beginner and what to work on a CLI project, you can reach out to [Remy Muhire](https://twitter.com/kenessajr?lang=en). He can tell you how you can help.
 
 ### Django-dotenv: 
 
-This project is a tool that helps to read .env files in a django project 
+This project is a tool that helps to read .env files in a Django project. 
 
-_Tech Stack_:
+_**Tech Stack**_:
  
 Python and Django 
 
-_How to contribute_:
+_**How to contribute**_:
 
-I have opened [an issue ](https://github.com/jpadilla/django-dotenv/issues/46) you can have a look on it to get started with the project 
+I have opened [an issue ](https://github.com/jpadilla/django-dotenv/issues/46). You can have a look at it to get started with the project. 
 
 
 ### Python and Django Conferences website (DjangoConf and EuroPython)
 
 
-Other project that can give you exposure are django conference websites, the project are written in python and are maintained with the best Django developers in the world. Working on those projects can give you your kickstart in your Django learning path. 
+Other projects that can give you exposure are Django conference websites. The projects are written in Python and are maintained with the best Django developers in the world. Working on those projects can give you your kickstart in your Django learning path. 
 
-_Tech Stack_:
+_**Tech Stack**_:
  
 Python and Django 
 
-_How to contribute_:
+_**How to contribute**_:
 
-Here are the link to [the site ](https://github.com/djangocon) also the [EuroPython website](https://github.com/EuroPython) , you can pick one project and see how you can help. 
+Here is the link to [the site ](https://github.com/djangocon) also the [EuroPython website](https://github.com/EuroPython), you can pick one project and see how you can help. 
 
 
-### My Project 
-I have also two open source project I always hack on on my github , feel free to have a look on them, [balobi nini](https://github.com/espoirMur/balobi_nini) , [nzembo](https://github.com/kisanola/nzembo)
+### My Projects
+I also have two open-source projects I always hack on on Github. Feel free to have a look on them, [balobi nini](https://github.com/espoirMur/balobi_nini), [nzembo](https://github.com/kisanola/nzembo)
 
-_Tech Stack_:
+_**Tech Stack**_:
 
-Python, NLTK , Django 
+Python, NLTK, Django, and soon VuesJs or React for frontend
 
-_How to contribute_:
+_**How to contribute**_:
 
-Reach out to me , I will tell you how you can contribute.
+Reach out to me, I will tell you how you can contribute.
 
 ### StackOverflow Questions
 
-[Put a tag for my reputation here]
+<a href="https://stackexchange.com/users/5957993"><img src="https://stackexchange.com/users/flair/5957993.png?theme=dark" width="208" height="58" alt="profile for Espoir Murhabazi on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Espoir Murhabazi on Stack Exchange, a network of free, community-driven Q&amp;A sites"></a>
 
-Another way of contributing to open  source is by answering questions on stack overflow , you will be surprise by amount of topic you can learn in a short period of time.  I have tried two years ago and I was surprised to the the amount of people I have helped on the platform and even today people are still coming back to me to ask one or 2 questions about the answers I put there a long time ago.
+Another way of contributing to open source is by answering questions on stack overflow. You will be surprised by the amount of topic you can learn in a short period. I tried two years ago, and I was surprised by the number of people I have helped on the platform. Even today, people are still coming back to me to ask one or 2 questions about the answers I put there a long time ago.
 
 _Tech Stack_:
 
-You decide and choose what is familiar to you . 
+You decide and choose what is familiar to you. 
 
 _How to contribute_:
 
-I know most of you have never seen the [stackOverflow](https://stackoverflow.com/) home page , this is the chance to go and see it . 
+I know most of you have never seen the [stackOverflow](https://stackoverflow.com/) home page, this is the chance to go and see it. 
 
-There are always beginner who are asking for help , you can filter question according to the language and tech stack you are familiar with and start providing help to people.
+There are always beginners who ask for help. You can filter new questions according to the language and tech stack you are familiar with and provide service to people.
 
-## How being drunk with pull requests and merge requests will help us ? 
+## How being drunk with pull requests and merge requests will help us? 
 
-We know that contributing to open source can play an instrumental role in your tech career, I could write a full blog post explaining the benefits of it but that is for next time . 
-And since we got a lot from the open source community , contributing to open sources is a good way to give back to the community. 
+We know that contributing to open source can play an instrumental role in your tech career. I could write a full blog post explaining its benefits, but that is for next time. 
+And since we got a lot from the open-source community, contributing to open sources is an excellent way to give back to the community. 
 
-“_YOU received free, give free._” (Matthew 10:8) 
+> “_YOU received free, give free._” _Matthew 10:8_
 
-## I have a venue which is not listed , how can I get people joining my stand? 
+## I have a not listed venue. How can I get people joining my stand? 
 
-If you have any other open source project you know a beginner may be interested in feel free to share it with us .
+If you have any other open-source project you know a beginner may be interested in, please share it with us.
 
-## I don't know how I can dress and how to drink , Can you give us some link to get started? 
+## I don’t know how to dress and how to drink. Can you give us some links to get started? 
 
 List resources people can use to get started :
 - https://dev.to/surajv/5-mistakes-that-can-be-avoided-as-a-beginner-in-foss-contribution-22gc
+
+
+
+
+
+
