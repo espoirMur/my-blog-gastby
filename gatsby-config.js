@@ -74,6 +74,15 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-matomo",
+      options: {
+        siteId: "1",
+        matomoUrl: "https://murhabazi.matomo.cloud",
+        siteUrl: "https://murhabazi.com",
+      },
+    },
+
+    {
       resolve: `gatsby-plugin-offline`,
       options: {
         precachePages: [`/blog/*`],

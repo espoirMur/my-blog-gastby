@@ -4,7 +4,6 @@ import "../../static/css/about.css"
 import { rhythm } from "../utils/typography"
 import myProfile from "../../content/assets/profile-pic.jpg"
 import SEO from "../components/seo"
-
 export default class AboutMe extends Component {
   render() {
     return (
@@ -64,11 +63,11 @@ export default class AboutMe extends Component {
                 </li>
               </ul>
               <p>
-                Checkout my email address:{" "}
+                Checkout{" "}
                 <a target="_blank" href="https://mailhide.io/e/kSXIE">
-                  https://mailhide.io/e/kSXIE
+                  my email{" "}
                 </a>
-                For any inquiry
+                address: For any inquiry
               </p>
             </div>
           </div>
