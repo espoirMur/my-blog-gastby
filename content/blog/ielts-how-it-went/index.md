@@ -25,7 +25,7 @@ It was a computer delivered IELTS, and was divided in two parts, the first one c
 
 The _**listening test**_ went smoothly as expected, beside some comprehension issues but I am sure I did well on this one. 
 
-Then came _**the reading**_, this was the most challenging part, but I managed to answer all questions in one hour. As usual, the gave us three texts ,the first one was about facial recognition, a topic I am familiar with due to my Machine Learning background, the second one was about Easter Island and it Stone statues and the third one was on coaster rollers.
+Then came _**the reading**_, this was the most challenging part, but I managed to answer all questions in one hour. As usual, they gave us three texts ,the first one was about facial recognition, a topic I am familiar with due to my Machine Learning background, the second one was about Easter Island and it Stone statues and the third one was on coaster rollers.
 
 At the end of the reading test , I took a toilet break for  3 minutes  and I resumed with the _**writing test.**_
 
