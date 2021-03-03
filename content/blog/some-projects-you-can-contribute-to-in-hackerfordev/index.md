@@ -1,6 +1,8 @@
 ---
 title: 'Hacktoberfest is almost there, Python developers here are some venues for parties.'
 date: '2020-09-17'
+published : True
+description: Open source projects you can contribute to for hacktoberfest.
 ---
 
 ![cover image](./images/festival.jpg)

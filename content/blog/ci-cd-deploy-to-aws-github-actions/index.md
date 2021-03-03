@@ -2,40 +2,37 @@
 title : Deploy a containerized python to AWS using Github Actions
 date : 2021-02-26T12:14:07
 description: Tutorial on how to build a ci/cd that use github actions to deploy a python to aws.
+published : False
 ---
-
 
 ## Deploy a containerized python to AWS using Github Actions
 
-Recently at work we decided to build a CI/CD pipeline to deploy our application directly to AWS . I had never worked with AWS and It was  the missing point on my cv to demonstrate that I have some devops skills . I decided to look for some tutorials online and I was not lucky to have what does what we need at work . I decided to write this guide by getting something working from various tutorials I found  online. 
-
+Recently at work we decided to build a CI/CD pipeline to deploy our application directly to AWS . I had never worked with AWS and it was  the missing point on my cv to demonstrate that I have some devops skills . I decided to look for some tutorials online and I was not lucky to have what does what we need at work . I decided to write this guide by getting something working from various tutorials I found  online. 
 ### What you will learn from this tutorial 
 - How to create an AWS architecture where you can deploy an python application
 - How to use Github Actions to deploy to that architecture
-- Some gotcha about deploying on AWS and how I a managed to solve them
-
-
+- Some gotcha about deploying on AWS and how I a managed to solve them. 
 ### Who is this tutorial for
 
-This tutorial is for everyone who is familiar with docker and have a python application with docker compose. 
+This tutorial is for middle level python developers who are familiar with docker and have a python application with docker-compose. 
 
 ### Which Application we will deploy 
 
 In this tutorial we will deploy a python application which has a celery worker, a celery scheduler and a redis database for task messaging and task queues. 
 
-I am not planning to talk about celery and task queue and how to use those framework but you can get start with it (here) and to get started with docker you can use this..(put the link here)
+I am not planning to talk about celery and task queue and how to use those framework but you can get start with them [here](https://medium.com/analytics-vidhya/python-celery-distributed-task-queue-demystified-for-beginners-to-professionals-part-1-b27030912fea) and to get started with docker you can use [this one](https://samwalpole.com/getting-started-with-docker) and [this one](https://adamtheautomator.com/docker-compose-tutorial/) to be familiar with docker compose.
 
 I will not touch to any popular python web framework  such Django, Flask or FastAPi but you can adapt this tutorial to them and I am sure it will work like a charm.
 
-My friends who write Php , Javascript or any other fancy language can also leverage this tutorial and adapt something to their language.
+My friends who write Php , Javascrpit or any other fancy language can also leverage this tutorial and adapt something to their language.
 
-The application skeleton can be downloaded from this link to get start (put the link here)
+The application skeleton can be downloaded from [this link](https://github.com/espoirMur/deploy_python_to_aws_github_actions) to get start.
 
-### Getting started with 
+### Getting started 
 
 To get start download a sample project we will be using by running the following command in your cmd, I hope you have git installed in your machine.
 
-`https://github.com/espoirMur/deploy_python_to_aws_github_actions.git`
+`git clone https://github.com/espoirMur/deploy_python_to_aws_github_actions.git`
 
 As you can see this is just a dummy project which run with run 4 docker containers.
 
@@ -43,23 +40,31 @@ You can follow the readme to get the project running for you.
 
 ### Creating the AWS Architecture
 
-Make sure you have created an AWS account and you have your credentials , the Key.
+Make sure you have created an AWS account and you have your credentials , the access key and the application secret.
 
 Most of the service used in this tutorial are available with an AWS free tier account. 
 
-We will be using this tutorial and follow the steps they gave us to create the archiecture we need :
+We will be using this tutorial and follow the steps they gave us to create the architecture we need :
 
 Basically those are the stack we need : 
+
+<p>
+    <img src="./images/aws_objects.png" alt>
+</p>
+ <p>
+    <em><a href="https://chintugudiya.org/focus-areas/tech-work/overview-deploying-glific-on-aws-ecs-fargate-with-cd-in-place/">
+    Source</a></em>
+</p>
 
 We will deploy our application using the AWS ECS Fragate launch type which will pull docker images from the Elastic Container Registry aka ECR.
 
 #### Why Fragate and not EC2?
 
-AWS provide us basically 2 account launch type which are the Fragate Launch type and the EC2. 
+AWS provide us basically two accounts launch type which are the Fragate Launch type and the EC2. 
 
 Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) Cloud. Using Amazon EC2 eliminates your need to invest in hardware up front, so you can develop and deploy applications faster. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage. With EC2 you don't need to care about hardware , everything hardware is managed by AWS. 
 
-AWS Fargate is a technology that you can use with Amazon ECS to run [containers](https://aws.amazon.com/what-are-containers) without having to manage servers or clusters of Amazon EC2 instances. . The advantages Fragate over EC2 is the fact that you don't have to configure, provision or scale clusters instance and care about virtual machine.
+AWS Fargate is a technology that you can use with Amazon ECS to run [containers](https://aws.amazon.com/what-are-containers) without having to manage servers or clusters of Amazon EC2 instances.The  advantages Fragate over EC2 is the fact that you don't have to configure, provision or scale clusters instance and care about virtual machine.
 
 
 In a nutshell : 
@@ -68,22 +73,25 @@ With a virtual machine, someone still has to manage the hardware, but with EC2 t
 
 With ECS on EC2, someone still has to manage the instances, but with ECS on Fargate that someone is AWS and you never even see the EC2 instances.
 
-ECS has a “launch type” of either EC2 (if you want to manage the instances yourself) or Fargate (if you want AWS to manage the instances).
-Source (https://www.reddit.com/r/aws/comments/dvl601/eli5_aws_fargate/f7ddkup?utm_source=share&utm_medium=web2x&context=3)
+ECS has a “launch type” of either EC2 (if you want to manage the instances yourself) or Fargate (if you want AWS to manage the instances). [Source](https://www.reddit.com/r/aws/comments/dvl601/eli5_aws_fargate/f7ddkup?utm_source=share&utm_medium=web2x&context=3). 
+
 Add cloud watch to check the logs 
 https://aws.amazon.com/blogs/containers/create-a-ci-cd-pipeline-for-amazon-ecs-with-github-actions-and-aws-codebuild-tests/
 
 ### The objects we need : 
 
+
 To deploy the application we need the following objects : A cluster, a service , a task definition  with container definition, cloud watch for logging , iam roles. 
+The bellow picture show how those AWS objects interacts with each other.
 
 Let us define some of those objects and then we will investigate how to create a stack having them using the Python cdk . 
 
-- __clutster__: It is a logical group of container instances that ECS can use for deploying Docker containers. It provides compute power to run application container instances.  In practise a container is usually attached to an AWS Instance. 
-- __service__: It enables us to run and maintain a specified number of instances of a task definition simultaneously in an Amazon ECS cluster. ie. It helps us run single or multiple containers all using the same Task Definition.
-- __task definition__: A task definition is a specification. You use it to define one or more containers (with image URIs) that you want to run together, along with other details such as environment variables, CPU/memory requirements, etc. The task definition doesn't actually run anything, its a description of how things will be set up when something does run. The task definition is similar to the docker-compose file. We will later use the docker compose file to generate a task definition. 
-- __task__ : A task is an actual thing that is running. ECS uses the task definition to run the task; it downloads the container images, configures the runtime environment based on other details in the task definition. You can run one or many tasks for any given task definition. Each running task is a set of one or more running containers - the containers in a task all run on the same instance.
-- __cloudwatch__: CloudWatch is a monitoring service , we are using it in this stack to get and visualize logs form the docker containners.
+- __A cluster__: It is a logical group of container instances that ECS can use for deploying Docker containers. It provides compute power to run application container instances.  In practise a container is usually attached to an AWS Instance. 
+- __A service__: It enables us to run and maintain a specified number of instances of a task definition simultaneously in an Amazon ECS cluster. ie. It helps us run single or multiple containers all using the same Task Definition.
+- __The task definition__: A task definition is a specification. You use it to define one or more containers (with image URIs) that you want to run together, along with other details such as environment variables, CPU/memory requirements, etc. The task definition doesn't actually run anything, its a description of how things will be set up when something does run. The task definition is similar to the docker-compose file. We will later use the docker compose file to generate a task definition. 
+- __A task__ : A task is an actual thing that is running. ECS uses the task definition to run the task; it downloads the container images, configures the runtime environment based on other details in the task definition. You can run one or many tasks for any given task definition. Each running task is a set of one or more running containers - the containers in a task all run on the same instance.
+- __cloudwatch__: CloudWatch is a monitoring service , we are using it in this stack to get and visualize logs form the docker containers.
+
 
 With all the objects describes we can now move to how to create the object using the python cdk. 
 
@@ -91,7 +99,12 @@ With all the objects describes we can now move to how to create the object using
 
 This picture will be describing what we need to run the application: 
 
-Here
+<p>
+    <img src="./images/aws_architecture.png" alt>
+</p>
+ <p>
+    <em>Our architecture and workflow in  a nutshell <em>
+</p>
 
 To build the infrastructure, we will be leverage the [AWS Cloud Development Kit (CDK)](https://aws.amazon.com/cdk/). If you are new to the CDK, see [Getting Started with the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html), it is  a simple and straigthforward to install. In this post, we will be using the CDK with Python 3.7.
 Another alternative to the cdk is to create the application via the aws console, however I found the cdk to be simplest approach because , I am a programmer and with the code we can have a full control on what we are creating .
@@ -252,12 +265,12 @@ task_definition = ecs.FargateTaskDefinition(self,  "ecs-devops-task-definition",
 And  the container : 
 
 ```
-container = task_definition.add_container(  "ecs-devops-sandbox", image=ecs.ContainerImage.from_registry("amazon/amazon-ecs-sample")  )
+container = task_definition.add_container("ecs-devops-sandbox", image=ecs.ContainerImage.from_registry("amazon/amazon-ecs-sample")  )
 ```
 
 In the code above, we are initially specifying the Task Definition to run with an example container from a public AWS sample registry. This sample container is replaced with our application container when our CI/CD pipeline updates the Task Definition. We are using the container from the sample registry to allow the Service to stabilize before any application container images are added to our ECR repository.
 
-With the task definition created we can attache a service that will be running it  . 
+With the task definition created we can attach a service that will be running it  . 
 
 ##### Creating the service : 
 
@@ -425,7 +438,7 @@ With the code created we can now run the following command to create our stack.
 
 If everything goes well you should have your stack created . As a results you will have a cluster , running a service that deploys a task definition , and a Cloudwatch log group create . 
 
-You can check your stack from the AWS console by naviguating to the following [link](https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false).
+You can check your stack from the AWS console by navigating to the following [link](https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false).
 
 You should be able to see something like this : 
 
@@ -448,12 +461,12 @@ The action on every push to the master branch will build  a docker image for our
 Here are a list of the github actions we will be using : 
 
 -   [Configure-aws-credentials](http://github.com/aws-actions/configure-aws-credentials) –This will help to  configure AWS credential and region environment variables for use in other GitHub Actions. 
--   [Amazon-ecr-login](http://github.com/aws-actions/amazon-ecr-login) – This will enable us to log in the local Docker client to one or more Amazon Elastic Container Registry (ECR) registries. After logging we can thereafore push our docker images to the registry. 
+-   [Amazon-ecr-login](http://github.com/aws-actions/amazon-ecr-login) – This will enable us to log in the local Docker client to one or more Amazon Elastic Container Registry (ECR) registries. After logging we can therefore push our docker images to the registry. 
 -   [Amazon ECS-render-task-definition](http://github.com/aws-actions/amazon-ecs-render-task-definition) – This will help us to render the docker image uri to the task definition.
 -   [Amazon ECS-deploy-task-definition](http://github.com/aws-actions/amazon-ecs-deploy-task-definition) – This is the action that does the real deploy for us. It will register the AWS task definition to ECS and then deploys it to an Amazon ECS service.
 - [Docker Buildx](https://github.com/docker/setup-buildx-action): This actions will help us to setup the most recent version of docker build , buildx which support caching. It is not mandotory if you don't need to use caching you can skip it . 
 
-#### Back To the Buisness : The code we want to deploy .
+#### Back To the Business : The code we want to deploy .
 
 Let go back to the project I introduced in the beginning and we will work from it. 
 From your command line move to the project directory : 
@@ -683,7 +696,7 @@ The output of this command is send to the file `.aws/task-definition.json` , if 
 ```
 
 What to note here , it all the services we have in the docker-compose file are now in the `containerDefinitions` sections of our task definition. 
-However that file is not yet full completed we will have to update it with other keys such as the network mode, the ressources, the execution role we created before, and the logging option for sending logs to Cloudwatch. Let go now and edit the file by adding the following. And we also need to remove the `link` key from each container definition. 
+However that file is not yet full completed we will have to update it with other keys such as the network mode, the resources, the execution role we created before, and the logging option for sending logs to Cloudwatch. Let go now and edit the file by adding the following. And we also need to remove the `link` key from each container definition. 
 
 ```
 "requiresCompatibilities":  [
