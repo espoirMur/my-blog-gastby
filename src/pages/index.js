@@ -26,40 +26,35 @@ export default class AboutMe extends Component {
               </div>
               <div style={{ clear: "both" }} class="subhead">
                 <p>
-                  Hey, Internet !! It's me Espoir Murhabazi, a Software Engineer
-                  from DRC! I am in a serious relationship with Python language,
-                  but I also write Javascript and sometimes Java. I greatly
-                  value clean and maintainable code, great software, but I know
-                  when I need to be a perfectionist and when it stands in the
-                  way of product delivery.
+                  Hello, My name is Espoir Murhabazi and I am a Software
+                  Engineer from the Democratic Republic of Congo (DRC)! I am in
+                  a serious relationship with the Python language, but I also
+                  write Javascript and sometimes Java. I greatly value clean,
+                  maintainable code and great software, but I know when I need
+                  to stop being a perfectionist and focus on product delivery.
                 </p>
                 <p>
                   I am also interested in Data Science and Machine Learning
                   especially Recommendations Engines, Natural Language
-                  Processing, and sometimes Neural Machine Translation.
+                  Processing and sometimes Neural Machine Translation.
                 </p>
                 <p>
                   When not coding, you can find me watching football and
-                  supporting ManCity, tweaking my FPL team, listening to
+                  supporting Manchester City, tweaking my FPL team, listening to
                   Congolese Music, helping people to learn about the Bible or
                   just spending time with my family!
                 </p>
               </div>
-              <p id="pright">
-                I love sharing my knowledge on , &nbsp;
-                <a href="https://stackoverflow.com/users/4683950/espoir-murhabazi">
-                  StackOverflow
-                </a>
-                , <a href="https://dev.to/espoir"> The PracticalDev </a>,{" "}
-                <a href="https://github.com/espoirMur"> Github </a> , and during
-                local meetups at different communities
-              </p>
               <ul>
-                <li>
-                  <a href="https://stackoverflow.com/questions/34818723/export-notebook-to-pdf-without-code/45029786#45029786">
-                    My best Answer on StackOverflow
-                  </a>
-                </li>
+                <a href="https://stackoverflow.com/users/4683950/espoir-murhabazi?theme=dark">
+                  <img
+                    src="https://stackoverflow.com/users/flair/4683950.png"
+                    width="208"
+                    height="58"
+                    alt="profile for Espoir Murhabazi at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
+                    title="profile for Espoir Murhabazi at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
+                  />
+                </a>
               </ul>
               <p>
                 Checkout{" "}
@@ -71,7 +66,8 @@ export default class AboutMe extends Component {
             </div>
           </div>
           <footer>
-            © {new Date().getFullYear()}, Build by Espy Mur Using Gastby
+            © {new Date().getFullYear()}, Build by Espy Mur Using
+            <a href="https://www.gatsbyjs.com/"> Gastby Js</a>
           </footer>
         </div>
       </main>
