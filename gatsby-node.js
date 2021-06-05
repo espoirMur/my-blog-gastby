@@ -50,7 +50,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
   createPage({
     path: `/blog`,
-    component: require.resolve("./src/components/blogIndex.js"),
+    component: require.resolve("./src/components/allPosts.js"),
   })
 }
 

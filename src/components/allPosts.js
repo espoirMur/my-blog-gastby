@@ -1,10 +1,10 @@
 import React, { Component } from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "./layout"
+import SEO from "./seo"
 import { rhythm } from "../utils/typography"
 
-class BlogIndex extends Component {
+class AllPosts extends Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -50,7 +50,7 @@ class BlogIndex extends Component {
   }
 }
 
-export default BlogIndex
+export default AllPosts
 
 export const pageQuery = graphql`
   query {

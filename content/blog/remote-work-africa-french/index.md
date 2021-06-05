@@ -1,7 +1,7 @@
 ---
 title: Quelques meilleurs conseils pour un travail efficace à distance, une réalité africaine
 date: "2020-03-26T22:12:03.284Z"
-description: "Conseils pour remote à distance en Afrique"
+description: "Conseils pour le travail à distance en Afrique"
 published : True
 ---
 
