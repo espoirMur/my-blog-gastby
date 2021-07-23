@@ -12,5 +12,4 @@ This site is still under construction , come back after few days you will see so
 - [x] Setup the domain and add SSL
 - [x] search engine opttimazation for the new website check [this](https://gregberge.com/blog/gatsby-seo)
 - [x] integrate google ad-sense or anything to integrate ads
-
-- [] checkout this package to add comment to the blog https://utteranc.es/
+- [x] checkout this package to add comment to the blog https://utteranc.es/

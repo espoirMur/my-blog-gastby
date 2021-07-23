@@ -1,5 +1,5 @@
 ---
-title : My book recommendation to enhance your Soft Skills as a developer
+title : My books recommendations to enhance your Soft Skills as a developer
 date : "2021-06-05T14:57:09"
 description: Book recommendation for your soft skills as a developer
 published : True
