@@ -1,7 +1,7 @@
 ---
 title : Mots d'un grand frère  à ses petits frère qui debutent avec la programmation
 date : "2021-07-23T14:57:09"
-description: comment faire pour devenir un bon programmeur, developeur ou software engineer si vous etes encore a l'université
+description: comment faire pour devenir un bon programmeur, developeur ou software engineer si vous etes encore a l'université au Congo ou en Afrique
 published : True
 ---
 ![cover](./images/andela-guys.jpg)
@@ -132,6 +132,7 @@ Les langages viennent et partent. Mais ce concept est là depuis des années et 
 
 Le dernier conseil que je peux donner est de maîtriser au moins un langage de programmation et le reste viendra de soi-même. 
 
+## Allons nous y arriver? 
   
 
 Soyez sûr que vous  y arriverez, il y a de jeunes formé aux pays qui ont eu la chance d'émerger en tant que développeur au niveau international, la liste est longue, mais je peux citer ceux qui me viennent en tête.

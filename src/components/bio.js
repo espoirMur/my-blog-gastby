@@ -51,9 +51,8 @@ const Bio = () => {
         }}
       />{" "}
       <p>
-        Written by <strong> {author} </strong> , a Engineer from DRC{" "}
-        <span class="flag-icon flag-icon-cd"></span> who is currently living and
-        working in Rwanda <span class="flag-icon flag-icon-cd"> . </span>
+        Written by <strong> {author} </strong> , a Software Engineer from DRC 🇨🇩
+        lost in Data Science .🤪
       </p>
     </div>
   )
