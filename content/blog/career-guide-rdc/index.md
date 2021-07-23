@@ -1,12 +1,12 @@
 ---
 title : Mots d'un grand frère  à ses petits frère qui debutent avec la programmation
 date : "2021-07-23T14:57:09"
-description: comment faire pour devenir un bon programmeur, developeur ou software engineer si vous etes encore a l'université
+description: comment faire pour devenir un bon programmeur, developeur ou software engineer si vous etes encore a l'université au Congo ou en Afrique
 published : True
 ---
 ![cover](./images/andela-guys.jpg)
 
-_Caption : My crew , un groupe des developeur qui m’ont fait plaisir: [Kart Musingo](https://github.com/Karlmusingo): G3 ULPGL, [Hadad Bwenge](https://www.linkedin.com/in/hadad-bwenge-345ba7103) : , [Vicent Mutonmo](https://www.linkedin.com/in/glody-mutombo) (ULK), [Grace Lungu](https://rw.linkedin.com/in/grace-lungu-262306190) (East African University Kampala) among the best Engineer we had back in the days at Andela._
+_Caption : My crew , un groupe des developeur qui m’ont fait plaisir: [Karl Musingo](https://github.com/Karlmusingo): G3 ULPGL, [Hadad Bwenge](https://www.linkedin.com/in/hadad-bwenge-345ba7103) : , [Jean Vincent Mutombo](https://www.linkedin.com/in/glody-mutombo) (UTB - Gisenyi), [Grace Lungu](https://rw.linkedin.com/in/grace-lungu-262306190) (International University of East Africa Kampala) among the best Engineer we had back in the days at Andela._
 
 Je me rappelle il y a cinq ans, je finissais mes études universitaires et à l'époque je rêvais de travailler dans une soi-disant Startup, car je lisais sur les réseaux sociaux que les startups faisaient le buzz à Kigali. À l'époque Je n'avais rien à mettre sur mon CV, je n’avais même pas suffisamment de connaissances dans des langages de programmation, que ce soit en Java ou en aucun autre d’ailleurs, et Dieu merci, c’est avec ce peu de connaissances que j'ai débuté ma carrière en développement informatique, mais je présume que cela n'est pas le cas pour mes petits frères et sœurs qui sont en train de finir leurs études aujourd'hui : c'est la raison pour laqu­elle Je me suis décidé d'écrire cet article, pour aider ceux qui cherchent à se faire une carrière dans notre domaine.
 
@@ -132,6 +132,7 @@ Les langages viennent et partent. Mais ce concept est là depuis des années et 
 
 Le dernier conseil que je peux donner est de maîtriser au moins un langage de programmation et le reste viendra de soi-même. 
 
+## Allons nous y arriver? 
   
 
 Soyez sûr que vous  y arriverez, il y a de jeunes formé aux pays qui ont eu la chance d'émerger en tant que développeur au niveau international, la liste est longue, mais je peux citer ceux qui me viennent en tête.
