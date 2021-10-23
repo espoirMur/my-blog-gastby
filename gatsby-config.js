@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://www.murhabazi.com/`,
     social: {
       github: "espoirMur",
+      twitter: "esp_py",
     },
   },
   plugins: [
