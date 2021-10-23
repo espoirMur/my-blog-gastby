@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import Comments from "../components/comments"
+import Img from "gatsby-image"
 
 class BlogPostTemplate extends Component {
   render() {
@@ -39,6 +40,12 @@ class BlogPostTemplate extends Component {
               {post.frontmatter.date}{" "}
             </p>{" "}
           </header>{" "}
+          {post.frontmatter.featuredimage && (
+            <Img
+              fluid={post.frontmatter.featuredimage.src.childImageSharp.fluid}
+              alt={post.frontmatter.featuredimage.alt}
+            />
+          )}
           <section
             dangerouslySetInnerHTML={{
               __html: post.html,
@@ -106,6 +113,16 @@ export const pageQuery = graphql`
         title
         date(formatString: "DD MMMM, YYYY")
         description
+        featuredimage {
+          src {
+            childImageSharp {
+              fluid(maxWidth: 1024) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          alt
+        }
       }
     }
   }

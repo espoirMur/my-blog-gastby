@@ -1,9 +1,13 @@
 ---
-title :  How I break up with pip and fall in love with poetry my new girlfriend.
+title :  How I break up with pip and fall in love with poetry , my new girlfriend.
 date : 2021-10-17T15:33:42
 description: How to migrate a python project from pip to poetry 
 published : True
+featuredimage:
+  src: "./picture-pip-poetry.jpeg"
+  alt: "Migrating pip to poetry "
 ---
+
 
 I have recently stumbled across [poetry](https://python-poetry.org/) new dependency management for python and decided to give it a try.
 
@@ -27,12 +31,6 @@ If you work with python and install packages you should be familiar with `pip` m
   
 
 ## Why we should use poetry in lieu of pip?
-
-![](https://lh3.googleusercontent.com/WEae7StOBGmS6vkaiYroiIwEZWQ2c4DFa56RwhpuOLrzlJfMXlTfUxnpu299Xme-cRGZBdqA0HYUdVUQvduv3cwDSZHr8TMt6o4nwd4DmnWCRjco2xXlHndDSWn_rsQAPRM5saY=s0)
-
-  
-
-  
 
 After 2 weeks of usages and successful migration of five personal projects from `pip` to `poetry`, I can choose poetry because :
 

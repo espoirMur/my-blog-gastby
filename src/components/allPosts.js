@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "./layout"
 import SEO from "./seo"
 import { rhythm } from "../utils/typography"
+import Img from "gatsby-image"
 
 class AllPosts extends Component {
   render() {
@@ -15,6 +16,7 @@ class AllPosts extends Component {
         <SEO title="All posts" />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
+          const featuredimage = node.frontmatter.featuredimage
           return (
             <article key={node.fields.slug}>
               <header>
@@ -35,6 +37,12 @@ class AllPosts extends Component {
                 </h3>{" "}
                 <small> {node.frontmatter.date} </small>{" "}
               </header>{" "}
+              {featuredimage && (
+                <Img
+                  fluid={featuredimage.src.childImageSharp.fluid}
+                  alt={featuredimage.alt}
+                />
+              )}
               <section>
                 <p
                   dangerouslySetInnerHTML={{
@@ -73,6 +81,16 @@ export const pageQuery = graphql`
             date(formatString: "DD MMMM, YYYY")
             title
             description
+            featuredimage {
+              src {
+                childImageSharp {
+                  fluid(maxWidth: 1024) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              alt
+            }
           }
         }
       }
