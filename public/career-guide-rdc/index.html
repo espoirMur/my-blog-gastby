@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.75 'Merriweather','Georgia',serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.9);font-family:'Merriweather','Georgia',serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:Montserrat,sans-serif;font-weight:900;text-rendering:optimizeLegibility;font-size:2.5rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1.73286rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1.4427rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;letter-spacing:0.140625em;text-transform:uppercase;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:0.83255rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:0.75966rem;line-height:1.1;font-style:italic;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}ul{margin-left:1.75rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;list-style-position:outside;list-style-image:none;list-style:disc;}ol{margin-left:1.75rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:0.85rem;line-height:1.75rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:1rem;line-height:1.75rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}blockquote{margin-left:-1.75rem;margin-right:1.75rem;margin-top:0;padding-bottom:0;padding-left:1.42188rem;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:1.20112rem;line-height:1.75rem;color:hsla(0,0%,0%,0.59);font-style:italic;border-left:0.32813rem solid hsla(0,0%,0%,0.9);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.75rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:calc(1.75rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.75rem;margin-bottom:calc(1.75rem / 2);margin-top:calc(1.75rem / 2);}li > ul{margin-left:1.75rem;margin-bottom:calc(1.75rem / 2);margin-top:calc(1.75rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.75rem / 2);}code{font-size:0.85rem;line-height:1.75rem;}kbd{font-size:0.85rem;line-height:1.75rem;}samp{font-size:0.85rem;line-height:1.75rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.16667rem;padding-right:1.16667rem;padding-top:0.875rem;padding-bottom:calc(0.875rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}blockquote > :last-child{margin-bottom:0;}blockquote cite{font-size:1rem;line-height:1.75rem;color:hsla(0,0%,0%,0.9);font-weight:400;}blockquote cite:before{content:"— ";}ul,ol{margin-left:0;}@media only screen and (max-width:480px){ul,ol{margin-left:1.75rem;}blockquote{margin-left:-1.3125rem;margin-right:0;padding-left:0.98438rem;}}h1,h2,h3,h4,h5,h6{margin-top:3.5rem;}a{box-shadow:0 1px 0 0 currentColor;color:#007acc;text-decoration:none;}a:hover,a:active{box-shadow:none;}mark,ins{background:#007acc;color:white;padding:0.10938rem 0.21875rem;text-decoration:none;}a.gatsby-resp-image-link{box-shadow:none;}</style><style data-href="/styles.97afc20dac5d77442b76.css" id="gatsby-global-css">@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/static/montserrat-latin-100-191cc9f50f3b76b9617cb383f19acb7d.woff2) format("woff2"),url(/static/montserrat-latin-100-370318464551d5f25b0f0a78f374faac.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/static/montserrat-latin-100italic-bdeaeb79db315697bd173a55b097dc18.woff2) format("woff2"),url(/static/montserrat-latin-100italic-ecf7d49386e8f265878e735db34a7c4b.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/static/montserrat-latin-200-85d5ef9db7f2dc6979172a4a3b2c57cb.woff2) format("woff2"),url(/static/montserrat-latin-200-1fc98e126a3d152549240e6244d7e669.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/static/montserrat-latin-200italic-49095760a498d024fe1a85a078850df9.woff2) format("woff2"),url(/static/montserrat-latin-200italic-fe46cf8b9462c820457d3bf537e4057f.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/static/montserrat-latin-300-7c3daf12b706645b5d3710f863a4da04.woff2) format("woff2"),url(/static/montserrat-latin-300-8dc95fab9cf98d02ca8d76e97d3dff60.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/static/montserrat-latin-300italic-f20b178ca2024a5eac8e42e6649db86c.woff2) format("woff2"),url(/static/montserrat-latin-300italic-3fe16939288856e8e828fa2661bf2354.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/static/montserrat-latin-400-bc3aa95dca08f5fee5291e34959c27bc.woff2) format("woff2"),url(/static/montserrat-latin-400-8102c4838f9e3d08dad644290a9cb701.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/static/montserrat-latin-400italic-5cad650422a7184467af5a4d17b264c4.woff2) format("woff2"),url(/static/montserrat-latin-400italic-d191f22af3bb50902b99ac577f81a322.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/static/montserrat-latin-500-92d16e458625f4d2c8940f6bdca0ff09.woff2) format("woff2"),url(/static/montserrat-latin-500-8b763220218ffc11c57c84ddb80e7b26.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/static/montserrat-latin-500italic-47bfcca6b69d6a9acca7a8bff17193e2.woff2) format("woff2"),url(/static/montserrat-latin-500italic-72c01f753c3940c0b9cb6bf2389caddf.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/static/montserrat-latin-600-6fb1b5623e528e27c18658fecf5ee0ee.woff2) format("woff2"),url(/static/montserrat-latin-600-7c839d15a6f54e7025ba8c0c4b333e8f.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/static/montserrat-latin-600italic-60789af1c9338ed1a9546722ec54b4f7.woff2) format("woff2"),url(/static/montserrat-latin-600italic-f3d4de8d0afb19e777c79032ce828e3d.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/static/montserrat-latin-700-39d93cf678c740f9f6b2b1cfde34bee3.woff2) format("woff2"),url(/static/montserrat-latin-700-80f10bd382f0df1cd650fec59f3c9394.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/static/montserrat-latin-700italic-ba136d97b14e82284dd595e257f11c47.woff2) format("woff2"),url(/static/montserrat-latin-700italic-8c98142b425630821139c24bd1698700.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/static/montserrat-latin-800-b7018be9ed6cd94da8b6675b3a468c3b.woff2) format("woff2"),url(/static/montserrat-latin-800-9a9befcf50d64f9d2d19d8b1d1984add.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/static/montserrat-latin-800italic-540ffdd223d1a9ad3d4e678e1a23372e.woff2) format("woff2"),url(/static/montserrat-latin-800italic-897086f99f4e1f45e6b1e9368527d0bc.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/static/montserrat-latin-900-58cd789700850375b834e8b6776002eb.woff2) format("woff2"),url(/static/montserrat-latin-900-26d42c9428780e545a540bbb50c84bce.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/static/montserrat-latin-900italic-451157bc8861fe54f523b3669a3def71.woff2) format("woff2"),url(/static/montserrat-latin-900italic-a8ec4957e1c24f5793305763ad9845b3.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/static/merriweather-latin-300-b1158cfcd4aacb9d8fb61625e37af46a.woff2) format("woff2"),url(/static/merriweather-latin-300-cc7de05e166e90320d7d896e0f72a19d.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/static/merriweather-latin-300italic-8fe52a48089d6ebe46db0b8e7cc66263.woff2) format("woff2"),url(/static/merriweather-latin-300italic-e1331f5397c2a673f9d3765138debdb5.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/static/merriweather-latin-400-8276fdb72ae8f4714d4e6eba704cc39f.woff2) format("woff2"),url(/static/merriweather-latin-400-69f09800f4f6479d06e44eba837df872.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/static/merriweather-latin-400italic-3a9be9ea9f7aa4af6de7307df21d9fc0.woff2) format("woff2"),url(/static/merriweather-latin-400italic-d76079ed7541a433a54f79316de086e9.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/static/merriweather-latin-700-fa534be7ffa380e39a7f6e03bf9a5e03.woff2) format("woff2"),url(/static/merriweather-latin-700-ba56ea84b8084b7ff9677f50d3cd81bd.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/static/merriweather-latin-700italic-1ef5edaaa20ae53ea50399884c5e48c6.woff2) format("woff2"),url(/static/merriweather-latin-700italic-534bc9e7ce93c73d73426e46acd78092.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/static/merriweather-latin-900-7528fb70e8a4a82c7305e72ff43ac25f.woff2) format("woff2"),url(/static/merriweather-latin-900-3799b6e2f5ed3fcccf9d7a708d7419fa.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/static/merriweather-latin-900italic-e1b4d2aaa78e12ad84aaf8a56321e4c2.woff2) format("woff2"),url(/static/merriweather-latin-900italic-2ae22f731b3424e8dbb4b37f7ca6e708.woff) format("woff")}code[class*=language-],pre[class*=language-]{color:#000;text-shadow:0 1px #fff}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}code[class*=language-],pre[class*=language-]{color:#ccc;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}.navigation-links{text-align:right;text-decoration:none}.navigation-links li{color:#eee;display:inline-block;padding:10px 20px;border-radius:20px;transition:all .8s;text-decoration:none}.navigation-links li.active{text-decoration:underline}.navigation-links li:hover{color:#eee;cursor:pointer;text-decoration:underline}body{background-color:#22264a;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PHBhdHRlcm4gcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImMiIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMjAiIHg9IjAiIHk9IjAiIHZpZXdCb3g9IjAgMCA1IDEwIj48cGF0aCBmaWxsLW9wYWNpdHk9IjAiIHN0cm9rZT0iIzI5MjkyOSIgc3Ryb2tlLXdpZHRoPSIwLjA5IiBkPSJNLTIsMUw3LDEwTS0yLDZMNywxNU0tMiwtNEw3LDUiLz48L3BhdHRlcm4+PHBhdHRlcm4gcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImMyIiB3aWR0aD0iNjAiIGhlaWdodD0iMTIwIiB4PSIxMDAlIiB5PSIwIiB2aWV3Qm94PSIwIDAgNSAxMCI+PHBhdGggZmlsbC1vcGFjaXR5PSIwIiBzdHJva2U9IiMyOTI5MjkiIHN0cm9rZS13aWR0aD0iMC4wOSIgZD0iTTcsMUwtMiwxME03LDZMLTIsMTVNNywtNEwtMiw1Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iNTAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjYykiLz48cmVjdCB4PSI1MCUiIHdpZHRoPSI1MCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNjMikiLz48L3N2Zz4=");margin:0;padding:0;overflow-x:hidden;height:100%;font-family:Lato,Helvetica,arial,sans-serif;font-weight:300;font-size:20px;line-height:1.45;color:#eee;color:hsla(0,0%,100%,.85)}#container{padding-top:50px}#content{max-width:43em;padding:10px;margin:0 auto}.subhead{font-size:1.2em;font-weight:300;line-height:1.5}li,p{font-size:1.7em}a{box-shadow:none;font-weight:700;text-decoration:none;color:#fff}a:hover{text-decoration:underline}p#pleft,p#pright{max-width:20em;float:left}ul{clear:both}html{font-size:62.5%}body{font-size:1em}@media (min-width:600px){html{font-size:80%}}@media (min-width:880px){html{font-size:120%}li,p{font-size:1em}p#pright{margin-left:3em}}.my-details{display:flex;flex-direction:row;flex-wrap:wrap}.my-details img{flex-grow:0;flex-shrink:0;width:150px;height:140px;border-radius:50%;background-repeat:no-repeat;background-position:50%;background-size:cover;margin-left:auto;margin-top:5px;margin-bottom:5px}.my-name{padding-left:5px;font-size:4.8em;font-weight:100;text-transform:uppercase}@media (max-width:768px){.my-details img{margin-left:-245px}.my-name{margin-top:150px;margin-left:20px}}@media (max-width:560px){.my-details img{margin-left:-215px}}@media (max-width:320px){.my-details img{margin-left:-180px}.my-name{font-size:3.5em;margin-top:150px;margin-left:20px}}</style><meta name="generator" content="Gatsby 2.32.13"/><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=6f5c28f3f385f8446abf8df653ae506c" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=6f5c28f3f385f8446abf8df653ae506c"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=6f5c28f3f385f8446abf8df653ae506c"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=6f5c28f3f385f8446abf8df653ae506c"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=6f5c28f3f385f8446abf8df653ae506c"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=6f5c28f3f385f8446abf8df653ae506c"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=6f5c28f3f385f8446abf8df653ae506c"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=6f5c28f3f385f8446abf8df653ae506c"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=6f5c28f3f385f8446abf8df653ae506c"/><title data-react-helmet="true">Mots d&#x27;un grand frère  à ses petits frère qui debutent avec la programmation | My ideas&#x27; home</title><meta data-react-helmet="true" name="description" content="comment faire pour devenir un bon programmeur, developeur ou software engineer si vous etes encore a l&#x27;université au Congo ou en Afrique"/><meta data-react-helmet="true" property="og:title" content="Mots d&#x27;un grand frère  à ses petits frère qui debutent avec la programmation"/><meta data-react-helmet="true" property="og:description" content="comment faire pour devenir un bon programmeur, developeur ou software engineer si vous etes encore a l&#x27;université au Congo ou en Afrique"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Espoir Murhabazi"/><meta data-react-helmet="true" name="twitter:title" content="Mots d&#x27;un grand frère  à ses petits frère qui debutent avec la programmation"/><meta data-react-helmet="true" name="twitter:description" content="comment faire pour devenir un bon programmeur, developeur ou software engineer si vous etes encore a l&#x27;université au Congo ou en Afrique"/><script data-react-helmet="true" type="application/ld+json">{"@context":"https://murhabazi.com","@type":"Personal","url":"https://murhabazi.com","name":"Espoir Murhabazi Website","contactPoint":{"@type":"ContactPoint","telephone":"+250 78 48 3 48 36","contactType":"Personal number"}}</script><link rel="preconnect" href="https://murhabazi.matomo.cloud"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-230ae265b8c1d319c5ad.js"/><link as="script" rel="preload" href="/framework-741ade27086b2708e961.js"/><link as="script" rel="preload" href="/app-28bcea319a15943ce57e.js"/><link as="script" rel="preload" href="/styles-407fe62976dc5310c43e.js"/><link as="script" rel="preload" href="/6d1f278d2acccc4939497354e50b6854f5cc6066-e8a04bda63bb56d3cab8.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-03b1a1461fc525de4f18.js"/><link as="fetch" rel="preload" href="/page-data/career-guide-rdc/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/4211413508.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div style="margin-left:auto;margin-right:auto;max-width:42rem;padding:2.625rem 1.3125rem"><nav class="navigation"><div class="container"><ul class="navigation-links"><li> <a href="/">Home</a> </li><li> <a href="/blog">Blog</a> </li><li><a target="_blank" href="https://drive.google.com/file/d/14yle0nyGH_Kyk7L67nvqwl90FobvY7W0/view?usp=sharing" rel="noopener noreferrer">Resume</a></li></ul></div></nav><header><h3 style="font-family:Montserrat, sans-serif;margin-top:0"><a style="box-shadow:none;text-decoration:none;color:inherit" href="/blog">My ideas&#x27; home</a></h3></header><main><main></main> <article><header><h1 style="margin-top:1.75rem;margin-bottom:0">Mots d&#x27;un grand frère  à ses petits frère qui debutent avec la programmation<!-- --> </h1> <p style="font-size:0.83255rem;line-height:1.75rem;display:block;margin-bottom:1.75rem">23 July, 2021<!-- --> </p> </header> <section><p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4a4d4afe8a9774ac5c44584960b7b8b9/b17f8/andela-guys.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 66.89189189189189%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQD/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAZdq1SMVf//EABsQAAICAwEAAAAAAAAAAAAAAAECAxEABCET/9oACAEBAAEFAhTP0Z63kSLONqoi3D//xAAWEQEBAQAAAAAAAAAAAAAAAAAAERL/2gAIAQMBAT8Bsbf/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEv/aAAgBAgEBPwFL/8QAGxAAAgMAAwAAAAAAAAAAAAAAAQIAEBEhMUH/2gAIAQEABj8CWdUCRmeCaq8tX//EABsQAQACAwEBAAAAAAAAAAAAAAEAESExgZFB/9oACAEBAAE/IRgmsEVHZJTOnyUpPREQGpfnkool9n//2gAMAwEAAgADAAAAEBTf/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQARIf/aAAgBAwEBPxCBHNv/xAAXEQEBAQEAAAAAAAAAAAAAAAABACER/9oACAECAQE/EEHJDvL/xAAcEAEBAAMAAwEAAAAAAAAAAAABEQAhMUFRYdH/2gAIAQEAAT8QUIyFdkX8cAjyU0XuKqNNMo1iQH7hF3bLkhzseD3w9xN1D0j7zP/Z'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="cover"
+        title="cover"
+        src="/static/4a4d4afe8a9774ac5c44584960b7b8b9/1c72d/andela-guys.jpg"
+        srcset="/static/4a4d4afe8a9774ac5c44584960b7b8b9/a80bd/andela-guys.jpg 148w,
+/static/4a4d4afe8a9774ac5c44584960b7b8b9/1c91a/andela-guys.jpg 295w,
+/static/4a4d4afe8a9774ac5c44584960b7b8b9/1c72d/andela-guys.jpg 590w,
+/static/4a4d4afe8a9774ac5c44584960b7b8b9/a8a14/andela-guys.jpg 885w,
+/static/4a4d4afe8a9774ac5c44584960b7b8b9/fbd2c/andela-guys.jpg 1180w,
+/static/4a4d4afe8a9774ac5c44584960b7b8b9/b17f8/andela-guys.jpg 1600w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><em>Caption : My crew , un groupe des developeur qui m’ont fait plaisir: <a href="https://github.com/Karlmusingo">Karl Musingo</a>: G3 ULPGL, <a href="https://www.linkedin.com/in/hadad-bwenge-345ba7103">Hadad Bwenge</a> : , <a href="https://www.linkedin.com/in/glody-mutombo">Jean Vincent Mutombo</a> (UTB - Gisenyi), <a href="https://rw.linkedin.com/in/grace-lungu-262306190">Grace Lungu</a> (International University of East Africa Kampala) among the best Engineer we had back in the days at Andela.</em></p>
+<p>Je me rappelle il y a cinq ans, je finissais mes études universitaires et à l’époque je rêvais de travailler dans une soi-disant Startup, car je lisais sur les réseaux sociaux que les startups faisaient le buzz à Kigali. À l’époque Je n’avais rien à mettre sur mon CV, je n’avais même pas suffisamment de connaissances dans des langages de programmation, que ce soit en Java ou en aucun autre d’ailleurs, et Dieu merci, c’est avec ce peu de connaissances que j’ai débuté ma carrière en développement informatique, mais je présume que cela n’est pas le cas pour mes petits frères et sœurs qui sont en train de finir leurs études aujourd’hui : c’est la raison pour laqu­elle Je me suis décidé d’écrire cet article, pour aider ceux qui cherchent à se faire une carrière dans notre domaine.</p>
+<p>Il sera structuré de la manière suivante :</p>
+<ul>
+<li>Que faire lorsqu’on est encore l’université ?</li>
+<li>Que  faire après ses études universitaires ?</li>
+<li>Que  faire après son premier travail ?</li>
+<li>Quel profil les entreprises recherchent parmi les candidats ?</li>
+</ul>
+<p>Bien que la plupart des conseils de cet article soient valables pour le domaine de l’informatique et de la programmation en particulier, certains d’entre eux sont également applicables pour n’importe quelle autre carrière.</p>
+<h2>First Thing First :</h2>
+<p>Pour vous rassurer j’aimerais vous dire une réalité fondamentale :</p>
+<p>Les entreprises ont besoin des personnels qualifiés,  de bons développeurs et ces derniers sont et resteront rares pour les jours  à venir. Une chose est sûre, soyez confiant, si vous êtes qualifié les entreprises vous chercheront. </p>
+<p>La grande question est comment se qualifier ?</p>
+<h2>L’Anglais Langage Par Excellence</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/9d19498892547da0f61f189cce881b02/0a47e/learn-english.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 116.89189189189189%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAIAAACEf/j0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFbklEQVQ4yxWQaU/aBwCH/99iSddWRUW5EcHihSIKgpRTBFGUUxFNUVsvRCfegvUucgrIKaBYQEVUVFpt12NOu3btsmRps2TZm2UfYS55XvzyJL83D8CrpzPoFDy+CIlCF2AKb0EiMcRa4piQ4uULN1j1Y1wSmU5CorAYXGkhrhiFwhYTylo5tYNINKDiUUVitqKVSSSWIVAYbBEegcbWUKudC+PR/sEDdW/MOMkRMGEIHA5fjkAUEaortEruIhI5X4gBZvNhWilDNynRDgpraiqQBcVwBKZZLLpK770zrl+bLL+/PpKpFHBUOQJZTuOyZx8LTDCoEYfRj4iBKTxuJQ8608Ecn241zMjY3DpwPprGIF/Gvd+SR98SyZtkgN/Cy8zC1reKfHNdPiTc+ACjH2+Z1SsBmZT1jEpYzgLPtdEdgeFAQMdrYLAbOU6d8kjUus/iHiwOKrs7xB2qiOFRDAL1EfHry6rVtfbhIRGAKMBJ5ezbvz0zx6xkxvZXPn28cPtX3p9ELjXaq4Wli13X8Un46/vzNJ0Zqir2eDT+4Eh/XxMKgweo5AoGgzw82GhvplooJXHX1D///p1MWq/PYy/UvZ8tttdh86cvL347iR5rOxPxhf3EksuhEUv4DQ0MYEQnnZpVTOtlSza1NaAJ7U5Fo0+Pf/Skw8a0VHEuEr/0r768Dp+8cRxcWpIXlmhiIRyb2U3od/f1gL6qdJ5UYqYRNusqvTTCjoSbHHnk5lVvMaoDefl+JDpEKo0rhTE+/VAh3Gqke5hVIS7FxyT5mdXAcm7es5w8ezY4mAGKFuCuZ/QXXeoQpuiLy50StbweGgrmQ2/lZ8PC19DObilh426GD5QbBOUEs3KAp1D4MwjMB4X5QNl7tLpr07oXV3TR2/vn8fFHs/mTyZzgcK+XFr+FQl/34tHqmg1QthcK9d9mh0CBZSjMAv1/+SGwzVzwuUR6OTqa6uyKEAj7DGZa1Xn5pO9MLk8g0acsdrCkxAIGeyEQNwTigkCAtWywNSfPmZ3nyAZ7svN8d+5t3cnwfPf9diXpsFl0ruw4rHu4dT87DgJH7oO8mTkboFx3Vo49K8cGygUWuTXz7OqVBsoij2JtpG6384MyllNM2xvrO+19/GZkLDHQ6W1jhVvoITnL0VzraKR4Wui2JppZQAG00zLdXNvcqvoHvdK1Pb9zboqlLM9PTc6BphC+xHMvMz7VHb+0hmMGd3DCFRi1bw1tBkb9odENzxOgoqKMTCH1D4lHphUnqe1NDvlqff3dRTw41/1X+kWSJ/jgdnz4cnFzdXLz9ux0Se+pq7Qv99Y3MmvJJACDxcvaG0b1Kt1U26uA57BZ8uth1LfjSR8F/4g8/8Vq+8nvunx/nD7beXd1dHOWMObm+spwE0OtReVEoKdHMLHQOTYmW8TA/PX1bt+qQqXq1QwE5/qtGaDbbM+n+9rUHRwuXzPQaHONTPbx1yH522U4g1YC9PQ1afqazGTiDk9gHO+uF/KwhYSHPHZ0fWarts5VgDOrBJIuBZXGU6raJsbks7MK67zagUY40QjgkYJjgOUfSOWvfn5pWFxIJlNrayanxx3dWImre9K6qTkJyx/xhoK7gxqdxWpJpyLRuNVk6HCUPgAmkehZaL5nbcq/FRwa1BhN1lTq3L7pim8+e2WxvbU5NqeHnb4NrXY8vB2xWO2rRvNOyGS2D6zpO4GBAkwrn0bnMOVyZYNASCRRGUxuHZtp109YmRwnT+iZH5coJSKRVCZvp1Dp5RVVTDb7cU+zflYF8BhkLB4Ph6MhMDgMgUIVFEGgqFJSpYJSMQ7KHb0L6ueSSQwyGAyDwtFIFAaNKYQhMFhcsaqN9x9SB26k+uVC1QAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="alt_text"
+        title="image_tooltip"
+        src="/static/9d19498892547da0f61f189cce881b02/fcda8/learn-english.png"
+        srcset="/static/9d19498892547da0f61f189cce881b02/12f09/learn-english.png 148w,
+/static/9d19498892547da0f61f189cce881b02/e4a3f/learn-english.png 295w,
+/static/9d19498892547da0f61f189cce881b02/fcda8/learn-english.png 590w,
+/static/9d19498892547da0f61f189cce881b02/0a47e/learn-english.png 600w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Avant tout, pour une bonne carrière en développement informatique, ou en informatique en général, pour l’amour du ciel, je le répète pour l’amour du Ciel : APPRENEZ L’ANGLAIS, APPRENEZ L’ANGLAIS, LEARN ENGLISH PEOPLE. </p>
+<p>Vous n’irez nulle part avec la langue Française en informatique. Même les Français et les Belges qui nous ont appris cette langue, utilisent l’anglais comme langue d’apprentissage de l’informatique. </p>
+<p>Que faire si vous n’êtes pas  à l’aise avec la langue de Shakespeare ? :</p>
+<p>Pour ceux qui ont eu la chance de faire de bonnes écoles secondaires comme moi, nous avons déjà une bonne base en anglais, c’est déjà un bon départ. </p>
+<p>Néanmoins, pour tout le monde, le mieux à faire c’est de chercher des clubs d’anglais et de les rejoindre. Là vous allez rencontrer des gens qui vont vous stimuler à apprendre et parler couramment l’anglais. Il y en a plein, presque dans toutes les universités du pays(RDC). </p>
+<p>À la limite, soyez à l’aise pour lire et comprendre un tutoriel en anglais. Le reste viendra avec un processus continu de pratique quotidienne. Personnellement cela m’a pris trois ans pour être à l’aise avec l’anglais. </p>
+<h2>Tirez profits de vos Cours à l’université</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a3688e776130151c12856d1199062d28/80c5b/please-graduate.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 66.89189189189189%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFAv/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAFVtTUrRJD/xAAZEAADAQEBAAAAAAAAAAAAAAABAgMAERL/2gAIAQEAAQUClMaCI+4gyk+IekZqHv8A/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAHBAAAQQDAQAAAAAAAAAAAAAAAAERMTICECFh/9oACAEBAAY/AhXxj0qgrcLTr//EABsQAAICAwEAAAAAAAAAAAAAAAERACEQMVFB/9oACAEBAAE/ISkT5NOWUGtolqN2Cw5FiOnH/wD/2gAMAwEAAgADAAAAEMw//8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8QR//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAgEBPxBtf//EABsQAQADAAMBAAAAAAAAAAAAAAEAETEhQZHR/9oACAEBAAE/EDwLYS2LtBa3fmZKoiCgqDJ6eDpF9rKzo3dh39n/2Q=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="alt_text"
+        title="image_tooltip"
+        src="/static/a3688e776130151c12856d1199062d28/1c72d/please-graduate.jpg"
+        srcset="/static/a3688e776130151c12856d1199062d28/a80bd/please-graduate.jpg 148w,
+/static/a3688e776130151c12856d1199062d28/1c91a/please-graduate.jpg 295w,
+/static/a3688e776130151c12856d1199062d28/1c72d/please-graduate.jpg 590w,
+/static/a3688e776130151c12856d1199062d28/a8a14/please-graduate.jpg 885w,
+/static/a3688e776130151c12856d1199062d28/fbd2c/please-graduate.jpg 1180w,
+/static/a3688e776130151c12856d1199062d28/80c5b/please-graduate.jpg 1999w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>On aura beau dire que nos programmes universitaires ne sont pas à jour, ou même qu’ils ne sont pas adaptés, mais ce sont ces mêmes programmes qui nous donnent une bonne base. Je suis toujours  reconnaissant pour les cours que j’ai appris à l’université en RDC.</p>
+<p>Mes cours d’Algorithmiques, de programmation orientée objet en Java, des bases des données en général, de génie logiciel, ont été une bonne fondation pour ma carrière en développement informatique. </p>
+<p>Et au-delà de ces cours, soyez curieux, ne vous limitez pas à apprendre pour avoir des pourcentages élevés ou pour vous limiter à passer un examen, lisez ici et là pour apprendre plus de ce que les autres apprennent. </p>
+<p>Plus le temps passera, plus vous serez surpris de ce que vous aurez appris. Défiez vos enseignants en allant au-delà de ce qui vous est transmis à l’université. </p>
+<p>Les cours vous permettront d’avoir ce qu’on appelle les <strong>hard skills</strong>, mais en plus de hard skills, une des compétences que j’ai acquis après l’université, ce sont les <strong>softs skills</strong>. </p>
+<h2>Les Softs Skills pour vous différencier</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/72a7fcd0455169e1b11616d3eccee94f/644c5/lukaku-team-work.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.08108108108109%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAgP/xAAVAQEBAAAAAAAAAAAAAAAAAAACBP/aAAwDAQACEAMQAAABhUEmy+BkNH//xAAaEAEAAgMBAAAAAAAAAAAAAAABAAIREyFC/9oACAEBAAEFAq8W+YnfIutn/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAEREiH/2gAIAQMBAT8Bi1DiP//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAECAQE/Aaf/xAAaEAACAgMAAAAAAAAAAAAAAAAAEQEgITFh/9oACAEBAAY/AjMNcNU//8QAGxAAAgMAAwAAAAAAAAAAAAAAAAERITFBUXH/2gAIAQEAAT8hotqUjyZtDRBTwdicRs//2gAMAwEAAgADAAAAENw//8QAFxEBAQEBAAAAAAAAAAAAAAAAAREAQf/aAAgBAwEBPxAAPubSb//EABcRAAMBAAAAAAAAAAAAAAAAAAABESH/2gAIAQIBAT8QbSms/8QAHBABAQACAwEBAAAAAAAAAAAAAREAITFBoXGR/9oACAEBAAE/EBdEXXmQXoBBNXjvlw1AKUTxvIXGxJ7iryBDRf3Eo+Z//9k='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="alt_text"
+        title="image_tooltip"
+        src="/static/72a7fcd0455169e1b11616d3eccee94f/1c72d/lukaku-team-work.jpg"
+        srcset="/static/72a7fcd0455169e1b11616d3eccee94f/a80bd/lukaku-team-work.jpg 148w,
+/static/72a7fcd0455169e1b11616d3eccee94f/1c91a/lukaku-team-work.jpg 295w,
+/static/72a7fcd0455169e1b11616d3eccee94f/1c72d/lukaku-team-work.jpg 590w,
+/static/72a7fcd0455169e1b11616d3eccee94f/a8a14/lukaku-team-work.jpg 885w,
+/static/72a7fcd0455169e1b11616d3eccee94f/fbd2c/lukaku-team-work.jpg 1180w,
+/static/72a7fcd0455169e1b11616d3eccee94f/644c5/lukaku-team-work.jpg 1440w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>En plus des cours à l’université, ne sous-estimer jamais les petits clubs qu’on a ici et là, que ça soit à l’église, à la fac ou au sein de la communauté en général.  Elles nous donnent ce qu’on appelle  dans le monde professionnel : le leadership, l’expérience et les soft skills. </p>
+<p>Au sein des organisations estudiantines et des clubs, vous acquérez les softs skills. C’est là où vous pouvez apprendre à travailler en équipe,  à communiquer,  à gérer les conflits ou à gérer toute sorte de personnalité. C’est le genre d’expérience qui vous sera très utile tout au long de votre vie. Apprenez aussi à être discipliné, ponctuel, à communiquer avec les clients, ces genres de petites qualités vous permettront de faire la différence dans un monde ou tout le monde semble les ignorer.  </p>
+<p>Avez-vous eu l’occasion de devenir chef de promotion ? Membre du gouvernement estudiantin ? Ne ratez jamais ces genres d’occasions. Elles vous ajouteront quelques lignes à mettre sur votre CV. </p>
+<h2>Faites connaître votre travail.</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/23678e93b19d143799cde9f838ae6ef9/573d3/git-configurations.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 27.027027027027025%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA9klEQVQY012PwVLDMAxE+xNMSQKUxrHTtLEku+5AmmR6KMMw3Pn/T1lUhwNw2HnWaLWyVk3H4DRC0gQ5zfBxyPVNpiXUtld51O6f2oXmd61a5ceOsCWG4QDTC5yPmVYimhDQRJUX1J7RqMf2Ae6wsGZBI8qOlkDjCPaYsL4y1pNHNRA2Q0AxM4r3gPJN8PSVUF20HjzuZ0IxEh7OjOoj4u5TUFx0Rij/NgeaGDVQUJ7V+KLNUZSMUgdLDSkmysr9QRckwaMuKK8/nle9sue/J1s+wkmCU+7kBKtn13vtHQjPyu3tvadM24l61NtHbBLDjQm2lRz4DbyClo9Y/SFtAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="alt_text"
+        title="image_tooltip"
+        src="/static/23678e93b19d143799cde9f838ae6ef9/fcda8/git-configurations.png"
+        srcset="/static/23678e93b19d143799cde9f838ae6ef9/12f09/git-configurations.png 148w,
+/static/23678e93b19d143799cde9f838ae6ef9/e4a3f/git-configurations.png 295w,
+/static/23678e93b19d143799cde9f838ae6ef9/fcda8/git-configurations.png 590w,
+/static/23678e93b19d143799cde9f838ae6ef9/efc66/git-configurations.png 885w,
+/static/23678e93b19d143799cde9f838ae6ef9/c83ae/git-configurations.png 1180w,
+/static/23678e93b19d143799cde9f838ae6ef9/573d3/git-configurations.png 1650w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Une fois ces connaissances acquises, hard et soft skills, comment les gens sauront que vous les avez ? Travailler sur votre réputation en ligne.  Si vous n’avez pas un compte Github, s’il vous plait arrêtez de lire ce post et aller en créer un, puis revenez au post. </p>
+<p>Une fois que vous aurez un compte GitHub, que mettre sur celui-ci ? Si vous êtes encore à la fac, travailler sur un TFC ou un mémoire qui vous permettra d’apprendre des projets qui vous seront utiles. Apprenez des plus et soyez curieux, ajoutez tout ce qui vous vient en tête dans le projet. Éviter la paresse et le fait d’écrire un travail juste pour avoir des points. Vos travaux sont les premiers projets que vous présenterez  à vos employeurs. Ayez l’habitude de mettre n’importe quel projet sur lequel vous travaillez en ligne. </p>
+<p>C’est un système de gestion de la boutique de votre tante maternelle que vous avez conçu ? Postez-le, on ne sait jamais.</p>
+<h2>Soyez Curieux et Apprenez à Googler</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/390a20a83483aa9ba60ad444402acf0e/acb04/google-stuff.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 91.21621621621621%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAASABQDASIAAhEBAxEB/8QAGQABAQEAAwAAAAAAAAAAAAAAAAUCAQME/8QAGAEAAgMAAAAAAAAAAAAAAAAAAQIAAwT/2gAMAwEAAhADEAAAAaPZL0rWHmVNL5IdA7f/xAAbEAACAgMBAAAAAAAAAAAAAAABAgASAxARE//aAAgBAQABBQLqkioIM9KurFjYTLE1/8QAFxEBAAMAAAAAAAAAAAAAAAAAAQAQEv/aAAgBAwEBPwFJi//EABkRAAEFAAAAAAAAAAAAAAAAAAABAhASE//aAAgBAgEBPwGxoo2P/8QAHRAAAgIBBQAAAAAAAAAAAAAAAAERIQIQIjEyM//aAAgBAQAGPwJ7oPSzsUpJdHKEY6f/xAAcEAEAAgIDAQAAAAAAAAAAAAABABEhMRBBcfH/2gAIAQEAAT8hNCr3ZmZANoAZvFF7IRGwz600jIt3XH//2gAMAwEAAgADAAAAEDD3/v/EABgRAAIDAAAAAAAAAAAAAAAAAAABEDFR/9oACAEDAQE/EGqo4I//xAAZEQADAAMAAAAAAAAAAAAAAAAAAREQQWH/2gAIAQIBAT8QVKnI2x//xAAdEAEBAQACAgMAAAAAAAAAAAABEQAhMUGBUWGR/9oACAEBAAE/EBdXVoD9RplCgwsb6ywJ3uBuYUHnEvBNUci/Dz4dfr8GSMKKpfWJCvZfOQHg3//Z'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="alt_text"
+        title="image_tooltip"
+        src="/static/390a20a83483aa9ba60ad444402acf0e/1c72d/google-stuff.jpg"
+        srcset="/static/390a20a83483aa9ba60ad444402acf0e/a80bd/google-stuff.jpg 148w,
+/static/390a20a83483aa9ba60ad444402acf0e/1c91a/google-stuff.jpg 295w,
+/static/390a20a83483aa9ba60ad444402acf0e/1c72d/google-stuff.jpg 590w,
+/static/390a20a83483aa9ba60ad444402acf0e/acb04/google-stuff.jpg 750w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Soyez curieux et apprenez à poser des questions : Voulez vous apprendre quelque chose, une simple requête google peut vous faire tomber sur 2 ou 3 ressources utiles.   Je ne peux pas vous dire comment apprendre à être curieux, car je ne sais pas comment on le fait. </p>
+<h2>L’importance de la communauté  (Networking)</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/8002479762848654a85b01d09e6493e5/4b190/gdg-comunity.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 66.89189189189189%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIEAQP/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAGtHwoOYf/EABoQAAIDAQEAAAAAAAAAAAAAAAACARITAxT/2gAIAQEAAQUC9FTeBOkVzWTJBVrH/8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8Bh//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABkQAAMBAQEAAAAAAAAAAAAAAAABETEhcf/aAAgBAQAGPwKPT04itGER/8QAGRABAAIDAAAAAAAAAAAAAAAAAQARITFR/9oACAEBAAE/IUhm03eGG44KJF1FXsXDmBrQn//aAAwDAQACAAMAAAAQF9//xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQMBAT8Qpj//xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQIBAT8QEtv/xAAZEAEAAwEBAAAAAAAAAAAAAAABABEhQTH/2gAIAQEAAT8QtZVptNc8l5SFFAZ2Kz3TYn0AouGCSwlcqBLvET//2Q=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="alt_text"
+        title="image_tooltip"
+        src="/static/8002479762848654a85b01d09e6493e5/1c72d/gdg-comunity.jpg"
+        srcset="/static/8002479762848654a85b01d09e6493e5/a80bd/gdg-comunity.jpg 148w,
+/static/8002479762848654a85b01d09e6493e5/1c91a/gdg-comunity.jpg 295w,
+/static/8002479762848654a85b01d09e6493e5/1c72d/gdg-comunity.jpg 590w,
+/static/8002479762848654a85b01d09e6493e5/4b190/gdg-comunity.jpg 800w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Rejoignez les communautés locales ou virtuelles vous y apprendrez beaucoup. Créez  un compte Twitter et rejoignez des groupes de discussion. Mais éviter de passer trop de temps sur des réseaux sociaux lorsque vous travaillez, ce sont de grands bouffeurs de temps. </p>
+<p>Rejoignez Une communauté. Les communautés de développeurs existent partout dans le pays et vous pouvez les rejoindre gratuitement. À Lubumbashi, il y des mouvements tels que <a href="https://itot.africa/">ltot Africa</a>, ou DevsCast. À Goma nous avons<a href="https://uptodatedevelopers.com/"> Uptodate Developers</a> et autres. A Kinshasa nous avons <a href="https://www.kinshasadigital.com/">Kinshasa Digital Academy</a> et tant d’autres, récemment à Bukavu nous avons vu Google developer group, etc Nous avons <a href="https://www.abelmbula.com/">Abel Mbula</a> qui f­ait du bon travail à Kisangani.  Il y a aussi diverses communautés en ligne comme freeCodeCamp, <a href="https://dev.to/">dev.to</a>, Codenwebie.</p>
+<p>Ces genres de communautés offrent des opportunités de network, en les côtoyant, Dieu sait ce que vous pouvez avoir comme réseaux. Comme le dit un vieil adage swahili de chez nous, <strong>mutu ni batu</strong>, Une personne, c’est d’autres personnes.</p>
+<h2>Que cherchent les entreprises ?</h2>
+<p>Avec des profils en ligne, avec deux ou trois projets en ligne, que ce que les entreprises cherchent d’autre auprès des développeurs ? </p>
+<p>Les entreprises n’ont rien à faire de vos études, de vos projets, de vos connaissances. No one care, Je répète, ils s’en moquent. </p>
+<p>Ce qui les intéresse, c’est comment vos connaissances peuvent résoudre leurs problèmes. C’est  la chose fondamentale à savoir pour avoir une carrière dans ce domaine. Vous devez chercher à savoir les problèmes que les entreprises ont et leur dire comment vos connaissances leur seront utiles. C’est tout.</p>
+<h2>Quel langage de programmation Apprendre</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/8976e89470ffa143c144d1c4b8e79f79/6ed34/today-developers.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 104.05405405405406%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAVABQDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAIDBQEE/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB9UNWok6MakKgf//EABwQAAMAAgMBAAAAAAAAAAAAAAECAwQxABESFP/aAAgBAQABBQKjTXIsZSMugh17CmevvflMwuBeij//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAeEAACAgICAwAAAAAAAAAAAAAAAQIRITEDEiIyYf/aAAgBAQAGPwLq4yt/RXGTvOzx0MUZbaMnoipccWUpOj//xAAbEAEAAwEAAwAAAAAAAAAAAAABABEhMVGB8P/aAAgBAQABPyFYmwWY2GlH4kl0da3A89eQXlEogR0rZ8LKRD3CQ3hP/9oADAMBAAIAAwAAABBDxz3/xAAXEQADAQAAAAAAAAAAAAAAAAAAARAx/9oACAEDAQE/EK9P/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAEQMf/aAAgBAgEBPxCrD//EAB4QAQEAAgICAwAAAAAAAAAAAAERACExQVGBYXGh/9oACAEBAAE/EHB5GS9pdc4wOaHO/lwRDNCwu+feLM2GPOBEonuW4VIr04Qv64Qrh20e8h2VAjL9mf/Z'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="alt_text"
+        title="image_tooltip"
+        src="/static/8976e89470ffa143c144d1c4b8e79f79/1c72d/today-developers.jpg"
+        srcset="/static/8976e89470ffa143c144d1c4b8e79f79/a80bd/today-developers.jpg 148w,
+/static/8976e89470ffa143c144d1c4b8e79f79/1c91a/today-developers.jpg 295w,
+/static/8976e89470ffa143c144d1c4b8e79f79/1c72d/today-developers.jpg 590w,
+/static/8976e89470ffa143c144d1c4b8e79f79/a8a14/today-developers.jpg 885w,
+/static/8976e89470ffa143c144d1c4b8e79f79/fbd2c/today-developers.jpg 1180w,
+/static/8976e89470ffa143c144d1c4b8e79f79/6ed34/today-developers.jpg 1520w"
+        sizes="(max-width: 590px) 100vw, 590px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Je ne veux pas me mettre à faire un débat sur les langages dans ce poste ni même dire quel langage est meilleur que l’autre, c’est hors cadre.</p>
+<p>Une chose est sure, le concept de la logique programmation existe depuis toujours et ne changera jamais comme les Algorithmes et les structures des données, les bases du HTTP, les Bases des données ou le Génie logiciel. </p>
+<p>Les langages viennent et partent. Mais ce concept est là depuis des années et reste là. Un bon ouvrier est quelqu’un qui sait utiliser l’outil adapté au problème. Si vous voulez faire dans le développement web, apprenez le  Javascript c’est incontourna­ble, pour les data science le Python est le langage par excellence. </p>
+<p>Le dernier conseil que je peux donner est de maîtriser au moins un langage de programmation et le reste viendra de soi-même. </p>
+<h2>Allons nous y arriver?</h2>
+<p>Soyez sûr que vous  y arriverez, il y a de jeunes formé aux pays qui ont eu la chance d’émerger en tant que développeur au niveau international, la liste est longue, mais je peux citer ceux qui me viennent en tête.</p>
+<p><a href="https://cd.linkedin.com/in/davidkathoh">David Kathoh</a>, <a href="https://github.com/nkpremices">Premices Nzanzu</a>, <a href="https://github.com/pacyL2K19">Pacifique ​​LINJANJA </a> , <a href="https://ke.linkedin.com/in/makutano-lucien">Lucien Makutano</a>, <a href="https://rw.linkedin.com/in/benjamin-kafirongo-b8b290128">Benjamin Kafirongo,</a> my guy <a href="https://cd.linkedin.com/in/michael-rukamakama-07a45b186">Michael Rukamakama</a>, ma bande des gars de Kigali,  toute la bande des gars de Lushi (la liste est longue, mais ils font du bon travail), et tous les autres devs qui trouvent leurs noms dans <a href="https://commits.top/congo.html">le top 10 de la liste suivante</a>. Vous faites la fierté du pays.</p>
+<h2>Conclusion :</h2>
+<p>Pendant mes études universitaires je n’ai pas eu des professionnels expérimentés dans mon domaine pour me prodiguer ces genres des conseils, mais vous avez la chance de m’avoir moi. 🤪 j’espère que vous en tirerez profit. Si vous êtes à la fac et avez certaines astuces pour avoir une bonne carrière en programmation, faites nous savoir. S’il y a certains points avec lesquels vous n’êtes pas d’accord dans mon poste faite moi savoir. Si vous avez d’autres points à ajouter dans le blog, veuillez les partager en commentaire. </p>
+<p>Cheers 🤲🏼</p></section> <hr style="margin-bottom:1.75rem"/> <footer><div style="display:flex;margin-bottom:4.375rem"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px;margin-right:0.875rem;margin-bottom:0;min-width:50px;border-radius:100%"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAGAEAAwEBAAAAAAAAAAAAAAAAAgMEAAH/2gAMAwEAAhADEAAAAcSueotnguXB0sQTT//EABsQAAIDAAMAAAAAAAAAAAAAAAECAAMREjEy/9oACAEBAAEFAlGm2nikrB21yBE8w9//xAAXEQEAAwAAAAAAAAAAAAAAAAAQARFB/9oACAEDAQE/AYo0/8QAFxEBAAMAAAAAAAAAAAAAAAAAEAERQf/aAAgBAgEBPwGbMP/EABkQAAMAAwAAAAAAAAAAAAAAAAABERAgIf/aAAgBAQAGPwKCaxSca1//xAAaEAADAAMBAAAAAAAAAAAAAAAAAREQITFx/9oACAEBAAE/IYyKtiaF6uIK6j6SFsY5eDR0P//aAAwDAQACAAMAAAAQQAg9/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAExERD/2gAIAQMBAT8QfL28dih//8QAGREAAwADAAAAAAAAAAAAAAAAAAEREDFB/9oACAECAQE/EEpTHA9n/8QAGhABAQEBAQEBAAAAAAAAAAAAAREAIRAxkf/aAAgBAQABPxBnBEALkyRtz98K7OHXRETqeAlCRifpcQM4Dv/Z" alt="Espoir Murhabazi" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms;border-radius:50%"/><noscript><picture><source srcset="/static/8f987b034c85873917f3cecccdaa2d97/99438/profile-pic.jpg 1x,
+/static/8f987b034c85873917f3cecccdaa2d97/aba1d/profile-pic.jpg 1.5x,
+/static/8f987b034c85873917f3cecccdaa2d97/b315d/profile-pic.jpg 2x" /><img loading="lazy" width="50" height="50" srcset="/static/8f987b034c85873917f3cecccdaa2d97/99438/profile-pic.jpg 1x,
+/static/8f987b034c85873917f3cecccdaa2d97/aba1d/profile-pic.jpg 1.5x,
+/static/8f987b034c85873917f3cecccdaa2d97/b315d/profile-pic.jpg 2x" src="/static/8f987b034c85873917f3cecccdaa2d97/99438/profile-pic.jpg" alt="Espoir Murhabazi" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div> <p>Written by <strong> <!-- -->Espoir Murhabazi<!-- --> </strong> , a Software Engineer from DRC 🇨🇩 lost in Data Science .🤪</p></div></footer> </article><nav><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li> <a rel="prev" href="/book-recomendations/"> <!-- -->←<!-- -->My books recommendations to enhance your Soft Skills as a developer<!-- --> </a> </li> <li> <a rel="next" href="/migrate-pip-to-poetry/"> <!-- -->How I break up with pip and fall in love with poetry my new girlfriend.<!-- -->→<!-- --> </a> </li> </ul> </nav> <div class="comment-box-wrapper container pt-7"><h1 class="mb-0">Comments</h1><hr class="my-0"/><div class="comment-box"></div></div></main><footer>© <!-- -->2021<!-- -->, Build by Espy Mur</footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+    window.dev = undefined
+    if (window.dev === true || !(navigator.doNotTrack === '1' || window.doNotTrack === '1')) {
+      window._paq = window._paq || [];
+      
+      
+      
+      window._paq.push(['setTrackerUrl', 'https://murhabazi.matomo.cloud/piwik.php']);
+      window._paq.push(['setSiteId', '1']);
+      window._paq.push(['enableHeartBeatTimer']);
+      window.start = new Date();
+
+      (function() {
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://murhabazi.matomo.cloud/piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+
+      if (window.dev === true) {
+        console.debug('[Matomo] Tracking initialized')
+        console.debug('[Matomo] matomoUrl: https://murhabazi.matomo.cloud, siteId: 1')
+      }
+    }
+  </script><noscript><img src="https://murhabazi.matomo.cloud/piwik.php?idsite=1&rec=1&url=https://murhabazi.com/career-guide-rdc/" style="border:0" alt="tracker" /></noscript><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/career-guide-rdc/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-1a2e57782b1e35f1f124.js"],"app":["/app-28bcea319a15943ce57e.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-b0556ce5127c1a3e2490.js"],"component---src-components-all-posts-js":["/component---src-components-all-posts-js-96ec7570b85b78d71fdb.js"],"component---src-pages-404-js":["/component---src-pages-404-js-230ac0c288bf91c802c5.js"],"component---src-pages-index-js":["/component---src-pages-index-js-b452e752e3751b2a17fa.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-03b1a1461fc525de4f18.js"]};/*]]>*/</script><script src="/polyfill-1a2e57782b1e35f1f124.js" nomodule=""></script><script src="/component---src-templates-blog-post-js-03b1a1461fc525de4f18.js" async=""></script><script src="/6d1f278d2acccc4939497354e50b6854f5cc6066-e8a04bda63bb56d3cab8.js" async=""></script><script src="/styles-407fe62976dc5310c43e.js" async=""></script><script src="/app-28bcea319a15943ce57e.js" async=""></script><script src="/framework-741ade27086b2708e961.js" async=""></script><script src="/webpack-runtime-230ae265b8c1d319c5ad.js" async=""></script></body></html>
