@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-91286df2f8d135b9d7ec.js"
+    "url": "webpack-runtime-841ac652b90f54c0e8ff.js"
   },
   {
     "url": "styles.a4db3b62c6e54214f093.css"
@@ -36,30 +36,33 @@ self.__precacheManifest = [
     "url": "styles-407fe62976dc5310c43e.js"
   },
   {
-    "url": "framework-741ade27086b2708e961.js"
+    "url": "framework-6c3ead24af170cdcb87c.js"
   },
   {
-    "url": "app-28bcea319a15943ce57e.js"
+    "url": "app-e233e0db39f7dab29731.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "6cff9dc6b7404b4f207e138f58104c13"
+    "revision": "76743ebd6a189572bc1e0ac30e97ce37"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-b0556ce5127c1a3e2490.js"
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-ad6431e4664bcf916d19.js"
   },
   {
-    "url": "polyfill-1a2e57782b1e35f1f124.js"
+    "url": "polyfill-a0c75589a40cac95b858.js"
   },
   {
     "url": "6d1f278d2acccc4939497354e50b6854f5cc6066-e8a04bda63bb56d3cab8.js"
   },
   {
-    "url": "component---src-components-all-posts-js-96ec7570b85b78d71fdb.js"
+    "url": "54986d9b71de0723ded40ddc0a18c457affec658-d944a226f0f034365e73.js"
+  },
+  {
+    "url": "component---src-components-all-posts-js-2920e1cdf2a86f4922b8.js"
   },
   {
     "url": "page-data/blog/page-data.json",
-    "revision": "2d0c809ede6c61c9fe7db3301c520504"
+    "revision": "cf80977a3f6f7816f691602ad16eed41"
   },
   {
     "url": "page-data/sq/d/63159454.json",
@@ -67,7 +70,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "3faa5151baf341e7a356e2a4d7046855"
+    "revision": "b01bdbe28629dae1ff8399e2e1a89752"
   },
   {
     "url": "manifest.webmanifest",
@@ -163,7 +166,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-28bcea319a15943ce57e.js`))) {
+  if (!resources || !(await caches.match(`/app-e233e0db39f7dab29731.js`))) {
     return await fetch(event.request)
   }
 
