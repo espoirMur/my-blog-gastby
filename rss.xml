@@ -1,30 +1,162 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My ideas' home]]></title><description><![CDATA[Murhabazi Buzina Espoir Home on the internet]]></description><link>https://www.murhabazi.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 23 Jul 2021 18:32:36 GMT</lastBuildDate><item><title><![CDATA[Mots d'un grand frère  à ses petits frère qui debutent avec la programmation]]></title><description><![CDATA[Caption : My crew , un groupe des developeur qui m’ont fait plaisir: Karl Musingo: G3 ULPGL, Hadad Bwenge : , Jean Vincent Mutombo (UTB…]]></description><link>https://www.murhabazi.com/career-guide-rdc/</link><guid isPermaLink="false">https://www.murhabazi.com/career-guide-rdc/</guid><pubDate>Fri, 23 Jul 2021 12:57:09 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My ideas' home]]></title><description><![CDATA[Murhabazi Buzina Espoir Home on the internet]]></description><link>https://www.murhabazi.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 23 Oct 2021 11:34:21 GMT</lastBuildDate><item><title><![CDATA[How I break up with pip and fall in love with poetry my new girlfriend.]]></title><description><![CDATA[I have recently stumbled across poetry new dependency management for python and decided to give it a try. I have been a die hard fan of pip…]]></description><link>https://www.murhabazi.com/migrate-pip-to-poetry/</link><guid isPermaLink="false">https://www.murhabazi.com/migrate-pip-to-poetry/</guid><pubDate>Sun, 17 Oct 2021 15:33:42 GMT</pubDate><content:encoded>&lt;p&gt;I have recently stumbled across &lt;a href=&quot;https://python-poetry.org/&quot;&gt;poetry&lt;/a&gt; new dependency management for python and decided to give it a try.&lt;/p&gt;
+&lt;p&gt;I have been a die hard fan of pip and had used it in most of my projects before I discovered poetry. Furthermore, I had heard about pyenv in the past but was reluctant to use it in my projects for preference reasons. Since Python dependency management is an interesting topic, I would like to explain the difference in another article such as &lt;a href=&quot;https://github.com/pypa/pip&quot;&gt;pip&lt;/a&gt; vs &lt;a href=&quot;https://github.com/pyenv/pyenv&quot;&gt;pyenv&lt;/a&gt; vs &lt;a href=&quot;https://github.com/python-poetry/poetry&quot;&gt;petry&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;When I discovered poetry and tested it, I fell in love with it.&lt;/p&gt;
+&lt;h2&gt;What is poetry?&lt;/h2&gt;
+&lt;p&gt;Although I will be talking about girlfriends, falling in love , and breakups in this article, the poetry I am talking about is not about love, prose, poems, or Shakespeare.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Poetry is a tool for &lt;strong&gt;dependency management&lt;/strong&gt; and &lt;strong&gt;packaging&lt;/strong&gt; in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.&lt;/em&gt; It supports Python 2.7 and 3.5+&lt;/p&gt;
+&lt;p&gt;If you work with python and install packages you should be familiar with &lt;code class=&quot;language-text&quot;&gt;pip&lt;/code&gt; my old girlfriend.&lt;/p&gt;
+&lt;h2&gt;Why we should use poetry in lieu of pip?&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/WEae7StOBGmS6vkaiYroiIwEZWQ2c4DFa56RwhpuOLrzlJfMXlTfUxnpu299Xme-cRGZBdqA0HYUdVUQvduv3cwDSZHr8TMt6o4nwd4DmnWCRjco2xXlHndDSWn_rsQAPRM5saY=s0&quot;&gt;&lt;/p&gt;
+&lt;p&gt;After 2 weeks of usages and successful migration of five personal projects from &lt;code class=&quot;language-text&quot;&gt;pip&lt;/code&gt; to &lt;code class=&quot;language-text&quot;&gt;poetry&lt;/code&gt;, I can choose poetry because :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It has a good dependency resolver. It does the job better than PIP. Read the interesting article &lt;a href=&quot;https://www.activestate.com/resources/quick-reads/python-dependencies-everything-you-need-to-know/&quot;&gt;www.activestate.com&lt;/a&gt;. The author explicitly said&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Unfortunately, pip makes no attempt to resolve dependency conflicts. For example, if you install two packages, package A may require a different version of a dependency than package B requires.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;And another advantage I found is that anytime you add a new dependency to the project poetry update for you the &lt;code class=&quot;language-text&quot;&gt;pyproject.toml&lt;/code&gt; with the new top-level dependency, it, therefore, avoid you to do &lt;code class=&quot;language-text&quot;&gt;pip freeze&lt;/code&gt; to generate a new requirement file for your project.&lt;/li&gt;
+&lt;li&gt;You can use the same tool to build and publish your packages.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In my opinion, I think &lt;code class=&quot;language-text&quot;&gt;poetry&lt;/code&gt; outweigh &lt;code class=&quot;language-text&quot;&gt;pip&lt;/code&gt; in many aspects. It is like pip but on steroids&lt;/p&gt;
+&lt;p&gt;In the following sections, I will guide you on how to migrate an existing project from pip to poetry.&lt;/p&gt;
+&lt;h2&gt;Installing Poetry in your system&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://lh5.googleusercontent.com/prDFZYFCdhOvTIpSpv8fItqiZ3GHrHEypuEhY0J2IyORNHoOwd6JlneUEUEGlcE-yRR0xVGkOUlwIeDWc5DfSCMrpJqX5m_CQxcERZ2fUzLmmOeV-dF-OYUbMAAg0t0uvxhAN-o=s0&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Installing poetry is very straightforward, if you have python installed and &lt;code class=&quot;language-text&quot;&gt;curl&lt;/code&gt; you can easily install it by running :&lt;/p&gt;
+&lt;h4&gt;osx / linux / bashonwindows install instructions&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; python -&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;windows powershell install instructions&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py -UseBasicParsing&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;.Content &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; python -&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;: The previous &lt;code class=&quot;language-text&quot;&gt;get-poetry.py&lt;/code&gt; installer is now deprecated, if you are currently using it you should migrate to the new, supported, &lt;code class=&quot;language-text&quot;&gt;install-poetry.py&lt;/code&gt; installer.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The installer installs the &lt;code class=&quot;language-text&quot;&gt;poetry&lt;/code&gt; tool to Poetry’s &lt;code class=&quot;language-text&quot;&gt;bin&lt;/code&gt; directory. This location depends on your system:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;$HOME/.local/bin&lt;/code&gt; for Unix&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;%APPDATA%\Python\Scripts&lt;/code&gt; on Windows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If this directory is not on your &lt;code class=&quot;language-text&quot;&gt;PATH&lt;/code&gt;, you will need to add it manually if you want to invoke Poetry with simply &lt;code class=&quot;language-text&quot;&gt;poetry&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Alternatively, you can use the full path to &lt;code class=&quot;language-text&quot;&gt;poetry&lt;/code&gt; to use it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There is also another version of installing it with &lt;code class=&quot;language-text&quot;&gt;pip&lt;/code&gt; but why would you use your ex to attract your new girlfriend? 🤔🤪&lt;/p&gt;
+&lt;p&gt;Once everything is installed you can restart your terminal and run the following command to check the poetry version:&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;poetry --version&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If installation is unsuccessfully or encountering incompatibility issues. Please heads up to &lt;a href=&quot;https://github.com/python-poetry/poetry&quot;&gt;Github Poetry&lt;/a&gt; to get a help, to learn more or to fire an issue.&lt;/p&gt;
+&lt;h2&gt;The Migration&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://lh4.googleusercontent.com/S09PZBBBn_Q9Vx8vpxLNP67_9HmU-JEM50KpnZZaZavhqS3y2tzfDFuvHlL59CJo_UKhtRtYyWofhx5zlUtvUbk3yO5HHsMM4rqs6xH0fCKaGWZsjlBX7T3j_R0WdPjvf1gG3U0=s0&quot;&gt;&lt;/p&gt;
+&lt;h3&gt;Generate top-level dependencies&lt;/h3&gt;
+&lt;p&gt;Before moving to the next step you need to make sure you can generate the top-level dependencies for your project, to do that you will need a package called &lt;a href=&quot;https://pypi.org/project/pipdeptree/&quot;&gt;pipdeptree&lt;/a&gt; . For context, the top-level dependencies are the root of your dependencies tree. What is even the dependency tree? Each package you install using &lt;code class=&quot;language-text&quot;&gt;pip&lt;/code&gt; has the other dependencies that rely on it. And before installing a new package it installs his top-level dependencies. For example, pandas is a package but &lt;code class=&quot;language-text&quot;&gt;pandas&lt;/code&gt; depends on &lt;code class=&quot;language-text&quot;&gt;numpy&lt;/code&gt;, if you install pandas it install also numpy as a dependent.&lt;/p&gt;
+&lt;p&gt;The following command will generate only the top-level dependencies, so if you have installed pandas, it will just generate pandas and not numpy as a requirement.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Why is this important? :&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This should be filled&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;pipdeptree --warn silence | grep -E &apos;^\w+&apos; &gt; requirements-new.txt&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Once you have generated the top-level dependencies, I would suggest you deactivate your virtual environment and delete it to make the break-up complete before moving to the next steps.&lt;/p&gt;
+&lt;h3&gt;Adding poetry to an existing project.&lt;/h3&gt;
+&lt;p&gt;If you have a new project where you are using &lt;code class=&quot;language-text&quot;&gt;pip&lt;/code&gt; and have the &lt;code class=&quot;language-text&quot;&gt;requirements.txt&lt;/code&gt; file inside you can run the following command to initialize poetry in the project.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;poetry init&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This will prompt you to set up poetry to your existing project and asked you to give some details about your project such as the project name, the python version you want to use, and the description. It will consequently generate the &lt;code class=&quot;language-text&quot;&gt;pyproject.toml&lt;/code&gt; file which will contain all the details about your project as well as the top-level projects requirement and their versions.&lt;/p&gt;
+&lt;h3&gt;Creating virtual environment&lt;/h3&gt;
+&lt;p&gt;Poetry creates by default virtual environment in a folder called &lt;code class=&quot;language-text&quot;&gt;~/Library/Application Support/pypoetry&lt;/code&gt; but you can change those settings by using the following command :&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;poetry config virtualenvs.in-project true&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;After running that command you can run the following :&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;poetry shell&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It will activate the project’s virtual environment and create a new one if the project does not have one.&lt;/p&gt;
+&lt;h3&gt;Installing the requirements for your projects.&lt;/h3&gt;
+&lt;p&gt;If you have the &lt;code class=&quot;language-text&quot;&gt;requirements-news.txt&lt;/code&gt; file resulting from the command you run on the first step, you can install all the packages in that and their corresponding version by running the following command:&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;for item in $(sed -n &apos;s/==/@/p&apos; requirements-new.txt); do poetry add &quot;${item}&quot; ; done&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This will work only on Linux and Mac, still trying to find the exact version of it for Windows.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;What does that command do?
+I loop over every line of the &lt;code class=&quot;language-text&quot;&gt;requirement-new.txt&lt;/code&gt; file take the dependency, and just replace the &lt;code class=&quot;language-text&quot;&gt;==&lt;/code&gt; in the dependency with &lt;code class=&quot;language-text&quot;&gt;@&lt;/code&gt; and then add it with poetry.&lt;/p&gt;
+&lt;p&gt;If for example in the file you have pandas==1.1.1, it will install the following with poetry &lt;code class=&quot;language-text&quot;&gt;poetry add pandas@1.11&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;  If everything goes well you should have the all the top-level packages installed with their dependencies.&lt;/p&gt;
+&lt;p&gt;Once the command has successfully run and you have everything installed, you should check if your &lt;code class=&quot;language-text&quot;&gt;pyproject.toml&lt;/code&gt; file contains all the packages and their top-level dependencies.&lt;/p&gt;
+&lt;p&gt;You can now remove the old &lt;code class=&quot;language-text&quot;&gt;requirements.txt&lt;/code&gt; file and the newly create &lt;code class=&quot;language-text&quot;&gt;requirement-new.txt&lt;/code&gt;file by running.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;rm -f requirements.*&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;A section about using poetry with conda enviroment&lt;/h3&gt;
+&lt;p&gt;Some people like to have multiples girlfriend and may like to keep their old conda or pip environment. I haven’t tried this approach yet , but according to&lt;a href=&quot;https://github.com/python-poetry/poetry/issues/105#issuecomment-498042062&quot;&gt; this issue&lt;/a&gt; it is possible to use poetry to install packages in a python environment.&lt;/p&gt;
+&lt;p&gt;You just have to configure poetry to not create a virtual environment in a project and install your packages in the conda  or pip environment.&lt;/p&gt;
+&lt;p&gt;I think you can try it and let us know in comment how it goes.&lt;/p&gt;
+&lt;h3&gt;Bonus, the Dockerfile.&lt;/h3&gt;
+&lt;p&gt;If you have a dockerfile you can edit it and use the following docker images which use multi-stage build to install all your requirement with poetry.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;FROM python:3.7.5 AS base
+LABEL maintainer=&quot;Espoir Murhabazi &amp;lt; first_name.second_name[:3] on gmail.com&gt;&quot;
+
+ENV  PYTHONUNBUFFERED=1  \
+PYTHONDONTWRITEBYTECODE=1  \
+PIP_NO_CACHE_DIR=off  \
+PIP_DISABLE_PIP_VERSION_CHECK=on  \
+PIP_DEFAULT_TIMEOUT=100  \
+POETRY_HOME=&quot;/opt/poetry&quot;  \
+POETRY_VIRTUALENVS_IN_PROJECT=true  \
+POETRY_NO_INTERACTION=1  \
+PYSETUP_PATH=&quot;/opt/pysetup&quot;  \
+VENV_PATH=&quot;/opt/pysetup/.venv&quot;
+
+ENV  PATH=&quot;$POETRY_HOME/bin:$VENV_PATH/bin:$PATH&quot;
+
+FROM  base  AS  python-deps
+
+RUN  apt-get  update  \
+
+&amp;amp;&amp;amp;  apt-get  install  --no-install-recommends  -y  \
+
+curl  \
+
+build-essential
+# Install Poetry - respects $POETRY_VERSION &amp;amp; $POETRY_HOME
+ENV POETRY_VERSION=1.1.7
+
+RUN curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+WORKDIR $PYSETUP_PATH
+
+COPY ./poetry.lock ./pyproject.toml ./
+RUN poetry install --no-dev
+FROM base AS runtime
+COPY --from=python-deps $POETRY_HOME $POETRY_HOME
+COPY --from=python-deps $PYSETUP_PATH $PYSETUP_PATH
+RUN useradd -ms /bin/bash espy
+COPY . /home/espy
+WORKDIR /home/espy
+USER espy
+CMD [&quot; you command &quot;]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Basically, what the docker file does, it uses a multi-stage build to first install the packages in the first step and copy only the packages installed in the second as well as the project repository. One of the advantages of the multi-stage build is that it uses only the necessary files your project needs and therefore reduce the memory of your docker container.&lt;/p&gt;
+&lt;p&gt;You can learn more about multi-stage build using the &lt;a href=&quot;%5Bhttps://pythonspeed.com/articles/multi-stage-docker-python/%5D(https://pythonspeed.com/articles/multi-stage-docker-python/)&quot;&gt;following tutorial.&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;And the story of my break up comes to an end. As you may know, all separations are not smooth, sometimes the daemons of your old girlfriend come and start causing troubles in your new relationship. So if you find any issue during this break-up, feel free to let me know in the comment I will try to help you as much as I can 🤔.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Mots d'un grand frère  à ses petits frère qui debutent avec la programmation]]></title><description><![CDATA[Caption : My crew , un groupe des developeur qui m’ont fait plaisir: Karl Musingo: G3 ULPGL, Hadad Bwenge : , Jean Vincent Mutombo (UTB…]]></description><link>https://www.murhabazi.com/career-guide-rdc/</link><guid isPermaLink="false">https://www.murhabazi.com/career-guide-rdc/</guid><pubDate>Fri, 23 Jul 2021 12:57:09 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/4a4d4afe8a9774ac5c44584960b7b8b9/e735c/andela-guys.jpg&quot;
+    href=&quot;/static/4a4d4afe8a9774ac5c44584960b7b8b9/b17f8/andela-guys.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 66.6875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQD/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAZdq1SMVf//EABsQAAEFAQEAAAAAAAAAAAAAAAMAAQIRMQQT/9oACAEBAAEFAmqU8XraGOJ26qEn3//EABYRAQEBAAAAAAAAAAAAAAAAAAAREv/aAAgBAwEBPwGxt//EABURAQEAAAAAAAAAAAAAAAAAAAAS/9oACAECAQE/AUv/xAAcEAABBAMBAAAAAAAAAAAAAAACAAEQESExMkH/2gAIAQEABj8CFahn5rxlYjko/8QAHRABAAMAAQUAAAAAAAAAAAAAAQARMSFBUYGRof/aAAgBAQABPyEaVcEVTpJTnSdMjBKeRLQTJ7epUYn2f//aAAwDAQACAAMAAAAQFN//xAAXEQEBAQEAAAAAAAAAAAAAAAABABEh/9oACAEDAQE/EIEc2//EABcRAQADAAAAAAAAAAAAAAAAAAEAESH/2gAIAQIBAT8QociHan//xAAbEAEAAwEBAQEAAAAAAAAAAAABABEhMUFR0f/aAAgBAQABPxCkA1BUvF/GBx6VYX2LrONAkyXdXbRrutRVgOzycv07G+Gnyh95P//Z&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 66.89189189189189%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQD/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAZdq1SMVf//EABsQAAICAwEAAAAAAAAAAAAAAAECAxEABCET/9oACAEBAAEFAhTP0Z63kSLONqoi3D//xAAWEQEBAQAAAAAAAAAAAAAAAAAAERL/2gAIAQMBAT8Bsbf/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEv/aAAgBAgEBPwFL/8QAGxAAAgMAAwAAAAAAAAAAAAAAAQIAEBEhMUH/2gAIAQEABj8CWdUCRmeCaq8tX//EABsQAQACAwEBAAAAAAAAAAAAAAEAESExgZFB/9oACAEBAAE/IRgmsEVHZJTOnyUpPREQGpfnkool9n//2gAMAwEAAgADAAAAEBTf/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQARIf/aAAgBAwEBPxCBHNv/xAAXEQEBAQEAAAAAAAAAAAAAAAABACER/9oACAECAQE/EEHJDvL/xAAcEAEBAAMAAwEAAAAAAAAAAAABEQAhMUFRYdH/2gAIAQEAAT8QUIyFdkX8cAjyU0XuKqNNMo1iQH7hF3bLkhzseD3w9xN1D0j7zP/Z&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;cover&quot;
         title=&quot;cover&quot;
-        src=&quot;/static/4a4d4afe8a9774ac5c44584960b7b8b9/88218/andela-guys.jpg&quot;
-        srcset=&quot;/static/4a4d4afe8a9774ac5c44584960b7b8b9/7237a/andela-guys.jpg 148w,
-/static/4a4d4afe8a9774ac5c44584960b7b8b9/0cfdf/andela-guys.jpg 295w,
-/static/4a4d4afe8a9774ac5c44584960b7b8b9/88218/andela-guys.jpg 590w,
-/static/4a4d4afe8a9774ac5c44584960b7b8b9/77d57/andela-guys.jpg 885w,
-/static/4a4d4afe8a9774ac5c44584960b7b8b9/5a917/andela-guys.jpg 1180w,
-/static/4a4d4afe8a9774ac5c44584960b7b8b9/e735c/andela-guys.jpg 1600w&quot;
+        src=&quot;/static/4a4d4afe8a9774ac5c44584960b7b8b9/1c72d/andela-guys.jpg&quot;
+        srcset=&quot;/static/4a4d4afe8a9774ac5c44584960b7b8b9/a80bd/andela-guys.jpg 148w,
+/static/4a4d4afe8a9774ac5c44584960b7b8b9/1c91a/andela-guys.jpg 295w,
+/static/4a4d4afe8a9774ac5c44584960b7b8b9/1c72d/andela-guys.jpg 590w,
+/static/4a4d4afe8a9774ac5c44584960b7b8b9/a8a14/andela-guys.jpg 885w,
+/static/4a4d4afe8a9774ac5c44584960b7b8b9/fbd2c/andela-guys.jpg 1180w,
+/static/4a4d4afe8a9774ac5c44584960b7b8b9/b17f8/andela-guys.jpg 1600w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -46,29 +178,30 @@
 &lt;h2&gt;L’Anglais Langage Par Excellence&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/9d19498892547da0f61f189cce881b02/3f01f/learn-english.png&quot;
+    href=&quot;/static/9d19498892547da0f61f189cce881b02/0a47e/learn-english.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 116.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAIAAACEf/j0AAAACXBIWXMAAAsSAAALEgHS3X78AAAFcklEQVQ4yxWUWVNaBwCF73/o9KkZNcpyAUEuiyhxwQ0VUcQVUVEUDWrdFRCVgEKjgbJFEFEWkVVFAQETXKJRozHJpFEnJk1nMp30IdNO/0PtzPd6znwPZw7Q1FRVy2YU0HKwGXg8RIAIJByeRKPnz7SzAp1dHi7vcSuTXlmExZEJ5AcEEhWLI9GZxQPV9EcINDDCLOzsqh3sq2dVFafjiERyFjaDWFnN3HIuxKVT+6KJ44CFw2vEYMmkzFwMllJZV/aEX7mQhtSW5ALqNKSqvkQ516GUtzXWl+KgbEw6xG1r+fj64HZ988vm1p/vjjt6BBhcbnoGjd/XtthXY0lKWyjPm3vcDcjL8xdSkfN1RXIlb9HUL+zlIMCMwtL8uEPzec3zyeG6WDfVcKuTUggDkr4dSbsvBWZi0ebVnRr1Q6COy9Rzy03JMB2bZnNLIjG1SCTs7u/e+FW818rbrW1ImBRTs5NPDJrEpCD8U4qntcLqGDWZhD3COgCFhqobK3TcMmcKbKkqL7Kt/fufr5vbCx9OYq8mZTfWlfOI6/x17Pvl8QmTHeSzfNszPv90R2ctAkUCuM0VvDaWVNayJG5a6qiI+ua+ff9ydOq9Oo2eDY9+Mi1ehmy3X19dn4YT5sn90+XnBwsu97RY2j0u6QQUU7zHina1im809tpcYq9T5F8ei8b1ccNkgsWOFpQcGOV7CdNu7Nd4XBePaLYCM0G/IrI1Gw4qAR0R0hPwy5kEH4Xog3DP2psvVPK1PEq4lhVAY7ZoBX4Il+ho2S2nH3W0BUpoLjI+kE32kSF/JhHQI1EmBGhHgIGk+/H8wmu9IcpgblNzvyX2zoaG3soVARBzrTf+tRX6/vI0kkezJ6V44MgADHEHoAUxZhDtB9G+VNh2Hu3KZNqpr38zq/yytnZjNt+u2I6Fvb9pNLeP5z7bbKGiYvv9VC+I8iD/BzCC6GUQ7UaivCB6NRW2Sy877OyKVrG8aEwwm/q8rv6oU7BbURlNQzzLyfVDBCsC4UaCLiTouAvfOVvvtOGoFQTqrsKXdD9wL9lzLznWwDmVTLyZmT1o4KynIaII1HYa3A2DO+BINwy5koZYgSMBdU/tvLBG198w31u3OMIJzg36FQLbFDco7w+xaw5aeGFJl2uG7xVzPdNtK6JGu6jJPcFblfKWxznA8GTruIyv1A/I1D0bz1c2dw37h67Dy4BroiXR1OxNhb/Qy48+bCaOHZsRvd+ncqyOOdcVFrvIuDQAZEBkWlHBmLR9al74Yi/ozCTemC0nR+Ggefrfq+uXff03HtfHPy4/vN///ePbV6aFNTzOoeiu4lRBUBZAK6KNinlyw6BK0nphsZyplG/2d+z+1bOD4HuN9upuYV7bTiIY3Vk7PPa8Pd81UPAeEGWRtDDqqwCJuPmRtk8x2GBITrYy6YonooISRquA75B2Lfzw4yoc5Z/oZrdyiMSchwKGVidUyJqfPiBtgKB5iAP8PNosE7A8dPr+jNxqVvUMDDAYdTwB/2jDHuG1b1awFvuaJArp0JB0ZEw0pxp+ahxec83Y6FRnKhwYa2Jok1KejQwevTtRzCqPX5653f710LZPp4iJxGfzGlVrZSDsc9jdMvkvztW1i/ODWMy+tDRqZ5cCKiRmhkp8qlc4ne4J6aRMrgyFomqd9kXId75se221hayGJbt5WjYbCkfUGp1E+shp1y5axoyGQWCASqmuLcvOy69gVhWVlGVm5VIoObTSYlV/l5qUpafmGcd7qzns0jJmCb08i5pDplCzc/Lb22pm5d0Au7oUIpJwGQQ0FpeOw+MJlHQslFNc8LC8UAVHyVPgkkYGnV2OBLF3r5pxB0TA4ckZEKWLX/MfBbtuxkqOVu8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 116.89189189189189%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAIAAACEf/j0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFbklEQVQ4yxWQaU/aBwCH/99iSddWRUW5EcHihSIKgpRTBFGUUxFNUVsvRCfegvUucgrIKaBYQEVUVFpt12NOu3btsmRps2TZm2UfYS55XvzyJL83D8CrpzPoFDy+CIlCF2AKb0EiMcRa4piQ4uULN1j1Y1wSmU5CorAYXGkhrhiFwhYTylo5tYNINKDiUUVitqKVSSSWIVAYbBEegcbWUKudC+PR/sEDdW/MOMkRMGEIHA5fjkAUEaortEruIhI5X4gBZvNhWilDNynRDgpraiqQBcVwBKZZLLpK770zrl+bLL+/PpKpFHBUOQJZTuOyZx8LTDCoEYfRj4iBKTxuJQ8608Ecn241zMjY3DpwPprGIF/Gvd+SR98SyZtkgN/Cy8zC1reKfHNdPiTc+ACjH2+Z1SsBmZT1jEpYzgLPtdEdgeFAQMdrYLAbOU6d8kjUus/iHiwOKrs7xB2qiOFRDAL1EfHry6rVtfbhIRGAKMBJ5ezbvz0zx6xkxvZXPn28cPtX3p9ELjXaq4Wli13X8Un46/vzNJ0Zqir2eDT+4Eh/XxMKgweo5AoGgzw82GhvplooJXHX1D///p1MWq/PYy/UvZ8tttdh86cvL347iR5rOxPxhf3EksuhEUv4DQ0MYEQnnZpVTOtlSza1NaAJ7U5Fo0+Pf/Skw8a0VHEuEr/0r768Dp+8cRxcWpIXlmhiIRyb2U3od/f1gL6qdJ5UYqYRNusqvTTCjoSbHHnk5lVvMaoDefl+JDpEKo0rhTE+/VAh3Gqke5hVIS7FxyT5mdXAcm7es5w8ezY4mAGKFuCuZ/QXXeoQpuiLy50StbweGgrmQ2/lZ8PC19DObilh426GD5QbBOUEs3KAp1D4MwjMB4X5QNl7tLpr07oXV3TR2/vn8fFHs/mTyZzgcK+XFr+FQl/34tHqmg1QthcK9d9mh0CBZSjMAv1/+SGwzVzwuUR6OTqa6uyKEAj7DGZa1Xn5pO9MLk8g0acsdrCkxAIGeyEQNwTigkCAtWywNSfPmZ3nyAZ7svN8d+5t3cnwfPf9diXpsFl0ruw4rHu4dT87DgJH7oO8mTkboFx3Vo49K8cGygUWuTXz7OqVBsoij2JtpG6384MyllNM2xvrO+19/GZkLDHQ6W1jhVvoITnL0VzraKR4Wui2JppZQAG00zLdXNvcqvoHvdK1Pb9zboqlLM9PTc6BphC+xHMvMz7VHb+0hmMGd3DCFRi1bw1tBkb9odENzxOgoqKMTCH1D4lHphUnqe1NDvlqff3dRTw41/1X+kWSJ/jgdnz4cnFzdXLz9ux0Se+pq7Qv99Y3MmvJJACDxcvaG0b1Kt1U26uA57BZ8uth1LfjSR8F/4g8/8Vq+8nvunx/nD7beXd1dHOWMObm+spwE0OtReVEoKdHMLHQOTYmW8TA/PX1bt+qQqXq1QwE5/qtGaDbbM+n+9rUHRwuXzPQaHONTPbx1yH522U4g1YC9PQ1afqazGTiDk9gHO+uF/KwhYSHPHZ0fWarts5VgDOrBJIuBZXGU6raJsbks7MK67zagUY40QjgkYJjgOUfSOWvfn5pWFxIJlNrayanxx3dWImre9K6qTkJyx/xhoK7gxqdxWpJpyLRuNVk6HCUPgAmkehZaL5nbcq/FRwa1BhN1lTq3L7pim8+e2WxvbU5NqeHnb4NrXY8vB2xWO2rRvNOyGS2D6zpO4GBAkwrn0bnMOVyZYNASCRRGUxuHZtp109YmRwnT+iZH5coJSKRVCZvp1Dp5RVVTDb7cU+zflYF8BhkLB4Ph6MhMDgMgUIVFEGgqFJSpYJSMQ7KHb0L6ueSSQwyGAyDwtFIFAaNKYQhMFhcsaqN9x9SB26k+uVC1QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;alt_text&quot;
         title=&quot;image_tooltip&quot;
-        src=&quot;/static/9d19498892547da0f61f189cce881b02/799d3/learn-english.png&quot;
-        srcset=&quot;/static/9d19498892547da0f61f189cce881b02/00d96/learn-english.png 148w,
-/static/9d19498892547da0f61f189cce881b02/0b23c/learn-english.png 295w,
-/static/9d19498892547da0f61f189cce881b02/799d3/learn-english.png 590w,
-/static/9d19498892547da0f61f189cce881b02/3f01f/learn-english.png 600w&quot;
+        src=&quot;/static/9d19498892547da0f61f189cce881b02/fcda8/learn-english.png&quot;
+        srcset=&quot;/static/9d19498892547da0f61f189cce881b02/12f09/learn-english.png 148w,
+/static/9d19498892547da0f61f189cce881b02/e4a3f/learn-english.png 295w,
+/static/9d19498892547da0f61f189cce881b02/fcda8/learn-english.png 590w,
+/static/9d19498892547da0f61f189cce881b02/0a47e/learn-english.png 600w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -82,31 +215,32 @@
 &lt;h2&gt;Tirez profits de vos Cours à l’université&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/a3688e776130151c12856d1199062d28/2fc02/please-graduate.jpg&quot;
+    href=&quot;/static/a3688e776130151c12856d1199062d28/80c5b/please-graduate.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 66.68334167083543%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFAf/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAFRxTZWyUH/xAAZEAACAwEAAAAAAAAAAAAAAAACAwABERL/2gAIAQEAAQUCUqolYHMXUEr4R0JEy9//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAbEAABBAMAAAAAAAAAAAAAAAAAARExMgIQYf/aAAgBAQAGPwIV8Y6VQVi0zr//xAAaEAADAQADAAAAAAAAAAAAAAAAAREhEDFR/9oACAEBAAE/IWJR3Yqg6iwELI5jN+2tJ6+P/9oADAMBAAIAAwAAABCPP//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAEDAQE/EEf/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQIBAT8QbX//xAAcEAEAAgIDAQAAAAAAAAAAAAABABEhMUFRkdH/2gAIAQEAAT8QLQWkS2VclpzvzWolCwUYnRRjh7jXcyg4N7hn9n//2Q==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 66.89189189189189%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFAv/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAFVtTUrRJD/xAAZEAADAQEBAAAAAAAAAAAAAAABAgMAERL/2gAIAQEAAQUClMaCI+4gyk+IekZqHv8A/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAHBAAAQQDAQAAAAAAAAAAAAAAAAERMTICECFh/9oACAEBAAY/AhXxj0qgrcLTr//EABsQAAICAwEAAAAAAAAAAAAAAAERACEQMVFB/9oACAEBAAE/ISkT5NOWUGtolqN2Cw5FiOnH/wD/2gAMAwEAAgADAAAAEMw//8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8QR//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAgEBPxBtf//EABsQAQADAAMBAAAAAAAAAAAAAAEAETEhQZHR/9oACAEBAAE/EDwLYS2LtBa3fmZKoiCgqDJ6eDpF9rKzo3dh39n/2Q==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;alt_text&quot;
         title=&quot;image_tooltip&quot;
-        src=&quot;/static/a3688e776130151c12856d1199062d28/88218/please-graduate.jpg&quot;
-        srcset=&quot;/static/a3688e776130151c12856d1199062d28/7237a/please-graduate.jpg 148w,
-/static/a3688e776130151c12856d1199062d28/0cfdf/please-graduate.jpg 295w,
-/static/a3688e776130151c12856d1199062d28/88218/please-graduate.jpg 590w,
-/static/a3688e776130151c12856d1199062d28/77d57/please-graduate.jpg 885w,
-/static/a3688e776130151c12856d1199062d28/5a917/please-graduate.jpg 1180w,
-/static/a3688e776130151c12856d1199062d28/2fc02/please-graduate.jpg 1999w&quot;
+        src=&quot;/static/a3688e776130151c12856d1199062d28/1c72d/please-graduate.jpg&quot;
+        srcset=&quot;/static/a3688e776130151c12856d1199062d28/a80bd/please-graduate.jpg 148w,
+/static/a3688e776130151c12856d1199062d28/1c91a/please-graduate.jpg 295w,
+/static/a3688e776130151c12856d1199062d28/1c72d/please-graduate.jpg 590w,
+/static/a3688e776130151c12856d1199062d28/a8a14/please-graduate.jpg 885w,
+/static/a3688e776130151c12856d1199062d28/fbd2c/please-graduate.jpg 1180w,
+/static/a3688e776130151c12856d1199062d28/80c5b/please-graduate.jpg 1999w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -119,31 +253,32 @@
 &lt;h2&gt;Les Softs Skills pour vous différencier&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/72a7fcd0455169e1b11616d3eccee94f/e5be1/lukaku-team-work.jpg&quot;
+    href=&quot;/static/72a7fcd0455169e1b11616d3eccee94f/644c5/lukaku-team-work.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAgP/xAAVAQEBAAAAAAAAAAAAAAAAAAACBP/aAAwDAQACEAMQAAABhUEmi+JkNH//xAAaEAEAAgMBAAAAAAAAAAAAAAABAAIREyFC/9oACAEBAAEFAji3zE75LOtn/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAEREiH/2gAIAQMBAT8Bi1DiP//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAECAQE/Aaf/xAAaEAACAgMAAAAAAAAAAAAAAAAAEQEQITFh/9oACAEBAAY/AmZhrhqlX//EABsQAAMAAgMAAAAAAAAAAAAAAAABESExQVFx/9oACAEBAAE/IcVlUjwJLgbEK8HcsVg3P//aAAwDAQACAAMAAAAQ1D//xAAXEQEBAQEAAAAAAAAAAAAAAAABEQBB/9oACAEDAQE/EAA+5tJv/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERIf/aAAgBAgEBPxBtKaz/xAAdEAEBAAICAwEAAAAAAAAAAAABEQAhMUFRcZGh/9oACAEBAAE/EDcEXXnrGF1Wgp28d8uGoBS08byFRsSfuJiQQ0X7iY9Z/9k=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 56.08108108108109%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAgP/xAAVAQEBAAAAAAAAAAAAAAAAAAACBP/aAAwDAQACEAMQAAABhUEmy+BkNH//xAAaEAEAAgMBAAAAAAAAAAAAAAABAAIREyFC/9oACAEBAAEFAq8W+YnfIutn/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAEREiH/2gAIAQMBAT8Bi1DiP//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAECAQE/Aaf/xAAaEAACAgMAAAAAAAAAAAAAAAAAEQEgITFh/9oACAEBAAY/AjMNcNU//8QAGxAAAgMAAwAAAAAAAAAAAAAAAAERITFBUXH/2gAIAQEAAT8hotqUjyZtDRBTwdicRs//2gAMAwEAAgADAAAAENw//8QAFxEBAQEBAAAAAAAAAAAAAAAAAREAQf/aAAgBAwEBPxAAPubSb//EABcRAAMBAAAAAAAAAAAAAAAAAAABESH/2gAIAQIBAT8QbSms/8QAHBABAQACAwEBAAAAAAAAAAAAAREAITFBoXGR/9oACAEBAAE/EBdEXXmQXoBBNXjvlw1AKUTxvIXGxJ7iryBDRf3Eo+Z//9k=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;alt_text&quot;
         title=&quot;image_tooltip&quot;
-        src=&quot;/static/72a7fcd0455169e1b11616d3eccee94f/88218/lukaku-team-work.jpg&quot;
-        srcset=&quot;/static/72a7fcd0455169e1b11616d3eccee94f/7237a/lukaku-team-work.jpg 148w,
-/static/72a7fcd0455169e1b11616d3eccee94f/0cfdf/lukaku-team-work.jpg 295w,
-/static/72a7fcd0455169e1b11616d3eccee94f/88218/lukaku-team-work.jpg 590w,
-/static/72a7fcd0455169e1b11616d3eccee94f/77d57/lukaku-team-work.jpg 885w,
-/static/72a7fcd0455169e1b11616d3eccee94f/5a917/lukaku-team-work.jpg 1180w,
-/static/72a7fcd0455169e1b11616d3eccee94f/e5be1/lukaku-team-work.jpg 1440w&quot;
+        src=&quot;/static/72a7fcd0455169e1b11616d3eccee94f/1c72d/lukaku-team-work.jpg&quot;
+        srcset=&quot;/static/72a7fcd0455169e1b11616d3eccee94f/a80bd/lukaku-team-work.jpg 148w,
+/static/72a7fcd0455169e1b11616d3eccee94f/1c91a/lukaku-team-work.jpg 295w,
+/static/72a7fcd0455169e1b11616d3eccee94f/1c72d/lukaku-team-work.jpg 590w,
+/static/72a7fcd0455169e1b11616d3eccee94f/a8a14/lukaku-team-work.jpg 885w,
+/static/72a7fcd0455169e1b11616d3eccee94f/fbd2c/lukaku-team-work.jpg 1180w,
+/static/72a7fcd0455169e1b11616d3eccee94f/644c5/lukaku-team-work.jpg 1440w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -154,31 +289,32 @@
 &lt;h2&gt;Faites connaître votre travail.&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/23678e93b19d143799cde9f838ae6ef9/d947d/git-configurations.png&quot;
+    href=&quot;/static/23678e93b19d143799cde9f838ae6ef9/573d3/git-configurations.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 26.90909090909091%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA/0lEQVQY002Q63KCMBCFfYqWKiiVCHLJJhAQUMZOp47T333/dzk9idPLjzPZPdn9spuVKg20m6G7GeLOqO0Y8qabsC80XvPmV/t/cVDx5/lar1V2FOR1i0IcjmZA0XQoxZ8u+Kq2UBVVWmSVwYHegfGPFD1f4zkPYC7IbIvoKng5a8QnQTq0jA2SW4fko0P61SO+GGxGwfoiiEeD3WjD3fPdIr4apEJgTqAiUI09nu4GEYHrWSNZLBuZv1ELvZtlLIgI23jwRPA780/z8Ceurc0DGP6pIr13UK6HarmqG5CZlkWaL2tsee44QSqcRHOAil80DGGzLadVC/sKG1b+Bmzglm0KEShGAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 27.027027027027025%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA9klEQVQY012PwVLDMAxE+xNMSQKUxrHTtLEku+5AmmR6KMMw3Pn/T1lUhwNw2HnWaLWyVk3H4DRC0gQ5zfBxyPVNpiXUtld51O6f2oXmd61a5ceOsCWG4QDTC5yPmVYimhDQRJUX1J7RqMf2Ae6wsGZBI8qOlkDjCPaYsL4y1pNHNRA2Q0AxM4r3gPJN8PSVUF20HjzuZ0IxEh7OjOoj4u5TUFx0Rij/NgeaGDVQUJ7V+KLNUZSMUgdLDSkmysr9QRckwaMuKK8/nle9sue/J1s+wkmCU+7kBKtn13vtHQjPyu3tvadM24l61NtHbBLDjQm2lRz4DbyClo9Y/SFtAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;alt_text&quot;
         title=&quot;image_tooltip&quot;
-        src=&quot;/static/23678e93b19d143799cde9f838ae6ef9/799d3/git-configurations.png&quot;
-        srcset=&quot;/static/23678e93b19d143799cde9f838ae6ef9/00d96/git-configurations.png 148w,
-/static/23678e93b19d143799cde9f838ae6ef9/0b23c/git-configurations.png 295w,
-/static/23678e93b19d143799cde9f838ae6ef9/799d3/git-configurations.png 590w,
-/static/23678e93b19d143799cde9f838ae6ef9/2a3d6/git-configurations.png 885w,
-/static/23678e93b19d143799cde9f838ae6ef9/ae92f/git-configurations.png 1180w,
-/static/23678e93b19d143799cde9f838ae6ef9/d947d/git-configurations.png 1650w&quot;
+        src=&quot;/static/23678e93b19d143799cde9f838ae6ef9/fcda8/git-configurations.png&quot;
+        srcset=&quot;/static/23678e93b19d143799cde9f838ae6ef9/12f09/git-configurations.png 148w,
+/static/23678e93b19d143799cde9f838ae6ef9/e4a3f/git-configurations.png 295w,
+/static/23678e93b19d143799cde9f838ae6ef9/fcda8/git-configurations.png 590w,
+/static/23678e93b19d143799cde9f838ae6ef9/efc66/git-configurations.png 885w,
+/static/23678e93b19d143799cde9f838ae6ef9/c83ae/git-configurations.png 1180w,
+/static/23678e93b19d143799cde9f838ae6ef9/573d3/git-configurations.png 1650w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -189,29 +325,30 @@
 &lt;h2&gt;Soyez Curieux et Apprenez à Googler&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/390a20a83483aa9ba60ad444402acf0e/2a7f3/google-stuff.jpg&quot;
+    href=&quot;/static/390a20a83483aa9ba60ad444402acf0e/acb04/google-stuff.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 91.06666666666668%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAASABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUCAQT/xAAYAQACAwAAAAAAAAAAAAAAAAABAgADBP/aAAwDAQACEAMQAAABpbl6VrDzqml8Idg7f//EABsQAAICAwEAAAAAAAAAAAAAAAECABEDEBIh/9oACAEBAAEFArBbywYcnLK3RsTJF1//xAAXEQEAAwAAAAAAAAAAAAAAAAABABAS/9oACAEDAQE/AUmL/8QAGREAAQUAAAAAAAAAAAAAAAAAAAECEBET/9oACAECAQE/AbNFGx//xAAdEAACAgEFAAAAAAAAAAAAAAAAARARAiEiMTIz/9oACAEBAAY/Anvo9DuKlZb0OVGMf//EAB4QAAIBAwUAAAAAAAAAAAAAAAERACExQRBRYaHx/9oACAEBAAE/IcBHd0PcCMBZCm4BlzDPEIELAz3JYJWG0//aAAwDAQACAAMAAAAQcD/C/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQAxEP/aAAgBAwEBPxBTOXCL/8QAGREAAwADAAAAAAAAAAAAAAAAAAEREEFh/9oACAECAQE/EFapyNsf/8QAHhABAQACAgIDAAAAAAAAAAAAAREAIXGBMUFRodH/2gAIAQEAAT8QDleIi8Er6yVp4rR6uADYuoBrEdG3DGtHeLxQUedRy35M1U0rL1nySy33iA6Az//Z&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 91.21621621621621%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAASABQDASIAAhEBAxEB/8QAGQABAQEAAwAAAAAAAAAAAAAAAAUCAQME/8QAGAEAAgMAAAAAAAAAAAAAAAAAAQIAAwT/2gAMAwEAAhADEAAAAaPZL0rWHmVNL5IdA7f/xAAbEAACAgMBAAAAAAAAAAAAAAABAgASAxARE//aAAgBAQABBQLqkioIM9KurFjYTLE1/8QAFxEBAAMAAAAAAAAAAAAAAAAAAQAQEv/aAAgBAwEBPwFJi//EABkRAAEFAAAAAAAAAAAAAAAAAAABAhASE//aAAgBAgEBPwGxoo2P/8QAHRAAAgIBBQAAAAAAAAAAAAAAAAERIQIQIjEyM//aAAgBAQAGPwJ7oPSzsUpJdHKEY6f/xAAcEAEAAgIDAQAAAAAAAAAAAAABABEhMRBBcfH/2gAIAQEAAT8hNCr3ZmZANoAZvFF7IRGwz600jIt3XH//2gAMAwEAAgADAAAAEDD3/v/EABgRAAIDAAAAAAAAAAAAAAAAAAABEDFR/9oACAEDAQE/EGqo4I//xAAZEQADAAMAAAAAAAAAAAAAAAAAAREQQWH/2gAIAQIBAT8QVKnI2x//xAAdEAEBAQACAgMAAAAAAAAAAAABEQAhMUGBUWGR/9oACAEBAAE/EBdXVoD9RplCgwsb6ywJ3uBuYUHnEvBNUci/Dz4dfr8GSMKKpfWJCvZfOQHg3//Z&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;alt_text&quot;
         title=&quot;image_tooltip&quot;
-        src=&quot;/static/390a20a83483aa9ba60ad444402acf0e/88218/google-stuff.jpg&quot;
-        srcset=&quot;/static/390a20a83483aa9ba60ad444402acf0e/7237a/google-stuff.jpg 148w,
-/static/390a20a83483aa9ba60ad444402acf0e/0cfdf/google-stuff.jpg 295w,
-/static/390a20a83483aa9ba60ad444402acf0e/88218/google-stuff.jpg 590w,
-/static/390a20a83483aa9ba60ad444402acf0e/2a7f3/google-stuff.jpg 750w&quot;
+        src=&quot;/static/390a20a83483aa9ba60ad444402acf0e/1c72d/google-stuff.jpg&quot;
+        srcset=&quot;/static/390a20a83483aa9ba60ad444402acf0e/a80bd/google-stuff.jpg 148w,
+/static/390a20a83483aa9ba60ad444402acf0e/1c91a/google-stuff.jpg 295w,
+/static/390a20a83483aa9ba60ad444402acf0e/1c72d/google-stuff.jpg 590w,
+/static/390a20a83483aa9ba60ad444402acf0e/acb04/google-stuff.jpg 750w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -220,29 +357,30 @@
 &lt;h2&gt;L’importance de la communauté  (Networking)&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/8002479762848654a85b01d09e6493e5/f67cc/gdg-comunity.jpg&quot;
+    href=&quot;/static/8002479762848654a85b01d09e6493e5/4b190/gdg-comunity.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 66.75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIEAQP/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAGtHwpOQf/EABoQAAIDAQEAAAAAAAAAAAAAAAACARITAxT/2gAIAQEAAQUC9FTeBOkVzWTFBVrH/8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8Bh//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABkQAAMBAQEAAAAAAAAAAAAAAAABETEhcf/aAAgBAQAGPwKPT04mVowiP//EABoQAQEBAAMBAAAAAAAAAAAAAAERACExUYH/2gAIAQEAAT8hSPm1ZbRw3OCgy6FX3Kh5wdeG/9oADAMBAAIAAwAAABDEH//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAwEBPxCmP//EABYRAQEBAAAAAAAAAAAAAAAAAAEAEf/aAAgBAgEBPxAS2//EABoQAQADAQEBAAAAAAAAAAAAAAEAEUEhMVH/2gAIAQEAAT8QV2q+qazyYkhQHNisloXH/Qi9QgoWErKhBHxE/9k=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 66.89189189189189%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIEAQP/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAGtHwoOYf/EABoQAAIDAQEAAAAAAAAAAAAAAAACARITAxT/2gAIAQEAAQUC9FTeBOkVzWTJBVrH/8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8Bh//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABkQAAMBAQEAAAAAAAAAAAAAAAABETEhcf/aAAgBAQAGPwKPT04itGER/8QAGRABAAIDAAAAAAAAAAAAAAAAAQARITFR/9oACAEBAAE/IUhm03eGG44KJF1FXsXDmBrQn//aAAwDAQACAAMAAAAQF9//xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQMBAT8Qpj//xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQIBAT8QEtv/xAAZEAEAAwEBAAAAAAAAAAAAAAABABEhQTH/2gAIAQEAAT8QtZVptNc8l5SFFAZ2Kz3TYn0AouGCSwlcqBLvET//2Q==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;alt_text&quot;
         title=&quot;image_tooltip&quot;
-        src=&quot;/static/8002479762848654a85b01d09e6493e5/88218/gdg-comunity.jpg&quot;
-        srcset=&quot;/static/8002479762848654a85b01d09e6493e5/7237a/gdg-comunity.jpg 148w,
-/static/8002479762848654a85b01d09e6493e5/0cfdf/gdg-comunity.jpg 295w,
-/static/8002479762848654a85b01d09e6493e5/88218/gdg-comunity.jpg 590w,
-/static/8002479762848654a85b01d09e6493e5/f67cc/gdg-comunity.jpg 800w&quot;
+        src=&quot;/static/8002479762848654a85b01d09e6493e5/1c72d/gdg-comunity.jpg&quot;
+        srcset=&quot;/static/8002479762848654a85b01d09e6493e5/a80bd/gdg-comunity.jpg 148w,
+/static/8002479762848654a85b01d09e6493e5/1c91a/gdg-comunity.jpg 295w,
+/static/8002479762848654a85b01d09e6493e5/1c72d/gdg-comunity.jpg 590w,
+/static/8002479762848654a85b01d09e6493e5/4b190/gdg-comunity.jpg 800w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -257,31 +395,32 @@
 &lt;h2&gt;Quel langage de programmation Apprendre&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/8976e89470ffa143c144d1c4b8e79f79/a0da6/today-developers.jpg&quot;
+    href=&quot;/static/8976e89470ffa143c144d1c4b8e79f79/6ed34/today-developers.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 104.21052631578948%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAVABQDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAIDBQEE/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB9UdOok6MioKgf//EAB0QAAMAAgIDAAAAAAAAAAAAAAECAwASBBEUITH/2gAIAQEAAQUCq81vYzlkutCPWyqU+ee2U5m4F6KP/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAHxAAAgIABwEAAAAAAAAAAAAAAAECEQMQEiExMmGB/9oACAEBAAY/Aqanb9Fet36bX9GJS5ay6IqWEmUpM//EABsQAQADAQADAAAAAAAAAAAAAAEAESExQXHx/9oACAEBAAE/IbPjHMbH6e3JrPJ3VsTjviFBzIMKKytn0JiS9wmMdqf/2gAMAwEAAgADAAAAEPPIAf/EABcRAAMBAAAAAAAAAAAAAAAAAAABEDH/2gAIAQMBAT8Qr0//xAAXEQADAQAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EKsP/8QAHRABAQACAgMBAAAAAAAAAAAAAREAIWFxMUFRof/aAAgBAQABPxBIaBWl0GXnKVJZ5+Uw/H7rKD5xE6V7aMc4BNti3At1cEmtYKX9+bhQ9unTk8TjRl7HP//Z&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 104.05405405405406%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAVABQDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAIDBQEE/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB9UNWok6MakKgf//EABwQAAMAAgMBAAAAAAAAAAAAAAECAwQxABESFP/aAAgBAQABBQKjTXIsZSMugh17CmevvflMwuBeij//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAeEAACAgICAwAAAAAAAAAAAAAAAQIRITEDEiIyYf/aAAgBAQAGPwLq4yt/RXGTvOzx0MUZbaMnoipccWUpOj//xAAbEAEAAwEAAwAAAAAAAAAAAAABABEhMVGB8P/aAAgBAQABPyFYmwWY2GlH4kl0da3A89eQXlEogR0rZ8LKRD3CQ3hP/9oADAMBAAIAAwAAABBDxz3/xAAXEQADAQAAAAAAAAAAAAAAAAAAARAx/9oACAEDAQE/EK9P/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAEQMf/aAAgBAgEBPxCrD//EAB4QAQEAAgICAwAAAAAAAAAAAAERACExQVGBYXGh/9oACAEBAAE/EHB5GS9pdc4wOaHO/lwRDNCwu+feLM2GPOBEonuW4VIr04Qv64Qrh20e8h2VAjL9mf/Z&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;alt_text&quot;
         title=&quot;image_tooltip&quot;
-        src=&quot;/static/8976e89470ffa143c144d1c4b8e79f79/88218/today-developers.jpg&quot;
-        srcset=&quot;/static/8976e89470ffa143c144d1c4b8e79f79/7237a/today-developers.jpg 148w,
-/static/8976e89470ffa143c144d1c4b8e79f79/0cfdf/today-developers.jpg 295w,
-/static/8976e89470ffa143c144d1c4b8e79f79/88218/today-developers.jpg 590w,
-/static/8976e89470ffa143c144d1c4b8e79f79/77d57/today-developers.jpg 885w,
-/static/8976e89470ffa143c144d1c4b8e79f79/5a917/today-developers.jpg 1180w,
-/static/8976e89470ffa143c144d1c4b8e79f79/a0da6/today-developers.jpg 1520w&quot;
+        src=&quot;/static/8976e89470ffa143c144d1c4b8e79f79/1c72d/today-developers.jpg&quot;
+        srcset=&quot;/static/8976e89470ffa143c144d1c4b8e79f79/a80bd/today-developers.jpg 148w,
+/static/8976e89470ffa143c144d1c4b8e79f79/1c91a/today-developers.jpg 295w,
+/static/8976e89470ffa143c144d1c4b8e79f79/1c72d/today-developers.jpg 590w,
+/static/8976e89470ffa143c144d1c4b8e79f79/a8a14/today-developers.jpg 885w,
+/static/8976e89470ffa143c144d1c4b8e79f79/fbd2c/today-developers.jpg 1180w,
+/static/8976e89470ffa143c144d1c4b8e79f79/6ed34/today-developers.jpg 1520w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -297,24 +436,25 @@
 &lt;p&gt;Pendant mes études universitaires je n’ai pas eu des professionnels expérimentés dans mon domaine pour me prodiguer ces genres des conseils, mais vous avez la chance de m’avoir moi. 🤪 j’espère que vous en tirerez profit. Si vous êtes à la fac et avez certaines astuces pour avoir une bonne carrière en programmation, faites nous savoir. S’il y a certains points avec lesquels vous n’êtes pas d’accord dans mon poste faite moi savoir. Si vous avez d’autres points à ajouter dans le blog, veuillez les partager en commentaire. &lt;/p&gt;
 &lt;p&gt;Cheers 🤲🏼&lt;/p&gt;</content:encoded></item><item><title><![CDATA[My books recommendations to enhance your Soft Skills as a developer]]></title><description><![CDATA[Three years ago, I decided to part ways with my Facebook account, and I decided to replace the time spent on Facebook with reading…]]></description><link>https://www.murhabazi.com/book-recomendations/</link><guid isPermaLink="false">https://www.murhabazi.com/book-recomendations/</guid><pubDate>Sat, 05 Jun 2021 12:57:09 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 55.28052805280528%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAADCElEQVQozy2S/1PTdRzHP10Gg4EMxvgwtvZ9bGxsa9tnS9ZZ0gxDD+sERRnzNBAvQu2wXIig4F1RLlPQY5cgctLZtVKQbnjqaXYVl2Ve1+X1Q19+69949B7rh+e93j+8Xo97vp6vt2T3b0RjaKTK6ENT5xXyUKFvoKLWzXrZTVmNa63meySVkR39I8zeeUxmeZVLuYdMLa5y9sb3pLMPsAbiSBZPjDLZJSACUJsfdlEuIOU6F2qtU9R6iiqsrCt/lrDXRaI/xfTiPbJ3V5le+oGPs9+S/uo7RmeW0JqCSCbX86irxWBNPWoxnH/nVVJpQ+eIUlbXSENoM2dODzFzspvgCwmuXZ7j379+Z3blR9I3H3I+9wuHzy4glRqQjM4IJVX2AkRrL6jKhlq4NMVeQ/Y1M5Ge4u8nd2nauo/tjdv49bMrnB4bZ3/PEY4NT3B8IkPyrePItQ4kgz1McaWV0uoCqFRrE+4syI0vYYi0smlHLx+mP+D2/DH27urh1lSG+9cXeLGlg7g/RDKq0KWESETDJJuiSHX2IEUayxoor2KNGZXcgDn2OjpXjHjHAb6eH+HJQi8Pzo3z+NYSk/PXOLVwm1NXlunZ20enEqQjEqY9FEDSWwMidFMBJpxp9C7CrXuQ/c2YPZtIvTPAb18cJJfazcrY+3x07hN6JuY4KWBjn9/jjcMnaPF6aQkp1NRYBdAS4BlxwTKdHWmdjsF3Uzz6+Ru84VfpSvTx6PpRVi90kX1zgOynFzGE4vh3HmJ45gajV1fY9/YoMYeb5MYm3DYPkmzyUSSAT5XosbgV/vzjJ95LDdO2ZSfZ6UH+WTzA8mAvK5MXeaW1jWLZizbaRueJ84xfzbH/6DgBk5P2iMLuDRGkWrN/DSip9MzOZMgtf4kiPujWzW3cySRYHNrOkID3DxwSm5hQVRQytsf3MDJ3k4PDZ3DqLTR7fHRvUP7PcL1oFJdu70yiNMXRVNdTWunA53Fjt7lRaawiX/Nazvm+YmHgabWRl7uP0Dc2iVFnxmFwsu25IP8BHLCjcdJKjnwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 55.4054054054054%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAADBUlEQVQozy2S+0+TVxjHXzMBKxbaUoGWt9Dr25aCIC2lK3XDqDgmiG54wYI6Xanb4rbMTSBhKG71EsvF6xgXE8VoSdQM7FDnvEVlUwxuWZb9Nn9csn/is8PrfvjkOSc555Pv85wjKSvr0MllGORy9GYfOnMpuSZBoZecAg/afDdaUfXijLREZl30M8bvzjN88xfGZp5zdupX+m88YWhqlrJIM5KzPKJeyDUJQaFbRZUIso0ulgmW6B0syrbgdTrYumc/Z67fI3V3luHpWQauPeakIHH5DrK3FsleGlYvaguEYLmirhfQCEmetYoceQUWd4iDBz5n4psoNXVRzgye599XfzLx0zOS03MMpV/QNfIDWQYHktUTQiMWC5KleU40eY7XGJ1YahpZXr6aA11H+OfvpzS2xlnleodnw99x/vQp9sa/pKtvgJ7kGLHOYxSYFKRiJUiW3s5So5AY7EJmFy2WYHSHKQpuINy4k0OJo9y/0sOOLbuZPDrIXDpFfVMrEW8F7cEAUcGOGlFDQSSLEiBTZxXpHP/LrGSKtCXhZvI9tUK4i9ToYf662sGjwR5+m5li9PIVvr44w6EL03R8uJ9tgSq2Bv20+CuQZFcVmbnFQijSGWyidQe+uk2YVq7FrNQS/2gf85Mfc6+vlXRnLyMj59h7bIzDF9P0pe6zr+s463zlNASqMReKGcqOKjK0FvGaYpORz7a2Pfzx+1P8kSYam3fxOPUV8+PtTMZipMe/x7vqXZSmGN2jN+i9dItY93HCSilttSHKnD4ks61SCGUWL5PRiS/zcu4hg/391Ndt5sLAF7y6GedW9wfcTg7RGm0jK9+Lwb+BzZ1Jjkz8SEdPkkqbh01+P9tD1UhF9koyc4rVdN8mEjyf/Zk3q9fTsGYj6bPtPDjxPr3179F9sFN04VTPasSnL3l7i5ry08Q53LKLtzxltIUComXn6xlmCFq272TN+mZ0RgWt0cOKUg8VXh/ZuoXXt6kz1uhtZOVYeCO7iEhLnE9OjGAtcmE3OWioqOQ/lRSkRXWPzM0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;cover&quot;
         title=&quot;cover&quot;
-        src=&quot;/static/2ce50f942364c16af49567ce0016771f/799d3/cover.png&quot;
-        srcset=&quot;/static/2ce50f942364c16af49567ce0016771f/00d96/cover.png 148w,
-/static/2ce50f942364c16af49567ce0016771f/0b23c/cover.png 295w,
-/static/2ce50f942364c16af49567ce0016771f/799d3/cover.png 590w,
-/static/2ce50f942364c16af49567ce0016771f/2a3d6/cover.png 885w,
-/static/2ce50f942364c16af49567ce0016771f/ae92f/cover.png 1180w,
-/static/2ce50f942364c16af49567ce0016771f/0aa3a/cover.png 1212w&quot;
+        src=&quot;/static/2ce50f942364c16af49567ce0016771f/fcda8/cover.png&quot;
+        srcset=&quot;/static/2ce50f942364c16af49567ce0016771f/12f09/cover.png 148w,
+/static/2ce50f942364c16af49567ce0016771f/e4a3f/cover.png 295w,
+/static/2ce50f942364c16af49567ce0016771f/fcda8/cover.png 590w,
+/static/2ce50f942364c16af49567ce0016771f/efc66/cover.png 885w,
+/static/2ce50f942364c16af49567ce0016771f/c83ae/cover.png 1180w,
+/static/2ce50f942364c16af49567ce0016771f/bb051/cover.png 1212w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;
@@ -334,31 +474,32 @@ Three years ago, I decided to part ways with my Facebook account, and I decided 
 &lt;p&gt;&lt;em&gt;As you can see in the picture below :&lt;/em&gt;
 &lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/5d119b52bfe58a0227d4baf5181e0ec1/cb5f6/atomic_habits_effects.png&quot;
+    href=&quot;/static/5d119b52bfe58a0227d4baf5181e0ec1/393aa/atomic_habits_effects.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 69.2436974789916%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAABkUlEQVQ4y4WU226DMAyGef/XmrSb9WZbu1I6CbVQCFAE9MA5ePndpqUs6yxZSRz48tsOWPPlN8GklDQMA8+FENS2LV1s4Li87ulntGGtY21PZH1+rX8BgyC4AceAKWwaP54rMzAMwgfgWMX0AL2WfU9Le/0IhD9TaFKlxzRNKc2KO3D84n/AKaxpGhKhyqofyPpYOBwsy5JBRVHQZrOhruuepjiO73Y76pSADsDFyuUgAKfTiZV5W+9XDf+qJ0RADKxqerLmV+D0RKRhgmirqopClSZGfb3qViLl1U2h7O9N6VXXpoamAZBlGbtuoj6La/jy+kZxJMjzPPJ9nyIRkW3bdDgcOJWjGvf7PcVxzCNAgOJAiEBp4Jifq4as9/lKbXbke/4FGEU0m80YKkLBXw0AeEGrhjK9hkuJkkgq61bV8Prp1XXNjgdd172lBVUoAeqKA5EJ5ohhjbnjOHxtiuPZfA+h0NtuKVUwnW4SJ5QkCV/gPMt5xB5iyCqOI4qSVF0bw8/B1BBteZ4zwGSqJ/QDc5o94FuxQCAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 68.91891891891892%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAABjklEQVQ4y42T226DMAyG+/4v1l5Mu9jFtIlSxvkUoEUcQ4IXG7KmrEyzZEEC/mz/cQ6XrwDQpJQwzzO9J0lCa21S7cv1m/7HNL3XcwkH2/F/AcMw/AGagC1s3iRpOv4/oPYtxNzn4wjvn+dHoIbsVfhXdYzlUFT1HWiGBUGwC3xWbT8MkCYxjNMMh/PFW/pvGkjTFOq6Btd1dzWcnxwOdiSmCQYEXtyINkelwe12g77vwXO9Xxru6RlFEXRdT+t2EHegmXHbsgnRhonjOKbnWv8C1BqKzSnvzdug9KqqCsqyBCHEQzEDzuHL6xvkWUoQLD9TOlqWRYHobdtSMGMMiqIgGFaFHSBwUtqhS/VOc/hhOeqHjnQLfJ/aOB6PBMUEeGu6riM4BmI1COKc01pMYh05AXU7KA3Xq4dB6JjdcRw6IGqtKCHLMpoAhGNCfOo1Pm3bhkp1UTe9GhvHW3VYdMKsp9MJojCCPM8pACvVjmuWswUYJ7TnY2f4PcnvFeqrp4U3r6Jp1+uV/JlxdUbfKtA/GzlBbusAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;atomic habits effects&quot;
         title=&quot;atomic habits effects&quot;
-        src=&quot;/static/5d119b52bfe58a0227d4baf5181e0ec1/799d3/atomic_habits_effects.png&quot;
-        srcset=&quot;/static/5d119b52bfe58a0227d4baf5181e0ec1/00d96/atomic_habits_effects.png 148w,
-/static/5d119b52bfe58a0227d4baf5181e0ec1/0b23c/atomic_habits_effects.png 295w,
-/static/5d119b52bfe58a0227d4baf5181e0ec1/799d3/atomic_habits_effects.png 590w,
-/static/5d119b52bfe58a0227d4baf5181e0ec1/2a3d6/atomic_habits_effects.png 885w,
-/static/5d119b52bfe58a0227d4baf5181e0ec1/ae92f/atomic_habits_effects.png 1180w,
-/static/5d119b52bfe58a0227d4baf5181e0ec1/cb5f6/atomic_habits_effects.png 1190w&quot;
+        src=&quot;/static/5d119b52bfe58a0227d4baf5181e0ec1/fcda8/atomic_habits_effects.png&quot;
+        srcset=&quot;/static/5d119b52bfe58a0227d4baf5181e0ec1/12f09/atomic_habits_effects.png 148w,
+/static/5d119b52bfe58a0227d4baf5181e0ec1/e4a3f/atomic_habits_effects.png 295w,
+/static/5d119b52bfe58a0227d4baf5181e0ec1/fcda8/atomic_habits_effects.png 590w,
+/static/5d119b52bfe58a0227d4baf5181e0ec1/efc66/atomic_habits_effects.png 885w,
+/static/5d119b52bfe58a0227d4baf5181e0ec1/c83ae/atomic_habits_effects.png 1180w,
+/static/5d119b52bfe58a0227d4baf5181e0ec1/393aa/atomic_habits_effects.png 1190w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -373,31 +514,32 @@ Three years ago, I decided to part ways with my Facebook account, and I decided 
 &lt;p&gt;&lt;em&gt;The cone of learning&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/50473b9d729f28bc279a5691e89360cf/4bad3/cone_of_learnings.png&quot;
+    href=&quot;/static/50473b9d729f28bc279a5691e89360cf/a3767/cone_of_learnings.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 111.07438016528926%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAABYlAAAWJQFJUiTwAAAEjElEQVQ4y21VXVMbVRjOz/Gjeq8zdhyd8cYLPy7U8cIZRy8d66VtvbFXTq2tUy6UqoW0QCAJu/lONsl+JUXogBAIgZIQoEASCFnYsEu+k8d3TwBh6pl55pzNOe+z7/M+79nYfnx3DNdf+g03X/8DN197gOuvDOLWG0O4/6kLdz9w4Kf3HmPgczd+/cSJex+O495H4xj4zIVbbw7h+5d/x40rD3Dj1cE+rgzCdv9jN+5cteP21WH8zGY7Bt53YPQbP8auBTH0FY+HX/IY+zYAx3dBDH/tAfdDFH99weH2W3b88s5j3CVY85237bCVCwZMzcTW0jZ2VgvYXS2iVq3jeN9Eo9pC+6TL0DI6p2jjuGyiun+Mg20Nh8UjVGg+KlXRPGnBlpp9hqWFJaRmF7Ewm8L8zAI9p7GcyiA1n8LM30/7mH6K6alpLC4sIr2wjPTiMjuXTvVnC2srWdieZbYgxCIQogLiYhyxeAyiJCIeERH2h+GecMPj5uGd9LB1yB+EGJYgSRJkWYYk06zIECl2+/k2bFWtiWRShX3YjnHHOFwuF1RFhSISZBU8x2N4aBiP7I/YWpZkqPEEEiohkcDU1BQURUEqlUKv24NN1xo4qZmIRmMQBIHeKtELkpCiCuS4glAggjAh6A9BCEehSCpkQWGEqqpSXJSyE6FpGtADmVI8hjXSS2lIoswOKhKRxRSWqdvlxsjjEZYhN8mxfWvvjJDjOMzNzTGOdrsDW2lHZw/6oY6EnIQqJRjECEmj55ggwsv5GIRwjJ2RKEOLzJJsqalWq/8RVvYNbG7lUSqVkHySBMdziAgRKHEVEkm2pHp5HzxEGA5G+pKpHBaZZUgmk8HZ6HS6sO0VDTTqNUITh9ohZJItxSUWpIgKeHJ4+KEdD/8cQsAboKwT/QyJWCXT9COdzCAyyq7VoD7c3TXQI+ZmvUUzWC/FSaYVJMdlllUoEGazZYpML5EFldoqjpX0CrptK7bJyOpmA7bD8gkujmazyVrBkptQkwj4AxgdGSWMIRgIUe0sU1RWu5Pa5dhulyRrRNhqN0lyA61WG71eD/l8HpFAlIzwUiOHmFQf1fFsLdBeLpc7JemxGFZDyxS90kChsIMlaptsNsvIarUanihT8Hv8rIYWWdAXBOfi2G8JMYl6vc5ILLJLhBqT3KXGPESlUoGu99son8sjFovB4XBgcHAQQ3RbJpxO1sjZZ7lzsovjAuGLw9AN+ijMkBlh+Lw+8JM8IqEIfSRmoGv6eb03NzfPk2CEZzelQ251O310Wh3UjTrW1/KYGHGCd/IED5yjLuRWc8xNywArw3a7zdbnhNZNKRYKKO8fMGgHGt2aKmpEaBomy8rHe8kgD8vWODaIsH5O8oLknY0DZJaXsbG+weqWW8uisF2AeWSiRf2Vml+E28kxzM8tsH4zdfM8w4s4JSxji+qwV9zDXmkPpWIJlXIFxpHBgg/KBwiQw5bT1rrVJMKq+b91t0ht2+sVZDNr2Mo9x2Zui2FnYwfVcpX9FbRrbczTl3x25h9aU22P69D3+3t1o3EJpl7Dv4a95ypHJqDrAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 110.8108108108108%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAABYlAAAWJQFJUiTwAAAEj0lEQVQ4y3VUW28bRRT2TwFxe+YPIPHGO7SgCAmJV56QoClCquAFHngChbQpapsrdeJb4rXX9nqvdpykthMlTXNx4sTEaZzYrq/rXd/9cXZsglLByEcz65nzzfnO+c7YfvxwAXfenMB37z0gu4/xtyZx7/0/MDnmxG+3FvHLR3OY+GwJE2MOTNxewq8f2zH1hQs/fTCNb9+YwN13JzH+Dtnb1vw7bNNfBfFozIP7nyzhwS0Hpm47MfOlF867AlbuSXDeEbD4dRCe70Ws/CDD8U0I/p9VOMcFPPzUhUefe0a2zGZbMd9Ap93CRTqHfDaP3OklfXfQMtvo9/q4HgP6jT6bjRaMuoFqsQq9qtNcg17W6cgAtkRsD/H1OBJrScTX4ni2SkZzPJZATFtDOChCDEoQQxKEQBhRdRXx1QQSG8kbFl9P4PnWLmyZdB6CGALn4yAIIQSDAciyBFlQCEyA2+kic2PZ7YHL4ULAz7M9WVagqGSKAlVVIZHPxcUFbJViGzs725iZmYXdbofD4WAHFFGDKmvwrnCYnZ7F7MwcgS5DlgggrCGiRRCJRBCLxdj57e1tSglRfnVloD/oIRKNQhRFaJqKKK2VsApV0uDj/OB9Afi8w1lVNCiCSuc0ZjzPEzMB5XKZ5deWO6uwxXHqGFJYRkSNUGQqo6WRsxXV/Ow8i9KibO0zQFVjEXIch2QyyTB63d4QcNDvw9ANxKJrUCSVUZVCBChHIYcVcMt+cCt+hKgoESqKHPoX0GJTq9UYYNcCLF42cJo5QS6XQzwRh8vtAh/gGV1ZVCmHPorMDeeSi9FWKHorQgtMVmTs7+9dK6tPgdnOz+rod7ukvS6aRhNrq+uUP4VFwXJIgPMz85h5MsvWEYWAgrRHl2nEpFKqkP+A+bdJu7bzbB2DXg/tZpsJN/vXOSRBYlFYueR9/KggPEkmQCkZVlkMiTjYOyBfoNPqoNshwGaHKOd0vD6sJEuCTEWJIMAH8XTBjvm5BfgJlFU5PFSCaZo3/BhlK4dmk9qoWkPTbKLdbpNAcwgHRHicHorOB57jGV0/Repd9iLIhZA+To9AqOEGg2GVqVVtpbyJYjFP4t7B4eEhUqkUA02sbzIANxXEMm6Zg3PRxeaIFGWXsxYfgV0DFkaUjYYBXddhGAb7zp1fUHvR6+J0YurhFB4/eYwl6qKwGMbR4dE1mEXzRoQFovxfo9loYiuxxbrDT93i9XgZ9Y21DVRL1aHuel1kMpnrLhkJu8qE3Wl10aXSdzs9JgGzbuIim4PjTwdcdnogFt1YnF/E0cExe756pIzXB4vQAjzPZnGZu8IVWSFfQJm0Zeomk5LVaiueFeoUDsFAEPW6jpbRYs7/0L5B+ey4gBe7u0in0jg5OkHqIIVs5gz1Up0J9XD/kIrhxtJTJ5LPNtklekVnzgysPzJaM8ovMyW8fHmOQqFA1S4yK5fKaNQaRL/DiiWLMouwUqkwqmbDxP8NW3ovj/2tfRw9Tw9t5xjpF6conr1C9aoOo2Rib+uAXvJNNIoG6gWd9kqoXNZQy+tk9ZHp7L+/AY//6iN6XL3GAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;cones of learning&quot;
         title=&quot;cones of learning&quot;
-        src=&quot;/static/50473b9d729f28bc279a5691e89360cf/799d3/cone_of_learnings.png&quot;
-        srcset=&quot;/static/50473b9d729f28bc279a5691e89360cf/00d96/cone_of_learnings.png 148w,
-/static/50473b9d729f28bc279a5691e89360cf/0b23c/cone_of_learnings.png 295w,
-/static/50473b9d729f28bc279a5691e89360cf/799d3/cone_of_learnings.png 590w,
-/static/50473b9d729f28bc279a5691e89360cf/2a3d6/cone_of_learnings.png 885w,
-/static/50473b9d729f28bc279a5691e89360cf/ae92f/cone_of_learnings.png 1180w,
-/static/50473b9d729f28bc279a5691e89360cf/4bad3/cone_of_learnings.png 1210w&quot;
+        src=&quot;/static/50473b9d729f28bc279a5691e89360cf/fcda8/cone_of_learnings.png&quot;
+        srcset=&quot;/static/50473b9d729f28bc279a5691e89360cf/12f09/cone_of_learnings.png 148w,
+/static/50473b9d729f28bc279a5691e89360cf/e4a3f/cone_of_learnings.png 295w,
+/static/50473b9d729f28bc279a5691e89360cf/fcda8/cone_of_learnings.png 590w,
+/static/50473b9d729f28bc279a5691e89360cf/efc66/cone_of_learnings.png 885w,
+/static/50473b9d729f28bc279a5691e89360cf/c83ae/cone_of_learnings.png 1180w,
+/static/50473b9d729f28bc279a5691e89360cf/a3767/cone_of_learnings.png 1210w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -436,31 +578,32 @@ Three years ago, I decided to part ways with my Facebook account, and I decided 
 &lt;p&gt;That is all about books I read last year. They are not enough in comparison with  books that humans have written on this earth, but in one year it is a lot, and the most important was not to read the book but to put into practice what you read from them. When I get old, I will have a large library like this one, and I can brag about them to my friends. &lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/251d73690d3594470ca125a66a69eb8d/f094d/book_shelf.png&quot;
+    href=&quot;/static/251d73690d3594470ca125a66a69eb8d/f8836/book_shelf.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 67.38056013179572%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAADaUlEQVQ4yzWS60+TZxjG+08t8cOSxS1Ztg9m2Yftw5xZNgluwzgQCAREyGityFFoaYVCKwK21B7p+fTy9m379khpy0GBKSILY56i7vtvD7p9uPPkSe7n91zXdd+aai5OVU2wkU+KSqEk/HT/+AP6Ky0kw25mxgcYH7yK3WrEc28au1lL0GFBivowmYyMjY8Sj/rZ3qxTq1XRKJEV0hEHSvQBkvsOAZuO8d5mZrWtOKf7sdxsxzbay9xwF0tjnczpfsZl6sZ5p5/WX77ncvN55o16dh8fsLX3GI2a9KAmPOSTXmTfPCtDbdh/b8d8sxufbQTFYyK+PIpzRk/Cv0Q27kIOLmIzDrE8ZxQ1iXPJQuPhHzR2BDCf8gqYAIpGyTWP7dtzzH9+Du3Hn7HQ1oTHco3x/l662tswTxqwzZrpafmOX5uakOQSaqmOks1TKG+z3niCprC2yntowo28YsTbcQH35Z+ItDQR6riIx9jB7I1OjHqh+K4Bt/U2fa0X0fd1IkUCKKkoUizI/pOnwvZTNEU5wCm0JAcpCrASXkSNOSjIPkrpAOvyKpU1H2XJQ72QpJpLUC+mqYmSIi6WZm7hXp5h69E+67VNNKV0SDwMc3qqwrZpZIAJmwUlkyYTD1DOyWzVKkR895nQ3SArZQmFfYwMD6Mb1OJYWiQcDHF48pqj528/AIvSqlC1guyeY+ZWN1919HLlt156Ll3Av3IfNZPFMHSdT858hHXWysTYIGc/PcuXX3xNKJEjX9rk8K8XHL9885/l00lH7WKiZrzmfnRDfYxcu4pZ7J/sWyDhtGIZ7mGg4xIP7k6ztmrHOKxjVDtAMhoiu5bkz+dvOHn9z/8KRV6Sl3LSRTGyTEnA65kgNZFhRazTuvi0JIl7IUO1oKCmk+SzsgDFcNomCbrucfzqLUd/v0BTzsQ+BF1I01hXqa3nKKsyqqJQUTPsNOo0qhukPFOEAzaiUYVIKEI4nEROF/G5vWTSCjsH+1gTWjTVXOo9bLuSEUpimEdMLOiv4+j6hqRzgZ2Hj4g4bFj7zxD1GwVMJZcpUShsUK7ssrv3jJOX79g/PKL4sCyA6hq1XIwtxc6G20DWZCBq6EaZbSbnmmKnkCDtNOKfOi9ydpCNhMRq+cklo8RTOTY2d0V279g7eMbh8Sv+BWLzFdByxfJBAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 67.56756756756756%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAADsElEQVQ4yyWT6VNTdxSG89fZzU5tbW1tKTh0uoCodVCUKQULhE1ACjQBEghLSCBkIRsXspHkJvfe3CSQBESlWFFq3aqdop3OdDrz9Ef9cObM+fLMvO95X0NJS1DW18Uk2VDjDF1r4duTJ4n4XficFgbaGpgx9xJ0TeOfG8ZjGyQpeYis+vnJNMrU1AS6JrNV3uTu3s8Y0tIi8toSqcA0a45+zB3n6Tr3GZ6xdiZ7GxnvucJ4dxPWvsvM9DQwdq2W1Zl2Rrsbqa05xcWzNYS8dm7f3Wdv/wCDEvOixpfJhOfwm79noecSc0OtLI4bWXeNkFr6kYC1g7DThCw5ya4tsuKawDpkZN46hLm/FSno5tbdA+4/fIxBjftQox6y0gLOi18x/eZbdL7xLiNnqgjPduAc7aSvrYW+LiOzUzbsAtJc/ym9XQPohQqJlCp2gURyg917jzBoiWW0qBc5YMN7qQbHh8dZOv0xno9O4On+krH2s1xvvcxA+1VC81Z6Wi5Qe+odbvR0kctmSSXiaKrCL/cf8PjZcwFcD6CvB9EiS2QDFuRlC4qAK8FZNGGDujJHRtx63M2mHBJqjiwKkI35iQWdLFj6SEaD5Dcr7O7dw5BPrVCQVynKEgGHhcmZcRQ9Syn/em6WCiIBMkG3g0goTLlUIrom4Zx3YLOYmZ8yE4tG2H9yyKPnL4+AYXKJo6fYcQy2UHW5kdbBCUzG77CN9FMQcjKxkJD5Hue/qCMWidFwrppjx45TV3cBVd8WUxKwQ57/+QqDfuRhxEXaP0lgwkh9cyP1F5poOH2CqREhZyXAzNgw33z+Pl+f+YQ1/xLXO5upPl1Fc1MzmlYkpxf5TQB/fw30kYu50aRZFK+JuHMI2Sdk+63o4RkKkp2Mz0o6aEeNeMgnw8KeKJlogPUVt4iQBU1O8OzwHw5f/YuhkJbYzEYoiZZs66n/d7moUymobBU1diplynkFNb2KIr6qKBrLvmXkrM5KKIjNfAMtm+HWgzvot+MYSmqSrYIwfzMn/JGQlt1Ik8NEHFZRpzJbG0VcphbC09U4nW7kpEZ09Sgqm6hahY3SDvsPnqBtq8RKXgyVXIrtXIRydIEF4yimK1cJtr1NsL+eSrlCSUlia/uA+EId69EMWiaPklYoFm+i53c4EO148fJvdvd/5emLvzBspMPcTNnZWRtmLzRM2dNH3mOk6BugGBijEJwkMf0DMXs3mZCLmHOclHcaaWmOcCxDfmuXg6d/UL51h4ci2P8BX/dTh9/Ex1sAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;book shelve&quot;
         title=&quot;book shelve&quot;
-        src=&quot;/static/251d73690d3594470ca125a66a69eb8d/799d3/book_shelf.png&quot;
-        srcset=&quot;/static/251d73690d3594470ca125a66a69eb8d/00d96/book_shelf.png 148w,
-/static/251d73690d3594470ca125a66a69eb8d/0b23c/book_shelf.png 295w,
-/static/251d73690d3594470ca125a66a69eb8d/799d3/book_shelf.png 590w,
-/static/251d73690d3594470ca125a66a69eb8d/2a3d6/book_shelf.png 885w,
-/static/251d73690d3594470ca125a66a69eb8d/ae92f/book_shelf.png 1180w,
-/static/251d73690d3594470ca125a66a69eb8d/f094d/book_shelf.png 1214w&quot;
+        src=&quot;/static/251d73690d3594470ca125a66a69eb8d/fcda8/book_shelf.png&quot;
+        srcset=&quot;/static/251d73690d3594470ca125a66a69eb8d/12f09/book_shelf.png 148w,
+/static/251d73690d3594470ca125a66a69eb8d/e4a3f/book_shelf.png 295w,
+/static/251d73690d3594470ca125a66a69eb8d/fcda8/book_shelf.png 590w,
+/static/251d73690d3594470ca125a66a69eb8d/efc66/book_shelf.png 885w,
+/static/251d73690d3594470ca125a66a69eb8d/c83ae/book_shelf.png 1180w,
+/static/251d73690d3594470ca125a66a69eb8d/f8836/book_shelf.png 1214w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -749,29 +892,30 @@ app&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;synth&lt;span c
 &lt;p&gt;We are now ready to pack containers and deliver our content to our client.&lt;/p&gt;
 &lt;p&gt;In the second part of this series, we will learn how to convert our docker-compose file to a task definition described in this tutorial. See you then!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[I sat for the IELTS today , here is how it went]]></title><description><![CDATA[After preparing for more than a month, I managed to pass my IELTS today. While waiting for the result , I would like to share with you how…]]></description><link>https://www.murhabazi.com/ielts-how-it-went/</link><guid isPermaLink="false">https://www.murhabazi.com/ielts-how-it-went/</guid><pubDate>Thu, 19 Nov 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/9c29d5efaa1c30da2f95b7508e9324b9/3f01f/ielts.png&quot;
+    href=&quot;/static/9c29d5efaa1c30da2f95b7508e9324b9/0a47e/ielts.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 52.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAACpElEQVQozz1SXU8TURDdf+iDiYmJMSEkEsUHNagkYsIDSKNB0EJiKKUFEUgFwWiUgFIQ+gXd7rbbbbffLS3dbrvdfhd4Os5trA+Te+/O7Jlzzgx3cXGBSqUCwzBQq9fR6nTQvrxE5/oa3asrdLpdel+hSWet0YDBotlCq9VCh2pZdCnXv3O5XA6qqkKvVlEpl2FoGurFImqZNBp0b1ETI3+OSjqFKmueyUCVw1BLJTSbzf9A7Xa79+aSySRy2Sy0Wg15twvSo2GIg3ehmCYQfj6C/I/vSC1ZELh1A/GZaYTuD0J8+hiyz4caARhEhKnTdR0aEeBkWUYiHkdWLSG1vwf+9s1exG1WCA+HkCVAvaJTowcoRaOQnj2BPDqCcliCTuyZKgbEVObzeXChUAiyJCGezSFOgNLwPYgDdxB9MwV5bBQyASXez0KZGIdGdcr4S0hDAzh3/kaNvGMM++zYPDgfURdFEXIkgsCpD19XV/Fz9SN+2W3Y39rC7pIVB+trONnbw4HTiaPNzzik75pe7flWpyExsPI/ppzL5YKTCnmeR4Qk8QR+ygcQpHuaBpalrnwwBImsOae3RoyK9LNKgyuSzCjVsS3pg3KCIGBychITFFMmE7Z3djA3P4+3MzNYsCzC7fHAPDeHF2NjWFpexqLNDqvdTjkLHA4HdqieARapQYkmz/n9fmyThE82G1bMZjgdG/BsbWJ34QMcplf4Y7VA2FjDvnkWX6ZfY+PdLL6tLGOdrDlxu3usmXcsGCgniAIEkiv4vJCCQQgBkkusY9EIUokEQmSBn3yW6IxSLnLoROL4CBnXMYrJBDRi1/evUCiACxIImzRPxadnZ2BD8ni9OCPm/ZyXvrmIjZ9qwrEYJCUGRVFQSKdRpR2ss/UhYLY2fwHHyOn786q6SAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 52.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACpElEQVQoz02T2U8TYRTF5w/0zfCgvuiDxmgIMYqauBDQBBJjUqEEjYkYYkQDiJhSFoMi0EJpZzrTTktbtq50pRRoa0SSn/erS3w4ufe7kznfOffMaLlcjnK5THV/n4Najfr37zROTmientI8+Unjz/n4xwm1ep3qcZ1as0ld+kajQVN6BdUraKlUinw+T0UIS4p8e4vKRpSyZVLd2uKwXKIcjZAP+CnFYxRCFpmVZdLpNEdHR/+IVT08PETb3NwkubtL4eCA9OJXzMsXMc63sdH7iFDHNdLTLrZfv0I/e4ZEvwPz4nnM2zeJGwZVIdivVKgIlMtCoYBm2zaJeJykqNyadaOfO4txoY3EyGvM61dIuV1U9vLYtzooimL73p3fvRmkIoTlUomSQLnMZDJolmVhh0LEd5PE5ucwb7RjXLmELQrDXfexhDTa+5iNJ33kTJNI1z2s9qtkV73UGs3W7pXCYrGIykNbW1vDMi0ikQh6IMDHsXHmPk7yZWKCz9PTzI2P802qd2mJhcVFlmdnWZqfp3xQo/Fnb4pMqVRVW11dZWZmBlVDojQoKjxyiS79rgSWESueNR8B2VlWLBXlxdzeHqlkkp2dHQyZ/1WoSDU16O7poau7m4cPHjAxNka/w8GTvj4cT5+yuLCA89kz7nZ24nQ6cQicz1/QP+BkdHQUt9vdCkTZbYUSEJuzMpx6/47J4WE8kx/QXZ9YejPCzOAA3pFh7IkxvK9eMj/kxDU0yNd3b5mSi3Uj2CL6H1owGMTQAxg+X8uyIWdlOxqLsbm9TShs4/MHMOVZRAKMej3EJZCkYE8+uZKoUwqV3Ww2ixYOh1uBKKL19XVUSGqffr9fwjIJCYlPZp6VFQK6TjSewJbLYokEWdnjfrVKTf4wRag+9l/41eky15z6/wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;cover image&quot;
         title=&quot;cover image&quot;
-        src=&quot;/static/9c29d5efaa1c30da2f95b7508e9324b9/799d3/ielts.png&quot;
-        srcset=&quot;/static/9c29d5efaa1c30da2f95b7508e9324b9/00d96/ielts.png 148w,
-/static/9c29d5efaa1c30da2f95b7508e9324b9/0b23c/ielts.png 295w,
-/static/9c29d5efaa1c30da2f95b7508e9324b9/799d3/ielts.png 590w,
-/static/9c29d5efaa1c30da2f95b7508e9324b9/3f01f/ielts.png 600w&quot;
+        src=&quot;/static/9c29d5efaa1c30da2f95b7508e9324b9/fcda8/ielts.png&quot;
+        srcset=&quot;/static/9c29d5efaa1c30da2f95b7508e9324b9/12f09/ielts.png 148w,
+/static/9c29d5efaa1c30da2f95b7508e9324b9/e4a3f/ielts.png 295w,
+/static/9c29d5efaa1c30da2f95b7508e9324b9/fcda8/ielts.png 590w,
+/static/9c29d5efaa1c30da2f95b7508e9324b9/0a47e/ielts.png 600w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -795,31 +939,32 @@ app&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;synth&lt;span c
 &lt;p&gt;And it was the end of my test , I am now looking forward to the result. I am confident I will get  6 at minimum. However I will not be dismayed if I get a 7.5 or 8. As said Eminem, &lt;em&gt;Success is my only motherfuc**g option, failure is not.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In the upcoming days, I will share my test results as well as my preparation strategy , so stay tunned for more content. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hacktoberfest is almost there, Python developers here are some venues for parties.]]></title><description><![CDATA[This year has been fantastic because I contributed to some open-source projects and had my pull request merged on amazing projects with many…]]></description><link>https://www.murhabazi.com/some-projects-you-can-contribute-to-in-hackerfordev/</link><guid isPermaLink="false">https://www.murhabazi.com/some-projects-you-can-contribute-to-in-hackerfordev/</guid><pubDate>Thu, 17 Sep 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/3a1de513ba937ccdedfea8b22642f861/c5054/festival.jpg&quot;
+    href=&quot;/static/3a1de513ba937ccdedfea8b22642f861/80bab/festival.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 66.48936170212765%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQCA//EABUBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAGXSqbkcSf/xAAaEAEBAAIDAAAAAAAAAAAAAAABAhESAAMh/9oACAEBAAEFAvJ5VGV2cYdZHttL/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGBAAAwEBAAAAAAAAAAAAAAAAAAExQQL/2gAIAQEABj8CuC5MLULpKIw//8QAHBABAAMAAgMAAAAAAAAAAAAAAQARITFRQWGh/9oACAEBAAE/IVQHlbCKR6081As+riyTVw9RoTsztJmjQM//2gAMAwEAAgADAAAAEO8f/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oACAEDAQE/EMWUL//EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAgBAgEBPxCpr//EAB4QAQEAAgICAwAAAAAAAAAAAAERACExYVGRQXHR/9oACAEBAAE/EJEIDk6f2ZtUezQ4LeWN8GOpUhSl7uIh4ABa+ffvAgl+9olX61Me6EwIFPjP/9k=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 66.21621621621621%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQCA//EABUBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAGXSmblcSf/xAAaEAEBAAIDAAAAAAAAAAAAAAABAgARAxIh/9oACAEBAAEFAvBqxV7OtOpzltL/AP/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABkQAAIDAQAAAAAAAAAAAAAAAAABETFBEv/aAAgBAQAGPwK8EjC7R0lEIw//xAAeEAABBAIDAQAAAAAAAAAAAAABABEhMUFRcYGh8P/aAAgBAQABPyElkbYD7tcAZGWQHPQKjMVz6dNETxGyFW5AGl//2gAMAwEAAgADAAAAEP8AH//EABcRAQEBAQAAAAAAAAAAAAAAAAEAESH/2gAIAQMBAT8QxZQ5f//EABcRAAMBAAAAAAAAAAAAAAAAAAABESH/2gAIAQIBAT8QukZ//8QAHxABAQACAgEFAAAAAAAAAAAAAREAITFRgUFhcZGx/9oACAEBAAE/EDXEE/TxeHWsQ+07NDjdm93rGU9Kxfe4pNkEAtdnn7xHkPLtEq/GsfBCSQFPTP/Z&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;cover image&quot;
         title=&quot;cover image&quot;
-        src=&quot;/static/3a1de513ba937ccdedfea8b22642f861/88218/festival.jpg&quot;
-        srcset=&quot;/static/3a1de513ba937ccdedfea8b22642f861/7237a/festival.jpg 148w,
-/static/3a1de513ba937ccdedfea8b22642f861/0cfdf/festival.jpg 295w,
-/static/3a1de513ba937ccdedfea8b22642f861/88218/festival.jpg 590w,
-/static/3a1de513ba937ccdedfea8b22642f861/77d57/festival.jpg 885w,
-/static/3a1de513ba937ccdedfea8b22642f861/5a917/festival.jpg 1180w,
-/static/3a1de513ba937ccdedfea8b22642f861/c5054/festival.jpg 3008w&quot;
+        src=&quot;/static/3a1de513ba937ccdedfea8b22642f861/1c72d/festival.jpg&quot;
+        srcset=&quot;/static/3a1de513ba937ccdedfea8b22642f861/a80bd/festival.jpg 148w,
+/static/3a1de513ba937ccdedfea8b22642f861/1c91a/festival.jpg 295w,
+/static/3a1de513ba937ccdedfea8b22642f861/1c72d/festival.jpg 590w,
+/static/3a1de513ba937ccdedfea8b22642f861/a8a14/festival.jpg 885w,
+/static/3a1de513ba937ccdedfea8b22642f861/fbd2c/festival.jpg 1180w,
+/static/3a1de513ba937ccdedfea8b22642f861/80bab/festival.jpg 3008w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -929,23 +1074,24 @@ And since we got a lot from the open-source community, contributing to open sour
 &lt;li&gt;&lt;a href=&quot;https://dev.to/surajv/5-mistakes-that-can-be-avoided-as-a-beginner-in-foss-contribution-22gc&quot;&gt;https://dev.to/surajv/5-mistakes-that-can-be-avoided-as-a-beginner-in-foss-contribution-22gc&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Quelques meilleurs conseils pour un travail efficace à distance, une réalité africaine]]></title><description><![CDATA[De nos jours travailler à la maison est devenue une nécessité, étant développeurs est la seule façon de travailler en cette période de crise…]]></description><link>https://www.murhabazi.com/remote-work-africa-french/</link><guid isPermaLink="false">https://www.murhabazi.com/remote-work-africa-french/</guid><pubDate>Thu, 26 Mar 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEEA//EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAGd5pKiMr//xAAZEAEAAwEBAAAAAAAAAAAAAAABAAIRAxD/2gAIAQEAAQUC0s74sox6hP/EABYRAQEBAAAAAAAAAAAAAAAAAAARIf/aAAgBAwEBPwGMf//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAECAQE/Aar/xAAZEAACAwEAAAAAAAAAAAAAAAAAIQIQMRH/2gAIAQEABj8CRptSTOH/xAAbEAEAAwEAAwAAAAAAAAAAAAABABEhMUFRYf/aAAgBAQABPyG/9NyBfrkHNUK0TxcsRSlxWxyf/9oADAMBAAIAAwAAABBTL//EABcRAAMBAAAAAAAAAAAAAAAAAAABEUH/2gAIAQMBAT8QlYQf/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERQf/aAAgBAgEBPxC3pR//xAAdEAEAAgICAwAAAAAAAAAAAAABABEhMUFxgdHw/9oACAEBAAE/EKQKosugeItas8B+xFAWu47QAm0xvjZmMAgKtAHUvLXt7n//2Q==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEEA//EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAGd5pKiMr//xAAZEAEAAwEBAAAAAAAAAAAAAAABAAIRAxD/2gAIAQEAAQUC0s74sox6hP/EABYRAQEBAAAAAAAAAAAAAAAAAAARIf/aAAgBAwEBPwGMf//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAECAQE/Aar/xAAZEAEAAgMAAAAAAAAAAAAAAAAAETECEFH/2gAIAQEABj8CWvWXUQ//xAAZEAADAQEBAAAAAAAAAAAAAAAAAREhMUH/2gAIAQEAAT8huzzcEr9Xhc1hVaa4U4UVjSqh/9oADAMBAAIAAwAAABBTL//EABcRAAMBAAAAAAAAAAAAAAAAAAABEUH/2gAIAQMBAT8QhYQf/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERIf/aAAgBAgEBPxC3NKP/xAAfEAEAAgEDBQAAAAAAAAAAAAABABEhMUFRYXGB0fD/2gAIAQEAAT8QBhqiy6BFrUvofsQYC0dY7QAVt5vyZI1AwJsAduJc0sN/c//Z&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Photo Aeriènne de Goma &quot;
         title=&quot;Photo Aeriènne de Goma &quot;
-        src=&quot;/static/895691833b55b2e32f249a454da05c48/88218/cover_picture_bkv_home.jpg&quot;
-        srcset=&quot;/static/895691833b55b2e32f249a454da05c48/7237a/cover_picture_bkv_home.jpg 148w,
-/static/895691833b55b2e32f249a454da05c48/0cfdf/cover_picture_bkv_home.jpg 295w,
-/static/895691833b55b2e32f249a454da05c48/88218/cover_picture_bkv_home.jpg 590w,
-/static/895691833b55b2e32f249a454da05c48/77d57/cover_picture_bkv_home.jpg 885w,
-/static/895691833b55b2e32f249a454da05c48/e937d/cover_picture_bkv_home.jpg 1024w&quot;
+        src=&quot;/static/895691833b55b2e32f249a454da05c48/1c72d/cover_picture_bkv_home.jpg&quot;
+        srcset=&quot;/static/895691833b55b2e32f249a454da05c48/a80bd/cover_picture_bkv_home.jpg 148w,
+/static/895691833b55b2e32f249a454da05c48/1c91a/cover_picture_bkv_home.jpg 295w,
+/static/895691833b55b2e32f249a454da05c48/1c72d/cover_picture_bkv_home.jpg 590w,
+/static/895691833b55b2e32f249a454da05c48/a8a14/cover_picture_bkv_home.jpg 885w,
+/static/895691833b55b2e32f249a454da05c48/72e01/cover_picture_bkv_home.jpg 1024w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -972,24 +1118,25 @@ Nous avons compris au moins l’apport de télétravail, passons maintenant à s
 &lt;h3&gt;Avoir toujours une bonne connexion internet&lt;/h3&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 56.29032258064516%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EABUBAQEAAAAAAAAAAAAAAAAAAAIB/9oADAMBAAIQAxAAAAHBiUwXRJJR/8QAGxAAAQQDAAAAAAAAAAAAAAAAAQACAxEUMkP/2gAIAQEAAQUChfTBM6soobc1/8QAFREBAQAAAAAAAAAAAAAAAAAAEEH/2gAIAQMBAT8Bh//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABoQAAICAwAAAAAAAAAAAAAAAAABEBESMYH/2gAIAQEABj8Cbypl2aGdj//EABwQAAICAgMAAAAAAAAAAAAAAAERADEhURBBYf/aAAgBAQABPyGljXsNYGL4ZpW4zl3DOzP/2gAMAwEAAgADAAAAEBjv/8QAFxEBAQEBAAAAAAAAAAAAAAAAAREAQf/aAAgBAwEBPxBJXHQ3/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAB/9oACAECAQE/EF2dv//EAB0QAQACAgIDAAAAAAAAAAAAAAEAESExQVGBscH/2gAIAQEAAT8QQ5JAbS+iHVzT2dZitNHG7fkQoKaJQzm8GXzqYzF5n//Z&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 56.08108108108109%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAUA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgH/2gAMAwEAAhADEAAAAToloLoaVqP/xAAbEAABBAMAAAAAAAAAAAAAAAACAAEDERQhQ//aAAgBAQABBQKE6BpirKJNoua//8QAFREBAQAAAAAAAAAAAAAAAAAAEEH/2gAIAQMBAT8Bh//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABsQAAIBBQAAAAAAAAAAAAAAAAABMQIQESGB/9oACAEBAAY/Aqt4ZJAztv/EABwQAAICAgMAAAAAAAAAAAAAAAABESExURBBYf/aAAgBAQABPyGVVcejsmtZ4LUtku3Yl7Z//9oADAMBAAIAAwAAABDb7//EABcRAQEBAQAAAAAAAAAAAAAAAAERAEH/2gAIAQMBAT8QSVx0N//EABYRAQEBAAAAAAAAAAAAAAAAABEAAf/aAAgBAgEBPxBdnb//xAAcEAEAAwADAQEAAAAAAAAAAAABABEhMVGxQcH/2gAIAQEAAT8Q02sByl8IdcFns62KA0c5t/GMGgNEoZku0e/eJke0/9k=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Vendeur des Megas Kinshasa Source : rfi.fr&quot;
         title=&quot;Vendeur des Megas Kinshasa Source : rfi.fr&quot;
-        src=&quot;/static/656a84f4e62a961eea871e7a6449f527/88218/vendeurs_megas_rdc.jpg&quot;
-        srcset=&quot;/static/656a84f4e62a961eea871e7a6449f527/7237a/vendeurs_megas_rdc.jpg 148w,
-/static/656a84f4e62a961eea871e7a6449f527/0cfdf/vendeurs_megas_rdc.jpg 295w,
-/static/656a84f4e62a961eea871e7a6449f527/88218/vendeurs_megas_rdc.jpg 590w,
-/static/656a84f4e62a961eea871e7a6449f527/77d57/vendeurs_megas_rdc.jpg 885w,
-/static/656a84f4e62a961eea871e7a6449f527/5a917/vendeurs_megas_rdc.jpg 1180w,
-/static/656a84f4e62a961eea871e7a6449f527/dfccc/vendeurs_megas_rdc.jpg 1240w&quot;
+        src=&quot;/static/656a84f4e62a961eea871e7a6449f527/1c72d/vendeurs_megas_rdc.jpg&quot;
+        srcset=&quot;/static/656a84f4e62a961eea871e7a6449f527/a80bd/vendeurs_megas_rdc.jpg 148w,
+/static/656a84f4e62a961eea871e7a6449f527/1c91a/vendeurs_megas_rdc.jpg 295w,
+/static/656a84f4e62a961eea871e7a6449f527/1c72d/vendeurs_megas_rdc.jpg 590w,
+/static/656a84f4e62a961eea871e7a6449f527/a8a14/vendeurs_megas_rdc.jpg 885w,
+/static/656a84f4e62a961eea871e7a6449f527/fbd2c/vendeurs_megas_rdc.jpg 1180w,
+/static/656a84f4e62a961eea871e7a6449f527/efc8b/vendeurs_megas_rdc.jpg 1240w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -1003,22 +1150,23 @@ Vendeur des Megas Kinshasa Source :  &lt;a href=&quot;www.rfi.fr&quot; target=&q
 &lt;h3&gt;Accès à l’électricité&lt;/h3&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 46.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAIBAwQF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAeNZCTSmkT//xAAbEAABBAMAAAAAAAAAAAAAAAABAAMQERIhQf/aAAgBAQABBQKtNAZ0uGP/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAYEAACAwAAAAAAAAAAAAAAAAAAESAiMf/aAAgBAQAGPwJstkf/xAAcEAACAgIDAAAAAAAAAAAAAAAAARFBECExYbH/2gAIAQEAAT8hU3g1Vjad3hLCouD/2gAMAwEAAgADAAAAELTf/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERUf/aAAgBAwEBPxBvCH//xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQIBAT8Qka//xAAbEAEAAwADAQAAAAAAAAAAAAABABEhMUFxsf/aAAgBAQABPxAdVQXdX2QDwzpe2rPaiLSbDh5PvODwn//Z&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 46.621621621621614%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAIBBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAABx3hJpS0J/8QAGRAAAwADAAAAAAAAAAAAAAAAARARAxIi/9oACAEBAAEFApzjA2iK/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGBAAAgMAAAAAAAAAAAAAAAAAABEgIjH/2gAIAQEABj8CbLZH/8QAGxAAAgIDAQAAAAAAAAAAAAAAABEBQRAxcZH/2gAIAQEAAT8hiLIb0csn1DFFcf/aAAwDAQACAAMAAAAQJB//xAAWEQEBAQAAAAAAAAAAAAAAAAABEFH/2gAIAQMBAT8QXJ//xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQIBAT8Qka//xAAcEAACAgIDAAAAAAAAAAAAAAABEQAxIXFRobH/2gAIAQEAAT8QKwQAuyOdQ5blhOxdqEZyIK6E94KGp//Z&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Delestage En Afrique&quot;
         title=&quot;Delestage En Afrique&quot;
-        src=&quot;/static/46e8070822e3b14d36486ed3c9b3a5a5/88218/delestage_afrique.jpg&quot;
-        srcset=&quot;/static/46e8070822e3b14d36486ed3c9b3a5a5/7237a/delestage_afrique.jpg 148w,
-/static/46e8070822e3b14d36486ed3c9b3a5a5/0cfdf/delestage_afrique.jpg 295w,
-/static/46e8070822e3b14d36486ed3c9b3a5a5/88218/delestage_afrique.jpg 590w,
-/static/46e8070822e3b14d36486ed3c9b3a5a5/2a7f3/delestage_afrique.jpg 750w&quot;
+        src=&quot;/static/46e8070822e3b14d36486ed3c9b3a5a5/1c72d/delestage_afrique.jpg&quot;
+        srcset=&quot;/static/46e8070822e3b14d36486ed3c9b3a5a5/a80bd/delestage_afrique.jpg 148w,
+/static/46e8070822e3b14d36486ed3c9b3a5a5/1c91a/delestage_afrique.jpg 295w,
+/static/46e8070822e3b14d36486ed3c9b3a5a5/1c72d/delestage_afrique.jpg 590w,
+/static/46e8070822e3b14d36486ed3c9b3a5a5/acb04/delestage_afrique.jpg 750w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -1039,24 +1187,25 @@ Le reste d’astuces sont valables peu importe le pays où l’on travaille :&lt
 &lt;h3&gt;Avoir un endroit confortable où l’on peut s’asseoir tranquillement et coder :&lt;/h3&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAD/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/aAAwDAQACEAMQAAABNikwZLSQ/8QAGxABAQABBQAAAAAAAAAAAAAAAQACAxESITP/2gAIAQEAAQUCfTmBu2Zizpl3f//EABYRAAMAAAAAAAAAAAAAAAAAAAEQEf/aAAgBAwEBPwGFf//EABURAQEAAAAAAAAAAAAAAAAAABAh/9oACAECAQE/AYf/xAAcEAABAwUAAAAAAAAAAAAAAAABAAIQAxESMWH/2gAIAQEABj8CrDqcBDjY5Faj/8QAHBAAAgICAwAAAAAAAAAAAAAAABEBITFRQWHB/9oACAEBAAE/IXnZ9E5mUdhkAbl0hGknbI4VR//aAAwDAQACAAMAAAAQcM//xAAXEQADAQAAAAAAAAAAAAAAAAABEBEx/9oACAEDAQE/EBPF/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQEQ/9oACAECAQE/ELUuf//EAB0QAAICAgMBAAAAAAAAAAAAAAERACExUUFhcYH/2gAIAQEAAT8QNjAuv6i6gS1go3NRh6MECVmVdBuDi9HPnyClgZWBP//Z&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAD/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/aAAwDAQACEAMQAAABLkkwZLSQ/8QAGxABAAICAwAAAAAAAAAAAAAAAQACAxESITL/2gAIAQEAAQUCfbc47Zcqxxk7n//EABYRAAMAAAAAAAAAAAAAAAAAAAEQEf/aAAgBAwEBPwGFf//EABURAQEAAAAAAAAAAAAAAAAAABAh/9oACAECAQE/AYf/xAAcEAABBAMBAAAAAAAAAAAAAAABAAIQYQMSITH/2gAIAQEABj8CzC04CHcOxteR/8QAHBAAAgICAwAAAAAAAAAAAAAAAAERITFhQYHB/9oACAEBAAE/Ie99CWQo2CBrm3hBBqO5FwlUf//aAAwDAQACAAMAAAAQ8M//xAAXEQADAQAAAAAAAAAAAAAAAAABEBEx/9oACAEDAQE/EBPF/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQEQ/9oACAECAQE/ELUuf//EAB0QAQACAgIDAAAAAAAAAAAAAAEAESExQYFRYXH/2gAIAQEAAT8Qs3wz57SnYW5ppzPAi/cIIDX6AQ5GVc+/kIMC1Uk//9k=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Me working At Klab&quot;
         title=&quot;Me working At Klab&quot;
-        src=&quot;/static/e98031b102dbe112acfb8dec1a232a78/88218/Me_working.jpg&quot;
-        srcset=&quot;/static/e98031b102dbe112acfb8dec1a232a78/7237a/Me_working.jpg 148w,
-/static/e98031b102dbe112acfb8dec1a232a78/0cfdf/Me_working.jpg 295w,
-/static/e98031b102dbe112acfb8dec1a232a78/88218/Me_working.jpg 590w,
-/static/e98031b102dbe112acfb8dec1a232a78/77d57/Me_working.jpg 885w,
-/static/e98031b102dbe112acfb8dec1a232a78/5a917/Me_working.jpg 1180w,
-/static/e98031b102dbe112acfb8dec1a232a78/d280c/Me_working.jpg 3264w&quot;
+        src=&quot;/static/e98031b102dbe112acfb8dec1a232a78/1c72d/Me_working.jpg&quot;
+        srcset=&quot;/static/e98031b102dbe112acfb8dec1a232a78/a80bd/Me_working.jpg 148w,
+/static/e98031b102dbe112acfb8dec1a232a78/1c91a/Me_working.jpg 295w,
+/static/e98031b102dbe112acfb8dec1a232a78/1c72d/Me_working.jpg 590w,
+/static/e98031b102dbe112acfb8dec1a232a78/a8a14/Me_working.jpg 885w,
+/static/e98031b102dbe112acfb8dec1a232a78/fbd2c/Me_working.jpg 1180w,
+/static/e98031b102dbe112acfb8dec1a232a78/768c6/Me_working.jpg 3264w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -1085,22 +1234,23 @@ Elles aideront également à s’isoler dans un endroit où il y a trop de monde
 &lt;h3&gt;Avoir une vie Sociale&lt;/h3&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 111.61971830985915%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAWABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQD/8QAFwEBAQEBAAAAAAAAAAAAAAAAAQIDBP/aAAwDAQACEAMQAAAB1m0jKoTEtjKdxl1//8QAHBAAAgEFAQAAAAAAAAAAAAAAAQIAAxESEyEi/9oACAEBAAEFAuTPZCljR9JfGpuvF4xXKBAJ/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAEDECH/2gAIAQMBAT8BqPRpH//EABcRAQADAAAAAAAAAAAAAAAAAAACEBH/2gAIAQIBAT8BYlX/xAAbEAACAwEBAQAAAAAAAAAAAAAAAQIRQTESIf/aAAgBAQAGPwL1ZHFZwUW9JfLS4YOCwcsOH//EAB4QAQADAQABBQAAAAAAAAAAAAEAETEhUUFhkaHw/9oACAEBAAE/IecM2I7Wyp8/uRqPowDh7q9JUnR1kXkFc4R9zQbfMuJhpIBj4n//2gAMAwEAAgADAAAAEIgnA//EABoRAAMBAAMAAAAAAAAAAAAAAAABETEhYcH/2gAIAQMBAT8Qcb2FORXr0QeI/8QAGxEAAQQDAAAAAAAAAAAAAAAAAAEQETEhQfD/2gAIAQIBAT8QRI0SMa6m/8QAHRABAQACAgMBAAAAAAAAAAAAAREAITFhQVFx8P/aAAgBAQABPxCaDTarDFhzgJoP52uNxB2zG/V24AGhxXrLZavJ9JjwhjSN7ytB7KYcdGBA/UPGQot3Y3n/2Q==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 111.48648648648648%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAWABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQD/8QAGAEAAwEBAAAAAAAAAAAAAAAAAAECAwT/2gAMAwEAAhADEAAAAdZdYyt0wV0ZT3GXX//EABwQAAICAgMAAAAAAAAAAAAAAAECABEDEhMhIv/aAAgBAQABBQLqb8kZKOH0l6ucxaKaYrcC1P/EABgRAAIDAAAAAAAAAAAAAAAAAAABAxAh/9oACAEDAQE/Aaj0Z//EABcRAQADAAAAAAAAAAAAAAAAAAACEBH/2gAIAQIBAT8BYnX/xAAcEAABBAMBAAAAAAAAAAAAAAAAAQIRMRIhQRD/2gAIAQEABj8CykbOkKEas2O1VHBWpwy55//EABwQAQADAQEAAwAAAAAAAAAAAAEAESExUWGh8P/aAAgBAQABPyHPDDWU7WWn39kwPowD30fiV7g+poFKzCbHANvs0vhpIIwJ/9oADAMBAAIAAwAAABDj537/xAAZEQEBAQEBAQAAAAAAAAAAAAABEQAxIfD/2gAIAQMBAT8QYvZrvQX7uAMm/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAEQESExQf/aAAgBAgEBPxBKuFjDUf/EAB4QAQADAAEFAQAAAAAAAAAAAAEAESExQVFhgaHR/9oACAEBAAE/EGlDFgN5FVWyVYH9+oq0V0vr5F4m2GAMIF0uCVnLvvIkAIxXfmWW7nTCvRDzfKD0lV1atcz/2Q==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Me Having Life&quot;
         title=&quot;Me Having Life&quot;
-        src=&quot;/static/4ddfbc99f85a09d7e3d1968e9469a0cb/88218/me_having_life.jpg&quot;
-        srcset=&quot;/static/4ddfbc99f85a09d7e3d1968e9469a0cb/7237a/me_having_life.jpg 148w,
-/static/4ddfbc99f85a09d7e3d1968e9469a0cb/0cfdf/me_having_life.jpg 295w,
-/static/4ddfbc99f85a09d7e3d1968e9469a0cb/88218/me_having_life.jpg 590w,
-/static/4ddfbc99f85a09d7e3d1968e9469a0cb/a25a8/me_having_life.jpg 852w&quot;
+        src=&quot;/static/4ddfbc99f85a09d7e3d1968e9469a0cb/1c72d/me_having_life.jpg&quot;
+        srcset=&quot;/static/4ddfbc99f85a09d7e3d1968e9469a0cb/a80bd/me_having_life.jpg 148w,
+/static/4ddfbc99f85a09d7e3d1968e9469a0cb/1c91a/me_having_life.jpg 295w,
+/static/4ddfbc99f85a09d7e3d1968e9469a0cb/1c72d/me_having_life.jpg 590w,
+/static/4ddfbc99f85a09d7e3d1968e9469a0cb/16274/me_having_life.jpg 852w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -1126,23 +1276,24 @@ A me voir je suis aussi slim que Wizzy Calipha mais ça m’aide à garder la fo
 &lt;p&gt;Rappelle toi:  &lt;em&gt;ventre creux n’a point d’oreil&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIEAQX/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAZKeS2axof/EABgQAAMBAQAAAAAAAAAAAAAAAAABAhES/9oACAEBAAEFAplpO6uGqRoqw60//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGBAAAwEBAAAAAAAAAAAAAAAAABEhEAH/2gAIAQEABj8CaF2ZWyZ//8QAGhAAAwEAAwAAAAAAAAAAAAAAAAERQSFxof/aAAgBAQABPyGCs2sMSMHUtJfso/QdK1z2f//aAAwDAQACAAMAAAAQLD//xAAWEQADAAAAAAAAAAAAAAAAAAAAARH/2gAIAQMBAT8QqIj/xAAWEQADAAAAAAAAAAAAAAAAAAAQEVH/2gAIAQIBAT8QVH//xAAdEAEAAwACAwEAAAAAAAAAAAABABEhMbFRcYGh/9oACAEBAAE/EDetiwdzc+tIGvD6in6BJgTUYL/jMiw5Bw7lggXNpn//2Q==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIEAQX/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAZKOU2axof/EABgQAQEBAQEAAAAAAAAAAAAAAAIBABES/9oACAEBAAEFAiaZWmLFL3Rc3ru//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGBAAAwEBAAAAAAAAAAAAAAAAAREhABD/2gAIAQEABj8CYGRnK3pz/8QAGRAAAwEBAQAAAAAAAAAAAAAAAAERQXGh/9oACAEBAAE/IaCNrDMjCUtJfso/QdK1H0//2gAMAwEAAgADAAAAEGw//8QAFhEAAwAAAAAAAAAAAAAAAAAAAAER/9oACAEDAQE/EKiI/8QAFhEAAwAAAAAAAAAAAAAAAAAAEBFR/9oACAECAQE/EFR//8QAHRABAAMAAQUAAAAAAAAAAAAAAQARITFBUXGhsf/aAAgBAQABPxATpYsH2C1daQNdnxFHA6iR0CowX9MqCwNBwJYITm07P//Z&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Local Food&quot;
         title=&quot;Local Food&quot;
-        src=&quot;/static/7fac11e7171b974d47b7d6e2fe55b366/88218/home_food.jpg&quot;
-        srcset=&quot;/static/7fac11e7171b974d47b7d6e2fe55b366/7237a/home_food.jpg 148w,
-/static/7fac11e7171b974d47b7d6e2fe55b366/0cfdf/home_food.jpg 295w,
-/static/7fac11e7171b974d47b7d6e2fe55b366/88218/home_food.jpg 590w,
-/static/7fac11e7171b974d47b7d6e2fe55b366/77d57/home_food.jpg 885w,
-/static/7fac11e7171b974d47b7d6e2fe55b366/e937d/home_food.jpg 1024w&quot;
+        src=&quot;/static/7fac11e7171b974d47b7d6e2fe55b366/1c72d/home_food.jpg&quot;
+        srcset=&quot;/static/7fac11e7171b974d47b7d6e2fe55b366/a80bd/home_food.jpg 148w,
+/static/7fac11e7171b974d47b7d6e2fe55b366/1c91a/home_food.jpg 295w,
+/static/7fac11e7171b974d47b7d6e2fe55b366/1c72d/home_food.jpg 590w,
+/static/7fac11e7171b974d47b7d6e2fe55b366/a8a14/home_food.jpg 885w,
+/static/7fac11e7171b974d47b7d6e2fe55b366/72e01/home_food.jpg 1024w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
@@ -1163,31 +1314,32 @@ Mais je suis sur qu’il y en a plein qui marchent avec vous , n’hésitez pas 
 He requested that I  write a script that connects to a specific mailbox, check…]]></description><link>https://www.murhabazi.com/read-emails-python/</link><guid isPermaLink="false">https://www.murhabazi.com/read-emails-python/</guid><pubDate>Fri, 14 Feb 2020 22:12:03 GMT</pubDate><content:encoded>&lt;h3&gt;The Problem&lt;/h3&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/1f0a7d33aa206088d396fdfffcd8ce0f/31edf/cover-image.jpg&quot;
+    href=&quot;/static/1f0a7d33aa206088d396fdfffcd8ce0f/01150/cover-image.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAE/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAcTAuqGoCP/EABwQAAICAgMAAAAAAAAAAAAAAAECAAMEEhMhQv/aAAgBAQABBQJHPJRbpDkIJ7J7LGf/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAVEQEBAAAAAAAAAAAAAAAAAAAQQf/aAAgBAgEBPwGH/8QAGxAAAgEFAAAAAAAAAAAAAAAAAAECEBESIUH/2gAIAQEABj8CRjK50izVP//EABwQAAICAgMAAAAAAAAAAAAAAAERACExUWGRof/aAAgBAQABPyE25vuWDkisYhJHxGhaWpvg+YAcz//aAAwDAQACAAMAAAAQ6B//xAAXEQEBAQEAAAAAAAAAAAAAAAABABEh/9oACAEDAQE/EE7Y3//EABcRAAMBAAAAAAAAAAAAAAAAAAABEWH/2gAIAQIBAT8QbUQun//EABsQAQADAQADAAAAAAAAAAAAAAEAESExUWGB/9oACAEBAAE/EDQS+bemCcy9iq+Yh1kupJYYnYEWrZWuyv3Z/9k=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 66.89189189189189%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAE/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAcTAuqGoCP/EABwQAAICAgMAAAAAAAAAAAAAAAECAAMEEhMhQv/aAAgBAQABBQJHPJRbpDkIJ7J7LGf/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAVEQEBAAAAAAAAAAAAAAAAAAAQQf/aAAgBAgEBPwGH/8QAGxAAAgEFAAAAAAAAAAAAAAAAAAECEBESIUH/2gAIAQEABj8CRjK50izVP//EABwQAAICAgMAAAAAAAAAAAAAAAERACExUWGRof/aAAgBAQABPyE25vuWDkisYhJHxGhaWpvg+YAcz//aAAwDAQACAAMAAAAQ6B//xAAXEQEBAQEAAAAAAAAAAAAAAAABABEh/9oACAEDAQE/EE7Y3//EABcRAAMBAAAAAAAAAAAAAAAAAAABEWH/2gAIAQIBAT8QbUQun//EABsQAQADAQADAAAAAAAAAAAAAAEAESExUWGB/9oACAEBAAE/EDQS+bemCcy9iq+Yh1kupJYYnYEWrZWuyv3Z/9k=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;email&quot;
         title=&quot;email&quot;
-        src=&quot;/static/1f0a7d33aa206088d396fdfffcd8ce0f/88218/cover-image.jpg&quot;
-        srcset=&quot;/static/1f0a7d33aa206088d396fdfffcd8ce0f/7237a/cover-image.jpg 148w,
-/static/1f0a7d33aa206088d396fdfffcd8ce0f/0cfdf/cover-image.jpg 295w,
-/static/1f0a7d33aa206088d396fdfffcd8ce0f/88218/cover-image.jpg 590w,
-/static/1f0a7d33aa206088d396fdfffcd8ce0f/77d57/cover-image.jpg 885w,
-/static/1f0a7d33aa206088d396fdfffcd8ce0f/5a917/cover-image.jpg 1180w,
-/static/1f0a7d33aa206088d396fdfffcd8ce0f/31edf/cover-image.jpg 6240w&quot;
+        src=&quot;/static/1f0a7d33aa206088d396fdfffcd8ce0f/1c72d/cover-image.jpg&quot;
+        srcset=&quot;/static/1f0a7d33aa206088d396fdfffcd8ce0f/a80bd/cover-image.jpg 148w,
+/static/1f0a7d33aa206088d396fdfffcd8ce0f/1c91a/cover-image.jpg 295w,
+/static/1f0a7d33aa206088d396fdfffcd8ce0f/1c72d/cover-image.jpg 590w,
+/static/1f0a7d33aa206088d396fdfffcd8ce0f/a8a14/cover-image.jpg 885w,
+/static/1f0a7d33aa206088d396fdfffcd8ce0f/fbd2c/cover-image.jpg 1180w,
+/static/1f0a7d33aa206088d396fdfffcd8ce0f/01150/cover-image.jpg 6240w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
@@ -1225,8 +1377,8 @@ We will be using &lt;code class=&quot;language-text&quot;&gt;.env&lt;/code&gt; f
     env&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In those lines, we are instructing git to ignore our &lt;code class=&quot;language-text&quot;&gt;.env&lt;/code&gt; files and our virtual environments.&lt;/p&gt;
 &lt;p&gt;Now we can populate the &lt;code class=&quot;language-text&quot;&gt;.env&lt;/code&gt; file with our credentials :&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;USER_EMAIL=&amp;#39;your@email.com&amp;#39;
-USER_PASSWORD=&amp;#39;your secret password.&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;USER_EMAIL=&apos;your@email.com&apos;
+USER_PASSWORD=&apos;your secret password.&apos;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We have recorded  our email credentials in the &lt;code class=&quot;language-text&quot;&gt;.env&lt;/code&gt; file; let us now write a method that reads them from there.
 For this task, we will be using a Python package called &lt;a href=&quot;https://github.com/theskumar/python-dotenv&quot;&gt;python-dotenv&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;let’s install it with :
@@ -1392,17 +1544,17 @@ Setting global configuration is useful for settings on the project level when yo
 &lt;p&gt;Like in real-world relationships, once you meet a new person, you have to introduce yourself. The same applies to Git; before the first commit, you have to set up your username and email.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/Y0mC3y5G53PsQ/giphy.gif&quot; alt=&quot;Introducing ourself&quot;&gt;&lt;/p&gt;
 &lt;p&gt;There comes user.name, and user.email config that needs to be made globally here are the commands:&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git config --global user.name &amp;quot;John Doe&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git config --global user.name &quot;John Doe&quot;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git config --global user.email johndoe@example.com&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Side note:
 As said &lt;a href=&quot;https://dev.to/msaracevic/comment/bdhb&quot;&gt;here&lt;/a&gt; If you use Github only in your laptop, you can set up your email like this :&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git config --global user.email &amp;quot;:USERNAME@users.noreply.github.com&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git config --global user.email &quot;:USERNAME@users.noreply.github.com&quot;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;It will still match your contributions correctly based on the no-reply address, but it won’t include your real email address to in public commits, meaning that all those spams scripts won’t pick you up and bother yours on your primary email address.&lt;/p&gt;
 &lt;p&gt;But if you use bitBucket, Gitlab and any other subversion system you can set up the email local per project. &lt;/p&gt;
 &lt;h4&gt;Change your default editor&lt;/h4&gt;
 &lt;p&gt;By default, Git uses Vim as the text editor for commits messages, rebase and merge messages.
 If like me you have never used Vim because you find it challenging to use, the next &lt;code class=&quot;language-text&quot;&gt;core.editor&lt;/code&gt; the command comes to your rescue.&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git config --global core.editor &amp;quot;code -w&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;git config --global core.editor &quot;code -w&quot;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;With this command, you can tell Git to use a text editor installed on your laptop which is available via command line.&lt;/p&gt;
 &lt;p&gt;For everyone who started to code after 2016, I guess the de facto choice for the editor is VSCode, but old school guys can use &lt;code class=&quot;language-text&quot;&gt;nano&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;sublime text&lt;/code&gt; or like our grandparents in code will keep &lt;code class=&quot;language-text&quot;&gt;vim&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;emacs.&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Note the -w argument after the editor name :
@@ -1428,28 +1580,29 @@ Sometimes some files don’t deserve to be on Git, instead of ignoring them for 
 &lt;p&gt;Come back later you will find cool stuff here&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 348px;&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 348px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/1f81a468d220ea3bd301736bba6c16d3/7dd51/migration.png&quot;
+    href=&quot;/static/1f81a468d220ea3bd301736bba6c16d3/34ea4/migration.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 80.74712643678161%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAAB60lEQVQ4y42USy8DURTHu/AJVATVV9iJBXZWFv0AdpYWVpJSj7ZKIl7jESK1QRSNjrlT00YrSBNUOl2IRyJERNJYWtj6AvJ3ZkZHkXZmcXPnZs79ndf/XItzTMT/xeAIavvvb7Hc+nSOS2TH3i1/fyqXHUUo7XZa7vIgY6AaSVCDuYMCmvw8agOKEwaX7pT92JoBKhHV+BkGlw9wEkuha1KEKxhHQ4CVK0PllJVIbHS5YyaJh3MZLyyNtYSMvq0z2AOiDiuBmku50S8gOTID+TAL/uIZkaN7rCYEuEN7dDmu19kAKKpAGxm0DGwhOz0HeTOKm0UOhdc8PgoiehZ2YB2NU2k054ZAFxnWUQSdEzHk18PIh5cgL8zjLZfB51UGm2GBgOy7+yaAzu+O2kZ4TOzL2Dm5QfdyElwkgdlIBh4uqdbYhGxYSZQEpKKvpu+QyhWQzl4SfBtVXkbdFnT5OCqlrIqaDNwhEdVDAjwrErbPDsFJp3h6vAR3kIJ1mKFpvFSLBhEqkTVSOm2zEtLXOfj4Y1j6efSvxHC7u4FmErv9/yhWTlmpTzsBvUIGrdMSORDhmeLROx9Fc4iZBxZTVqE0KdW+fRKydq4nqNUf12GaqE3N8g9UqWXx7FJHsuzrYySb30X/04CKr80XnMfmHHot/JUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 81.08108108108108%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAAB6klEQVQ4y5WUyy8DURTGu/EHEE1DtVWRSNjZ2IkQVmJjKRJbISJ0tPUogni1qAaJdx93qi80LaVJk6ZCQhAi2FmInb/AQj532k6rT2NxcubOvfc333fumStSqFmkBomGfCjbM5srvuP5RZQ+yW3mAWU0y+g7Zco8+R+QVyWjsGq1FVWMFcVMKigLND+wnGaximDB5ITXcozGURaVWgf9CInDMsqQ3zIHLFHZUD/rwVswhDvihen4Ep1rAciYZEliWYhlqkKqsaOmfwfBQR18vivsn9zDcnKDxYNdlNIyJMvzJ5AqpECJ1omGHiNul/UIG0x4Ms7g/SOCz0cLmsb2IGHs1AkRplBJQ0w3tOl2EdkwImiYR0BvxEf4HF8hP4bnbChSkd+nn19hop60jvqjayx5rtGuP8D0lhvdq37UjjtQxhAhp5xcxJ1o1agD5rNbuEKvCF8E0Lm+jYJerqVs6e2THRhrampFw6Kwz4auTTfWT90YIT48PwTRs+mCeICgQpPRi7kVci1TSuvTbHAj9BBB28ohRN0WTC3tILCxBokq082flqW0PnUzLnRs+VChZaOKWybMaJ00Q56wKgDIW1bEG7u435oYSxju72GjPcqvVQg9ZR7CKePH5epYJEFEODD9Ashxw2QF/gC37OTyF15sXwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Chinese Salty Egg&quot;
         title=&quot;Chinese Salty Egg&quot;
-        src=&quot;/static/1f81a468d220ea3bd301736bba6c16d3/7dd51/migration.png&quot;
-        srcset=&quot;/static/1f81a468d220ea3bd301736bba6c16d3/00d96/migration.png 148w,
-/static/1f81a468d220ea3bd301736bba6c16d3/0b23c/migration.png 295w,
-/static/1f81a468d220ea3bd301736bba6c16d3/7dd51/migration.png 348w&quot;
+        src=&quot;/static/1f81a468d220ea3bd301736bba6c16d3/34ea4/migration.png&quot;
+        srcset=&quot;/static/1f81a468d220ea3bd301736bba6c16d3/12f09/migration.png 148w,
+/static/1f81a468d220ea3bd301736bba6c16d3/e4a3f/migration.png 295w,
+/static/1f81a468d220ea3bd301736bba6c16d3/34ea4/migration.png 348w&quot;
         sizes=&quot;(max-width: 348px) 100vw, 348px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
       /&gt;
   &lt;/a&gt;
