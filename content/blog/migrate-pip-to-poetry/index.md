@@ -11,7 +11,7 @@ featuredimage:
 
 I have recently stumbled across [poetry](https://python-poetry.org/) new dependency management for python and decided to give it a try.
 
-I have been a die hard fan of pip and had used it in most of my projects before I discovered poetry. Furthermore, I had heard about pyenv in the past but was reluctant to use it in my projects for preference reasons. Since Python dependency management is an interesting topic, I would like to explain the difference in another article such as [pip](https://github.com/pypa/pip) vs [pyenv](https://github.com/pyenv/pyenv) vs [petry](https://github.com/python-poetry/poetry).
+I have been a die hard fan of pip and had used it in most of my projects before I discovered poetry. Furthermore, I had heard about pyenv in the past but was reluctant to use it in my projects for preference reasons. Since Python dependency management is an interesting topic, I would like to explain the difference in another article such as [pip](https://github.com/pypa/pip) vs [pyenv](https://github.com/pyenv/pyenv) vs [poetry](https://github.com/python-poetry/poetry).
 
 When I discovered poetry and tested it, I fell in love with it.
 
