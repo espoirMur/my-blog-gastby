@@ -22,7 +22,9 @@ The younger me, after my first year of undergraduate, receiving a scholarship wo
 
 I am from DR Congo, and I graduated from ULPGL in Goma, Eastern Congo; and as you may guess, I did my undergraduate studies in French. I did what we called Polytechnic and graduated in Genie Electrique et Informati­que, which is an equivalent of a Bachelor’s degree in Electrical Engineering and Computer science. As I spent six years in undergraduates studies, I thought it was a master’s degree, but I am sure it was not.
 
-I didn't graduate with distinction despite finishing some years with 72 %. I finished my last year with 64%, which was not a distinction. On average, my grades were around 67% which was an equi­valent of 2:2 degree in the UK or second class.
+I didn't graduate with distinction despite finishing some years with 72 %. I finished my last year with 64%, which was not a distinction. On average, my grades were around 67% which was an equi­valent of 2:2 degree in the UK or second class. 
+
+I think if I had the same grades in the UK , I would have been a first class degree. However since I came from a poor ranking country , the universities in the UK considered the degree  as second class. I learned this a bit late , but you can check the [following article](https://www.westminster.ac.uk/sites/default/public-files/general-documents/overseas-academic-qualifications-equivalency-chart.pdf) for the equivalences per country.
 
 On top of my undergraduate, I had around five years of experience as a software engineer. I also had some Machine Learning experience acquired via community work and personal projects. I got the chance to participate in a research paper that got published, [Masakhane's paper](https://arxiv.org/abs/2003.11529). By the time I was applying, I was working on another paper that was not yet published.
 
@@ -44,7 +46,7 @@ I was glad and lucky with the recommendations I got. I didn't leave my Universit
 
 ## My Universities choices
 
-As a guy who came from a low-tier university with poor grades, with strong imposter syndrome, and who was afraid to live in big cities; I didn't bother applying to the top four: Oxbridge, UCL, Imperial, which are the top universities In Machine learning In the UK, in the world, and In Europe.
+As a guy who came from a low-tier university with poor grades, with strong imposter syndrome, and who was afraid to live in big cities; I didn't bother applying to the top four: Oxbridge, UCL, Imperial, which are the top universities In Machine learning In the UK,In Europe and in the World.
 
 I went ahead as the first batch and applied to the speech and Natural language processing at Edinburgh and the same program at Sheffield and Artificial Intelligence at Cardiff University. But honestly speaking, they were decent programs.
 
@@ -56,24 +58,19 @@ Below are the first mistakes I made during the application process to those univ
 
 -   My final course transcripts: Instead of applying with all my transcripts illustrating all the courses I studied in my undergrad, I used the transcript for my two last years at University. I later discovered that I should have used all my transcripts, and it was late to edit my application with those transcripts.
     
--   Since my degree did not have any equivalent in the UK educational system, I thought it was a master’s degree since I spent six years as an undergrad, but I was mistaken. I Should have called it as it was licence en Genie Electrique et Informatique. I finally asked the [question on stack exchange](https://academia.stackexchange.com/questions/166060/diploma-equivalence-from-the-old-belgian-system/166062#166062), and I got the final answer.
+-   Since my degree did not have any equivalent in the UK educational system, I thought it was a master’s degree since I spent six years as an undergrad, but I was mistaken. I Should have called it as it was _Licence en Genie Electrique et Informatique_. I finally asked the [question on stack exchange](https://academia.stackexchange.com/questions/166060/diploma-equivalence-from-the-old-belgian-system/166062#166062), and I got the final answer.
     
--   My statement of purpose: The statement of purpose is the letter that opens your doors to universities. While applying to this, Mine was good, but it was not outstanding for a student with my experience. I did not illustrate how my undergrad studies and professional experience prepared me for the master.
+-   My statement of purpose: The statement of purpose is the letter that opens your doors to universities. While applying to this, mine was good, but it was not outstanding for a student with my experience. I did not illustrate how my undergrad studies and professional experience prepared me for the master.
     
-
-  
-  
-  
-
 ## The first Bach outcome
 
 ![](https://lh4.googleusercontent.com/i0ZDVfj9GVCscjHgI3N9q_6nXKbswhHilgSg2UP8T7VB2VHDR0u2j4B8U62_29GxGYf1YNOv6ZmHp8SP-OFdUaImqKDDitUm0H1CcxWhKmyxeLG2ukmL2ytEG88zmBwBTstb3dXi)
 
   
 
-I got back-to-back rejections from those three universities, and the demons of Imposter syndrome came back again.
+I got back-to-back rejections from those three universities, and the demons of Imposter Syndrome came back again.
 
-Those universities required students to have at least a 2:1 grade (first class or distinction and from good universities ) was not my case.
+Those universities required students to have at least a 2:1 grade (first class or distinction and from good universities ), that was not my case.
 
 After failing to get admissions, start looking for middle-class university or Europa leagues teams for those familiar with Premier League.
 
@@ -85,7 +82,7 @@ I came across the Data Science master at Cardiff, Data science at Sussex, Big Da
 
 ![](https://lh3.googleusercontent.com/Bs6HkG1xpJT1qpqtxl_yWv96rXTduSruS20mbneVlWhk6qJsuPoSEmnvOHImCTrE1lg6Q0r1fzG15qqtLalGeBRuVa_3hjFwWVdxjO3m4z7TJVmYElGIkPMlbhY1v3WqKpuAd7Vo)
 
-I started looking for graduates forums online to learn about the UK’s application process and stumbled across the [grad admission subreddit](https://www.reddit.com/r/gradadmissions/), [the statement of purpose subreddit.](https://www.reddit.com/r/gradadmissions/comments/9pd2b8/the_statement_of_purpose_prompt_for_ucsd_is_a/) I stumbled across a fantastic [guide](http://writeivy.com/structure-is-magic-a-guide-to-the-graduate-sop/) on the subreddit writing by a graduate study expert, and I applied all the advice written in that blog. The statement of purpose subreddit has many students going in the same process as you and who are willing to help you review your SOP. I was glad I got help from the subreddit, and it helped me proofread my new statement.
+I started looking for graduates forums online to learn about the UK’s application process and stumbled across the [grad admission subreddit](https://www.reddit.com/r/gradadmissions/), [the statement of purpose subreddit.](https://www.reddit.com/r/gradadmissions/comments/9pd2b8/the_statement_of_purpose_prompt_for_ucsd_is_a/) I found a fantastic [guide](http://writeivy.com/structure-is-magic-a-guide-to-the-graduate-sop/) on the subreddit written  by a graduate study expert, and I applied all the advice written in that blog. The statement of purpose subreddit has many students going in the same process as you and who are willing to help you review your SOP. I was glad I got help from the subreddit, and it helped me proofread my new statement.
 
 I went ahead and got all my transcripts from my university and translated them. I also got a letter confirming that I finished my studies at my university since we did not have our certificate signed by our Minister now. Don’t ask me why because I don’t have an answer for that.
 
@@ -99,7 +96,7 @@ I got another rejection from Leeds. But, to my dismay, in April, I got an Uncond
 
 I later received another offer from Sussex, New Castle, and a conditional offer from the Data Science program at Cardiff University.
 
-By the time I got the offer from those universities, I had already passed the Chevening Interview, and I could not amend my choice. Should I have got a chance to do so, I could have picked Sussex as my first choice and Cardiff as my third choice.
+By the time I got the offer from those universities, I had already passed the Chevening Interview, and I could not amend my choices. Should I have got a chance to do so, I could have picked Sussex as my first choice and Cardiff as my third choice.
 
 ## The Final Decision
 
@@ -111,19 +108,19 @@ I found the master of Data Science at Susses a perfect choice for me and my care
 
 ### Why Cardiff At third
 
-Although their international department communication was good, I did not meet their condition in time to Secure my scholarship. It required me to have my final degree signed by our minister on time but with our country's politics. Here is the letter called A qui de droit, which the university declined. After many setbacks with the grad admission team, I finally got an unconditional offer, but it was too late for the Chevening application deadline.
+Although their international department communication was good, I did not meet their condition in time to secure my scholarship. It required me to have my final degree signed by our minister on time but with our country's politics that was not possible. There is the letter called _A qui de droit_, which the university declined. After many back and forth with the grad admission team, I finally got an unconditional offer, but it was too late for the Chevening application deadline.
 
 ### So I Ended up in Essex
 
-Since it was the only university I submitted to Chevening after the interview, I got an offer. It was impossible to change it later, it was the only option I had, but if I had the choice to change, I could have chosen Sussex instead.
+Since it was the only university I submitted to Chevening after the interview, I got an offer. It was impossible to change it later, it was the only option I had, but if I had the choice to change, I could have chosen Sussex or Cardiff instead.
 
-I am not very happy with the university admission department, and they are somewhat slowish. To illustrate that, we are one month before the course start date, but I haven’t yet got my Confirmation of Acceptance of Studies ( CAS). Anyway, it is already late to change my university choice. I will have to go there.
+I am not very happy with the university admission department, and they are somehow slowish. To illustrate that, we are one month before the course start date, but I haven’t yet got my Confirmation of Acceptance of Studies ( CAS). Anyway, it is already late to change my university choice. I will have to go there.
 
 ## What I am looking forward to
 
-I think the calm in the town will help me to concentrate on my studies. I am looking forward to interacting with Prof [Dr. Shoaib Jameel](https://www.essex.ac.uk/people/jamee22406/shoaib-jameel) and integrating his NLP group to research great questions, information retrieval, and conversational agents.
+I think the calm in the town will help me to concentrate on my studies. I am looking forward to interacting with Prof [Dr. Shoaib Jameel](https://www.essex.ac.uk/people/jamee22406/shoaib-jameel) and integrating his NLP group to research on great questions answering, search and information retrieval.
 
-Colchester seems to be a quiet city for me, and it is just one hour from London. I plan to enjoy my studies there and spend some weekends in London.
+Colchester seems to be a quiet city for me but  it is just one hour from London. I plan to enjoy my studies there and spend some weekends in London.
 
 I will enjoy my journey In the UK as much as possible and watch at least two premiers leagues games. The Manchester derby and a London derby.
 
@@ -133,11 +130,11 @@ I will enjoy my journey In the UK as much as possible and watch at least two pre
 
 What next After graduating, I will come back home and give back to the community. Yes, I will come back, my African people. I am not planning to stay in the UK; I will return to Africa; those are my ambitions. I hope to learn a lot during my studies and work hard for two years and see if I will still have the energy to apply for a Ph.D., this time in a top-four team.
 
-## Fears, Reflexion, and Joys
+## Fears, Reflections, and Joys
 
 The good news is that I got the Chevening scholarship, and I will be a sponsored student in the Uk for the following year. I have heard people congratulate me for that and tell me that it is a prestigious scholarship but let wait and see.
 
-I regret that I didn't get admission from Edinburgh or Sheffield, which was kind of Europa League teams. I somehow got the fact that I didn't even apply to Oxbridge, University College London, or Imperial College London, like Man City, Man United, Liverpool, and Chelsea.
+I regret that I didn't get admission from Edinburgh or Sheffield, which was kind of Europa League teams. I somehow regret the fact that I didn't even apply to Oxbridge, University College London, or Imperial College London, like Man City, Man United, Liverpool, and Chelsea.
 
 My biggest fear is losing my job. I have a paying job that is paying me more than the monthly stipend Chevening gives. Will I be able to work part-time while studying? If not, how will I be able to support my family while studying?
 
