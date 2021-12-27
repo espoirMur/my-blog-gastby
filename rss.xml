@@ -1,93 +1,187 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My ideas' home]]></title><description><![CDATA[Murhabazi Buzina Espoir Home on the internet]]></description><link>https://www.murhabazi.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 06 Nov 2021 11:32:14 GMT</lastBuildDate><item><title><![CDATA[Lessons learned while Applying to Master’s Degrees In the UK.]]></title><description><![CDATA[A bit earlier last year, in August 2020, I learned about the Chevening scholarship from the Uk government, and I decided to give it a try…]]></description><link>https://www.murhabazi.com/applying-to-uk-lessons/</link><guid isPermaLink="false">https://www.murhabazi.com/applying-to-uk-lessons/</guid><pubDate>Fri, 05 Nov 2021 23:00:36 GMT</pubDate><content:encoded>&lt;p&gt;A bit earlier last year, in August 2020, I learned about the &lt;a href=&quot;https://www.chevening.org/&quot;&gt;Chevening scholarship&lt;/a&gt; from the Uk government, and I decided to give it a try. Chevening is a fully-funded scholarship by the UK government; it offers mid-career professionals from some countries the opportunity to study for a master’s degree in any university in the UK.&lt;/p&gt;
-&lt;p&gt;Part of the conditions to get the scholarship is to gain entry to any UK University. As a result, Chevening will cover your tuition fees and give you a monthly stipend of 1150 pounds. I needed the scholarship and admission to a UK university, and that is how my journey started.&lt;/p&gt;
-&lt;p&gt;In this blog, I will relate my experience with the application process. I will talk about my failures, my success stories, and what I learned during the process.&lt;/p&gt;
-&lt;p&gt;But before talking about the universities, let me talk about myself and my background to give you more context.&lt;/p&gt;
-&lt;h2&gt;A local boy from Bukavu who studied in Goma&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://lh5.googleusercontent.com/M1sxZv-WK7g0gK0ZnDlbeDh2SewMyBlXvD2M5gMXmu6OCQHLQYo5YAiMq-GMkWQGBe4CWu0vdWMrrPZ5Lubf5gG2CGbn1dztFiegOJR9HdsJ5THG34m_R5xm67fd9cTwbapETJ_7&quot;&gt;&lt;/p&gt;
-&lt;p&gt;The younger me, after my first year of undergraduate, receiving a scholarship worth 120 USD&lt;/p&gt;
-&lt;p&gt;I am from DR Congo, and I graduated from ULPGL in Goma, Eastern Congo; and as you may guess, I did my undergraduate studies in French. I did what we called Polytechnic and graduated in Genie Electrique et Informati­que, which is an equivalent of a Bachelor’s degree in Electrical Engineering and Computer science. As I spent six years in undergraduates studies, I thought it was a master’s degree, but I am sure it was not.&lt;/p&gt;
-&lt;p&gt;I didn’t graduate with distinction despite finishing some years with 72 %. I finished my last year with 64%, which was not a distinction. On average, my grades were around 67% which was an equi­valent of 2:2 degree in the UK or second class. &lt;/p&gt;
-&lt;p&gt;I think if I had the same grades in the UK , I would have been a first class degree. However since I came from a poor ranking country , the universities in the UK considered the degree  as second class. I learned this a bit late , but you can check the &lt;a href=&quot;https://www.westminster.ac.uk/sites/default/public-files/general-documents/overseas-academic-qualifications-equivalency-chart.pdf&quot;&gt;following article&lt;/a&gt; for the equivalences per country.&lt;/p&gt;
-&lt;p&gt;On top of my undergraduate, I had around five years of experience as a software engineer. I also had some Machine Learning experience acquired via community work and personal projects. I got the chance to participate in a research paper that got published, &lt;a href=&quot;https://arxiv.org/abs/2003.11529&quot;&gt;Masakhane’s paper&lt;/a&gt;. By the time I was applying, I was working on another paper that was not yet published.&lt;/p&gt;
-&lt;p&gt;My dream was to find a specialized master in Natural language processing or computational linguistic in the UK. That was my first mistake. Instead of looking for a specialized master in NLP, I could have looked for a more general master in either Machine learning, Data Science or Artificial Intelligence with NLP Courses.&lt;/p&gt;
-&lt;h2&gt;The Application Process&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://lh6.googleusercontent.com/Sk5MSRpTRSYxLIfvDHzd5WDqRlHLWNUonEr7nXG0albajremxmTQC4kP6zPAQPHrn-lkf4gC5ztC8imUeIlxeiXI4p3eGyelVBE8ip8lE4efMYroUv7hBHYzUQ2ayYZQsB4zR7KC&quot;&gt;&lt;/p&gt;
-&lt;h2&gt;The IELTS Tests&lt;/h2&gt;
-&lt;p&gt;Coming from a francophone university I knew that it was important for me to have an English test either an IELTS or a TOEFL. I decide to go for the IELTS since I was applying for universities in the UK.&lt;/p&gt;
-&lt;p&gt;I sat for the IELTS test back in November 2020, and I was glad to get a 6.5. That was the least score to gain admission to a top university in the UK for 2021-2022. To learn more about my IELTS experience, &lt;a href=&quot;https://murhabazi.com/ielts-how-it-went/&quot;&gt;check out this blog post&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;The recommendation letters&lt;/h2&gt;
-&lt;p&gt;I was glad and lucky with the recommendations I got. I didn’t leave my University on a good note, so it was not the best place to look for recommendations. However, I managed to get recommendations from my academic mentor from my research group, a former classmate who is already a Ph.D. student and a teaching assistant, and another one from a former colleague. There were generic recommendations where I needed to edit the university and the program I was applying for.&lt;/p&gt;
-&lt;h2&gt;My Universities choices&lt;/h2&gt;
-&lt;p&gt;As a guy who came from a low-tier university with poor grades, with strong imposter syndrome, and who was afraid to live in big cities; I didn’t bother applying to the top four: Oxbridge, UCL, Imperial, which are the top universities In Machine learning In the UK,In Europe and in the World.&lt;/p&gt;
-&lt;p&gt;I went ahead as the first batch and applied to the speech and Natural language processing at Edinburgh and the same program at Sheffield and Artificial Intelligence at Cardiff University. But honestly speaking, they were decent programs.&lt;/p&gt;
-&lt;h2&gt;Mistakes I made while applying.&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/ebv42UX_vWcm20D0DMKyW_-PRM69lw2b1BZDOBbY9gp_hT5-zHnkQsBSCZcG3sWi8p_JBLoBVSnLEXfRRJ-TF1QHGfwTx0niP9KUsVox9SLauNAS4Scklxcmcdb6y5gyac1ExGii&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Below are the first mistakes I made during the application process to those universities :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;My final course transcripts: Instead of applying with all my transcripts illustrating all the courses I studied in my undergrad, I used the transcript for my two last years at University. I later discovered that I should have used all my transcripts, and it was late to edit my application with those transcripts.&lt;/li&gt;
-&lt;li&gt;Since my degree did not have any equivalent in the UK educational system, I thought it was a master’s degree since I spent six years as an undergrad, but I was mistaken. I Should have called it as it was &lt;em&gt;Licence en Genie Electrique et Informatique&lt;/em&gt;. I finally asked the &lt;a href=&quot;https://academia.stackexchange.com/questions/166060/diploma-equivalence-from-the-old-belgian-system/166062#166062&quot;&gt;question on stack exchange&lt;/a&gt;, and I got the final answer.&lt;/li&gt;
-&lt;li&gt;My statement of purpose: The statement of purpose is the letter that opens your doors to universities. While applying to this, mine was good, but it was not outstanding for a student with my experience. I did not illustrate how my undergrad studies and professional experience prepared me for the master.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;The first Bach outcome&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://lh4.googleusercontent.com/i0ZDVfj9GVCscjHgI3N9q_6nXKbswhHilgSg2UP8T7VB2VHDR0u2j4B8U62_29GxGYf1YNOv6ZmHp8SP-OFdUaImqKDDitUm0H1CcxWhKmyxeLG2ukmL2ytEG88zmBwBTstb3dXi&quot;&gt;&lt;/p&gt;
-&lt;p&gt;I got back-to-back rejections from those three universities, and the demons of Imposter Syndrome came back again.&lt;/p&gt;
-&lt;p&gt;Those universities required students to have at least a 2:1 grade (first class or distinction and from good universities ), that was not my case.&lt;/p&gt;
-&lt;p&gt;After failing to get admissions, start looking for middle-class university or Europa leagues teams for those familiar with Premier League.&lt;/p&gt;
-&lt;h2&gt;The second batch of Applications&lt;/h2&gt;
-&lt;p&gt;I came across the Data Science master at Cardiff, Data science at Sussex, Big Data and text Analytics at Essex, Data Science and AI at New Castle, and Artificial Intelligence at Leeds university. From my research, those were decent universities with good NLP courses in their curriculum and good researchers doing NLP.&lt;/p&gt;
-&lt;h3&gt;What I did to improve my Applications&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/Bs6HkG1xpJT1qpqtxl_yWv96rXTduSruS20mbneVlWhk6qJsuPoSEmnvOHImCTrE1lg6Q0r1fzG15qqtLalGeBRuVa_3hjFwWVdxjO3m4z7TJVmYElGIkPMlbhY1v3WqKpuAd7Vo&quot;&gt;&lt;/p&gt;
-&lt;p&gt;I started looking for graduates forums online to learn about the UK’s application process and stumbled across the &lt;a href=&quot;https://www.reddit.com/r/gradadmissions/&quot;&gt;grad admission subreddit&lt;/a&gt;, &lt;a href=&quot;https://www.reddit.com/r/gradadmissions/comments/9pd2b8/the_statement_of_purpose_prompt_for_ucsd_is_a/&quot;&gt;the statement of purpose subreddit.&lt;/a&gt; I found a fantastic &lt;a href=&quot;http://writeivy.com/structure-is-magic-a-guide-to-the-graduate-sop/&quot;&gt;guide&lt;/a&gt; on the subreddit written  by a graduate study expert, and I applied all the advice written in that blog. The statement of purpose subreddit has many students going in the same process as you and who are willing to help you review your SOP. I was glad I got help from the subreddit, and it helped me proofread my new statement.&lt;/p&gt;
-&lt;p&gt;I went ahead and got all my transcripts from my university and translated them. I also got a letter confirming that I finished my studies at my university since we did not have our certificate signed by our Minister now. Don’t ask me why because I don’t have an answer for that.&lt;/p&gt;
-&lt;p&gt;I applied to those universities with my updated transcripts, statements of purpose, and recommendation letters and started waiting for the results.&lt;/p&gt;
-&lt;h3&gt;The second batch’s Outcome&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://lh4.googleusercontent.com/CU1lBE_xq9SWKo07bw3Z0ruD_usjutTMG3tci1Q0ewBBuZ5ZclIHj1R2DKAllST8wfNSnzqHzWYxiOvBgAgjwNLSaEVhEAM4XJhKv3uTEFe4wSoU1GGY6IWf5MnIaG27BTNiIBAF&quot;&gt;&lt;/p&gt;
-&lt;p&gt;I got another rejection from Leeds. But, to my dismay, in April, I got an Unconditional offer from Essex. The offer was enough to put me in an excellent position to get the Chevening scholarship. I submitted it as my second choice to Chevening with Cardiff, and Edinburgh being my 1st and third choices.&lt;/p&gt;
-&lt;p&gt;I later received another offer from Sussex, New Castle, and a conditional offer from the Data Science program at Cardiff University.&lt;/p&gt;
-&lt;p&gt;By the time I got the offer from those universities, I had already passed the Chevening Interview, and I could not amend my choices. Should I have got a chance to do so, I could have picked Sussex as my first choice and Cardiff as my third choice.&lt;/p&gt;
-&lt;h2&gt;The Final Decision&lt;/h2&gt;
-&lt;p&gt;No matter how many offers I got, I had to attend only one university.&lt;/p&gt;
-&lt;h3&gt;Why Sussex?&lt;/h3&gt;
-&lt;p&gt;I found the master of Data Science at Susses a perfect choice for me and my career goals and NLP ambitions. The course has two NLP modules in the curriculum and has some good professors doing NLP research. It was near Brighton on the beach and had a good reputation for African students. And while applying for the university, I found that it has my local African university in its choices.&lt;/p&gt;
-&lt;h3&gt;Why Cardiff At third&lt;/h3&gt;
-&lt;p&gt;Although their international department communication was good, I did not meet their condition in time to secure my scholarship. It required me to have my final degree signed by our minister on time but with our country’s politics that was not possible. There is the letter called &lt;em&gt;A qui de droit&lt;/em&gt;, which the university declined. After many back and forth with the grad admission team, I finally got an unconditional offer, but it was too late for the Chevening application deadline.&lt;/p&gt;
-&lt;h3&gt;So I Ended up in Essex&lt;/h3&gt;
-&lt;p&gt;Since it was the only university I submitted to Chevening after the interview, I got an offer. It was impossible to change it later, it was the only option I had, but if I had the choice to change, I could have chosen Sussex or Cardiff instead.&lt;/p&gt;
-&lt;p&gt;I am not very happy with the university admission department, and they are somehow slowish. To illustrate that, we are one month before the course start date, but I haven’t yet got my Confirmation of Acceptance of Studies ( CAS). Anyway, it is already late to change my university choice. I will have to go there.&lt;/p&gt;
-&lt;h2&gt;What I am looking forward to&lt;/h2&gt;
-&lt;p&gt;I think the calm in the town will help me to concentrate on my studies. I am looking forward to interacting with Prof &lt;a href=&quot;https://www.essex.ac.uk/people/jamee22406/shoaib-jameel&quot;&gt;Dr. Shoaib Jameel&lt;/a&gt; and integrating his NLP group to research on great questions answering, search and information retrieval.&lt;/p&gt;
-&lt;p&gt;Colchester seems to be a quiet city for me but  it is just one hour from London. I plan to enjoy my studies there and spend some weekends in London.&lt;/p&gt;
-&lt;p&gt;I will enjoy my journey In the UK as much as possible and watch at least two premiers leagues games. The Manchester derby and a London derby.&lt;/p&gt;
-&lt;h2&gt;What Next After My master&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://lh4.googleusercontent.com/xB8NvTHRCRnGLIBgb_hSJydGN4MG1lkY2ZC1IHW41UI0YNIOJ2lEervFw6KlgnThwtztOg3b6n7IibusYwo3I7BdXjVuPOLATkDWHTVwPwsdPPiqkTDzYizsB-T2urG3R5HAruly&quot;&gt;&lt;/p&gt;
-&lt;p&gt;What next After graduating, I will come back home and give back to the community. Yes, I will come back, my African people. I am not planning to stay in the UK; I will return to Africa; those are my ambitions. I hope to learn a lot during my studies and work hard for two years and see if I will still have the energy to apply for a Ph.D., this time in a top-four team.&lt;/p&gt;
-&lt;h2&gt;Fears, Reflections, and Joys&lt;/h2&gt;
-&lt;p&gt;The good news is that I got the Chevening scholarship, and I will be a sponsored student in the Uk for the following year. I have heard people congratulate me for that and tell me that it is a prestigious scholarship but let wait and see.&lt;/p&gt;
-&lt;p&gt;I regret that I didn’t get admission from Edinburgh or Sheffield, which was kind of Europa League teams. I somehow regret the fact that I didn’t even apply to Oxbridge, University College London, or Imperial College London, like Man City, Man United, Liverpool, and Chelsea.&lt;/p&gt;
-&lt;p&gt;My biggest fear is losing my job. I have a paying job that is paying me more than the monthly stipend Chevening gives. Will I be able to work part-time while studying? If not, how will I be able to support my family while studying?&lt;/p&gt;
-&lt;p&gt;How will I get money to enjoy weekends in the UK, football matches, and meet beautiful girls?&lt;/p&gt;
-&lt;p&gt;But sometimes I just sit down and say, it will be fine.&lt;/p&gt;
-&lt;h2&gt;Lessons learned&lt;/h2&gt;
-&lt;p&gt;To sum up, here are the few lessons I learned:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;If you are in CS, this tool, &lt;a href=&quot;http://csrankings.org/#/index?nlp&amp;#x26;ir&amp;#x26;uk&quot;&gt;CSRankings: Computer Science Rankings&lt;/a&gt;, is a must-have you can use to learn more about university rankings. What I enjoyed about the website is that it doesn’t only give you university rankings. Still, it can rank university per topic or area and give you a list of professors working on a given topic. Those pieces of information are instrumental when you are writing your statement of purpose.&lt;/li&gt;
-&lt;li&gt;Join graduate communities on Reddit &lt;a href=&quot;https://www.reddit.com/r/gradadmissions/&quot;&gt;r/gradadminssion&lt;/a&gt;, &lt;a href=&quot;https://www.reddit.com/r/StatementOfPurpose/&quot;&gt;r/statement of purpose&lt;/a&gt;, and you will enjoy the help and resources you can find on those groups. I am not a fan of other social media platforms, but I am sure you can get more support and find similar groups to those subreddits.&lt;/li&gt;
-&lt;li&gt;During the application time, most of the universities organize open days, virtual or on-site events. Make sure you attend those events and learn as much as you can about your department and the international admission department. This will help to put you in a good position when writing your statement of purpose and should put you in touch with the international admission team.&lt;/li&gt;
-&lt;li&gt;Make sure all your documents are ready on time. If you did not do your undergraduate in English, ensure you have certified translations of all your documents on time.&lt;/li&gt;
-&lt;li&gt;If you are from a French university, start early to get an IELTS or TOEFL score on time,&lt;/li&gt;
-&lt;li&gt;Make sure your recommendations are ready.&lt;/li&gt;
-&lt;li&gt;Never underestimate your contributions to community projects and the work you did back in university.&lt;/li&gt;
-&lt;li&gt;And start applying early to learn as much as you can in the process.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;And to conclude, I will leave you with one of my favorite quotes:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://lh6.googleusercontent.com/DWzKbI2f7bbP_eCsfYXxShke33eQuW3zotTW_NlC1OJmA8EepOryVwKHSHn39N05-QX2xwjtKI8dpglgdYmorgICSvOCzg2WNK7liaJdF8m4ywfg2ct9wUwbyWqFvLI6c-6MHKob&quot;&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How I break up with pip and fall in love with poetry , my new girlfriend.]]></title><description><![CDATA[I have recently stumbled across poetry new dependency management for python and decided to give it a try. I have been a die hard fan of pip…]]></description><link>https://www.murhabazi.com/migrate-pip-to-poetry/</link><guid isPermaLink="false">https://www.murhabazi.com/migrate-pip-to-poetry/</guid><pubDate>Sun, 17 Oct 2021 15:33:42 GMT</pubDate><content:encoded>&lt;p&gt;I have recently stumbled across &lt;a href=&quot;https://python-poetry.org/&quot;&gt;poetry&lt;/a&gt; new dependency management for python and decided to give it a try.&lt;/p&gt;
-&lt;p&gt;I have been a die hard fan of pip and had used it in most of my projects before I discovered poetry. Furthermore, I had heard about pyenv in the past but was reluctant to use it in my projects for preference reasons. Since Python dependency management is an interesting topic, I would like to explain the difference in another article such as &lt;a href=&quot;https://github.com/pypa/pip&quot;&gt;pip&lt;/a&gt; vs &lt;a href=&quot;https://github.com/pyenv/pyenv&quot;&gt;pyenv&lt;/a&gt; vs &lt;a href=&quot;https://github.com/python-poetry/poetry&quot;&gt;poetry&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My ideas' home]]></title><description><![CDATA[Murhabazi Buzina Espoir Home on the internet]]></description><link>https://www.murhabazi.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 27 Dec 2021 22:45:52 GMT</lastBuildDate><item><title><![CDATA[Local Boy visited the Etihad Stadium. Here is how it went.]]></title><description><![CDATA[Local Boy visited the Etihad Stadium. Here is how it went. I had been dreaming about visiting the Etihad Stadium one day in my life. When I…]]></description><link>https://www.murhabazi.com/man-city-game-experience/</link><guid isPermaLink="false">https://www.murhabazi.com/man-city-game-experience/</guid><pubDate>Mon, 27 Dec 2021 18:20:39 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/86c641c6c3b743d87cba95dded2df2a8/9568a/dream-come-true.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.1081081081081%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAgADAQT/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/9oADAMBAAIQAxAAAAFa5Tl3IfheDvNRmf/EAB4QAAIBAwUAAAAAAAAAAAAAAAECAwAjMRESEyJD/9oACAEBAAEFAhH146MRpUIjQ27ZonaiZkA1OPRs/wD/xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAjEAACAAMIAwAAAAAAAAAAAAAAARESMgIDECExM0FRcYGh/9oACAEBAAY/AqmV/TcO0WVNKakeRq8g2jIXk9Yf/8QAHBABAAIDAQEBAAAAAAAAAAAAAQARITFBYXGR/9oACAEBAAE/IbL0a1M82i3tLythdJn9gPB50swjZ9WK51cL9gs6prHIA1orkax219lsf//aAAwDAQACAAMAAAAQVAxA/8QAGREAAwADAAAAAAAAAAAAAAAAAAERIUGB/9oACAEDAQE/ELmHR7E3D//EABgRAAMBAQAAAAAAAAAAAAAAAAABESFB/9oACAECAQE/EJVTBcHKf//EAB8QAQADAAICAwEAAAAAAAAAAAEAESExUUGhYXGBkf/aAAgBAQABPxBCHGWuM4+ptYW7gCqt0wYkoxjBrpH8BhInnvPUNDapDb7mg7Cw7iK0mFnVuQUHxMF2wRWxu/1gSDtD+MULfHXzP//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cover image&quot;
+        title=&quot;cover image&quot;
+        src=&quot;/static/86c641c6c3b743d87cba95dded2df2a8/1c72d/dream-come-true.jpg&quot;
+        srcset=&quot;/static/86c641c6c3b743d87cba95dded2df2a8/a80bd/dream-come-true.jpg 148w,
+/static/86c641c6c3b743d87cba95dded2df2a8/1c91a/dream-come-true.jpg 295w,
+/static/86c641c6c3b743d87cba95dded2df2a8/1c72d/dream-come-true.jpg 590w,
+/static/86c641c6c3b743d87cba95dded2df2a8/a8a14/dream-come-true.jpg 885w,
+/static/86c641c6c3b743d87cba95dded2df2a8/fbd2c/dream-come-true.jpg 1180w,
+/static/86c641c6c3b743d87cba95dded2df2a8/9568a/dream-come-true.jpg 3024w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Local Boy visited the Etihad Stadium. Here is how it went.&lt;/h2&gt;
+&lt;p&gt;I had been dreaming about visiting the Etihad Stadium one day in my life. When I first applied for the Chevening Scholarship, watching a Mancity game was one of the reasons why I wanted to come to the UK. &lt;/p&gt;
+&lt;p&gt;I knew Boxing Day was a big day for the English Premier League, which is why I booked my ticket for the Manchester City against Leicester Game despite fear of postponement due to the new variant of COVID. &lt;/p&gt;
+&lt;p&gt;I traveled from Colchester to Manchester on the 24th of December and I booked my stay at the Britannica Hotel in the heart of Manchester Piccadilly. &lt;/p&gt;
+&lt;p&gt;On the day of the game,  I took the bus to the stadium. At first glimpse of the Stadium, I was in tears. My childhood dream became a reality. I was at the Etihad Stadium.&lt;/p&gt;
+&lt;p&gt;I arrived a bit late and missed the chance to have a full official stadium tour. I still managed to visit the Stadium by myself later on, and took some nice pictures. &lt;/p&gt;
+&lt;h3&gt;Meeting the legend&lt;/h3&gt;
+&lt;p&gt;Firstly, let’s start with a bit of history. I have been supporting Manchester City since 2008 when I found that Vincent Kompany has some Congolese origin and comes from the same region as I. I wish I had the chance to meet him when he played for ManCity, but sadly he retired from professional football years ago. &lt;/p&gt;
+&lt;p&gt;I have been a massive fan of him for his leadership on and off the pitch. I consider him my role model; therefore, I had to take my first picture of the day with his statue. &lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1bd6302d891c4d12fca12010f183eba9/9568a/meeting-the-legend.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.1081081081081%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECBAP/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAActUkkkXVw0LGrEL/8QAHRAAAgIBBQAAAAAAAAAAAAAAAQIAAxAREiAhMv/aAAgBAQABBQJVEsrClegthCXMWwfK7ppXw//EABcRAAMBAAAAAAAAAAAAAAAAAAABERD/2gAIAQMBAT8BI8p//8QAFhEBAQEAAAAAAAAAAAAAAAAAABEB/9oACAECAQE/AYuKj//EAB0QAAIBBAMAAAAAAAAAAAAAAAABIRESMbEgQUL/2gAIAQEABj8Cq0eTGxK3AjGiFI7pO+H/xAAeEAACAgICAwAAAAAAAAAAAAABEQAhUWEQMUGh8P/aAAgBAQABPyEogNbBuVwIukYyB7TagQu4FBXKT8swotDKC1obnxHKn//aAAwDAQACAAMAAAAQH9Xy/8QAGREAAgMBAAAAAAAAAAAAAAAAAREAEEEh/9oACAEDAQE/EGdEdkQPaf/EABgRAQEAAwAAAAAAAAAAAAAAAAARASFR/9oACAECAQE/EI6grDd//8QAIBABAQACAQMFAAAAAAAAAAAAAREAIaEQcZExQVFhgf/aAAgBAQABPxB3JbRCO9xlEgiCX7x3CWwgeMoFJQfbTzgHZZe29cmCgwRSKT93jSHZA+vGSyY0E68GKz4k3fRN4Des/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;legend&quot;
+        title=&quot;legend&quot;
+        src=&quot;/static/1bd6302d891c4d12fca12010f183eba9/1c72d/meeting-the-legend.jpg&quot;
+        srcset=&quot;/static/1bd6302d891c4d12fca12010f183eba9/a80bd/meeting-the-legend.jpg 148w,
+/static/1bd6302d891c4d12fca12010f183eba9/1c91a/meeting-the-legend.jpg 295w,
+/static/1bd6302d891c4d12fca12010f183eba9/1c72d/meeting-the-legend.jpg 590w,
+/static/1bd6302d891c4d12fca12010f183eba9/a8a14/meeting-the-legend.jpg 885w,
+/static/1bd6302d891c4d12fca12010f183eba9/fbd2c/meeting-the-legend.jpg 1180w,
+/static/1bd6302d891c4d12fca12010f183eba9/9568a/meeting-the-legend.jpg 3024w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;The Dream come true&lt;/h3&gt;
+&lt;p&gt;Secondly, I went to the stadium and took the picture that sums up my childhood dreams, Espoir in the UK.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/55990dc4282531e221b6cae722dbadf9/9568a/at-stadium-2.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.1081081081081%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAwAEAf/EABYBAQEBAAAAAAAAAAAAAAAAAAACAf/aAAwDAQACEAMQAAABFT04y3YF8i1KWeP/xAAeEAABAgcBAAAAAAAAAAAAAAABAgMAERITISIxMv/aAAgBAQABBQIDNOpEobMnLyYcVlC41ttUKSOHjfn/xAAWEQEBAQAAAAAAAAAAAAAAAAAAERD/2gAIAQMBAT8ByI//xAAXEQEAAwAAAAAAAAAAAAAAAAAAEBES/9oACAECAQE/AYtp/8QAIhAAAgEBCAMAAAAAAAAAAAAAAAERIQIQEiIxMjNhgZGh/9oACAEBAAY/AowL0cXw2Db0gipRyWmzszpSeb//xAAdEAEAAgICAwAAAAAAAAAAAAABABEhMUGxUWFx/9oACAEBAAE/IRUFQ9u4ngvzAOrHxSCsa3xADl1cROFUpAYDRiXUhSLc8xXctUJDbOyf/9oADAMBAAIAAwAAABCvEHH/xAAWEQEBAQAAAAAAAAAAAAAAAAARAQD/2gAIAQMBAT8QbnVV1dXf/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQEA/9oACAECAQE/ECYmghoIG//EAB4QAQACAgMAAwAAAAAAAAAAAAEAESExQWFxUZGx/9oACAEBAAE/EOJfRZeKzyOIctvzrFD7DGgGhvq4TxSUbXVBe+oMwU2YmOkpd9vUIQEOYPwYmsi5lmzHzAQVTFHfstSsI/YAoKoxCW9T/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;at stadium&quot;
+        title=&quot;at stadium&quot;
+        src=&quot;/static/55990dc4282531e221b6cae722dbadf9/1c72d/at-stadium-2.jpg&quot;
+        srcset=&quot;/static/55990dc4282531e221b6cae722dbadf9/a80bd/at-stadium-2.jpg 148w,
+/static/55990dc4282531e221b6cae722dbadf9/1c91a/at-stadium-2.jpg 295w,
+/static/55990dc4282531e221b6cae722dbadf9/1c72d/at-stadium-2.jpg 590w,
+/static/55990dc4282531e221b6cae722dbadf9/a8a14/at-stadium-2.jpg 885w,
+/static/55990dc4282531e221b6cae722dbadf9/fbd2c/at-stadium-2.jpg 1180w,
+/static/55990dc4282531e221b6cae722dbadf9/9568a/at-stadium-2.jpg 3024w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;Cream on the cake, I watched a game live.&lt;/h3&gt;
+&lt;p&gt;And Finally, before the game, I took another one to show people and everyone I have been watching football within Goma, Bukavu, Kigali pubs that their friend and the only Manchester City fan they know has made it to the stadium. &lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/892ee9f924b9dc02955fd3860ea8275e/9568a/before-game.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.1081081081081%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEBQL/xAAYAQACAwAAAAAAAAAAAAAAAAABAgADBP/aAAwDAQACEAMQAAABcmiKpXGgIcJPPGg6BACf/8QAHRAAAgEFAQEAAAAAAAAAAAAAAAECAxETMTISI//aAAgBAQABBQLAzCzzNDrpRo1fspj5W73JafVz/8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8BIf/EABwRAAEDBQAAAAAAAAAAAAAAAAABAhEDEBQxUf/aAAgBAgEBPwFH1I0ZC8Jt/8QAHhAAAgAGAwAAAAAAAAAAAAAAAAECECAxMkFCcYH/2gAIAQEABj8C0zE3KNvkXF2emVH/xAAdEAACAgIDAQAAAAAAAAAAAAAAAREhYXExQVHw/9oACAEBAAE/IXmCx+cirKuxgcPOSCjnGhDXBDrRfQkL8g7Gg/DJSnhL1n//2gAMAwEAAgADAAAAENcHA//EABcRAQEBAQAAAAAAAAAAAAAAAAABEYH/2gAIAQMBAT8QyOrDI//EABgRAQADAQAAAAAAAAAAAAAAAAEAEBEx/9oACAECAQE/EHJeKIsmz//EAB4QAQACAgIDAQAAAAAAAAAAAAEAESExQVFhcYGR/9oACAEBAAE/EKaBudMWBy2AWfkHBHTKoUFrI58Lhjk0G8LZ84gtWclm5TixBsgPlEHbkK3eGYAUT7qI3OEWTA0vhEdF9n//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;at stadium&quot;
+        title=&quot;at stadium&quot;
+        src=&quot;/static/892ee9f924b9dc02955fd3860ea8275e/1c72d/before-game.jpg&quot;
+        srcset=&quot;/static/892ee9f924b9dc02955fd3860ea8275e/a80bd/before-game.jpg 148w,
+/static/892ee9f924b9dc02955fd3860ea8275e/1c91a/before-game.jpg 295w,
+/static/892ee9f924b9dc02955fd3860ea8275e/1c72d/before-game.jpg 590w,
+/static/892ee9f924b9dc02955fd3860ea8275e/a8a14/before-game.jpg 885w,
+/static/892ee9f924b9dc02955fd3860ea8275e/fbd2c/before-game.jpg 1180w,
+/static/892ee9f924b9dc02955fd3860ea8275e/9568a/before-game.jpg 3024w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;Final result and FPL disappointments&lt;/h3&gt;
+&lt;p&gt;The game did end up well; we won 6-3; unfortunately, my FPL captain Phil Foden got only one point. I think this is the old FPL course. You_ should not captain a player you will be watching live. _&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4a97b175dd93ec278fe046489e4cb90d/ec605/fpl-team-result.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 216.2162162162162%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAArABQDASIAAhEBAxEB/8QAGgAAAwADAQAAAAAAAAAAAAAAAAMEAQIFBv/EABgBAAMBAQAAAAAAAAAAAAAAAAECAwQF/9oADAMBAAIQAxAAAAGJ0zmLiQLVZ2I86QrGpccBraO2eeAP/8QAHhAAAwABBAMAAAAAAAAAAAAAAQIDAAQREyEQEhT/2gAIAQEAAQUCMVxdGXX4KYJuyLzjHrZGHSDbKpu/ednwZTA4Z+yxmwFqbtVwOeuf/8QAHhEAAgEDBQAAAAAAAAAAAAAAAAECAxETEiExUWH/2gAIAQMBAT8B1em5yRrtKxjRij0f/8QAGBEBAQADAAAAAAAAAAAAAAAAABIQESH/2gAIAQIBAT8B27ikpf/EACEQAAIBAwMFAAAAAAAAAAAAAAABAhEhMgMSURAgM3GR/9oACAEBAAY/AvNplYyjTkyibrFIzovZR6kvouluxvc7CVXdcmTM2V3MzZ//xAAeEAEAAgICAwEAAAAAAAAAAAABABEhMUFhUYHR8f/aAAgBAQABPyELTi4t+Q48vSP6Upm99lsNDA4KhEl0eJoS8hqeoXMzSsrc5YI8FYhfiX2OqTvsaS5A5TZGVaHcoi87gGhn/9oADAMBAAIAAwAAABBPyrxnP//EABkRAQEBAQEBAAAAAAAAAAAAAAEAETFBYf/aAAgBAwEBPxDJ4jRox6TsKByDMwvkv//EABoRAAICAwAAAAAAAAAAAAAAAAABEBEhUXH/2gAIAQIBAT8Qts6MMTpVCp//xAAhEAEBAAIBBAIDAAAAAAAAAAABEQAhMUFRYXGBkaHR8P/aAAgBAQABPxCIN1djFM7SlW52xPP0/plkI7HkO35wR9kaRy+s8toCPpxgqAaeDGEFSqlj1zitRpzFw4BhJvpvI6RMZ4xA3eOc52VOMWK1kJr++MUlCR6TLhZldLzhMaQNaMBhnYc//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;fpl team result&quot;
+        title=&quot;fpl team result&quot;
+        src=&quot;/static/4a97b175dd93ec278fe046489e4cb90d/1c72d/fpl-team-result.jpg&quot;
+        srcset=&quot;/static/4a97b175dd93ec278fe046489e4cb90d/a80bd/fpl-team-result.jpg 148w,
+/static/4a97b175dd93ec278fe046489e4cb90d/1c91a/fpl-team-result.jpg 295w,
+/static/4a97b175dd93ec278fe046489e4cb90d/1c72d/fpl-team-result.jpg 590w,
+/static/4a97b175dd93ec278fe046489e4cb90d/a8a14/fpl-team-result.jpg 885w,
+/static/4a97b175dd93ec278fe046489e4cb90d/ec605/fpl-team-result.jpg 1125w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;I wish I had the chance to catch the Canal + Broadcasting car to get a chance to pass on TV, but unfortunately, I couldn’t find where the car was standing.&lt;/p&gt;
+&lt;p&gt;Now I can say that I finished my year in style. I hope to watch more games in the future and more importantly to catch the CANAL + car next time I visit the stadium.  &lt;/p&gt;</content:encoded></item><item><title><![CDATA[How I break up with pip and fall in love with poetry my new girlfriend.]]></title><description><![CDATA[I have recently stumbled across poetry new dependency management for python and decided to give it a try. I have been a die hard fan of pip…]]></description><link>https://www.murhabazi.com/migrate-pip-to-poetry/</link><guid isPermaLink="false">https://www.murhabazi.com/migrate-pip-to-poetry/</guid><pubDate>Sun, 17 Oct 2021 15:33:42 GMT</pubDate><content:encoded>&lt;p&gt;I have recently stumbled across &lt;a href=&quot;https://python-poetry.org/&quot;&gt;poetry&lt;/a&gt; new dependency management for python and decided to give it a try.&lt;/p&gt;
+&lt;p&gt;I have been a die hard fan of pip and had used it in most of my projects before I discovered poetry. Furthermore, I had heard about pyenv in the past but was reluctant to use it in my projects for preference reasons. Since Python dependency management is an interesting topic, I would like to explain the difference in another article such as &lt;a href=&quot;https://github.com/pypa/pip&quot;&gt;pip&lt;/a&gt; vs &lt;a href=&quot;https://github.com/pyenv/pyenv&quot;&gt;pyenv&lt;/a&gt; vs &lt;a href=&quot;https://github.com/python-poetry/poetry&quot;&gt;petry&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;When I discovered poetry and tested it, I fell in love with it.&lt;/p&gt;
 &lt;h2&gt;What is poetry?&lt;/h2&gt;
 &lt;p&gt;Although I will be talking about girlfriends, falling in love , and breakups in this article, the poetry I am talking about is not about love, prose, poems, or Shakespeare.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Poetry is a tool for &lt;strong&gt;dependency management&lt;/strong&gt; and &lt;strong&gt;packaging&lt;/strong&gt; in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.&lt;/em&gt; It supports Python 2.7 and 3.5+&lt;/p&gt;
 &lt;p&gt;If you work with python and install packages you should be familiar with &lt;code class=&quot;language-text&quot;&gt;pip&lt;/code&gt; my old girlfriend.&lt;/p&gt;
 &lt;h2&gt;Why we should use poetry in lieu of pip?&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/WEae7StOBGmS6vkaiYroiIwEZWQ2c4DFa56RwhpuOLrzlJfMXlTfUxnpu299Xme-cRGZBdqA0HYUdVUQvduv3cwDSZHr8TMt6o4nwd4DmnWCRjco2xXlHndDSWn_rsQAPRM5saY=s0&quot;&gt;&lt;/p&gt;
 &lt;p&gt;After 2 weeks of usages and successful migration of five personal projects from &lt;code class=&quot;language-text&quot;&gt;pip&lt;/code&gt; to &lt;code class=&quot;language-text&quot;&gt;poetry&lt;/code&gt;, I can choose poetry because :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;It has a good dependency resolver. It does the job better than PIP. Read the interesting article &lt;a href=&quot;https://www.activestate.com/resources/quick-reads/python-dependencies-everything-you-need-to-know/&quot;&gt;www.activestate.com&lt;/a&gt;. The author explicitly said&lt;/li&gt;
@@ -97,7 +191,7 @@
 &lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;And another advantage I found is that anytime you add a new dependency to the project poetry update for you the &lt;code class=&quot;language-text&quot;&gt;pyproject.toml&lt;/code&gt; with the new top-level dependency, it, therefore, avoid you to do &lt;code class=&quot;language-text&quot;&gt;pip freeze&lt;/code&gt; to generate a new requirement file for your project.&lt;/li&gt;
-&lt;li&gt;You can use the same tool to build and publish your packages. And it is easy to do so. I my opinion this is why I think &lt;code class=&quot;language-text&quot;&gt;poetry&lt;/code&gt; outweighed &lt;code class=&quot;language-text&quot;&gt;pip&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;You can use the same tool to build and publish your packages.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In my opinion, I think &lt;code class=&quot;language-text&quot;&gt;poetry&lt;/code&gt; outweigh &lt;code class=&quot;language-text&quot;&gt;pip&lt;/code&gt; in many aspects. It is like pip but on steroids&lt;/p&gt;
 &lt;p&gt;In the following sections, I will guide you on how to migrate an existing project from pip to poetry.&lt;/p&gt;
