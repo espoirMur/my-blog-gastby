@@ -58,7 +58,11 @@ export default class AboutMe extends Component {
               </ul>
               <p>
                 Checkout{" "}
-                <a target="_blank" href="https://mailhide.io/e/kSXIE">
+                <a
+                  target="_blank"
+                  href="https://mailhide.io/e/kSXIE"
+                  rel="noreferrer"
+                >
                   my email{" "}
                 </a>
                 address: For any inquiry

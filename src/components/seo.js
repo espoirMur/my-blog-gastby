@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import JsonLd from "./Jsonld"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, cover_image }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -61,6 +61,13 @@ function SEO({ description, lang, meta, title }) {
           {
             name: `twitter:description`,
             content: metaDescription,
+          },
+          {
+            property: `og:image`,
+            // You should ideally replace the hardcoded URL below with a value you set
+            // in your gatsby-config.js file.  And import all shared site metadata into
+            // this component with the useStaticQuery hook.
+            content: cover_image,
           },
         ].concat(meta)}
       />

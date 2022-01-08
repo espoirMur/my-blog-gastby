@@ -20,7 +20,7 @@ export default class NavBar extends Component {
               <a
                 target="_blank"
                 href="https://drive.google.com/file/d/14yle0nyGH_Kyk7L67nvqwl90FobvY7W0/view?usp=sharing"
-                rel="noopener noreferrer"
+                rel="noreferrer"
               >
                 Resume
               </a>

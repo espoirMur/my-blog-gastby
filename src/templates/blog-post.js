@@ -18,6 +18,7 @@ class BlogPostTemplate extends Component {
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
+          cover_image={post.frontmatter.cover_image || ""}
         />{" "}
         <article>
           <header>
@@ -106,6 +107,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "DD MMMM, YYYY")
         description
+        cover_image
       }
     }
   }
