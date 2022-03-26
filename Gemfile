@@ -26,4 +26,7 @@ group :jekyll_plugins do
   gem "pygments.rb"
   gem "jekyll-compose"
   gem "kramdown"
+  gem "webrick"
 end
+
+gem "rexml", "~> 3.2"

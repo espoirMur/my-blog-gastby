@@ -2,7 +2,7 @@
 layout: post
 title:  "An Ode to Twitter"
 date:   2020-08-19 00:15:00
-comments: false
+comments: true
 categories: poem
 image: /images/twitter.jpg
 ---
