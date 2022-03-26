@@ -18,28 +18,29 @@ sass:
   style: compressed # expanded
 
 # SEO settings
-title: Jade Abbott
-description: "Jade Abbott, NLP Engineer by day, ML Engineer by Night"
-keywords: "Jade Abbott, NLP, African Languages, Masakhane"
-url: https://jabbott.io
+title: Espoir Murhabazi ideas' home
+description: "Murhabazi Buzina Espoir Home on the internet"
+keywords: "Espoir Murhabazi, Congolese Software Engineer, Ingenieur Informaticien Congolais, Geek Corner, Murhabazi Buzina"
+url: https://murhabazi.com
 baseurl: ""
 
-google_analytics: UA-52446115-1
-repo: https://github.com/jaderabbit/jaderabbit.github.io
+google_analytics: G-CJV32Y553Z
+repo: https://github.com/espoirMur/espoirMur.github.io
 disqus_shortname: "nandothemes"
 disqus_site_shortname: "nandothemes"
 
 # Author settings
 author:
-  name: Jade Abbott
-  job: NLP Engineer by Day, NLP Research by Night
-  bio: "Putting ML into Prod @ Retro Rabbit. NLP for African Languages @ Masakhane. Bassist @ FMFY"
+  name: Espoir Murhabazi Buzina
+  job: Aspiring Full-Stack Machine Learning Engineer
+  bio: "A Software Engineer lost in Data Science"
   thumb: /images/me.jpg
-  email: jade.zoe.abbott@gmail.com
-  url: https://jabbott.io
-  github: https://github.com/jaderabbit
-  twitter: https://twitter.com/alienelf
-  linkedin: https://www.linkedin.com/in/jade-abbott-5b3a692a/
+  email: espoir.mur on gmail
+  url: https://murhabazi.com/
+  github: https://github.com/espoirMur
+  twitter: https://twitter.com/esp_py
+  linkedin: https://www.linkedin.com/in/espoir-murhabazi-buzina-7849b1b1/
+  stackoverflow: https://stackoverflow.com/users/4683950/espoir-murhabazi
 
 # navbar pages
 navbar:
@@ -47,7 +48,7 @@ navbar:
     title: whoami();
   - slug: blog
     title: read();
-  - slug: talks
+  - slug: uni-stuffs
     title: watch();
   - slug: research
     title: research();
