@@ -4,12 +4,16 @@ title: whoami();
 permalink: /about/
 ---
 
-My name is Jade. 
+In one line: I am in between Software Engineering and Data Science. 🧐
 
-By day, I am an NLP engineer at [Retro Rabbit](retrorabbit.co.za) where I build all kinds of things. I was once dubbed as “Full-stack ML” because I’ve worked at every end of putting a ML model into production - from wrangling the data, to training the models, to deploying and scaling in production, to adding results to the database, and repeating the cycle over and over - with a focus on data ops and devops.
+By Day:  You will find me fine-tuning language models task for my MSc project and any natural language processing task I am working on, or just getting lost in complicated equations of Probabilistic Machine Learning. 🎓
 
-By night, I lead [Masakhane](masakhane.io), a grassroots open research movement for NLP for African languages. I am extremely passionate about changing the way Africa and Africans are currently percieved by the Western world. I wish to empower the world by empowering Africans from all walks of life to participate in the global conversation.
+By Night: I am deploying code for spiny.ai. I do anything with python, pivoting pandas dataframe to do data analysis, cooking celery on Aws Kubernetes clusters to deploy our code, firing an API with Flask or FastApi, or arguing with my teammates about the best variable names to use for our codebase. 🤪
 
-In-between, I [tweet](twitter.com/alienelf) extensively and angrily.
+On Weekends: When I am not coding, you can find me supporting manchester city, tweaking my fantasy premier league team, or just moving around nightclubs in Uk and enjoying live music.🦈
 
-And sometimes, I take that anger out [musically](fmfy.bandcamp.com) 
+Fun fact: I have never thought that saying that I am the firstborn in my family and having nine siblings from the same mum would be my fun fact one day.👨‍👩‍👧‍👦😉
+
+Favorite Quotes : _The goal isn't to live forever but to create something that will_. Jamal Edwards MBE
+
+

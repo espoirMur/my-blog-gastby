@@ -4,13 +4,16 @@ title: research();
 permalink: /research/
 ---
 
-I've had quite a back-and-forth journey with research, trying to learn what excites me most. Here are a couple of my assorted published works. 
+I am currently doing my master and hope to put more on this section in the future, research exited me a lot but I am not currently thinking about doing a Phd.
 
 - [Participatory Research for Low-resourced Machine Translation: A Case Study in African Languages - EMNLP Findings 2020](https://arxiv.org/abs/2010.02353)
-- [Masakhane - Machine Translation for Africa - ICLR AfricaNLP Workshop 2020](https://arxiv.org/abs/2003.11529)
-- [AI4D - African Dataset Challenge - WiNLP 2020](https://www.aclweb.org/anthology/2020.winlp-1.18/)
-- [A Focus on NMT for African Languages - Unpublished](https://arxiv.org/abs/1906.05685)
-- [Benchmarking NMT for Southern African Languages - WiNLP Workshop - ACL 2019](https://www.aclweb.org/anthology/papers/W/W19/W19-3632/)
-- [Towards Machine Translation for African Languages - ML4D Workshop - NeurIPS 2018](https://arxiv.org/abs/1811.05467)
-- [Nature-inspired Swarm Robotics Algorithms for Prioritized Foraging - ANTS 2014](https://link.springer.com/chapter/10.1007/978-3-319-09952-1_23)
-- [The Performance of Bacterial Foraging in Dynamic Environments - ANTS 2012](https://link.springer.com/chapter/10.1007/978-3-642-32650-9_29)
+- More to come...
+
+---------
+
+If you're hosting me for a talk, [here](/images/me-offical-speaker.jpg) is my preferred profile image, and below is my speaker bio:
+
+
+> I am Espoir Murhabazi Buzina, a Congolese software engineer with six years of experience in software engineering and data science.  
+>I am currently a master's student in computer science at the University of Essex. I specialize in Natural Language Processing. I am passionate about text data and anything related to Natural Language Processing.
+> My friend calls me *le grand Frere de ses petit freres* because I am passionate about mentoring young people and building the next generation of Congolese tech leaders. My dream is to train a thousand young Congolese software engineers and equip them with skills that will help them get remote jobs in top tech companies in the world in the next five years. I was awarded the Chevening Scholarship in 2021-22 for my community building and leadership skills.
