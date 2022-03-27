@@ -4,7 +4,7 @@ date : "2020-11-30T22:54:01"
 description: "I finally joined spiny ai"
 comments: true
 categories: non-tech
-published : false
+layout: post
 ---
 
 After more than one year with countless job applications  and rejections, I am glad go announce you that I will be joining Spiny.ai as a Software Engineer !

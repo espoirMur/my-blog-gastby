@@ -2,12 +2,12 @@
 title: Quelques meilleurs conseils pour un travail efficace à distance, une réalité africaine
 date: "2020-03-26T22:12:03.284Z"
 description: "Conseils pour le travail à distance en Afrique"
-published : true
+layout: post
 comments: true
 categories: non-tech
 ---
 
-![Photo Aeriènne de Goma ](./pictures/cover_picture_bkv_home.jpg)
+{% include image.html name="./pictures/cover_picture_bkv_home.jpg" caption="Photo Aeriènne de Goma " %}
 <div align="center">
 Photo Aeriènne de Goma, Crédit : <a href="https://twitter.com/clarice_butsapu" target="_blank">Clarice Butsapu Twitter</a>
 </div>
@@ -44,7 +44,7 @@ Nous avons compris au moins l’apport de télétravail, passons maintenant à s
 
 ### Avoir toujours une bonne connexion internet
 
-![Vendeur des Megas Kinshasa Source : rfi.fr](./pictures/vendeurs_megas_rdc.jpg)
+{% include image.html name="./pictures/vendeurs_megas_rdc.jpg" caption="Vendeur des Megas Kinshasa Source : rfi.fr" %}
 <div align="center">
 Vendeur des Megas Kinshasa Source :  <a href="www.rfi.fr" target="_blank">RFI</a>
 </div>
@@ -59,7 +59,7 @@ Il est également conseillé d'avoir au moins 2 ou 3 fournisseurs de relaie, car
 
 ### Accès à l'électricité 
 
-![Delestage En Afrique](./pictures/delestage_afrique.jpg)
+{% include image.html name="./pictures/delestage_afrique.jpg" caption="Delestage En Afrique" %}
 <div align="center">
 Delestages en Afrique
 </div>
@@ -79,7 +79,7 @@ Le reste d'astuces sont valables peu importe le pays où l'on travaille :
 
 ### Avoir un endroit confortable où l'on peut s'asseoir tranquillement et coder :
 
-![Me working At Klab](./pictures/Me_working.jpg)
+{% include image.html name="./pictures/Me_working.jpg" caption="Me working At Klab" %}
 <div align="center">
 Me Working from Somewhere
 </div>
@@ -92,7 +92,7 @@ Nous n'avons pas besoin d'exigence pour ce qui est de la marque de la chaise ou 
 
 ### Éviter les distractions inutiles de la maison
 
-![Working from home and having family life.](./pictures/working-from-home.gif)
+{% include image.html name="./pictures/working-from-home.gif" caption="Working from home and having family life." %}
 <div align="center">
 Working from home and having family life. 
 Source :  <a href="www.bbc.com" target="_blank">Bbc</a>
@@ -116,7 +116,7 @@ Nous n’avons pas besoin d’avoir le tout dernier Airpods pro ou les derniers 
 
 ### Avoir une vie Sociale 
 
-![Me Having Life](./pictures/me_having_life.jpg)
+{% include image.html name="./pictures/me_having_life.jpg" caption="Me Having Life" %}
 <div align="center">
 Me having a life at Gisenyi Beach
 </div>
@@ -148,7 +148,7 @@ Selon ton programme, prends le temps de préparer un bon petit déjeuner et un b
 
 Rappelle toi:  *ventre creux n’a point d’oreil*
 
-![Local Food](./pictures/home_food.jpg)
+{% include image.html name="./pictures/home_food.jpg" caption="Local Food" %}
 <div align="center">
 Local Food Credit:  <a href="https://twitter.com/Ensapu1" target="_blank"> Esther Nsapu</a> on Twitter
 </div>

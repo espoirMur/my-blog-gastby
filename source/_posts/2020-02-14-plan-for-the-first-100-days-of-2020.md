@@ -2,6 +2,7 @@
 title: Plan for the first 100 days of 2020
 date: "2020-02-14T22:12:03.284Z"
 description: "Thing I need to get done"
+layout: post
 ---
 
 I hate new year resolution , instead I go with 100 days sprints.

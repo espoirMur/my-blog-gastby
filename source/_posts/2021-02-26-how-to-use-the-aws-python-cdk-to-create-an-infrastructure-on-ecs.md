@@ -1,6 +1,6 @@
 ---
 title: How to use the AWS Python CDK to create an infrastructure on ECS.
-published: true
+layout: post
 date: "2021-02-26T22:12:03.284Z"
 comments: true
 categories: tech
@@ -84,7 +84,7 @@ We will deploy our application using the AWS ECS Fargate launch type which will 
 
   
 
-![Alt Text](https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif)
+{% include image.html name="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" caption="Alt Text" %}
 
   
 
@@ -124,7 +124,7 @@ To deploy the application we need the following objects: a cluster, a service, a
 
   
 
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k5bcp5zjq6ssob06mgyt.png)
+{% include image.html name="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k5bcp5zjq6ssob06mgyt.png" caption="Alt Text" %}
 
   
 

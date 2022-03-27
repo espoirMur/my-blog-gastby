@@ -2,12 +2,12 @@
 title: I sat for the IELTS today , here is how it went 
 date: "2020-11-19T22:12:03.284Z"
 description: "As summary on how my english test was."
-published : true
+layout: post
 comments: true
 categories: non-tech
 ---
 
-![cover image](./images/ielts.png)
+{% include image.html name="./images/ielts.png" caption="cover image" %}
 
 After preparing for more than a month, I managed to pass my IELTS today. While waiting for the result , I would like to share with you how it went. 
 
@@ -23,7 +23,7 @@ Once I got inside the test room I asked the examiner if he could change my keybo
 
 It was a computer delivered IELTS, and was divided in two parts, the first one consisted of the listening , the reading and the writing; the second one was the speaking. 
 
-![stressfull exam](https://media.giphy.com/media/xUA7bcVPhLACfKIItG/giphy.gif)
+{% include image.html name="https://media.giphy.com/media/xUA7bcVPhLACfKIItG/giphy.gif" caption="stressfull exam" %}
 
 
 The _**listening test**_ went smoothly as expected, beside some comprehension issues but I am sure I did well on this one. 

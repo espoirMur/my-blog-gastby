@@ -2,6 +2,7 @@
 title: LeetCode April 30 days of Algorithms context
 date: "2015-05-01T22:12:03.284Z"
 description: ""
+layout: post
 ---
 
 Let me do this and see where I will reach , Each day Leetcode will give an  algorithm challenge I will posting here the challenge and What I learned , hope I will complete the challenge.

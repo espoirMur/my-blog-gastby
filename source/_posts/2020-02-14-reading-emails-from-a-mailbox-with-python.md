@@ -2,7 +2,7 @@
 title: Reading Emails from a Mailbox with python
 date: "2020-02-14T22:12:03.284Z"
 description: "Tutorials on how to read emails with  Python"
-published : true
+layout: post
 comments: true
 categories: tech
 
@@ -10,7 +10,7 @@ categories: tech
 
 ### The Problem
 
-![email](./cover-image.jpg)
+{% include image.html name="cover-image.jpg" caption="email" %}
 
 Recently I received a request from my client. 
 He requested that I  write a script that connects to a specific mailbox, check if there are new emails, read them, and download the attachments and perform some data analysis on those attachments.

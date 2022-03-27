@@ -2,10 +2,9 @@
 title : Lessons learned while Applying to Master’s Degrees In the UK.
 date : 2021-11-05T23:00:36
 description:  Lessons learned while Applying to Master’s Degrees In the UK as  francophone student.
-published : true
+layout: post
 comments: false
 categories: non-tech
-layout: post
 ---
 
 
@@ -19,7 +18,7 @@ But before talking about the universities, let me talk about myself and my backg
 
 ## A local boy from Bukavu who studied in Goma
 
-![](https://lh5.googleusercontent.com/M1sxZv-WK7g0gK0ZnDlbeDh2SewMyBlXvD2M5gMXmu6OCQHLQYo5YAiMq-GMkWQGBe4CWu0vdWMrrPZ5Lubf5gG2CGbn1dztFiegOJR9HdsJ5THG34m_R5xm67fd9cTwbapETJ_7)
+{% include image.html name="https://lh5.googleusercontent.com/M1sxZv-WK7g0gK0ZnDlbeDh2SewMyBlXvD2M5gMXmu6OCQHLQYo5YAiMq-GMkWQGBe4CWu0vdWMrrPZ5Lubf5gG2CGbn1dztFiegOJR9HdsJ5THG34m_R5xm67fd9cTwbapETJ_7" caption="" %}
 
 The younger me, after my first year of undergraduate, receiving a scholarship worth 120 USD
 
@@ -35,7 +34,7 @@ My dream was to find a specialized master in Natural language processing or comp
 
 ## The Application Process
 
-![](https://lh6.googleusercontent.com/Sk5MSRpTRSYxLIfvDHzd5WDqRlHLWNUonEr7nXG0albajremxmTQC4kP6zPAQPHrn-lkf4gC5ztC8imUeIlxeiXI4p3eGyelVBE8ip8lE4efMYroUv7hBHYzUQ2ayYZQsB4zR7KC)
+{% include image.html name="https://lh6.googleusercontent.com/Sk5MSRpTRSYxLIfvDHzd5WDqRlHLWNUonEr7nXG0albajremxmTQC4kP6zPAQPHrn-lkf4gC5ztC8imUeIlxeiXI4p3eGyelVBE8ip8lE4efMYroUv7hBHYzUQ2ayYZQsB4zR7KC" caption="" %}
 
 ## The IELTS Tests
 
@@ -55,7 +54,7 @@ I went ahead as the first batch and applied to the speech and Natural language p
 
 ## Mistakes I made while applying.
 
-![](https://lh3.googleusercontent.com/ebv42UX_vWcm20D0DMKyW_-PRM69lw2b1BZDOBbY9gp_hT5-zHnkQsBSCZcG3sWi8p_JBLoBVSnLEXfRRJ-TF1QHGfwTx0niP9KUsVox9SLauNAS4Scklxcmcdb6y5gyac1ExGii)
+{% include image.html name="https://lh3.googleusercontent.com/ebv42UX_vWcm20D0DMKyW_-PRM69lw2b1BZDOBbY9gp_hT5-zHnkQsBSCZcG3sWi8p_JBLoBVSnLEXfRRJ-TF1QHGfwTx0niP9KUsVox9SLauNAS4Scklxcmcdb6y5gyac1ExGii" caption="" %}
 
 Below are the first mistakes I made during the application process to those universities :
 
@@ -67,7 +66,7 @@ Below are the first mistakes I made during the application process to those univ
     
 ## The first Bach outcome
 
-![](https://lh4.googleusercontent.com/i0ZDVfj9GVCscjHgI3N9q_6nXKbswhHilgSg2UP8T7VB2VHDR0u2j4B8U62_29GxGYf1YNOv6ZmHp8SP-OFdUaImqKDDitUm0H1CcxWhKmyxeLG2ukmL2ytEG88zmBwBTstb3dXi)
+{% include image.html name="https://lh4.googleusercontent.com/i0ZDVfj9GVCscjHgI3N9q_6nXKbswhHilgSg2UP8T7VB2VHDR0u2j4B8U62_29GxGYf1YNOv6ZmHp8SP-OFdUaImqKDDitUm0H1CcxWhKmyxeLG2ukmL2ytEG88zmBwBTstb3dXi" caption="" %}
 
   
 
@@ -83,7 +82,7 @@ I came across the Data Science master at Cardiff, Data science at Sussex, Big Da
 
 ### What I did to improve my Applications
 
-![](https://lh3.googleusercontent.com/Bs6HkG1xpJT1qpqtxl_yWv96rXTduSruS20mbneVlWhk6qJsuPoSEmnvOHImCTrE1lg6Q0r1fzG15qqtLalGeBRuVa_3hjFwWVdxjO3m4z7TJVmYElGIkPMlbhY1v3WqKpuAd7Vo)
+{% include image.html name="https://lh3.googleusercontent.com/Bs6HkG1xpJT1qpqtxl_yWv96rXTduSruS20mbneVlWhk6qJsuPoSEmnvOHImCTrE1lg6Q0r1fzG15qqtLalGeBRuVa_3hjFwWVdxjO3m4z7TJVmYElGIkPMlbhY1v3WqKpuAd7Vo" caption="" %}
 
 I started looking for graduates forums online to learn about the UK’s application process and stumbled across the [grad admission subreddit](https://www.reddit.com/r/gradadmissions/), [the statement of purpose subreddit.](https://www.reddit.com/r/gradadmissions/comments/9pd2b8/the_statement_of_purpose_prompt_for_ucsd_is_a/) I found a fantastic [guide](http://writeivy.com/structure-is-magic-a-guide-to-the-graduate-sop/) on the subreddit written  by a graduate study expert, and I applied all the advice written in that blog. The statement of purpose subreddit has many students going in the same process as you and who are willing to help you review your SOP. I was glad I got help from the subreddit, and it helped me proofread my new statement.
 
@@ -93,7 +92,7 @@ I applied to those universities with my updated transcripts, statements of purpo
 
 ### The second batch’s Outcome
 
-![](https://lh4.googleusercontent.com/CU1lBE_xq9SWKo07bw3Z0ruD_usjutTMG3tci1Q0ewBBuZ5ZclIHj1R2DKAllST8wfNSnzqHzWYxiOvBgAgjwNLSaEVhEAM4XJhKv3uTEFe4wSoU1GGY6IWf5MnIaG27BTNiIBAF)
+{% include image.html name="https://lh4.googleusercontent.com/CU1lBE_xq9SWKo07bw3Z0ruD_usjutTMG3tci1Q0ewBBuZ5ZclIHj1R2DKAllST8wfNSnzqHzWYxiOvBgAgjwNLSaEVhEAM4XJhKv3uTEFe4wSoU1GGY6IWf5MnIaG27BTNiIBAF" caption="" %}
 
 I got another rejection from Leeds. But, to my dismay, in April, I got an Unconditional offer from Essex. The offer was enough to put me in an excellent position to get the Chevening scholarship. I submitted it as my second choice to Chevening with Cardiff, and Edinburgh being my 1st and third choices.
 
@@ -129,7 +128,7 @@ I will enjoy my journey In the UK as much as possible and watch at least two pre
 
 ## What Next After My master
 
-![](https://lh4.googleusercontent.com/xB8NvTHRCRnGLIBgb_hSJydGN4MG1lkY2ZC1IHW41UI0YNIOJ2lEervFw6KlgnThwtztOg3b6n7IibusYwo3I7BdXjVuPOLATkDWHTVwPwsdPPiqkTDzYizsB-T2urG3R5HAruly)
+{% include image.html name="https://lh4.googleusercontent.com/xB8NvTHRCRnGLIBgb_hSJydGN4MG1lkY2ZC1IHW41UI0YNIOJ2lEervFw6KlgnThwtztOg3b6n7IibusYwo3I7BdXjVuPOLATkDWHTVwPwsdPPiqkTDzYizsB-T2urG3R5HAruly" caption="" %}
 
 What next After graduating, I will come back home and give back to the community. Yes, I will come back, my African people. I am not planning to stay in the UK; I will return to Africa; those are my ambitions. I hope to learn a lot during my studies and work hard for two years and see if I will still have the energy to apply for a Ph.D., this time in a top-four team.
 
@@ -168,4 +167,4 @@ To sum up, here are the few lessons I learned:
 
 And to conclude, I will leave you with one of my favorite quotes:
 
-![](https://lh6.googleusercontent.com/DWzKbI2f7bbP_eCsfYXxShke33eQuW3zotTW_NlC1OJmA8EepOryVwKHSHn39N05-QX2xwjtKI8dpglgdYmorgICSvOCzg2WNK7liaJdF8m4ywfg2ct9wUwbyWqFvLI6c-6MHKob)
+{% include image.html name="https://lh6.googleusercontent.com/DWzKbI2f7bbP_eCsfYXxShke33eQuW3zotTW_NlC1OJmA8EepOryVwKHSHn39N05-QX2xwjtKI8dpglgdYmorgICSvOCzg2WNK7liaJdF8m4ywfg2ct9wUwbyWqFvLI6c-6MHKob" caption="" %}

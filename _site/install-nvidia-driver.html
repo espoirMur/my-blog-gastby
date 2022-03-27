@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>install nvidia driver</title>
+<meta name="description" content="I had many driver installed I my virtual machine , so It was actually the reason why I was having the error.">
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="canonical" href="http://localhost:4000/install-nvidia-driver">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-CJV32Y553Z', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</head>
+<body>
+  <header class="site-header">
+  <div class="container">
+    <input type="checkbox" id="toggleNavbar">
+    <h1 class="logo"><a href="/">esp<span>.py</span></a></h1>
+    <label for="toggleNavbar" role="button" class="toggle-navbar-button">
+      <i class="icon icon-menu"></i>
+      <i class="icon icon-cross"></i>
+    </label>
+    <nav class="navbar">
+      <ul>
+        <li><a href="/" title="Home">127.0.0.1</a></li>
+        
+          <li><a href="/about" title="whoami();">whoami();</a></li>
+        
+          <li><a href="/blog" title="read();">read();</a></li>
+        
+          <li><a href="/dreams" title="dreams();">dreams();</a></li>
+        
+          <li><a href="/research" title="research();">research();</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<main class="main-container">
+  <div class="container">
+    <article role="article" class="post">
+
+  <div class="card">
+    <header class="post-header">
+      <h1 class="post-title">install nvidia driver</h1>
+      <em class="post-meta">
+        <time>Mar 27, 2022</time>
+      </em>
+    </header>
+
+    <div class="post-content">
+      
+      <p>I had many driver installed I my virtual machine , so It was actually the reason why I was having the error.</p>
+
+<p>To fix it I had first to remove all driver I have installed before using :</p>
+<ul>
+  <li><code>sudo apt-get purge nvidia-*</code></li>
+  <li><code>sudo apt-get update</code>
+-<code>sudo apt-get autoremove</code></li>
+</ul>
+
+<p>After that I when a head and installed the latest version of it nvidia driver:</p>
+
+<p>I did :</p>
+
+<ul>
+  <li><code>apt search nvidia-driver</code> 
+To get the latest version of the driver
+After getting the latest version I installed it with :</li>
+</ul>
+
+<p>Edit Sept 2021 : According to the last comment  by @a-r-j  you can install a couple of dependencies before</p>
+<ul>
+  <li><code>sudo apt install libnvidia-common-470</code></li>
+  <li><code>sudo apt install libnividia-gl-470</code></li>
+</ul>
+
+<p>Then you can move forward and install the driver.</p>
+
+<ul>
+  <li><code>sudo apt install nvidia-driver-470</code></li>
+</ul>
+
+<p>And after installing it I rebooted my machine and checked with :</p>
+
+<p><code>nvidia-smi</code></p>
+
+<p>And tata ☄️</p>
+
+<p>The results :</p>
+
+<p>https://imgur.com/a/xfpvrtb</p>
+
+<p>Ressources :</p>
+
+<p>https://www.cyberciti.biz/faq/ubuntu-linux-install-nvidia-driver-latest-proprietary-driver/</p>
+
+
+    </div>
+
+    
+<hr>
+
+<aside id="comments" class="disqus">
+  <h3><i class="icon icon-comments-o"></i> Comments</h3>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function() {
+      this.page.url = 'http://localhost:4000/install-nvidia-driver';
+      this.page.identifier = '/install-nvidia-driver';
+    };
+    (function() {
+      var d = document,
+      s = d.createElement('script');
+      s.src = '//nandothemes.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</aside>
+
+
+  </div>
+
+</article>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <ul class="social">
+  <li><a href="https://github.com/espoirMur" target="_blank"><i class="icon icon-github"></i></a></li>
+  <li><a href="https://twitter.com/esp_py" target="_blank"><i class="icon icon-twitter"></i></a></li>
+  <li><a href="https://www.linkedin.com/in/espoir-murhabazi-buzina-7849b1b1/" target="_blank"><i class="icon icon-linkedin"></i></a></li>
+  <li><a href="https://stackoverflow.com/users/4683950/espoir-murhabazi" target="_blank"><i class="icon icon-stackoverflow"></i></a></li>
+</ul>
+
+    <p class="txt-medium-gray">
+      <small>&copy;2022 All rights reserved. Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and ♥</small>
+    </p>
+  </div>
+</footer>
+
+
+</body>
+</html>

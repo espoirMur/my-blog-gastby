@@ -4,7 +4,7 @@ date: "2020-03-08T22:12:03.284Z"
 description: "how I setup my macbook for development"
 comments: true
 categories: non-tech
-published: true
+layout: post
 ---
 
 This guide helps to setup a new macbook and make it ready for software development.

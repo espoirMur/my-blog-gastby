@@ -27,27 +27,27 @@ Firstly, let's start with a bit of history. I have been supporting Manchester Ci
 I have been a massive fan of him for his leadership on and off the pitch. I consider him my role model; therefore, I had to take my first picture of the day with his statue. 
 
 
-![legend](./images/meeting-the-legend.jpeg)
+{% include image.html name="./images/meeting-the-legend.jpeg" caption="legend" %}
 
 ### The Dream come true 
 
 Secondly, I went to the Stadium and took the picture that sums up my childhood dreams, Espoir in the UK.
 
 
-![at Stadium](./images/etihad-stadium.jpeg)
+{% include image.html name="./images/etihad-stadium.jpeg" caption="at Stadium" %}
 
 ### Cream on the cake, I watched a game live.
 
 And Finally, before the game, I took another one to show people and everyone I have been watching football with in Goma, Bukavu, Kigali pubs that their friend and the only Manchester City fan they know has made it to the Stadium. 
 
-![before the game](./images/before-game.jpeg)
+{% include image.html name="./images/before-game.jpeg" caption="before the game" %}
 
 ### Final result and FPL disappointments 
 
 The game did end up well; we won 6-3; unfortunately, my FPL captain Phil Foden got only one point. I think this is the old FPL course. You_ should not captain a player you will be watching live. _
 
 
-![fpl team result](./images/fpl-team-result.jpeg)
+{% include image.html name="./images/fpl-team-result.jpeg" caption="fpl team result" %}
 
 I wish I had the chance to catch the Canal + Broadcasting car to get a chance to pass on TV, but unfortunately, I couldn’t find where the car was standing.
 

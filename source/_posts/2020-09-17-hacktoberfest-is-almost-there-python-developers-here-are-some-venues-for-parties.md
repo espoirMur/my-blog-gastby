@@ -1,13 +1,13 @@
 ---
 title: 'Hacktoberfest is almost there, Python developers here are some venues for parties.'
 date: '2020-09-17'
-published : true
+layout: post
 description: Open source projects you can contribute to for hacktoberfest.
 comments: true
 categories: tech
 ---
 
-![cover image](./images/festival.jpg)
+{% include image.html name="./images/festival.jpg" caption="cover image" %}
 
 This year has been fantastic because I contributed to some open-source projects and had my pull request merged on amazing projects with many stars. It helps me to put some green dots on my GitHub profile…
 

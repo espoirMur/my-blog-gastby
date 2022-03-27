@@ -2,7 +2,7 @@
 title :  How I break up with pip and fall in love with poetry my new girlfriend.
 date : 2021-10-17T15:33:42
 description: How to migrate a python project from pip to poetry 
-published : true
+layout: post
 comments: true
 categories: tech
 ---
@@ -30,7 +30,7 @@ If you work with python and install packages you should be familiar with `pip` m
 
 ## Why we should use poetry in lieu of pip?
 
-![](https://lh3.googleusercontent.com/WEae7StOBGmS6vkaiYroiIwEZWQ2c4DFa56RwhpuOLrzlJfMXlTfUxnpu299Xme-cRGZBdqA0HYUdVUQvduv3cwDSZHr8TMt6o4nwd4DmnWCRjco2xXlHndDSWn_rsQAPRM5saY=s0)
+{% include image.html name="https://lh3.googleusercontent.com/WEae7StOBGmS6vkaiYroiIwEZWQ2c4DFa56RwhpuOLrzlJfMXlTfUxnpu299Xme-cRGZBdqA0HYUdVUQvduv3cwDSZHr8TMt6o4nwd4DmnWCRjco2xXlHndDSWn_rsQAPRM5saY=s0" caption="" %}
 
   
 
@@ -65,7 +65,7 @@ In the following sections, I will guide you on how to migrate an existing projec
 
   
 
-![](https://lh5.googleusercontent.com/prDFZYFCdhOvTIpSpv8fItqiZ3GHrHEypuEhY0J2IyORNHoOwd6JlneUEUEGlcE-yRR0xVGkOUlwIeDWc5DfSCMrpJqX5m_CQxcERZ2fUzLmmOeV-dF-OYUbMAAg0t0uvxhAN-o=s0)
+{% include image.html name="https://lh5.googleusercontent.com/prDFZYFCdhOvTIpSpv8fItqiZ3GHrHEypuEhY0J2IyORNHoOwd6JlneUEUEGlcE-yRR0xVGkOUlwIeDWc5DfSCMrpJqX5m_CQxcERZ2fUzLmmOeV-dF-OYUbMAAg0t0uvxhAN-o=s0" caption="" %}
 
   
 
@@ -134,7 +134,7 @@ If installation is unsuccessfully or encountering incompatibility issues. Please
   
 
 ## The Migration
-![](https://lh4.googleusercontent.com/S09PZBBBn_Q9Vx8vpxLNP67_9HmU-JEM50KpnZZaZavhqS3y2tzfDFuvHlL59CJo_UKhtRtYyWofhx5zlUtvUbk3yO5HHsMM4rqs6xH0fCKaGWZsjlBX7T3j_R0WdPjvf1gG3U0=s0)
+{% include image.html name="https://lh4.googleusercontent.com/S09PZBBBn_Q9Vx8vpxLNP67_9HmU-JEM50KpnZZaZavhqS3y2tzfDFuvHlL59CJo_UKhtRtYyWofhx5zlUtvUbk3yO5HHsMM4rqs6xH0fCKaGWZsjlBX7T3j_R0WdPjvf1gG3U0=s0" caption="" %}
 
   
 
