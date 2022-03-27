@@ -27,6 +27,7 @@ group :jekyll_plugins do
   gem "jekyll-compose"
   gem "kramdown"
   gem "webrick"
+  gem 'jekyll-seo-tag'
 end
 
 gem "rexml", "~> 3.2"
