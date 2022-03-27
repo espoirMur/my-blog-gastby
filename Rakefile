@@ -4,6 +4,7 @@ require "tmpdir"
 require "bundler/setup"
 require "jekyll"
 require "bourbon"
+require 'fileutils'
 
 # Change your GitHub reponame
 GITHUB_REPONAME = "espoirMur/espoirMur.github.io"
@@ -77,9 +78,13 @@ task :post do
     exit -1
   end
 
-  filename = File.join(CONFIG['posts'], "#{date}-#{slug}.#{CONFIG['post_ext']}")
+  directory = File.join(CONFIG['posts'], "#{slug}")
+  filename = File.join(directory, "index.#{CONFIG['post_ext']}")
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
+  else
+    FileUtils.mkdir_p(directory)
+    FileUtils.touch(filename)
   end
 
   puts "Creating new post: #{filename}"
@@ -90,6 +95,7 @@ task :post do
     post.puts "permalink: #{slug}"
     post.puts "date: #{date} #{time}"
     post.puts "comments: true"
+    post.puts "published : false"
     post.puts "description: \"#{title}\""
     post.puts 'keywords: ""'
     post.puts "categories:"
