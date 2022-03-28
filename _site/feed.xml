@@ -5,8 +5,8 @@
     <description>Murhabazi Buzina Espoir Home on the internet</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 27 Mar 2022 20:01:40 +0100</pubDate>
-    <lastBuildDate>Sun, 27 Mar 2022 20:01:40 +0100</lastBuildDate>
+    <pubDate>Mon, 28 Mar 2022 14:49:29 +0100</pubDate>
+    <lastBuildDate>Mon, 28 Mar 2022 14:49:29 +0100</lastBuildDate>
     <generator>Jekyll v3.6.3</generator>
     
       <item>
@@ -82,41 +82,37 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;p&gt;I have been a massive fan of him for his leadership on and off the pitch. I consider him my role model; therefore, I had to take my first picture of the day with his statue.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/./images/meeting-the-legend.jpeg&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;legend&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/./images/meeting-the-legend.jpeg   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;legend&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;h3 id=&quot;the-dream-come-true&quot;&gt;The Dream come true&lt;/h3&gt;
 
 &lt;p&gt;Secondly, I went to the Stadium and took the picture that sums up my childhood dreams, Espoir in the UK.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/./images/etihad-stadium.jpeg&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;at Stadium&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/./images/etihad-stadium.jpeg   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;at Stadium&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;h3 id=&quot;cream-on-the-cake-i-watched-a-game-live&quot;&gt;Cream on the cake, I watched a game live.&lt;/h3&gt;
 
 &lt;p&gt;And Finally, before the game, I took another one to show people and everyone I have been watching football with in Goma, Bukavu, Kigali pubs that their friend and the only Manchester City fan they know has made it to the Stadium.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/./images/before-game.jpeg&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;before the game&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/./images/before-game.jpeg   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;before the game&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;h3 id=&quot;final-result-and-fpl-disappointments&quot;&gt;Final result and FPL disappointments&lt;/h3&gt;
 
 &lt;p&gt;The game did end up well; we won 6-3; unfortunately, my FPL captain Phil Foden got only one point. I think this is the old FPL course. You_ should not captain a player you will be watching live. _&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/./images/fpl-team-result.jpeg&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;fpl team result&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/./images/fpl-team-result.jpeg   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;fpl team result&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;I wish I had the chance to catch the Canal + Broadcasting car to get a chance to pass on TV, but unfortunately, I couldn’t find where the car was standing.&lt;/p&gt;
 
@@ -144,11 +140,10 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;h2 id=&quot;a-local-boy-from-bukavu-who-studied-in-goma&quot;&gt;A local boy from Bukavu who studied in Goma&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-11-05-lessons-learned-while-applying-to-master-s-degrees-in-the-uk/https://lh5.googleusercontent.com/M1sxZv-WK7g0gK0ZnDlbeDh2SewMyBlXvD2M5gMXmu6OCQHLQYo5YAiMq-GMkWQGBe4CWu0vdWMrrPZ5Lubf5gG2CGbn1dztFiegOJR9HdsJ5THG34m_R5xm67fd9cTwbapETJ_7&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-11-05-lessons-learned-while-applying-to-master-s-degrees-in-the-uk/https://lh5.googleusercontent.com/M1sxZv-WK7g0gK0ZnDlbeDh2SewMyBlXvD2M5gMXmu6OCQHLQYo5YAiMq-GMkWQGBe4CWu0vdWMrrPZ5Lubf5gG2CGbn1dztFiegOJR9HdsJ5THG34m_R5xm67fd9cTwbapETJ_7   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;The younger me, after my first year of undergraduate, receiving a scholarship worth 120 USD&lt;/p&gt;
 
@@ -164,11 +159,10 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;h2 id=&quot;the-application-process&quot;&gt;The Application Process&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-11-05-lessons-learned-while-applying-to-master-s-degrees-in-the-uk/https://lh6.googleusercontent.com/Sk5MSRpTRSYxLIfvDHzd5WDqRlHLWNUonEr7nXG0albajremxmTQC4kP6zPAQPHrn-lkf4gC5ztC8imUeIlxeiXI4p3eGyelVBE8ip8lE4efMYroUv7hBHYzUQ2ayYZQsB4zR7KC&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-11-05-lessons-learned-while-applying-to-master-s-degrees-in-the-uk/https://lh6.googleusercontent.com/Sk5MSRpTRSYxLIfvDHzd5WDqRlHLWNUonEr7nXG0albajremxmTQC4kP6zPAQPHrn-lkf4gC5ztC8imUeIlxeiXI4p3eGyelVBE8ip8lE4efMYroUv7hBHYzUQ2ayYZQsB4zR7KC   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;h2 id=&quot;the-ielts-tests&quot;&gt;The IELTS Tests&lt;/h2&gt;
 
@@ -188,11 +182,10 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;h2 id=&quot;mistakes-i-made-while-applying&quot;&gt;Mistakes I made while applying.&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-11-05-lessons-learned-while-applying-to-master-s-degrees-in-the-uk/https://lh3.googleusercontent.com/ebv42UX_vWcm20D0DMKyW_-PRM69lw2b1BZDOBbY9gp_hT5-zHnkQsBSCZcG3sWi8p_JBLoBVSnLEXfRRJ-TF1QHGfwTx0niP9KUsVox9SLauNAS4Scklxcmcdb6y5gyac1ExGii&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-11-05-lessons-learned-while-applying-to-master-s-degrees-in-the-uk/https://lh3.googleusercontent.com/ebv42UX_vWcm20D0DMKyW_-PRM69lw2b1BZDOBbY9gp_hT5-zHnkQsBSCZcG3sWi8p_JBLoBVSnLEXfRRJ-TF1QHGfwTx0niP9KUsVox9SLauNAS4Scklxcmcdb6y5gyac1ExGii   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;Below are the first mistakes I made during the application process to those universities :&lt;/p&gt;
 
@@ -210,11 +203,10 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;h2 id=&quot;the-first-bach-outcome&quot;&gt;The first Bach outcome&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-11-05-lessons-learned-while-applying-to-master-s-degrees-in-the-uk/https://lh4.googleusercontent.com/i0ZDVfj9GVCscjHgI3N9q_6nXKbswhHilgSg2UP8T7VB2VHDR0u2j4B8U62_29GxGYf1YNOv6ZmHp8SP-OFdUaImqKDDitUm0H1CcxWhKmyxeLG2ukmL2ytEG88zmBwBTstb3dXi&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-11-05-lessons-learned-while-applying-to-master-s-degrees-in-the-uk/https://lh4.googleusercontent.com/i0ZDVfj9GVCscjHgI3N9q_6nXKbswhHilgSg2UP8T7VB2VHDR0u2j4B8U62_29GxGYf1YNOv6ZmHp8SP-OFdUaImqKDDitUm0H1CcxWhKmyxeLG2ukmL2ytEG88zmBwBTstb3dXi   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;I got back-to-back rejections from those three universities, and the demons of Imposter Syndrome came back again.&lt;/p&gt;
 
@@ -228,11 +220,10 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;h3 id=&quot;what-i-did-to-improve-my-applications&quot;&gt;What I did to improve my Applications&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-11-05-lessons-learned-while-applying-to-master-s-degrees-in-the-uk/https://lh3.googleusercontent.com/Bs6HkG1xpJT1qpqtxl_yWv96rXTduSruS20mbneVlWhk6qJsuPoSEmnvOHImCTrE1lg6Q0r1fzG15qqtLalGeBRuVa_3hjFwWVdxjO3m4z7TJVmYElGIkPMlbhY1v3WqKpuAd7Vo&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-11-05-lessons-learned-while-applying-to-master-s-degrees-in-the-uk/https://lh3.googleusercontent.com/Bs6HkG1xpJT1qpqtxl_yWv96rXTduSruS20mbneVlWhk6qJsuPoSEmnvOHImCTrE1lg6Q0r1fzG15qqtLalGeBRuVa_3hjFwWVdxjO3m4z7TJVmYElGIkPMlbhY1v3WqKpuAd7Vo   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;I started looking for graduates forums online to learn about the UK’s application process and stumbled across the &lt;a href=&quot;https://www.reddit.com/r/gradadmissions/&quot;&gt;grad admission subreddit&lt;/a&gt;, &lt;a href=&quot;https://www.reddit.com/r/gradadmissions/comments/9pd2b8/the_statement_of_purpose_prompt_for_ucsd_is_a/&quot;&gt;the statement of purpose subreddit.&lt;/a&gt; I found a fantastic &lt;a href=&quot;http://writeivy.com/structure-is-magic-a-guide-to-the-graduate-sop/&quot;&gt;guide&lt;/a&gt; on the subreddit written  by a graduate study expert, and I applied all the advice written in that blog. The statement of purpose subreddit has many students going in the same process as you and who are willing to help you review your SOP. I was glad I got help from the subreddit, and it helped me proofread my new statement.&lt;/p&gt;
 
@@ -242,11 +233,10 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;h3 id=&quot;the-second-batchs-outcome&quot;&gt;The second batch’s Outcome&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-11-05-lessons-learned-while-applying-to-master-s-degrees-in-the-uk/https://lh4.googleusercontent.com/CU1lBE_xq9SWKo07bw3Z0ruD_usjutTMG3tci1Q0ewBBuZ5ZclIHj1R2DKAllST8wfNSnzqHzWYxiOvBgAgjwNLSaEVhEAM4XJhKv3uTEFe4wSoU1GGY6IWf5MnIaG27BTNiIBAF&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-11-05-lessons-learned-while-applying-to-master-s-degrees-in-the-uk/https://lh4.googleusercontent.com/CU1lBE_xq9SWKo07bw3Z0ruD_usjutTMG3tci1Q0ewBBuZ5ZclIHj1R2DKAllST8wfNSnzqHzWYxiOvBgAgjwNLSaEVhEAM4XJhKv3uTEFe4wSoU1GGY6IWf5MnIaG27BTNiIBAF   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;I got another rejection from Leeds. But, to my dismay, in April, I got an Unconditional offer from Essex. The offer was enough to put me in an excellent position to get the Chevening scholarship. I submitted it as my second choice to Chevening with Cardiff, and Edinburgh being my 1st and third choices.&lt;/p&gt;
 
@@ -282,11 +272,10 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;h2 id=&quot;what-next-after-my-master&quot;&gt;What Next After My master&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-11-05-lessons-learned-while-applying-to-master-s-degrees-in-the-uk/https://lh4.googleusercontent.com/xB8NvTHRCRnGLIBgb_hSJydGN4MG1lkY2ZC1IHW41UI0YNIOJ2lEervFw6KlgnThwtztOg3b6n7IibusYwo3I7BdXjVuPOLATkDWHTVwPwsdPPiqkTDzYizsB-T2urG3R5HAruly&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-11-05-lessons-learned-while-applying-to-master-s-degrees-in-the-uk/https://lh4.googleusercontent.com/xB8NvTHRCRnGLIBgb_hSJydGN4MG1lkY2ZC1IHW41UI0YNIOJ2lEervFw6KlgnThwtztOg3b6n7IibusYwo3I7BdXjVuPOLATkDWHTVwPwsdPPiqkTDzYizsB-T2urG3R5HAruly   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;What next After graduating, I will come back home and give back to the community. Yes, I will come back, my African people. I am not planning to stay in the UK; I will return to Africa; those are my ambitions. I hope to learn a lot during my studies and work hard for two years and see if I will still have the energy to apply for a Ph.D., this time in a top-four team.&lt;/p&gt;
 
@@ -335,11 +324,10 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;p&gt;And to conclude, I will leave you with one of my favorite quotes:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-11-05-lessons-learned-while-applying-to-master-s-degrees-in-the-uk/https://lh6.googleusercontent.com/DWzKbI2f7bbP_eCsfYXxShke33eQuW3zotTW_NlC1OJmA8EepOryVwKHSHn39N05-QX2xwjtKI8dpglgdYmorgICSvOCzg2WNK7liaJdF8m4ywfg2ct9wUwbyWqFvLI6c-6MHKob&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-11-05-lessons-learned-while-applying-to-master-s-degrees-in-the-uk/https://lh6.googleusercontent.com/DWzKbI2f7bbP_eCsfYXxShke33eQuW3zotTW_NlC1OJmA8EepOryVwKHSHn39N05-QX2xwjtKI8dpglgdYmorgICSvOCzg2WNK7liaJdF8m4ywfg2ct9wUwbyWqFvLI6c-6MHKob   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 </description>
         <pubDate>Fri, 05 Nov 2021 23:00:36 +0000</pubDate>
@@ -369,11 +357,10 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;h2 id=&quot;why-we-should-use-poetry-in-lieu-of-pip&quot;&gt;Why we should use poetry in lieu of pip?&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-10-17-how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/https://lh3.googleusercontent.com/WEae7StOBGmS6vkaiYroiIwEZWQ2c4DFa56RwhpuOLrzlJfMXlTfUxnpu299Xme-cRGZBdqA0HYUdVUQvduv3cwDSZHr8TMt6o4nwd4DmnWCRjco2xXlHndDSWn_rsQAPRM5saY=s0&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-10-17-how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/https://lh3.googleusercontent.com/WEae7StOBGmS6vkaiYroiIwEZWQ2c4DFa56RwhpuOLrzlJfMXlTfUxnpu299Xme-cRGZBdqA0HYUdVUQvduv3cwDSZHr8TMt6o4nwd4DmnWCRjco2xXlHndDSWn_rsQAPRM5saY=s0   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;After 2 weeks of usages and successful migration of five personal projects from &lt;code&gt;pip&lt;/code&gt; to &lt;code&gt;poetry&lt;/code&gt;, I can choose poetry because :&lt;/p&gt;
 
@@ -400,11 +387,10 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;h2 id=&quot;installing-poetry-in-your-system&quot;&gt;Installing Poetry in your system&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-10-17-how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/https://lh5.googleusercontent.com/prDFZYFCdhOvTIpSpv8fItqiZ3GHrHEypuEhY0J2IyORNHoOwd6JlneUEUEGlcE-yRR0xVGkOUlwIeDWc5DfSCMrpJqX5m_CQxcERZ2fUzLmmOeV-dF-OYUbMAAg0t0uvxhAN-o=s0&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-10-17-how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/https://lh5.googleusercontent.com/prDFZYFCdhOvTIpSpv8fItqiZ3GHrHEypuEhY0J2IyORNHoOwd6JlneUEUEGlcE-yRR0xVGkOUlwIeDWc5DfSCMrpJqX5m_CQxcERZ2fUzLmmOeV-dF-OYUbMAAg0t0uvxhAN-o=s0   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;Installing poetry is very straightforward, if you have python installed and &lt;code&gt;curl&lt;/code&gt; you can easily install it by running :&lt;/p&gt;
 
@@ -457,11 +443,10 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 
 &lt;h2 id=&quot;the-migration&quot;&gt;The Migration&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-10-17-how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/https://lh4.googleusercontent.com/S09PZBBBn_Q9Vx8vpxLNP67_9HmU-JEM50KpnZZaZavhqS3y2tzfDFuvHlL59CJo_UKhtRtYyWofhx5zlUtvUbk3yO5HHsMM4rqs6xH0fCKaGWZsjlBX7T3j_R0WdPjvf1gG3U0=s0&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-10-17-how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/https://lh4.googleusercontent.com/S09PZBBBn_Q9Vx8vpxLNP67_9HmU-JEM50KpnZZaZavhqS3y2tzfDFuvHlL59CJo_UKhtRtYyWofhx5zlUtvUbk3yO5HHsMM4rqs6xH0fCKaGWZsjlBX7T3j_R0WdPjvf1gG3U0=s0   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;h3 id=&quot;generate-top-level-dependencies&quot;&gt;Generate top-level dependencies&lt;/h3&gt;
 
@@ -595,11 +580,10 @@ CMD [&quot; you command &quot;]
       <item>
         <title>Mots d'un grand frère  à ses petits frère qui debutent avec la programmation</title>
         <description>
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/./images/andela-guys.jpg&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;cover&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/./images/andela-guys.jpg   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;cover&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;&lt;em&gt;Caption : My crew , un groupe des developeur qui m’ont fait plaisir: &lt;a href=&quot;https://github.com/Karlmusingo&quot;&gt;Karl Musingo&lt;/a&gt;: G3 ULPGL, &lt;a href=&quot;https://www.linkedin.com/in/hadad-bwenge-345ba7103&quot;&gt;Hadad Bwenge&lt;/a&gt; : , &lt;a href=&quot;https://www.linkedin.com/in/glody-mutombo&quot;&gt;Jean Vincent Mutombo&lt;/a&gt; (UTB - Gisenyi), &lt;a href=&quot;https://rw.linkedin.com/in/grace-lungu-262306190&quot;&gt;Grace Lungu&lt;/a&gt; (International University of East Africa Kampala) among the best Engineer we had back in the days at Andela.&lt;/em&gt;&lt;/p&gt;
 
@@ -625,11 +609,10 @@ CMD [&quot; you command &quot;]
 
 &lt;h2 id=&quot;langlais-langage-par-excellence&quot;&gt;L’Anglais Langage Par Excellence&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/images/learn-english.png&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;alt_text&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/images/learn-english.png   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;Avant tout, pour une bonne carrière en développement informatique, ou en informatique en général, pour l’amour du ciel, je le répète pour l’amour du Ciel : APPRENEZ L’ANGLAIS, APPRENEZ L’ANGLAIS, LEARN ENGLISH PEOPLE.&lt;/p&gt;
 
@@ -645,11 +628,10 @@ CMD [&quot; you command &quot;]
 
 &lt;h2 id=&quot;tirez-profits-de-vos-cours-à-luniversité&quot;&gt;Tirez profits de vos Cours à l’université&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/images/please-graduate.jpg&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;alt_text&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/images/please-graduate.jpg   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;On aura beau dire que nos programmes universitaires ne sont pas à jour, ou même qu’ils ne sont pas adaptés, mais ce sont ces mêmes programmes qui nous donnent une bonne base. Je suis toujours  reconnaissant pour les cours que j’ai appris à l’université en RDC.&lt;/p&gt;
 
@@ -663,11 +645,10 @@ CMD [&quot; you command &quot;]
 
 &lt;h2 id=&quot;les-softs-skills-pour-vous-différencier&quot;&gt;Les Softs Skills pour vous différencier&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/images/lukaku-team-work.jpg&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;alt_text&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/images/lukaku-team-work.jpg   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;En plus des cours à l’université, ne sous-estimer jamais les petits clubs qu’on a ici et là, que ça soit à l’église, à la fac ou au sein de la communauté en général.  Elles nous donnent ce qu’on appelle  dans le monde professionnel : le leadership, l’expérience et les soft skills.&lt;/p&gt;
 
@@ -677,11 +658,10 @@ CMD [&quot; you command &quot;]
 
 &lt;h2 id=&quot;faites-connaître-votre-travail&quot;&gt;Faites connaître votre travail.&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/images/git-configurations.png&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;alt_text&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/images/git-configurations.png   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;Une fois ces connaissances acquises, hard et soft skills, comment les gens sauront que vous les avez ? Travailler sur votre réputation en ligne.  Si vous n’avez pas un compte Github, s’il vous plait arrêtez de lire ce post et aller en créer un, puis revenez au post.&lt;/p&gt;
 
@@ -691,21 +671,19 @@ CMD [&quot; you command &quot;]
 
 &lt;h2 id=&quot;soyez-curieux-et-apprenez-à-googler&quot;&gt;Soyez Curieux et Apprenez à Googler&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/images/google-stuff.jpg&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;alt_text&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/images/google-stuff.jpg   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;Soyez curieux et apprenez à poser des questions : Voulez vous apprendre quelque chose, une simple requête google peut vous faire tomber sur 2 ou 3 ressources utiles.   Je ne peux pas vous dire comment apprendre à être curieux, car je ne sais pas comment on le fait.&lt;/p&gt;
 
 &lt;h2 id=&quot;limportance-de-la-communauté--networking&quot;&gt;L’importance de la communauté  (Networking)&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/images/gdg-comunity.jpg&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;alt_text&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/images/gdg-comunity.jpg   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;Rejoignez les communautés locales ou virtuelles vous y apprendrez beaucoup. Créez  un compte Twitter et rejoignez des groupes de discussion. Mais éviter de passer trop de temps sur des réseaux sociaux lorsque vous travaillez, ce sont de grands bouffeurs de temps.&lt;/p&gt;
 
@@ -723,11 +701,10 @@ CMD [&quot; you command &quot;]
 
 &lt;h2 id=&quot;quel-langage-de-programmation-apprendre&quot;&gt;Quel langage de programmation Apprendre&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/images/today-developers.jpg&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;alt_text&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/images/today-developers.jpg   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;Je ne veux pas me mettre à faire un débat sur les langages dans ce poste ni même dire quel langage est meilleur que l’autre, c’est hors cadre.&lt;/p&gt;
 
@@ -762,11 +739,10 @@ CMD [&quot; you command &quot;]
       <item>
         <title>My books recommendations to enhance your Soft Skills as a developer</title>
         <description>
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/cover.png&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;cover&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/cover.png   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;cover&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;Three years ago, I decided to part ways with my Facebook account, and I decided to replace the time spent on Facebook with reading developers’ blogs. During that time, I stumbled across &lt;a href=&quot;https://dev.to/&quot;&gt;dev&lt;/a&gt;, medium, and quora. These sites and publications have contributed a lot to the developer I am today.  I decided to dig deeper in my social media detox. Last year, I decided to block WhatsApp status unless Man-City qualified for the Champions League final and spent the time reading books about soft skills to improve my softs skills as a developer.&lt;/p&gt;
 
@@ -796,11 +772,10 @@ CMD [&quot; you command &quot;]
 
 &lt;p&gt;&lt;em&gt;As you can see in the picture below :&lt;/em&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/atomic_habits_effects.png&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;atomic habits effects&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/atomic_habits_effects.png   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;atomic habits effects&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;&lt;em&gt;“The effects of small habits compound over time. For example, if you can get just 1 percent better each day, you’ll end up with results that are nearly 37 times better after one year.”&lt;/em&gt;&lt;/p&gt;
 
@@ -818,11 +793,10 @@ CMD [&quot; you command &quot;]
 
 &lt;p&gt;&lt;em&gt;The cone of learning&lt;/em&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/cone_of_learnings.png&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;cones of learning&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/cone_of_learnings.png   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;cones of learning&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;em&gt;Rich don’t work for money. They work to learn how to let money work for them one day&lt;/em&gt;.&lt;/li&gt;
@@ -884,11 +858,10 @@ CMD [&quot; you command &quot;]
 
 &lt;p&gt;That is all about books I read last year. They are not enough in comparison with  books that humans have written on this earth, but in one year it is a lot, and the most important was not to read the book but to put into practice what you read from them. When I get old, I will have a large library like this one, and I can brag about them to my friends.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/book_shelf.png&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;book shelve&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/book_shelf.png   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;book shelve&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;How do I manage to find time to read and work full time with endless bugs in a world full of distractions? The secret came from the book Atomic habits. I have made it easy for me. I have a ritual, my morning routine. I know that I have to do two things in the morning; my fitness routine, brushing my teeth, and reading for at least 30 minutes. And as a reward for this routine, I can open my phone and check if I have important emails or any notification that will boost my dopamine.&lt;/p&gt;
 
@@ -950,11 +923,10 @@ CMD [&quot; you command &quot;]
 
 &lt;h4 id=&quot;why-fargate-and-not-ec2&quot;&gt;Why Fargate and not EC2?&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-02-26-how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;Alt Text&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-02-26-how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;Alt Text&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;AWS provides us basically two launch types which are the Fargate launch type and the EC2.&lt;/p&gt;
 
@@ -974,11 +946,10 @@ CMD [&quot; you command &quot;]
 
 &lt;p&gt;To deploy the application we need the following objects: a cluster, a service, a task definition with containers definition, cloud watch for logging, and IAM roles. The below picture illustrates how those AWS objects interact with each other.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2021-02-26-how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k5bcp5zjq6ssob06mgyt.png&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;Alt Text&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2021-02-26-how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k5bcp5zjq6ssob06mgyt.png   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;Alt Text&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;Let us define some of those objects and then we will investigate how to create a stack, containing them, using Python cdk.&lt;/p&gt;
 
@@ -1427,11 +1398,10 @@ EcsDevopsCdkStack(app, &quot;ecs-devops-cdk&quot;, env={
       <item>
         <title>I sat for the IELTS today , here is how it went</title>
         <description>
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2020-11-19-i-sat-for-the-ielts-today-here-is-how-it-went/./images/ielts.png&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;cover image&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2020-11-19-i-sat-for-the-ielts-today-here-is-how-it-went/./images/ielts.png   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;cover image&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;After preparing for more than a month, I managed to pass my IELTS today. While waiting for the result , I would like to share with you how it went.&lt;/p&gt;
 
@@ -1447,11 +1417,10 @@ EcsDevopsCdkStack(app, &quot;ecs-devops-cdk&quot;, env={
 
 &lt;p&gt;It was a computer delivered IELTS, and was divided in two parts, the first one consisted of the listening , the reading and the writing; the second one was the speaking.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2020-11-19-i-sat-for-the-ielts-today-here-is-how-it-went/https://media.giphy.com/media/xUA7bcVPhLACfKIItG/giphy.gif&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;stressfull exam&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2020-11-19-i-sat-for-the-ielts-today-here-is-how-it-went/https://media.giphy.com/media/xUA7bcVPhLACfKIItG/giphy.gif   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;stressfull exam&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;The &lt;em&gt;&lt;strong&gt;listening test&lt;/strong&gt;&lt;/em&gt; went smoothly as expected, beside some comprehension issues but I am sure I did well on this one.&lt;/p&gt;
 
@@ -1486,11 +1455,10 @@ EcsDevopsCdkStack(app, &quot;ecs-devops-cdk&quot;, env={
       <item>
         <title>Hacktoberfest is almost there, Python developers here are some venues for parties.</title>
         <description>
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure markdown=&quot;1&quot;&amp;gt;
-    &amp;lt;img src=&quot;/assets/2020-09-17-hacktoberfest-is-almost-there-python-developers-here-are-some-venues-for-parties/./images/festival.jpg&quot;  /&amp;gt;
-    &amp;lt;figcaption&amp;gt;cover image&amp;lt;/figcaption&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;
+  &lt;p&gt;&amp;lt;img src=http://localhost:4000 /assets/posts/2020-09-17-hacktoberfest-is-almost-there-python-developers-here-are-some-venues-for-parties/./images/festival.jpg   /&amp;gt;&lt;/p&gt;
+  &lt;figcaption&gt;cover image&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;This year has been fantastic because I contributed to some open-source projects and had my pull request merged on amazing projects with many stars. It helps me to put some green dots on my GitHub profile…&lt;/p&gt;
 

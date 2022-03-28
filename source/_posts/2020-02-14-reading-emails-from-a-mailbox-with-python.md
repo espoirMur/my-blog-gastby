@@ -12,6 +12,7 @@ categories: tech
 
 {% include image.html name="cover-image.jpg" caption="email" %}
 
+
 Recently I received a request from my client. 
 He requested that I  write a script that connects to a specific mailbox, check if there are new emails, read them, and download the attachments and perform some data analysis on those attachments.
 I was super excited about this task, and I asked myself; is it possible to read emails using Python? 

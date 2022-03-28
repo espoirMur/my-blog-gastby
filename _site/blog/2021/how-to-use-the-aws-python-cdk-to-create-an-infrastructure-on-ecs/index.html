@@ -9,7 +9,7 @@
 <title>How to use the AWS Python CDK to create an infrastructure on ECS.</title>
 <meta name="description" content="Recently at work, we decided to build a CI/CD pipeline that deploys our application directly to AWS. I had never worked with AWS, and it was a missing point ...">
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/assets/css/main.css">
 <link rel="canonical" href="http://localhost:4000/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/">
 
 <script>
@@ -122,11 +122,10 @@
 
 <h4 id="why-fargate-and-not-ec2">Why Fargate and not EC2?</h4>
 
-<pre><code>&lt;figure markdown="1"&gt;
-    &lt;img src="/assets/2021-02-26-how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif"  /&gt;
-    &lt;figcaption&gt;Alt Text&lt;/figcaption&gt;
-&lt;/figure&gt;
-</code></pre>
+<figure>
+  <p>&lt;img src=http://localhost:4000 /assets/posts/2021-02-26-how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif   /&gt;</p>
+  <figcaption>Alt Text</figcaption>
+</figure>
 
 <p>AWS provides us basically two launch types which are the Fargate launch type and the EC2.</p>
 
@@ -146,11 +145,10 @@
 
 <p>To deploy the application we need the following objects: a cluster, a service, a task definition with containers definition, cloud watch for logging, and IAM roles. The below picture illustrates how those AWS objects interact with each other.</p>
 
-<pre><code>&lt;figure markdown="1"&gt;
-    &lt;img src="/assets/2021-02-26-how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k5bcp5zjq6ssob06mgyt.png"  /&gt;
-    &lt;figcaption&gt;Alt Text&lt;/figcaption&gt;
-&lt;/figure&gt;
-</code></pre>
+<figure>
+  <p>&lt;img src=http://localhost:4000 /assets/posts/2021-02-26-how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k5bcp5zjq6ssob06mgyt.png   /&gt;</p>
+  <figcaption>Alt Text</figcaption>
+</figure>
 
 <p>Let us define some of those objects and then we will investigate how to create a stack, containing them, using Python cdk.</p>
 

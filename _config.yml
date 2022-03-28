@@ -6,7 +6,7 @@ plugins: [jekyll-paginate-v2, jekyll-seo-tag]
 
 pagination:
   enabled: true
-  per_page: 3
+  per_page: 4
   permalink: "/page/:num/"
 
 comments: true
@@ -14,7 +14,7 @@ comments: true
 source: source
 destination: _site
 sass:
-  sass_dir: _sass
+  sass_dir: assets/_sass
   style: compressed # expanded
 
 # SEO settings
@@ -34,7 +34,8 @@ author:
   name: Espoir Murhabazi Buzina
   job: Aspiring Full-Stack Machine Learning Engineer
   bio: "A Software Engineer lost in Data Science"
-  thumb: /images/me.jpg
+  thumb: /assets/images/me.jpg
+  profile-pic: /assets/images/me-official-speaker.jpg
   email: espoir.mur on gmail
   url: https://murhabazi.com/
   github: https://github.com/espoirMur
