@@ -88,7 +88,7 @@
 
 <p>I use the following command to change the macbook name in case it’s promping a wrong username:</p>
 
-<p><code>sudo scutil --set HostName name-you-want</code></p>
+<p><code class="highlighter-rouge">sudo scutil --set HostName name-you-want</code></p>
 
 <h2 id="developers-tools">Developers Tools</h2>
 
@@ -101,8 +101,8 @@
   <li>type the following one and follow the prompt :</li>
 </ul>
 
-<pre><code>xcode-select --install
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xcode-select --install
+</code></pre></div></div>
 
 <p>follow <a href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/">this link</a> for a precise step by step guide .</p>
 
@@ -116,16 +116,16 @@ my choice is  a combinaison of zsh and <a href="https://www.iterm2.com/documenta
 <ul>
   <li>
     <p>For iterm2
-<code>brew cask install iterm2</code></p>
+<code class="highlighter-rouge">brew cask install iterm2</code></p>
   </li>
   <li>
     <p>For Zsh  and zsh completions
-<code>brew install zsh zsh-completions </code></p>
+<code class="highlighter-rouge">brew install zsh zsh-completions </code></p>
   </li>
   <li>
     <p>And oh my zsh c:</p>
-    <pre><code>sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-</code></pre>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+</code></pre></div>    </div>
   </li>
 </ul>
 
@@ -157,16 +157,16 @@ About homebrew:</p>
 <p>let us install it.
 As homebrew is written in ruby we will install it with this simple comand:</p>
 
-<pre><code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+</code></pre></div></div>
 <p>Once homebrew is installed we can install everything according to your needs.</p>
 
 <h2 id="useful-softwares">Useful Softwares</h2>
 
 <p>I run the following comand to install the first set of softwares I need to work on my new laptop:</p>
 
-<pre><code> brew cask install slack zoomus google-chrome visual-studio-code spotify google-backup-and-sync
-</code></pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> brew cask install slack zoomus google-chrome visual-studio-code spotify google-backup-and-sync
+</code></pre></div></div>
 
 <p>They are the most important software I use :</p>
 
@@ -188,17 +188,17 @@ They are the most important software for me , everything else can be installed f
     <p>let install python3 and python 2</p>
   </li>
   <li>
-    <p>python 2 I  use <code>brew install python@2</code></p>
+    <p>python 2 I  use <code class="highlighter-rouge">brew install python@2</code></p>
   </li>
   <li>
     <p>python 3 I’m a big fan of python 3.6.5 because for now it’s the only version supported by tensorflow.</p>
   </li>
 </ul>
 
-<p><code>brew install --ignore-dependencies https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb</code></p>
+<p><code class="highlighter-rouge">brew install --ignore-dependencies https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb</code></p>
 <h4 id="javascript">JavaScript</h4>
 
-<p>Node the latest version <code>brew install node</code></p>
+<p>Node the latest version <code class="highlighter-rouge">brew install node</code></p>
 
 <h3 id="synchronize-zshrc-file">Synchronize .zshrc file</h3>
 
@@ -207,10 +207,10 @@ They are the most important software for me , everything else can be installed f
 <ul>
   <li>I made sure I have Google drive sync installed in my laptop</li>
   <li>Check if a folder Called Google Drive is in The home directory</li>
-  <li>Create a folder for configuration with : <code>mkdir -p ~/Google\ Drive/ohmyzsh-conf</code></li>
-  <li>Make a copy for the existing file in case : <code>cp ~/.zshrc ~/.zshrc.copy</code></li>
-  <li>Move the original file to the google drive folder : <code>mv .zshrc ~/Google\ Drive/ohmyzsh-conf/.zshrc</code></li>
-  <li>Make a symbolic link from that file with the original configuration : <code>ln -s ~/Google\ Drive/ohmyzsh-conf/.zshrc .zshrc</code></li>
+  <li>Create a folder for configuration with : <code class="highlighter-rouge">mkdir -p ~/Google\ Drive/ohmyzsh-conf</code></li>
+  <li>Make a copy for the existing file in case : <code class="highlighter-rouge">cp ~/.zshrc ~/.zshrc.copy</code></li>
+  <li>Move the original file to the google drive folder : <code class="highlighter-rouge">mv .zshrc ~/Google\ Drive/ohmyzsh-conf/.zshrc</code></li>
+  <li>Make a symbolic link from that file with the original configuration : <code class="highlighter-rouge">ln -s ~/Google\ Drive/ohmyzsh-conf/.zshrc .zshrc</code></li>
 </ul>
 
     </div>

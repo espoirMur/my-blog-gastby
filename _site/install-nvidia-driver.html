@@ -86,9 +86,9 @@
 
 <p>To fix it I had first to remove all driver I have installed before using :</p>
 <ul>
-  <li><code>sudo apt-get purge nvidia-*</code></li>
-  <li><code>sudo apt-get update</code>
--<code>sudo apt-get autoremove</code></li>
+  <li><code class="highlighter-rouge">sudo apt-get purge nvidia-*</code></li>
+  <li><code class="highlighter-rouge">sudo apt-get update</code>
+-<code class="highlighter-rouge">sudo apt-get autoremove</code></li>
 </ul>
 
 <p>After that I when a head and installed the latest version of it nvidia driver:</p>
@@ -96,26 +96,26 @@
 <p>I did :</p>
 
 <ul>
-  <li><code>apt search nvidia-driver</code> 
+  <li><code class="highlighter-rouge">apt search nvidia-driver</code> 
 To get the latest version of the driver
 After getting the latest version I installed it with :</li>
 </ul>
 
 <p>Edit Sept 2021 : According to the last comment  by @a-r-j  you can install a couple of dependencies before</p>
 <ul>
-  <li><code>sudo apt install libnvidia-common-470</code></li>
-  <li><code>sudo apt install libnividia-gl-470</code></li>
+  <li><code class="highlighter-rouge">sudo apt install libnvidia-common-470</code></li>
+  <li><code class="highlighter-rouge">sudo apt install libnividia-gl-470</code></li>
 </ul>
 
 <p>Then you can move forward and install the driver.</p>
 
 <ul>
-  <li><code>sudo apt install nvidia-driver-470</code></li>
+  <li><code class="highlighter-rouge">sudo apt install nvidia-driver-470</code></li>
 </ul>
 
 <p>And after installing it I rebooted my machine and checked with :</p>
 
-<p><code>nvidia-smi</code></p>
+<p><code class="highlighter-rouge">nvidia-smi</code></p>
 
 <p>And tata ☄️</p>
 

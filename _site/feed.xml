@@ -5,8 +5,8 @@
     <description>Murhabazi Buzina Espoir Home on the internet</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 28 Mar 2022 19:35:37 +0100</pubDate>
-    <lastBuildDate>Mon, 28 Mar 2022 19:35:37 +0100</lastBuildDate>
+    <pubDate>Mon, 28 Mar 2022 20:40:02 +0100</pubDate>
+    <lastBuildDate>Mon, 28 Mar 2022 20:40:02 +0100</lastBuildDate>
     <generator>Jekyll v3.6.3</generator>
     
       <item>
@@ -15,9 +15,9 @@
 
 &lt;p&gt;To fix it I had first to remove all driver I have installed before using :&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;sudo apt-get purge nvidia-*&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;sudo apt-get update&lt;/code&gt;
--&lt;code&gt;sudo apt-get autoremove&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get purge nvidia-*&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get update&lt;/code&gt;
+-&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get autoremove&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;After that I when a head and installed the latest version of it nvidia driver:&lt;/p&gt;
@@ -25,26 +25,26 @@
 &lt;p&gt;I did :&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;apt search nvidia-driver&lt;/code&gt; 
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;apt search nvidia-driver&lt;/code&gt; 
 To get the latest version of the driver
 After getting the latest version I installed it with :&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Edit Sept 2021 : According to the last comment  by @a-r-j  you can install a couple of dependencies before&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;sudo apt install libnvidia-common-470&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;sudo apt install libnividia-gl-470&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt install libnvidia-common-470&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt install libnividia-gl-470&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Then you can move forward and install the driver.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;sudo apt install nvidia-driver-470&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt install nvidia-driver-470&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;And after installing it I rebooted my machine and checked with :&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;nvidia-smi&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;nvidia-smi&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;And tata ☄️&lt;/p&gt;
 
@@ -335,13 +335,13 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;p&gt;&lt;em&gt;Poetry is a tool for &lt;strong&gt;dependency management&lt;/strong&gt; and &lt;strong&gt;packaging&lt;/strong&gt; in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.&lt;/em&gt; It supports Python 2.7 and 3.5+&lt;/p&gt;
 
-&lt;p&gt;If you work with python and install packages you should be familiar with &lt;code&gt;pip&lt;/code&gt; my old girlfriend.&lt;/p&gt;
+&lt;p&gt;If you work with python and install packages you should be familiar with &lt;code class=&quot;highlighter-rouge&quot;&gt;pip&lt;/code&gt; my old girlfriend.&lt;/p&gt;
 
 &lt;h2 id=&quot;why-we-should-use-poetry-in-lieu-of-pip&quot;&gt;Why we should use poetry in lieu of pip?&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/WEae7StOBGmS6vkaiYroiIwEZWQ2c4DFa56RwhpuOLrzlJfMXlTfUxnpu299Xme-cRGZBdqA0HYUdVUQvduv3cwDSZHr8TMt6o4nwd4DmnWCRjco2xXlHndDSWn_rsQAPRM5saY=s0&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;After 2 weeks of usages and successful migration of five personal projects from &lt;code&gt;pip&lt;/code&gt; to &lt;code&gt;poetry&lt;/code&gt;, I can choose poetry because :&lt;/p&gt;
+&lt;p&gt;After 2 weeks of usages and successful migration of five personal projects from &lt;code class=&quot;highlighter-rouge&quot;&gt;pip&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;poetry&lt;/code&gt;, I can choose poetry because :&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;It has a good dependency resolver. It does the job better than PIP. Read the interesting article &lt;a href=&quot;https://www.activestate.com/resources/quick-reads/python-dependencies-everything-you-need-to-know/&quot;&gt;www.activestate.com&lt;/a&gt;. The author explicitly said&lt;/li&gt;
@@ -353,14 +353,14 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;And another advantage I found is that anytime you add a new dependency to the project poetry update for you the &lt;code&gt;pyproject.toml&lt;/code&gt; with the new top-level dependency, it, therefore, avoid you to do &lt;code&gt;pip freeze&lt;/code&gt; to generate a new requirement file for your project.&lt;/p&gt;
+    &lt;p&gt;And another advantage I found is that anytime you add a new dependency to the project poetry update for you the &lt;code class=&quot;highlighter-rouge&quot;&gt;pyproject.toml&lt;/code&gt; with the new top-level dependency, it, therefore, avoid you to do &lt;code class=&quot;highlighter-rouge&quot;&gt;pip freeze&lt;/code&gt; to generate a new requirement file for your project.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;You can use the same tool to build and publish your packages.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;In my opinion, I think &lt;code&gt;poetry&lt;/code&gt; outweigh &lt;code&gt;pip&lt;/code&gt; in many aspects. It is like pip but on steroids&lt;/p&gt;
+&lt;p&gt;In my opinion, I think &lt;code class=&quot;highlighter-rouge&quot;&gt;poetry&lt;/code&gt; outweigh &lt;code class=&quot;highlighter-rouge&quot;&gt;pip&lt;/code&gt; in many aspects. It is like pip but on steroids&lt;/p&gt;
 
 &lt;p&gt;In the following sections, I will guide you on how to migrate an existing project from pip to poetry.&lt;/p&gt;
 
@@ -368,52 +368,52 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://lh5.googleusercontent.com/prDFZYFCdhOvTIpSpv8fItqiZ3GHrHEypuEhY0J2IyORNHoOwd6JlneUEUEGlcE-yRR0xVGkOUlwIeDWc5DfSCMrpJqX5m_CQxcERZ2fUzLmmOeV-dF-OYUbMAAg0t0uvxhAN-o=s0&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Installing poetry is very straightforward, if you have python installed and &lt;code&gt;curl&lt;/code&gt; you can easily install it by running :&lt;/p&gt;
+&lt;p&gt;Installing poetry is very straightforward, if you have python installed and &lt;code class=&quot;highlighter-rouge&quot;&gt;curl&lt;/code&gt; you can easily install it by running :&lt;/p&gt;
 
 &lt;h4 id=&quot;osx--linux--bashonwindows-install-instructions&quot;&gt;osx / linux / bashonwindows install instructions&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+curl &lt;span class=&quot;nt&quot;&gt;-sSL&lt;/span&gt; https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;windows-powershell-install-instructions&quot;&gt;windows powershell install instructions&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
-(Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py -UseBasicParsing).Content | python -
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Invoke-WebRequest &lt;span class=&quot;nt&quot;&gt;-Uri&lt;/span&gt; https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py &lt;span class=&quot;nt&quot;&gt;-UseBasicParsing&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.Content | python -
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;: The previous &lt;code&gt;get-poetry.py&lt;/code&gt; installer is now deprecated, if you are currently using it you should migrate to the new, supported, &lt;code&gt;install-poetry.py&lt;/code&gt; installer.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;: The previous &lt;code class=&quot;highlighter-rouge&quot;&gt;get-poetry.py&lt;/code&gt; installer is now deprecated, if you are currently using it you should migrate to the new, supported, &lt;code class=&quot;highlighter-rouge&quot;&gt;install-poetry.py&lt;/code&gt; installer.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;The installer installs the &lt;code&gt;poetry&lt;/code&gt; tool to Poetry’s &lt;code&gt;bin&lt;/code&gt; directory. This location depends on your system:&lt;/p&gt;
+  &lt;p&gt;The installer installs the &lt;code class=&quot;highlighter-rouge&quot;&gt;poetry&lt;/code&gt; tool to Poetry’s &lt;code class=&quot;highlighter-rouge&quot;&gt;bin&lt;/code&gt; directory. This location depends on your system:&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code&gt;$HOME/.local/bin&lt;/code&gt; for Unix&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$HOME/.local/bin&lt;/code&gt; for Unix&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code&gt;%APPDATA%\Python\Scripts&lt;/code&gt; on Windows&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;%APPDATA%\Python\Scripts&lt;/code&gt; on Windows&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;If this directory is not on your &lt;code&gt;PATH&lt;/code&gt;, you will need to add it manually if you want to invoke Poetry with simply &lt;code&gt;poetry&lt;/code&gt;.&lt;/p&gt;
+  &lt;p&gt;If this directory is not on your &lt;code class=&quot;highlighter-rouge&quot;&gt;PATH&lt;/code&gt;, you will need to add it manually if you want to invoke Poetry with simply &lt;code class=&quot;highlighter-rouge&quot;&gt;poetry&lt;/code&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Alternatively, you can use the full path to &lt;code&gt;poetry&lt;/code&gt; to use it.&lt;/p&gt;
+  &lt;p&gt;Alternatively, you can use the full path to &lt;code class=&quot;highlighter-rouge&quot;&gt;poetry&lt;/code&gt; to use it.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;There is also another version of installing it with &lt;code&gt;pip&lt;/code&gt; but why would you use your ex to attract your new girlfriend? 🤔🤪&lt;/p&gt;
+&lt;p&gt;There is also another version of installing it with &lt;code class=&quot;highlighter-rouge&quot;&gt;pip&lt;/code&gt; but why would you use your ex to attract your new girlfriend? 🤔🤪&lt;/p&gt;
 
 &lt;p&gt;Once everything is installed you can restart your terminal and run the following command to check the poetry version:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;poetry --version&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;poetry --version&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;If installation is unsuccessfully or encountering incompatibility issues. Please heads up to &lt;a href=&quot;https://github.com/python-poetry/poetry&quot;&gt;Github Poetry&lt;/a&gt; to get a help, to learn more or to fire an issue.&lt;/p&gt;
 
@@ -423,7 +423,7 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 
 &lt;h3 id=&quot;generate-top-level-dependencies&quot;&gt;Generate top-level dependencies&lt;/h3&gt;
 
-&lt;p&gt;Before moving to the next step you need to make sure you can generate the top-level dependencies for your project, to do that you will need a package called &lt;a href=&quot;https://pypi.org/project/pipdeptree/&quot;&gt;pipdeptree&lt;/a&gt; . For context, the top-level dependencies are the root of your dependencies tree. What is even the dependency tree? Each package you install using &lt;code&gt;pip&lt;/code&gt; has the other dependencies that rely on it. And before installing a new package it installs his top-level dependencies. For example, pandas is a package but &lt;code&gt;pandas&lt;/code&gt; depends on &lt;code&gt;numpy&lt;/code&gt;, if you install pandas it install also numpy as a dependent.&lt;/p&gt;
+&lt;p&gt;Before moving to the next step you need to make sure you can generate the top-level dependencies for your project, to do that you will need a package called &lt;a href=&quot;https://pypi.org/project/pipdeptree/&quot;&gt;pipdeptree&lt;/a&gt; . For context, the top-level dependencies are the root of your dependencies tree. What is even the dependency tree? Each package you install using &lt;code class=&quot;highlighter-rouge&quot;&gt;pip&lt;/code&gt; has the other dependencies that rely on it. And before installing a new package it installs his top-level dependencies. For example, pandas is a package but &lt;code class=&quot;highlighter-rouge&quot;&gt;pandas&lt;/code&gt; depends on &lt;code class=&quot;highlighter-rouge&quot;&gt;numpy&lt;/code&gt;, if you install pandas it install also numpy as a dependent.&lt;/p&gt;
 
 &lt;p&gt;The following command will generate only the top-level dependencies, so if you have installed pandas, it will just generate pandas and not numpy as a requirement.&lt;/p&gt;
 
@@ -431,52 +431,52 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 
 &lt;p&gt;This should be filled&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;pipdeptree --warn silence | grep -E '^\w+' &amp;gt; requirements-new.txt&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pipdeptree --warn silence | grep -E '^\w+' &amp;gt; requirements-new.txt&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you have generated the top-level dependencies, I would suggest you deactivate your virtual environment and delete it to make the break-up complete before moving to the next steps.&lt;/p&gt;
 
 &lt;h3 id=&quot;adding-poetry-to-an-existing-project&quot;&gt;Adding poetry to an existing project.&lt;/h3&gt;
 
-&lt;p&gt;If you have a new project where you are using &lt;code&gt;pip&lt;/code&gt; and have the &lt;code&gt;requirements.txt&lt;/code&gt; file inside you can run the following command to initialize poetry in the project.&lt;/p&gt;
+&lt;p&gt;If you have a new project where you are using &lt;code class=&quot;highlighter-rouge&quot;&gt;pip&lt;/code&gt; and have the &lt;code class=&quot;highlighter-rouge&quot;&gt;requirements.txt&lt;/code&gt; file inside you can run the following command to initialize poetry in the project.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;poetry init&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;poetry init&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;This will prompt you to set up poetry to your existing project and asked you to give some details about your project such as the project name, the python version you want to use, and the description. It will consequently generate the &lt;code&gt;pyproject.toml&lt;/code&gt; file which will contain all the details about your project as well as the top-level projects requirement and their versions.&lt;/p&gt;
+&lt;p&gt;This will prompt you to set up poetry to your existing project and asked you to give some details about your project such as the project name, the python version you want to use, and the description. It will consequently generate the &lt;code class=&quot;highlighter-rouge&quot;&gt;pyproject.toml&lt;/code&gt; file which will contain all the details about your project as well as the top-level projects requirement and their versions.&lt;/p&gt;
 
 &lt;h3 id=&quot;creating-virtual-environment&quot;&gt;Creating virtual environment&lt;/h3&gt;
 
-&lt;p&gt;Poetry creates by default virtual environment in a folder called &lt;code&gt;~/Library/Application Support/pypoetry&lt;/code&gt; but you can change those settings by using the following command :&lt;/p&gt;
+&lt;p&gt;Poetry creates by default virtual environment in a folder called &lt;code class=&quot;highlighter-rouge&quot;&gt;~/Library/Application Support/pypoetry&lt;/code&gt; but you can change those settings by using the following command :&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;poetry config virtualenvs.in-project true &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;poetry config virtualenvs.in-project true &lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;After running that command you can run the following :&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;poetry shell &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;poetry shell &lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;It will activate the project’s virtual environment and create a new one if the project does not have one.&lt;/p&gt;
 
 &lt;h3 id=&quot;installing-the-requirements-for-your-projects&quot;&gt;Installing the requirements for your projects.&lt;/h3&gt;
 
-&lt;p&gt;If you have the &lt;code&gt;requirements-news.txt&lt;/code&gt; file resulting from the command you run on the first step, you can install all the packages in that and their corresponding version by running the following command:&lt;/p&gt;
+&lt;p&gt;If you have the &lt;code class=&quot;highlighter-rouge&quot;&gt;requirements-news.txt&lt;/code&gt; file resulting from the command you run on the first step, you can install all the packages in that and their corresponding version by running the following command:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;for item in $(sed -n 's/==/@/p' requirements-new.txt); do poetry add &quot;${item}&quot; ; done&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;for item in $(sed -n 's/==/@/p' requirements-new.txt); do poetry add &quot;${item}&quot; ; done&lt;/code&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;This will work only on Linux and Mac, still trying to find the exact version of it for Windows.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;What does that command do?
-I loop over every line of the &lt;code&gt;requirement-new.txt&lt;/code&gt; file take the dependency, and just replace the &lt;code&gt;==&lt;/code&gt; in the dependency with &lt;code&gt;@&lt;/code&gt; and then add it with poetry.&lt;/p&gt;
+I loop over every line of the &lt;code class=&quot;highlighter-rouge&quot;&gt;requirement-new.txt&lt;/code&gt; file take the dependency, and just replace the &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt; in the dependency with &lt;code class=&quot;highlighter-rouge&quot;&gt;@&lt;/code&gt; and then add it with poetry.&lt;/p&gt;
 
-&lt;p&gt;If for example in the file you have pandas==1.1.1, it will install the following with poetry &lt;code&gt;poetry add pandas@1.11&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If for example in the file you have pandas==1.1.1, it will install the following with poetry &lt;code class=&quot;highlighter-rouge&quot;&gt;poetry add pandas@1.11&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;If everything goes well you should have the all the top-level packages installed with their dependencies.&lt;/p&gt;
 
-&lt;p&gt;Once the command has successfully run and you have everything installed, you should check if your &lt;code&gt;pyproject.toml&lt;/code&gt; file contains all the packages and their top-level dependencies.&lt;/p&gt;
+&lt;p&gt;Once the command has successfully run and you have everything installed, you should check if your &lt;code class=&quot;highlighter-rouge&quot;&gt;pyproject.toml&lt;/code&gt; file contains all the packages and their top-level dependencies.&lt;/p&gt;
 
-&lt;p&gt;You can now remove the old &lt;code&gt;requirements.txt&lt;/code&gt; file and the newly create &lt;code&gt;requirement-new.txt &lt;/code&gt;file by running.&lt;/p&gt;
+&lt;p&gt;You can now remove the old &lt;code class=&quot;highlighter-rouge&quot;&gt;requirements.txt&lt;/code&gt; file and the newly create &lt;code class=&quot;highlighter-rouge&quot;&gt;requirement-new.txt &lt;/code&gt;file by running.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;rm -f requirements.*&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rm -f requirements.*&lt;/code&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;a-section-about-using-poetry-with-conda-enviroment&quot;&gt;A section about using poetry with conda enviroment&lt;/h3&gt;
 
@@ -490,7 +490,7 @@ I loop over every line of the &lt;code&gt;requirement-new.txt&lt;/code&gt; file 
 
 &lt;p&gt;If you have a dockerfile you can edit it and use the following docker images which use multi-stage build to install all your requirement with poetry.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;FROM python:3.7.5 AS base
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM python:3.7.5 AS base
 LABEL maintainer=&quot;Espoir Murhabazi &amp;lt; first_name.second_name[:3] on gmail.com&amp;gt;&quot;
 
 ENV  PYTHONUNBUFFERED=1  \
@@ -531,7 +531,7 @@ COPY . /home/espy
 WORKDIR /home/espy
 USER espy
 CMD [&quot; you command &quot;]
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Basically, what the docker file does, it uses a multi-stage build to first install the packages in the first step and copy only the packages installed in the second as well as the project repository. One of the advantages of the multi-stage build is that it uses only the necessary files your project needs and therefore reduce the memory of your docker container.&lt;/p&gt;
 
@@ -947,7 +947,7 @@ CMD [&quot; you command &quot;]
 &lt;p&gt;After installing the CDK check if it is working with the following command:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;cdk --version&lt;/code&gt; should output your CDK version.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cdk --version&lt;/code&gt; should output your CDK version.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h5 id=&quot;initializing-the-aws-cli-&quot;&gt;Initializing the AWS CLI :&lt;/h5&gt;
@@ -956,16 +956,16 @@ CMD [&quot; you command &quot;]
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code&gt;~/.aws/credentials&lt;/code&gt;: if you are using Mac or Linux&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.aws/credentials&lt;/code&gt;: if you are using Mac or Linux&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code&gt;C:\Users\&lt;/code&gt;USERNAME&lt;code&gt;\.aws\config&lt;/code&gt;: if you are on Windows&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;C:\Users\&lt;/code&gt;USERNAME&lt;code class=&quot;highlighter-rouge&quot;&gt;\.aws\config&lt;/code&gt;: if you are on Windows&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;The content of that file should look like this one:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 [default]
 
 region=your region
@@ -974,7 +974,7 @@ aws_access_key_id = *********************************
 
 aws_secret_access_key = ******************************
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;With the credentials, the cli client and the CDK installed let us move to the second step about creating the architecture.&lt;/p&gt;
 
@@ -986,15 +986,15 @@ aws_secret_access_key = ******************************
 
 &lt;p&gt;Run the following command to create a new CDK project:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;mkdir ecs-devops-cdk&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir ecs-devops-cdk&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Enter the project using:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;cd ecs-devops-cdk&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd ecs-devops-cdk&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Or if you are using VSCode you can open the project with vs code using:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;code ecs-devops-cdk&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;code ecs-devops-cdk&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;em&gt;Step 2&lt;/em&gt;: Initialize the python CDK project :&lt;/li&gt;
@@ -1002,14 +1002,14 @@ aws_secret_access_key = ******************************
 
 &lt;p&gt;To initialize the CDK project run the following command:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;cdk init --language python&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cdk init --language python&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;The command will create a new python CDK project and we will be editing it in the next step to build our stack.&lt;/p&gt;
 
 &lt;p&gt;After a quick look you should see a structure like this in your project:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
-.
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
 
 ├── README.md
 
@@ -1029,7 +1029,7 @@ aws_secret_access_key = ******************************
 
 └── source.bat
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;em&gt;Step 3&lt;/em&gt;: activate virtual environment :&lt;/li&gt;
@@ -1037,9 +1037,9 @@ aws_secret_access_key = ******************************
 
 &lt;p&gt;You can activate your virtual environment using the following command :&lt;/p&gt;
 
-&lt;p&gt;On mac and linux : &lt;code&gt;source .env/bin/activate&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;On mac and linux : &lt;code class=&quot;highlighter-rouge&quot;&gt;source .env/bin/activate&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;For windows : &lt;code&gt;.env\Scripts\activate.bat&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;For windows : &lt;code class=&quot;highlighter-rouge&quot;&gt;.env\Scripts\activate.bat&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;em&gt;step 4&lt;/em&gt;: Installing dependencies:&lt;/li&gt;
@@ -1047,7 +1047,7 @@ aws_secret_access_key = ******************************
 
 &lt;p&gt;With the virtual environment created we can now install the dependencies :&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;pip install -r requirements.txt&lt;/code&gt;and&lt;code&gt;pip install aws_cdk.aws_ec2 aws_cdk.aws_ecs aws_cdk.aws_ecr aws_cdk.aws_iam&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pip install -r requirements.txt&lt;/code&gt;and&lt;code class=&quot;highlighter-rouge&quot;&gt;pip install aws_cdk.aws_ec2 aws_cdk.aws_ecs aws_cdk.aws_ecr aws_cdk.aws_iam&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;With the project initialized we can now move to the next step where we will be creating our components.&lt;/p&gt;
 
@@ -1055,18 +1055,18 @@ aws_secret_access_key = ******************************
 
 &lt;p&gt;We can now move to the stack creation step&lt;/p&gt;
 
-&lt;p&gt;If you open the file under &lt;code&gt;ecs_devops_cdk/ecs_devops_cdk_stack.py&lt;/code&gt; you should be able to see the followings :&lt;/p&gt;
+&lt;p&gt;If you open the file under &lt;code class=&quot;highlighter-rouge&quot;&gt;ecs_devops_cdk/ecs_devops_cdk_stack.py&lt;/code&gt; you should be able to see the followings :&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
-from aws_cdk import core
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;aws_cdk&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;core&lt;/span&gt;
 
-class EcsDevopsCdkStack(core.Stack):
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EcsDevopsCdkStack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;core&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
 
-def __init__ (self, scope: core.Construct, construct_id: str, **kwargs) -&amp;gt; None:
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;core&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;construct_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
 
-super(). __init__ (scope, construct_id, **kwargs)
+&lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;construct_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;It is basically a class that will contain the code defining our stack.&lt;/p&gt;
 
@@ -1082,26 +1082,26 @@ super(). __init__ (scope, construct_id, **kwargs)
 
 &lt;p&gt;To create a container repository you can use the following command :&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
-ecr_repository = ecr.Repository(self, &quot;ecs-devops-repository&quot;, repository_name=&quot;ecs-devops-repository&quot;)
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;ecr_repository&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ecr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Repository&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-repository&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;repository_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-repository&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;step 3&lt;/strong&gt;: Creating the VPC :&lt;/p&gt;
 
 &lt;p&gt;We can either create a vpc or use an existing vpc. To create a vpc use can add the following code the ` &lt;strong&gt;init&lt;/strong&gt; ` method.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
-vpc = ec2.Vpc(self, &quot;ecs-devops-vpc&quot;, max_azs=3)
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;vpc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ec2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Vpc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-vpc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_azs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;You can also use an existing vpc , if that is the case for you use the following lines:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
-vpc = ec2.Vpc.from_lookup(self, &quot;ecs-devops-vpc&quot;,vpc_id='vpc-number')
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;vpc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ec2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Vpc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_lookup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-vpc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vpc_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'vpc-number'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;For this, you need the vpc name and the corresponding id.&lt;/p&gt;
 
@@ -1109,32 +1109,32 @@ vpc = ec2.Vpc.from_lookup(self, &quot;ecs-devops-vpc&quot;,vpc_id='vpc-number')
 
 &lt;p&gt;With the vpc created we can attach the cluster to it . To create the cluster we can use the following code :&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
-cluster = ecs.Cluster(self,
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;cluster&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ecs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
-&quot;ecs-devops-cluster&quot;,
+&lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-cluster&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
-cluster_name=&quot;ecs-devops-cluster&quot;,
+&lt;span class=&quot;n&quot;&gt;cluster_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-cluster&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
-vpc=vpc)
+&lt;span class=&quot;n&quot;&gt;vpc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vpc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;em&gt;step 5:&lt;/em&gt; Creating the Role:&lt;/p&gt;
 
 &lt;p&gt;Let us create the role, the role will give the service permission to perform tasks.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
-execution_role = iam.Role(self, &quot;ecs-devops-execution-role&quot;, assumed_by=iam.ServicePrincipal(&quot;ecs-tasks.amazonaws.com&quot;), role_name=&quot;ecs-devops-execution-role&quot;)
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;execution_role&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Role&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-execution-role&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;assumed_by&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServicePrincipal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecs-tasks.amazonaws.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;role_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-execution-role&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;With the execution role created we can attach policy to it to give it the permission it needs.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
-execution_role.add_to_policy(iam.PolicyStatement( effect=iam.Effect.ALLOW, resources=[&quot;*&quot;], actions=[&quot;ecr:GetAuthorizationToken&quot;, &quot;ecr:BatchCheckLayerAvailability&quot;, &quot;ecr:GetDownloadUrlForLayer&quot;, &quot;ecr:BatchGetImage&quot;, &quot;logs:CreateLogStream&quot;, &quot;logs:PutLogEvents&quot;] ))
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;execution_role&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_to_policy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyStatement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;effect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Effect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ALLOW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resources&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;*&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;actions&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecr:GetAuthorizationToken&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecr:BatchCheckLayerAvailability&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecr:GetDownloadUrlForLayer&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecr:BatchGetImage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;logs:CreateLogStream&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;logs:PutLogEvents&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;With the IAM role created we can attach a task definition to it&lt;/p&gt;
 
@@ -1142,17 +1142,17 @@ execution_role.add_to_policy(iam.PolicyStatement( effect=iam.Effect.ALLOW, resou
 
 &lt;p&gt;Here is the code we used to create the task definition ;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
-task_definition = ecs.FargateTaskDefinition(self, &quot;ecs-devops-task-definition&quot;, execution_role=execution_role, family=&quot;ecs-devops-task-definition&quot;)
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;task_definition&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ecs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FargateTaskDefinition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-task-definition&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;execution_role&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;execution_role&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;family&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-task-definition&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;And the container :&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
-container = task_definition.add_container(&quot;ecs-devops-sandbox&quot;, image=ecs.ContainerImage.from_registry(&quot;amazon/amazon-ecs-sample&quot;) )
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;task_definition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_container&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-sandbox&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ecs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ContainerImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_registry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;amazon/amazon-ecs-sample&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;In the code above, we are initially specifying the Task Definition to run with an example container from a public AWS sample registry. This sample container is replaced with our application container when our CI/CD pipeline updates the Task Definition. We are using the container from the sample registry to allow the Service to stabilize before any application container images are added to our ECR repository.&lt;/p&gt;
 
@@ -1160,159 +1160,159 @@ container = task_definition.add_container(&quot;ecs-devops-sandbox&quot;, image=
 
 &lt;p&gt;&lt;em&gt;step 7:&lt;/em&gt; Creating the service :&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
-service = ecs.FargateService(self, &quot;ecs-devops-service&quot;, cluster=cluster, task_definition=task_definition, service_name=&quot;ecs-devops-service&quot;)
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ecs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FargateService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-service&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cluster&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;task_definition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;task_definition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-service&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The service uses the task definition and you can see it is attached to our created cluster.&lt;/p&gt;
 
 &lt;p&gt;PS: When your AWS instance is in a public subnet , you need to auto-assign public IP addresses to the containers to grant them internet access. This will help your service to download a docker image from a public repository. In that case, you can use the following code when creating the service. :&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
-service = ecs.FargateService(self,
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ecs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FargateService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
-&quot;service-name&quot;,
+&lt;span class=&quot;s&quot;&gt;&quot;service-name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
-cluster=cluster,
+&lt;span class=&quot;n&quot;&gt;cluster&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
-task_definition=task_definition,
+&lt;span class=&quot;n&quot;&gt;task_definition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;task_definition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
-service_name=&quot;service-name&quot;,
+&lt;span class=&quot;n&quot;&gt;service_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;service-name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
-assign_public_ip=True, # this is important
+&lt;span class=&quot;n&quot;&gt;assign_public_ip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# this is important&lt;/span&gt;
 
-security_groups=[list of security groups , also important],
+&lt;span class=&quot;n&quot;&gt;security_groups&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;security&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;groups&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;also&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;important&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
 
-vpc_subnets=[list of subnets]
+&lt;span class=&quot;n&quot;&gt;vpc_subnets&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;subnets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 
-)
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Note the assign_public_ip , the security group and the VPC subnets.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Step 8&lt;/em&gt;: Creating the cloudwatch Log group:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
-log_group = aws_logs.LogGroup(
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;log_group&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aws_logs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LogGroup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
 
   
 
-self,
+&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
   
 
-&quot;ecs-devops-service-logs-groups&quot;,
+&lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-service-logs-groups&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
   
 
-log_group_name=&quot;ecs-devops-service-logs&quot;)
+&lt;span class=&quot;n&quot;&gt;log_group_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-service-logs&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;As stated before we will be transferring the docker logs to our log group created in Cloudwatch.&lt;/p&gt;
 
 &lt;p&gt;With all the objects created let us make sure that we have all the ingredients for our stack in the following updated file.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;ecs_devops_cdk/ecs_devops_cdk_stack.py&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ecs_devops_cdk/ecs_devops_cdk_stack.py&lt;/code&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
-from aws_cdk import (core, aws_ecs as ecs, aws_ecr as ecr, aws_ec2 as ec2, aws_iam as iam, aws_logs)
-
-  
-
-class EcsDevopsCdkStack(core.Stack):
-
-def __init__ (self, scope: core.Construct, construct_id: str, **kwargs) -&amp;gt; None:
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;aws_cdk&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;core&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aws_ecs&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ecs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aws_ecr&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ecr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aws_ec2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ec2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aws_iam&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iam&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aws_logs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
   
 
-super(). __init__ (scope, construct_id, **kwargs)
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EcsDevopsCdkStack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;core&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
 
-ecr_repository = ecr.Repository(self, &quot;ecs-devops-repository&quot;, repository_name=&quot;ecs-devops-repository&quot;)
-
-vpc = ec2.Vpc(self, &quot;ecs-devops-vpc&quot;, max_azs=3)
-
-cluster = ecs.Cluster(self, &quot;ecs-devops-cluster&quot;, cluster_name=&quot;ecs-devops-cluster&quot;, vpc=vpc)
-
-execution_role = iam.Role(self, &quot;ecs-devops-execution-role&quot;, assumed_by=iam.ServicePrincipal(&quot;ecs-tasks.amazonaws.com&quot;), role_name=&quot;ecs-devops-execution-role&quot;)
-
-execution_role.add_to_policy(iam.PolicyStatement(
-
-effect=iam.Effect.ALLOW, resources=[&quot;*&quot;],
-
-actions=[&quot;ecr:GetAuthorizationToken&quot;,
-
-&quot;ecr:BatchCheckLayerAvailability&quot;,
-
-&quot;ecr:GetDownloadUrlForLayer&quot;,
-
-&quot;ecr:BatchGetImage&quot;,
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;core&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;construct_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
 
   
 
-&quot;logs:CreateLogStream&quot;,
+&lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;construct_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;ecr_repository&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ecr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Repository&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-repository&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;repository_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-repository&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;vpc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ec2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Vpc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-vpc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_azs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;cluster&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ecs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-cluster&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cluster_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-cluster&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vpc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vpc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;execution_role&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Role&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-execution-role&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;assumed_by&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ServicePrincipal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecs-tasks.amazonaws.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;role_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-execution-role&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;execution_role&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_to_policy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PolicyStatement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;effect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Effect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ALLOW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resources&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;*&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;actions&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecr:GetAuthorizationToken&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;ecr:BatchCheckLayerAvailability&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;ecr:GetDownloadUrlForLayer&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;ecr:BatchGetImage&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
   
 
-&quot;logs:PutLogEvents&quot; ] ))
+&lt;span class=&quot;s&quot;&gt;&quot;logs:CreateLogStream&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
   
 
-task_definition = ecs.FargateTaskDefinition(self, &quot;ecs-devops-task-definition&quot;, execution_role=execution_role,
+&lt;span class=&quot;s&quot;&gt;&quot;logs:PutLogEvents&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 
-family=&quot;ecs-devops-task-definition&quot;)
+  
 
-container = task_definition.add_container(&quot;ecs-devops-sandbox&quot;, image=ecs.ContainerImage.from_registry(&quot;amazon/amazon-ecs-sample&quot;))
+&lt;span class=&quot;n&quot;&gt;task_definition&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ecs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FargateTaskDefinition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-task-definition&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;execution_role&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;execution_role&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
-service = ecs.FargateService(self, &quot;ecs-devops-service&quot;, cluster=cluster, task_definition=task_definition, service_name=&quot;ecs-devops-service&quot;)
+&lt;span class=&quot;n&quot;&gt;family&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-task-definition&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-log_group = aws_logs.LogGroup(self, &quot;ecs-devops-service-logs-groups&quot;, log_group_name=&quot;ecs-devops-service-logs&quot;)
+&lt;span class=&quot;n&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;task_definition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_container&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-sandbox&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ecs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ContainerImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_registry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;amazon/amazon-ecs-sample&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ecs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FargateService&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-service&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cluster&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cluster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;task_definition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;task_definition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-service&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;p&gt;Before creating the stack open the file &lt;code&gt;app.py&lt;/code&gt;&lt;/p&gt;
+&lt;span class=&quot;n&quot;&gt;log_group&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aws_logs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LogGroup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-service-logs-groups&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;log_group_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-service-logs&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Before creating the stack open the file &lt;code class=&quot;highlighter-rouge&quot;&gt;app.py&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;You should see something like this :&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
-from aws_cdk import core
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;aws_cdk&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;core&lt;/span&gt;
 
-from ecs_devops_cdk.ecs_devops_cdk_stack import EcsDevopsCdkStack
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;ecs_devops_cdk.ecs_devops_cdk_stack&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EcsDevopsCdkStack&lt;/span&gt;
 
-app = core.App()
+&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;core&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 
   
 
-EcsDevopsCdkStack(app, &quot;ecs-devops-cdk&quot;)
+&lt;span class=&quot;n&quot;&gt;EcsDevopsCdkStack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-cdk&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-app.synth()
+&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;synth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Replace the line where your stack is instantiated, 4th line, with the following :&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;
-EcsDevopsCdkStack(app, &quot;ecs-devops-cdk&quot;, env={
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;EcsDevopsCdkStack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-cdk&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
   
 
-'account': &quot; **************&quot;,
+&lt;span class=&quot;s&quot;&gt;'account'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; **************&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
   
 
-'region': &quot;your region&quot;
+&lt;span class=&quot;s&quot;&gt;'region'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;your region&quot;&lt;/span&gt;
 
   
 
-})
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;With this set; you can now create your stack. With the code created we can now run the following command to create our stack.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;cdk deploy&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cdk deploy&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;If everything goes well you should have your stack created. As a result, you will have a cluster, running a service that deploys a task definition, and a Cloudwatch log group created.&lt;/p&gt;
 

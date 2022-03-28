@@ -173,7 +173,7 @@
 <p>After installing the CDK check if it is working with the following command:</p>
 
 <ul>
-  <li><code>cdk --version</code> should output your CDK version.</li>
+  <li><code class="highlighter-rouge">cdk --version</code> should output your CDK version.</li>
 </ul>
 
 <h5 id="initializing-the-aws-cli-">Initializing the AWS CLI :</h5>
@@ -182,16 +182,16 @@
 
 <ul>
   <li>
-    <p><code>~/.aws/credentials</code>: if you are using Mac or Linux</p>
+    <p><code class="highlighter-rouge">~/.aws/credentials</code>: if you are using Mac or Linux</p>
   </li>
   <li>
-    <p><code>C:\Users\</code>USERNAME<code>\.aws\config</code>: if you are on Windows</p>
+    <p><code class="highlighter-rouge">C:\Users\</code>USERNAME<code class="highlighter-rouge">\.aws\config</code>: if you are on Windows</p>
   </li>
 </ul>
 
 <p>The content of that file should look like this one:</p>
 
-<pre><code>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 [default]
 
 region=your region
@@ -200,7 +200,7 @@ aws_access_key_id = *********************************
 
 aws_secret_access_key = ******************************
 
-</code></pre>
+</code></pre></div></div>
 
 <p>With the credentials, the cli client and the CDK installed let us move to the second step about creating the architecture.</p>
 
@@ -212,15 +212,15 @@ aws_secret_access_key = ******************************
 
 <p>Run the following command to create a new CDK project:</p>
 
-<p><code>mkdir ecs-devops-cdk</code></p>
+<p><code class="highlighter-rouge">mkdir ecs-devops-cdk</code></p>
 
 <p>Enter the project using:</p>
 
-<p><code>cd ecs-devops-cdk</code></p>
+<p><code class="highlighter-rouge">cd ecs-devops-cdk</code></p>
 
 <p>Or if you are using VSCode you can open the project with vs code using:</p>
 
-<p><code>code ecs-devops-cdk</code></p>
+<p><code class="highlighter-rouge">code ecs-devops-cdk</code></p>
 
 <ul>
   <li><em>Step 2</em>: Initialize the python CDK project :</li>
@@ -228,14 +228,14 @@ aws_secret_access_key = ******************************
 
 <p>To initialize the CDK project run the following command:</p>
 
-<p><code>cdk init --language python</code></p>
+<p><code class="highlighter-rouge">cdk init --language python</code></p>
 
 <p>The command will create a new python CDK project and we will be editing it in the next step to build our stack.</p>
 
 <p>After a quick look you should see a structure like this in your project:</p>
 
-<pre><code class="language-bash">
-.
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nb">.</span>
 
 ├── README.md
 
@@ -255,7 +255,7 @@ aws_secret_access_key = ******************************
 
 └── source.bat
 
-</code></pre>
+</code></pre></div></div>
 
 <ul>
   <li><em>Step 3</em>: activate virtual environment :</li>
@@ -263,9 +263,9 @@ aws_secret_access_key = ******************************
 
 <p>You can activate your virtual environment using the following command :</p>
 
-<p>On mac and linux : <code>source .env/bin/activate</code></p>
+<p>On mac and linux : <code class="highlighter-rouge">source .env/bin/activate</code></p>
 
-<p>For windows : <code>.env\Scripts\activate.bat</code></p>
+<p>For windows : <code class="highlighter-rouge">.env\Scripts\activate.bat</code></p>
 
 <ul>
   <li><em>step 4</em>: Installing dependencies:</li>
@@ -273,7 +273,7 @@ aws_secret_access_key = ******************************
 
 <p>With the virtual environment created we can now install the dependencies :</p>
 
-<p><code>pip install -r requirements.txt</code>and<code>pip install aws_cdk.aws_ec2 aws_cdk.aws_ecs aws_cdk.aws_ecr aws_cdk.aws_iam</code></p>
+<p><code class="highlighter-rouge">pip install -r requirements.txt</code>and<code class="highlighter-rouge">pip install aws_cdk.aws_ec2 aws_cdk.aws_ecs aws_cdk.aws_ecr aws_cdk.aws_iam</code></p>
 
 <p>With the project initialized we can now move to the next step where we will be creating our components.</p>
 
@@ -281,18 +281,18 @@ aws_secret_access_key = ******************************
 
 <p>We can now move to the stack creation step</p>
 
-<p>If you open the file under <code>ecs_devops_cdk/ecs_devops_cdk_stack.py</code> you should be able to see the followings :</p>
+<p>If you open the file under <code class="highlighter-rouge">ecs_devops_cdk/ecs_devops_cdk_stack.py</code> you should be able to see the followings :</p>
 
-<pre><code class="language-python">
-from aws_cdk import core
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">from</span> <span class="nn">aws_cdk</span> <span class="kn">import</span> <span class="n">core</span>
 
-class EcsDevopsCdkStack(core.Stack):
+<span class="k">class</span> <span class="nc">EcsDevopsCdkStack</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">Stack</span><span class="p">):</span>
 
-def __init__ (self, scope: core.Construct, construct_id: str, **kwargs) -&gt; None:
+<span class="k">def</span> <span class="nf">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scope</span><span class="p">:</span> <span class="n">core</span><span class="o">.</span><span class="n">Construct</span><span class="p">,</span> <span class="n">construct_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
 
-super(). __init__ (scope, construct_id, **kwargs)
+<span class="nb">super</span><span class="p">()</span><span class="o">.</span> <span class="n">__init__</span> <span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">construct_id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <p>It is basically a class that will contain the code defining our stack.</p>
 
@@ -308,26 +308,26 @@ super(). __init__ (scope, construct_id, **kwargs)
 
 <p>To create a container repository you can use the following command :</p>
 
-<pre><code class="language-python">
-ecr_repository = ecr.Repository(self, "ecs-devops-repository", repository_name="ecs-devops-repository")
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">ecr_repository</span> <span class="o">=</span> <span class="n">ecr</span><span class="o">.</span><span class="n">Repository</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-repository"</span><span class="p">,</span> <span class="n">repository_name</span><span class="o">=</span><span class="s">"ecs-devops-repository"</span><span class="p">)</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <p><strong>step 3</strong>: Creating the VPC :</p>
 
 <p>We can either create a vpc or use an existing vpc. To create a vpc use can add the following code the ` <strong>init</strong> ` method.</p>
 
-<pre><code class="language-python">
-vpc = ec2.Vpc(self, "ecs-devops-vpc", max_azs=3)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">vpc</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">Vpc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-vpc"</span><span class="p">,</span> <span class="n">max_azs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <p>You can also use an existing vpc , if that is the case for you use the following lines:</p>
 
-<pre><code class="language-python">
-vpc = ec2.Vpc.from_lookup(self, "ecs-devops-vpc",vpc_id='vpc-number')
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">vpc</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">Vpc</span><span class="o">.</span><span class="n">from_lookup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-vpc"</span><span class="p">,</span><span class="n">vpc_id</span><span class="o">=</span><span class="s">'vpc-number'</span><span class="p">)</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <p>For this, you need the vpc name and the corresponding id.</p>
 
@@ -335,32 +335,32 @@ vpc = ec2.Vpc.from_lookup(self, "ecs-devops-vpc",vpc_id='vpc-number')
 
 <p>With the vpc created we can attach the cluster to it . To create the cluster we can use the following code :</p>
 
-<pre><code class="language-python">
-cluster = ecs.Cluster(self,
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">cluster</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">Cluster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
 
-"ecs-devops-cluster",
+<span class="s">"ecs-devops-cluster"</span><span class="p">,</span>
 
-cluster_name="ecs-devops-cluster",
+<span class="n">cluster_name</span><span class="o">=</span><span class="s">"ecs-devops-cluster"</span><span class="p">,</span>
 
-vpc=vpc)
+<span class="n">vpc</span><span class="o">=</span><span class="n">vpc</span><span class="p">)</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <p><em>step 5:</em> Creating the Role:</p>
 
 <p>Let us create the role, the role will give the service permission to perform tasks.</p>
 
-<pre><code class="language-python">
-execution_role = iam.Role(self, "ecs-devops-execution-role", assumed_by=iam.ServicePrincipal("ecs-tasks.amazonaws.com"), role_name="ecs-devops-execution-role")
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">execution_role</span> <span class="o">=</span> <span class="n">iam</span><span class="o">.</span><span class="n">Role</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-execution-role"</span><span class="p">,</span> <span class="n">assumed_by</span><span class="o">=</span><span class="n">iam</span><span class="o">.</span><span class="n">ServicePrincipal</span><span class="p">(</span><span class="s">"ecs-tasks.amazonaws.com"</span><span class="p">),</span> <span class="n">role_name</span><span class="o">=</span><span class="s">"ecs-devops-execution-role"</span><span class="p">)</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <p>With the execution role created we can attach policy to it to give it the permission it needs.</p>
 
-<pre><code class="language-python">
-execution_role.add_to_policy(iam.PolicyStatement( effect=iam.Effect.ALLOW, resources=["*"], actions=["ecr:GetAuthorizationToken", "ecr:BatchCheckLayerAvailability", "ecr:GetDownloadUrlForLayer", "ecr:BatchGetImage", "logs:CreateLogStream", "logs:PutLogEvents"] ))
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">execution_role</span><span class="o">.</span><span class="n">add_to_policy</span><span class="p">(</span><span class="n">iam</span><span class="o">.</span><span class="n">PolicyStatement</span><span class="p">(</span> <span class="n">effect</span><span class="o">=</span><span class="n">iam</span><span class="o">.</span><span class="n">Effect</span><span class="o">.</span><span class="n">ALLOW</span><span class="p">,</span> <span class="n">resources</span><span class="o">=</span><span class="p">[</span><span class="s">"*"</span><span class="p">],</span> <span class="n">actions</span><span class="o">=</span><span class="p">[</span><span class="s">"ecr:GetAuthorizationToken"</span><span class="p">,</span> <span class="s">"ecr:BatchCheckLayerAvailability"</span><span class="p">,</span> <span class="s">"ecr:GetDownloadUrlForLayer"</span><span class="p">,</span> <span class="s">"ecr:BatchGetImage"</span><span class="p">,</span> <span class="s">"logs:CreateLogStream"</span><span class="p">,</span> <span class="s">"logs:PutLogEvents"</span><span class="p">]</span> <span class="p">))</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <p>With the IAM role created we can attach a task definition to it</p>
 
@@ -368,17 +368,17 @@ execution_role.add_to_policy(iam.PolicyStatement( effect=iam.Effect.ALLOW, resou
 
 <p>Here is the code we used to create the task definition ;</p>
 
-<pre><code class="language-python">
-task_definition = ecs.FargateTaskDefinition(self, "ecs-devops-task-definition", execution_role=execution_role, family="ecs-devops-task-definition")
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">task_definition</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">FargateTaskDefinition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-task-definition"</span><span class="p">,</span> <span class="n">execution_role</span><span class="o">=</span><span class="n">execution_role</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">"ecs-devops-task-definition"</span><span class="p">)</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <p>And the container :</p>
 
-<pre><code class="language-python">
-container = task_definition.add_container("ecs-devops-sandbox", image=ecs.ContainerImage.from_registry("amazon/amazon-ecs-sample") )
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">container</span> <span class="o">=</span> <span class="n">task_definition</span><span class="o">.</span><span class="n">add_container</span><span class="p">(</span><span class="s">"ecs-devops-sandbox"</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">ecs</span><span class="o">.</span><span class="n">ContainerImage</span><span class="o">.</span><span class="n">from_registry</span><span class="p">(</span><span class="s">"amazon/amazon-ecs-sample"</span><span class="p">)</span> <span class="p">)</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <p>In the code above, we are initially specifying the Task Definition to run with an example container from a public AWS sample registry. This sample container is replaced with our application container when our CI/CD pipeline updates the Task Definition. We are using the container from the sample registry to allow the Service to stabilize before any application container images are added to our ECR repository.</p>
 
@@ -386,159 +386,159 @@ container = task_definition.add_container("ecs-devops-sandbox", image=ecs.Contai
 
 <p><em>step 7:</em> Creating the service :</p>
 
-<pre><code class="language-python">
-service = ecs.FargateService(self, "ecs-devops-service", cluster=cluster, task_definition=task_definition, service_name="ecs-devops-service")
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">service</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">FargateService</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-service"</span><span class="p">,</span> <span class="n">cluster</span><span class="o">=</span><span class="n">cluster</span><span class="p">,</span> <span class="n">task_definition</span><span class="o">=</span><span class="n">task_definition</span><span class="p">,</span> <span class="n">service_name</span><span class="o">=</span><span class="s">"ecs-devops-service"</span><span class="p">)</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <p>The service uses the task definition and you can see it is attached to our created cluster.</p>
 
 <p>PS: When your AWS instance is in a public subnet , you need to auto-assign public IP addresses to the containers to grant them internet access. This will help your service to download a docker image from a public repository. In that case, you can use the following code when creating the service. :</p>
 
-<pre><code class="language-python">
-service = ecs.FargateService(self,
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">service</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">FargateService</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
 
-"service-name",
+<span class="s">"service-name"</span><span class="p">,</span>
 
-cluster=cluster,
+<span class="n">cluster</span><span class="o">=</span><span class="n">cluster</span><span class="p">,</span>
 
-task_definition=task_definition,
+<span class="n">task_definition</span><span class="o">=</span><span class="n">task_definition</span><span class="p">,</span>
 
-service_name="service-name",
+<span class="n">service_name</span><span class="o">=</span><span class="s">"service-name"</span><span class="p">,</span>
 
-assign_public_ip=True, # this is important
+<span class="n">assign_public_ip</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># this is important</span>
 
-security_groups=[list of security groups , also important],
+<span class="n">security_groups</span><span class="o">=</span><span class="p">[</span><span class="nb">list</span> <span class="n">of</span> <span class="n">security</span> <span class="n">groups</span> <span class="p">,</span> <span class="n">also</span> <span class="n">important</span><span class="p">],</span>
 
-vpc_subnets=[list of subnets]
+<span class="n">vpc_subnets</span><span class="o">=</span><span class="p">[</span><span class="nb">list</span> <span class="n">of</span> <span class="n">subnets</span><span class="p">]</span>
 
-)
+<span class="p">)</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <p>Note the assign_public_ip , the security group and the VPC subnets.</p>
 
 <p><em>Step 8</em>: Creating the cloudwatch Log group:</p>
 
-<pre><code class="language-python">
-log_group = aws_logs.LogGroup(
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">log_group</span> <span class="o">=</span> <span class="n">aws_logs</span><span class="o">.</span><span class="n">LogGroup</span><span class="p">(</span>
 
   
 
-self,
+<span class="bp">self</span><span class="p">,</span>
 
   
 
-"ecs-devops-service-logs-groups",
+<span class="s">"ecs-devops-service-logs-groups"</span><span class="p">,</span>
 
   
 
-log_group_name="ecs-devops-service-logs")
+<span class="n">log_group_name</span><span class="o">=</span><span class="s">"ecs-devops-service-logs"</span><span class="p">)</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <p>As stated before we will be transferring the docker logs to our log group created in Cloudwatch.</p>
 
 <p>With all the objects created let us make sure that we have all the ingredients for our stack in the following updated file.</p>
 
-<p><code>ecs_devops_cdk/ecs_devops_cdk_stack.py</code></p>
+<p><code class="highlighter-rouge">ecs_devops_cdk/ecs_devops_cdk_stack.py</code></p>
 
-<pre><code class="language-python">
-from aws_cdk import (core, aws_ecs as ecs, aws_ecr as ecr, aws_ec2 as ec2, aws_iam as iam, aws_logs)
-
-  
-
-class EcsDevopsCdkStack(core.Stack):
-
-def __init__ (self, scope: core.Construct, construct_id: str, **kwargs) -&gt; None:
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">from</span> <span class="nn">aws_cdk</span> <span class="kn">import</span> <span class="p">(</span><span class="n">core</span><span class="p">,</span> <span class="n">aws_ecs</span> <span class="k">as</span> <span class="n">ecs</span><span class="p">,</span> <span class="n">aws_ecr</span> <span class="k">as</span> <span class="n">ecr</span><span class="p">,</span> <span class="n">aws_ec2</span> <span class="k">as</span> <span class="n">ec2</span><span class="p">,</span> <span class="n">aws_iam</span> <span class="k">as</span> <span class="n">iam</span><span class="p">,</span> <span class="n">aws_logs</span><span class="p">)</span>
 
   
 
-super(). __init__ (scope, construct_id, **kwargs)
+<span class="k">class</span> <span class="nc">EcsDevopsCdkStack</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">Stack</span><span class="p">):</span>
 
-ecr_repository = ecr.Repository(self, "ecs-devops-repository", repository_name="ecs-devops-repository")
-
-vpc = ec2.Vpc(self, "ecs-devops-vpc", max_azs=3)
-
-cluster = ecs.Cluster(self, "ecs-devops-cluster", cluster_name="ecs-devops-cluster", vpc=vpc)
-
-execution_role = iam.Role(self, "ecs-devops-execution-role", assumed_by=iam.ServicePrincipal("ecs-tasks.amazonaws.com"), role_name="ecs-devops-execution-role")
-
-execution_role.add_to_policy(iam.PolicyStatement(
-
-effect=iam.Effect.ALLOW, resources=["*"],
-
-actions=["ecr:GetAuthorizationToken",
-
-"ecr:BatchCheckLayerAvailability",
-
-"ecr:GetDownloadUrlForLayer",
-
-"ecr:BatchGetImage",
+<span class="k">def</span> <span class="nf">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scope</span><span class="p">:</span> <span class="n">core</span><span class="o">.</span><span class="n">Construct</span><span class="p">,</span> <span class="n">construct_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
 
   
 
-"logs:CreateLogStream",
+<span class="nb">super</span><span class="p">()</span><span class="o">.</span> <span class="n">__init__</span> <span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">construct_id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">ecr_repository</span> <span class="o">=</span> <span class="n">ecr</span><span class="o">.</span><span class="n">Repository</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-repository"</span><span class="p">,</span> <span class="n">repository_name</span><span class="o">=</span><span class="s">"ecs-devops-repository"</span><span class="p">)</span>
+
+<span class="n">vpc</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">Vpc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-vpc"</span><span class="p">,</span> <span class="n">max_azs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">cluster</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">Cluster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-cluster"</span><span class="p">,</span> <span class="n">cluster_name</span><span class="o">=</span><span class="s">"ecs-devops-cluster"</span><span class="p">,</span> <span class="n">vpc</span><span class="o">=</span><span class="n">vpc</span><span class="p">)</span>
+
+<span class="n">execution_role</span> <span class="o">=</span> <span class="n">iam</span><span class="o">.</span><span class="n">Role</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-execution-role"</span><span class="p">,</span> <span class="n">assumed_by</span><span class="o">=</span><span class="n">iam</span><span class="o">.</span><span class="n">ServicePrincipal</span><span class="p">(</span><span class="s">"ecs-tasks.amazonaws.com"</span><span class="p">),</span> <span class="n">role_name</span><span class="o">=</span><span class="s">"ecs-devops-execution-role"</span><span class="p">)</span>
+
+<span class="n">execution_role</span><span class="o">.</span><span class="n">add_to_policy</span><span class="p">(</span><span class="n">iam</span><span class="o">.</span><span class="n">PolicyStatement</span><span class="p">(</span>
+
+<span class="n">effect</span><span class="o">=</span><span class="n">iam</span><span class="o">.</span><span class="n">Effect</span><span class="o">.</span><span class="n">ALLOW</span><span class="p">,</span> <span class="n">resources</span><span class="o">=</span><span class="p">[</span><span class="s">"*"</span><span class="p">],</span>
+
+<span class="n">actions</span><span class="o">=</span><span class="p">[</span><span class="s">"ecr:GetAuthorizationToken"</span><span class="p">,</span>
+
+<span class="s">"ecr:BatchCheckLayerAvailability"</span><span class="p">,</span>
+
+<span class="s">"ecr:GetDownloadUrlForLayer"</span><span class="p">,</span>
+
+<span class="s">"ecr:BatchGetImage"</span><span class="p">,</span>
 
   
 
-"logs:PutLogEvents" ] ))
+<span class="s">"logs:CreateLogStream"</span><span class="p">,</span>
 
   
 
-task_definition = ecs.FargateTaskDefinition(self, "ecs-devops-task-definition", execution_role=execution_role,
+<span class="s">"logs:PutLogEvents"</span> <span class="p">]</span> <span class="p">))</span>
 
-family="ecs-devops-task-definition")
+  
 
-container = task_definition.add_container("ecs-devops-sandbox", image=ecs.ContainerImage.from_registry("amazon/amazon-ecs-sample"))
+<span class="n">task_definition</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">FargateTaskDefinition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-task-definition"</span><span class="p">,</span> <span class="n">execution_role</span><span class="o">=</span><span class="n">execution_role</span><span class="p">,</span>
 
-service = ecs.FargateService(self, "ecs-devops-service", cluster=cluster, task_definition=task_definition, service_name="ecs-devops-service")
+<span class="n">family</span><span class="o">=</span><span class="s">"ecs-devops-task-definition"</span><span class="p">)</span>
 
-log_group = aws_logs.LogGroup(self, "ecs-devops-service-logs-groups", log_group_name="ecs-devops-service-logs")
+<span class="n">container</span> <span class="o">=</span> <span class="n">task_definition</span><span class="o">.</span><span class="n">add_container</span><span class="p">(</span><span class="s">"ecs-devops-sandbox"</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">ecs</span><span class="o">.</span><span class="n">ContainerImage</span><span class="o">.</span><span class="n">from_registry</span><span class="p">(</span><span class="s">"amazon/amazon-ecs-sample"</span><span class="p">))</span>
 
-</code></pre>
+<span class="n">service</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">FargateService</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-service"</span><span class="p">,</span> <span class="n">cluster</span><span class="o">=</span><span class="n">cluster</span><span class="p">,</span> <span class="n">task_definition</span><span class="o">=</span><span class="n">task_definition</span><span class="p">,</span> <span class="n">service_name</span><span class="o">=</span><span class="s">"ecs-devops-service"</span><span class="p">)</span>
 
-<p>Before creating the stack open the file <code>app.py</code></p>
+<span class="n">log_group</span> <span class="o">=</span> <span class="n">aws_logs</span><span class="o">.</span><span class="n">LogGroup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-service-logs-groups"</span><span class="p">,</span> <span class="n">log_group_name</span><span class="o">=</span><span class="s">"ecs-devops-service-logs"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>Before creating the stack open the file <code class="highlighter-rouge">app.py</code></p>
 
 <p>You should see something like this :</p>
 
-<pre><code class="language-python">
-from aws_cdk import core
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">from</span> <span class="nn">aws_cdk</span> <span class="kn">import</span> <span class="n">core</span>
 
-from ecs_devops_cdk.ecs_devops_cdk_stack import EcsDevopsCdkStack
+<span class="kn">from</span> <span class="nn">ecs_devops_cdk.ecs_devops_cdk_stack</span> <span class="kn">import</span> <span class="n">EcsDevopsCdkStack</span>
 
-app = core.App()
+<span class="n">app</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">App</span><span class="p">()</span>
 
   
 
-EcsDevopsCdkStack(app, "ecs-devops-cdk")
+<span class="n">EcsDevopsCdkStack</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="s">"ecs-devops-cdk"</span><span class="p">)</span>
 
-app.synth()
+<span class="n">app</span><span class="o">.</span><span class="n">synth</span><span class="p">()</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <p>Replace the line where your stack is instantiated, 4th line, with the following :</p>
 
-<pre><code class="language-python">
-EcsDevopsCdkStack(app, "ecs-devops-cdk", env={
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">EcsDevopsCdkStack</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="s">"ecs-devops-cdk"</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="p">{</span>
 
   
 
-'account': " **************",
+<span class="s">'account'</span><span class="p">:</span> <span class="s">" **************"</span><span class="p">,</span>
 
   
 
-'region': "your region"
+<span class="s">'region'</span><span class="p">:</span> <span class="s">"your region"</span>
 
   
 
-})
+<span class="p">})</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <p>With this set; you can now create your stack. With the code created we can now run the following command to create our stack.</p>
 
-<p><code>cdk deploy</code></p>
+<p><code class="highlighter-rouge">cdk deploy</code></p>
 
 <p>If everything goes well you should have your stack created. As a result, you will have a cluster, running a service that deploys a task definition, and a Cloudwatch log group created.</p>
 
