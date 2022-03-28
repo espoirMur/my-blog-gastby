@@ -29,6 +29,7 @@ If you are familiar with Python, this tutorial is for you. To complete this tuto
 
 Let us create a project we will be using :
 Navigate to your command line and type the following lines of code :
+
 `mkdir read_emails_project & cd read_emails_project`
 
 Once in the project, let’s initialize git :
