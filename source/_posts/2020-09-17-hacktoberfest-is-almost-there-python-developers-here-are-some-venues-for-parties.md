@@ -7,7 +7,7 @@ comments: true
 categories: tech
 ---
 
-{% include image.html name="./images/festival.jpg" caption="cover image" %}
+{% include image.html name="festival.jpg" caption="cover image" %}
 
 This year has been fantastic because I contributed to some open-source projects and had my pull request merged on amazing projects with many stars. It helps me to put some green dots on my GitHub profile…
 

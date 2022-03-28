@@ -2,12 +2,12 @@
 title : Local Boy visited the Etihad Stadium. Here is how it went.
 date : 2021-12-27T18:20:39
 description: Boxing Day is an important day in the premier league season; hence as a Manchester City supporter Espoir Murhabazi relates about his experience watching a Premier League game live in Manchester. 
-published : True
-cover_image : ./images/dream-come-true.jpeg
+layout: post
 comments: true
 categories: non-tech
 ---
 
+{% include image.html name="dream-come-true.jpeg" caption="dream come true" %}
 I had been dreaming about visiting the Etihad Stadium one day in my life. When I first applied for the Chevening Scholarship, watching a Mancity game was one of the reasons why I wanted to come to the UK. 
 
 I knew Boxing Day was a big day for the English Premier League, which is why I booked my ticket for the Manchester City against Leicester Game despite fear of postponement due to the new variant of COVID. 
@@ -27,27 +27,27 @@ Firstly, let's start with a bit of history. I have been supporting Manchester Ci
 I have been a massive fan of him for his leadership on and off the pitch. I consider him my role model; therefore, I had to take my first picture of the day with his statue. 
 
 
-{% include image.html name="./images/meeting-the-legend.jpeg" caption="legend" %}
+{% include image.html name="meeting-the-legend.jpeg" caption="legend" %}
 
 ### The Dream come true 
 
 Secondly, I went to the Stadium and took the picture that sums up my childhood dreams, Espoir in the UK.
 
 
-{% include image.html name="./images/etihad-stadium.jpeg" caption="at Stadium" %}
+{% include image.html name="etihad-stadium.jpeg" caption="at Stadium" %}
 
 ### Cream on the cake, I watched a game live.
 
 And Finally, before the game, I took another one to show people and everyone I have been watching football with in Goma, Bukavu, Kigali pubs that their friend and the only Manchester City fan they know has made it to the Stadium. 
 
-{% include image.html name="./images/before-game.jpeg" caption="before the game" %}
+{% include image.html name="before-game.jpeg" caption="before the game" %}
 
 ### Final result and FPL disappointments 
 
 The game did end up well; we won 6-3; unfortunately, my FPL captain Phil Foden got only one point. I think this is the old FPL course. You_ should not captain a player you will be watching live. _
 
 
-{% include image.html name="./images/fpl-team-result.jpeg" caption="fpl team result" %}
+{% include image.html name="fpl-team-result.jpeg" caption="fpl team result" %}
 
 I wish I had the chance to catch the Canal + Broadcasting car to get a chance to pass on TV, but unfortunately, I couldn’t find where the car was standing.
 

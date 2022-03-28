@@ -7,7 +7,7 @@ comments: true
 categories: non-tech
 ---
 
-{% include image.html name="./images/ielts.png" caption="cover image" %}
+{% include image.html name="ielts.png" caption="cover image" %}
 
 After preparing for more than a month, I managed to pass my IELTS today. While waiting for the result , I would like to share with you how it went. 
 

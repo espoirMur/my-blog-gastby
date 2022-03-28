@@ -1,16 +1,16 @@
 {% capture includeGuts %}
 {% capture imagePath %}{{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}/{{ include.name }}{% endcapture %}
 {% capture imageFullPath %} /assets/posts/{{ imagePath }} {% endcapture %}
-{% if include.name  contains 'http:' %}
+{% if include.name  contains 'http' %}
     <img markdown="1" src="{{include.name}}" {% if include.alt %} alt="{{ include.alt }}" {% endif %} {% if include.width %} width="{{ include.width }}" {% endif %}/>
 {% else %}
 {% if include.caption %}
     <figure markdown="1">
-        <img src={{site.url | strip }}{{imageFullPath}} {% if include.alt %} alt="{{ include.alt }}" {% endif %} {% if include.width %} width="{{ include.width }}" {% endif %}/>
+        <img src="{{imageFullPath | prepend: site.url | replace: ' ', ''}}"  {% if include.alt %} alt="{{ include.alt }}" {% endif %} {% if include.width %} width="{{ include.width }}" {% endif %}/>
         <figcaption>{{ include.caption }}</figcaption>
     </figure>
 {% else %}
-    <img markdown="1" src={{site.url | strip }}{{imageFullPath}}  {% if include.alt %} alt="{{ include.alt }}" {% endif %} {% if include.width %} width="{{ include.width }}" {% endif %}/>
+    <img markdown="1" src= "{{imageFullPath | prepend: site.url | replace: ' ', ''}}" {% if include.alt %} alt="{{ include.alt }}" {% endif %} {% if include.width %} width="{{ include.width }}" {% endif %}/>
 {% endif %}
 {% endif %}
 {% endcapture %}

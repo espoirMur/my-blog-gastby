@@ -122,10 +122,7 @@
 
 <h4 id="why-fargate-and-not-ec2">Why Fargate and not EC2?</h4>
 
-<figure>
-  <p>&lt;img src=http://localhost:4000 /assets/posts/2021-02-26-how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif   /&gt;</p>
-  <figcaption>Alt Text</figcaption>
-</figure>
+<p><img src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" /></p>
 
 <p>AWS provides us basically two launch types which are the Fargate launch type and the EC2.</p>
 
@@ -145,10 +142,7 @@
 
 <p>To deploy the application we need the following objects: a cluster, a service, a task definition with containers definition, cloud watch for logging, and IAM roles. The below picture illustrates how those AWS objects interact with each other.</p>
 
-<figure>
-  <p>&lt;img src=http://localhost:4000 /assets/posts/2021-02-26-how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k5bcp5zjq6ssob06mgyt.png   /&gt;</p>
-  <figcaption>Alt Text</figcaption>
-</figure>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/k5bcp5zjq6ssob06mgyt.png" /></p>
 
 <p>Let us define some of those objects and then we will investigate how to create a stack, containing them, using Python cdk.</p>
 

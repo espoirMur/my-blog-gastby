@@ -1,5 +1,5 @@
 ---
-title: Quelques meilleurs conseils pour un travail efficace à distance, une réalité africaine
+title: Quelques meilleurs conseils pour un travail efficace a distance, une realite africaine
 date: "2020-03-26T22:12:03.284Z"
 description: "Conseils pour le travail à distance en Afrique"
 layout: post
@@ -7,14 +7,14 @@ comments: true
 categories: non-tech
 ---
 
-{% include image.html name="./pictures/cover_picture_bkv_home.jpg" caption="Photo Aeriènne de Goma " %}
+{% include image.html name="cover_picture_bkv_home.jpg" %}
 <div align="center">
 Photo Aeriènne de Goma, Crédit : <a href="https://twitter.com/clarice_butsapu" target="_blank">Clarice Butsapu Twitter</a>
 </div>
-</br>
+
 
  De nos jours travailler à la maison est devenue une nécessité, étant développeurs est la seule façon de travailler en cette période de crise de la pandémie. 
-En parcourant l'internet, je n'ai pas pu trouver un bon article donnant certaines astuces pour le travail à distance dans le contexte Africain et précisément congolais. 
+En parcourant l'internet, je n'ai pas pu trouver un bon article donnant certaines astuces pour le travail à distance dans le contexte Africain et précisément Congolais. 
 En Afrique dans certains pays, avoir un bon internet et un courant stable est un dilemme de tout le jour. 
  
 Une idée, une motivation qui m’a poussé à rédiger cet article enfin de partage avec vous.
@@ -44,11 +44,11 @@ Nous avons compris au moins l’apport de télétravail, passons maintenant à s
 
 ### Avoir toujours une bonne connexion internet
 
-{% include image.html name="./pictures/vendeurs_megas_rdc.jpg" caption="Vendeur des Megas Kinshasa Source : rfi.fr" %}
+{% include image.html name="vendeurs_megas_rdc.jpg" %}
 <div align="center">
 Vendeur des Megas Kinshasa Source :  <a href="www.rfi.fr" target="_blank">RFI</a>
 </div>
-</br>
+
 
 Comme pour télétravailler nous avons besoin d'une bonne connection internet , c'est donc la première chose que nous devons nous rassurer de ne pas manquer. Ce n'est pas professionnel de donner à ses collègues des prétextes de manque de connexion internet, ou de la lenteur de la connexion pour n'avoir pas fini le travail à faire. Toutes ces excuses n'ont pas leur place dans le monde professionnel. C’est du bulshit.
 
@@ -59,11 +59,11 @@ Il est également conseillé d'avoir au moins 2 ou 3 fournisseurs de relaie, car
 
 ### Accès à l'électricité 
 
-{% include image.html name="./pictures/delestage_afrique.jpg" caption="Delestage En Afrique" %}
+{% include image.html name="delestage_afrique.jpg" %}
 <div align="center">
 Delestages en Afrique
 </div>
-</br>
+
 
 Dans certains pays, l'électricité n'est plus du tout un problème sérieux; la population a facilement de l'électricité 24 heures sur 24; dans d'autres pourtant cela reste encore un sérieux problème d'actualité.
 Tout comme pour l'internet, il est évident que vos collègues ne prendront jamais en compte des excuses de délestage ou de manque d'énergie pour cause du retard de travail.
@@ -79,11 +79,11 @@ Le reste d'astuces sont valables peu importe le pays où l'on travaille :
 
 ### Avoir un endroit confortable où l'on peut s'asseoir tranquillement et coder :
 
-{% include image.html name="./pictures/Me_working.jpg" caption="Me working At Klab" %}
+{% include image.html name="Me_working.jpg"%}
 <div align="center">
 Me Working from Somewhere
 </div>
-</br>
+
 
 
 Le télétravail donne la flexibilité de travailler n'importe où , mais tous les endroit ne favorisent pas la productivité .
@@ -92,12 +92,12 @@ Nous n'avons pas besoin d'exigence pour ce qui est de la marque de la chaise ou 
 
 ### Éviter les distractions inutiles de la maison
 
-{% include image.html name="./pictures/working-from-home.gif" caption="Working from home and having family life." %}
+{% include image.html name="working-from-home.gif" %}
 <div align="center">
 Working from home and having family life. 
 Source :  <a href="www.bbc.com" target="_blank">Bbc</a>
 </div>
-</br>
+
 
 Je pense que c’est la partie la plus difficile à gérer surtout lorsque l'on travaille à la maison et que des enfants ou de petits frères veuillent tout le temps s'amuser avec nous pendant que nous sommes disponible à tout moment.
 
@@ -116,11 +116,11 @@ Nous n’avons pas besoin d’avoir le tout dernier Airpods pro ou les derniers 
 
 ### Avoir une vie Sociale 
 
-{% include image.html name="./pictures/me_having_life.jpg" caption="Me Having Life" %}
+{% include image.html name="me_having_life.jpg"%}
 <div align="center">
 Me having a life at Gisenyi Beach
 </div>
-</br>
+
 
 Un très grand problème avec le remote work est l'isolement social. A force de passer la plupart du temps à travailler à la maison, il y'a risque d'oublier la vie sociale. Une conséquence à long terme est la dépression. Croyez moi la dépression est réelle, je me rappelle avoir quitté mon remote work parce que je me suis retrouvé seul sans collègues et déprimé.
 
@@ -148,11 +148,11 @@ Selon ton programme, prends le temps de préparer un bon petit déjeuner et un b
 
 Rappelle toi:  *ventre creux n’a point d’oreil*
 
-{% include image.html name="./pictures/home_food.jpg" caption="Local Food" %}
+{% include image.html name="home_food.jpg" %}
 <div align="center">
 Local Food Credit:  <a href="https://twitter.com/Ensapu1" target="_blank"> Esther Nsapu</a> on Twitter
 </div>
-</br>
+
 
 ### Les autres astuces en rapport au professionnalisme dans le monde réel reste aussi valable en remote work :
 
