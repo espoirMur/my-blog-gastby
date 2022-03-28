@@ -1,0 +1,76 @@
+# Build settings
+permalink: /blog/:year/:title/
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: bash
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
+plugins: [jekyll-paginate-v2, jekyll-seo-tag]
+
+pagination:
+  enabled: true
+  per_page: 4
+  permalink: "/page/:num/"
+
+comments: true
+
+source: source
+destination: _site
+sass:
+  sass_dir: assets/_sass
+  style: compressed # expanded
+
+# SEO settings
+title: Espoir Murhabazi ideas' home
+description: "Murhabazi Buzina Espoir Home on the internet"
+keywords: "Espoir Murhabazi, Congolese Software Engineer, Ingenieur Informaticien Congolais, Geek Corner, Murhabazi Buzina"
+url: https://murhabazi.com
+baseurl: ""
+
+google_analytics: G-CJV32Y553Z
+repo: https://github.com/espoirMur/espoirMur.github.io
+disqus_shortname: "nandothemes"
+disqus_site_shortname: "nandothemes"
+
+# Author settings
+author:
+  name: Espoir Murhabazi Buzina
+  job: Aspiring Full-Stack Machine Learning Engineer
+  bio: "A Software Engineer lost in Data Science"
+  thumb: /assets/images/me.jpg
+  profile-pic: /assets/images/me-official-speaker.jpg
+  email: espoir.mur on gmail
+  url: https://murhabazi.com/
+  github: https://github.com/espoirMur
+  twitter: https://twitter.com/esp_py
+  linkedin: https://www.linkedin.com/in/espoir-murhabazi-buzina-7849b1b1/
+  stackoverflow: https://stackoverflow.com/users/4683950/espoir-murhabazi
+
+# navbar pages
+navbar:
+  - slug: about
+    title: whoami();
+  - slug: blog
+    title: read();
+  - slug: dreams
+    title: dreams();
+  - slug: research
+    title: research();
+
+
+exclude: ["config.rb", "src", "Gemfile", "Gemfile.lock", "package.json","README.md", "Rakefile"]
+
+social:
+  name: Espoir Murhabazi
+  links:
+    -  https://github.com/espoirMur
+    -  https://twitter.com/esp_py
+    -  https://www.linkedin.com/in/espoir-murhabazi-buzina-7849b1b1/
+    -  https://stackoverflow.com/users/4683950/espoir-murhabazi
