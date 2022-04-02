@@ -86,9 +86,9 @@
 
 <p>To fix it I had first to remove all driver I have installed before using :</p>
 <ul>
-  <li><code class="language-bash highlighter-rouge"><span class="nb">sudo </span>apt-get purge nvidia-<span class="k">*</span></code></li>
-  <li><code class="language-bash highlighter-rouge"><span class="nb">sudo </span>apt-get update</code>
--<code class="language-bash highlighter-rouge"><span class="nb">sudo </span>apt-get autoremove</code></li>
+  <li><code class="language-bash highlihgt highlighter-rouge"><span class="n">sudo</span><span class="w"> </span><span class="n">apt-get</span><span class="w"> </span><span class="n">purge</span><span class="w"> </span><span class="n">nvidia-*</span></code></li>
+  <li><code class="language-bash highlihgt highlighter-rouge"><span class="n">sudo</span><span class="w"> </span><span class="n">apt-get</span><span class="w"> </span><span class="n">update</span></code>
+-<code class="language-bash highlihgt highlighter-rouge"><span class="n">sudo</span><span class="w"> </span><span class="n">apt-get</span><span class="w"> </span><span class="n">autoremove</span></code></li>
 </ul>
 
 <p>After that I when a head and installed the latest version of it nvidia driver:</p>
@@ -96,26 +96,26 @@
 <p>I did :</p>
 
 <ul>
-  <li><code class="language-bash highlighter-rouge">apt search nvidia-driver</code> 
+  <li><code class="language-bash highlihgt highlighter-rouge"><span class="n">apt</span><span class="w"> </span><span class="n">search</span><span class="w"> </span><span class="n">nvidia-driver</span></code> 
 To get the latest version of the driver
 After getting the latest version I installed it with :</li>
 </ul>
 
 <p>Edit Sept 2021 : According to the last comment  by @a-r-j  you can install a couple of dependencies before</p>
 <ul>
-  <li><code class="language-bash highlighter-rouge"><span class="nb">sudo </span>apt install libnvidia-common-470</code></li>
-  <li><code class="language-bash highlighter-rouge"><span class="nb">sudo </span>apt install libnividia-gl-470</code></li>
+  <li><code class="language-bash highlihgt highlighter-rouge"><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">libnvidia-common-470</span></code></li>
+  <li><code class="language-bash highlihgt highlighter-rouge"><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">libnividia-gl-470</span></code></li>
 </ul>
 
 <p>Then you can move forward and install the driver.</p>
 
 <ul>
-  <li><code class="language-bash highlighter-rouge"><span class="nb">sudo </span>apt install nvidia-driver-470</code></li>
+  <li><code class="language-bash highlihgt highlighter-rouge"><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">nvidia-driver-470</span></code></li>
 </ul>
 
 <p>And after installing it I rebooted my machine and checked with :</p>
 
-<p><code class="language-bash highlighter-rouge">nvidia-smi</code></p>
+<p><code class="language-bash highlihgt highlighter-rouge"><span class="n">nvidia-smi</span></code></p>
 
 <p>And tata ☄️</p>
 

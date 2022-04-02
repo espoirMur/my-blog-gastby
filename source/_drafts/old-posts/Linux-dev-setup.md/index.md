@@ -3,7 +3,7 @@ How i set up my ubuntu dev machine for web development with python , javascript 
 
 1. Install Google chrome 
 
-`wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb`
+`wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb`{:.language-clojure .highlihgt}
 
 `
 sudo dpkg -i google-chrome-stable_current_amd64.deb
@@ -16,13 +16,13 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 3. Install VS code editor
 
-`snap install vscode`
+`snap install vscode`{:.language-clojure .highlihgt}
 
 4. Install node 
 
 4.a install curl :
 
-`apt-get install curl`
+`apt-get install curl`{:.language-clojure .highlihgt}
 
 
 4.b add ppa :
@@ -37,21 +37,21 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 4.d Install node
 
-`apt-get install -y nodejs`
+`apt-get install -y nodejs`{:.language-clojure .highlihgt}
 
 
 5. Install python 
 
-`sudo apt-get install python3 python3-pip`
+`sudo apt-get install python3 python3-pip`{:.language-clojure .highlihgt}
 
 Install also virtual env 
 
-`pip install virtualenv`
+`pip install virtualenv`{:.language-clojure .highlihgt}
 
 
 6. Install postgres
 
-`sudo apt install postgresql postgresql-contrib`
+`sudo apt install postgresql postgresql-contrib`{:.language-clojure .highlihgt}
 
 #### Ressources 
 

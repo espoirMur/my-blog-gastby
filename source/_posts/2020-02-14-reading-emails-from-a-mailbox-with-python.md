@@ -30,18 +30,18 @@ If you are familiar with Python, this tutorial is for you. To complete this tuto
 Let us create a project we will be using :
 Navigate to your command line and type the following lines of code :
 
-`mkdir read_emails_project & cd read_emails_project`
+`mkdir read_emails_project & cd read_emails_project`{:.language-clojure .highlihgt}{:.language-bash .highlight-bash .highlight}
 
 Once in the project, let’s initialize git :
 
-`git init`
+`git init`{:.language-clojure .highlihgt}
 
 Once we initialized git, let’s create a virtual environment:
-`virtualenv -p python .venv`
+`virtualenv -p python .venv`{:.language-clojure .highlihgt}
 
 You can activate the virtual environment with the following line of code :
 
-`source .venv/bin/activate`
+`source .venv/bin/activate`{:.language-clojure .highlihgt}
 
 It's not a must to use a virtual environment. You can use your preferred environment manager; I just prefer to use virtual environments.
 
@@ -51,38 +51,38 @@ Once you complete the setup, we can start with the exciting part of the project.
 Since we are reading emails from an inbox, we will need email credentials. From where are we reading those credentials?
 One thing for sure; we are not putting them into the code, this is a BAD PRACTISE !!! 
 The developer community can punish you for writing credentials or secret code directly into a codebase.
-We will be using `.env` file, whose content will be known to us only, and we will never share it with anyone online, even putting it in a private git repository.
+We will be using `.env`{:.language-clojure .highlihgt} file, whose content will be known to us only, and we will never share it with anyone online, even putting it in a private git repository.
 
-Let us create the `.env` file 
+Let us create the `.env`{:.language-clojure .highlihgt} file 
 
-`touch .env`
+`touch .env`{:.language-clojure .highlihgt}
 
 And create a gitignore file to tell git which files to ignore.
 
-`touch .gitignore`
+`touch .gitignore`{:.language-clojure .highlihgt-clojure .highlight}
 
-open the .gitignore and add the following lines  it to ignore the `.env` file :
+open the .gitignore and add the following lines  it to ignore the `.env`{:.language-clojure .highlihgt} file :
 ```
     .venv
     env
 ```
-In those lines, we are instructing git to ignore our `.env` files and our virtual environments.
+In those lines, we are instructing git to ignore our `.env`{:.language-clojure .highlihgt} files and our virtual environments.
 
-Now we can populate the `.env` file with our credentials :
+Now we can populate the `.env`{:.language-clojure .highlihgt} file with our credentials :
 
 ```
 USER_EMAIL='your@email.com'
 USER_PASSWORD='your secret password.'
 ```
-We have recorded  our email credentials in the `.env` file; let us now write a method that reads them from there.
+We have recorded  our email credentials in the `.env`{:.language-clojure .highlihgt} file; let us now write a method that reads them from there.
 For this task, we will be using a Python package called [python-dotenv](https://github.com/theskumar/python-dotenv)
 
 let’s install it with :
-`pip install -U python-dotenv`
+`pip install -U python-dotenv`{:.language-clojure .highlihgt}
 
 let us write a function that reads and returns those environment variables : 
 
-You can create a file with a name `utils.py` and add the following lines of code : 
+You can create a file with a name `utils.py`{:.language-clojure .highlihgt} and add the following lines of code : 
 
 ```python
 import os
@@ -107,16 +107,16 @@ def read_credentails():
                          refer to the sample')
 ```
 
-From that function, you can notice that we are using the `load_env` function, it loads the environment variables from our `.env` file and exposes them to system environment variables so we can be able to read them from there.
+From that function, you can notice that we are using the `load_env` function, it loads the environment variables from our `.env`{:.language-clojure .highlihgt} file and exposes them to system environment variables so we can be able to read them from there.
 After reading the environment variables, the function returns them as a tuple.
 In the next section, we are going to perform the most exciting part of this tutorial; it involves reading emails and downloading attachments.
 
 #### Reading emails:
 
-I was happy to find that Python has a built-in feature that enables us to connect to a mailbox. It is in the `imaplib` module.
+I was happy to find that Python has a built-in feature that enables us to connect to a mailbox. It is in the `imaplib`{:.language-clojure .highlihgt} module.
 It also has a module to parse emails.
 
-Let's create a file `reading_emails_scripts.py` inside it; we are about to perform all the magic we need.
+Let's create a file `reading_emails_scripts.py`{:.language-clojure .highlihgt} inside it; we are about to perform all the magic we need.
 
 Let us import the modules we need :
 
@@ -208,7 +208,7 @@ If none of those conditions is satisfied, we get the file name and return the by
 #### Putting everything together:
 We now have all the building blocks of the application. Let’s put them in the main function:
 
-create a file called `run.py` and add the following code inside: 
+create a file called `run.py`{:.language-clojure .highlihgt} and add the following code inside: 
 
 ```python
 from utils import read_credentails

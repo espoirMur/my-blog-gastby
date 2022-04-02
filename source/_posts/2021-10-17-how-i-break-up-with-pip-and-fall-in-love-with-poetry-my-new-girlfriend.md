@@ -22,7 +22,7 @@ Although I will be talking about girlfriends, falling in love , and breakups in 
 _Poetry is a tool for **dependency management** and **packaging** in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you._ It supports Python 2.7 and 3.5+
 
   
-If you work with python and install packages you should be familiar with `pip` my old girlfriend.
+If you work with python and install packages you should be familiar with `pip`{:.language-clojure .highlihgt} my old girlfriend.
 
   
 
@@ -36,7 +36,7 @@ If you work with python and install packages you should be familiar with `pip` m
 
   
 
-After 2 weeks of usages and successful migration of five personal projects from `pip` to `poetry`, I can choose poetry because :
+After 2 weeks of usages and successful migration of five personal projects from `pip` to `poetry`{:.language-clojure .highlihgt}, I can choose poetry because :
 
   
 
@@ -46,7 +46,7 @@ After 2 weeks of usages and successful migration of five personal projects from 
 
   
 
-- And another advantage I found is that anytime you add a new dependency to the project poetry update for you the `pyproject.toml` with the new top-level dependency, it, therefore, avoid you to do `pip freeze` to generate a new requirement file for your project.
+- And another advantage I found is that anytime you add a new dependency to the project poetry update for you the `pyproject.toml` with the new top-level dependency, it, therefore, avoid you to do `pip freeze`{:.language-clojure .highlihgt} to generate a new requirement file for your project.
 
   
 
@@ -54,7 +54,7 @@ After 2 weeks of usages and successful migration of five personal projects from 
 
   
 
-In my opinion, I think `poetry` outweigh `pip` in many aspects. It is like pip but on steroids
+In my opinion, I think `poetry` outweigh `pip`{:.language-clojure .highlihgt} in many aspects. It is like pip but on steroids
 
 In the following sections, I will guide you on how to migrate an existing project from pip to poetry.
 
@@ -71,7 +71,7 @@ In the following sections, I will guide you on how to migrate an existing projec
 
   
 
-Installing poetry is very straightforward, if you have python installed and `curl` you can easily install it by running :
+Installing poetry is very straightforward, if you have python installed and `curl`{:.language-clojure .highlihgt} you can easily install it by running :
 
   
 
@@ -95,29 +95,29 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 
 ```
 
-> **Warning**: The previous `get-poetry.py` installer is now deprecated, if you are currently using it you should migrate to the new, supported, `install-poetry.py` installer.
+> **Warning**: The previous `get-poetry.py` installer is now deprecated, if you are currently using it you should migrate to the new, supported, `install-poetry.py`{:.language-clojure .highlihgt} installer.
 
   
 
->The installer installs the `poetry` tool to Poetry's `bin` directory. This location depends on your system:
+>The installer installs the `poetry` tool to Poetry's `bin`{:.language-clojure .highlihgt} directory. This location depends on your system:
 
   
 
-- `$HOME/.local/bin` for Unix
+- `$HOME/.local/bin`{:.language-clojure .highlihgt} for Unix
 
-- `%APPDATA%\Python\Scripts` on Windows
-
-  
-
-> If this directory is not on your `PATH`, you will need to add it manually if you want to invoke Poetry with simply `poetry`.
+- `%APPDATA%\Python\Scripts`{:.language-clojure .highlihgt} on Windows
 
   
 
-> Alternatively, you can use the full path to `poetry` to use it.
+> If this directory is not on your `PATH`, you will need to add it manually if you want to invoke Poetry with simply `poetry`{:.language-clojure .highlihgt}.
 
   
 
-There is also another version of installing it with `pip` but why would you use your ex to attract your new girlfriend? 🤔🤪
+> Alternatively, you can use the full path to `poetry`{:.language-clojure .highlihgt} to use it.
+
+  
+
+There is also another version of installing it with `pip`{:.language-clojure .highlihgt} but why would you use your ex to attract your new girlfriend? 🤔🤪
 
   
 
@@ -125,7 +125,7 @@ There is also another version of installing it with `pip` but why would you use 
 
 Once everything is installed you can restart your terminal and run the following command to check the poetry version:
 
-`poetry --version`
+`poetry --version`{:.language-clojure .highlihgt}
 
   
 
@@ -146,7 +146,7 @@ If installation is unsuccessfully or encountering incompatibility issues. Please
 
   
 
-Before moving to the next step you need to make sure you can generate the top-level dependencies for your project, to do that you will need a package called [pipdeptree](https://pypi.org/project/pipdeptree/) . For context, the top-level dependencies are the root of your dependencies tree. What is even the dependency tree? Each package you install using `pip` has the other dependencies that rely on it. And before installing a new package it installs his top-level dependencies. For example, pandas is a package but `pandas` depends on `numpy`, if you install pandas it install also numpy as a dependent.
+Before moving to the next step you need to make sure you can generate the top-level dependencies for your project, to do that you will need a package called [pipdeptree](https://pypi.org/project/pipdeptree/) . For context, the top-level dependencies are the root of your dependencies tree. What is even the dependency tree? Each package you install using `pip` has the other dependencies that rely on it. And before installing a new package it installs his top-level dependencies. For example, pandas is a package but `pandas` depends on `numpy`{:.language-clojure .highlihgt}, if you install pandas it install also numpy as a dependent.
 
   
 
@@ -161,7 +161,7 @@ _Why is this important? :_
 
 This should be filled
 
-`pipdeptree --warn silence | grep -E '^\w+' > requirements-new.txt`
+`pipdeptree --warn silence | grep -E '^\w+' > requirements-new.txt`{:.language-clojure .highlihgt}
 
 Once you have generated the top-level dependencies, I would suggest you deactivate your virtual environment and delete it to make the break-up complete before moving to the next steps.
 
@@ -169,54 +169,54 @@ Once you have generated the top-level dependencies, I would suggest you deactiva
 
 ### Adding poetry to an existing project.
 
-If you have a new project where you are using `pip` and have the `requirements.txt` file inside you can run the following command to initialize poetry in the project.
+If you have a new project where you are using `pip` and have the `requirements.txt`{:.language-clojure .highlihgt} file inside you can run the following command to initialize poetry in the project.
 
 
-`poetry init`
+`poetry init`{:.language-clojure .highlihgt}
 
-This will prompt you to set up poetry to your existing project and asked you to give some details about your project such as the project name, the python version you want to use, and the description. It will consequently generate the `pyproject.toml` file which will contain all the details about your project as well as the top-level projects requirement and their versions.
+This will prompt you to set up poetry to your existing project and asked you to give some details about your project such as the project name, the python version you want to use, and the description. It will consequently generate the `pyproject.toml`{:.language-clojure .highlihgt} file which will contain all the details about your project as well as the top-level projects requirement and their versions.
 
 ### Creating virtual environment
 
-Poetry creates by default virtual environment in a folder called `~/Library/Application Support/pypoetry` but you can change those settings by using the following command :
+Poetry creates by default virtual environment in a folder called `~/Library/Application Support/pypoetry`{:.language-clojure .highlihgt} but you can change those settings by using the following command :
 
-`poetry config virtualenvs.in-project true `
+`poetry config virtualenvs.in-project true `{:.language-clojure .highlihgt}
 
 After running that command you can run the following :
 
 
-`poetry shell `
+`poetry shell `{:.language-clojure .highlihgt}
 
 It will activate the project’s virtual environment and create a new one if the project does not have one.
 
 ### Installing the requirements for your projects.
 
-If you have the `requirements-news.txt` file resulting from the command you run on the first step, you can install all the packages in that and their corresponding version by running the following command:
+If you have the `requirements-news.txt`{:.language-clojure .highlihgt} file resulting from the command you run on the first step, you can install all the packages in that and their corresponding version by running the following command:
 
-`for item in $(sed -n 's/==/@/p' requirements-new.txt); do poetry add "${item}" ; done`
+`for item in $(sed -n 's/==/@/p' requirements-new.txt); do poetry add "${item}" ; done`{:.language-clojure .highlihgt}
 
 
 > This will work only on Linux and Mac, still trying to find the exact version of it for Windows.
 
 
 What does that command do?
-I loop over every line of the `requirement-new.txt` file take the dependency, and just replace the `==` in the dependency with `@` and then add it with poetry.
+I loop over every line of the `requirement-new.txt` file take the dependency, and just replace the `==` in the dependency with `@`{:.language-clojure .highlihgt} and then add it with poetry.
 
 
-If for example in the file you have pandas==1.1.1, it will install the following with poetry `poetry add pandas@1.11`
+If for example in the file you have pandas==1.1.1, it will install the following with poetry `poetry add pandas@1.11`{:.language-clojure .highlihgt}
 
   If everything goes well you should have the all the top-level packages installed with their dependencies.
 
   
-Once the command has successfully run and you have everything installed, you should check if your `pyproject.toml` file contains all the packages and their top-level dependencies.
+Once the command has successfully run and you have everything installed, you should check if your `pyproject.toml`{:.language-clojure .highlihgt} file contains all the packages and their top-level dependencies.
 
  
 
-You can now remove the old `requirements.txt` file and the newly create `requirement-new.txt `file by running.
+You can now remove the old `requirements.txt` file and the newly create `requirement-new.txt `{:.language-clojure .highlihgt}file by running.
 
  
 
-`rm -f requirements.*`
+`rm -f requirements.*`{:.language-clojure .highlihgt}
 
   
 
