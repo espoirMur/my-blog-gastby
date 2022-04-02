@@ -1,4 +1,4 @@
-name: Testing the GitHub Pages publication
+name: Test the publication of the pages
 
 on:
   push:
@@ -23,4 +23,5 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         target_branch: 'gh-pages'
-        jekyll_src: '_site'
+        jekyll_src: '_site/'
+        cname: 'murhabazi.com'
