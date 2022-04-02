@@ -10,7 +10,7 @@
 <meta name="description" content="I have recently stumbled across poetry new dependency management for python and decided to give it a try.">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="http://localhost:4000/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/">
+<link rel="canonical" href="https://murhabazi.com/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/">
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -31,13 +31,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="How to migrate a python project from pip to poetry" />
 <meta property="og:description" content="How to migrate a python project from pip to poetry" />
-<link rel="canonical" href="http://localhost:4000/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/" />
-<meta property="og:url" content="http://localhost:4000/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/" />
+<link rel="canonical" href="https://murhabazi.com/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/" />
+<meta property="og:url" content="https://murhabazi.com/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/" />
 <meta property="og:site_name" content="Espoir Murhabazi ideas’ home" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-10-17T16:33:42+01:00" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/","author":{"@type":"Person","name":"Espoir Murhabazi Buzina"},"@type":"BlogPosting","headline":"How I break up with pip and fall in love with poetry my new girlfriend.","dateModified":"2021-10-17T16:33:42+01:00","datePublished":"2021-10-17T16:33:42+01:00","description":"How to migrate a python project from pip to poetry","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/"},"@context":"https://schema.org"}</script>
+{"url":"https://murhabazi.com/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/","author":{"@type":"Person","name":"Espoir Murhabazi Buzina"},"@type":"BlogPosting","description":"How to migrate a python project from pip to poetry","mainEntityOfPage":{"@type":"WebPage","@id":"https://murhabazi.com/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/"},"headline":"How I break up with pip and fall in love with poetry my new girlfriend.","dateModified":"2021-10-17T16:33:42+01:00","datePublished":"2021-10-17T16:33:42+01:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -94,13 +94,13 @@
 
 <p><em>Poetry is a tool for <strong>dependency management</strong> and <strong>packaging</strong> in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.</em> It supports Python 2.7 and 3.5+</p>
 
-<p>If you work with python and install packages you should be familiar with <code class="language-bash highlihgt highlighter-rouge"><span class="n">pip</span></code> my old girlfriend.</p>
+<p>If you work with python and install packages you should be familiar with <code class="language-bash highlight highlighter-rouge"><span class="n">pip</span></code> my old girlfriend.</p>
 
 <h2 id="why-we-should-use-poetry-in-lieu-of-pip">Why we should use poetry in lieu of pip?</h2>
 
 <p><img src="https://lh3.googleusercontent.com/WEae7StOBGmS6vkaiYroiIwEZWQ2c4DFa56RwhpuOLrzlJfMXlTfUxnpu299Xme-cRGZBdqA0HYUdVUQvduv3cwDSZHr8TMt6o4nwd4DmnWCRjco2xXlHndDSWn_rsQAPRM5saY=s0" /></p>
 
-<p>After 2 weeks of usages and successful migration of five personal projects from <code class="language-bash highlighter-rouge">pip</code> to <code class="language-bash highlihgt highlighter-rouge"><span class="n">poetry</span></code>, I can choose poetry because :</p>
+<p>After 2 weeks of usages and successful migration of five personal projects from <code class="language-bash highlighter-rouge">pip</code> to <code class="language-bash highlight highlighter-rouge"><span class="n">poetry</span></code>, I can choose poetry because :</p>
 
 <ul>
   <li>It has a good dependency resolver. It does the job better than PIP. Read the interesting article <a href="https://www.activestate.com/resources/quick-reads/python-dependencies-everything-you-need-to-know/">www.activestate.com</a>. The author explicitly said</li>
@@ -112,14 +112,14 @@
 
 <ul>
   <li>
-    <p>And another advantage I found is that anytime you add a new dependency to the project poetry update for you the <code class="language-bash highlighter-rouge">pyproject.toml</code> with the new top-level dependency, it, therefore, avoid you to do <code class="language-bash highlihgt highlighter-rouge"><span class="n">pip</span><span class="w"> </span><span class="n">freeze</span></code> to generate a new requirement file for your project.</p>
+    <p>And another advantage I found is that anytime you add a new dependency to the project poetry update for you the <code class="language-bash highlighter-rouge">pyproject.toml</code> with the new top-level dependency, it, therefore, avoid you to do <code class="language-bash highlight highlighter-rouge"><span class="n">pip</span><span class="w"> </span><span class="n">freeze</span></code> to generate a new requirement file for your project.</p>
   </li>
   <li>
     <p>You can use the same tool to build and publish your packages.</p>
   </li>
 </ul>
 
-<p>In my opinion, I think <code class="language-bash highlighter-rouge">poetry</code> outweigh <code class="language-bash highlihgt highlighter-rouge"><span class="n">pip</span></code> in many aspects. It is like pip but on steroids</p>
+<p>In my opinion, I think <code class="language-bash highlighter-rouge">poetry</code> outweigh <code class="language-bash highlight highlighter-rouge"><span class="n">pip</span></code> in many aspects. It is like pip but on steroids</p>
 
 <p>In the following sections, I will guide you on how to migrate an existing project from pip to poetry.</p>
 
@@ -127,7 +127,7 @@
 
 <p><img src="https://lh5.googleusercontent.com/prDFZYFCdhOvTIpSpv8fItqiZ3GHrHEypuEhY0J2IyORNHoOwd6JlneUEUEGlcE-yRR0xVGkOUlwIeDWc5DfSCMrpJqX5m_CQxcERZ2fUzLmmOeV-dF-OYUbMAAg0t0uvxhAN-o=s0" /></p>
 
-<p>Installing poetry is very straightforward, if you have python installed and <code class="language-bash highlihgt highlighter-rouge"><span class="n">curl</span></code> you can easily install it by running :</p>
+<p>Installing poetry is very straightforward, if you have python installed and <code class="language-bash highlight highlighter-rouge"><span class="n">curl</span></code> you can easily install it by running :</p>
 
 <h4 id="osx--linux--bashonwindows-install-instructions">osx / linux / bashonwindows install instructions</h4>
 
@@ -144,35 +144,35 @@ curl <span class="nt">-sSL</span> https://raw.githubusercontent.com/python-poetr
 </code></pre></div></div>
 
 <blockquote>
-  <p><strong>Warning</strong>: The previous <code class="language-bash highlighter-rouge">get-poetry.py</code> installer is now deprecated, if you are currently using it you should migrate to the new, supported, <code class="language-bash highlihgt highlighter-rouge"><span class="n">install-poetry.py</span></code> installer.</p>
+  <p><strong>Warning</strong>: The previous <code class="language-bash highlighter-rouge">get-poetry.py</code> installer is now deprecated, if you are currently using it you should migrate to the new, supported, <code class="language-bash highlight highlighter-rouge"><span class="n">install-poetry.py</span></code> installer.</p>
 </blockquote>
 
 <blockquote>
-  <p>The installer installs the <code class="language-bash highlighter-rouge">poetry</code> tool to Poetry’s <code class="language-bash highlihgt highlighter-rouge"><span class="n">bin</span></code> directory. This location depends on your system:</p>
+  <p>The installer installs the <code class="language-bash highlighter-rouge">poetry</code> tool to Poetry’s <code class="language-bash highlight highlighter-rouge"><span class="n">bin</span></code> directory. This location depends on your system:</p>
 </blockquote>
 
 <ul>
   <li>
-    <p><code class="language-bash highlihgt highlighter-rouge"><span class="n">$HOME/.local/bin</span></code> for Unix</p>
+    <p><code class="language-bash highlight highlighter-rouge"><span class="n">$HOME/.local/bin</span></code> for Unix</p>
   </li>
   <li>
-    <p><code class="language-bash highlihgt highlighter-rouge"><span class="n">%APPDATA%</span><span class="sc">\P</span><span class="n">ython</span><span class="sc">\S</span><span class="n">cripts</span></code> on Windows</p>
+    <p><code class="language-bash highlight highlighter-rouge"><span class="n">%APPDATA%</span><span class="sc">\P</span><span class="n">ython</span><span class="sc">\S</span><span class="n">cripts</span></code> on Windows</p>
   </li>
 </ul>
 
 <blockquote>
-  <p>If this directory is not on your <code class="language-bash highlighter-rouge">PATH</code>, you will need to add it manually if you want to invoke Poetry with simply <code class="language-bash highlihgt highlighter-rouge"><span class="n">poetry</span></code>.</p>
+  <p>If this directory is not on your <code class="language-bash highlighter-rouge">PATH</code>, you will need to add it manually if you want to invoke Poetry with simply <code class="language-bash highlight highlighter-rouge"><span class="n">poetry</span></code>.</p>
 </blockquote>
 
 <blockquote>
-  <p>Alternatively, you can use the full path to <code class="language-bash highlihgt highlighter-rouge"><span class="n">poetry</span></code> to use it.</p>
+  <p>Alternatively, you can use the full path to <code class="language-bash highlight highlighter-rouge"><span class="n">poetry</span></code> to use it.</p>
 </blockquote>
 
-<p>There is also another version of installing it with <code class="language-bash highlihgt highlighter-rouge"><span class="n">pip</span></code> but why would you use your ex to attract your new girlfriend? 🤔🤪</p>
+<p>There is also another version of installing it with <code class="language-bash highlight highlighter-rouge"><span class="n">pip</span></code> but why would you use your ex to attract your new girlfriend? 🤔🤪</p>
 
 <p>Once everything is installed you can restart your terminal and run the following command to check the poetry version:</p>
 
-<p><code class="language-bash highlihgt highlighter-rouge"><span class="n">poetry</span><span class="w"> </span><span class="n">--version</span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">poetry</span><span class="w"> </span><span class="n">--version</span></code></p>
 
 <p>If installation is unsuccessfully or encountering incompatibility issues. Please heads up to <a href="https://github.com/python-poetry/poetry">Github Poetry</a> to get a help, to learn more or to fire an issue.</p>
 
@@ -182,7 +182,7 @@ curl <span class="nt">-sSL</span> https://raw.githubusercontent.com/python-poetr
 
 <h3 id="generate-top-level-dependencies">Generate top-level dependencies</h3>
 
-<p>Before moving to the next step you need to make sure you can generate the top-level dependencies for your project, to do that you will need a package called <a href="https://pypi.org/project/pipdeptree/">pipdeptree</a> . For context, the top-level dependencies are the root of your dependencies tree. What is even the dependency tree? Each package you install using <code class="language-bash highlighter-rouge">pip</code> has the other dependencies that rely on it. And before installing a new package it installs his top-level dependencies. For example, pandas is a package but <code class="language-bash highlighter-rouge">pandas</code> depends on <code class="language-bash highlihgt highlighter-rouge"><span class="n">numpy</span></code>, if you install pandas it install also numpy as a dependent.</p>
+<p>Before moving to the next step you need to make sure you can generate the top-level dependencies for your project, to do that you will need a package called <a href="https://pypi.org/project/pipdeptree/">pipdeptree</a> . For context, the top-level dependencies are the root of your dependencies tree. What is even the dependency tree? Each package you install using <code class="language-bash highlighter-rouge">pip</code> has the other dependencies that rely on it. And before installing a new package it installs his top-level dependencies. For example, pandas is a package but <code class="language-bash highlighter-rouge">pandas</code> depends on <code class="language-bash highlight highlighter-rouge"><span class="n">numpy</span></code>, if you install pandas it install also numpy as a dependent.</p>
 
 <p>The following command will generate only the top-level dependencies, so if you have installed pandas, it will just generate pandas and not numpy as a requirement.</p>
 
@@ -190,52 +190,52 @@ curl <span class="nt">-sSL</span> https://raw.githubusercontent.com/python-poetr
 
 <p>This should be filled</p>
 
-<p><code class="language-bash highlihgt highlighter-rouge"><span class="n">pipdeptree</span><span class="w"> </span><span class="n">--warn</span><span class="w"> </span><span class="n">silence</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="n">grep</span><span class="w"> </span><span class="n">-E</span><span class="w"> </span><span class="o">'^</span><span class="sc">\w</span><span class="nb">+</span><span class="o">'</span><span class="w"> </span><span class="nb">&gt;</span><span class="w"> </span><span class="n">requirements-new.txt</span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">pipdeptree</span><span class="w"> </span><span class="n">--warn</span><span class="w"> </span><span class="n">silence</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="n">grep</span><span class="w"> </span><span class="n">-E</span><span class="w"> </span><span class="o">'^</span><span class="sc">\w</span><span class="nb">+</span><span class="o">'</span><span class="w"> </span><span class="nb">&gt;</span><span class="w"> </span><span class="n">requirements-new.txt</span></code></p>
 
 <p>Once you have generated the top-level dependencies, I would suggest you deactivate your virtual environment and delete it to make the break-up complete before moving to the next steps.</p>
 
 <h3 id="adding-poetry-to-an-existing-project">Adding poetry to an existing project.</h3>
 
-<p>If you have a new project where you are using <code class="language-bash highlighter-rouge">pip</code> and have the <code class="language-bash highlihgt highlighter-rouge"><span class="n">requirements.txt</span></code> file inside you can run the following command to initialize poetry in the project.</p>
+<p>If you have a new project where you are using <code class="language-bash highlighter-rouge">pip</code> and have the <code class="language-bash highlight highlighter-rouge"><span class="n">requirements.txt</span></code> file inside you can run the following command to initialize poetry in the project.</p>
 
-<p><code class="language-bash highlihgt highlighter-rouge"><span class="n">poetry</span><span class="w"> </span><span class="n">init</span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">poetry</span><span class="w"> </span><span class="n">init</span></code></p>
 
-<p>This will prompt you to set up poetry to your existing project and asked you to give some details about your project such as the project name, the python version you want to use, and the description. It will consequently generate the <code class="language-bash highlihgt highlighter-rouge"><span class="n">pyproject.toml</span></code> file which will contain all the details about your project as well as the top-level projects requirement and their versions.</p>
+<p>This will prompt you to set up poetry to your existing project and asked you to give some details about your project such as the project name, the python version you want to use, and the description. It will consequently generate the <code class="language-bash highlight highlighter-rouge"><span class="n">pyproject.toml</span></code> file which will contain all the details about your project as well as the top-level projects requirement and their versions.</p>
 
 <h3 id="creating-virtual-environment">Creating virtual environment</h3>
 
-<p>Poetry creates by default virtual environment in a folder called <code class="language-bash highlihgt highlighter-rouge"><span class="o">~</span><span class="n">/Library/Application</span><span class="w"> </span><span class="n">Support/pypoetry</span></code> but you can change those settings by using the following command :</p>
+<p>Poetry creates by default virtual environment in a folder called <code class="language-bash highlight highlighter-rouge"><span class="o">~</span><span class="n">/Library/Application</span><span class="w"> </span><span class="n">Support/pypoetry</span></code> but you can change those settings by using the following command :</p>
 
-<p><code class="language-bash highlihgt highlighter-rouge"><span class="n">poetry</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">virtualenvs.in-project</span><span class="w"> </span><span class="n">true</span><span class="w"> </span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">poetry</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">virtualenvs.in-project</span><span class="w"> </span><span class="n">true</span><span class="w"> </span></code></p>
 
 <p>After running that command you can run the following :</p>
 
-<p><code class="language-bash highlihgt highlighter-rouge"><span class="n">poetry</span><span class="w"> </span><span class="n">shell</span><span class="w"> </span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">poetry</span><span class="w"> </span><span class="n">shell</span><span class="w"> </span></code></p>
 
 <p>It will activate the project’s virtual environment and create a new one if the project does not have one.</p>
 
 <h3 id="installing-the-requirements-for-your-projects">Installing the requirements for your projects.</h3>
 
-<p>If you have the <code class="language-bash highlihgt highlighter-rouge"><span class="n">requirements-news.txt</span></code> file resulting from the command you run on the first step, you can install all the packages in that and their corresponding version by running the following command:</p>
+<p>If you have the <code class="language-bash highlight highlighter-rouge"><span class="n">requirements-news.txt</span></code> file resulting from the command you run on the first step, you can install all the packages in that and their corresponding version by running the following command:</p>
 
-<p><code class="language-bash highlihgt highlighter-rouge"><span class="k">for</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="nf">sed</span><span class="w"> </span><span class="n">-n</span><span class="w"> </span><span class="ss">'s/==/</span><span class="o">@</span><span class="n">/p</span><span class="o">'</span><span class="w"> </span><span class="n">requirements-new.txt</span><span class="p">)</span><span class="c1">; do poetry add "${item}" ; done</span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="k">for</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">$</span><span class="p">(</span><span class="nf">sed</span><span class="w"> </span><span class="n">-n</span><span class="w"> </span><span class="ss">'s/==/</span><span class="o">@</span><span class="n">/p</span><span class="o">'</span><span class="w"> </span><span class="n">requirements-new.txt</span><span class="p">)</span><span class="c1">; do poetry add "${item}" ; done</span></code></p>
 
 <blockquote>
   <p>This will work only on Linux and Mac, still trying to find the exact version of it for Windows.</p>
 </blockquote>
 
 <p>What does that command do?
-I loop over every line of the <code class="language-bash highlighter-rouge">requirement-new.txt</code> file take the dependency, and just replace the <code class="language-bash highlighter-rouge"><span class="o">==</span></code> in the dependency with <code class="language-bash highlihgt highlighter-rouge"><span class="o">@</span></code> and then add it with poetry.</p>
+I loop over every line of the <code class="language-bash highlighter-rouge">requirement-new.txt</code> file take the dependency, and just replace the <code class="language-bash highlighter-rouge"><span class="o">==</span></code> in the dependency with <code class="language-bash highlight highlighter-rouge"><span class="o">@</span></code> and then add it with poetry.</p>
 
-<p>If for example in the file you have pandas==1.1.1, it will install the following with poetry <code class="language-bash highlihgt highlighter-rouge"><span class="n">poetry</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="n">pandas</span><span class="o">@</span><span class="mf">1.11</span></code></p>
+<p>If for example in the file you have pandas==1.1.1, it will install the following with poetry <code class="language-bash highlight highlighter-rouge"><span class="n">poetry</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="n">pandas</span><span class="o">@</span><span class="mf">1.11</span></code></p>
 
 <p>If everything goes well you should have the all the top-level packages installed with their dependencies.</p>
 
-<p>Once the command has successfully run and you have everything installed, you should check if your <code class="language-bash highlihgt highlighter-rouge"><span class="n">pyproject.toml</span></code> file contains all the packages and their top-level dependencies.</p>
+<p>Once the command has successfully run and you have everything installed, you should check if your <code class="language-bash highlight highlighter-rouge"><span class="n">pyproject.toml</span></code> file contains all the packages and their top-level dependencies.</p>
 
-<p>You can now remove the old <code class="language-bash highlighter-rouge">requirements.txt</code> file and the newly create <code class="language-bash highlihgt highlighter-rouge"><span class="n">requirement-new.txt</span><span class="w"> </span></code>file by running.</p>
+<p>You can now remove the old <code class="language-bash highlighter-rouge">requirements.txt</code> file and the newly create <code class="language-bash highlight highlighter-rouge"><span class="n">requirement-new.txt</span><span class="w"> </span></code>file by running.</p>
 
-<p><code class="language-bash highlihgt highlighter-rouge"><span class="n">rm</span><span class="w"> </span><span class="n">-f</span><span class="w"> </span><span class="n">requirements.*</span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">rm</span><span class="w"> </span><span class="n">-f</span><span class="w"> </span><span class="n">requirements.*</span></code></p>
 
 <h3 id="a-section-about-using-poetry-with-conda-enviroment">A section about using poetry with conda enviroment</h3>
 
@@ -310,7 +310,7 @@ CMD <span class="o">[</span><span class="s2">" you command "</span><span class="
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function() {
-      this.page.url = 'http://localhost:4000/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/';
+      this.page.url = 'https://murhabazi.com/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/';
       this.page.identifier = '/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend';
     };
     (function() {

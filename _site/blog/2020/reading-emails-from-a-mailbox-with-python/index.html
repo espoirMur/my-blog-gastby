@@ -10,7 +10,7 @@
 <meta name="description" content="The Problem">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="http://localhost:4000/blog/2020/reading-emails-from-a-mailbox-with-python/">
+<link rel="canonical" href="https://murhabazi.com/blog/2020/reading-emails-from-a-mailbox-with-python/">
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -31,13 +31,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Tutorials on how to read emails with Python" />
 <meta property="og:description" content="Tutorials on how to read emails with Python" />
-<link rel="canonical" href="http://localhost:4000/blog/2020/reading-emails-from-a-mailbox-with-python/" />
-<meta property="og:url" content="http://localhost:4000/blog/2020/reading-emails-from-a-mailbox-with-python/" />
+<link rel="canonical" href="https://murhabazi.com/blog/2020/reading-emails-from-a-mailbox-with-python/" />
+<meta property="og:url" content="https://murhabazi.com/blog/2020/reading-emails-from-a-mailbox-with-python/" />
 <meta property="og:site_name" content="Espoir Murhabazi ideas’ home" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-02-14T22:12:03+00:00" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/blog/2020/reading-emails-from-a-mailbox-with-python/","author":{"@type":"Person","name":"Espoir Murhabazi Buzina"},"@type":"BlogPosting","headline":"Reading Emails from a Mailbox with python","dateModified":"2020-02-14T22:12:03+00:00","datePublished":"2020-02-14T22:12:03+00:00","description":"Tutorials on how to read emails with Python","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2020/reading-emails-from-a-mailbox-with-python/"},"@context":"https://schema.org"}</script>
+{"url":"https://murhabazi.com/blog/2020/reading-emails-from-a-mailbox-with-python/","author":{"@type":"Person","name":"Espoir Murhabazi Buzina"},"@type":"BlogPosting","description":"Tutorials on how to read emails with Python","mainEntityOfPage":{"@type":"WebPage","@id":"https://murhabazi.com/blog/2020/reading-emails-from-a-mailbox-with-python/"},"headline":"Reading Emails from a Mailbox with python","dateModified":"2020-02-14T22:12:03+00:00","datePublished":"2020-02-14T22:12:03+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -85,7 +85,7 @@
       <h3 id="the-problem">The Problem</h3>
 
 <figure>
-  <p><img src="http://localhost:4000/assets/posts/2020-02-14-reading-emails-from-a-mailbox-with-python/cover-image.jpg" /></p>
+  <p><img src="https://murhabazi.com/assets/posts/2020-02-14-reading-emails-from-a-mailbox-with-python/cover-image.jpg" /></p>
   <figcaption>email</figcaption>
 </figure>
 
@@ -105,18 +105,18 @@ I was super excited about this task, and I asked myself; is it possible to read 
 <p>Let us create a project we will be using :
 Navigate to your command line and type the following lines of code :</p>
 
-<p><code class="language-bash highlihgt language-bash highlight-bash highlight highlighter-rouge"><span class="n">mkdir</span><span class="w"> </span><span class="n">read_emails_project</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="n">read_emails_project</span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">mkdir</span><span class="w"> </span><span class="n">read_emails_project</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="n">read_emails_project</span></code></p>
 
 <p>Once in the project, let’s initialize git :</p>
 
-<p><code class="language-bash highlihgt highlighter-rouge"><span class="n">git</span><span class="w"> </span><span class="n">init</span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">git</span><span class="w"> </span><span class="n">init</span></code></p>
 
 <p>Once we initialized git, let’s create a virtual environment:
-<code class="language-bash highlihgt highlighter-rouge"><span class="n">virtualenv</span><span class="w"> </span><span class="n">-p</span><span class="w"> </span><span class="n">python</span><span class="w"> </span><span class="n">.venv</span></code></p>
+<code class="language-bash highlight highlighter-rouge"><span class="n">virtualenv</span><span class="w"> </span><span class="n">-p</span><span class="w"> </span><span class="n">python</span><span class="w"> </span><span class="n">.venv</span></code></p>
 
 <p>You can activate the virtual environment with the following line of code :</p>
 
-<p><code class="language-bash highlihgt highlighter-rouge"><span class="n">source</span><span class="w"> </span><span class="n">.venv/bin/activate</span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">source</span><span class="w"> </span><span class="n">.venv/bin/activate</span></code></p>
 
 <p>It’s not a must to use a virtual environment. You can use your preferred environment manager; I just prefer to use virtual environments.</p>
 
@@ -126,36 +126,36 @@ Navigate to your command line and type the following lines of code :</p>
 <p>Since we are reading emails from an inbox, we will need email credentials. From where are we reading those credentials?
 One thing for sure; we are not putting them into the code, this is a BAD PRACTISE !!! 
 The developer community can punish you for writing credentials or secret code directly into a codebase.
-We will be using <code class="language-bash highlihgt highlighter-rouge"><span class="n">.env</span></code> file, whose content will be known to us only, and we will never share it with anyone online, even putting it in a private git repository.</p>
+We will be using <code class="language-bash highlight highlighter-rouge"><span class="n">.env</span></code> file, whose content will be known to us only, and we will never share it with anyone online, even putting it in a private git repository.</p>
 
-<p>Let us create the <code class="language-bash highlihgt highlighter-rouge"><span class="n">.env</span></code> file</p>
+<p>Let us create the <code class="language-bash highlight highlighter-rouge"><span class="n">.env</span></code> file</p>
 
-<p><code class="language-bash highlihgt highlighter-rouge"><span class="n">touch</span><span class="w"> </span><span class="n">.env</span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">touch</span><span class="w"> </span><span class="n">.env</span></code></p>
 
 <p>And create a gitignore file to tell git which files to ignore.</p>
 
-<p><code class="language-bash highlihgt-clojure highlight highlighter-rouge"><span class="n">touch</span><span class="w"> </span><span class="n">.gitignore</span></code></p>
+<p><code class="language-bash highlight-clojure highlight highlighter-rouge"><span class="n">touch</span><span class="w"> </span><span class="n">.gitignore</span></code></p>
 
-<p>open the .gitignore and add the following lines  it to ignore the <code class="language-bash highlihgt highlighter-rouge"><span class="n">.env</span></code> file :</p>
+<p>open the .gitignore and add the following lines  it to ignore the <code class="language-bash highlight highlighter-rouge"><span class="n">.env</span></code> file :</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    .venv
     env
 </code></pre></div></div>
-<p>In those lines, we are instructing git to ignore our <code class="language-bash highlihgt highlighter-rouge"><span class="n">.env</span></code> files and our virtual environments.</p>
+<p>In those lines, we are instructing git to ignore our <code class="language-bash highlight highlighter-rouge"><span class="n">.env</span></code> files and our virtual environments.</p>
 
-<p>Now we can populate the <code class="language-bash highlihgt highlighter-rouge"><span class="n">.env</span></code> file with our credentials :</p>
+<p>Now we can populate the <code class="language-bash highlight highlighter-rouge"><span class="n">.env</span></code> file with our credentials :</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">USER_EMAIL</span><span class="o">=</span><span class="s1">'your@email.com'</span>
 <span class="nv">USER_PASSWORD</span><span class="o">=</span><span class="s1">'your secret password.'</span>
 </code></pre></div></div>
-<p>We have recorded  our email credentials in the <code class="language-bash highlihgt highlighter-rouge"><span class="n">.env</span></code> file; let us now write a method that reads them from there.
+<p>We have recorded  our email credentials in the <code class="language-bash highlight highlighter-rouge"><span class="n">.env</span></code> file; let us now write a method that reads them from there.
 For this task, we will be using a Python package called <a href="https://github.com/theskumar/python-dotenv">python-dotenv</a></p>
 
 <p>let’s install it with :
-<code class="language-bash highlihgt highlighter-rouge"><span class="n">pip</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">-U</span><span class="w"> </span><span class="n">python-dotenv</span></code></p>
+<code class="language-bash highlight highlighter-rouge"><span class="n">pip</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">-U</span><span class="w"> </span><span class="n">python-dotenv</span></code></p>
 
 <p>let us write a function that reads and returns those environment variables :</p>
 
-<p>You can create a file with a name <code class="language-bash highlihgt highlighter-rouge"><span class="n">utils.py</span></code> and add the following lines of code :</p>
+<p>You can create a file with a name <code class="language-bash highlight highlighter-rouge"><span class="n">utils.py</span></code> and add the following lines of code :</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
@@ -179,16 +179,16 @@ For this task, we will be using a Python package called <a href="https://github.
 </span><span class="s">                         refer to the sample'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>From that function, you can notice that we are using the <code class="language-bash highlighter-rouge">load_env</code> function, it loads the environment variables from our <code class="language-bash highlihgt highlighter-rouge"><span class="n">.env</span></code> file and exposes them to system environment variables so we can be able to read them from there.
+<p>From that function, you can notice that we are using the <code class="language-bash highlighter-rouge">load_env</code> function, it loads the environment variables from our <code class="language-bash highlight highlighter-rouge"><span class="n">.env</span></code> file and exposes them to system environment variables so we can be able to read them from there.
 After reading the environment variables, the function returns them as a tuple.
 In the next section, we are going to perform the most exciting part of this tutorial; it involves reading emails and downloading attachments.</p>
 
 <h4 id="reading-emails">Reading emails:</h4>
 
-<p>I was happy to find that Python has a built-in feature that enables us to connect to a mailbox. It is in the <code class="language-bash highlihgt highlighter-rouge"><span class="n">imaplib</span></code> module.
+<p>I was happy to find that Python has a built-in feature that enables us to connect to a mailbox. It is in the <code class="language-bash highlight highlighter-rouge"><span class="n">imaplib</span></code> module.
 It also has a module to parse emails.</p>
 
-<p>Let’s create a file <code class="language-bash highlihgt highlighter-rouge"><span class="n">reading_emails_scripts.py</span></code> inside it; we are about to perform all the magic we need.</p>
+<p>Let’s create a file <code class="language-bash highlight highlighter-rouge"><span class="n">reading_emails_scripts.py</span></code> inside it; we are about to perform all the magic we need.</p>
 
 <p>Let us import the modules we need :</p>
 
@@ -281,7 +281,7 @@ This means the function will return an iterator which is an object we can iterat
 <h4 id="putting-everything-together">Putting everything together:</h4>
 <p>We now have all the building blocks of the application. Let’s put them in the main function:</p>
 
-<p>create a file called <code class="language-bash highlihgt highlighter-rouge"><span class="n">run.py</span></code> and add the following code inside:</p>
+<p>create a file called <code class="language-bash highlight highlighter-rouge"><span class="n">run.py</span></code> and add the following code inside:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">read_credentails</span>
 <span class="kn">from</span> <span class="nn">reading_emails_scripts</span> <span class="kn">import</span> <span class="n">get_mail_attachments</span><span class="p">,</span> <span class="n">get_unseen_emails</span>
@@ -329,7 +329,7 @@ We call the get_unseen_emails method which returns our messages , we check if th
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function() {
-      this.page.url = 'http://localhost:4000/blog/2020/reading-emails-from-a-mailbox-with-python/';
+      this.page.url = 'https://murhabazi.com/blog/2020/reading-emails-from-a-mailbox-with-python/';
       this.page.identifier = '/blog/2020/reading-emails-from-a-mailbox-with-python';
     };
     (function() {

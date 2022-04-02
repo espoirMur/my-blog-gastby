@@ -164,7 +164,7 @@ After installing the CDK check if it is working with the following command:
 
   
 
-- `cdk --version`{:.language-clojure .highlihgt} should output your CDK version.
+- `cdk --version`{:.language-clojure .highlight} should output your CDK version.
 
   
 
@@ -176,9 +176,9 @@ Make sure you have AWS CLI installed on your computer. [Configure your AWS CLI](
 
   
 
-- `~/.aws/credentials`{:.language-clojure .highlihgt}: if you are using Mac or Linux
+- `~/.aws/credentials`{:.language-clojure .highlight}: if you are using Mac or Linux
 
-- `C:\Users\`USERNAME`\.aws\config`{:.language-clojure .highlihgt}: if you are on Windows
+- `C:\Users\`USERNAME`\.aws\config`{:.language-clojure .highlight}: if you are on Windows
 
   
 
@@ -220,7 +220,7 @@ Run the following command to create a new CDK project:
 
   
 
-`mkdir ecs-devops-cdk`{:.language-clojure .highlihgt}
+`mkdir ecs-devops-cdk`{:.language-clojure .highlight}
 
   
 
@@ -228,7 +228,7 @@ Enter the project using:
 
   
 
-`cd ecs-devops-cdk`{:.language-clojure .highlihgt}
+`cd ecs-devops-cdk`{:.language-clojure .highlight}
 
   
 
@@ -236,7 +236,7 @@ Or if you are using VSCode you can open the project with vs code using:
 
   
 
-`code ecs-devops-cdk`{:.language-clojure .highlihgt}
+`code ecs-devops-cdk`{:.language-clojure .highlight}
 
   
 
@@ -248,7 +248,7 @@ To initialize the CDK project run the following command:
 
   
 
-`cdk init --language python`{:.language-clojure .highlihgt}
+`cdk init --language python`{:.language-clojure .highlight}
 
   
 
@@ -294,9 +294,9 @@ You can activate your virtual environment using the following command :
 
   
 
-On mac and linux : `source .env/bin/activate`{:.language-clojure .highlihgt}
+On mac and linux : `source .env/bin/activate`{:.language-clojure .highlight}
 
-For windows : `.env\Scripts\activate.bat`{:.language-clojure .highlihgt}
+For windows : `.env\Scripts\activate.bat`{:.language-clojure .highlight}
 
   
 
@@ -308,7 +308,7 @@ With the virtual environment created we can now install the dependencies :
 
   
 
-`pip install -r requirements.txt`and`pip install aws_cdk.aws_ec2 aws_cdk.aws_ecs aws_cdk.aws_ecr aws_cdk.aws_iam`{:.language-clojure .highlihgt}
+`pip install -r requirements.txt`and`pip install aws_cdk.aws_ec2 aws_cdk.aws_ecs aws_cdk.aws_ecr aws_cdk.aws_iam`{:.language-clojure .highlight}
 
   
 
@@ -324,7 +324,7 @@ We can now move to the stack creation step
 
   
 
-If you open the file under `ecs_devops_cdk/ecs_devops_cdk_stack.py`{:.language-clojure .highlihgt} you should be able to see the followings :
+If you open the file under `ecs_devops_cdk/ecs_devops_cdk_stack.py`{:.language-clojure .highlight} you should be able to see the followings :
 
   
 
@@ -380,7 +380,7 @@ __step 3__: Creating the VPC :
 
   
 
-We can either create a vpc or use an existing vpc. To create a vpc use can add the following code the ` __init__ `{:.language-clojure .highlihgt} method.
+We can either create a vpc or use an existing vpc. To create a vpc use can add the following code the ` __init__ `{:.language-clojure .highlight} method.
 
   
 
@@ -574,7 +574,7 @@ With all the objects created let us make sure that we have all the ingredients f
 
   
 
-`ecs_devops_cdk/ecs_devops_cdk_stack.py`{:.language-clojure .highlihgt}
+`ecs_devops_cdk/ecs_devops_cdk_stack.py`{:.language-clojure .highlight}
 
   
 
@@ -636,7 +636,7 @@ log_group = aws_logs.LogGroup(self, "ecs-devops-service-logs-groups", log_group_
 
   
 
-Before creating the stack open the file `app.py`{:.language-clojure .highlihgt}
+Before creating the stack open the file `app.py`{:.language-clojure .highlight}
 
   
 
@@ -690,7 +690,7 @@ With this set; you can now create your stack. With the code created we can now r
 
   
 
-`cdk deploy`{:.language-clojure .highlihgt}
+`cdk deploy`{:.language-clojure .highlight}
 
   
 

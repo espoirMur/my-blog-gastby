@@ -3,10 +3,10 @@
   <channel>
     <title>Espoir Murhabazi ideas' home</title>
     <description>Murhabazi Buzina Espoir Home on the internet</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 02 Apr 2022 14:02:40 +0100</pubDate>
-    <lastBuildDate>Sat, 02 Apr 2022 14:02:40 +0100</lastBuildDate>
+    <link>https://murhabazi.com/</link>
+    <atom:link href="https://murhabazi.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 02 Apr 2022 14:45:56 +0100</pubDate>
+    <lastBuildDate>Sat, 02 Apr 2022 14:45:56 +0100</lastBuildDate>
     <generator>Jekyll v3.6.3</generator>
     
       <item>
@@ -15,9 +15,9 @@
 
 &lt;p&gt;To fix it I had first to remove all driver I have installed before using :&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apt-get&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;purge&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nvidia-*&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apt-get&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;/code&gt;
--&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apt-get&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;autoremove&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apt-get&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;purge&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nvidia-*&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apt-get&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;/code&gt;
+-&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apt-get&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;autoremove&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;After that I when a head and installed the latest version of it nvidia driver:&lt;/p&gt;
@@ -25,26 +25,26 @@
 &lt;p&gt;I did :&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nvidia-driver&lt;/span&gt;&lt;/code&gt; 
+  &lt;li&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nvidia-driver&lt;/span&gt;&lt;/code&gt; 
 To get the latest version of the driver
 After getting the latest version I installed it with :&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Edit Sept 2021 : According to the last comment  by @a-r-j  you can install a couple of dependencies before&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;libnvidia-common-470&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;libnividia-gl-470&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;libnvidia-common-470&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;libnividia-gl-470&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Then you can move forward and install the driver.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nvidia-driver-470&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nvidia-driver-470&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;And after installing it I rebooted my machine and checked with :&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;nvidia-smi&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;nvidia-smi&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;And tata ☄️&lt;/p&gt;
 
@@ -58,8 +58,8 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 </description>
         <pubDate>Sun, 27 Mar 2022 14:36:01 +0100</pubDate>
-        <link>http://localhost:4000/install-nvidia-driver</link>
-        <guid isPermaLink="true">http://localhost:4000/install-nvidia-driver</guid>
+        <link>https://murhabazi.com/install-nvidia-driver</link>
+        <guid isPermaLink="true">https://murhabazi.com/install-nvidia-driver</guid>
         
         
       </item>
@@ -68,7 +68,7 @@ After getting the latest version I installed it with :&lt;/li&gt;
         <title>Local Boy visited the Etihad Stadium. Here is how it went.</title>
         <description>
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/dream-come-true.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/dream-come-true.jpeg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;dream come true&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -89,7 +89,7 @@ After getting the latest version I installed it with :&lt;/li&gt;
 &lt;p&gt;I have been a massive fan of him for his leadership on and off the pitch. I consider him my role model; therefore, I had to take my first picture of the day with his statue.&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/meeting-the-legend.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/meeting-the-legend.jpeg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;legend&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -98,7 +98,7 @@ After getting the latest version I installed it with :&lt;/li&gt;
 &lt;p&gt;Secondly, I went to the Stadium and took the picture that sums up my childhood dreams, Espoir in the UK.&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/etihad-stadium.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/etihad-stadium.jpeg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;at Stadium&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -107,7 +107,7 @@ After getting the latest version I installed it with :&lt;/li&gt;
 &lt;p&gt;And Finally, before the game, I took another one to show people and everyone I have been watching football with in Goma, Bukavu, Kigali pubs that their friend and the only Manchester City fan they know has made it to the Stadium.&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/before-game.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/before-game.jpeg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;before the game&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -116,7 +116,7 @@ After getting the latest version I installed it with :&lt;/li&gt;
 &lt;p&gt;The game did end up well; we won 6-3; unfortunately, my FPL captain Phil Foden got only one point. I think this is the old FPL course. You_ should not captain a player you will be watching live. _&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/fpl-team-result.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/fpl-team-result.jpeg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;fpl team result&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -126,8 +126,8 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 </description>
         <pubDate>Mon, 27 Dec 2021 18:20:39 +0000</pubDate>
-        <link>http://localhost:4000/blog/2021/local-boy-visited-the-etihad-stadium-here-is-how-it-went/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2021/local-boy-visited-the-etihad-stadium-here-is-how-it-went/</guid>
+        <link>https://murhabazi.com/blog/2021/local-boy-visited-the-etihad-stadium-here-is-how-it-went/</link>
+        <guid isPermaLink="true">https://murhabazi.com/blog/2021/local-boy-visited-the-etihad-stadium-here-is-how-it-went/</guid>
         
         
         <category>non-tech</category>
@@ -313,8 +313,8 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 </description>
         <pubDate>Fri, 05 Nov 2021 23:00:36 +0000</pubDate>
-        <link>http://localhost:4000/blog/2021/lessons-learned-while-applying-to-masters-degrees-in-the-uk/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2021/lessons-learned-while-applying-to-masters-degrees-in-the-uk/</guid>
+        <link>https://murhabazi.com/blog/2021/lessons-learned-while-applying-to-masters-degrees-in-the-uk/</link>
+        <guid isPermaLink="true">https://murhabazi.com/blog/2021/lessons-learned-while-applying-to-masters-degrees-in-the-uk/</guid>
         
         
         <category>non-tech</category>
@@ -335,13 +335,13 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;p&gt;&lt;em&gt;Poetry is a tool for &lt;strong&gt;dependency management&lt;/strong&gt; and &lt;strong&gt;packaging&lt;/strong&gt; in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.&lt;/em&gt; It supports Python 2.7 and 3.5+&lt;/p&gt;
 
-&lt;p&gt;If you work with python and install packages you should be familiar with &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt;&lt;/code&gt; my old girlfriend.&lt;/p&gt;
+&lt;p&gt;If you work with python and install packages you should be familiar with &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt;&lt;/code&gt; my old girlfriend.&lt;/p&gt;
 
 &lt;h2 id=&quot;why-we-should-use-poetry-in-lieu-of-pip&quot;&gt;Why we should use poetry in lieu of pip?&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/WEae7StOBGmS6vkaiYroiIwEZWQ2c4DFa56RwhpuOLrzlJfMXlTfUxnpu299Xme-cRGZBdqA0HYUdVUQvduv3cwDSZHr8TMt6o4nwd4DmnWCRjco2xXlHndDSWn_rsQAPRM5saY=s0&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;After 2 weeks of usages and successful migration of five personal projects from &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;pip&lt;/code&gt; to &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;poetry&lt;/span&gt;&lt;/code&gt;, I can choose poetry because :&lt;/p&gt;
+&lt;p&gt;After 2 weeks of usages and successful migration of five personal projects from &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;pip&lt;/code&gt; to &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;poetry&lt;/span&gt;&lt;/code&gt;, I can choose poetry because :&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;It has a good dependency resolver. It does the job better than PIP. Read the interesting article &lt;a href=&quot;https://www.activestate.com/resources/quick-reads/python-dependencies-everything-you-need-to-know/&quot;&gt;www.activestate.com&lt;/a&gt;. The author explicitly said&lt;/li&gt;
@@ -353,14 +353,14 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;And another advantage I found is that anytime you add a new dependency to the project poetry update for you the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;pyproject.toml&lt;/code&gt; with the new top-level dependency, it, therefore, avoid you to do &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;freeze&lt;/span&gt;&lt;/code&gt; to generate a new requirement file for your project.&lt;/p&gt;
+    &lt;p&gt;And another advantage I found is that anytime you add a new dependency to the project poetry update for you the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;pyproject.toml&lt;/code&gt; with the new top-level dependency, it, therefore, avoid you to do &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;freeze&lt;/span&gt;&lt;/code&gt; to generate a new requirement file for your project.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;You can use the same tool to build and publish your packages.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;In my opinion, I think &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;poetry&lt;/code&gt; outweigh &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt;&lt;/code&gt; in many aspects. It is like pip but on steroids&lt;/p&gt;
+&lt;p&gt;In my opinion, I think &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;poetry&lt;/code&gt; outweigh &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt;&lt;/code&gt; in many aspects. It is like pip but on steroids&lt;/p&gt;
 
 &lt;p&gt;In the following sections, I will guide you on how to migrate an existing project from pip to poetry.&lt;/p&gt;
 
@@ -368,7 +368,7 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://lh5.googleusercontent.com/prDFZYFCdhOvTIpSpv8fItqiZ3GHrHEypuEhY0J2IyORNHoOwd6JlneUEUEGlcE-yRR0xVGkOUlwIeDWc5DfSCMrpJqX5m_CQxcERZ2fUzLmmOeV-dF-OYUbMAAg0t0uvxhAN-o=s0&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Installing poetry is very straightforward, if you have python installed and &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;curl&lt;/span&gt;&lt;/code&gt; you can easily install it by running :&lt;/p&gt;
+&lt;p&gt;Installing poetry is very straightforward, if you have python installed and &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;curl&lt;/span&gt;&lt;/code&gt; you can easily install it by running :&lt;/p&gt;
 
 &lt;h4 id=&quot;osx--linux--bashonwindows-install-instructions&quot;&gt;osx / linux / bashonwindows install instructions&lt;/h4&gt;
 
@@ -385,35 +385,35 @@ curl &lt;span class=&quot;nt&quot;&gt;-sSL&lt;/span&gt; https://raw.githubuserco
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;: The previous &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;get-poetry.py&lt;/code&gt; installer is now deprecated, if you are currently using it you should migrate to the new, supported, &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;install-poetry.py&lt;/span&gt;&lt;/code&gt; installer.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;: The previous &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;get-poetry.py&lt;/code&gt; installer is now deprecated, if you are currently using it you should migrate to the new, supported, &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;install-poetry.py&lt;/span&gt;&lt;/code&gt; installer.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;The installer installs the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;poetry&lt;/code&gt; tool to Poetry’s &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;/code&gt; directory. This location depends on your system:&lt;/p&gt;
+  &lt;p&gt;The installer installs the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;poetry&lt;/code&gt; tool to Poetry’s &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;/code&gt; directory. This location depends on your system:&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;$HOME/.local/bin&lt;/span&gt;&lt;/code&gt; for Unix&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;$HOME/.local/bin&lt;/span&gt;&lt;/code&gt; for Unix&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;%APPDATA%&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;\P&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ython&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;\S&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cripts&lt;/span&gt;&lt;/code&gt; on Windows&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;%APPDATA%&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;\P&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ython&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;\S&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cripts&lt;/span&gt;&lt;/code&gt; on Windows&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;If this directory is not on your &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;PATH&lt;/code&gt;, you will need to add it manually if you want to invoke Poetry with simply &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;poetry&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
+  &lt;p&gt;If this directory is not on your &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;PATH&lt;/code&gt;, you will need to add it manually if you want to invoke Poetry with simply &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;poetry&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Alternatively, you can use the full path to &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;poetry&lt;/span&gt;&lt;/code&gt; to use it.&lt;/p&gt;
+  &lt;p&gt;Alternatively, you can use the full path to &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;poetry&lt;/span&gt;&lt;/code&gt; to use it.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;There is also another version of installing it with &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt;&lt;/code&gt; but why would you use your ex to attract your new girlfriend? 🤔🤪&lt;/p&gt;
+&lt;p&gt;There is also another version of installing it with &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt;&lt;/code&gt; but why would you use your ex to attract your new girlfriend? 🤔🤪&lt;/p&gt;
 
 &lt;p&gt;Once everything is installed you can restart your terminal and run the following command to check the poetry version:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;poetry&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;--version&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;poetry&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;--version&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;If installation is unsuccessfully or encountering incompatibility issues. Please heads up to &lt;a href=&quot;https://github.com/python-poetry/poetry&quot;&gt;Github Poetry&lt;/a&gt; to get a help, to learn more or to fire an issue.&lt;/p&gt;
 
@@ -423,7 +423,7 @@ curl &lt;span class=&quot;nt&quot;&gt;-sSL&lt;/span&gt; https://raw.githubuserco
 
 &lt;h3 id=&quot;generate-top-level-dependencies&quot;&gt;Generate top-level dependencies&lt;/h3&gt;
 
-&lt;p&gt;Before moving to the next step you need to make sure you can generate the top-level dependencies for your project, to do that you will need a package called &lt;a href=&quot;https://pypi.org/project/pipdeptree/&quot;&gt;pipdeptree&lt;/a&gt; . For context, the top-level dependencies are the root of your dependencies tree. What is even the dependency tree? Each package you install using &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;pip&lt;/code&gt; has the other dependencies that rely on it. And before installing a new package it installs his top-level dependencies. For example, pandas is a package but &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;pandas&lt;/code&gt; depends on &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;numpy&lt;/span&gt;&lt;/code&gt;, if you install pandas it install also numpy as a dependent.&lt;/p&gt;
+&lt;p&gt;Before moving to the next step you need to make sure you can generate the top-level dependencies for your project, to do that you will need a package called &lt;a href=&quot;https://pypi.org/project/pipdeptree/&quot;&gt;pipdeptree&lt;/a&gt; . For context, the top-level dependencies are the root of your dependencies tree. What is even the dependency tree? Each package you install using &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;pip&lt;/code&gt; has the other dependencies that rely on it. And before installing a new package it installs his top-level dependencies. For example, pandas is a package but &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;pandas&lt;/code&gt; depends on &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;numpy&lt;/span&gt;&lt;/code&gt;, if you install pandas it install also numpy as a dependent.&lt;/p&gt;
 
 &lt;p&gt;The following command will generate only the top-level dependencies, so if you have installed pandas, it will just generate pandas and not numpy as a requirement.&lt;/p&gt;
 
@@ -431,52 +431,52 @@ curl &lt;span class=&quot;nt&quot;&gt;-sSL&lt;/span&gt; https://raw.githubuserco
 
 &lt;p&gt;This should be filled&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pipdeptree&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;--warn&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;silence&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grep&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;-E&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'^&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;\w&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requirements-new.txt&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pipdeptree&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;--warn&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;silence&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grep&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;-E&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'^&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;\w&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requirements-new.txt&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you have generated the top-level dependencies, I would suggest you deactivate your virtual environment and delete it to make the break-up complete before moving to the next steps.&lt;/p&gt;
 
 &lt;h3 id=&quot;adding-poetry-to-an-existing-project&quot;&gt;Adding poetry to an existing project.&lt;/h3&gt;
 
-&lt;p&gt;If you have a new project where you are using &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;pip&lt;/code&gt; and have the &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;requirements.txt&lt;/span&gt;&lt;/code&gt; file inside you can run the following command to initialize poetry in the project.&lt;/p&gt;
+&lt;p&gt;If you have a new project where you are using &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;pip&lt;/code&gt; and have the &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;requirements.txt&lt;/span&gt;&lt;/code&gt; file inside you can run the following command to initialize poetry in the project.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;poetry&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;poetry&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;This will prompt you to set up poetry to your existing project and asked you to give some details about your project such as the project name, the python version you want to use, and the description. It will consequently generate the &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pyproject.toml&lt;/span&gt;&lt;/code&gt; file which will contain all the details about your project as well as the top-level projects requirement and their versions.&lt;/p&gt;
+&lt;p&gt;This will prompt you to set up poetry to your existing project and asked you to give some details about your project such as the project name, the python version you want to use, and the description. It will consequently generate the &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pyproject.toml&lt;/span&gt;&lt;/code&gt; file which will contain all the details about your project as well as the top-level projects requirement and their versions.&lt;/p&gt;
 
 &lt;h3 id=&quot;creating-virtual-environment&quot;&gt;Creating virtual environment&lt;/h3&gt;
 
-&lt;p&gt;Poetry creates by default virtual environment in a folder called &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/Library/Application&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Support/pypoetry&lt;/span&gt;&lt;/code&gt; but you can change those settings by using the following command :&lt;/p&gt;
+&lt;p&gt;Poetry creates by default virtual environment in a folder called &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/Library/Application&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Support/pypoetry&lt;/span&gt;&lt;/code&gt; but you can change those settings by using the following command :&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;poetry&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;virtualenvs.in-project&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;poetry&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;virtualenvs.in-project&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;After running that command you can run the following :&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;poetry&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;poetry&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;It will activate the project’s virtual environment and create a new one if the project does not have one.&lt;/p&gt;
 
 &lt;h3 id=&quot;installing-the-requirements-for-your-projects&quot;&gt;Installing the requirements for your projects.&lt;/h3&gt;
 
-&lt;p&gt;If you have the &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;requirements-news.txt&lt;/span&gt;&lt;/code&gt; file resulting from the command you run on the first step, you can install all the packages in that and their corresponding version by running the following command:&lt;/p&gt;
+&lt;p&gt;If you have the &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;requirements-news.txt&lt;/span&gt;&lt;/code&gt; file resulting from the command you run on the first step, you can install all the packages in that and their corresponding version by running the following command:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sed&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;-n&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;'s/==/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requirements-new.txt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;; do poetry add &quot;${item}&quot; ; done&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sed&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;-n&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;'s/==/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requirements-new.txt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;; do poetry add &quot;${item}&quot; ; done&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;This will work only on Linux and Mac, still trying to find the exact version of it for Windows.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;What does that command do?
-I loop over every line of the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;requirement-new.txt&lt;/code&gt; file take the dependency, and just replace the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;/code&gt; in the dependency with &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;/code&gt; and then add it with poetry.&lt;/p&gt;
+I loop over every line of the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;requirement-new.txt&lt;/code&gt; file take the dependency, and just replace the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;/code&gt; in the dependency with &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;/code&gt; and then add it with poetry.&lt;/p&gt;
 
-&lt;p&gt;If for example in the file you have pandas==1.1.1, it will install the following with poetry &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;poetry&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pandas&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.11&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If for example in the file you have pandas==1.1.1, it will install the following with poetry &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;poetry&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pandas&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.11&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;If everything goes well you should have the all the top-level packages installed with their dependencies.&lt;/p&gt;
 
-&lt;p&gt;Once the command has successfully run and you have everything installed, you should check if your &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pyproject.toml&lt;/span&gt;&lt;/code&gt; file contains all the packages and their top-level dependencies.&lt;/p&gt;
+&lt;p&gt;Once the command has successfully run and you have everything installed, you should check if your &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pyproject.toml&lt;/span&gt;&lt;/code&gt; file contains all the packages and their top-level dependencies.&lt;/p&gt;
 
-&lt;p&gt;You can now remove the old &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;requirements.txt&lt;/code&gt; file and the newly create &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;requirement-new.txt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;/code&gt;file by running.&lt;/p&gt;
+&lt;p&gt;You can now remove the old &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;requirements.txt&lt;/code&gt; file and the newly create &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;requirement-new.txt&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;/code&gt;file by running.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;rm&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;-f&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requirements.*&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;rm&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;-f&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requirements.*&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;a-section-about-using-poetry-with-conda-enviroment&quot;&gt;A section about using poetry with conda enviroment&lt;/h3&gt;
 
@@ -542,8 +542,8 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;p&gt;And the story of my break up comes to an end. As you may know, all separations are not smooth, sometimes the daemons of your old girlfriend come and start causing troubles in your new relationship. So if you find any issue during this break-up, feel free to let me know in the comment I will try to help you as much as I can 🤔.&lt;/p&gt;
 </description>
         <pubDate>Sun, 17 Oct 2021 16:33:42 +0100</pubDate>
-        <link>http://localhost:4000/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/</guid>
+        <link>https://murhabazi.com/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/</link>
+        <guid isPermaLink="true">https://murhabazi.com/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/</guid>
         
         
         <category>tech</category>
@@ -554,7 +554,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
         <title>Mots d'un grand frère  à ses petits frère qui debutent avec la programmation</title>
         <description>
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/andela-guys.jpg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/andela-guys.jpg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;cover&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -583,7 +583,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;h2 id=&quot;langlais-langage-par-excellence&quot;&gt;L’Anglais Langage Par Excellence&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/learn-english.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/learn-english.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -602,7 +602,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;h2 id=&quot;tirez-profits-de-vos-cours-à-luniversité&quot;&gt;Tirez profits de vos Cours à l’université&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/please-graduate.jpg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/please-graduate.jpg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -619,7 +619,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;h2 id=&quot;les-softs-skills-pour-vous-différencier&quot;&gt;Les Softs Skills pour vous différencier&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/lukaku-team-work.jpg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/lukaku-team-work.jpg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -632,7 +632,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;h2 id=&quot;faites-connaître-votre-travail&quot;&gt;Faites connaître votre travail.&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/git-configurations.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/git-configurations.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -645,7 +645,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;h2 id=&quot;soyez-curieux-et-apprenez-à-googler&quot;&gt;Soyez Curieux et Apprenez à Googler&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/google-stuff.jpg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/google-stuff.jpg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -654,7 +654,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;h2 id=&quot;limportance-de-la-communauté--networking&quot;&gt;L’importance de la communauté  (Networking)&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/gdg-comunity.jpg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/gdg-comunity.jpg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -675,7 +675,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;h2 id=&quot;quel-langage-de-programmation-apprendre&quot;&gt;Quel langage de programmation Apprendre&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/today-developers.jpg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/today-developers.jpg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -701,8 +701,8 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;p&gt;Cheers 🤲🏼&lt;/p&gt;
 </description>
         <pubDate>Fri, 23 Jul 2021 14:57:09 +0100</pubDate>
-        <link>http://localhost:4000/blog/2021/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2021/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/</guid>
+        <link>https://murhabazi.com/blog/2021/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/</link>
+        <guid isPermaLink="true">https://murhabazi.com/blog/2021/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/</guid>
         
         
         <category>non-tech</category>
@@ -713,7 +713,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
         <title>My books recommendations to enhance your Soft Skills as a developer</title>
         <description>
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/cover.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/cover.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;cover&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -746,7 +746,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;p&gt;&lt;em&gt;As you can see in the picture below :&lt;/em&gt;&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/atomic_habits_effects.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/atomic_habits_effects.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;atomic habits effects&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -767,7 +767,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;p&gt;&lt;em&gt;The cone of learning&lt;/em&gt;&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/cone_of_learnings.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/cone_of_learnings.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;cones of learning&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -832,7 +832,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;p&gt;That is all about books I read last year. They are not enough in comparison with  books that humans have written on this earth, but in one year it is a lot, and the most important was not to read the book but to put into practice what you read from them. When I get old, I will have a large library like this one, and I can brag about them to my friends.&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/book_shelf.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/book_shelf.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;book shelve&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -846,8 +846,8 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 
 </description>
         <pubDate>Sat, 05 Jun 2021 14:57:09 +0100</pubDate>
-        <link>http://localhost:4000/blog/2021/my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2021/my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/</guid>
+        <link>https://murhabazi.com/blog/2021/my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/</link>
+        <guid isPermaLink="true">https://murhabazi.com/blog/2021/my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/</guid>
         
         
         <category>non-tech</category>
@@ -947,7 +947,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;p&gt;After installing the CDK check if it is working with the following command:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;cdk&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;--version&lt;/span&gt;&lt;/code&gt; should output your CDK version.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;cdk&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;--version&lt;/span&gt;&lt;/code&gt; should output your CDK version.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h5 id=&quot;initializing-the-aws-cli-&quot;&gt;Initializing the AWS CLI :&lt;/h5&gt;
@@ -956,10 +956,10 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/.aws/credentials&lt;/span&gt;&lt;/code&gt;: if you are using Mac or Linux&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/.aws/credentials&lt;/span&gt;&lt;/code&gt;: if you are using Mac or Linux&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;&lt;/code&gt;USERNAME&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;sc&quot;&gt;\.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aws&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;\c&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;onfig&lt;/span&gt;&lt;/code&gt;: if you are on Windows&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;&lt;/code&gt;USERNAME&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;sc&quot;&gt;\.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aws&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;\c&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;onfig&lt;/span&gt;&lt;/code&gt;: if you are on Windows&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -986,15 +986,15 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 
 &lt;p&gt;Run the following command to create a new CDK project:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;mkdir&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ecs-devops-cdk&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;mkdir&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ecs-devops-cdk&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Enter the project using:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ecs-devops-cdk&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ecs-devops-cdk&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Or if you are using VSCode you can open the project with vs code using:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ecs-devops-cdk&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ecs-devops-cdk&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;em&gt;Step 2&lt;/em&gt;: Initialize the python CDK project :&lt;/li&gt;
@@ -1002,7 +1002,7 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 
 &lt;p&gt;To initialize the CDK project run the following command:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;cdk&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;--language&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;python&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;cdk&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;--language&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;python&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;The command will create a new python CDK project and we will be editing it in the next step to build our stack.&lt;/p&gt;
 
@@ -1037,9 +1037,9 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 
 &lt;p&gt;You can activate your virtual environment using the following command :&lt;/p&gt;
 
-&lt;p&gt;On mac and linux : &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.env/bin/activate&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;On mac and linux : &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.env/bin/activate&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;For windows : &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;.env&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;\S&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cripts&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;\a&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ctivate.bat&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;For windows : &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;.env&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;\S&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cripts&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;\a&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ctivate.bat&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;em&gt;step 4&lt;/em&gt;: Installing dependencies:&lt;/li&gt;
@@ -1047,7 +1047,7 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 
 &lt;p&gt;With the virtual environment created we can now install the dependencies :&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;pip install &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; requirements.txt&lt;/code&gt;and&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aws_cdk.aws_ec2&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aws_cdk.aws_ecs&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aws_cdk.aws_ecr&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aws_cdk.aws_iam&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;pip install &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; requirements.txt&lt;/code&gt;and&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aws_cdk.aws_ec2&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aws_cdk.aws_ecs&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aws_cdk.aws_ecr&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aws_cdk.aws_iam&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;With the project initialized we can now move to the next step where we will be creating our components.&lt;/p&gt;
 
@@ -1055,7 +1055,7 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 
 &lt;p&gt;We can now move to the stack creation step&lt;/p&gt;
 
-&lt;p&gt;If you open the file under &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ecs_devops_cdk/ecs_devops_cdk_stack.py&lt;/span&gt;&lt;/code&gt; you should be able to see the followings :&lt;/p&gt;
+&lt;p&gt;If you open the file under &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ecs_devops_cdk/ecs_devops_cdk_stack.py&lt;/span&gt;&lt;/code&gt; you should be able to see the followings :&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;aws_cdk&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;core&lt;/span&gt;
@@ -1089,7 +1089,7 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 
 &lt;p&gt;&lt;strong&gt;step 3&lt;/strong&gt;: Creating the VPC :&lt;/p&gt;
 
-&lt;p&gt;We can either create a vpc or use an existing vpc. To create a vpc use can add the following code the ` &lt;strong&gt;init&lt;/strong&gt; `{:.language-clojure .highlihgt} method.&lt;/p&gt;
+&lt;p&gt;We can either create a vpc or use an existing vpc. To create a vpc use can add the following code the ` &lt;strong&gt;init&lt;/strong&gt; `{:.language-clojure .highlight} method.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &lt;span class=&quot;n&quot;&gt;vpc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ec2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Vpc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-vpc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_azs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -1215,7 +1215,7 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 
 &lt;p&gt;With all the objects created let us make sure that we have all the ingredients for our stack in the following updated file.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ecs_devops_cdk/ecs_devops_cdk_stack.py&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ecs_devops_cdk/ecs_devops_cdk_stack.py&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;aws_cdk&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;core&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aws_ecs&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ecs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aws_ecr&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ecr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aws_ec2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ec2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aws_iam&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iam&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aws_logs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -1272,7 +1272,7 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Before creating the stack open the file &lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;app.py&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Before creating the stack open the file &lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;app.py&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;You should see something like this :&lt;/p&gt;
 
@@ -1312,7 +1312,7 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 
 &lt;p&gt;With this set; you can now create your stack. With the code created we can now run the following command to create our stack.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-bash highlihgt highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;cdk&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deploy&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-bash highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;cdk&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deploy&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;If everything goes well you should have your stack created. As a result, you will have a cluster, running a service that deploys a task definition, and a Cloudwatch log group created.&lt;/p&gt;
 
@@ -1327,8 +1327,8 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 &lt;p&gt;In the second part of this series, we will learn how to convert our docker-compose file to a task definition described in this tutorial. See you then!&lt;/p&gt;
 </description>
         <pubDate>Fri, 26 Feb 2021 22:12:03 +0000</pubDate>
-        <link>http://localhost:4000/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/</guid>
+        <link>https://murhabazi.com/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/</link>
+        <guid isPermaLink="true">https://murhabazi.com/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/</guid>
         
         
         <category>tech</category>
@@ -1354,8 +1354,8 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 &lt;p&gt;That is all, thanks for reading this, I will keep posting news updates from my role so stay tuned.&lt;/p&gt;
 </description>
         <pubDate>Mon, 30 Nov 2020 22:54:01 +0000</pubDate>
-        <link>http://localhost:4000/blog/2020/joining-spiny-ai/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2020/joining-spiny-ai/</guid>
+        <link>https://murhabazi.com/blog/2020/joining-spiny-ai/</link>
+        <guid isPermaLink="true">https://murhabazi.com/blog/2020/joining-spiny-ai/</guid>
         
         
         <category>non-tech</category>
@@ -1366,7 +1366,7 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
         <title>I sat for the IELTS today , here is how it went</title>
         <description>
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2020-11-19-i-sat-for-the-ielts-today-here-is-how-it-went/ielts.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2020-11-19-i-sat-for-the-ielts-today-here-is-how-it-went/ielts.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;cover image&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -1408,8 +1408,8 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 
 </description>
         <pubDate>Thu, 19 Nov 2020 22:12:03 +0000</pubDate>
-        <link>http://localhost:4000/blog/2020/i-sat-for-the-ielts-today-here-is-how-it-went/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2020/i-sat-for-the-ielts-today-here-is-how-it-went/</guid>
+        <link>https://murhabazi.com/blog/2020/i-sat-for-the-ielts-today-here-is-how-it-went/</link>
+        <guid isPermaLink="true">https://murhabazi.com/blog/2020/i-sat-for-the-ielts-today-here-is-how-it-went/</guid>
         
         
         <category>non-tech</category>
@@ -1420,7 +1420,7 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
         <title>Hacktoberfest is almost there, Python developers here are some venues for parties.</title>
         <description>
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2020-09-17-hacktoberfest-is-almost-there-python-developers-here-are-some-venues-for-parties/festival.jpg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2020-09-17-hacktoberfest-is-almost-there-python-developers-here-are-some-venues-for-parties/festival.jpg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;cover image&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -1612,8 +1612,8 @@ And since we got a lot from the open-source community, contributing to open sour
 
 </description>
         <pubDate>Thu, 17 Sep 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/blog/2020/hacktoberfest-is-almost-there-python-developers-here-are-some-venues-for-parties/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2020/hacktoberfest-is-almost-there-python-developers-here-are-some-venues-for-parties/</guid>
+        <link>https://murhabazi.com/blog/2020/hacktoberfest-is-almost-there-python-developers-here-are-some-venues-for-parties/</link>
+        <guid isPermaLink="true">https://murhabazi.com/blog/2020/hacktoberfest-is-almost-there-python-developers-here-are-some-venues-for-parties/</guid>
         
         
         <category>tech</category>

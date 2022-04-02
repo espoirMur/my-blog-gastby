@@ -10,7 +10,7 @@
 <meta name="description" content="Recently at work, we decided to build a CI/CD pipeline that deploys our application directly to AWS. I had never worked with AWS, and it was a missing point ...">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="http://localhost:4000/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/">
+<link rel="canonical" href="https://murhabazi.com/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/">
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -37,7 +37,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-02-26T22:12:03+00:00" />
 <script type="application/ld+json">
-{"url":"https://www.murhabazi.com/ci-cd-deploy-to-aws-github-actions/","author":{"@type":"Person","name":"Espoir Murhabazi Buzina"},"@type":"BlogPosting","headline":"How to use the AWS Python CDK to create an infrastructure on ECS.","dateModified":"2021-02-26T22:12:03+00:00","datePublished":"2021-02-26T22:12:03+00:00","description":"Recently at work, we decided to build a CI/CD pipeline that deploys our application directly to AWS. I had never worked with AWS, and it was a missing point on my CV which demonstrates that I have some DevOps skills. I decided to search for some tutorials online and I was not lucky to get what we needed at work. I decided to write this guide by getting something working from various tutorials I found online.","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.murhabazi.com/ci-cd-deploy-to-aws-github-actions/"},"@context":"https://schema.org"}</script>
+{"url":"https://www.murhabazi.com/ci-cd-deploy-to-aws-github-actions/","author":{"@type":"Person","name":"Espoir Murhabazi Buzina"},"@type":"BlogPosting","description":"Recently at work, we decided to build a CI/CD pipeline that deploys our application directly to AWS. I had never worked with AWS, and it was a missing point on my CV which demonstrates that I have some DevOps skills. I decided to search for some tutorials online and I was not lucky to get what we needed at work. I decided to write this guide by getting something working from various tutorials I found online.","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.murhabazi.com/ci-cd-deploy-to-aws-github-actions/"},"headline":"How to use the AWS Python CDK to create an infrastructure on ECS.","dateModified":"2021-02-26T22:12:03+00:00","datePublished":"2021-02-26T22:12:03+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -173,7 +173,7 @@
 <p>After installing the CDK check if it is working with the following command:</p>
 
 <ul>
-  <li><code class="language-bash highlihgt highlighter-rouge"><span class="n">cdk</span><span class="w"> </span><span class="n">--version</span></code> should output your CDK version.</li>
+  <li><code class="language-bash highlight highlighter-rouge"><span class="n">cdk</span><span class="w"> </span><span class="n">--version</span></code> should output your CDK version.</li>
 </ul>
 
 <h5 id="initializing-the-aws-cli-">Initializing the AWS CLI :</h5>
@@ -182,10 +182,10 @@
 
 <ul>
   <li>
-    <p><code class="language-bash highlihgt highlighter-rouge"><span class="o">~</span><span class="n">/.aws/credentials</span></code>: if you are using Mac or Linux</p>
+    <p><code class="language-bash highlight highlighter-rouge"><span class="o">~</span><span class="n">/.aws/credentials</span></code>: if you are using Mac or Linux</p>
   </li>
   <li>
-    <p><code class="language-bash highlighter-rouge">C:<span class="se">\U</span>sers<span class="se">\</span></code>USERNAME<code class="language-bash highlihgt highlighter-rouge"><span class="sc">\.</span><span class="n">aws</span><span class="sc">\c</span><span class="n">onfig</span></code>: if you are on Windows</p>
+    <p><code class="language-bash highlighter-rouge">C:<span class="se">\U</span>sers<span class="se">\</span></code>USERNAME<code class="language-bash highlight highlighter-rouge"><span class="sc">\.</span><span class="n">aws</span><span class="sc">\c</span><span class="n">onfig</span></code>: if you are on Windows</p>
   </li>
 </ul>
 
@@ -212,15 +212,15 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <p>Run the following command to create a new CDK project:</p>
 
-<p><code class="language-bash highlihgt highlighter-rouge"><span class="n">mkdir</span><span class="w"> </span><span class="n">ecs-devops-cdk</span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">mkdir</span><span class="w"> </span><span class="n">ecs-devops-cdk</span></code></p>
 
 <p>Enter the project using:</p>
 
-<p><code class="language-bash highlihgt highlighter-rouge"><span class="n">cd</span><span class="w"> </span><span class="n">ecs-devops-cdk</span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">cd</span><span class="w"> </span><span class="n">ecs-devops-cdk</span></code></p>
 
 <p>Or if you are using VSCode you can open the project with vs code using:</p>
 
-<p><code class="language-bash highlihgt highlighter-rouge"><span class="n">code</span><span class="w"> </span><span class="n">ecs-devops-cdk</span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">code</span><span class="w"> </span><span class="n">ecs-devops-cdk</span></code></p>
 
 <ul>
   <li><em>Step 2</em>: Initialize the python CDK project :</li>
@@ -228,7 +228,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <p>To initialize the CDK project run the following command:</p>
 
-<p><code class="language-bash highlihgt highlighter-rouge"><span class="n">cdk</span><span class="w"> </span><span class="n">init</span><span class="w"> </span><span class="n">--language</span><span class="w"> </span><span class="n">python</span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">cdk</span><span class="w"> </span><span class="n">init</span><span class="w"> </span><span class="n">--language</span><span class="w"> </span><span class="n">python</span></code></p>
 
 <p>The command will create a new python CDK project and we will be editing it in the next step to build our stack.</p>
 
@@ -263,9 +263,9 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <p>You can activate your virtual environment using the following command :</p>
 
-<p>On mac and linux : <code class="language-bash highlihgt highlighter-rouge"><span class="n">source</span><span class="w"> </span><span class="n">.env/bin/activate</span></code></p>
+<p>On mac and linux : <code class="language-bash highlight highlighter-rouge"><span class="n">source</span><span class="w"> </span><span class="n">.env/bin/activate</span></code></p>
 
-<p>For windows : <code class="language-bash highlihgt highlighter-rouge"><span class="n">.env</span><span class="sc">\S</span><span class="n">cripts</span><span class="sc">\a</span><span class="n">ctivate.bat</span></code></p>
+<p>For windows : <code class="language-bash highlight highlighter-rouge"><span class="n">.env</span><span class="sc">\S</span><span class="n">cripts</span><span class="sc">\a</span><span class="n">ctivate.bat</span></code></p>
 
 <ul>
   <li><em>step 4</em>: Installing dependencies:</li>
@@ -273,7 +273,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <p>With the virtual environment created we can now install the dependencies :</p>
 
-<p><code class="language-bash highlighter-rouge">pip install <span class="nt">-r</span> requirements.txt</code>and<code class="language-bash highlihgt highlighter-rouge"><span class="n">pip</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">aws_cdk.aws_ec2</span><span class="w"> </span><span class="n">aws_cdk.aws_ecs</span><span class="w"> </span><span class="n">aws_cdk.aws_ecr</span><span class="w"> </span><span class="n">aws_cdk.aws_iam</span></code></p>
+<p><code class="language-bash highlighter-rouge">pip install <span class="nt">-r</span> requirements.txt</code>and<code class="language-bash highlight highlighter-rouge"><span class="n">pip</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">aws_cdk.aws_ec2</span><span class="w"> </span><span class="n">aws_cdk.aws_ecs</span><span class="w"> </span><span class="n">aws_cdk.aws_ecr</span><span class="w"> </span><span class="n">aws_cdk.aws_iam</span></code></p>
 
 <p>With the project initialized we can now move to the next step where we will be creating our components.</p>
 
@@ -281,7 +281,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <p>We can now move to the stack creation step</p>
 
-<p>If you open the file under <code class="language-bash highlihgt highlighter-rouge"><span class="n">ecs_devops_cdk/ecs_devops_cdk_stack.py</span></code> you should be able to see the followings :</p>
+<p>If you open the file under <code class="language-bash highlight highlighter-rouge"><span class="n">ecs_devops_cdk/ecs_devops_cdk_stack.py</span></code> you should be able to see the followings :</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kn">from</span> <span class="nn">aws_cdk</span> <span class="kn">import</span> <span class="n">core</span>
@@ -315,7 +315,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <p><strong>step 3</strong>: Creating the VPC :</p>
 
-<p>We can either create a vpc or use an existing vpc. To create a vpc use can add the following code the ` <strong>init</strong> `{:.language-clojure .highlihgt} method.</p>
+<p>We can either create a vpc or use an existing vpc. To create a vpc use can add the following code the ` <strong>init</strong> `{:.language-clojure .highlight} method.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="n">vpc</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">Vpc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-vpc"</span><span class="p">,</span> <span class="n">max_azs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -441,7 +441,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <p>With all the objects created let us make sure that we have all the ingredients for our stack in the following updated file.</p>
 
-<p><code class="language-bash highlihgt highlighter-rouge"><span class="n">ecs_devops_cdk/ecs_devops_cdk_stack.py</span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">ecs_devops_cdk/ecs_devops_cdk_stack.py</span></code></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kn">from</span> <span class="nn">aws_cdk</span> <span class="kn">import</span> <span class="p">(</span><span class="n">core</span><span class="p">,</span> <span class="n">aws_ecs</span> <span class="k">as</span> <span class="n">ecs</span><span class="p">,</span> <span class="n">aws_ecr</span> <span class="k">as</span> <span class="n">ecr</span><span class="p">,</span> <span class="n">aws_ec2</span> <span class="k">as</span> <span class="n">ec2</span><span class="p">,</span> <span class="n">aws_iam</span> <span class="k">as</span> <span class="n">iam</span><span class="p">,</span> <span class="n">aws_logs</span><span class="p">)</span>
@@ -498,7 +498,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 </code></pre></div></div>
 
-<p>Before creating the stack open the file <code class="language-bash highlihgt highlighter-rouge"><span class="n">app.py</span></code></p>
+<p>Before creating the stack open the file <code class="language-bash highlight highlighter-rouge"><span class="n">app.py</span></code></p>
 
 <p>You should see something like this :</p>
 
@@ -538,7 +538,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <p>With this set; you can now create your stack. With the code created we can now run the following command to create our stack.</p>
 
-<p><code class="language-bash highlihgt highlighter-rouge"><span class="n">cdk</span><span class="w"> </span><span class="n">deploy</span></code></p>
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">cdk</span><span class="w"> </span><span class="n">deploy</span></code></p>
 
 <p>If everything goes well you should have your stack created. As a result, you will have a cluster, running a service that deploys a task definition, and a Cloudwatch log group created.</p>
 
@@ -562,7 +562,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function() {
-      this.page.url = 'http://localhost:4000/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/';
+      this.page.url = 'https://murhabazi.com/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/';
       this.page.identifier = '/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs';
     };
     (function() {
