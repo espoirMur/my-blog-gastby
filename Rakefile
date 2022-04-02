@@ -42,6 +42,7 @@ task :publish => [:generate] do
     system "git init"
     system "git checkout --orphan #{GITHUB_REPO_BRANCH}"
     system "git add ."
+    system
     message = "Site deployement at #{Time.now.utc}"
     system "git commit -am #{message.inspect}"
     system "git remote add origin git@github.com:#{GITHUB_REPONAME}.git"
