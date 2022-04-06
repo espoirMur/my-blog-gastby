@@ -28,6 +28,7 @@ group :jekyll_plugins do
   gem "kramdown"
   gem "webrick"
   gem 'jekyll-seo-tag'
+  gem "match_regex"
 end
 
 gem "rexml", "~> 3.2"

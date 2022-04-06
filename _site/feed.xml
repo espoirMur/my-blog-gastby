@@ -3,11 +3,147 @@
   <channel>
     <title>Espoir Murhabazi ideas' home</title>
     <description>Murhabazi Buzina Espoir Home on the internet</description>
-    <link>https://murhabazi.com/</link>
-    <atom:link href="https://murhabazi.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 06 Apr 2022 11:16:00 +0100</pubDate>
-    <lastBuildDate>Wed, 06 Apr 2022 11:16:00 +0100</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 06 Apr 2022 13:43:54 +0100</pubDate>
+    <lastBuildDate>Wed, 06 Apr 2022 13:43:54 +0100</lastBuildDate>
     <generator>Jekyll v3.6.3</generator>
+    
+      <item>
+        <title>test 2022 post</title>
+        <description>&lt;p&gt;this is a test post to check what is happening&lt;/p&gt;
+</description>
+        <pubDate>Wed, 06 Apr 2022 13:41:26 +0100</pubDate>
+        <link>http://localhost:4000/test-2022-post</link>
+        <guid isPermaLink="true">http://localhost:4000/test-2022-post</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Congolese 🇨🇩 , Africans young Software Engineers, and Computer Scientists graduates - let’s get that master's degree! 🚀 🚀🚀🎓</title>
+        <description>
+&lt;figure&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2022-04-06-master-options-africans/cmu-africa-graduation.png&quot; /&gt;&lt;/p&gt;
+  &lt;figcaption&gt;CMU Africa Graduation ceremony , I need someone to put the 🇨🇩 on that picture next time&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I had been dreaming about attending a high-ranked university for ages. The interaction with brilliant professors lecturers, the smell of old books in a library, and the social aspect of university life have always fascinated me.&lt;/p&gt;
+
+&lt;p&gt;After graduating from my local university in my native country - Congo, I decided to gain some real-world experience by working instead of going straight for a master’s degree. Six years passed since I graduated, and I yearned to build a strong career in the Software Engineering industry. I wanted to realize my dream, and I decided to apply for a Master in Data Science in the UK. Fortunately, I got an offer from the University of Essex, thanks for the Chevening Scholarship. For those who don’t know I am currently doing my master at that university, my experience about it is mixed but that is out of the scope of this blog  🤪.&lt;/p&gt;
+
+&lt;p&gt;As a Software Engineer, there are different ways to learn. I have gone through all of them:  tutorials, coding Bootcamp, Youtube videos, MOOC, personnel projects, and the academic way. Nevertheless, I can attest, that as long as we live in today’s world and economy, a &lt;strong&gt;high-ranked&lt;/strong&gt; university is still the best, the most legit, and the most credible way to learn and acquire new skills, especially when it comes to research. I am not opening the old debate on the best way to learn as a Software Engineer, and it is beyond the scope of this blog. Instead, I will share some opportunities for young talented graduates from the continent in general and DRCongo particularly, on attending high-ranked universities globally.&lt;/p&gt;
+
+&lt;p&gt;As a young African growing up in DRCongo, there are fewer options for good universities than someone born and raised in Europe or North America.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, there have been initiatives to improve inclusivity for people from developing countries or of disadvantaged backgrounds in academia over the past decade.&lt;/p&gt;
+
+&lt;p&gt;Following up on a recent discussion with an old friend of mine in a WhatsApp group, I decided to put some options young graduates with a similar background as me can access  to get a good master’s in computer science or related field.&lt;/p&gt;
+
+&lt;p&gt;I will talk about some of them below, and the list is not exhaustive. In conclusion, I will share some of my tips to get opportunities in my career.&lt;/p&gt;
+
+&lt;h2 id=&quot;carnegie-mellon-university--africa&quot;&gt;&lt;a href=&quot;https://www.cmu.edu/africa/&quot;&gt;Carnegie Mellon University  AFRICA&lt;/a&gt;&lt;/h2&gt;
+
+&lt;figure&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2022-04-06-master-options-africans/cmu-africa-campus.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;figcaption&gt;CMU Africa campus, I am sure there are some Europeans university which are not as beautiful as this country&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The CMU Africa is an extension of the main &lt;a href=&quot;https://www.cmu.edu/&quot;&gt;CMU,&lt;/a&gt; which is one of the best computer science universities in the world. In 2011, following up on a recent partnership with the BAD and the World Bank, CMU has decided to open its door in Rwanda to bring high-quality education to Africa. It is the only U.S. research university offering its master’s degrees with a full-time faculty, staff, and operations in Africa.&lt;/p&gt;
+
+&lt;p&gt;Since 2018, I have been interacting with CMU graduates from all over Africa. I can attest it is one of the best masters out there. CMU is the pillar of the Rwanda and East African tech scene. Their graduates are working for top-notch tech companies locally. Some of my CMU Alumni friends are working for Google, IBM, or doing Ph.D. in the main CMU campus or Oxford.&lt;/p&gt;
+
+&lt;p&gt;Here are some of the alumni from the university I got a chance to interact with :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/in/kesaoluwafunmilola/&quot;&gt;Oluwafunmilola Kesa&lt;/a&gt;, Software Engineer at Microsoft, Vancouver Canada&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.cs.ox.ac.uk/people/daniel.omeiza/&quot;&gt;Daniel Omeiza&lt;/a&gt;, Ph.D. Student at University of Oxford, Oxford UK&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://ng.linkedin.com/in/azeez-oluwafemi&quot;&gt;Azeez Oluwafemi&lt;/a&gt;, Research Engineer at Borealis AI, Vancouver Canada.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://ug.linkedin.com/in/joan-kirunga&quot;&gt;Joan Kirunga&lt;/a&gt; , Senior Data Scientist at BBox, Kigali Rwanda&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;what-is-the-cost&quot;&gt;What is the cost:&lt;/h3&gt;
+
+&lt;p&gt;I have met some students who got scholarships from the Rwandan government if they are Rwandeses or the &lt;a href=&quot;https://www.africa.engineering.cmu.edu/impact/mastercard-scholars.html&quot;&gt;prestigious Mastercard Scholarship.&lt;/a&gt; According to &lt;a href=&quot;https://www.africa.engineering.cmu.edu/admissions/tuition/index.html&quot;&gt;their website,&lt;/a&gt; the tuition fees can range from 8k to 16k USD per year. If you have a good track of leadership and community-building experience, you can easily find a scholarship that funds your studies at CMU Africa.&lt;/p&gt;
+
+&lt;h2 id=&quot;africa-master-of-machine-intelligence&quot;&gt;&lt;a href=&quot;https://aimsammi.org/&quot;&gt;Africa Master of Machine Intelligence&lt;/a&gt;&lt;/h2&gt;
+
+&lt;figure&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2022-04-06-master-options-africans/ammi-launch-8.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;figcaption&gt;AMMI Kigali launch&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;In 2019, with a partnership with Google and Facebook, &lt;a href=&quot;https://medium.com/@moustaphacisse/introducing-the-african-masters-of-machine-intelligence-at-aims-9441b4346a55&quot;&gt;Moustapha Cisse launched&lt;/a&gt; the African Master of Machine Intelligence.&lt;/p&gt;
+
+&lt;p&gt;AMMI is a one-year master’s to help passionate young Africans access cutting-edge research on Artificial Intelligence without leaving the country and going through the hassle of a student visa. I have seen top researchers from UCL Google lecturing at the university. In 2019, I had a chance to meet Marc Peter Deisenroth, who was lecturing at the university. He wrote one of the best books on &lt;a href=&quot;https://books.google.co.uk/books?id=pbONxAEACAAJ&amp;amp;printsec=frontcover&amp;amp;source=gbs_ge_summary_r&amp;amp;cad=0#v=onepage&amp;amp;q&amp;amp;f=false&quot;&gt;Mathematic of Machine Learning.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The final goal of the university is to produce talent for the Google office in Accra. I can attest I know some of their graduates who joined the Google Accra office and are doing well. I also know others who went for Ph.D. in top universities in Europe.&lt;/p&gt;
+
+&lt;p&gt;Here are some alums from congo I had a chance to interact with :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://aimsammi.org/person/muhigiri-cirhuza-alain/&quot;&gt;Muhigiri Chiruza Alain&lt;/a&gt;, The guy is one of those smart people who don’t have an online profile, I am sure he is doing well, maybe doing a Ph.D. at Standford or somewhere.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/in/salomon-kabongo&quot;&gt;Salomon Kabongo&lt;/a&gt;, Phd Student at L3S Research, Leipzig Germany&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;what-is-the-cost-&quot;&gt;What is the cost :&lt;/h3&gt;
+
+&lt;p&gt;The program is highly competitive and only takes the best talent. Its acceptance rate, which is six percent, makes it one of the most prestigious masters in Africa. Fortunately, it is free; Google and Facebook cover your tuition fees. If you are one of those guys who could quickly get 72 % in undergrad, you have a solid background in Mathematics and Computer Science, and you are passionate about Machine Learning, you should give this program a try.&lt;/p&gt;
+
+&lt;h2 id=&quot;chevening-scholarship&quot;&gt;&lt;a href=&quot;https://www.chevening.org/&quot;&gt;Chevening scholarship.&lt;/a&gt;&lt;/h2&gt;
+
+&lt;figure&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2022-04-06-master-options-africans/chevener-from-drc.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;figcaption&gt;Chevener from DRC 2022 cohort , caption me if you can 🤪 &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The program has been there for more than 30 years and provides African leaders the chance to study at any British university of their choice fully funded. Suppose you manage to get a place in one of the best UK universities for Machine Learning or Data Science. Chevening will cover your tuition fees.&lt;/p&gt;
+
+&lt;p&gt;I can guarantee, that if you have dreamt about studying at one of the best British Universities, you can try this scholarship. As a Chevening scholar, I can attest that this is one of the best scholarships you can get if you are admitted to a good university. It gives you access to a good network of computer scientists and people from different backgrounds.&lt;/p&gt;
+
+&lt;p&gt;Chevening alumni are currently among the best leaders in their respective countries.&lt;/p&gt;
+
+&lt;p&gt;Some Alums I have interacted with :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/in/mbithenzomo/&quot;&gt;Mbithe Nzomo&lt;/a&gt;, Doctoral Researcher, University of Cape Town, South Africa&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;And the list goes on, there handful of Cheveners who did Computer Science and are doing well in life. Head to &lt;a href=&quot;https://www.chevening.org/alumni/&quot;&gt;this link&lt;/a&gt; to learn more about them.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;what-is-the-cost--1&quot;&gt;What is the cost :&lt;/h3&gt;
+
+&lt;p&gt;It is a fully-funded scholarship, and you don’t need to pay anything. You are only required to have two years of work experience and good leadership background. As part of the application process, you will have to write four essays. These are your leadership and Networking skills, your course of studies, and your career plan. The application process is lengthy, but it is worth it, to be honest with you. It is among one of the best scholarships in the world as long as you get a place to a good university in UK. One quack, is that part of the terms and conditions of the scholarship you have to return to your home country for at least two years.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+
+&lt;p&gt;Those are the top three programs any African Engineer who wants to go for a master’s in Computer science can think about. The list is not exhaustive; there are more programs out there, and I am still collecting information about them.
+Should I get more time and energy in the future, I will post them in part two of this series. I will share more advice on how to get access to top research papers in the world without attending a university. Additionally, I will share some undergraduate universities you can dream about.
+Until my next feature, stay safe, take care, and see you in part two of this series.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 06 Apr 2022 11:22:56 +0100</pubDate>
+        <link>http://localhost:4000/master-options-africans</link>
+        <guid isPermaLink="true">http://localhost:4000/master-options-africans</guid>
+        
+        
+        <category>non-tech</category>
+        
+      </item>
     
       <item>
         <title>install nvidia driver</title>
@@ -58,8 +194,8 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 </description>
         <pubDate>Sun, 27 Mar 2022 14:36:01 +0100</pubDate>
-        <link>https://murhabazi.com/install-nvidia-driver</link>
-        <guid isPermaLink="true">https://murhabazi.com/install-nvidia-driver</guid>
+        <link>http://localhost:4000/install-nvidia-driver</link>
+        <guid isPermaLink="true">http://localhost:4000/install-nvidia-driver</guid>
         
         
       </item>
@@ -68,7 +204,7 @@ After getting the latest version I installed it with :&lt;/li&gt;
         <title>Local Boy visited the Etihad Stadium. Here is how it went.</title>
         <description>
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/dream-come-true.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-12-27-/dream-come-true.jpeg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;dream come true&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -89,7 +225,7 @@ After getting the latest version I installed it with :&lt;/li&gt;
 &lt;p&gt;I have been a massive fan of him for his leadership on and off the pitch. I consider him my role model; therefore, I had to take my first picture of the day with his statue.&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/meeting-the-legend.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-12-27-/meeting-the-legend.jpeg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;legend&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -98,7 +234,7 @@ After getting the latest version I installed it with :&lt;/li&gt;
 &lt;p&gt;Secondly, I went to the Stadium and took the picture that sums up my childhood dreams, Espoir in the UK.&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/etihad-stadium.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-12-27-/etihad-stadium.jpeg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;at Stadium&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -107,7 +243,7 @@ After getting the latest version I installed it with :&lt;/li&gt;
 &lt;p&gt;And Finally, before the game, I took another one to show people and everyone I have been watching football with in Goma, Bukavu, Kigali pubs that their friend and the only Manchester City fan they know has made it to the Stadium.&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/before-game.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-12-27-/before-game.jpeg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;before the game&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -116,7 +252,7 @@ After getting the latest version I installed it with :&lt;/li&gt;
 &lt;p&gt;The game did end up well; we won 6-3; unfortunately, my FPL captain Phil Foden got only one point. I think this is the old FPL course. You_ should not captain a player you will be watching live. _&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-12-27-local-boy-visited-the-etihad-stadium-here-is-how-it-went/fpl-team-result.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-12-27-/fpl-team-result.jpeg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;fpl team result&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -126,8 +262,8 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 </description>
         <pubDate>Mon, 27 Dec 2021 18:20:39 +0000</pubDate>
-        <link>https://murhabazi.com/blog/2021/local-boy-visited-the-etihad-stadium-here-is-how-it-went/</link>
-        <guid isPermaLink="true">https://murhabazi.com/blog/2021/local-boy-visited-the-etihad-stadium-here-is-how-it-went/</guid>
+        <link>http://localhost:4000/blog/2021/local-boy-visited-the-etihad-stadium-here-is-how-it-went/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2021/local-boy-visited-the-etihad-stadium-here-is-how-it-went/</guid>
         
         
         <category>non-tech</category>
@@ -313,8 +449,8 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 </description>
         <pubDate>Fri, 05 Nov 2021 23:00:36 +0000</pubDate>
-        <link>https://murhabazi.com/blog/2021/lessons-learned-while-applying-to-masters-degrees-in-the-uk/</link>
-        <guid isPermaLink="true">https://murhabazi.com/blog/2021/lessons-learned-while-applying-to-masters-degrees-in-the-uk/</guid>
+        <link>http://localhost:4000/blog/2021/lessons-learned-while-applying-to-masters-degrees-in-the-uk/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2021/lessons-learned-while-applying-to-masters-degrees-in-the-uk/</guid>
         
         
         <category>non-tech</category>
@@ -542,8 +678,8 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;p&gt;And the story of my break up comes to an end. As you may know, all separations are not smooth, sometimes the daemons of your old girlfriend come and start causing troubles in your new relationship. So if you find any issue during this break-up, feel free to let me know in the comment I will try to help you as much as I can 🤔.&lt;/p&gt;
 </description>
         <pubDate>Sun, 17 Oct 2021 16:33:42 +0100</pubDate>
-        <link>https://murhabazi.com/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/</link>
-        <guid isPermaLink="true">https://murhabazi.com/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/</guid>
+        <link>http://localhost:4000/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/</guid>
         
         
         <category>tech</category>
@@ -554,7 +690,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
         <title>Mots d'un grand frère  à ses petits frère qui debutent avec la programmation</title>
         <description>
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/andela-guys.jpg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-07-23-/andela-guys.jpg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;cover&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -583,7 +719,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;h2 id=&quot;langlais-langage-par-excellence&quot;&gt;L’Anglais Langage Par Excellence&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/learn-english.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-07-23-/learn-english.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -602,7 +738,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;h2 id=&quot;tirez-profits-de-vos-cours-à-luniversité&quot;&gt;Tirez profits de vos Cours à l’université&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/please-graduate.jpg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-07-23-/please-graduate.jpg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -619,7 +755,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;h2 id=&quot;les-softs-skills-pour-vous-différencier&quot;&gt;Les Softs Skills pour vous différencier&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/lukaku-team-work.jpg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-07-23-/lukaku-team-work.jpg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -632,7 +768,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;h2 id=&quot;faites-connaître-votre-travail&quot;&gt;Faites connaître votre travail.&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/git-configurations.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-07-23-/git-configurations.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -645,7 +781,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;h2 id=&quot;soyez-curieux-et-apprenez-à-googler&quot;&gt;Soyez Curieux et Apprenez à Googler&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/google-stuff.jpg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-07-23-/google-stuff.jpg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -654,7 +790,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;h2 id=&quot;limportance-de-la-communauté--networking&quot;&gt;L’importance de la communauté  (Networking)&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/gdg-comunity.jpg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-07-23-/gdg-comunity.jpg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -675,7 +811,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;h2 id=&quot;quel-langage-de-programmation-apprendre&quot;&gt;Quel langage de programmation Apprendre&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-07-23-mots-d-un-grand-frère-à-ses-petits-frère-qui-debutent-avec-la-programmation/today-developers.jpg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-07-23-/today-developers.jpg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;alt_text&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -701,8 +837,8 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;p&gt;Cheers 🤲🏼&lt;/p&gt;
 </description>
         <pubDate>Fri, 23 Jul 2021 14:57:09 +0100</pubDate>
-        <link>https://murhabazi.com/blog/2021/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/</link>
-        <guid isPermaLink="true">https://murhabazi.com/blog/2021/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/</guid>
+        <link>http://localhost:4000/blog/2021/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2021/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/</guid>
         
         
         <category>non-tech</category>
@@ -713,7 +849,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
         <title>My books recommendations to enhance your Soft Skills as a developer</title>
         <description>
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/cover.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-06-05-/./images/cover.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;cover&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -746,7 +882,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;p&gt;&lt;em&gt;As you can see in the picture below :&lt;/em&gt;&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/atomic_habits_effects.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-06-05-/./images/atomic_habits_effects.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;atomic habits effects&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -767,7 +903,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;p&gt;&lt;em&gt;The cone of learning&lt;/em&gt;&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/cone_of_learnings.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-06-05-/./images/cone_of_learnings.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;cones of learning&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -832,7 +968,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;p&gt;That is all about books I read last year. They are not enough in comparison with  books that humans have written on this earth, but in one year it is a lot, and the most important was not to read the book but to put into practice what you read from them. When I get old, I will have a large library like this one, and I can brag about them to my friends.&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/./images/book_shelf.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2021-06-05-/./images/book_shelf.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;book shelve&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -846,8 +982,8 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 
 </description>
         <pubDate>Sat, 05 Jun 2021 14:57:09 +0100</pubDate>
-        <link>https://murhabazi.com/blog/2021/my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/</link>
-        <guid isPermaLink="true">https://murhabazi.com/blog/2021/my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/</guid>
+        <link>http://localhost:4000/blog/2021/my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2021/my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/</guid>
         
         
         <category>non-tech</category>
@@ -1327,8 +1463,8 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 &lt;p&gt;In the second part of this series, we will learn how to convert our docker-compose file to a task definition described in this tutorial. See you then!&lt;/p&gt;
 </description>
         <pubDate>Fri, 26 Feb 2021 22:12:03 +0000</pubDate>
-        <link>https://murhabazi.com/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/</link>
-        <guid isPermaLink="true">https://murhabazi.com/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/</guid>
+        <link>http://localhost:4000/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/</guid>
         
         
         <category>tech</category>
@@ -1354,269 +1490,11 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 &lt;p&gt;That is all, thanks for reading this, I will keep posting news updates from my role so stay tuned.&lt;/p&gt;
 </description>
         <pubDate>Mon, 30 Nov 2020 22:54:01 +0000</pubDate>
-        <link>https://murhabazi.com/blog/2020/joining-spiny-ai/</link>
-        <guid isPermaLink="true">https://murhabazi.com/blog/2020/joining-spiny-ai/</guid>
+        <link>http://localhost:4000/blog/2020/joining-spiny-ai/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2020/joining-spiny-ai/</guid>
         
         
         <category>non-tech</category>
-        
-      </item>
-    
-      <item>
-        <title>I sat for the IELTS today , here is how it went</title>
-        <description>
-&lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2020-11-19-i-sat-for-the-ielts-today-here-is-how-it-went/ielts.png&quot; /&gt;&lt;/p&gt;
-  &lt;figcaption&gt;cover image&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;After preparing for more than a month, I managed to pass my IELTS today. While waiting for the result , I would like to share with you how it went.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Logistics&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I reached the British Council in Kigali at 8:30, 30 minutes before my test.&lt;/p&gt;
-
-&lt;p&gt;I was  a comfortable place and they made sure all COVID preventions measure were followed strictly.&lt;/p&gt;
-
-&lt;p&gt;Once I got inside the test room I asked the examiner if he could change my keyboard layout since I was more familiar with the AZERTY french keyboard but to my dismay the said it’s unchangeable. I was forced to use the normal English keyboard layout for the test. Although, this decreased my touching typing speed, it didn’t affect my test performance on overall except some typos I managed to correct within the timelines.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;The tests&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;It was a computer delivered IELTS, and was divided in two parts, the first one consisted of the listening , the reading and the writing; the second one was the speaking.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/xUA7bcVPhLACfKIItG/giphy.gif&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The &lt;em&gt;&lt;strong&gt;listening test&lt;/strong&gt;&lt;/em&gt; went smoothly as expected, beside some comprehension issues but I am sure I did well on this one.&lt;/p&gt;
-
-&lt;p&gt;Then came &lt;em&gt;&lt;strong&gt;the reading&lt;/strong&gt;&lt;/em&gt;, this was the most challenging part, but I managed to answer all questions in one hour. As usual, they gave us three texts ,the first one was about facial recognition, a topic I am familiar with due to my Machine Learning background, the second one was about Easter Island and it Stone statues and the third one was on coaster rollers.&lt;/p&gt;
-
-&lt;p&gt;At the end of the reading test , I took a toilet break for  3 minutes  and I resumed with the &lt;em&gt;&lt;strong&gt;writing test.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;In task one I got a combination of a land map and a population growth graph. With all the keyboard issues I lost 10 minutes on this test and I spent 30 minutes responding instead of 20 minutes as advised.&lt;/p&gt;
-
-&lt;p&gt;The task two was about personal information being stored in computers. I was asked if the advantages of that practice outweighs it disadvantages. With the 30 minutes remaining, I managed to write 277 words for this topic. This one was my favorite part ,I wish I  had  more time to bombard them with everything I know about privacy and data.  I spent some time correcting the essays and the first part was over.&lt;/p&gt;
-
-&lt;p&gt;Around midday I left the room confident that I nailed it but let us wait for the results.&lt;/p&gt;
-
-&lt;p&gt;The &lt;em&gt;&lt;strong&gt;speaking test&lt;/strong&gt;&lt;/em&gt; started at 13:40, I was luckily to have brought a book which helped me to avoid the waiting room frustration.&lt;/p&gt;
-
-&lt;p&gt;It was a casual one, I was asked if I work or study and about comedians in the first part. During the second part, the question was about a car journey I have made recently and the follow up conversations were about cars. Despite not being a fan of cars , I managed to give some goods answer to those questions.&lt;/p&gt;
-
-&lt;p&gt;And it was the end of my test , I am now looking forward to the result. I am confident I will get  6 at minimum. However I will not be dismayed if I get a 7.5 or 8. As said Eminem, &lt;em&gt;Success is my only motherfuc**g option, failure is not.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;In the upcoming days, I will share my test results as well as my preparation strategy , so stay tunned for more content.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 19 Nov 2020 22:12:03 +0000</pubDate>
-        <link>https://murhabazi.com/blog/2020/i-sat-for-the-ielts-today-here-is-how-it-went/</link>
-        <guid isPermaLink="true">https://murhabazi.com/blog/2020/i-sat-for-the-ielts-today-here-is-how-it-went/</guid>
-        
-        
-        <category>non-tech</category>
-        
-      </item>
-    
-      <item>
-        <title>Hacktoberfest is almost there, Python developers here are some venues for parties.</title>
-        <description>
-&lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;https://murhabazi.com/assets/posts/2020-09-17-hacktoberfest-is-almost-there-python-developers-here-are-some-venues-for-parties/festival.jpg&quot; /&gt;&lt;/p&gt;
-  &lt;figcaption&gt;cover image&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;This year has been fantastic because I contributed to some open-source projects and had my pull request merged on amazing projects with many stars. It helps me to put some green dots on my GitHub profile…&lt;/p&gt;
-
-&lt;p&gt;I don’t want to brag about my open source contributions, which are very small compared to what has been done in the open-source community. Instead, I want to show you which open source project you can contribute to during this period. They are not the biggest parties at the festival, but they can train you to drink beers, dress, and dance before attending the most prominent venues.&lt;/p&gt;
-
-&lt;p&gt;By contributing to those projects, you can get those green dots on your GitHub profile so that when a recruiter asks you for some sample of your work, you can have something to show 
-them.&lt;/p&gt;
-
-&lt;p&gt;But why October?
-The reason why I wrote this post today, it’s because we are in October, which is the open-source month. DigitalOcean, in partnership with dev.to, organizes &lt;a href=&quot;https://hacktoberfest.digitalocean.com/&quot;&gt;Hacktoberfest&lt;/a&gt;. During the most exciting open-source festival, people get the opportunity to contribute to open sources and get some swags and other awards for recognition.&lt;/p&gt;
-
-&lt;h2 id=&quot;can-you-tell-us-about-the-venues-&quot;&gt;Can you tell us about the venues? :&lt;/h2&gt;
-
-&lt;p&gt;The venues are on Github. Here are some links with topics and description about each venue I collected for you.&lt;/p&gt;
-
-&lt;h3 id=&quot;kratec-flask-restful-cookie-cutter&quot;&gt;&lt;a href=&quot;https://github.com/karec/cookiecutter-flask-restful&quot;&gt;Kratec flask restful cookie-cutter&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;This project is a cookie-cutter, a template for creating flask applications.&lt;/p&gt;
-
-&lt;p&gt;It has a structured way to make flask-restful applications. It is a good starting point for building flask applications. It has some basic features all applications have in common such as token-based authentication and user management system.&lt;/p&gt;
-
-&lt;p&gt;It also has all the settings needed for a flask backend, such as database setup, celery configurations, docker-compose, etc.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Tech Stack&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;The project is built using Flask and Python 3.6.
-If you are familiar with that stack, this can be a good start for you.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;How You can contribute&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;As for all the software projects, this one is not yet completed. It needs some improvements. You can make it &lt;a href=&quot;https://realpython.com/python-pep8/&quot;&gt;PEP8&lt;/a&gt; compliant by setting up linter to make sure it follows all the styles included in pep8. It has some open issues you can look to.&lt;/p&gt;
-
-&lt;h3 id=&quot;masakhane-&quot;&gt;&lt;a href=&quot;https://github.com/masakhane-io/masakhane-mt&quot;&gt;Masakhane&lt;/a&gt; :&lt;/h3&gt;
-
-&lt;p&gt;This is my favorite project; it aims to apply the modern neural machine translation techniques to African languages. With this, we are building the next google translator for African languages. 
-If you are an African, you care for African languages, and you are an NLP enthusiast, I will recommend to look  at this project. It has a good opening community. You should join this project.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Tech stack used&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;Python, Keras, PyTorch&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;How to Contribute&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;The project is well documented; you can go to &lt;a href=&quot;https://github.com/masakhane-io/masakhane-mt#how-can-i-contribute&quot;&gt;this&lt;/a&gt; section in the readme; you will find different ways to contribute.&lt;/p&gt;
-
-&lt;p&gt;We have a &lt;a href=&quot;https://github.com/masakhane-io/masakhane-mt/blob/master/starter_notebook.ipynb&quot;&gt;starter notebook&lt;/a&gt;, you can grab it, it is self-explanatory, and by running it for your local language, you can have the first benchmark for it.&lt;/p&gt;
-
-&lt;h3 id=&quot;pytube-&quot;&gt;&lt;a href=&quot;https://github.com/nficano/pytube&quot;&gt;PyTube&lt;/a&gt; :&lt;/h3&gt;
-
-&lt;p&gt;This is a fantastic tool, and by contributing to it, you will be helping many developers around.
-From the project readme, you can read that:&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;PyTube is a very serious, lightweight, dependency-free Python library (and command-line utility) for downloading YouTube Videos.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;In simple terms, this project helps you to download a Youtube video or a full Youtube playlist video by providing its URL using python code.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Tech stack used&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;Python&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;How to contribute&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;The project is looking for contributors. It has around 30 open issues as of now; you can pick one and start investigating it. 
-I have opened &lt;a href=&quot;https://github.com/nficano/pytube/issues/593&quot;&gt;this issue&lt;/a&gt; on the project. You can look at it. It is beginner-friendly, and if you have a beginner to intermediate knowledge in Python, you are good to go.&lt;/p&gt;
-
-&lt;h3 id=&quot;chatistics&quot;&gt;&lt;a href=&quot;https://github.com/MasterScrat/Chatistics&quot;&gt;Chatistics&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;The project name is a concatenation of chat and statistics.
-It is a python3 project that converts chat logs from various messaging platforms into pandas DataFrames. It can also generate histograms and word clouds from the chat logs. 
-Suppose you are an intermediate python developer who is interested in data, NLP, and text analysis. In that case, this can help you to forge your knowledge in those topics.
-It can help you find the most active users and get the most topics your friends discuss in a Whatsapp group or a telegram channel.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Tech stack used&lt;/strong&gt;&lt;/em&gt;:
- Python&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;How to contribute&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;The project has 18 open issues, and you can think about other features you can add. 
-I have opened a &lt;a href=&quot;https://github.com/MasterScrat/Chatistics/issues/64&quot;&gt;issue about&lt;/a&gt; a feature some may need. You can look at it.&lt;/p&gt;
-
-&lt;h3 id=&quot;speed-rwanda&quot;&gt;&lt;a href=&quot;https://github.com/kenessajr/speed-rw&quot;&gt;Speed Rwanda&lt;/a&gt;:&lt;/h3&gt;
-
-&lt;p&gt;A few months ago, a friend of mine &lt;a href=&quot;https://twitter.com/kenessajr?lang=en&quot;&gt;Remy Muhire&lt;/a&gt; started a twitter thread where Rwandans users could post their internet speed in text format and a screenshot of from fast.com.&lt;/p&gt;
-
-&lt;p&gt;We collected more than two hundred tweets from Rwandans.&lt;/p&gt;
-
-&lt;p&gt;They shared their network provider, their internet speed (in text and as a screenshot), and some shared their location.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Tech Stack&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;Python, Tweepy, Pandas&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;How to contribute&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;There are different ways to contribute to:&lt;/p&gt;
-
-&lt;p&gt;suppose you want to dive into optical character recognition. In that case, you can help us get the internet speed from the fast.com network speed screenshot.&lt;/p&gt;
-
-&lt;p&gt;If you want to get into data analysis, I have collected many questions you can answer using data visualization or simple pandas queries.
-You can check the project readme to learn more about it.&lt;/p&gt;
-
-&lt;p&gt;If you want to play with regex, you can also help us extract the tweets’ speed.&lt;/p&gt;
-
-&lt;h3 id=&quot;pindo&quot;&gt;Pindo&lt;/h3&gt;
-
-&lt;p&gt;Pindo is the communication platform for humans and machines. It helps to send messages, emails, and text in bulk. It’s similar to Nexmo or Twillo.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Tech Stack&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;Python&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;How to contribute&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;The project is actively looking for contributors. If you are a beginner and want to work on a CLI project, you can reach out to &lt;a href=&quot;https://twitter.com/kenessajr?lang=en&quot;&gt;Remy Muhire&lt;/a&gt;. He can tell you how you can help.&lt;/p&gt;
-
-&lt;h3 id=&quot;django-dotenv&quot;&gt;Django-dotenv:&lt;/h3&gt;
-
-&lt;p&gt;This project is a tool that helps to read .env files in a Django project.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Tech Stack&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;Python and Django&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;How to contribute&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;I have opened &lt;a href=&quot;https://github.com/jpadilla/django-dotenv/issues/46&quot;&gt;an issue &lt;/a&gt;. You can have a look at it to get started with the project.&lt;/p&gt;
-
-&lt;h3 id=&quot;python-and-django-conferences-website-djangoconf-and-europython&quot;&gt;Python and Django Conferences website (DjangoConf and EuroPython)&lt;/h3&gt;
-
-&lt;p&gt;Other projects that can give you exposure are Django conference websites. The projects are written in Python and are maintained with the best Django developers in the world. Working on those projects can give you a kickstart in your Django learning path.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Tech Stack&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;Python and Django&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;How to contribute&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;Here is the link to &lt;a href=&quot;https://github.com/djangocon&quot;&gt;the site &lt;/a&gt; also the &lt;a href=&quot;https://github.com/EuroPython&quot;&gt;EuroPython website&lt;/a&gt;, you can pick one project and see how you can help.&lt;/p&gt;
-
-&lt;h3 id=&quot;my-projects&quot;&gt;My Projects&lt;/h3&gt;
-&lt;p&gt;I also have two open-source projects. I always hack on Github. Feel free to have a look at them, &lt;a href=&quot;https://github.com/espoirMur/balobi_nini&quot;&gt;balobi nini&lt;/a&gt;, &lt;a href=&quot;https://github.com/kisanola/nzembo&quot;&gt;nzembo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Tech Stack&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;Python, NLTK, Django, and soon Vue Js or React for frontend&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;How to contribute&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;Reach out to me, and I will tell you how you can contribute.&lt;/p&gt;
-
-&lt;h3 id=&quot;stackoverflow-questions&quot;&gt;StackOverflow Questions&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://stackexchange.com/users/5957993&quot;&gt;&lt;img src=&quot;https://stackexchange.com/users/flair/5957993.png?theme=dark&quot; width=&quot;208&quot; height=&quot;58&quot; alt=&quot;profile for Espoir Murhabazi on Stack Exchange, a network of free, community-driven Q&amp;amp;A sites&quot; title=&quot;profile for Espoir Murhabazi on Stack Exchange, a network of free, community-driven Q&amp;amp;A sites&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Another way of contributing to open source is by answering questions on stack overflow. You will be surprised by the number of topics you can learn in a short period. I tried two years ago, and I was surprised by the number of people I have helped on the platform. Even today, people are still coming back to me to ask one or two questions about the answers I put there a long time ago.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Tech Stack&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;You decide and choose what is familiar to you.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;How to contribute&lt;/em&gt;:&lt;/p&gt;
-
-&lt;p&gt;I know most of you have never seen the &lt;a href=&quot;https://stackoverflow.com/&quot;&gt;stackOverflow&lt;/a&gt; home page; this is the chance to go and see it.&lt;/p&gt;
-
-&lt;p&gt;There are always beginners who ask for help. You can filter new questions according to the language and tech stack you are familiar with and provide service to people.&lt;/p&gt;
-
-&lt;h2 id=&quot;how-being-drunk-with-pull-requests-and-merge-requests-will-help-us&quot;&gt;How being drunk with pull requests and merge requests will help us?&lt;/h2&gt;
-
-&lt;p&gt;We know that contributing to open source can play an instrumental role in your tech career. I could write a full blog post explaining its benefits, but that is for next time. 
-And since we got a lot from the open-source community, contributing to open sources is an excellent way to give back to the community.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“&lt;em&gt;YOU received free, give free.&lt;/em&gt;” &lt;em&gt;Matthew 10:8&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;i-have-a-not-listed-venue-how-can-i-get-people-joining-my-stand&quot;&gt;I have a not listed venue. How can I get people joining my stand?&lt;/h2&gt;
-
-&lt;p&gt;If you have any other open-source project you know a beginner may be interested in, please share it with us.&lt;/p&gt;
-
-&lt;h2 id=&quot;i-dont-know-how-to-dress-and-how-to-drink-can-you-give-us-some-links-to-get-started&quot;&gt;I don’t know how to dress and how to drink. Can you give us some links to get started?&lt;/h2&gt;
-
-&lt;p&gt;List resources people can use to get started :&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;https://dev.to/surajv/5-mistakes-that-can-be-avoided-as-a-beginner-in-foss-contribution-22gc&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Thu, 17 Sep 2020 00:00:00 +0100</pubDate>
-        <link>https://murhabazi.com/blog/2020/hacktoberfest-is-almost-there-python-developers-here-are-some-venues-for-parties/</link>
-        <guid isPermaLink="true">https://murhabazi.com/blog/2020/hacktoberfest-is-almost-there-python-developers-here-are-some-venues-for-parties/</guid>
-        
-        
-        <category>tech</category>
         
       </item>
     

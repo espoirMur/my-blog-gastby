@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Congolese, African Young Software Engineers, and Computer Scientists graduates - let’s get that master's degree! 🚀 🚀🚀🎓"
+title: "Congolese 🇨🇩 , Africans young Software Engineers, and Computer Scientists graduates - let’s get that master's degree! 🚀 🚀🚀🎓"
 permalink: master-options-africans
 date: 2022-04-06 10:22:56
 comments: true
-description: "Best Master programs and scholarships for young Africans and Congolese nationals in computer science"
+description: "Master programs and scholarships for young Africans and Congolese nationals in computer science , artificial intelligence , machine learning"
 keywords: "master’s, Africa, academia, scholarship, master computer science Africa"
 categories: "non-tech"
 ---
@@ -14,9 +14,9 @@ categories: "non-tech"
 
 I had been dreaming about attending a high-ranked university for ages. The interaction with brilliant professors lecturers, the smell of old books in a library, and the social aspect of university life have always fascinated me. 
 
-After graduating from my local university in my native country - Congo, I decided to gain some real-world experience by working instead of going straight for a master's degree. Six years passed since I graduated, and I yearned to build a strong career in the Software Engineering industry. I wanted to realize my dream, and I decided to apply for a Master in Data Science in the UK. Fortunately, I got into the University of Essex to offer that course. (Not sure about the connection with the next section )
+After graduating from my local university in my native country - Congo, I decided to gain some real-world experience by working instead of going straight for a master's degree. Six years passed since I graduated, and I yearned to build a strong career in the Software Engineering industry. I wanted to realize my dream, and I decided to apply for a Master in Data Science in the UK. Fortunately, I got an offer from the University of Essex, thanks for the Chevening Scholarship. For those who don't know I am currently doing my master at that university, my experience about it is mixed but that is out of the scope of this blog  🤪. 
 
-As a Software Engineer, there are different ways to learn. I have gone through all of them:  tutorials, coding Bootcamp, Youtube videos, MOOC, personnel projects, and the academic course. Nevertheless, I can attest, that as long as we live in today’s world and economy, a high-ranked university is still the best, the most legit, and the most credible way to learn and acquire new skills, especially when it comes to research. I am not opening the old debate on the best way to learn as a Software Engineer, and it is beyond the scope of this blog. Instead, I will share some opportunities for young talented graduates from the continent in general and DRCongo particularly, on attending high-ranked universities globally. 
+As a Software Engineer, there are different ways to learn. I have gone through all of them:  tutorials, coding Bootcamp, Youtube videos, MOOC, personnel projects, and the academic way. Nevertheless, I can attest, that as long as we live in today’s world and economy, a **high-ranked** university is still the best, the most legit, and the most credible way to learn and acquire new skills, especially when it comes to research. I am not opening the old debate on the best way to learn as a Software Engineer, and it is beyond the scope of this blog. Instead, I will share some opportunities for young talented graduates from the continent in general and DRCongo particularly, on attending high-ranked universities globally. 
 
 As a young African growing up in DRCongo, there are fewer options for good universities than someone born and raised in Europe or North America.
 
@@ -54,7 +54,7 @@ Here are some of the alumni from the university I got a chance to interact with 
 
   
 
-I have met some students who got scholarships from the Rwandan government if they are Rwandese or the [prestigious Mastercard Scholarship.](https://www.africa.engineering.cmu.edu/impact/mastercard-scholars.html) According to [their website,](https://www.africa.engineering.cmu.edu/admissions/tuition/index.html) the tuition fees can range from 8k to 16k USD per year. If you have a good track of leadership and community-building experience, you can easily find a scholarship that funds your studies at CMU Africa.
+I have met some students who got scholarships from the Rwandan government if they are Rwandeses or the [prestigious Mastercard Scholarship.](https://www.africa.engineering.cmu.edu/impact/mastercard-scholars.html) According to [their website,](https://www.africa.engineering.cmu.edu/admissions/tuition/index.html) the tuition fees can range from 8k to 16k USD per year. If you have a good track of leadership and community-building experience, you can easily find a scholarship that funds your studies at CMU Africa.
 
 ## [Africa Master of Machine Intelligence](https://aimsammi.org/)
 
@@ -92,7 +92,7 @@ The program is highly competitive and only takes the best talent. Its acceptance
 
 ## [Chevening scholarship.](https://www.chevening.org/)
 
-{% include image.html name="chevener-from-drc.jpeg" caption="Chevener from DRC 2022 cohort , caption me if you can "%}
+{% include image.html name="chevener-from-drc.jpeg" caption="Chevener from DRC 2022 cohort , caption me if you can 🤪 "%}
 
 The program has been there for more than 30 years and provides African leaders the chance to study at any British university of their choice fully funded. Suppose you manage to get a place in one of the best UK universities for Machine Learning or Data Science. Chevening will cover your tuition fees.
 

@@ -12,7 +12,7 @@ kramdown:
     block:
       line_numbers: false
       start_line: 1
-plugins: [jekyll-paginate-v2, jekyll-seo-tag]
+plugins: [jekyll-paginate-v2, jekyll-seo-tag, match_regex]
 
 pagination:
   enabled: true

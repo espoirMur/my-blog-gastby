@@ -1,0 +1,7 @@
+{% capture post_first_image %}
+  {% assign hero_image = page.content | match_regex: '<img .*?src="([^"]+)"' %}
+  {% if hero_image == nil %}
+    {% assign hero_image = "/assets/images/post-default-cover.jpeg" | prepend: site_base %}
+  {% endif %}
+  {{ hero_image }}
+{% endcapture %}

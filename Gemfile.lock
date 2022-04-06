@@ -38,6 +38,7 @@ GEM
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
+    match_regex (0.1.0)
     mercenary (0.3.6)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -70,6 +71,7 @@ DEPENDENCIES
   jekyll-seo-tag
   json (~> 2)
   kramdown
+  match_regex
   pygments.rb
   rake (~> 12.3)
   rexml (~> 3.2)
