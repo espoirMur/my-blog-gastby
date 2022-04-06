@@ -71,3 +71,5 @@ yarn-error.log
 # an empty message
 
 _site/
+.sass_cache/
+Gemfile.lock 
