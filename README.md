@@ -11,4 +11,14 @@ Template: github.com/nandomoreirame/end2end
 - [] Fix the code for highlight one line syntax in markdown
 
 
-```
+
+### Some usefull command 
+
+## to create a new blog 
+
+`bundle exec rake post title="the title"`
+
+
+## to build the site
+
+` bundle exec jekyll build`
