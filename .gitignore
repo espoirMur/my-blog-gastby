@@ -69,3 +69,5 @@ yarn-error.log
 .yarn-integrity
 
 # an empty message
+
+_site/
