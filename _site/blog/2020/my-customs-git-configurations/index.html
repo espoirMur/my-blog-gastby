@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>My Customs Git Configurations</title>
+<meta name="description" content="customizing git settings.">
+<meta property="og:image" content=https://cdn.lynda.com/course/514200/514200-636141225565412095-16x9.jpg>
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="canonical" href="https://murhabazi.com/blog/2020/my-customs-git-configurations/">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-CJV32Y553Z', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>My Customs Git Configurations | Espoir Murhabazi ideas’ home</title>
+<meta name="generator" content="Jekyll v3.6.3" />
+<meta property="og:title" content="My Customs Git Configurations" />
+<meta name="author" content="Espoir Murhabazi Buzina" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="customizing git settings." />
+<meta property="og:description" content="customizing git settings." />
+<link rel="canonical" href="https://murhabazi.com/blog/2020/my-customs-git-configurations/" />
+<meta property="og:url" content="https://murhabazi.com/blog/2020/my-customs-git-configurations/" />
+<meta property="og:site_name" content="Espoir Murhabazi ideas’ home" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-30T22:12:03+00:00" />
+<script type="application/ld+json">
+{"url":"https://murhabazi.com/blog/2020/my-customs-git-configurations/","author":{"@type":"Person","name":"Espoir Murhabazi Buzina"},"@type":"BlogPosting","headline":"My Customs Git Configurations","dateModified":"2020-01-30T22:12:03+00:00","datePublished":"2020-01-30T22:12:03+00:00","description":"customizing git settings.","mainEntityOfPage":{"@type":"WebPage","@id":"https://murhabazi.com/blog/2020/my-customs-git-configurations/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <header class="site-header">
+  <div class="container">
+    <input type="checkbox" id="toggleNavbar">
+    <h1 class="logo"><a href="/">esp<span>.py</span></a></h1>
+    <label for="toggleNavbar" role="button" class="toggle-navbar-button">
+      <i class="icon icon-menu"></i>
+      <i class="icon icon-cross"></i>
+    </label>
+    <nav class="navbar">
+      <ul>
+        <li><a href="/" title="Home">127.0.0.1</a></li>
+        
+          <li><a href="/about" title="whoami();">whoami();</a></li>
+        
+          <li><a href="/blog" title="read();">read();</a></li>
+        
+          <li><a href="/dreams" title="dreams();">dreams();</a></li>
+        
+          <li><a href="/research" title="research();">research();</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<main class="main-container">
+  <div class="container">
+    <article role="article" class="post">
+
+  <div class="card">
+    <header class="post-header">
+      <h1 class="post-title">My Customs Git Configurations</h1>
+      <em class="post-meta">
+        <time>Jan 30, 2020</time>
+      </em>
+    </header>
+
+    <div class="post-content">
+      
+      <p><img src="https://cdn.lynda.com/course/514200/514200-636141225565412095-16x9.jpg" alt="Configurations" /></p>
+
+<p>Git is a powerful tool, and you cannot call yourself a modern software engineer if you are not using Git or any other subversion system unless you are an old school guy who writes code alone and shares it in a zip file. Trust me!! Those guys still exist in my local village.</p>
+
+<p>If you are reading this, it means you have the internet, and you use git at work or for personal projects, and sometimes you need to make customizations to make your life easier.</p>
+
+<p>In this blog post, I would like to share with you four custom GitHub settings I found, and that may be useful for you.</p>
+
+<h2 id="the-problem">The problem</h2>
+
+<p>You are working on a project, and the team has a standard commit message template you have to use for your commits, or like me, you don’t like writing your commit messages in the default git editor, Vim. I had headaches while trying to quit Vim; once I have finished editing my commit message.</p>
+
+<h2 id="the-solution">The solution</h2>
+
+<p>If you have ever faced one of the problems above, Git comes to your rescue with <code class="language-bash highlight highlighter-rouge"><span class="n">git</span><span class="w"> </span><span class="n">config</span></code> where you can customize your default settings.</p>
+
+<h3 id="configuration-levels">Configuration levels</h3>
+
+<p>You can customize your config on three levels :</p>
+
+<ul>
+  <li>System-wide level: It means you apply your customs settings for all users on your laptop. Settings on system level are not essential for us unless you are sharing your computer with friends and family or working on a school computer where every student has his account on one laptop.</li>
+</ul>
+
+<p>Any settings on system-level will have <code class="language-bash highlight highlighter-rouge"><span class="n">--system</span></code> argument.</p>
+
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">git</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">--system</span></code></p>
+
+<ul>
+  <li>Global Level or User level: this is specific to one user, and the settings are for you, and you share them across all your repositories. 
+On this level, the settings are followed with <code class="language-bash highlight highlighter-rouge"><span class="n">--global</span></code> argument.</li>
+</ul>
+
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">git</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">--global</span></code></p>
+
+<ul>
+  <li>Repository Level or Local level: this only applied to the git repository you are working on.
+Setting global configuration is useful for settings on the project level when you want to follow a certain standard for the project.</li>
+</ul>
+
+<p>For this, you use the <code class="language-bash highlight highlighter-rouge"><span class="n">--local</span></code> argument.</p>
+
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">git</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">--local</span></code></p>
+
+<h3 id="customs-useful-configurations">Customs useful configurations</h3>
+
+<p>Once we know all levels for git configuration, let see which settings you can set up.</p>
+
+<h4 id="tell-git-who-you-are">Tell Git who you are</h4>
+
+<p>Like in real-world relationships, once you meet a new person, you have to introduce yourself. The same applies to Git; before the first commit, you have to set up your username and email.</p>
+
+<p><img src="https://media.giphy.com/media/Y0mC3y5G53PsQ/giphy.gif" alt="Introducing ourself" /></p>
+
+<p>There comes user.name, and user.email config that needs to be made globally here are the commands:</p>
+
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">git</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">--global</span><span class="w"> </span><span class="n">user.name</span><span class="w"> </span><span class="s">"John Doe"</span></code></p>
+
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">git</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">--global</span><span class="w"> </span><span class="n">user.email</span><span class="w"> </span><span class="n">johndoe</span><span class="o">@</span><span class="n">example.com</span></code></p>
+
+<p>Side note: 
+As said <a href="https://dev.to/msaracevic/comment/bdhb">here</a> If you use Github only in your laptop, you can set up your email like this :</p>
+
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">git</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">--global</span><span class="w"> </span><span class="n">user.email</span><span class="w"> </span><span class="s">":USERNAME@users.noreply.github.com"</span></code></p>
+
+<p>It will still match your contributions correctly based on the no-reply address, but it won’t include your real email address to in public commits, meaning that all those spams scripts won’t pick you up and bother yours on your primary email address.</p>
+
+<p>But if you use bitBucket, Gitlab and any other subversion system you can set up the email local per project.</p>
+
+<h4 id="change-your-default-editor">Change your default editor</h4>
+
+<p>By default, Git uses Vim as the text editor for commits messages, rebase and merge messages.
+If like me you have never used Vim because you find it challenging to use, the next <code class="language-bash highlight highlighter-rouge"><span class="n">core.editor</span></code> the command comes to your rescue.</p>
+
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">git</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">--global</span><span class="w"> </span><span class="n">core.editor</span><span class="w"> </span><span class="s">"code -w"</span></code></p>
+
+<p>With this command, you can tell Git to use a text editor installed on your laptop which is available via command line.</p>
+
+<p>For everyone who started to code after 2016, I guess the de facto choice for the editor is VSCode, but old school guys can use <code class="language-bash highlighter-rouge">nano</code>, <code class="language-bash highlighter-rouge">sublime text</code> or like our grandparents in code will keep <code class="language-bash highlighter-rouge">vim</code> or ` emacs.`{:.language-clojure .highlight}</p>
+
+<p>Note the -w argument after the editor name : 
+That force Git to wait for your commit message that is typing type on your custom editor otherwise Git will close and assuming there is an empty message. Thanks to this <a href="https://stackoverflow.com/a/11702707/4683950">StackOverflow</a> answer</p>
+
+<h4 id="all-commits-should-wear-the-same-uniform">All commits should wear the same uniform:</h4>
+
+<p><img src="https://www.eduquepsp.education/wp-content/uploads/2018/06/epspbanner.jpg" alt="uniform" />
+<em>Source : <a href="https://www.eduquepsp.education/">national-education-DRC</a></em></p>
+
+<p>If you work on a structured project that has the same template for commit message the <code class="language-bash highlight highlighter-rouge"><span class="n">commit.template</span></code> a command can help.</p>
+
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">git</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">--local</span><span class="w"> </span><span class="n">commit.template</span><span class="w"> </span><span class="o">~</span><span class="n">/.commit-message.md</span></code></p>
+
+<p>I prefer setting this local on projects and having one global for my project.</p>
+
+<h4 id="they-dont-deserve-to-be-on-git">They don’t deserve to be on Git</h4>
+
+<p>You may be familiar with the .gitignore file on projects.
+Sometimes some files don’t deserve to be on Git, instead of ignoring them for a project you ignore them globally using a global template for Git ignore with the <code class="language-bash highlight highlighter-rouge"><span class="n">core.excludesfile</span></code> command</p>
+
+<p><code class="language-bash highlight highlighter-rouge"><span class="n">git</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">--global</span><span class="w"> </span><span class="n">core.excludesfile</span><span class="w"> </span><span class="o">~</span><span class="n">/.gitignore_global</span></code></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Live is already complicated; we should not let Git add another level of complication in it.</p>
+
+<p>I hope those settings will helps you to make life more comfortable when using Git.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration">Customizing Git Config</a></li>
+</ul>
+
+    </div>
+
+    
+<hr>
+
+<aside id="comments" class="disqus">
+  <h3><i class="icon icon-comments-o"></i> Comments</h3>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function() {
+      this.page.url = 'https://murhabazi.com/blog/2020/my-customs-git-configurations/';
+      this.page.identifier = '/blog/2020/my-customs-git-configurations';
+    };
+    (function() {
+      var d = document,
+      s = d.createElement('script');
+      s.src = '//nandothemes.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</aside>
+
+
+  </div>
+
+</article>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <ul class="social">
+  <li><a href="https://github.com/espoirMur" target="_blank"><i class="icon icon-github"></i></a></li>
+  <li><a href="https://twitter.com/esp_py" target="_blank"><i class="icon icon-twitter"></i></a></li>
+  <li><a href="https://www.linkedin.com/in/espoir-murhabazi-buzina-7849b1b1/" target="_blank"><i class="icon icon-linkedin"></i></a></li>
+  <li><a href="https://stackoverflow.com/users/4683950/espoir-murhabazi" target="_blank"><i class="icon icon-stackoverflow"></i></a></li>
+</ul>
+
+    <p class="txt-medium-gray">
+      <small>&copy;2022 All rights reserved. Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and ♥</small>
+    </p>
+  </div>
+</footer>
+
+
+</body>
+</html>
