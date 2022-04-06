@@ -12,7 +12,7 @@ categories: "non-tech"
 {% include image.html name="cmu-africa-graduation.png" caption="CMU Africa Graduation ceremony , I need someone to put the 🇨🇩 on that picture next time" %}
 
 
-I had been dreaming about attending a high-ranked university for ages. The interaction with brilliant professors lecturers, the smell of old books in a library, and the social aspect of university life have always fascinated me. 
+I had been dreaming about attending a high-ranked university for ages. The interaction with brilliant professors, lecturers, the smell of old books in a library, and the social aspect of university life have always fascinated me. 
 
 After graduating from my local university in my native country - Congo, I decided to gain some real-world experience by working instead of going straight for a master's degree. Six years passed since I graduated, and I yearned to build a strong career in the Software Engineering industry. I wanted to realize my dream, and I decided to apply for a Master in Data Science in the UK. Fortunately, I got an offer from the University of Essex, thanks for the Chevening Scholarship. For those who don't know I am currently doing my master at that university, my experience about it is mixed but that is out of the scope of this blog  🤪. 
 
