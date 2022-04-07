@@ -9,6 +9,8 @@ require 'fileutils'
 # Change your GitHub reponame
 GITHUB_REPONAME = "espoirMur/espoirMur.github.io"
 GITHUB_REPO_BRANCH = "gh-pages"
+CNAME = "murhabazi.com"
+
 
 SOURCE = "source/"
 DEST = "_site"
@@ -36,14 +38,14 @@ desc "Generate and publish blog to gh-pages"
 task :publish => [:generate] do
   Dir.mktmpdir do |tmp|
     cp_r "_site/.", tmp
-
+    File.open("#{tmp}/CNAME", "w") do |f|     
+      f.write("www.murhabazi.com")   
+    end
     pwd = Dir.pwd
     Dir.chdir tmp
-
     system "git init"
     system "git checkout --orphan #{GITHUB_REPO_BRANCH}"
     system "git add ."
-    system
     message = "Site deployement at #{Time.now.utc}"
     system "git commit -am #{message.inspect}"
     system "git remote add origin git@github.com:#{GITHUB_REPONAME}.git"

@@ -44,7 +44,7 @@ And after installing it I rebooted my machine and checked with :
  
  The results :
  
- https://imgur.com/a/xfpvrtb
+ ![Imgur Image](https://imgur.com/a/xfpvrtb.jpg)
  
  Ressources :
  

@@ -29,6 +29,7 @@ group :jekyll_plugins do
   gem "webrick"
   gem 'jekyll-seo-tag'
   gem "match_regex"
+  gem "minima"
 end
 
 gem "rexml", "~> 3.2"
