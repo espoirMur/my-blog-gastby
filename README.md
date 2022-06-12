@@ -8,8 +8,20 @@ Template: github.com/nandomoreirame/end2end
 
 ### Todos for new change
 
-- [] Fix the code for highlight one line syntax in markdown
-
+- [x] Fix the code for highlight one line syntax in markdown
+- [] Fix the code for the pagination and don't let the page go out of range
+- [] When displaying the page site, make sure the post image thumbnail is displayed and they fit the page
+- [] Fix some css in the post that went out of range
+- [] Fix the google analytics issue and make sure the data is reaching googl analytics
+- [] Fix image thumbnail when your are sharing the post on social media
+- [] setup a ci/cd pipeline to directly deploy the site on github pages using github actions
+- [] change the code of the highlighting and make sure the look like [this site](https://sergiokopplin.github.io/indigo/markdown-extra-components/#side-by-side)
+- [] Bonus : 
+    - check if the site is responsive
+    - check if you can add both dark and light theme
+    - add the image background to the post 
+- [] set a note section in the site , where I can post some notes that are not ready to be published into blog posts.  check this site for an idea. https://devopsian.net/notes/
+ 
 
 
 ### Some usefull command 
