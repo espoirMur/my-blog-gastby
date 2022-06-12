@@ -19,6 +19,8 @@ Template: github.com/nandomoreirame/end2end
 - [] Bonus : 
     - check if the site is responsive
     - check if you can add both dark and light theme
+    - add the image background to the post 
+- [] set a note section in the site , where I can post some notes that are not ready to be published into blog posts.  check this site for an idea. https://devopsian.net/notes/
  
 
 

@@ -5,6 +5,7 @@ description: comment faire pour devenir un bon programmeur, developeur ou softwa
 layout: post
 comments: true
 categories: non-tech
+permalink: mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation
 ---
 {% include image.html name="andela-guys.jpg" caption="cover" %}
 
@@ -32,7 +33,7 @@ La grande question est comment se qualifier ?
 ##  L’Anglais Langage Par Excellence 
 
 
-{% include image.html name="learn-english.png" caption="alt_text" %}
+{% include image.html name="learn-english.png" caption="learn english please" %}
 
 Avant tout, pour une bonne carrière en développement informatique, ou en informatique en général, pour l'amour du ciel, je le répète pour l'amour du Ciel : APPRENEZ L'ANGLAIS, APPRENEZ L'ANGLAIS, LEARN ENGLISH PEOPLE. 
 
@@ -50,7 +51,7 @@ Néanmoins, pour tout le monde, le mieux à faire c’est de chercher des clubs 
 
 
 
-{% include image.html name="please-graduate.jpg"  caption="alt_text" %}
+{% include image.html name="please-graduate.jpg"  caption="obtenez ce diplome svp..." %}
 
 
 On aura beau dire que nos programmes universitaires ne sont pas à jour, ou même qu’ils ne sont pas adaptés, mais ce sont ces mêmes programmes qui nous donnent une bonne base. Je suis toujours  reconnaissant pour les cours que j'ai appris à l’université en RDC.
@@ -66,7 +67,7 @@ Les cours vous permettront d’avoir ce qu’on appelle les **hard skills**, mai
 ## Les Softs Skills pour vous différencier
 
 
-{% include image.html name="lukaku-team-work.jpg"  caption="alt_text" %}
+{% include image.html name="lukaku-team-work.jpg"  caption="le travail en equipe est tres important" %}
 
 
 En plus des cours à l'université, ne sous-estimer jamais les petits clubs qu'on a ici et là, que ça soit à l'église, à la fac ou au sein de la communauté en général.  Elles nous donnent ce qu'on appelle  dans le monde professionnel : le leadership, l’expérience et les soft skills. 
@@ -81,7 +82,7 @@ Avez-vous eu l’occasion de devenir chef de promotion ? Membre du gouvernement 
 
 
 
-{% include image.html name="git-configurations.png"  caption="alt_text" %}
+{% include image.html name="git-configurations.png"  caption="get other know your work" %}
 
 
 Une fois ces connaissances acquises, hard et soft skills, comment les gens sauront que vous les avez ? Travailler sur votre réputation en ligne.  Si vous n'avez pas un compte Github, s’il vous plait arrêtez de lire ce post et aller en créer un, puis revenez au post. 
@@ -94,7 +95,7 @@ C’est un système de gestion de la boutique de votre tante maternelle que vous
 
 ## Soyez Curieux et Apprenez à Googler
 
-{% include image.html name="google-stuff.jpg"  caption="alt_text" %}
+{% include image.html name="google-stuff.jpg"  caption="learn how to google" %}
 
 
 Soyez curieux et apprenez à poser des questions : Voulez vous apprendre quelque chose, une simple requête google peut vous faire tomber sur 2 ou 3 ressources utiles.   Je ne peux pas vous dire comment apprendre à être curieux, car je ne sais pas comment on le fait. 
@@ -102,7 +103,7 @@ Soyez curieux et apprenez à poser des questions : Voulez vous apprendre quelque
 ## L'importance de la communauté  (Networking)
 
 
-{% include image.html name="gdg-comunity.jpg"  caption="alt_text" %}
+{% include image.html name="gdg-comunity.jpg"  caption="networking" %}
 
 
 Rejoignez les communautés locales ou virtuelles vous y apprendrez beaucoup. Créez  un compte Twitter et rejoignez des groupes de discussion. Mais éviter de passer trop de temps sur des réseaux sociaux lorsque vous travaillez, ce sont de grands bouffeurs de temps. 
@@ -123,7 +124,7 @@ Ce qui les intéresse, c’est comment vos connaissances peuvent résoudre leurs
 
 ## Quel langage de programmation Apprendre
 
-{% include image.html name="today-developers.jpg"  caption="alt_text" %}
+{% include image.html name="today-developers.jpg"  caption="don't learn languages learn concepts" %}
 
 
 Je ne veux pas me mettre à faire un débat sur les langages dans ce poste ni même dire quel langage est meilleur que l'autre, c’est hors cadre.
