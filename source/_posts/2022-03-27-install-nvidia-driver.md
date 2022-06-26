@@ -15,6 +15,7 @@ tags:
 I had many driver installed I my virtual machine , so It was actually the reason why I was having the error.
 
 To fix it I had first to remove all driver I have installed before using :
+
  -`sudo apt-get purge nvidia-*`{:.language-clojure .highlight}
  
  -`sudo apt-get update`{:.language-clojure .highlight}
