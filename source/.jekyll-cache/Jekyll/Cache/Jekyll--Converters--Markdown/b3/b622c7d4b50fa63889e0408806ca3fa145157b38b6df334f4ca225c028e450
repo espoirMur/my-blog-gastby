@@ -1,0 +1,237 @@
+I"�Y<h3 id="the-problem">The Problem</h3>
+
+<figure>
+  <p><img src="/assets/posts/2020-02-15-/cover-image.jpg" /></p>
+  <figcaption>email</figcaption>
+</figure>
+
+<p>Recently I received a request from my client. 
+He requested that I  write a script that connects to a specific mailbox, check if there are new emails, read them, and download the attachments and perform some data analysis on those attachments.
+I was super excited about this task, and I asked myself; is it possible to read emails using Python?</p>
+
+<h3 id="the-solution">The solution</h3>
+<p>I started googling, and I was lucky to find that it is possible to read emails using Python.</p>
+
+<p>In this blog post, I will explain how I managed to read emails from an IMAP mail server, and how I downloaded the attachments and saved them into a  specific folder.</p>
+
+<p>If you are familiar with Python, this tutorial is for you. To complete this tutorial, you need to have python 3.6 installed in your laptop and virtual environment installed.</p>
+
+<h4 id="first-things-first-create-the-project-and-initialize-your-virtual-environment">First things first; create the project and initialize your virtual environment</h4>
+
+<p>Let us create a project we will be using :
+Navigate to your command line and type the following lines of code :</p>
+
+<p><code class="language-clojure highlight highlighter-rouge"><span class="n">mkdir</span><span class="w"> </span><span class="n">read_emails_project</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="n">read_emails_project</span></code></p>
+
+<p>Once in the project, let’s initialize git :</p>
+
+<p><code class="language-clojure highlight highlighter-rouge"><span class="n">git</span><span class="w"> </span><span class="n">init</span></code></p>
+
+<p>Once we initialized git, let’s create a virtual environment:
+<code class="language-clojure highlight highlighter-rouge"><span class="n">virtualenv</span><span class="w"> </span><span class="n">-p</span><span class="w"> </span><span class="n">python</span><span class="w"> </span><span class="n">.venv</span></code></p>
+
+<p>You can activate the virtual environment with the following line of code :</p>
+
+<p><code class="language-clojure highlight highlighter-rouge"><span class="n">source</span><span class="w"> </span><span class="n">.venv/bin/activate</span></code></p>
+
+<p>It’s not a must to use a virtual environment. You can use your preferred environment manager; I just prefer to use virtual environments.</p>
+
+<p>Once you complete the setup, we can start with the exciting part of the project.</p>
+<h4 id="never-write-secrete-credentials-into-code-use-environment-variables">Never Write secrete credentials into code, use environment variables</h4>
+
+<p>Since we are reading emails from an inbox, we will need email credentials. From where are we reading those credentials?
+One thing for sure; we are not putting them into the code, this is a BAD PRACTISE !!! 
+The developer community can punish you for writing credentials or secret code directly into a codebase.
+We will be using <code class="language-clojure highlight highlighter-rouge"><span class="n">.env</span></code> file, whose content will be known to us only, and we will never share it with anyone online, even putting it in a private git repository.</p>
+
+<p>Let us create the <code class="language-clojure highlight highlighter-rouge"><span class="n">.env</span></code> file</p>
+
+<p><code class="language-clojure highlight highlighter-rouge"><span class="n">touch</span><span class="w"> </span><span class="n">.env</span></code></p>
+
+<p>And create a gitignore file to tell git which files to ignore.</p>
+
+<p><code class="language-clojure highlight-clojure highlight highlighter-rouge"><span class="n">touch</span><span class="w"> </span><span class="n">.gitignore</span></code></p>
+
+<p>open the .gitignore and add the following lines  it to ignore the <code class="language-clojure highlight highlighter-rouge"><span class="n">.env</span></code> file :</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    .venv
+    <span class="nb">env</span>
+</code></pre></div></div>
+<p>In those lines, we are instructing git to ignore our <code class="language-clojure highlight highlighter-rouge"><span class="n">.env</span></code> files and our virtual environments.</p>
+
+<p>Now we can populate the <code class="language-clojure highlight highlighter-rouge"><span class="n">.env</span></code> file with our credentials :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">USER_EMAIL</span><span class="o">=</span><span class="s1">'your@email.com'</span>
+<span class="nv">USER_PASSWORD</span><span class="o">=</span><span class="s1">'your secret password.'</span>
+</code></pre></div></div>
+<p>We have recorded  our email credentials in the <code class="language-clojure highlight highlighter-rouge"><span class="n">.env</span></code> file; let us now write a method that reads them from there.
+For this task, we will be using a Python package called <a href="https://github.com/theskumar/python-dotenv">python-dotenv</a></p>
+
+<p>let’s install it with :
+<code class="language-clojure highlight highlighter-rouge"><span class="n">pip</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">-U</span><span class="w"> </span><span class="n">python-dotenv</span></code></p>
+
+<p>let us write a function that reads and returns those environment variables :</p>
+
+<p>You can create a file with a name <code class="language-clojure highlight highlighter-rouge"><span class="n">utils.py</span></code> and add the following lines of code :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+
+<span class="k">def</span> <span class="nf">read_credentails</span><span class="p">():</span>
+    <span class="s">"""
+    Return user’s credentials from the environment variables file and 
+    raise a an exception if the credentials are not present 
+    
+    Raises:
+        NotImplementedError: [description]
+    """</span>
+    <span class="n">load_dotenv</span><span class="p">()</span>
+
+    <span class="n">USER_EMAIL</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">getenv</span><span class="p">(</span><span class="s">"USER_EMAIL"</span><span class="p">)</span>
+    <span class="n">USER_PASSWORD</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">getenv</span><span class="p">(</span><span class="s">"USER_PASSWORD"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">USER_EMAIL</span> <span class="ow">and</span> <span class="n">USER_PASSWORD</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">USER_EMAIL</span><span class="p">,</span> <span class="n">USER_PASSWORD</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'Please add a .env file and write the credentials it it ,
+                         refer to the sample'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>From that function, you can notice that we are using the <code class="language-bash highlighter-rouge">load_env</code> function, it loads the environment variables from our <code class="language-clojure highlight highlighter-rouge"><span class="n">.env</span></code> file and exposes them to system environment variables so we can be able to read them from there.
+After reading the environment variables, the function returns them as a tuple.
+In the next section, we are going to perform the most exciting part of this tutorial; it involves reading emails and downloading attachments.</p>
+
+<h4 id="reading-emails">Reading emails:</h4>
+
+<p>I was happy to find that Python has a built-in feature that enables us to connect to a mailbox. It is in the <code class="language-clojure highlight highlighter-rouge"><span class="n">imaplib</span></code> module.
+It also has a module to parse emails.</p>
+
+<p>Let’s create a file <code class="language-clojure highlight highlighter-rouge"><span class="n">reading_emails_scripts.py</span></code> inside it; we are about to perform all the magic we need.</p>
+
+<p>Let us import the modules we need :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">email</span> <span class="kn">import</span> <span class="n">message_from_bytes</span>
+<span class="kn">from</span> <span class="nn">imaplib</span> <span class="kn">import</span> <span class="n">IMAP4_SSL</span>
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">read_credentails</span>
+</code></pre></div></div>
+
+<p>We are importing the :</p>
+<ul>
+  <li>message_from_bytes function from the email module. It will help us to read the emails which come as bytes and convert them to text.</li>
+  <li>IMAP4_SSL: class which is the main class that will help us to perform all the operations.
+Note that we are using IMAP4 protocol to read emails, IMAP4 is a mail protocol used to access a mailbox on a remote server from a local email client. IMAP can be more complex but provides more conveniences for syncing across multiple devices.
+You can read more about emails protocol <a href="https://www.navigator.ca/support/imap-pop3-smtp/">here</a></li>
+  <li>our read_credentials function, which we introduced in the previous section.</li>
+</ul>
+
+<p>I have created a function that perform the operation and return a generator with all mails found in the mailbox , here it is :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_unseen_emails</span><span class="p">(</span><span class="n">email_address</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+    <span class="s">"""
+    Filter the email and return unseen emails
+    Args:
+        email_address (string): recipient email
+        password (password): recipient password
+    """</span>
+    <span class="k">with</span> <span class="n">IMAP4_SSL</span><span class="p">(</span><span class="s">"your_imap_server"</span><span class="p">)</span> <span class="k">as</span> <span class="n">mail_connection</span><span class="p">:</span>
+        <span class="n">mail_connection</span><span class="p">.</span><span class="n">login</span><span class="p">(</span><span class="n">email_address</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+        <span class="n">mail_connection</span><span class="p">.</span><span class="nb">list</span><span class="p">()</span>
+        <span class="n">mail_connection</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">'INBOX'</span><span class="p">)</span>
+        <span class="p">(</span><span class="n">retcode</span><span class="p">,</span> <span class="n">messages</span><span class="p">)</span> <span class="o">=</span> <span class="n">mail_connection</span><span class="p">.</span><span class="n">search</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span>
+            <span class="s">'(OR (UNSEEN) (FROM your.email@gmail.com))'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">retcode</span> <span class="o">==</span> <span class="s">'OK'</span> <span class="ow">and</span> <span class="n">messages</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">messages</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">split</span><span class="p">()):</span>
+                <span class="n">typ</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mail_connection</span><span class="p">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="s">'(RFC822)'</span><span class="p">)</span>
+                <span class="n">message</span> <span class="o">=</span> <span class="n">message_from_bytes</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">typ</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mail_connection</span><span class="p">.</span><span class="n">store</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="s">'+FLAGS'</span><span class="p">,</span> <span class="s">'</span><span class="se">\\</span><span class="s">Seen'</span><span class="p">)</span>
+                <span class="k">yield</span> <span class="n">message</span>
+</code></pre></div></div>
+<p>You can see that we are instantiating a secure mail_connection from the IMAP4SSL class and using it with the python context manager.
+We will be using the mail_connection object to perform all the operations we want to our mailbox.</p>
+
+<p>After instantiating, we log in to the mailbox with our credentials, then we list all the mailbox categories we have, e.g.: In Google, we have INBOX, SPAM, UPDATES, FORUMS, SPAMS, etc
+We select only the inbox folder, and from the inbox, we filter only unseen messages or emails coming from your email address.
+Note that you can search for anything in your inbox and even complicated queries.</p>
+
+<p>The search returns retcodes with messages and their IDS 
+Note that :</p>
+<blockquote>
+  <p>The server assigned messages id to emails, and are implementation-dependent. The IMAP4 &gt;protocol makes a distinction between sequential ids for messages at a given point in time &gt;during a transaction and UID identifiers for messages, but not all servers seem to bother.</p>
+</blockquote>
+
+<p>Once we have messages ids, we can fetch ids and the format of the headers we want.
+We are using RFC822 to fetch the entire message as an RFC 2822 formatted message.
+RFC 2822 is a protocol for standard messages sent between computers; you can read more about it <a href="https://tools.ietf.org/html/rfc2822.html">here</a></p>
+
+<p>In the next line, we are using the message_from_bytes function from the email module to convert the bytes we received as a message.</p>
+
+<p>Then we mark the message as seen by using the store method
+and we yield the results.
+This means the function will return an iterator which is an object we can iterate over. Find more about iterators and generators in python <a href="[https://stackoverflow.com/questions/9884132/what-exactly-are-iterator-iterable-and-iteration](https://stackoverflow.com/questions/9884132/what-exactly-are-iterator-iterable-and-iteration)">here</a> and <a href="[https://www.programiz.com/python-programming/generator](https://www.programiz.com/python-programming/generator)">here</a>.</p>
+
+<p>Once we have retrieved the emails, let us create the function that gets attachments from that email.</p>
+
+<h3 id="getting-attachment-from-the-email">Getting attachment from the email:</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_mail_attachments</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">condition_check</span><span class="p">):</span>
+    <span class="s">"""
+    Get attachments files from mail
+    Args:
+        message (email ): email object to retrieve attachment from
+        condition_check ([function]): the function to use when filtering the
+        email should return specific condition we are filtering
+    Returns:
+        [filename, file]: the file name, input stream from the files
+    """</span>
+    <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">message</span><span class="p">.</span><span class="n">walk</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">part</span><span class="p">.</span><span class="n">get_content_maintype</span><span class="p">()</span> <span class="o">==</span> <span class="s">'multipart'</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">part</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'Content-Disposition'</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="n">part</span><span class="p">.</span><span class="n">get_filename</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">condition_check</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+            <span class="k">yield</span> <span class="n">part</span><span class="p">.</span><span class="n">get_filename</span><span class="p">(),</span> <span class="n">part</span><span class="p">.</span><span class="n">get_payload</span><span class="p">(</span><span class="n">decode</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+<p>This function takes the email object yielded by the  last function and a filter function which tells which extension we can filter from the email, iterate over all his part using the walk() method. For each part we check if the main type is not multipart , and content disposition is  None</p>
+
+<p>If none of those conditions is satisfied, we get the file name and return the byte stream from the email.</p>
+
+<h4 id="putting-everything-together">Putting everything together:</h4>
+<p>We now have all the building blocks of the application. Let’s put them in the main function:</p>
+
+<p>create a file called <code class="language-clojure highlight highlighter-rouge"><span class="n">run.py</span></code> and add the following code inside:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">read_credentails</span>
+<span class="kn">from</span> <span class="nn">reading_emails_scripts</span> <span class="kn">import</span> <span class="n">get_mail_attachments</span><span class="p">,</span> <span class="n">get_unseen_emails</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+ <span class="n">email_address</span><span class="p">,</span> <span class="n">password</span> <span class="o">=</span> <span class="n">read_credentails</span><span class="p">()</span>
+    <span class="n">messages</span> <span class="o">=</span> <span class="n">get_unseen_emails</span><span class="p">(</span><span class="n">email_address</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">messages</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">messages</span><span class="p">:</span>
+            <span class="n">attachments</span> <span class="o">=</span> <span class="n">get_mail_attachments</span><span class="p">(</span><span class="n">message</span><span class="p">,</span>
+                                              <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">'.xml'</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">attachment</span> <span class="ow">in</span> <span class="n">attachments</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">attachment</span><span class="p">:</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'./data/xml_files/{}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">attachment</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="s">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+                        <span class="nb">file</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">attachment</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+<p>We can see that; we call read_credentials which returns the credentials from the .env file,
+We call the get_unseen_emails method which returns our messages , we check if the message has attachments with get_mail_attachment function and if there is an attachment we save it to a folder of our choice.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>In this tutorial, we went through the whole process of reading emails with Python, we saw how to download attachments from emails, and we put everything together to have a fully working script.</p>
+
+<p>It’s also a good practice to write unit tests to test the code you are writing because I believe that something that is not tested is broken.</p>
+
+<p>In the next part, we will see how you can write unit tests for this piece of code. So stay tuned for more.</p>
+
+<p>You can check the code for this tutorial from this <a href="[https://github.com/espoirMur/read_emails_with_python](https://github.com/espoirMur/read_emails_with_python)">Github repository</a>.</p>
+
+<p>Cheers!</p>
+
+<h4 id="references-">References :</h4>
+<ul>
+  <li>Python Module of the week <a href="https://pymotw.com/2/imaplib/">imaplib</a></li>
+  <li><a href="https://medium.com/@sdoshi579/to-read-emails-and-download-attachments-in-python-6d7d6b60269">Read Emails and Download attachments </a></li>
+  <li><a href="https://stackoverflow.com/a/29629741/4683950">Read only new emails in Python on StackOverflow</a></li>
+</ul>
+:ET

@@ -12,7 +12,7 @@
 <meta name="description" content="how I setup my macbook for development">
 <meta property="og:image" content=/assets/images/post-default-cover.jpeg>
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="https://murhabazi.com/blog/2020/setup-a-new-macbook-for-software-development/">
+<link rel="canonical" href="http://localhost:4000/blog/2020/setup-a-new-macbook-for-software-development/">
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJV32Y553Z"></script>
@@ -36,21 +36,23 @@
 </script>
 
 
-  <!-- Begin Jekyll SEO tag v2.6.1 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Setup a new Macbook for software development | Espoir Murhabazi ideas’ home</title>
-<meta name="generator" content="Jekyll v3.6.3" />
+<meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Setup a new Macbook for software development" />
 <meta name="author" content="Espoir Murhabazi Buzina" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="how I setup my macbook for development" />
 <meta property="og:description" content="how I setup my macbook for development" />
-<link rel="canonical" href="https://murhabazi.com/blog/2020/setup-a-new-macbook-for-software-development/" />
-<meta property="og:url" content="https://murhabazi.com/blog/2020/setup-a-new-macbook-for-software-development/" />
+<link rel="canonical" href="http://localhost:4000/blog/2020/setup-a-new-macbook-for-software-development/" />
+<meta property="og:url" content="http://localhost:4000/blog/2020/setup-a-new-macbook-for-software-development/" />
 <meta property="og:site_name" content="Espoir Murhabazi ideas’ home" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-03-08T22:12:03+00:00" />
+<meta property="article:published_time" content="2020-03-09T00:12:03+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Setup a new Macbook for software development" />
 <script type="application/ld+json">
-{"datePublished":"2020-03-08T22:12:03+00:00","url":"https://murhabazi.com/blog/2020/setup-a-new-macbook-for-software-development/","dateModified":"2020-03-08T22:12:03+00:00","author":{"@type":"Person","name":"Espoir Murhabazi Buzina"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://murhabazi.com/blog/2020/setup-a-new-macbook-for-software-development/"},"description":"how I setup my macbook for development","headline":"Setup a new Macbook for software development","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Espoir Murhabazi Buzina","url":"https://murhabazi.com/"},"dateModified":"2020-03-09T00:12:03+02:00","datePublished":"2020-03-09T00:12:03+02:00","description":"how I setup my macbook for development","headline":"Setup a new Macbook for software development","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2020/setup-a-new-macbook-for-software-development/"},"url":"http://localhost:4000/blog/2020/setup-a-new-macbook-for-software-development/"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -89,7 +91,7 @@
     <header class="post-header">
       <h1 class="post-title">Setup a new Macbook for software development</h1>
       <em class="post-meta">
-        <time>Mar 8, 2020</time>
+        <time>Mar 9, 2020</time>
       </em>
     </header>
 
@@ -129,15 +131,15 @@ my choice is  a combinaison of zsh and <a href="https://www.iterm2.com/documenta
 <ul>
   <li>
     <p>For iterm2
-<code class="language-bash highlighter-rouge">brew cask install iterm2</code></p>
+<code class="language-bash highlighter-rouge">brew cask <span class="nb">install </span>iterm2</code></p>
   </li>
   <li>
     <p>For Zsh  and zsh completions
-<code class="language-bash highlighter-rouge">brew install zsh zsh-completions </code></p>
+<code class="language-bash highlighter-rouge">brew <span class="nb">install </span>zsh zsh-completions </code></p>
   </li>
   <li>
     <p>And oh my zsh c:</p>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh <span class="nt">-c</span> <span class="s2">"</span><span class="k">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="k">)</span><span class="s2">"</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="si">)</span><span class="s2">"</span>
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -170,7 +172,7 @@ About homebrew:</p>
 <p>let us install it.
 As homebrew is written in ruby we will install it with this simple comand:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/bin/ruby <span class="nt">-e</span> <span class="s2">"</span><span class="k">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">"</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/bin/ruby <span class="nt">-e</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/master/install<span class="si">)</span><span class="s2">"</span>
 </code></pre></div></div>
 <p>Once homebrew is installed we can install everything according to your needs.</p>
 
@@ -178,7 +180,7 @@ As homebrew is written in ruby we will install it with this simple comand:</p>
 
 <p>I run the following comand to install the first set of softwares I need to work on my new laptop:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> brew cask install slack zoomus google-chrome visual-studio-code spotify google-backup-and-sync
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> brew cask <span class="nb">install </span>slack zoomus google-chrome visual-studio-code spotify google-backup-and-sync
 </code></pre></div></div>
 
 <p>They are the most important software I use :</p>
@@ -201,17 +203,17 @@ They are the most important software for me , everything else can be installed f
     <p>let install python3 and python 2</p>
   </li>
   <li>
-    <p>python 2 I  use <code class="language-bash highlighter-rouge">brew install python@2</code></p>
+    <p>python 2 I  use <code class="language-bash highlighter-rouge">brew <span class="nb">install </span>python@2</code></p>
   </li>
   <li>
     <p>python 3 I’m a big fan of python 3.6.5 because for now it’s the only version supported by tensorflow.</p>
   </li>
 </ul>
 
-<p><code class="language-bash highlighter-rouge">brew install <span class="nt">--ignore-dependencies</span> https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb</code></p>
+<p><code class="language-bash highlighter-rouge">brew <span class="nb">install</span> <span class="nt">--ignore-dependencies</span> https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb</code></p>
 <h4 id="javascript">JavaScript</h4>
 
-<p>Node the latest version <code class="language-bash highlighter-rouge">brew install node</code></p>
+<p>Node the latest version <code class="language-bash highlighter-rouge">brew <span class="nb">install </span>node</code></p>
 
 <h3 id="synchronize-zshrc-file">Synchronize .zshrc file</h3>
 
@@ -220,10 +222,10 @@ They are the most important software for me , everything else can be installed f
 <ul>
   <li>I made sure I have Google drive sync installed in my laptop</li>
   <li>Check if a folder Called Google Drive is in The home directory</li>
-  <li>Create a folder for configuration with : <code class="language-bash highlighter-rouge">mkdir <span class="nt">-p</span> ~/Google<span class="se">\ </span>Drive/ohmyzsh-conf</code></li>
-  <li>Make a copy for the existing file in case : <code class="language-bash highlighter-rouge">cp ~/.zshrc ~/.zshrc.copy</code></li>
-  <li>Move the original file to the google drive folder : <code class="language-bash highlighter-rouge">mv .zshrc ~/Google<span class="se">\ </span>Drive/ohmyzsh-conf/.zshrc</code></li>
-  <li>Make a symbolic link from that file with the original configuration : <code class="language-bash highlighter-rouge">ln <span class="nt">-s</span> ~/Google<span class="se">\ </span>Drive/ohmyzsh-conf/.zshrc .zshrc</code></li>
+  <li>Create a folder for configuration with : <code class="language-bash highlighter-rouge"><span class="nb">mkdir</span> <span class="nt">-p</span> ~/Google<span class="se">\ </span>Drive/ohmyzsh-conf</code></li>
+  <li>Make a copy for the existing file in case : <code class="language-bash highlighter-rouge"><span class="nb">cp</span> ~/.zshrc ~/.zshrc.copy</code></li>
+  <li>Move the original file to the google drive folder : <code class="language-bash highlighter-rouge"><span class="nb">mv</span> .zshrc ~/Google<span class="se">\ </span>Drive/ohmyzsh-conf/.zshrc</code></li>
+  <li>Make a symbolic link from that file with the original configuration : <code class="language-bash highlighter-rouge"><span class="nb">ln</span> <span class="nt">-s</span> ~/Google<span class="se">\ </span>Drive/ohmyzsh-conf/.zshrc .zshrc</code></li>
 </ul>
 
     </div>
@@ -236,7 +238,7 @@ They are the most important software for me , everything else can be installed f
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function() {
-      this.page.url = 'https://murhabazi.com/blog/2020/setup-a-new-macbook-for-software-development/';
+      this.page.url = 'http://localhost:4000/blog/2020/setup-a-new-macbook-for-software-development/';
       this.page.identifier = '/blog/2020/setup-a-new-macbook-for-software-development';
     };
     (function() {
