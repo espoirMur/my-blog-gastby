@@ -9,10 +9,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>How to use the AWS Python CDK to create an infrastructure on ECS.</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <meta name="description" content="Murhabazi Buzina Espoir Home on the internet">
 <meta property="og:image" content=/assets/images/me.jpg>
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="https://murhabazi.com/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/">
+<link rel="canonical" href="http://localhost:4000/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/">
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJV32Y553Z"></script>
@@ -36,9 +37,9 @@
 </script>
 
 
-  <!-- Begin Jekyll SEO tag v2.6.1 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>How to use the AWS Python CDK to create an infrastructure on ECS. | Espoir Murhabazi ideas’ home</title>
-<meta name="generator" content="Jekyll v3.6.3" />
+<meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="How to use the AWS Python CDK to create an infrastructure on ECS." />
 <meta name="author" content="Espoir Murhabazi Buzina" />
 <meta property="og:locale" content="en_US" />
@@ -48,9 +49,11 @@
 <meta property="og:url" content="https://www.murhabazi.com/ci-cd-deploy-to-aws-github-actions/" />
 <meta property="og:site_name" content="Espoir Murhabazi ideas’ home" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-02-26T22:12:03+00:00" />
+<meta property="article:published_time" content="2021-02-27T00:12:03+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How to use the AWS Python CDK to create an infrastructure on ECS." />
 <script type="application/ld+json">
-{"datePublished":"2021-02-26T22:12:03+00:00","url":"https://www.murhabazi.com/ci-cd-deploy-to-aws-github-actions/","dateModified":"2021-02-26T22:12:03+00:00","author":{"@type":"Person","name":"Espoir Murhabazi Buzina"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.murhabazi.com/ci-cd-deploy-to-aws-github-actions/"},"description":"Recently at work, we decided to build a CI/CD pipeline that deploys our application directly to AWS. I had never worked with AWS, and it was a missing point on my CV which demonstrates that I have some DevOps skills. I decided to search for some tutorials online and I was not lucky to get what we needed at work. I decided to write this guide by getting something working from various tutorials I found online.","headline":"How to use the AWS Python CDK to create an infrastructure on ECS.","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Espoir Murhabazi Buzina","url":"https://murhabazi.com/"},"dateModified":"2021-02-27T00:12:03+02:00","datePublished":"2021-02-27T00:12:03+02:00","description":"Recently at work, we decided to build a CI/CD pipeline that deploys our application directly to AWS. I had never worked with AWS, and it was a missing point on my CV which demonstrates that I have some DevOps skills. I decided to search for some tutorials online and I was not lucky to get what we needed at work. I decided to write this guide by getting something working from various tutorials I found online.","headline":"How to use the AWS Python CDK to create an infrastructure on ECS.","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.murhabazi.com/ci-cd-deploy-to-aws-github-actions/"},"url":"https://www.murhabazi.com/ci-cd-deploy-to-aws-github-actions/"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -89,7 +92,7 @@
     <header class="post-header">
       <h1 class="post-title">How to use the AWS Python CDK to create an infrastructure on ECS.</h1>
       <em class="post-meta">
-        <time>Feb 26, 2021</time>
+        <time>Feb 27, 2021</time>
       </em>
     </header>
 
@@ -186,7 +189,7 @@
 <p>After installing the CDK check if it is working with the following command:</p>
 
 <ul>
-  <li><code class="language-bash highlight highlighter-rouge"><span class="n">cdk</span><span class="w"> </span><span class="n">--version</span></code> should output your CDK version.</li>
+  <li><code class="language-clojure highlight highlighter-rouge"><span class="n">cdk</span><span class="w"> </span><span class="n">--version</span></code> should output your CDK version.</li>
 </ul>
 
 <h5 id="initializing-the-aws-cli-">Initializing the AWS CLI :</h5>
@@ -195,10 +198,10 @@
 
 <ul>
   <li>
-    <p><code class="language-bash highlight highlighter-rouge"><span class="o">~</span><span class="n">/.aws/credentials</span></code>: if you are using Mac or Linux</p>
+    <p><code class="language-clojure highlight highlighter-rouge"><span class="o">~</span><span class="n">/.aws/credentials</span></code>: if you are using Mac or Linux</p>
   </li>
   <li>
-    <p><code class="language-bash highlighter-rouge">C:<span class="se">\U</span>sers<span class="se">\</span></code>USERNAME<code class="language-bash highlight highlighter-rouge"><span class="sc">\.</span><span class="n">aws</span><span class="sc">\c</span><span class="n">onfig</span></code>: if you are on Windows</p>
+    <p><code class="language-bash highlighter-rouge">C:<span class="se">\U</span>sers<span class="se">\</span></code>USERNAME<code class="language-clojure highlight highlighter-rouge"><span class="sc">\.</span><span class="n">aws</span><span class="sc">\c</span><span class="n">onfig</span></code>: if you are on Windows</p>
   </li>
 </ul>
 
@@ -225,15 +228,15 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <p>Run the following command to create a new CDK project:</p>
 
-<p><code class="language-bash highlight highlighter-rouge"><span class="n">mkdir</span><span class="w"> </span><span class="n">ecs-devops-cdk</span></code></p>
+<p><code class="language-clojure highlight highlighter-rouge"><span class="n">mkdir</span><span class="w"> </span><span class="n">ecs-devops-cdk</span></code></p>
 
 <p>Enter the project using:</p>
 
-<p><code class="language-bash highlight highlighter-rouge"><span class="n">cd</span><span class="w"> </span><span class="n">ecs-devops-cdk</span></code></p>
+<p><code class="language-clojure highlight highlighter-rouge"><span class="n">cd</span><span class="w"> </span><span class="n">ecs-devops-cdk</span></code></p>
 
 <p>Or if you are using VSCode you can open the project with vs code using:</p>
 
-<p><code class="language-bash highlight highlighter-rouge"><span class="n">code</span><span class="w"> </span><span class="n">ecs-devops-cdk</span></code></p>
+<p><code class="language-clojure highlight highlighter-rouge"><span class="n">code</span><span class="w"> </span><span class="n">ecs-devops-cdk</span></code></p>
 
 <ul>
   <li><em>Step 2</em>: Initialize the python CDK project :</li>
@@ -241,7 +244,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <p>To initialize the CDK project run the following command:</p>
 
-<p><code class="language-bash highlight highlighter-rouge"><span class="n">cdk</span><span class="w"> </span><span class="n">init</span><span class="w"> </span><span class="n">--language</span><span class="w"> </span><span class="n">python</span></code></p>
+<p><code class="language-clojure highlight highlighter-rouge"><span class="n">cdk</span><span class="w"> </span><span class="n">init</span><span class="w"> </span><span class="n">--language</span><span class="w"> </span><span class="n">python</span></code></p>
 
 <p>The command will create a new python CDK project and we will be editing it in the next step to build our stack.</p>
 
@@ -276,9 +279,9 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <p>You can activate your virtual environment using the following command :</p>
 
-<p>On mac and linux : <code class="language-bash highlight highlighter-rouge"><span class="n">source</span><span class="w"> </span><span class="n">.env/bin/activate</span></code></p>
+<p>On mac and linux : <code class="language-clojure highlight highlighter-rouge"><span class="n">source</span><span class="w"> </span><span class="n">.env/bin/activate</span></code></p>
 
-<p>For windows : <code class="language-bash highlight highlighter-rouge"><span class="n">.env</span><span class="sc">\S</span><span class="n">cripts</span><span class="sc">\a</span><span class="n">ctivate.bat</span></code></p>
+<p>For windows : <code class="language-clojure highlight highlighter-rouge"><span class="n">.env</span><span class="sc">\S</span><span class="n">cripts</span><span class="sc">\a</span><span class="n">ctivate.bat</span></code></p>
 
 <ul>
   <li><em>step 4</em>: Installing dependencies:</li>
@@ -286,7 +289,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <p>With the virtual environment created we can now install the dependencies :</p>
 
-<p><code class="language-bash highlighter-rouge">pip install <span class="nt">-r</span> requirements.txt</code>and<code class="language-bash highlight highlighter-rouge"><span class="n">pip</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">aws_cdk.aws_ec2</span><span class="w"> </span><span class="n">aws_cdk.aws_ecs</span><span class="w"> </span><span class="n">aws_cdk.aws_ecr</span><span class="w"> </span><span class="n">aws_cdk.aws_iam</span></code></p>
+<p><code class="language-bash highlighter-rouge">pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt</code>and<code class="language-clojure highlight highlighter-rouge"><span class="n">pip</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">aws_cdk.aws_ec2</span><span class="w"> </span><span class="n">aws_cdk.aws_ecs</span><span class="w"> </span><span class="n">aws_cdk.aws_ecr</span><span class="w"> </span><span class="n">aws_cdk.aws_iam</span></code></p>
 
 <p>With the project initialized we can now move to the next step where we will be creating our components.</p>
 
@@ -294,16 +297,16 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <p>We can now move to the stack creation step</p>
 
-<p>If you open the file under <code class="language-bash highlight highlighter-rouge"><span class="n">ecs_devops_cdk/ecs_devops_cdk_stack.py</span></code> you should be able to see the followings :</p>
+<p>If you open the file under <code class="language-clojure highlight highlighter-rouge"><span class="n">ecs_devops_cdk/ecs_devops_cdk_stack.py</span></code> you should be able to see the followings :</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kn">from</span> <span class="nn">aws_cdk</span> <span class="kn">import</span> <span class="n">core</span>
 
-<span class="k">class</span> <span class="nc">EcsDevopsCdkStack</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">Stack</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">EcsDevopsCdkStack</span><span class="p">(</span><span class="n">core</span><span class="p">.</span><span class="n">Stack</span><span class="p">):</span>
 
-<span class="k">def</span> <span class="nf">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scope</span><span class="p">:</span> <span class="n">core</span><span class="o">.</span><span class="n">Construct</span><span class="p">,</span> <span class="n">construct_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scope</span><span class="p">:</span> <span class="n">core</span><span class="p">.</span><span class="n">Construct</span><span class="p">,</span> <span class="n">construct_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
 
-<span class="nb">super</span><span class="p">()</span><span class="o">.</span> <span class="n">__init__</span> <span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">construct_id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="nb">super</span><span class="p">().</span> <span class="n">__init__</span> <span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">construct_id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 </code></pre></div></div>
 
@@ -322,7 +325,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 <p>To create a container repository you can use the following command :</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">ecr_repository</span> <span class="o">=</span> <span class="n">ecr</span><span class="o">.</span><span class="n">Repository</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-repository"</span><span class="p">,</span> <span class="n">repository_name</span><span class="o">=</span><span class="s">"ecs-devops-repository"</span><span class="p">)</span>
+<span class="n">ecr_repository</span> <span class="o">=</span> <span class="n">ecr</span><span class="p">.</span><span class="n">Repository</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-repository"</span><span class="p">,</span> <span class="n">repository_name</span><span class="o">=</span><span class="s">"ecs-devops-repository"</span><span class="p">)</span>
 
 </code></pre></div></div>
 
@@ -331,14 +334,14 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 <p>We can either create a vpc or use an existing vpc. To create a vpc use can add the following code the ` <strong>init</strong> `{:.language-clojure .highlight} method.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">vpc</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">Vpc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-vpc"</span><span class="p">,</span> <span class="n">max_azs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">vpc</span> <span class="o">=</span> <span class="n">ec2</span><span class="p">.</span><span class="n">Vpc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-vpc"</span><span class="p">,</span> <span class="n">max_azs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
 </code></pre></div></div>
 
 <p>You can also use an existing vpc , if that is the case for you use the following lines:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">vpc</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">Vpc</span><span class="o">.</span><span class="n">from_lookup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-vpc"</span><span class="p">,</span><span class="n">vpc_id</span><span class="o">=</span><span class="s">'vpc-number'</span><span class="p">)</span>
+<span class="n">vpc</span> <span class="o">=</span> <span class="n">ec2</span><span class="p">.</span><span class="n">Vpc</span><span class="p">.</span><span class="n">from_lookup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-vpc"</span><span class="p">,</span><span class="n">vpc_id</span><span class="o">=</span><span class="s">'vpc-number'</span><span class="p">)</span>
 
 </code></pre></div></div>
 
@@ -349,7 +352,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 <p>With the vpc created we can attach the cluster to it . To create the cluster we can use the following code :</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">cluster</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">Cluster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<span class="n">cluster</span> <span class="o">=</span> <span class="n">ecs</span><span class="p">.</span><span class="n">Cluster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
 
 <span class="s">"ecs-devops-cluster"</span><span class="p">,</span>
 
@@ -364,14 +367,14 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 <p>Let us create the role, the role will give the service permission to perform tasks.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">execution_role</span> <span class="o">=</span> <span class="n">iam</span><span class="o">.</span><span class="n">Role</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-execution-role"</span><span class="p">,</span> <span class="n">assumed_by</span><span class="o">=</span><span class="n">iam</span><span class="o">.</span><span class="n">ServicePrincipal</span><span class="p">(</span><span class="s">"ecs-tasks.amazonaws.com"</span><span class="p">),</span> <span class="n">role_name</span><span class="o">=</span><span class="s">"ecs-devops-execution-role"</span><span class="p">)</span>
+<span class="n">execution_role</span> <span class="o">=</span> <span class="n">iam</span><span class="p">.</span><span class="n">Role</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-execution-role"</span><span class="p">,</span> <span class="n">assumed_by</span><span class="o">=</span><span class="n">iam</span><span class="p">.</span><span class="n">ServicePrincipal</span><span class="p">(</span><span class="s">"ecs-tasks.amazonaws.com"</span><span class="p">),</span> <span class="n">role_name</span><span class="o">=</span><span class="s">"ecs-devops-execution-role"</span><span class="p">)</span>
 
 </code></pre></div></div>
 
 <p>With the execution role created we can attach policy to it to give it the permission it needs.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">execution_role</span><span class="o">.</span><span class="n">add_to_policy</span><span class="p">(</span><span class="n">iam</span><span class="o">.</span><span class="n">PolicyStatement</span><span class="p">(</span> <span class="n">effect</span><span class="o">=</span><span class="n">iam</span><span class="o">.</span><span class="n">Effect</span><span class="o">.</span><span class="n">ALLOW</span><span class="p">,</span> <span class="n">resources</span><span class="o">=</span><span class="p">[</span><span class="s">"*"</span><span class="p">],</span> <span class="n">actions</span><span class="o">=</span><span class="p">[</span><span class="s">"ecr:GetAuthorizationToken"</span><span class="p">,</span> <span class="s">"ecr:BatchCheckLayerAvailability"</span><span class="p">,</span> <span class="s">"ecr:GetDownloadUrlForLayer"</span><span class="p">,</span> <span class="s">"ecr:BatchGetImage"</span><span class="p">,</span> <span class="s">"logs:CreateLogStream"</span><span class="p">,</span> <span class="s">"logs:PutLogEvents"</span><span class="p">]</span> <span class="p">))</span>
+<span class="n">execution_role</span><span class="p">.</span><span class="n">add_to_policy</span><span class="p">(</span><span class="n">iam</span><span class="p">.</span><span class="n">PolicyStatement</span><span class="p">(</span> <span class="n">effect</span><span class="o">=</span><span class="n">iam</span><span class="p">.</span><span class="n">Effect</span><span class="p">.</span><span class="n">ALLOW</span><span class="p">,</span> <span class="n">resources</span><span class="o">=</span><span class="p">[</span><span class="s">"*"</span><span class="p">],</span> <span class="n">actions</span><span class="o">=</span><span class="p">[</span><span class="s">"ecr:GetAuthorizationToken"</span><span class="p">,</span> <span class="s">"ecr:BatchCheckLayerAvailability"</span><span class="p">,</span> <span class="s">"ecr:GetDownloadUrlForLayer"</span><span class="p">,</span> <span class="s">"ecr:BatchGetImage"</span><span class="p">,</span> <span class="s">"logs:CreateLogStream"</span><span class="p">,</span> <span class="s">"logs:PutLogEvents"</span><span class="p">]</span> <span class="p">))</span>
 
 </code></pre></div></div>
 
@@ -382,14 +385,14 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 <p>Here is the code we used to create the task definition ;</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">task_definition</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">FargateTaskDefinition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-task-definition"</span><span class="p">,</span> <span class="n">execution_role</span><span class="o">=</span><span class="n">execution_role</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">"ecs-devops-task-definition"</span><span class="p">)</span>
+<span class="n">task_definition</span> <span class="o">=</span> <span class="n">ecs</span><span class="p">.</span><span class="n">FargateTaskDefinition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-task-definition"</span><span class="p">,</span> <span class="n">execution_role</span><span class="o">=</span><span class="n">execution_role</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">"ecs-devops-task-definition"</span><span class="p">)</span>
 
 </code></pre></div></div>
 
 <p>And the container :</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">container</span> <span class="o">=</span> <span class="n">task_definition</span><span class="o">.</span><span class="n">add_container</span><span class="p">(</span><span class="s">"ecs-devops-sandbox"</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">ecs</span><span class="o">.</span><span class="n">ContainerImage</span><span class="o">.</span><span class="n">from_registry</span><span class="p">(</span><span class="s">"amazon/amazon-ecs-sample"</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">container</span> <span class="o">=</span> <span class="n">task_definition</span><span class="p">.</span><span class="n">add_container</span><span class="p">(</span><span class="s">"ecs-devops-sandbox"</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">ecs</span><span class="p">.</span><span class="n">ContainerImage</span><span class="p">.</span><span class="n">from_registry</span><span class="p">(</span><span class="s">"amazon/amazon-ecs-sample"</span><span class="p">)</span> <span class="p">)</span>
 
 </code></pre></div></div>
 
@@ -400,7 +403,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 <p><em>step 7:</em> Creating the service :</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">service</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">FargateService</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-service"</span><span class="p">,</span> <span class="n">cluster</span><span class="o">=</span><span class="n">cluster</span><span class="p">,</span> <span class="n">task_definition</span><span class="o">=</span><span class="n">task_definition</span><span class="p">,</span> <span class="n">service_name</span><span class="o">=</span><span class="s">"ecs-devops-service"</span><span class="p">)</span>
+<span class="n">service</span> <span class="o">=</span> <span class="n">ecs</span><span class="p">.</span><span class="n">FargateService</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-service"</span><span class="p">,</span> <span class="n">cluster</span><span class="o">=</span><span class="n">cluster</span><span class="p">,</span> <span class="n">task_definition</span><span class="o">=</span><span class="n">task_definition</span><span class="p">,</span> <span class="n">service_name</span><span class="o">=</span><span class="s">"ecs-devops-service"</span><span class="p">)</span>
 
 </code></pre></div></div>
 
@@ -409,7 +412,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 <p>PS: When your AWS instance is in a public subnet , you need to auto-assign public IP addresses to the containers to grant them internet access. This will help your service to download a docker image from a public repository. In that case, you can use the following code when creating the service. :</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">service</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">FargateService</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<span class="n">service</span> <span class="o">=</span> <span class="n">ecs</span><span class="p">.</span><span class="n">FargateService</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
 
 <span class="s">"service-name"</span><span class="p">,</span>
 
@@ -419,8 +422,8 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <span class="n">service_name</span><span class="o">=</span><span class="s">"service-name"</span><span class="p">,</span>
 
-<span class="n">assign_public_ip</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c"># this is important</span>
-
+<span class="n">assign_public_ip</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="c1"># this is important
+</span>
 <span class="n">security_groups</span><span class="o">=</span><span class="p">[</span><span class="nb">list</span> <span class="n">of</span> <span class="n">security</span> <span class="n">groups</span> <span class="p">,</span> <span class="n">also</span> <span class="n">important</span><span class="p">],</span>
 
 <span class="n">vpc_subnets</span><span class="o">=</span><span class="p">[</span><span class="nb">list</span> <span class="n">of</span> <span class="n">subnets</span><span class="p">]</span>
@@ -434,7 +437,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 <p><em>Step 8</em>: Creating the cloudwatch Log group:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">log_group</span> <span class="o">=</span> <span class="n">aws_logs</span><span class="o">.</span><span class="n">LogGroup</span><span class="p">(</span>
+<span class="n">log_group</span> <span class="o">=</span> <span class="n">aws_logs</span><span class="p">.</span><span class="n">LogGroup</span><span class="p">(</span>
 
   
 
@@ -454,32 +457,32 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <p>With all the objects created let us make sure that we have all the ingredients for our stack in the following updated file.</p>
 
-<p><code class="language-bash highlight highlighter-rouge"><span class="n">ecs_devops_cdk/ecs_devops_cdk_stack.py</span></code></p>
+<p><code class="language-clojure highlight highlighter-rouge"><span class="n">ecs_devops_cdk/ecs_devops_cdk_stack.py</span></code></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kn">from</span> <span class="nn">aws_cdk</span> <span class="kn">import</span> <span class="p">(</span><span class="n">core</span><span class="p">,</span> <span class="n">aws_ecs</span> <span class="k">as</span> <span class="n">ecs</span><span class="p">,</span> <span class="n">aws_ecr</span> <span class="k">as</span> <span class="n">ecr</span><span class="p">,</span> <span class="n">aws_ec2</span> <span class="k">as</span> <span class="n">ec2</span><span class="p">,</span> <span class="n">aws_iam</span> <span class="k">as</span> <span class="n">iam</span><span class="p">,</span> <span class="n">aws_logs</span><span class="p">)</span>
 
   
 
-<span class="k">class</span> <span class="nc">EcsDevopsCdkStack</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">Stack</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">EcsDevopsCdkStack</span><span class="p">(</span><span class="n">core</span><span class="p">.</span><span class="n">Stack</span><span class="p">):</span>
 
-<span class="k">def</span> <span class="nf">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scope</span><span class="p">:</span> <span class="n">core</span><span class="o">.</span><span class="n">Construct</span><span class="p">,</span> <span class="n">construct_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scope</span><span class="p">:</span> <span class="n">core</span><span class="p">.</span><span class="n">Construct</span><span class="p">,</span> <span class="n">construct_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
 
   
 
-<span class="nb">super</span><span class="p">()</span><span class="o">.</span> <span class="n">__init__</span> <span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">construct_id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="nb">super</span><span class="p">().</span> <span class="n">__init__</span> <span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">construct_id</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="n">ecr_repository</span> <span class="o">=</span> <span class="n">ecr</span><span class="o">.</span><span class="n">Repository</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-repository"</span><span class="p">,</span> <span class="n">repository_name</span><span class="o">=</span><span class="s">"ecs-devops-repository"</span><span class="p">)</span>
+<span class="n">ecr_repository</span> <span class="o">=</span> <span class="n">ecr</span><span class="p">.</span><span class="n">Repository</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-repository"</span><span class="p">,</span> <span class="n">repository_name</span><span class="o">=</span><span class="s">"ecs-devops-repository"</span><span class="p">)</span>
 
-<span class="n">vpc</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">Vpc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-vpc"</span><span class="p">,</span> <span class="n">max_azs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">vpc</span> <span class="o">=</span> <span class="n">ec2</span><span class="p">.</span><span class="n">Vpc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-vpc"</span><span class="p">,</span> <span class="n">max_azs</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
-<span class="n">cluster</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">Cluster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-cluster"</span><span class="p">,</span> <span class="n">cluster_name</span><span class="o">=</span><span class="s">"ecs-devops-cluster"</span><span class="p">,</span> <span class="n">vpc</span><span class="o">=</span><span class="n">vpc</span><span class="p">)</span>
+<span class="n">cluster</span> <span class="o">=</span> <span class="n">ecs</span><span class="p">.</span><span class="n">Cluster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-cluster"</span><span class="p">,</span> <span class="n">cluster_name</span><span class="o">=</span><span class="s">"ecs-devops-cluster"</span><span class="p">,</span> <span class="n">vpc</span><span class="o">=</span><span class="n">vpc</span><span class="p">)</span>
 
-<span class="n">execution_role</span> <span class="o">=</span> <span class="n">iam</span><span class="o">.</span><span class="n">Role</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-execution-role"</span><span class="p">,</span> <span class="n">assumed_by</span><span class="o">=</span><span class="n">iam</span><span class="o">.</span><span class="n">ServicePrincipal</span><span class="p">(</span><span class="s">"ecs-tasks.amazonaws.com"</span><span class="p">),</span> <span class="n">role_name</span><span class="o">=</span><span class="s">"ecs-devops-execution-role"</span><span class="p">)</span>
+<span class="n">execution_role</span> <span class="o">=</span> <span class="n">iam</span><span class="p">.</span><span class="n">Role</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-execution-role"</span><span class="p">,</span> <span class="n">assumed_by</span><span class="o">=</span><span class="n">iam</span><span class="p">.</span><span class="n">ServicePrincipal</span><span class="p">(</span><span class="s">"ecs-tasks.amazonaws.com"</span><span class="p">),</span> <span class="n">role_name</span><span class="o">=</span><span class="s">"ecs-devops-execution-role"</span><span class="p">)</span>
 
-<span class="n">execution_role</span><span class="o">.</span><span class="n">add_to_policy</span><span class="p">(</span><span class="n">iam</span><span class="o">.</span><span class="n">PolicyStatement</span><span class="p">(</span>
+<span class="n">execution_role</span><span class="p">.</span><span class="n">add_to_policy</span><span class="p">(</span><span class="n">iam</span><span class="p">.</span><span class="n">PolicyStatement</span><span class="p">(</span>
 
-<span class="n">effect</span><span class="o">=</span><span class="n">iam</span><span class="o">.</span><span class="n">Effect</span><span class="o">.</span><span class="n">ALLOW</span><span class="p">,</span> <span class="n">resources</span><span class="o">=</span><span class="p">[</span><span class="s">"*"</span><span class="p">],</span>
+<span class="n">effect</span><span class="o">=</span><span class="n">iam</span><span class="p">.</span><span class="n">Effect</span><span class="p">.</span><span class="n">ALLOW</span><span class="p">,</span> <span class="n">resources</span><span class="o">=</span><span class="p">[</span><span class="s">"*"</span><span class="p">],</span>
 
 <span class="n">actions</span><span class="o">=</span><span class="p">[</span><span class="s">"ecr:GetAuthorizationToken"</span><span class="p">,</span>
 
@@ -499,19 +502,19 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
   
 
-<span class="n">task_definition</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">FargateTaskDefinition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-task-definition"</span><span class="p">,</span> <span class="n">execution_role</span><span class="o">=</span><span class="n">execution_role</span><span class="p">,</span>
+<span class="n">task_definition</span> <span class="o">=</span> <span class="n">ecs</span><span class="p">.</span><span class="n">FargateTaskDefinition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-task-definition"</span><span class="p">,</span> <span class="n">execution_role</span><span class="o">=</span><span class="n">execution_role</span><span class="p">,</span>
 
 <span class="n">family</span><span class="o">=</span><span class="s">"ecs-devops-task-definition"</span><span class="p">)</span>
 
-<span class="n">container</span> <span class="o">=</span> <span class="n">task_definition</span><span class="o">.</span><span class="n">add_container</span><span class="p">(</span><span class="s">"ecs-devops-sandbox"</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">ecs</span><span class="o">.</span><span class="n">ContainerImage</span><span class="o">.</span><span class="n">from_registry</span><span class="p">(</span><span class="s">"amazon/amazon-ecs-sample"</span><span class="p">))</span>
+<span class="n">container</span> <span class="o">=</span> <span class="n">task_definition</span><span class="p">.</span><span class="n">add_container</span><span class="p">(</span><span class="s">"ecs-devops-sandbox"</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">ecs</span><span class="p">.</span><span class="n">ContainerImage</span><span class="p">.</span><span class="n">from_registry</span><span class="p">(</span><span class="s">"amazon/amazon-ecs-sample"</span><span class="p">))</span>
 
-<span class="n">service</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">FargateService</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-service"</span><span class="p">,</span> <span class="n">cluster</span><span class="o">=</span><span class="n">cluster</span><span class="p">,</span> <span class="n">task_definition</span><span class="o">=</span><span class="n">task_definition</span><span class="p">,</span> <span class="n">service_name</span><span class="o">=</span><span class="s">"ecs-devops-service"</span><span class="p">)</span>
+<span class="n">service</span> <span class="o">=</span> <span class="n">ecs</span><span class="p">.</span><span class="n">FargateService</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-service"</span><span class="p">,</span> <span class="n">cluster</span><span class="o">=</span><span class="n">cluster</span><span class="p">,</span> <span class="n">task_definition</span><span class="o">=</span><span class="n">task_definition</span><span class="p">,</span> <span class="n">service_name</span><span class="o">=</span><span class="s">"ecs-devops-service"</span><span class="p">)</span>
 
-<span class="n">log_group</span> <span class="o">=</span> <span class="n">aws_logs</span><span class="o">.</span><span class="n">LogGroup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-service-logs-groups"</span><span class="p">,</span> <span class="n">log_group_name</span><span class="o">=</span><span class="s">"ecs-devops-service-logs"</span><span class="p">)</span>
+<span class="n">log_group</span> <span class="o">=</span> <span class="n">aws_logs</span><span class="p">.</span><span class="n">LogGroup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">"ecs-devops-service-logs-groups"</span><span class="p">,</span> <span class="n">log_group_name</span><span class="o">=</span><span class="s">"ecs-devops-service-logs"</span><span class="p">)</span>
 
 </code></pre></div></div>
 
-<p>Before creating the stack open the file <code class="language-bash highlight highlighter-rouge"><span class="n">app.py</span></code></p>
+<p>Before creating the stack open the file <code class="language-clojure highlight highlighter-rouge"><span class="n">app.py</span></code></p>
 
 <p>You should see something like this :</p>
 
@@ -520,13 +523,13 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <span class="kn">from</span> <span class="nn">ecs_devops_cdk.ecs_devops_cdk_stack</span> <span class="kn">import</span> <span class="n">EcsDevopsCdkStack</span>
 
-<span class="n">app</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">App</span><span class="p">()</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">core</span><span class="p">.</span><span class="n">App</span><span class="p">()</span>
 
   
 
 <span class="n">EcsDevopsCdkStack</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="s">"ecs-devops-cdk"</span><span class="p">)</span>
 
-<span class="n">app</span><span class="o">.</span><span class="n">synth</span><span class="p">()</span>
+<span class="n">app</span><span class="p">.</span><span class="n">synth</span><span class="p">()</span>
 
 </code></pre></div></div>
 
@@ -551,7 +554,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
 
 <p>With this set; you can now create your stack. With the code created we can now run the following command to create our stack.</p>
 
-<p><code class="language-bash highlight highlighter-rouge"><span class="n">cdk</span><span class="w"> </span><span class="n">deploy</span></code></p>
+<p><code class="language-clojure highlight highlighter-rouge"><span class="n">cdk</span><span class="w"> </span><span class="n">deploy</span></code></p>
 
 <p>If everything goes well you should have your stack created. As a result, you will have a cluster, running a service that deploys a task definition, and a Cloudwatch log group created.</p>
 
@@ -575,7 +578,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function() {
-      this.page.url = 'https://murhabazi.com/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/';
+      this.page.url = 'http://localhost:4000/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/';
       this.page.identifier = '/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs';
     };
     (function() {
@@ -603,7 +606,7 @@ aws_secret_access_key <span class="o">=</span> <span class="k">*****************
   <li><a href="https://github.com/espoirMur" target="_blank"><i class="icon icon-github"></i></a></li>
   <li><a href="https://twitter.com/esp_py" target="_blank"><i class="icon icon-twitter"></i></a></li>
   <li><a href="https://www.linkedin.com/in/espoir-murhabazi-buzina-7849b1b1/" target="_blank"><i class="icon icon-linkedin"></i></a></li>
-  <li><a href="https://stackoverflow.com/users/4683950/espoir-murhabazi" target="_blank"><i class="icon icon-stackoverflow"></i></a></li>
+  <li><a href="https://stackoverflow.com/users/4683950/espoir-murhabazi" target="_blank"><i class="fa-brands fa-stack-overflow"></i></a></li>
 </ul>
 
     <p class="txt-medium-gray">
