@@ -1,27 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Espoir Murhabazi ideas&apos; home</title>
+    <title>Espoir Murhabazi ideas' home</title>
     <description>Murhabazi Buzina Espoir Home on the internet</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Jul 2022 00:08:45 +0200</pubDate>
-    <lastBuildDate>Fri, 08 Jul 2022 00:08:45 +0200</lastBuildDate>
+    <pubDate>Wed, 31 Aug 2022 17:58:43 +0100</pubDate>
+    <lastBuildDate>Wed, 31 Aug 2022 17:58:43 +0100</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
-        <title>test </title>
-        <description>
-</description>
-        <pubDate>Thu, 07 Apr 2022 15:00:07 +0200</pubDate>
-        <link>http://localhost:4000/test</link>
-        <guid isPermaLink="true">http://localhost:4000/test</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Congolese 🇨🇩 , Africans young Software Engineers, and Computer Scientists graduates - let’s get that master&apos;s degree! 🚀 🚀🚀🎓</title>
+        <title>Congolese 🇨🇩 , Africans young Software Engineers, and Computer Scientists graduates - let’s get that master's degree! 🚀 🚀🚀🎓</title>
         <description>
 &lt;figure&gt;
   &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-06-master-options-africans/cmu-africa-graduation.png&quot; /&gt;&lt;/p&gt;
@@ -129,7 +118,7 @@
 Should I get more time and energy in the future, I will post them in part two of this series. I will share more advice on how to get access to top research papers in the world without attending a university. Additionally, I will share some undergraduate universities you can dream about.
 Until my next feature, stay safe, take care, and see you in part two of this series.&lt;/p&gt;
 </description>
-        <pubDate>Wed, 06 Apr 2022 12:22:56 +0200</pubDate>
+        <pubDate>Wed, 06 Apr 2022 11:22:56 +0100</pubDate>
         <link>http://localhost:4000/master-options-africans</link>
         <guid isPermaLink="true">http://localhost:4000/master-options-africans</guid>
         
@@ -187,7 +176,7 @@ After getting the latest version I installed it with :&lt;/li&gt;
 &lt;p&gt;https://www.cyberciti.biz/faq/ubuntu-linux-install-nvidia-driver-latest-proprietary-driver/&lt;/p&gt;
 
 </description>
-        <pubDate>Sun, 27 Mar 2022 15:36:01 +0200</pubDate>
+        <pubDate>Sun, 27 Mar 2022 14:36:01 +0100</pubDate>
         <link>http://localhost:4000/install-nvidia-driver</link>
         <guid isPermaLink="true">http://localhost:4000/install-nvidia-driver</guid>
         
@@ -255,7 +244,7 @@ After getting the latest version I installed it with :&lt;/li&gt;
 &lt;p&gt;Now I can say that I finished my year in style. I hope to watch more games in the future and more importantly to catch the CANAL + car next time I visit the Stadium.&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 27 Dec 2021 20:20:39 +0200</pubDate>
+        <pubDate>Mon, 27 Dec 2021 18:20:39 +0000</pubDate>
         <link>http://localhost:4000/blog/2021/local-boy-visited-the-etihad-stadium-here-is-how-it-went/</link>
         <guid isPermaLink="true">http://localhost:4000/blog/2021/local-boy-visited-the-etihad-stadium-here-is-how-it-went/</guid>
         
@@ -442,7 +431,7 @@ After getting the latest version I installed it with :&lt;/li&gt;
 &lt;p&gt;&lt;img src=&quot;https://lh6.googleusercontent.com/DWzKbI2f7bbP_eCsfYXxShke33eQuW3zotTW_NlC1OJmA8EepOryVwKHSHn39N05-QX2xwjtKI8dpglgdYmorgICSvOCzg2WNK7liaJdF8m4ywfg2ct9wUwbyWqFvLI6c-6MHKob&quot; /&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 06 Nov 2021 01:00:36 +0200</pubDate>
+        <pubDate>Fri, 05 Nov 2021 23:00:36 +0000</pubDate>
         <link>http://localhost:4000/blog/2021/lessons-learned-while-applying-to-masters-degrees-in-the-uk/</link>
         <guid isPermaLink="true">http://localhost:4000/blog/2021/lessons-learned-while-applying-to-masters-degrees-in-the-uk/</guid>
         
@@ -561,7 +550,7 @@ curl &lt;span class=&quot;nt&quot;&gt;-sSL&lt;/span&gt; https://raw.githubuserco
 
 &lt;p&gt;This should be filled&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-clojure highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pipdeptree&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;--warn&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;silence&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grep&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;-E&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&apos;^&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;\w&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requirements-new.txt&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-clojure highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pipdeptree&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;--warn&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;silence&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grep&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;-E&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'^&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;\w&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requirements-new.txt&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you have generated the top-level dependencies, I would suggest you deactivate your virtual environment and delete it to make the break-up complete before moving to the next steps.&lt;/p&gt;
 
@@ -589,7 +578,7 @@ curl &lt;span class=&quot;nt&quot;&gt;-sSL&lt;/span&gt; https://raw.githubuserco
 
 &lt;p&gt;If you have the &lt;code class=&quot;language-clojure highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;requirements-news.txt&lt;/span&gt;&lt;/code&gt; file resulting from the command you run on the first step, you can install all the packages in that and their corresponding version by running the following command:&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-clojure highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sed&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;-n&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;&apos;s/==/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requirements-new.txt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;; do poetry add &quot;${item}&quot; ; done&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-clojure highlight highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sed&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;-n&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;'s/==/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requirements-new.txt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;; do poetry add &quot;${item}&quot; ; done&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;This will work only on Linux and Mac, still trying to find the exact version of it for Windows.&lt;/p&gt;
@@ -671,7 +660,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 
 &lt;p&gt;And the story of my break up comes to an end. As you may know, all separations are not smooth, sometimes the daemons of your old girlfriend come and start causing troubles in your new relationship. So if you find any issue during this break-up, feel free to let me know in the comment I will try to help you as much as I can 🤔.&lt;/p&gt;
 </description>
-        <pubDate>Sun, 17 Oct 2021 17:33:42 +0200</pubDate>
+        <pubDate>Sun, 17 Oct 2021 16:33:42 +0100</pubDate>
         <link>http://localhost:4000/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/</link>
         <guid isPermaLink="true">http://localhost:4000/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/</guid>
         
@@ -681,7 +670,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
       </item>
     
       <item>
-        <title>Mots d&apos;un grand frère  à ses petits frère qui debutent avec la programmation</title>
+        <title>Mots d'un grand frère  à ses petits frère qui debutent avec la programmation</title>
         <description>
 &lt;figure&gt;
   &lt;p&gt;&lt;img src=&quot;/assets/posts/2021-07-23-mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/andela-guys.jpg&quot; /&gt;&lt;/p&gt;
@@ -806,7 +795,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 
 &lt;figure&gt;
   &lt;p&gt;&lt;img src=&quot;/assets/posts/2021-07-23-mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/today-developers.jpg&quot; /&gt;&lt;/p&gt;
-  &lt;figcaption&gt;don&apos;t learn languages learn concepts&lt;/figcaption&gt;
+  &lt;figcaption&gt;don't learn languages learn concepts&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Je ne veux pas me mettre à faire un débat sur les langages dans ce poste ni même dire quel langage est meilleur que l’autre, c’est hors cadre.&lt;/p&gt;
@@ -830,7 +819,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 
 &lt;p&gt;Cheers 🤲🏼&lt;/p&gt;
 </description>
-        <pubDate>Fri, 23 Jul 2021 14:57:09 +0200</pubDate>
+        <pubDate>Fri, 23 Jul 2021 14:57:09 +0100</pubDate>
         <link>http://localhost:4000/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation</link>
         <guid isPermaLink="true">http://localhost:4000/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation</guid>
         
@@ -975,7 +964,7 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;p&gt;Do you have similar books to recommend to me? Feel free to leave them as a  comment. Otherwise, take care and enjoy life. Cheers.&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 05 Jun 2021 14:57:09 +0200</pubDate>
+        <pubDate>Sat, 05 Jun 2021 14:57:09 +0100</pubDate>
         <link>http://localhost:4000/blog/2021/my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/</link>
         <guid isPermaLink="true">http://localhost:4000/blog/2021/my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/</guid>
         
@@ -1229,7 +1218,7 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 &lt;p&gt;You can also use an existing vpc , if that is the case for you use the following lines:&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;n&quot;&gt;vpc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ec2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Vpc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_lookup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-vpc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vpc_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;vpc-number&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;vpc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ec2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Vpc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_lookup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ecs-devops-vpc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vpc_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'vpc-number'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -1428,11 +1417,11 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 
   
 
-&lt;span class=&quot;s&quot;&gt;&apos;account&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; **************&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;'account'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; **************&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 
   
 
-&lt;span class=&quot;s&quot;&gt;&apos;region&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;your region&quot;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;'region'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;your region&quot;&lt;/span&gt;
 
   
 
@@ -1456,7 +1445,7 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 
 &lt;p&gt;In the second part of this series, we will learn how to convert our docker-compose file to a task definition described in this tutorial. See you then!&lt;/p&gt;
 </description>
-        <pubDate>Sat, 27 Feb 2021 00:12:03 +0200</pubDate>
+        <pubDate>Fri, 26 Feb 2021 22:12:03 +0000</pubDate>
         <link>http://localhost:4000/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/</link>
         <guid isPermaLink="true">http://localhost:4000/blog/2021/how-to-use-the-aws-python-cdk-to-create-an-infrastructure-on-ecs/</guid>
         
@@ -1483,9 +1472,63 @@ aws_secret_access_key &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span cl
 
 &lt;p&gt;That is all, thanks for reading this, I will keep posting news updates from my role so stay tuned.&lt;/p&gt;
 </description>
-        <pubDate>Mon, 30 Nov 2020 22:54:01 +0200</pubDate>
+        <pubDate>Mon, 30 Nov 2020 22:54:01 +0000</pubDate>
         <link>http://localhost:4000/blog/2020/joining-spiny-ai/</link>
         <guid isPermaLink="true">http://localhost:4000/blog/2020/joining-spiny-ai/</guid>
+        
+        
+        <category>non-tech</category>
+        
+      </item>
+    
+      <item>
+        <title>I sat for the IELTS today , here is how it went</title>
+        <description>
+&lt;figure&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2020-11-19-/ielts.png&quot; /&gt;&lt;/p&gt;
+  &lt;figcaption&gt;cover image&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;After preparing for more than a month, I managed to pass my IELTS today. While waiting for the result , I would like to share with you how it went.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Logistics&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I reached the British Council in Kigali at 8:30, 30 minutes before my test.&lt;/p&gt;
+
+&lt;p&gt;I was  a comfortable place and they made sure all COVID preventions measure were followed strictly.&lt;/p&gt;
+
+&lt;p&gt;Once I got inside the test room I asked the examiner if he could change my keyboard layout since I was more familiar with the AZERTY french keyboard but to my dismay the said it’s unchangeable. I was forced to use the normal English keyboard layout for the test. Although, this decreased my touching typing speed, it didn’t affect my test performance on overall except some typos I managed to correct within the timelines.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The tests&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It was a computer delivered IELTS, and was divided in two parts, the first one consisted of the listening , the reading and the writing; the second one was the speaking.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/xUA7bcVPhLACfKIItG/giphy.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;em&gt;&lt;strong&gt;listening test&lt;/strong&gt;&lt;/em&gt; went smoothly as expected, beside some comprehension issues but I am sure I did well on this one.&lt;/p&gt;
+
+&lt;p&gt;Then came &lt;em&gt;&lt;strong&gt;the reading&lt;/strong&gt;&lt;/em&gt;, this was the most challenging part, but I managed to answer all questions in one hour. As usual, they gave us three texts ,the first one was about facial recognition, a topic I am familiar with due to my Machine Learning background, the second one was about Easter Island and it Stone statues and the third one was on coaster rollers.&lt;/p&gt;
+
+&lt;p&gt;At the end of the reading test , I took a toilet break for  3 minutes  and I resumed with the &lt;em&gt;&lt;strong&gt;writing test.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In task one I got a combination of a land map and a population growth graph. With all the keyboard issues I lost 10 minutes on this test and I spent 30 minutes responding instead of 20 minutes as advised.&lt;/p&gt;
+
+&lt;p&gt;The task two was about personal information being stored in computers. I was asked if the advantages of that practice outweighs it disadvantages. With the 30 minutes remaining, I managed to write 277 words for this topic. This one was my favorite part ,I wish I  had  more time to bombard them with everything I know about privacy and data.  I spent some time correcting the essays and the first part was over.&lt;/p&gt;
+
+&lt;p&gt;Around midday I left the room confident that I nailed it but let us wait for the results.&lt;/p&gt;
+
+&lt;p&gt;The &lt;em&gt;&lt;strong&gt;speaking test&lt;/strong&gt;&lt;/em&gt; started at 13:40, I was luckily to have brought a book which helped me to avoid the waiting room frustration.&lt;/p&gt;
+
+&lt;p&gt;It was a casual one, I was asked if I work or study and about comedians in the first part. During the second part, the question was about a car journey I have made recently and the follow up conversations were about cars. Despite not being a fan of cars , I managed to give some goods answer to those questions.&lt;/p&gt;
+
+&lt;p&gt;And it was the end of my test , I am now looking forward to the result. I am confident I will get  6 at minimum. However I will not be dismayed if I get a 7.5 or 8. As said Eminem, &lt;em&gt;Success is my only motherfuc**g option, failure is not.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In the upcoming days, I will share my test results as well as my preparation strategy , so stay tunned for more content.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 19 Nov 2020 22:12:03 +0000</pubDate>
+        <link>http://localhost:4000/blog/2020/i-sat-for-the-ielts-today-here-is-how-it-went/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2020/i-sat-for-the-ielts-today-here-is-how-it-went/</guid>
         
         
         <category>non-tech</category>
