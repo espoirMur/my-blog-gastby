@@ -4,10 +4,10 @@ title: "Information Retrieval on the COVID-19 Open Research Dataset (CORD-19)"
 permalink: information-retrieval-on-medical-research-papers-about-covid19
 date: 2022-04-07 12:03:59
 comments: true
-description: "information retrieval on medical research papers about CORD-19 dataset"
+description: "Information Retrieval on medical research papers about CORD-19 dataset"
 keywords: "Information Retrieval, Medical Research, Covid19, CORD-19 dataset"
 categories:
-published: false
+published: true
 
 tags:
 
@@ -15,10 +15,10 @@ tags:
 
 ##  Scenario
 
-In response to the COVID-19 pandemic, the White House and a coalition of leading research groups have prepared the [COVID-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) Open Research Dataset (CORD-19) . CORD-19 is a resource of over 181,000 scholarly articles, including over 80,000 with full text, about COVID-19, SARS-CoV-2, and related coronaviruses. This freely available dataset is provided to the global research community to apply recent advances in information retrieval and other AI techniques to generate new insights in support of the ongoing fight against this infectious disease. There is a growing urgency for these approaches because of the rapid acceleration in new coronavirus literature, making it difficult for the medical research community to keep up.
+In response to the COVID-19 pandemic, the White House and a coalition of leading research groups have prepared the [COVID-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) Open Research Dataset (CORD-19). CORD-19 is a resource of over 181,000 scholarly articles, including over 80,000 with full text, about COVID-19, SARS-CoV-2, and related coronaviruses. This freely available dataset is provided to the global research community to apply recent advances in Information Retrieval and other AI techniques to generate new insights in support of the ongoing fight against this infectious disease. There is a growing urgency for these approaches because of the rapid acceleration in new coronavirus literature, making it difficult for the medical research community to keep up.
 
 ## The task
-For this tutorial, we will write an information retrieval pipeline that helps anyone to query the cord-19 dataset and find relevant articles for their queries.
+For this tutorial, we will write an Information Retrieval pipeline that helps anyone to query the cord-19 dataset and find relevant articles for their queries.
 
 We will show two different approaches to building that pipeline. The first approach uses the TF-IDF and cosine similarity between the query and the articles. We will use Elasticsearch with the python API to search our articles for the second one.
 
@@ -26,38 +26,33 @@ For the first step, we will leverage the TF-IDF vectorizer from Sklearn. In cont
 
 This series is a part of an assignment I did for my Information Retrieval course. I decided to publish it online because of the lack of relevant tutorials on this topic. 
 
-This writing will consist of the following section: 
+This will be a two parts tutorial.
 
-For the first part : 
-
-- **Data Collection:** In this section, we will go through downloading the dataset from Kaggle and how to process it in a CSV file.
-
-- **Data Cleaning:** We will discover how to perform NLP preprocessing on the text file and create the cleaned version of the text.
+For the first part: 
+- **Data Collection:** In this section, we will go through downloading the dataset from Kaggle and saving it as a csv file.
+- **Data Cleaning:** We will pre-process and clean the text.
 - **Keyword selection:** We will use TF-IDF to find the appropriate keywords for each document.
 - **Querying** : In this section we will query the article using TF-IDF.
 
-For the second part : 
-
+For the second part: 
 - Model Creation and Indexing: We will build our elastic search model and create our index in the database.
 - Querying: We will show to perform some simple queries on our database and preprocess the results.
 
-For this series, I am assuming the following : 
+For this series, I am assuming the following: 
 
 - You have elastic-search installed and running on your computer. 
-- You have python 3.7 installed.
-- You are familiar with the basics of text processing in python and object-relational mapping.
+- You have Python 3.7 installed.
+- You are familiar with the basics of text processing in Python and Object-Relational Mapping(ORM).
 
 If that is the case for you, let's get started.
 
-{% include image.html name="information-retrieval-system.png" caption="Our Information retrieval pipeline" %}
-
-
+{% include image.html name="information-retrieval-system.png" caption="Our Information Retrieval pipeline" %}
 
 ## Data Collection 
 
 In this section, we will go through downloading the dataset from Kaggle and how to process it in chunks.
 
-The dataset is large, and for this tutorial, we will use only the metadata release alongside the dataset. 
+The dataset is huge, and for this tutorial, we will use only the metadata release alongside the dataset. 
 
 ### Downloading the metadata file
 
@@ -67,7 +62,7 @@ The data comes as a zip file; you will have to unzip it to start using it.
 
 ### Reading the dataset with Dask.
 
-The dataset is large. It has more than 1.5Gb. We will use dask and pandas to read the file to make our life easier.
+The dataset is huge. It has more than 1.5Gb. We will use dask and pandas to read the file to make our life easier.
 
 Make sure to have [dask](https://docs.dask.org/en/stable/) and [pandas](https://pandas.pydata.org/) installed in your environment for this project.
 
@@ -87,28 +82,26 @@ If the libraries are well imported, let us read the file.
 
 
 ```python
-DATA_PATH  =  Path.cwd().joinpath("data")
-metadata_path  =  DATA_PATH.joinpath("metadata.csv")
-data  =  dd.read_csv(metadata_path,  dtype={"pubmed_id":  np.object0,  'arxiv_id':  'object',  'who_covidence_id':  'object'})
+DATA_PATH = Path.cwd().joinpath("data")
+metadata_path = DATA_PATH.joinpath("metadata.csv")
+data = dd.read_csv(metadata_path,  dtype={"pubmed_id":  np.object0,  'arxiv_id':  'object',  'who_covidence_id':  'object'})
 ```
 
 Those lines, call the read_csv from function from dask to read the file and specify some columns data mapping.
 Under the assumption that you have a data folder on the same level as this jupyter notebook and it is named `metadata.csv`. If that is not the case , you can pass the exact path of your csv file to the `read_csv` function.
 
-__Why is dask faster than pandas?__ 
+__Why is Dask faster than Pandas?__ 
 
 Remember, we are dealing with a large dataset. Pandas would like to load the whole data in memory. But for a small computer, 1.7 Gb is a lot of data to fit in memory, which would take us a lot of time. 
 
-A workaround for this problem would be to read our dataset in different chunks with pandas. 
-Dask is doing almost the same it read the dataset in parallel using chunk but transparently. 
+A workaround for this problem would be to read our dataset in different chunks with pandas. Dask is doing almost the same, it read the dataset in parallel using chunk but transparently for the end users. 
 
 It avoids us writing a lot of code that will read the data in chunks, process each chunk in parallel, and combine the whole data in one dataset. Check this tutorial [here](https://pythonspeed.com/articles/faster-pandas-dask/) for more details about how dask is faster than pandas.
 
 Once our data is read, let us select a subset for our tutorial.
 
-
 ```python
-important_columns  =  ["pubmed_id",  "title",  "abstract",  "journal",  "authors",  "publish_time"]
+important_columns = ["pubmed_id",  "title",  "abstract",  "journal",  "authors",  "publish_time"]
 ```
 
 The dataset has 59k rows but for this exercice will will only work this the a sample of 1000 rows which is roughly the 1/60 of the whole dataframe
@@ -116,7 +109,7 @@ The dataset has 59k rows but for this exercice will will only work this the a sa
 
 ```python
 sample_df = data.sample(frac=float(1/300))
-sample_df  =  sample_df.dropna(subset=important_columns)
+sample_df = sample_df.dropna(subset=important_columns)
 sample_df = sample_df.loc[:,  important_columns]
 ```
 
@@ -125,7 +118,7 @@ We are still using a dask dataframe; let us convert it to a pandas dataframe.
 
 
 ```python
-data_df  =  sample_df.compute()
+data_df = sample_df.compute()
 ```
 
 This line creates the pandas dataframe we will be working with for the rest of the tutorial.
@@ -138,86 +131,14 @@ data_df  =  data_df.set_index("pubmed_id")
 data_df.head()
 ```
 
+| pubmed_id | title                                             | abstract                                          | journal                | authors                                           | publish_time |
+|-----------|---------------------------------------------------|---------------------------------------------------|------------------------|---------------------------------------------------|--------------|
+| 32165633  | Acid ceramidase of macrophages traps herpes si... | Macrophages have important protective function... | Nat Commun             | Lang, Judith; Bohn, Patrick; Bhat, Hilal; Jast... | 2020-03-12   |
+| 18325284  | Resource Allocation during an Influenza Pandemic  | Resource Allocation during an Influenza Pandemic  | Emerg Infect Dis       | Paranthaman, Karthikeyan; Conlon, Christopher ... | 2008-03-01   |
+| 30073452  | Analysis of pig trading networks and practices... | East Africa is undergoing rapid expansion of p... | Trop Anim Health Prod  | Atherstone, C.; Galiwango, R. G.; Grace, D.; A... | 2018-08-02   |
+| 35017151  | Pembrolizumab and decitabine for refractory or... | BACKGROUND: The powerful ‘graft versus leukemi... | J Immunother Cancer    | Goswami, Meghali; Gui, Gege; Dillon, Laura W; ... | 2022-01-11   |
+| 34504521  | Performance Evaluation of Enterprise Supply Ch... | In order to make up for the shortcomings of cu... | Comput Intell Neurosci | Bu, Miaoling                                      | 2021-08-30   |
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>title</th>
-      <th>abstract</th>
-      <th>journal</th>
-      <th>authors</th>
-      <th>publish_time</th>
-    </tr>
-    <tr>
-      <th>pubmed_id</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>32165633</th>
-      <td>Acid ceramidase of macrophages traps herpes si...</td>
-      <td>Macrophages have important protective function...</td>
-      <td>Nat Commun</td>
-      <td>Lang, Judith; Bohn, Patrick; Bhat, Hilal; Jast...</td>
-      <td>2020-03-12</td>
-    </tr>
-    <tr>
-      <th>18325284</th>
-      <td>Resource Allocation during an Influenza Pandemic</td>
-      <td>Resource Allocation during an Influenza Pandemic</td>
-      <td>Emerg Infect Dis</td>
-      <td>Paranthaman, Karthikeyan; Conlon, Christopher ...</td>
-      <td>2008-03-01</td>
-    </tr>
-    <tr>
-      <th>30073452</th>
-      <td>Analysis of pig trading networks and practices...</td>
-      <td>East Africa is undergoing rapid expansion of p...</td>
-      <td>Trop Anim Health Prod</td>
-      <td>Atherstone, C.; Galiwango, R. G.; Grace, D.; A...</td>
-      <td>2018-08-02</td>
-    </tr>
-    <tr>
-      <th>35017151</th>
-      <td>Pembrolizumab and decitabine for refractory or...</td>
-      <td>BACKGROUND: The powerful ‘graft versus leukemi...</td>
-      <td>J Immunother Cancer</td>
-      <td>Goswami, Meghali; Gui, Gege; Dillon, Laura W; ...</td>
-      <td>2022-01-11</td>
-    </tr>
-    <tr>
-      <th>34504521</th>
-      <td>Performance Evaluation of Enterprise Supply Ch...</td>
-      <td>In order to make up for the shortcomings of cu...</td>
-      <td>Comput Intell Neurosci</td>
-      <td>Bu, Miaoling</td>
-      <td>2021-08-30</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
 The dataframe contains the following columns : 
 
@@ -242,8 +163,8 @@ For this step, we will be using [Spacy](https://spacy.io/usage),[NLTK](https://w
 import  spacy
 import  nltk
 import  re
-nlp  =  spacy.load('en_core_web_sm')
-stopwords_list  =  nltk.corpus.stopwords.words('english')
+nlp = spacy.load('en_core_web_sm')
+stopwords_list = nltk.corpus.stopwords.words('english')
 ```
 
 ### Tokenization
@@ -260,9 +181,9 @@ The following function will perform stop word removal for us :
 ```python
 def  remove_stopwords(text,  is_lower_case=False):
     tokens  =  nltk.word_tokenize(text)
-    tokens  =  [token.strip()  for  token  in  tokens]
-    if  is_lower_case:
-        filtered_tokens  =  [token  for  token  in  tokens  if  token  not  in  stopwords_list]
+    tokens  =  [token.strip() for token in tokens]
+    if is_lower_case:
+        filtered_tokens = [token  for  token  in  tokens  if  token  not  in  stopwords_list]
     else:
         filtered_tokens  =  [token  for  token  in  tokens  if  token.lower()  not  in  stopwords_list]
     filtered_text  =  '  '.join(filtered_tokens)
@@ -272,8 +193,7 @@ def  remove_stopwords(text,  is_lower_case=False):
 
 ### Special characters and number removal.
 
-Special characters and symbols are usually non-alphanumeric or occasionally numeric characters which add to the extra noise in unstructured text. For our problem, since our corpus is built with articles from the biomedical field, there are a lot of numbers denoting quantities and dosages. We have decided to remove them to simplify the tutorial.
-
+Special characters and symbols are usually non-alphanumeric or occasionally numeric characters which add extra noise in unstructured text. For our problem, since our corpus is built with articles from the biomedical field, there are a lot of numbers denoting quantities and dosages. We have decided to remove them to simplify the tutorial.
 
 ### Lematization
 
@@ -281,11 +201,11 @@ In this step, we will use lemmatization instead of stemming,
 
 Chirstopher Maning define lemmatization as : 
 
-_lemmatization usually refers to doing things properly using a vocabulary and morphological analysis of words, usually aiming to remove inflectional endings only and to return the base or dictionary form of a word, which is known as the lemma. If confronted with the token saw, stemming might return just s, whereas lemmatization would attempt to return either see or saw_
+_Lemmatization usually refers to doing things properly with the use of a vocabulary and morphological analysis of words, normally aiming to remove inflectional endings only and to return the base or dictionary form of a word, which is known as the lemma . If confronted with the token saw, stemming might return just s, whereas lemmatization would attempt to return either see or saw depending on whether the use of the token was as a verb or a noun. The two may also differ in that stemming most commonly collapses derivationally related words, whereas lemmatization commonly only collapses the different inflectional forms of a lemma._
 
-A good lemmatizer will replace words such as foot by feet, chosen, choose, by choice., etc.
+A good lemmatizer will replace words such as foot by feet; chosen, choose, by choice.; etc.
 
-This approach has some advantages because it will help not spread the information between different word forms derived from the same lemma. Therefore it will lead to an accurate TF-IDF because the same semantic information is assembled in one place.
+This approach has some advantages because it will help not spread the information between different word forms derived from the same lemma. Therefore, it will lead to an accurate TF-IDF because the same semantic information is assembled in one place.
 
 
 The code for lemmatization is as follow : 
@@ -298,7 +218,7 @@ def  lemmatize_text(text):
     return  text
 ```
 
-Finaly we apply the preprocessing function to our dataset to generate a cleaned version for each abstract.
+Finally, we apply the preprocessing function to our dataset to generate a cleaned version for each abstract.
 
 
 ```python
@@ -323,52 +243,58 @@ def preprocess_text(text,  text_lower_case=True,  text_lemmatization=True, stopw
 data_df['abstract_cleaned']  =  data_df['abstract'].apply(preprocess_text)
 ```
 
-With our text cleaned, we can move to our tutorial's next version, which generates the most relevant keywords for each abstract.
+With our text cleaned, we can move to our tutorial's next section, which generates the most relevant keywords for each abstract.
 
 ### Keyword Generation using Term Inverse - Document Frequency (Tf-IDF)
 
-To generate keywords for each paper, we have to find a heuristic that finds the most relevant words while penalizing the common phrase in our corpus. Practitioners have widely used the term frequency-inverse document frequency (TF-IDF) to generate important keywords in documents in information retrieval. But what is TF-IDF? It combines two metrics, the term frequency and the inverse document frequency.
+To generate keywords for each paper, we have to find a heuristic that finds the most relevant words while penalizing the common phrase in our corpus. Practitioners have widely used the Term Frequency-Inverse Document Frequency (TF-IDF) to generate important keywords in documents in Information Retrieval. But what is TF-IDF? It combines two metrics, the Term frequency and the Inverse Document Frequency.
 
 #### Term Frequency 
 
-[K. Sparck Jones.] define the term frequency TF as a numerical statistic that reflects how important the word is to document in a collection or a corpus.
+[K. Sparck Jones.] defines the term frequency (TF) as a numerical statistic that reflects how important a word is to document in a collection or a corpus. It is the relative frequency of term w within the document d.
 
-We compute it using the following formula. 
+It is computed  using the following formula : 
 
-```
-TF(t) = (Number of times term t appears in a document) / (Total number of terms in the document).
-```
+$$
+\begin{equation}
+    tf(w,d) = \frac{f_{w,d}}{\sum_{t\ast}^{d}f_{w\ast,d}}
+\end{equation}
+$$
+
+with $$f_{w,d}$$ defined as the raw count of the word w in the document d, and $$\sum_{t\ast}^{d}f_{w\ast,d}$$ as the total number of terms in document d (counting each occurrence of the same term separately).
 
 #### Inverse Document Frequency
 
-[K. Sparck Jones.] defines the inverse document frequency as the log of the ratio between the total number of documents in the corpus and the number of documents with the word.
+The inverse document frequency is defined as the log of the ratio between the total number of documents in the 
+corpus and the number of documents with the word. It is a measure the amount of information provided by the word.
+$$
+\begin{equation}
+    idf(w, d) = log\frac{N}{1 + (\left | d \in D : w \in d \right |)}
+\end{equation}
+$$
+with
+  - N: total number of documents in the corpus N  and the  denominator represent the number of documents with the word w.
+This helps to penalize the most common word in a corpus. Those words carry fewer values for in the corpus.
 
-```
-IDF(t) = log_e(Total number of documents / Number of documents with term t in it)
-```
-
-This helps to penalize the most common in a corpus. Those words carry fewer values for our analysis.
 For the curious who want to know why we use the log in the IDF, check out [this answer](https://stackoverflow.com/a/33429876/4683950) from StackOverflow.
 
-The TF-IDF combines both the term frequency and the inverse document frequency. 
+The TF-IDF combines both the Term Frequency and the Inverse Document Frequency. 
 
-$(tf_idf)_{t,d } = Idf_t * TF_{w, d}$
+$$(tf_idf)_{t,d } = Idf_t * TF_{w, d}$$
 
-#### Applying Tf-IDF to our corpus
+#### Applying TF-IDF to our corpus
 
 
+To apply TF-IDF we will leverage the sklearn implementation of the algorithm.
+Before running the bellow code, make sure you have [sklearn](https://scikit-learn.org/stable/about.html) installed.
 
-We will leverage the sklearn implementation of the TF-IDF, so before running the following code, make sure you have [sklearn](https://scikit-learn.org/stable/about.html) installed.
-
-If the sklearn is installed, you can import it with the following code.
+If the sklearn is installed, you can import it with the bellow code.
 
 
 
 ```python
 from  sklearn.feature_extraction.text  import  TfidfVectorizer
 ```
-
-[melanie and all ] recommended way to run  `TfidfVectorizer`  is with smoothing (`smooth_idf  =  True`) and normalization (`norm='l2") turned on. These parameters will better account for text length differences and produce more meaningful to–IDF scores. Smoothing and L2 normalization are the default settings for  `TfidfVectorizer,` so you don't need to include any extra code at all to turn them on. [melanie and all ]
 
 
 ```python
@@ -382,17 +308,13 @@ def create_tfidf_features(corpus, max_features=10000, max_df=0.95, min_df=2):
     print('tfidf matrix successfully created.')
     return X, tfidf_vectorizor
 ```
+[This article](https://melaniewalsh.github.io/Intro-Cultural-Analytics/05-Text-Analysis/03-TF-IDF-Scikit-Learn.html) recommended  to use  `TfidfVectorizer`  with smoothing (`smooth_idf  =  True`) and normalization (`norm='l2") turned on. These parameters will better account for text length differences and produce more meaningful to–IDF scores. Smoothing and L2 normalization are the default settings for `TfidfVectorizer,` so you don't need to include any extra code at all to turn them on.
 
 On top of the `smoth_idf`  and `norm` hyperparameters, the other keys hyperparameters are : 
-
-
 - `max_features` which denotes the max number of words to keep in our vocabulary
-
 - `max_df`: When building the vocabulary, ignore terms that have a document frequency strictly higher than the given threshold  
-
 - `min_df:` When building the vocabulary, ignore terms that have a document frequency strictly lower than the given threshold. This value is also called a cut-off in the literature. 
-
-`n_gram_range` is the number of n-grams to consider when building our vocabulary; for this task, we consider nonograms, bigrams, and trigrams.
+- `n_gram_range` is the number of n-grams to consider when building our vocabulary; for this task, we consider nonograms, bigrams, and trigrams.
 
 
 ```python
@@ -404,10 +326,8 @@ data_df = data_df.reset_index()
 tf_idf_matrix, tf_idf_vectorizer = create_tfidf_features(data_df['abstract_cleaned'])
 ```
 
-
-
 After applying the tf_if vectorizer on to our corpus, it will result in the following two objects : 
--  The `tf_ifd matrix` , is a matrix where rows are the documents and columns are the words in our vocabulary.
+- The `tf_ifd matrix` , is a matrix where rows are the documents and columns are the words in our vocabulary.
 - The `tf_idf_vectorizer` is an object that will help us to transform a new document to the TF-IDF version.
 
 The value at the ith row and jth column is the TF-IDF score of the word j in document i.
@@ -417,184 +337,11 @@ For better analysis we converted the `tf_idf_matrix` into a pandas dataframe usi
 
 ```python
 tfidf_df  =  pd.DataFrame(tf_idf_matrix.toarray(), columns=tf_idf_vectorizer.get_feature_names(), index=[data_df.index])
-tfidf_df.head()
 ```
 
+The next step is to generate the top 20 keywords for each document, those word are the word with the highest tf-idf score within the document.
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>aa</th>
-      <th>ab</th>
-      <th>abbott</th>
-      <th>abdomen</th>
-      <th>abdominal</th>
-      <th>abdominal pain</th>
-      <th>abdominal wall</th>
-      <th>ability</th>
-      <th>ability induce</th>
-      <th>ability perform</th>
-      <th>...</th>
-      <th>zip</th>
-      <th>zip code</th>
-      <th>zip code level</th>
-      <th>zone</th>
-      <th>zoonosis</th>
-      <th>zoonotic</th>
-      <th>zoonotic pathogen</th>
-      <th>zoonotic virus</th>
-      <th>μm</th>
-      <th>μm respectively</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.08894</td>
-      <td>0.098877</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.00000</td>
-      <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 10000 columns</p>
-</div>
-
-
-
-The next step is to generate the top 20 keywords for each document, those word are the word with the highest tf-idf score in each document.
-
- Let’s reorganize the DataFrame so that the words are in rows rather than columns.
+Before doing that, let’s reorganize the DataFrame so that the words are in rows rather than columns.
 
 
 ```python
@@ -603,82 +350,7 @@ tfidf_df_stacked = tfidf_df.stack().reset_index()
 tfidf_df_stacked = tfidf_df_stacked.rename(columns={0:'tfidf','level_1': 'term', "level_0": "doc_id"})
 ```
 
- We  sort by document and tfidf score and then groupby document and take the first 20 values.
-
-
-```python
-tfidf_df_stacked.head()
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>doc_id</th>
-      <th>term</th>
-      <th>tfidf</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>aa</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0</td>
-      <td>ab</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>abbott</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>abdomen</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>abdominal</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-tfidf_df_stacked = tfidf_df_stacked.sort_values(by=['doc_id','tfidf'], ascending=[True,False])\
-.groupby(['doc_id']).head(10)
-```
-
+We sort by document and tfidf score and then groupby document and take the first 20 values.
 Once we have sorted and find the top keywords we can save them in a dictionary where the keys are the the document id and the values are the another dictionary of the term and their tf-idf score.
 
 
@@ -688,86 +360,11 @@ document_tfidf  =  tfidf_df_stacked.groupby(['doc_id']).apply(lambda  x:  x[['te
 
 ```
 
-With our document and the top keyword mappings, we can now visualize what our corpus looks like to have an idea on each paper on the document. 
+With our documents and the top keyword mappings, we can now visualize what our corpus looks like to have an idea on each paper on the document. 
 
 I recently come across a good piece of code that makes visualization for a document using TF-IDF. 
 
 I grabbed it from this [article](https://melaniewalsh.github.io/Intro-Cultural-Analytics/05-Text-Analysis/03-TF-IDF-Scikit-Learn.html).
-
-
-```python
-tfidf_df_stacked.head()
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>index</th>
-      <th>doc_id</th>
-      <th>term</th>
-      <th>tfidf</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>3977</td>
-      <td>0</td>
-      <td>hsv</td>
-      <td>0.43</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4957</td>
-      <td>0</td>
-      <td>macrophage</td>
-      <td>0.26</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>6913</td>
-      <td>0</td>
-      <td>propagation</td>
-      <td>0.22</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>7683</td>
-      <td>0</td>
-      <td>restrict</td>
-      <td>0.19</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>6151</td>
-      <td>0</td>
-      <td>particle</td>
-      <td>0.17</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
 
 ```python
 import altair as alt
@@ -818,12 +415,9 @@ text = base.mark_text(baseline='middle').encode(
 #### Querying using tf-idf
 
 
-{% include image.html name="query-processing-tfidf.png" caption="The text Processing Part" %}
+{% include image.html name="query-processing-tfidf.png" caption="The text Processing Part"%}
 
-
-
-With our tfidf we could easily use it to run search and make queries that use the tf-idf score and cosine similarty.
-
+With our TF-IDF we could easily use it to run search and make queries that use the TF-IDF score and cosine similarty.
 
 ```python
 from sklearn.metrics.pairwise import cosine_similarity
@@ -861,95 +455,18 @@ The above code, get our new query, generate it TF-IDF  vector. Then it computes 
 
 As the result, it returns the top n rows in the matrix which are similar to our query vector. 
 
-
 ```python
 data_df.head()
 ```
 
+| pubmed_id | title    | abstract                                          | journal                                           | authors                | publish_time                                      | abstract_cleaned |
+|-----------|----------|---------------------------------------------------|---------------------------------------------------|------------------------|---------------------------------------------------|------------------|
+| 32165633 | Acid ceramidase of macrophages traps herpes si... | Macrophages have important protective function... | Nat Commun             | Lang, Judith; Bohn, Patrick; Bhat, Hilal; Jast... | 2020-03-12       | macrophage  important  protective  function  i... |
+| 18325284 | Resource Allocation during an Influenza Pandemic  | Resource Allocation during an Influenza Pandemic  | Emerg Infect Dis       | Paranthaman, Karthikeyan; Conlon, Christopher ... | 2008-03-01       | resource  allocation  influenza  pandemic         |
+| 30073452 | Analysis of pig trading networks and practices... | East Africa is undergoing rapid expansion of p... | Trop Anim Health Prod  | Atherstone, C.; Galiwango, R. G.; Grace, D.; A... | 2018-08-02       | east  africa  undergo  rapid  expansion  pig  ... |
+| 35017151 | Pembrolizumab and decitabine for refractory or... | BACKGROUND: The powerful ‘graft versus leukemi... | J Immunother Cancer    | Goswami, Meghali; Gui, Gege; Dillon, Laura W; ... | 2022-01-11       | background  powerful  graft  versus  leukemia ... |
+| 34504521 | Performance Evaluation of Enterprise Supply Ch... | In order to make up for the shortcomings of cu... | Comput Intell Neurosci | Bu, Miaoling                                      | 2021-08-30       | order  make  shortcoming  current  performance... |
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>pubmed_id</th>
-      <th>title</th>
-      <th>abstract</th>
-      <th>journal</th>
-      <th>authors</th>
-      <th>publish_time</th>
-      <th>abstract_cleaned</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>32165633</td>
-      <td>Acid ceramidase of macrophages traps herpes si...</td>
-      <td>Macrophages have important protective function...</td>
-      <td>Nat Commun</td>
-      <td>Lang, Judith; Bohn, Patrick; Bhat, Hilal; Jast...</td>
-      <td>2020-03-12</td>
-      <td>macrophage  important  protective  function  i...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>18325284</td>
-      <td>Resource Allocation during an Influenza Pandemic</td>
-      <td>Resource Allocation during an Influenza Pandemic</td>
-      <td>Emerg Infect Dis</td>
-      <td>Paranthaman, Karthikeyan; Conlon, Christopher ...</td>
-      <td>2008-03-01</td>
-      <td>resource  allocation  influenza  pandemic</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>30073452</td>
-      <td>Analysis of pig trading networks and practices...</td>
-      <td>East Africa is undergoing rapid expansion of p...</td>
-      <td>Trop Anim Health Prod</td>
-      <td>Atherstone, C.; Galiwango, R. G.; Grace, D.; A...</td>
-      <td>2018-08-02</td>
-      <td>east  africa  undergo  rapid  expansion  pig  ...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>35017151</td>
-      <td>Pembrolizumab and decitabine for refractory or...</td>
-      <td>BACKGROUND: The powerful ‘graft versus leukemi...</td>
-      <td>J Immunother Cancer</td>
-      <td>Goswami, Meghali; Gui, Gege; Dillon, Laura W; ...</td>
-      <td>2022-01-11</td>
-      <td>background  powerful  graft  versus  leukemia ...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>34504521</td>
-      <td>Performance Evaluation of Enterprise Supply Ch...</td>
-      <td>In order to make up for the shortcomings of cu...</td>
-      <td>Comput Intell Neurosci</td>
-      <td>Bu, Miaoling</td>
-      <td>2021-08-30</td>
-      <td>order  make  shortcoming  current  performance...</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
 
 
@@ -961,172 +478,13 @@ tfidf_df.head()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>aa</th>
-      <th>ab</th>
-      <th>abbott</th>
-      <th>abdomen</th>
-      <th>abdominal</th>
-      <th>abdominal pain</th>
-      <th>abdominal wall</th>
-      <th>ability</th>
-      <th>ability induce</th>
-      <th>ability perform</th>
-      <th>...</th>
-      <th>zip</th>
-      <th>zip code</th>
-      <th>zip code level</th>
-      <th>zone</th>
-      <th>zoonosis</th>
-      <th>zoonotic</th>
-      <th>zoonotic pathogen</th>
-      <th>zoonotic virus</th>
-      <th>μm</th>
-      <th>μm respectively</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.09</td>
-      <td>0.1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 10000 columns</p>
-</div>
+| aa | ab  | abbott | abdomen | abdominal | abdominal pain | abdominal wall | ability | ability induce | ability perform | ... | zip | zip code | zip code level | zone | zoonosis | zoonotic | zoonotic pathogen | zoonotic virus | μm  | μm respectively |
+|----|-----|--------|---------|-----------|----------------|----------------|---------|----------------|-----------------|-----|-----|----------|----------------|------|----------|----------|-------------------|----------------|-----|-----------------|
+| 0  | 0.0 | 0.0    | 0.0     | 0.0       | 0.0            | 0.0            | 0.0     | 0.0            | 0.0             | 0.0 | ... | 0.0      | 0.0            | 0.0  | 0.0      | 0.0      | 0.00              | 0.0            | 0.0 | 0.0             | 0.0 |
+| 1  | 0.0 | 0.0    | 0.0     | 0.0       | 0.0            | 0.0            | 0.0     | 0.0            | 0.0             | 0.0 | ... | 0.0      | 0.0            | 0.0  | 0.0      | 0.0      | 0.00              | 0.0            | 0.0 | 0.0             | 0.0 |
+| 2  | 0.0 | 0.0    | 0.0     | 0.0       | 0.0            | 0.0            | 0.0     | 0.0            | 0.0             | 0.0 | ... | 0.0      | 0.0            | 0.0  | 0.0      | 0.0      | 0.09              | 0.1            | 0.0 | 0.0             | 0.0 |
+| 3  | 0.0 | 0.0    | 0.0     | 0.0       | 0.0            | 0.0            | 0.0     | 0.0            | 0.0             | 0.0 | ... | 0.0      | 0.0            | 0.0  | 0.0      | 0.0      | 0.00              | 0.0            | 0.0 | 0.0             | 0.0 |
+| 4  | 0.0 | 0.0    | 0.0     | 0.0       | 0.0            | 0.0            | 0.0     | 0.0            | 0.0             | 0.0 | ... | 0.0      | 0.0            | 0.0  | 0.0      | 0.0      | 0.00              | 0.0            | 0.0 | 0.0             | 0.0 |
 
 
 
@@ -1145,7 +503,6 @@ print("search time: {:.2f} ms".format(search_time * 1000))
 print()
 show_similar_documents(data_df, cosine_similarities, sim_vecs)
 ```
-
     search time: 7.60 ms
     
     Top-1, Similarity = 0.25484833157402037
@@ -1165,7 +522,7 @@ show_similar_documents(data_df, cosine_similarities, sim_vecs)
     **==**==**==**==**==**==**==**==**==**==
     Top-4, Similarity = 0.11561157619559267
     the pubmed id : 27325914, 
-    title Consortia's critical role in developing medical countermeasures for re-emerging viral infections: a USA perspective.
+    title Consortia critical role in developing medical countermeasures for re-emerging viral infections: a USA perspective.
     abstract Viral infections, such as Ebola, severe acute resp
     **==**==**==**==**==**==**==**==**==**==
     Top-5, Similarity = 0.10755790364315998
@@ -1175,4 +532,4 @@ show_similar_documents(data_df, cosine_similarities, sim_vecs)
     **==**==**==**==**==**==**==**==**==**==
 
 
-That is all for the first part of this tutorial , We have learned how to build TF-IDF vectors, and how to leverage the cosine similarity to compute and retrieve documents that matches a query. In the second part of the tutorial we will learn how to use elasticsearch to perform the same. 
+That is all for the first part of this tutorial , We have learned how to build TF-IDF vectors, and how to leverage the cosine similarity to compute and retrieve documents that matches a query. In the second part of the tutorial we will learn how to use elasticsearch to perform the same task. 
