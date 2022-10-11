@@ -14,22 +14,16 @@ tags: python, data-science, exploratory-data-analysis, stores, machine-learning
 
 ### Context
 
-This was a take home assignment I completed for a Data Scientist/Machine Learning Engineer Role I interviewed for a Big retailer in the UK. I would like to not disclose the name of the company for confidentiality reasons.
+This was a take home assignment I completed for a Data Scientist/Machine Learning Engineer Role I interviewed for a big retailer company in the UK. I would like to not disclose the name of the company for confidentiality reasons.
 
-Unfortunately , I was not selected for the roles but I got feedback and I applied it on this assignment and I would like to share it with you.
+Unfortunately , I was not selected for the roles but I got feedback and I applied it on this assignment. That is the reason why I am sharing this post with you.
 
 In the rest of this notebook I will use the name `The Store` to reference the company.
 
-### Other instruction
-
-
-To run this notebook, make sure , you have installed the package mentioned in the [requirement](./requirements.txt) file withe their respective versions.
-
-### STORES Sales Prediction
 
 ### Problem Statement
 
-At The store, the location of a retail store plays a huge role in its commercial success. Our Stores Team use various data sources to better understand the potential of candidate locations for new stores in the UK. They need data science help in designing a model that can predict the future sales **[normalised_sales]** of a store based on location characteristics. Your task is to examine the provided dataset and answer the questions below.
+At The Store, the location of a retail store plays a huge role in its commercial success. Our Stores Team use various data sources to better understand the potential of candidate locations for new stores in the UK. They need data science help in designing a model that can predict the future sales **[normalised_sales]** of a store based on location characteristics. Your task is to examine the provided dataset and answer the questions below.
 
 #### Dataset files
 
@@ -38,8 +32,8 @@ At The store, the location of a retail store plays a huge role in its commercial
 
 #### Columns
 
-* [x]  `location_id`: id of The Store property location
-* [x] `normalised_sales`: normalised sales value of The store
+* [x] `location_id`: id of The Store property location
+* [x] `normalised_sales`: normalised sales value of The Store
 * [x] `crime_rate`: crime rate in the area (higher means more crime)
 * [x] `household_size`: mean household size in the area
 * [x] `household_affluency`: mean household affluency in the area (higher means more affluent)
@@ -55,29 +49,30 @@ At The store, the location of a retail store plays a huge role in its commercial
 * [x] `school_proximity`: average school proximity in the area
 * [x] `county`: county code of the area
 
-## Abstract TLDR
+### Abstract TLDR
 
-This assignment aimed to predict the number of sales using the different attributes of the store dataset. the training dataset has 315 rows and 14 columns. First, we cleaned the data and removed the columns with missing values. Then , we analyzed the distribution of the data and the correlation between the normalized sales and different attributes. We found that the household ratio, the crime rate, and the property values were highly correlated with the normalised sales.
+This assignment aimed to predict the number of sales using the different attributes of The Store dataset. The training dataset has 315 rows and 14 columns. 
+First, the dataset was cleaned, and columns with missing values were removed. Then an analysis of the distribution of the data and the correlation between the normalized sales and different attributes was conducted. The key finding for the exploratory data analysis step was that the household ratio, the crime rate and the property values are highly correlated with the normalized sales.
 
-For the modeling, we preprocessed the data by converting attributes with outliers value to categories and using one-hot encoding for the categorical values.  We also did feature engineering and create a new feature called the household_ratio.
+The modelling consists of the following steps: binarization or conversion of attributes with outliers to categories, using one-hot encoding for categorical values, and features engineering, which resulted in creating a new feature called household_ratio.
 
-After data preprocessing, we train a decision tree regressor and a random forest regressor and evaluate the model using five-fold cross-validation. We found out that the decision tree model overfit the data; it yields an average mean absolute error of 0.04 on the training set but 0.38 on the average on the validation set. The final random forest model yielded an average of 0.11 mean absolute error on the training set and 0.33 error on the validation set. 
+The next step after the data preprocessing was the modelling. Tree-based models were used in this step: decision tree and random forest regressor. The evaluation was done using five-fold cross-validation. The key finding was that the decision tree model overfits the data; it yields an average mean absolute error of 0.04 on the training set but 0.38 on the validation set. 
+The final random forest model yielded an average of 0.11 mean absolute error on the training set and 0.33 error on the validation set. 
 
-We analyzed the errors and found that the mean absolute error has a normal distribution but with outliers. As part of the model's improvement, we suggest analyzing the data point where the model made high mean absolute errors, training a separate model with those values, and combining the results at the end.
+After analyzing the errors, it was found that the mean absolute error has a normal distribution but with outliers. As part of the model's improvement, we suggest analyzing the data point where the model made high mean absolute errors, training a separate model with those values, and combining the results at the end.
 
-
-For usage of the model, while we would recommend the decision tree to the product managers and business people to explain how the model works, we will consider using the random forest to make the final prediction.
+For usage of the model, while the decision tree can be used to explain how the model works to product managers and other stakeholders, the random forest is the appropriate model for predictions.
 
 
 
 
 ## Exploratory Data Analysis
 
-Before diving into the modelling, you are given the dataset and The Stores team expect you to come back with an analysis of the data and any concerns you may have about it. They would also like to know which other information you think would be useful to collect for future developments.
+Before diving into the modelling, you are given the dataset and The Store team expect you to come back with an analysis of the data and any concerns you may have about it. They would also like to know which other information you think would be useful to collect for future developments.
 
 ### How I did on this question:
 
-Here is the feedback I got from The Stores team:
+Here is the feedback I got from The Store team:
 
 #### Positives:
 
@@ -87,7 +82,7 @@ You did some clever feature engineering with household features, combining them 
 
 Unfortunately you wrongly interpreted negative normalized sales as store's losses .
 
-My response, I think I should have asked for more clarification about how they interpret the normalized sales losses, it a big mistake and cost me a lot.
+My response, I think, I should have asked for more clarifications about how they interpret the normalized sales losses, it a big mistake and cost me a lot.
 
 ```python
 import warnings
@@ -609,47 +604,39 @@ def visualize_attribute(attribute_name, x_range=5, store_df=store_df):
 
 ## Exploratory Data Analysis
 
-
-In this step, we will perform exploratory data analysis; for each column, we will check for missing values, outliers,  the value distribution, and how they are the correlation between them and the target values.
-
-By the end of this step, we will find out the variables that are mainly correlated with the number of sales.
-
+This step consists of the exploratory data analysis of the dataset. For each column, missing values and outliers will be checked. Then the value distribution and the correlation between the attributes, and the correlation between each attribute and the target value will be conducted. As the results this analyze will help to find the varialbles that are highly correlated with the number of sales.
 ### The Target Variable : Normalised Sales
 
 For this problem,  we are predicting the normalized sales of a store. The normalized sale can be positive or negative.
 <strike>
- From our understanding, a negative normalized sales mean loss and a positive normalized sales mean gain. A loss happens when a store has products it was supposed to sell in a given period but didn't sell them and has to clear the items from the store. A gain or a positive value of normalized sales is when the product was sold in the given period, resulting in a profit for store.
+ From our understanding, a negative normalized sales mean loss and a positive normalized sales mean gain. A loss happens when a store has products it was supposed to sell in a given period but didn't sell them and has to clear the items from The Store. A gain or a positive value of normalized sales is when the product was sold in the given period, resulting in a profit for store.
 </strike>
 
 That is the paragraph that cost me point in this section . I should have also added that I am not sure about that and I will need more clarification.
 
 ### Information about the dataset
 
-We can see that our dataset has 320 rows and 12 columns. We can consider this a small dataset.
+The dataset has 320 rows and 12 columns, it can be considered as a small dataset.
 
 ```python
 visualize_attribute("normalised_sales", x_range=.8)
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_17_0.png){: .center-image }
+
+![Information about the dataset](images/Exploratory-data-analysis_17_0.png){: .center-image }
 
 ```python
 store_df.normalised_sales.std().round(2)
 ```
-
-
-
-
     0.98
 
 
 
-As per the plot we can see that sales values follow a normal distribution centered around {{store_df.normalised_sales.mean().round(2)}}, and with  a standard deviation of {{store_df.normalised_sales.std().round(2)}}.
+As per the plot show that sales values follow a normal distribution centered around {{store_df.normalised_sales.mean().round(2)}}, and with  a standard deviation of {{store_df.normalised_sales.std().round(2)}}.
 
 
 ### Missing values Computation 
-
-Since we don't have any reasons  for the missing values , we will use different missing values computation methods and then compare the effect of that on the predictor variable.
+Since there is no reason for the missing values, different missing values computation methods were used to compare the effect of each computation method on the predictor variable.
 
 ```python
 print(store_df.isnull().sum())
@@ -672,23 +659,22 @@ print(store_df.isnull().sum())
     county                     0
     dtype: int64
 
-From that we can see that the columns school proximity and the commercial property have missing values which are 10 % of the values for the commercial property and 20 % for the school proximity.
-
-In the next step we will have a closer look on those values to find how to deal with them.
+The above table illustrate that the school proximity and commercial property columns have are 10% and 20% of the values respectively. The next step will have a closer look on those values and find how to deal with them.
 
 #### Possible Reason for Missing Values
 
-For recall , let us note what are three main reason for missing values in the data according to the mechanism of  missingness.
+For recall , let us note what are three main reason for missing values in the data according to the mechanism of missingness.
 
 - Missing completely at Random:  is defined as when the probability that the data are missing is not related to either the specific value which is supposed to be obtained or the set of observed responses.
+
 - Missing at Random : ) is a more realistic assumption for the studies performed in the anesthetic field. Data are regarded to be MAR when the probability that the responses are missing depends on the set of observed responses, but is not related to the specific missing values which is expected to be obtained.
-- Missing not at Random: If the characters of the data do not meet those of MCAR or MAR, then they fall into the category of missing not at random (MNAR).
+
+- Missing not at Random: if the characters of the data do not meet those of MCAR or MAR, then they fall into the category of missing not at random (MNAR).
 
 
-Upon looking at the dataset, there seems to be  a valid reason for the missing values in the two columns, there seems to be missing at random. So now, we cannot decide the best method to deal with those missing values after looking at each variable separately.
+Upon looking at the dataset, there seems to be a valid reason for the missing values in the two columns, there seems to be missing at random. So now, a decision cannot be made about the best method to deal with those missing values before looking at each variable separately.
 
-Next we will analyze correlation between variables and the target variable , then we will analyze each variable separately.
-
+The next section will analyze the correlation between each attributes and the target variable, the an analysis of each variable will be conducted.
 ### Correlation Analysis
 
 ```python
@@ -1155,18 +1141,18 @@ correlation_matrix.loc["normalised_sales"].sort_values(ascending=False)
 
 
 
-Here is few information we can notice from the correlation matrix : 
+Here is few information noticeable from the correlation matrix : 
  - The highest correlated attribute is the proportion of new builds and public transport distribution.
  - The property values and the proportion of non-retail commercial properties. 
  - Public transport distribution and proportion of non retails are negatively correlated.
 
-In terms of Pearson correlation with the target variable, we can see that the normalized sales are negatively correlated with the household_affluency but positively correlated with the household size.
+In terms of Pearson correlation with the target variable, the normalized sales are negatively correlated with the household_affluency but positively correlated with the household size.
 
 
 ### Variable Distribution 
 
 
-In the following section, we will analyze each variable deeper. For each variable,  we will draw a histogram and a boxplot. It will help to find out the outliers and the variable distribution. We will then plot a correlation between the variable and the normalized sales. If a feature has outlier values, we will have a deeper look at those and deal with them with the appropriate method.
+The following section will analyze each variable deeper. For each variable, it will draw a histogram and a boxplot. This plot will help to find out the outliers and the variable distribution. It will then plot a correlation between the variable and the normalized sales. If a feature has outlier values, it will have a deeper look at those and deal with them with the appropriate method.
 
 ```python
 number_of_columns = len(store_df.columns)
@@ -1186,7 +1172,7 @@ for column_index, column in enumerate(store_df.columns):
 fig.tight_layout()
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_31_0.png){: .center-image }
+![Distribution of Variables](images/Exploratory-data-analysis_31_0.png){: .center-image }
 
 #### Crime Rate
 
@@ -1194,11 +1180,9 @@ fig.tight_layout()
 visualize_attribute("crime_rate")
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_33_0.png){: .center-image }
+![crime rate ratio](images/Exploratory-data-analysis_33_0.png){: .center-image }
 
-By analyzing the graph of the crime rate, we can see that the crime rate is not normally distributed but have a sort of logarithmic distribution.
-
-As per the plot, we can find that the crime rate has some outlier values. For a deeper analysis, we will convert the crime rate into high, medium, and low categories.
+The graph of the crime rate ration illustrates that there crime rate is not normally distributed but have a sort of logarithmic distribution. The plot also shows that the crime rate has outlier values. For a deeper analysis, a conversion of the crime rate ration into high, medium, and low category will be performed.
 
 ```python
 def categorize_attribute(attribute, bins_range, categories_names):
@@ -1225,8 +1209,7 @@ store_df.crime_rate_bin.value_counts().plot(kind='barh')
     <AxesSubplot:>
 
 
-
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_37_1.png){: .center-image }
+![crime rate ratio](images/Exploratory-data-analysis_37_1.png){: .center-image }
 
 ```python
 store_df.loc[store_df.crime_rate_bin == 'high']
@@ -1467,7 +1450,10 @@ store_df.loc[store_df.crime_rate_bin == 'high']
 
 
 Once we have grouped the crime rate by bins , let us visualize the normalize sales in those bins
-
+-- Continue here
+https://blog.pragmaticengineer.com/becoming-a-better-writer-in-tech/
+https://www.naturalreaders.com/
+Find a community of proofreaders
 ##### Sales per Crime Rate
 
 ```python
@@ -1500,7 +1486,7 @@ sns.barplot(y=mean_sales_per_crime_rate.index, x=mean_sales_per_crime_rate)
 
 
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_43_1.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_43_1.png){: .center-image }
 
 ```python
 
@@ -1514,19 +1500,19 @@ sns.boxplot(y="normalised_sales", x='crime_rate_bin', data=store_df)
 
 
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_44_1.png){: .center-image }
+![crime rate vs sales](images/Exploratory-data-analysis_44_1.png){: .center-image }
 
-We can confirm that the region with the lowest crime rate has the highest sales.
 
+The above plot can confirm that the region with the lowest crime rate has the highest sales.
 #### Proportion of Flats
 
 ```python
 visualize_attribute("proportion_flats")
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_47_0.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_47_0.png){: .center-image }
 
-As for the crime rate in the area, we can see that the proportion of flats in the area have outliers, and we can split it into two categories and analyze them.
+As for the crime rate in the area, the proportion of flats in the area have outliers. It can be split in two categories for further analysis.
 
 ```python
 categories_bins = [(-1, 10), (10, 60), (60, store_df["proportion_flats"].max())]
@@ -1545,9 +1531,9 @@ store_df.proportion_flats_bin.value_counts().plot(kind='barh')
 
 
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_50_1.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_50_1.png){: .center-image }
 
-Upon binarizing the proportion of flats in the area, we can now visualize the normalized sales in those bins.
+Upon binarizing the proportion of flats in the area, let us visualize the sales in within those bins.
 
 ```python
 
@@ -1561,20 +1547,17 @@ sns.boxplot(y="normalised_sales", x='proportion_flats_bin', data=store_df)
 
 
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_52_1.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_52_1.png){: .center-image }
 
 As per the visualization, the area with low flats proportion has the lowest sales, whereas the area with high flats ratio has the highest sales.
-
-This makes sense because the flats attract more people and those people will like to buy more in the stores.
+This makes sense because the flats attract more people and those people will like to buy more in The Store.
 
 #### Proportion of commercial properties.
-The next property we would like to analyze is the proportion of commercial properties in the area.
+The next property to analyze is the proportion of commercial properties in the area.
 
-As per the documentation, this column contains the percentage of commercial properties in the area; therefore since it contains the percentage, we expect the values to be between 0 and 100. Unfortunately, we can see that some values are null and others are not between 0 and 200.
+As per the documentation, this column contains the percentage of commercial properties in the area; therefore since it contains the percentage, we expect the values to be between 0 and 100. Unfortunately, some values are null and others are not between 0 and 200.
 
-**We have around 29 null values; since we don't have any information about the area without commercial properties, can we consider those nan values as 0?** This is a question to ask the business or the data collector.
-
-As of now, with more than 10 % of those values, I would consider dropping the attribute in the analysis and leverage the information from the proportion of non-retail, commercial properties.
+The columns has 29 null values; since there not any information about tne area without commercial properties, for now the missing value can be filled with 0. Then we can ask the business or the data collector why there are missing values. Another alternative would be to drop the attribute with those null values.
 
 #### Property value in the Area
 
@@ -1598,9 +1581,9 @@ store_df.property_value.isna().value_counts()
 visualize_attribute("property_value", 50)
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_57_0.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_57_0.png){: .center-image }
 
-From the plot, we can see two different bins of property values: one with values lower than 500 and another with values higher than 500.
+The plot illustrates two different bins of property values: one with values lower than 500 and another with values higher than 500.
 
 ```python
 property_value_correlation = store_df.loc[:, ["property_value"]].corrwith(store_df.normalised_sales).values[0].round(2)
@@ -1610,9 +1593,11 @@ property_value_correlation = store_df.loc[:, ["property_value"]].corrwith(store_
 sns.relplot(x="property_value", y="normalised_sales", data=store_df);
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_60_0.png){: .center-image }
 
-We can see no clear linear correlation between property value and normalized sales. It seems to be negative with a Pearson coefficient of {{property_value_correlation}}
+
+![proportion of flats](images/Exploratory-data-analysis_60_0.png){: .center-image }
+
+The above  plot illustrates that there is no clear linear correlation between property value and normalized sales. It seems to be negative with a Pearson coefficient of {{property_value_correlation}}
 
 Since we have two categories in the property values, we would like to split the columns into two categories and visualize the sales values within those categories.
 
@@ -1633,7 +1618,7 @@ sns.boxplot(x="property_value_bin", y="normalised_sales", data=store_df)
 
 
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_64_1.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_64_1.png){: .center-image }
 
 Looking at the property value itself, it seems to correlate with the sales negatively. The areas with the most expensive properties have the lowest sales. In contrast, the area with less expensive property has the highest sales. 
 
@@ -1659,7 +1644,7 @@ store_df.proportion_nonretail.isna().value_counts()
 visualize_attribute("proportion_nonretail")
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_68_0.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_68_0.png){: .center-image }
 
 Let us combine the property values with the ration of non retails property in the area and visualize
 
@@ -1671,7 +1656,7 @@ store_df["ratio_property_value_nonretail"] = store_df.property_value / store_df.
 visualize_attribute("ratio_property_value_nonretail", 40)
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_71_0.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_71_0.png){: .center-image }
 
 ```python
 sns.relplot(x="ratio_property_value_nonretail", y="normalised_sales", data=store_df)
@@ -1684,7 +1669,7 @@ sns.relplot(x="ratio_property_value_nonretail", y="normalised_sales", data=store
 
 
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_72_1.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_72_1.png){: .center-image }
 
 ```python
 store_df.loc[:, ["ratio_property_value_nonretail"]].corrwith(store_df.normalised_sales)
@@ -1790,7 +1775,7 @@ store_df.loc[:, ["commercial_property", "retail_property_value", "property_value
 visualize_attribute("retail_property_value", 50)
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_78_0.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_78_0.png){: .center-image }
 
 ```python
 store_df.loc[:, ["retail_property_value"]].corrwith(store_df.normalised_sales)
@@ -1815,7 +1800,7 @@ sns.relplot(y="retail_property_value", x="normalised_sales", data=store_df)
 
 
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_80_1.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_80_1.png){: .center-image }
 
 The newly created variable negatively correlates with the normalized sales. The higher the retail property value, the lowers the sales. Therefore, we can assume that the most expensive property attracts fewer people.
 
@@ -1827,8 +1812,8 @@ After exploring the property attribute, we can visualize the household attribute
 - `household_affluency`: mean household affluency in the area (higher means more affluent)
 
 These attributes hold different household information. For example, they contain the household size and the household affluence.
-
-We will assume that the larger household size in the area yields more sales. Or the more affluent the house is, the more sales we have in the region. We can also combine the two variables in the household ratio and visualize how they correlate with the target variable.
+We will assume that the larger household size in the area yields more sales. Or the more affluent the house is, the more sales in the region. 
+The two attributes can be combined to create the household ratio, then a visualization will be made to find out how it correlated with the sales.
 
 ```python
 store_df.household_size.isna().value_counts()
@@ -1858,15 +1843,15 @@ store_df.household_affluency.isna().value_counts()
 visualize_attribute("household_affluency")
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_85_0.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_85_0.png){: .center-image }
 
 ```python
 visualize_attribute("household_size")
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_86_0.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_86_0.png){: .center-image }
 
-We can see that those attributes seem to be generally distributed without outliers.
+The plot showed us that those attributes follow a normal distribution without outliers.
 
 ```python
 store_df.loc[:, ["household_size", "household_affluency", "normalised_sales"]].corr()
@@ -1932,9 +1917,9 @@ sns.relplot(x="household_size", y="normalised_sales", data=store_df,  hue="prope
 
 
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_89_1.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_89_1.png){: .center-image }
 
-Looking at the regression plot, we found that household size greater than two have lower property values, and we can see the linear relationship between the household size and the normalized sales.
+The above plot illustrates that a household size greater than two have lower property values, it also describes the linear relationship between the household size and the normalized sales.
 
 ```python
 sns.relplot(x="household_affluency", y="normalised_sales", data=store_df, hue="property_value_bin")
@@ -1947,9 +1932,9 @@ sns.relplot(x="household_affluency", y="normalised_sales", data=store_df, hue="p
 
 
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_91_1.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_91_1.png){: .center-image }
 
-We can see that two attributes are correlated with each other on the one hand. However, on the other hand, household size is positively correlated with sales, whereas household affluence is negatively correlated with sales.
+The two household attributes are correlated with each other on the one hand. However, on the other hand, household size is positively correlated with sales, whereas household affluence is negatively correlated with sales.
 
 Let us create a ratio of the household size and the household affluence and evaluate how it will be correlated with the target variable.
 
@@ -1961,7 +1946,7 @@ store_df["household_ratio"] = store_df.household_size / store_df.household_afflu
 visualize_attribute("household_ratio")
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_94_0.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_94_0.png){: .center-image }
 
 ```python
 sns.relplot(x="household_ratio", y="normalised_sales", data=store_df, hue="property_value_bin")
@@ -1974,9 +1959,9 @@ sns.relplot(x="household_ratio", y="normalised_sales", data=store_df, hue="prope
 
 
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_95_1.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_95_1.png){: .center-image }
 
-An exciting property of that plot is that the new household ratio is highly correlated with sales. By looking at the property values, we noticed that the most expensive property also has a lower household ratio and therefore lowers sales.
+An exciting property of that plot is that the new household ratio is highly correlated with sales. The property values shows that the most expensive property also has a lower household ratio and therefore lowers sales.
 
 ```python
 store_df.loc[:, ["household_size", "household_affluency", "normalised_sales", "household_ratio"]].corr()
@@ -2046,7 +2031,7 @@ By combining the both variable into the household ratio, we have found out that 
 
 #### New store distribution 
 
-The new store distribution attribute tells us if the store is recent or not; we can assume that recent stores have fewer sales than older stores. Because we people are more likely to buy from the old stores, let us look at the data and how it spread within the stores.
+The new store distribution attribute tells us if The Store is recent or not; we can assume that recent stores have fewer sales than older stores. Because people are more likely to buy from the old stores. Let us look at the data and how it spread within The Store.
 
 ```python
 store_df.new_store.value_counts().plot(kind='barh')
@@ -2059,9 +2044,9 @@ store_df.new_store.value_counts().plot(kind='barh')
 
 
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_100_1.png){: .center-image }
+![new store distribution](images/Exploratory-data-analysis_100_1.png){: .center-image }
 
-As per the barplot we can see that we have more old stores than new one , in the areas.
+The barplot illustrates that we have more old stores than new one in the areas.
 
 ```python
 sns.boxplot(y="normalised_sales", x='new_store', data=store_df)
@@ -2074,9 +2059,7 @@ sns.boxplot(y="normalised_sales", x='new_store', data=store_df)
 
 
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_102_1.png){: .center-image }
-
-We can not confirm our assumption, but the opposite is accurate we can see that the new stores have more sales than the old ones. But this can be taken with reserve, as we can see that we have more old stores than new stores in the dataset. We can find another metric that is weighted by the number of elements we have in each category.
+![proportion of flats](images/Exploratory-data-analysis_102_1.png){: .center-image }
 
 ```python
 store_df.new_store.value_counts()
@@ -2111,14 +2094,12 @@ store_df.competitor_density.max(
 visualize_attribute("competitor_density", 50)
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_107_0.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_107_0.png){: .center-image }
 
-As per the graph, we can see that the chart following is left-skewed, with more regions with a higher density of competitors.
-Binarization may be helpful here.
+The plot is left-skewed with more regions with a higher density of competitors. Categorizing the attributes may be helpful here.
 
 ```python
 store_df["competitor_density_bin"] = categorize_attribute("competitor_density", [(0, 300), (300, 400)], ["low", "high"])
-
 ```
 
 ```python
@@ -2132,7 +2113,7 @@ sns.boxplot(y="normalised_sales", x="competitor_density_bin", data=store_df)
 
 
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_110_1.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_110_1.png){: .center-image }
 
 ```python
 store_df.loc[:, ["competitor_density"]].corrwith(store_df.normalised_sales)
@@ -2157,9 +2138,9 @@ sns.relplot(y="competitor_density", x="normalised_sales", data=store_df)
 
 
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_112_1.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_112_1.png){: .center-image }
 
-Even after binarizing the attribute, we found that the region with higher competitors tends to have higher sales. The correct explanation is that competitors tend to establish their stores in the area, which is attractive in terms of sales. They have done the analysis before and found a viable market in the region, and the demand is high, so they have established their stores.
+Even after binarizing the attribute, it can be noticed that the region with higher competitors tends to have higher sales. The correct explanation is that competitors tend to establish their stores in the area, which is attractive in terms of sales. They have done the analysis before and found a viable market in the region, and the demand is high, so they have established their stores.
 
 #### Transport Availability
 
@@ -2188,7 +2169,7 @@ store_df.transport_availability.value_counts().plot(kind='barh')
 
 
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_116_1.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_116_1.png){: .center-image }
 
 In those categories , let us visualize the mean of of the sales.
 
@@ -2203,7 +2184,7 @@ sns.boxplot(y="normalised_sales", x=store_df.transport_availability.str.split(" 
 
 
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_118_1.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_118_1.png){: .center-image }
 
 ```python
 store_df.groupby("transport_availability").agg({"normalised_sales": lambda x: np.abs(x).mean()})
@@ -2262,7 +2243,7 @@ store_df.groupby("transport_availability").agg({"normalised_sales": lambda x: np
 </div>
 
 
-We can see that the transport availability is not linear correlated with the sales and the few locations with higher sales are spread out in different transport availability categories.
+The transport availability is not linear correlated with the sales and the few locations with higher sales are spread out in different transport availability categories.
 
 #### Public Transport Distribution 
 
@@ -2284,7 +2265,7 @@ There is no null values of the public transport distribution , let us now visual
 visualize_attribute("public_transport_dist")
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_124_0.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_124_0.png){: .center-image }
 
 ```python
 store_df.public_transport_dist.max()
@@ -2321,9 +2302,9 @@ store_df.loc[:, ["public_transport_dist"]].corrwith(store_df.normalised_sales)
 visualize_attribute("public_transport_dist")
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_129_0.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_129_0.png){: .center-image }
 
-But we can clearly see that it does not have any linear correlation with the target variable.
+This attribute does not have any linear correlation with thne target attribute.
 
 ```python
 store_df.head()
@@ -2527,7 +2508,7 @@ store_df.head()
 sns.relplot(x="public_transport_dist", y="normalised_sales", data=store_df, hue="transport_availability");
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_132_0.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_132_0.png){: .center-image }
 
 By combining the public transport distribution with the transport availability , there is no clear correlation between the two variables.
 
@@ -2556,7 +2537,7 @@ store_df.school_proximity.min
 
 
 
-We can see that columns has missing values , 
+The two columns has missing values , 
 - an idea before continuing may be to fill those values with the mean of the attribute. 
 - Or since the columns have more than 20 % of missing  values we can consider dropping them and leverage the information from the other columns.
 
@@ -2654,27 +2635,27 @@ sns.boxplot(y="normalised_sales", x="county", data=store_df, order=sales_by_coun
 axe.tick_params(axis='x', labelrotation=90)
 ```
 
-![png]({{ site.baseurl }}/source/assets/posts/eda/Exploratory-data-analysis/Exploratory-data-analysis_140_0.png){: .center-image }
+![proportion of flats](images/Exploratory-data-analysis_140_0.png){: .center-image }
 
-As per the plot we can see that the sales are are higher in some region , but lowers in other region , we can do further analysis to find out what are affecting the sales in those regions.
+The plot illustrates that the sales are higher in some region , but lowers in other region. A further analysis can be conducted to find out what are affecting the sales in those regions.
 
 ### Conclusion on the Data Analysis:
 
+This section the Exploratory data analysis was completed. This analysis help in understanding the variables distributions, the correlations between each variable and the target attribute. At the end of the analysis, different ways of combining features were explored.
 
-We have just completed our exploratory data analysis. In this section, we understood the distribution of the variables,  the correlation between each variable and the target attribute, and finally, we explored different ways of combining the features.
+As per the analysis, here are the key findings.
 
-As per our analysis, here are our key findings : 
 
 #### Linear Correlations with the target variable
 
-- We have found that by splitting the crime rate into different categories, we discovered that the crime rate is negatively correlated with sales. Therefore, the region with a higher crime rate has lower sales.
-- We found a strong linear correlation between the household ratio and the number of sales. The household ratio is defined as of the  household size divided by the  household affluency.
-- We found that the more competitor in the region, the higher are the sales in that region.
-- We found that there seems not to be a clear linear correlation between the transport attributes and the sales.
-- We found that the property values are negatively correlated with the sales, the more expensive the property values in the region, the lower the rates in the area.
-- We created a new variable combining the property values and the ratio of non-retail property and found that the ratio is silghly correlated with the sales.
-- We found that the region with a higher proportion of flats seems to have higher sales.
-- We found that the higher sales in the dataset came from the specific county. For now, we didn't dive deeper into that attribute to find out if that may be a random phenomenon.  
+- By splitting the crime rate into different categories, we discovered that the crime rate is negatively correlated with sales. Therefore, the region with a higher crime rate has lower sales.
+- A strong linear correlation exists between the household ratio and the number of sales. The household ratio is defined as of the  household size divided by the  household affluency.
+- The more competitor in the region, the higher are the sales in that region.
+- There seems not to be a clear linear correlation between the transport attributes and the sales.
+- The property values are negatively correlated with the sales, the more expensive the property values in the region, the lower the rates in the area.
+- A new variable combining the property values and the ratio of non-retail property were created. The it was found that the new created ratio is silghly correlated with the sales.
+- The region with a higher proportion of flats seems to have higher sales.
+- The higher sales in the dataset came from the specific county. For now, we didn't dive deeper into that attribute to find out if that may be a random phenomenon.  
 
 #### Variables with Missing values: 
 
