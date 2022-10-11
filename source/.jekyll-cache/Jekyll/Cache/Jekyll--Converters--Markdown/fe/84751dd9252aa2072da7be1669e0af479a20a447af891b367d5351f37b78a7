@@ -1,0 +1,756 @@
+I"��<h2 id="scenario">Scenario</h2>
+
+<p>In response to the COVID-19 pandemic, the White House and a coalition of leading research groups have prepared the <a href="https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge">COVID-19</a> Open Research Dataset (CORD-19). CORD-19 is a resource of over 181,000 scholarly articles, including over 80,000 with full text, about COVID-19, SARS-CoV-2, and related coronaviruses. This freely available dataset is provided to the global research community to apply recent advances in information retrieval and other AI techniques to generate new insights in support of the ongoing fight against this infectious disease. There is a growing urgency for these approaches because of the rapid acceleration in new coronavirus literature, making it difficult for the medical research community to keep up.</p>
+
+<h2 id="the-task">The task</h2>
+<p>For this tutorial, we will write an information retrieval pipeline that helps anyone to query the cord-19 dataset and find relevant articles for their queries.</p>
+
+<p>We will show two different approaches to building that pipeline. The first approach uses the TF-IDF and cosine similarity between the query and the articles. We will use Elasticsearch with the python API to search our articles for the second one.</p>
+
+<p>For the first step, we will leverage the TF-IDF vectorizer from Sklearn. In contrast, for the second one, we will leverage the python <a href="https://github.com/elastic/elasticsearch-dsl-py">elastic search dsl</a>.  If you are  familiar with ORMs, this library is like an object-relational framework to interact with the elastic search database. If you have a background in python and some NLP experience, this is a fantastic tool for a smooth interaction with elastic search.</p>
+
+<p>This series is a part of an assignment I did for my Information Retrieval course. I decided to publish it online because of the lack of relevant tutorials on this topic.</p>
+
+<p>This will be a two parts tutorial.</p>
+
+<p>For the first part:</p>
+<ul>
+  <li><strong>Data Collection:</strong> In this section, we will go through downloading the dataset from Kaggle and saving it as a csv file.</li>
+  <li><strong>Data Cleaning:</strong> We will pre-process and clean the text.</li>
+  <li><strong>Keyword selection:</strong> We will use TF-IDF to find the appropriate keywords for each document.</li>
+  <li><strong>Querying</strong> : In this section we will query the article using TF-IDF.</li>
+</ul>
+
+<p>For the second part:</p>
+<ul>
+  <li>Model Creation and Indexing: We will build our elastic search model and create our index in the database.</li>
+  <li>Querying: We will show to perform some simple queries on our database and preprocess the results.</li>
+</ul>
+
+<p>For this series, I am assuming the following:</p>
+
+<ul>
+  <li>You have elastic-search installed and running on your computer.</li>
+  <li>You have Python 3.7 installed.</li>
+  <li>You are familiar with the basics of text processing in Python and Object-Relational Mapping(ORM).</li>
+</ul>
+
+<p>If that is the case for you, let’s get started.</p>
+
+<figure>
+  <p><img src="/assets/posts/2022-04-07-information-retrieval-on-medical-research-papers-about-covid19/information-retrieval-system.png" /></p>
+  <figcaption>Our Information retrieval pipeline</figcaption>
+</figure>
+
+<h2 id="data-collection">Data Collection</h2>
+
+<p>In this section, we will go through downloading the dataset from Kaggle and how to process it in chunks.</p>
+
+<p>The dataset is huge, and for this tutorial, we will use only the metadata release alongside the dataset.</p>
+
+<h3 id="downloading-the-metadata-file">Downloading the metadata file</h3>
+
+<p>The simplest way to download the data is to head to the <a href="https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge?select=metadata.csv">competition link</a> then select the metadata.csv file, and finally, click on the download button to download it and save it in a place in your local machine.</p>
+
+<p>The data comes as a zip file; you will have to unzip it to start using it.</p>
+
+<h3 id="reading-the-dataset-with-dask">Reading the dataset with Dask.</h3>
+
+<p>The dataset is huge. It has more than 1.5Gb. We will use dask and pandas to read the file to make our life easier.</p>
+
+<p>Make sure to have <a href="https://docs.dask.org/en/stable/">dask</a> and <a href="https://pandas.pydata.org/">pandas</a> installed in your environment for this project.</p>
+
+<p>With the file downloaded in your local machine, dask and pandas installed, let us write the first code to read the dataset.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span>  <span class="nn">pandas</span>  <span class="k">as</span>  <span class="n">pd</span>
+<span class="kn">from</span>  <span class="nn">pathlib</span>  <span class="kn">import</span>  <span class="n">Path</span>
+<span class="kn">import</span>  <span class="nn">dask.dataframe</span>  <span class="k">as</span>  <span class="n">dd</span>
+<span class="kn">import</span>  <span class="nn">numpy</span>  <span class="k">as</span>  <span class="n">np</span>
+</code></pre></div></div>
+
+<p>If the libraries are well imported, let us read the file.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">DATA_PATH</span>  <span class="o">=</span>  <span class="n">Path</span><span class="p">.</span><span class="n">cwd</span><span class="p">().</span><span class="n">joinpath</span><span class="p">(</span><span class="s">"data"</span><span class="p">)</span>
+<span class="n">metadata_path</span>  <span class="o">=</span>  <span class="n">DATA_PATH</span><span class="p">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s">"metadata.csv"</span><span class="p">)</span>
+<span class="n">data</span>  <span class="o">=</span>  <span class="n">dd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">metadata_path</span><span class="p">,</span>  <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s">"pubmed_id"</span><span class="p">:</span>  <span class="n">np</span><span class="p">.</span><span class="n">object0</span><span class="p">,</span>  <span class="s">'arxiv_id'</span><span class="p">:</span>  <span class="s">'object'</span><span class="p">,</span>  <span class="s">'who_covidence_id'</span><span class="p">:</span>  <span class="s">'object'</span><span class="p">})</span>
+</code></pre></div></div>
+
+<p>Those lines, call the read_csv from function from dask to read the file and specify some columns data mapping.
+Under the assumption that you have a data folder on the same level as this jupyter notebook and it is named <code class="language-bash highlighter-rouge">metadata.csv</code>. If that is not the case , you can pass the exact path of your csv file to the <code class="language-bash highlighter-rouge">read_csv</code> function.</p>
+
+<p><strong>Why is Dask faster than Pandas?</strong></p>
+
+<p>Remember, we are dealing with a large dataset. Pandas would like to load the whole data in memory. But for a small computer, 1.7 Gb is a lot of data to fit in memory, which would take us a lot of time.</p>
+
+<p>A workaround for this problem would be to read our dataset in different chunks with pandas. Dask is doing almost the same, it read the dataset in parallel using chunk but transparently for the end users.</p>
+
+<p>It avoids us writing a lot of code that will read the data in chunks, process each chunk in parallel, and combine the whole data in one dataset. Check this tutorial <a href="https://pythonspeed.com/articles/faster-pandas-dask/">here</a> for more details about how dask is faster than pandas.</p>
+
+<p>Once our data is read, let us select a subset for our tutorial.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">important_columns</span>  <span class="o">=</span>  <span class="p">[</span><span class="s">"pubmed_id"</span><span class="p">,</span>  <span class="s">"title"</span><span class="p">,</span>  <span class="s">"abstract"</span><span class="p">,</span>  <span class="s">"journal"</span><span class="p">,</span>  <span class="s">"authors"</span><span class="p">,</span>  <span class="s">"publish_time"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>The dataset has 59k rows but for this exercice will will only work this the a sample of 1000 rows which is roughly the 1/60 of the whole dataframe</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sample_df</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">300</span><span class="p">))</span>
+<span class="n">sample_df</span>  <span class="o">=</span>  <span class="n">sample_df</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="n">important_columns</span><span class="p">)</span>
+<span class="n">sample_df</span> <span class="o">=</span> <span class="n">sample_df</span><span class="p">.</span><span class="n">loc</span><span class="p">[:,</span>  <span class="n">important_columns</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>We are still using a dask dataframe; let us convert it to a pandas dataframe.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_df</span>  <span class="o">=</span>  <span class="n">sample_df</span><span class="p">.</span><span class="n">compute</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>This line creates the pandas dataframe we will be working with for the rest of the tutorial.
+The bellow lines will drop null values in the abstract of the dataset and</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_df</span>  <span class="o">=</span>  <span class="n">data_df</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s">'abstract'</span><span class="p">],</span>  <span class="n">axis</span><span class="o">=</span><span class="s">"rows"</span><span class="p">)</span>
+<span class="n">data_df</span>  <span class="o">=</span>  <span class="n">data_df</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">"pubmed_id"</span><span class="p">)</span>
+<span class="n">data_df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+      <th>abstract</th>
+      <th>journal</th>
+      <th>authors</th>
+      <th>publish_time</th>
+    </tr>
+    <tr>
+      <th>pubmed_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>32165633</th>
+      <td>Acid ceramidase of macrophages traps herpes si...</td>
+      <td>Macrophages have important protective function...</td>
+      <td>Nat Commun</td>
+      <td>Lang, Judith; Bohn, Patrick; Bhat, Hilal; Jast...</td>
+      <td>2020-03-12</td>
+    </tr>
+    <tr>
+      <th>18325284</th>
+      <td>Resource Allocation during an Influenza Pandemic</td>
+      <td>Resource Allocation during an Influenza Pandemic</td>
+      <td>Emerg Infect Dis</td>
+      <td>Paranthaman, Karthikeyan; Conlon, Christopher ...</td>
+      <td>2008-03-01</td>
+    </tr>
+    <tr>
+      <th>30073452</th>
+      <td>Analysis of pig trading networks and practices...</td>
+      <td>East Africa is undergoing rapid expansion of p...</td>
+      <td>Trop Anim Health Prod</td>
+      <td>Atherstone, C.; Galiwango, R. G.; Grace, D.; A...</td>
+      <td>2018-08-02</td>
+    </tr>
+    <tr>
+      <th>35017151</th>
+      <td>Pembrolizumab and decitabine for refractory or...</td>
+      <td>BACKGROUND: The powerful ‘graft versus leukemi...</td>
+      <td>J Immunother Cancer</td>
+      <td>Goswami, Meghali; Gui, Gege; Dillon, Laura W; ...</td>
+      <td>2022-01-11</td>
+    </tr>
+    <tr>
+      <th>34504521</th>
+      <td>Performance Evaluation of Enterprise Supply Ch...</td>
+      <td>In order to make up for the shortcomings of cu...</td>
+      <td>Comput Intell Neurosci</td>
+      <td>Bu, Miaoling</td>
+      <td>2021-08-30</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>The dataframe contains the following columns :</p>
+
+<p>The pub med id is a unique id to identify the article.</p>
+<ul>
+  <li>Title: the title of the research paper</li>
+  <li>authors: the author of the paper</li>
+  <li>publish time: the date the paper was published 
+The abstract is the abstract of the paper, which is the text we will use for indexing purposes for this work.
+With our pandas dataset in place, let us move to the next part: text processing.</li>
+</ul>
+
+<h2 id="text-processing">Text Processing</h2>
+
+<figure>
+  <p><img src="/assets/posts/2022-04-07-information-retrieval-on-medical-research-papers-about-covid19/text-processing-part.png" /></p>
+  <figcaption>The text Processing Part</figcaption>
+</figure>
+
+<p>In this part, we will perform text processing. Our input is the raw text for the paper abstract for this section. Our output is the cleaned version of the input text.
+Our preprocessing consists of the following steps: tokenization, lemmatization, stop word removal, lowercasing, special characters, and number removal.</p>
+
+<p>For this step, we will be using <a href="https://spacy.io/usage">Spacy</a>,<a href="https://www.nltk.org/install.html">NLTK</a>, and regular expressions to perform our preprocessing. Ensure you have spacy and NLTK installed before running the code in this section. Check also if you have installed the <code class="language-bash highlighter-rouge">en_core_web_sm</code> package. If not install it from this <a href="https://spacy.io/models/en#en_core_web_sm">link</a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span>  <span class="nn">spacy</span>
+<span class="kn">import</span>  <span class="nn">nltk</span>
+<span class="kn">import</span>  <span class="nn">re</span>
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">'en_core_web_sm'</span><span class="p">)</span>
+<span class="n">stopwords_list</span> <span class="o">=</span> <span class="n">nltk</span><span class="p">.</span><span class="n">corpus</span><span class="p">.</span><span class="n">stopwords</span><span class="p">.</span><span class="n">words</span><span class="p">(</span><span class="s">'english'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="tokenization">Tokenization</h3>
+
+<p>Tokenization is the process of splitting a document into tokens, basically splitting a bunch of text into words. Spacy has a built-in tokenizer that helps us with this.</p>
+
+<h3 id="stopwords-removal">Stopwords removal.</h3>
+
+<p>Stop words are words that have no special significance when analyzing the text. Those words are frequent in the corpus but are useless for our analysis and example of them are <strong><em>a</em></strong>, <strong><em>an</em></strong>, <strong><em>the</em></strong>, <strong><em>and</em></strong> the like.</p>
+
+<p>The following function will perform stop word removal for us :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span>  <span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">text</span><span class="p">,</span>  <span class="n">is_lower_case</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="n">tokens</span>  <span class="o">=</span>  <span class="n">nltk</span><span class="p">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">tokens</span>  <span class="o">=</span>  <span class="p">[</span><span class="n">token</span><span class="p">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">is_lower_case</span><span class="p">:</span>
+        <span class="n">filtered_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">token</span>  <span class="k">for</span>  <span class="n">token</span>  <span class="ow">in</span>  <span class="n">tokens</span>  <span class="k">if</span>  <span class="n">token</span>  <span class="ow">not</span>  <span class="ow">in</span>  <span class="n">stopwords_list</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">filtered_tokens</span>  <span class="o">=</span>  <span class="p">[</span><span class="n">token</span>  <span class="k">for</span>  <span class="n">token</span>  <span class="ow">in</span>  <span class="n">tokens</span>  <span class="k">if</span>  <span class="n">token</span><span class="p">.</span><span class="n">lower</span><span class="p">()</span>  <span class="ow">not</span>  <span class="ow">in</span>  <span class="n">stopwords_list</span><span class="p">]</span>
+    <span class="n">filtered_text</span>  <span class="o">=</span>  <span class="s">'  '</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">filtered_tokens</span><span class="p">)</span>
+    <span class="k">return</span>  <span class="n">filtered_text</span>
+</code></pre></div></div>
+
+<h3 id="special-characters-and-number-removal">Special characters and number removal.</h3>
+
+<p>Special characters and symbols are usually non-alphanumeric or occasionally numeric characters which add extra noise in unstructured text. For our problem, since our corpus is built with articles from the biomedical field, there are a lot of numbers denoting quantities and dosages. We have decided to remove them to simplify the tutorial.</p>
+
+<h3 id="lematization">Lematization</h3>
+
+<p>In this step, we will use lemmatization instead of stemming,</p>
+
+<p>Chirstopher Maning define lemmatization as :</p>
+
+<p><em>Lemmatization usually refers to doing things properly with the use of a vocabulary and morphological analysis of words, normally aiming to remove inflectional endings only and to return the base or dictionary form of a word, which is known as the lemma . If confronted with the token saw, stemming might return just s, whereas lemmatization would attempt to return either see or saw depending on whether the use of the token was as a verb or a noun. The two may also differ in that stemming most commonly collapses derivationally related words, whereas lemmatization commonly only collapses the different inflectional forms of a lemma.</em></p>
+
+<p>A good lemmatizer will replace words such as foot by feet; chosen, choose, by choice.; etc.</p>
+
+<p>This approach has some advantages because it will help not spread the information between different word forms derived from the same lemma. Therefore, it will lead to an accurate TF-IDF because the same semantic information is assembled in one place.</p>
+
+<p>The code for lemmatization is as follow :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span>  <span class="nf">lemmatize_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">text</span>  <span class="o">=</span>  <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">text</span>  <span class="o">=</span>  <span class="s">'  '</span><span class="p">.</span><span class="n">join</span><span class="p">([</span><span class="n">word</span><span class="p">.</span><span class="n">lemma_</span>  <span class="k">if</span>  <span class="n">word</span><span class="p">.</span><span class="n">lemma_</span>  <span class="o">!=</span>  <span class="s">'-PRON-'</span>  <span class="k">else</span>  <span class="n">word</span><span class="p">.</span><span class="n">text</span>  <span class="k">for</span>  <span class="n">word</span>  <span class="ow">in</span>  <span class="n">text</span><span class="p">])</span>
+    <span class="k">return</span>  <span class="n">text</span>
+</code></pre></div></div>
+
+<p>Finally, we apply the preprocessing function to our dataset to generate a cleaned version for each abstract.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">preprocess_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span>  <span class="n">text_lower_case</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>  <span class="n">text_lemmatization</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">stopword_removal</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>  
+    <span class="k">if</span> <span class="n">text_lower_case</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="n">lower</span><span class="p">().</span><span class="n">strip</span><span class="p">()</span>
+    
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s">'[^\w\s]'</span><span class="p">,</span> <span class="s">''</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s">'[\r|\n|\r\n]+'</span><span class="p">,</span> <span class="s">' '</span><span class="p">,</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s">'\d+'</span><span class="p">,</span> <span class="s">''</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">text_lemmatization</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">lemmatize_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="n">sub</span><span class="p">(</span><span class="s">' +'</span><span class="p">,</span> <span class="s">' '</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        <span class="c1"># remove stopwords
+</span>    <span class="k">if</span> <span class="n">stopword_removal</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">remove_stopwords</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">is_lower_case</span><span class="o">=</span><span class="n">text_lower_case</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">text</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_df</span><span class="p">[</span><span class="s">'abstract_cleaned'</span><span class="p">]</span>  <span class="o">=</span>  <span class="n">data_df</span><span class="p">[</span><span class="s">'abstract'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="n">preprocess_text</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>With our text cleaned, we can move to our tutorial’s next section, which generates the most relevant keywords for each abstract.</p>
+
+<h3 id="keyword-generation-using-term-inverse---document-frequency-tf-idf">Keyword Generation using Term Inverse - Document Frequency (Tf-IDF)</h3>
+
+<p>To generate keywords for each paper, we have to find a heuristic that finds the most relevant words while penalizing the common phrase in our corpus. Practitioners have widely used the Term Frequency-Inverse Document Frequency (TF-IDF) to generate important keywords in documents in information retrieval. But what is TF-IDF? It combines two metrics, the Term frequency and the Inverse Document Frequency.</p>
+
+<h4 id="term-frequency">Term Frequency</h4>
+
+<p>[K. Sparck Jones.] defines the term frequency (TF) as a numerical statistic that reflects how important a word is to document in a collection or a corpus. It is the relative frequency of term w within the document d.</p>
+
+<p>It is computed  using the following formula :</p>
+
+\[\begin{equation}
+    tf(w,d) = \frac{f_{w,d}}{\sum_{t\ast}^{d}f_{w\ast,d}}
+\end{equation}\]
+
+<p>with \(f_{w,d}\) defined as the raw count of the word w in the document d, and \(\sum_{t\ast}^{d}f_{w\ast,d}\) as the total number of terms in document d (counting each occurrence of the same term separately).</p>
+
+<h4 id="inverse-document-frequency">Inverse Document Frequency</h4>
+
+<p>The inverse document frequency is defined as the log of the ratio between the total number of documents in the 
+corpus and the number of documents with the word. It is a measure the amount of information provided by the word.
+\(\begin{equation}
+    idf(w, d) = log\frac{N}{1 + (\left | d \in D : w \in d \right |)}
+\end{equation}\)
+with</p>
+<ul>
+  <li>N: total number of documents in the corpus N  and the  denominator represent the number of documents with the word w.
+This helps to penalize the most common word in a corpus. Those words carry fewer values for in the corpus.</li>
+</ul>
+
+<p>For the curious who want to know why we use the log in the IDF, check out <a href="https://stackoverflow.com/a/33429876/4683950">this answer</a> from StackOverflow.</p>
+
+<p>The TF-IDF combines both the Term Frequency and the Inverse Document Frequency.</p>
+
+\[(tf_idf)_{t,d } = Idf_t * TF_{w, d}\]
+
+<h4 id="applying-tf-idf-to-our-corpus">Applying TF-IDF to our corpus</h4>
+
+<p>To apply TF-IDF we will leverage the sklearn implementation of the algorithm.
+Before running the bellow code, make sure you have <a href="https://scikit-learn.org/stable/about.html">sklearn</a> installed.</p>
+
+<p>If the sklearn is installed, you can import it with the bellow code.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span>  <span class="nn">sklearn.feature_extraction.text</span>  <span class="kn">import</span>  <span class="n">TfidfVectorizer</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create_tfidf_features</span><span class="p">(</span><span class="n">corpus</span><span class="p">,</span> <span class="n">max_features</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">max_df</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">min_df</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="s">""" Creates a tf-idf matrix for the `corpus` using sklearn. """</span>
+    <span class="n">tfidf_vectorizor</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">decode_error</span><span class="o">=</span><span class="s">'replace'</span><span class="p">,</span> <span class="n">strip_accents</span><span class="o">=</span><span class="s">'unicode'</span><span class="p">,</span> <span class="n">analyzer</span><span class="o">=</span><span class="s">'word'</span><span class="p">,</span> 
+                                       <span class="n">stop_words</span><span class="o">=</span><span class="s">'english'</span><span class="p">,</span> <span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">max_features</span><span class="o">=</span><span class="n">max_features</span><span class="p">,</span> 
+                                       <span class="n">norm</span><span class="o">=</span><span class="s">'l2'</span><span class="p">,</span> <span class="n">use_idf</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">smooth_idf</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">sublinear_tf</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                                       <span class="n">max_df</span><span class="o">=</span><span class="n">max_df</span><span class="p">,</span> <span class="n">min_df</span><span class="o">=</span><span class="n">min_df</span><span class="p">)</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">tfidf_vectorizor</span><span class="p">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">corpus</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'tfidf matrix successfully created.'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">X</span><span class="p">,</span> <span class="n">tfidf_vectorizor</span>
+</code></pre></div></div>
+<p><a href="https://melaniewalsh.github.io/Intro-Cultural-Analytics/05-Text-Analysis/03-TF-IDF-Scikit-Learn.html">This article</a> recommended  to use  <code class="language-bash highlighter-rouge">TfidfVectorizer</code>  with smoothing (<code class="language-bash highlighter-rouge">smooth_idf  <span class="o">=</span>  True</code>) and normalization (<code class="language-bash highlighter-rouge"><span class="nv">norm</span><span class="o">=</span><span class="s1">'l2") turned on. These parameters will better account for text length differences and produce more meaningful to–IDF scores. Smoothing and L2 normalization are the default settings for </span></code>TfidfVectorizer,` so you don’t need to include any extra code at all to turn them on.</p>
+
+<p>On top of the <code class="language-bash highlighter-rouge">smoth_idf</code>  and <code class="language-bash highlighter-rouge">norm</code> hyperparameters, the other keys hyperparameters are :</p>
+
+<ul>
+  <li>
+    <p><code class="language-bash highlighter-rouge">max_features</code> which denotes the max number of words to keep in our vocabulary</p>
+  </li>
+  <li>
+    <p><code class="language-bash highlighter-rouge">max_df</code>: When building the vocabulary, ignore terms that have a document frequency strictly higher than the given threshold</p>
+  </li>
+  <li>
+    <p><code class="language-bash highlighter-rouge">min_df:</code> When building the vocabulary, ignore terms that have a document frequency strictly lower than the given threshold. This value is also called a cut-off in the literature.</p>
+  </li>
+  <li>
+    <p><code class="language-bash highlighter-rouge">n_gram_range</code> is the number of n-grams to consider when building our vocabulary; for this task, we consider nonograms, bigrams, and trigrams.</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_df</span> <span class="o">=</span> <span class="n">data_df</span><span class="p">.</span><span class="n">reset_index</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tf_idf_matrix</span><span class="p">,</span> <span class="n">tf_idf_vectorizer</span> <span class="o">=</span> <span class="n">create_tfidf_features</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="s">'abstract_cleaned'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>After applying the tf_if vectorizer on to our corpus, it will result in the following two objects :</p>
+<ul>
+  <li>The <code class="language-bash highlighter-rouge">tf_ifd matrix</code> , is a matrix where rows are the documents and columns are the words in our vocabulary.</li>
+  <li>The <code class="language-bash highlighter-rouge">tf_idf_vectorizer</code> is an object that will help us to transform a new document to the TF-IDF version.</li>
+</ul>
+
+<p>The value at the ith row and jth column is the TF-IDF score of the word j in document i.</p>
+
+<p>For better analysis we converted the <code class="language-bash highlighter-rouge">tf_idf_matrix</code> into a pandas dataframe using the following code :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tfidf_df</span>  <span class="o">=</span>  <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tf_idf_matrix</span><span class="p">.</span><span class="n">toarray</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="n">tf_idf_vectorizer</span><span class="p">.</span><span class="n">get_feature_names</span><span class="p">(),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="n">data_df</span><span class="p">.</span><span class="n">index</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>The next step is to generate the top 20 keywords for each document, those word are the word with the highest tf-idf score within the document.</p>
+
+<p>Before doing that, let’s reorganize the DataFrame so that the words are in rows rather than columns.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tfidf_df</span> <span class="o">=</span> <span class="n">tfidf_df</span><span class="p">.</span><span class="n">sort_index</span><span class="p">().</span><span class="nb">round</span><span class="p">(</span><span class="n">decimals</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">tfidf_df_stacked</span> <span class="o">=</span> <span class="n">tfidf_df</span><span class="p">.</span><span class="n">stack</span><span class="p">().</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">tfidf_df_stacked</span> <span class="o">=</span> <span class="n">tfidf_df_stacked</span><span class="p">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s">'tfidf'</span><span class="p">,</span><span class="s">'level_1'</span><span class="p">:</span> <span class="s">'term'</span><span class="p">,</span> <span class="s">"level_0"</span><span class="p">:</span> <span class="s">"doc_id"</span><span class="p">})</span>
+</code></pre></div></div>
+
+<p>We sort by document and tfidf score and then groupby document and take the first 20 values.
+Once we have sorted and find the top keywords we can save them in a dictionary where the keys are the the document id and the values are the another dictionary of the term and their tf-idf score.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tfidf_df_stacked</span>  <span class="o">=</span>  <span class="n">tfidf_df_stacked</span><span class="p">.</span><span class="n">reset_index</span><span class="p">().</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s">'level_1'</span><span class="p">:</span><span class="s">'term'</span><span class="p">})</span>
+<span class="n">document_tfidf</span>  <span class="o">=</span>  <span class="n">tfidf_df_stacked</span><span class="p">.</span><span class="n">groupby</span><span class="p">([</span><span class="s">'doc_id'</span><span class="p">]).</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span>  <span class="n">x</span><span class="p">:</span>  <span class="n">x</span><span class="p">[[</span><span class="s">'term'</span><span class="p">,</span>  <span class="s">"tfidf"</span><span class="p">]].</span><span class="n">set_index</span><span class="p">(</span><span class="s">"term"</span><span class="p">).</span><span class="n">to_dict</span><span class="p">().</span><span class="n">get</span><span class="p">(</span><span class="s">'tfidf'</span><span class="p">))</span>
+
+</code></pre></div></div>
+
+<p>With our documents and the top keyword mappings, we can now visualize what our corpus looks like to have an idea on each paper on the document.</p>
+
+<p>I recently come across a good piece of code that makes visualization for a document using TF-IDF.</p>
+
+<p>I grabbed it from this <a href="https://melaniewalsh.github.io/Intro-Cultural-Analytics/05-Text-Analysis/03-TF-IDF-Scikit-Learn.html">article</a>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="n">alt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># Terms in this list will get a red dot in the visualization
+</span><span class="n">term_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">"covid"</span><span class="p">,</span> <span class="s">'traitement'</span><span class="p">,</span> <span class="s">'ebola'</span><span class="p">]</span>
+
+<span class="c1"># adding a little randomness to break ties in term ranking
+</span><span class="n">top_tfidf_plusRand</span> <span class="o">=</span> <span class="n">tfidf_df_stacked</span><span class="p">.</span><span class="n">loc</span><span class="p">[:</span><span class="mi">800</span><span class="p">]</span>
+<span class="n">top_tfidf_plusRand</span><span class="p">[</span><span class="s">'tfidf'</span><span class="p">]</span> <span class="o">=</span> <span class="n">top_tfidf_plusRand</span><span class="p">[</span><span class="s">'tfidf'</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="n">tfidf_df_stacked</span><span class="p">.</span><span class="n">loc</span><span class="p">[:</span><span class="mi">800</span><span class="p">].</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="mf">0.0001</span>
+
+<span class="c1"># base for all visualizations, with rank calculation
+</span><span class="n">base</span> <span class="o">=</span> <span class="n">alt</span><span class="p">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">top_tfidf_plusRand</span><span class="p">).</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s">'rank:O'</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s">'doc_id:N'</span>
+<span class="p">).</span><span class="n">transform_window</span><span class="p">(</span>
+    <span class="n">rank</span> <span class="o">=</span> <span class="s">"rank()"</span><span class="p">,</span>
+    <span class="n">sort</span> <span class="o">=</span> <span class="p">[</span><span class="n">alt</span><span class="p">.</span><span class="n">SortField</span><span class="p">(</span><span class="s">"tfidf"</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s">"descending"</span><span class="p">)],</span>
+    <span class="n">groupby</span> <span class="o">=</span> <span class="p">[</span><span class="s">"doc_id"</span><span class="p">],</span>
+<span class="p">)</span>
+
+<span class="c1"># heatmap specification
+</span><span class="n">heatmap</span> <span class="o">=</span> <span class="n">base</span><span class="p">.</span><span class="n">mark_rect</span><span class="p">().</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="s">'tfidf:Q'</span>
+<span class="p">)</span>
+
+<span class="c1"># red circle over terms in above list
+</span><span class="n">circle</span> <span class="o">=</span> <span class="n">base</span><span class="p">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">).</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">alt</span><span class="p">.</span><span class="n">condition</span><span class="p">(</span>
+        <span class="n">alt</span><span class="p">.</span><span class="n">FieldOneOfPredicate</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="s">'term'</span><span class="p">,</span> <span class="n">oneOf</span><span class="o">=</span><span class="n">term_list</span><span class="p">),</span>
+        <span class="n">alt</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="s">'red'</span><span class="p">),</span>
+        <span class="n">alt</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="s">'#FFFFFF00'</span><span class="p">)</span>        
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># text labels, white for darker heatmap colors
+</span><span class="n">text</span> <span class="o">=</span> <span class="n">base</span><span class="p">.</span><span class="n">mark_text</span><span class="p">(</span><span class="n">baseline</span><span class="o">=</span><span class="s">'middle'</span><span class="p">).</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s">'term:N'</span><span class="p">,</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">alt</span><span class="p">.</span><span class="n">condition</span><span class="p">(</span><span class="n">alt</span><span class="p">.</span><span class="n">datum</span><span class="p">.</span><span class="n">tfidf</span> <span class="o">&gt;=</span> <span class="mf">0.23</span><span class="p">,</span> <span class="n">alt</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="s">'white'</span><span class="p">),</span> <span class="n">alt</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="s">'black'</span><span class="p">))</span>
+<span class="p">)</span>
+
+<span class="c1"># display the three superimposed visualizations
+</span><span class="p">(</span><span class="n">heatmap</span> <span class="o">+</span> <span class="n">circle</span> <span class="o">+</span> <span class="n">text</span><span class="p">).</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span> <span class="o">=</span> <span class="mi">1200</span><span class="p">)</span>
+</code></pre></div></div>
+
+<figure>
+  <p><img src="/assets/posts/2022-04-07-information-retrieval-on-medical-research-papers-about-covid19/tf-idf-chart.png" /></p>
+  <figcaption>each document and top 10 terms</figcaption>
+</figure>
+
+<h4 id="querying-using-tf-idf">Querying using tf-idf</h4>
+
+<figure>
+  <p><img src="/assets/posts/2022-04-07-information-retrieval-on-medical-research-papers-about-covid19/query-processing-tfidf.png" /></p>
+  <figcaption>The text Processing Part</figcaption>
+</figure>
+
+<p>With our TF-IDF we could easily use it to run search and make queries that use the TF-IDF score and cosine similarty.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">calculate_similarity</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">X</span><span class="o">=</span><span class="n">tf_idf_matrix</span><span class="p">,</span> <span class="n">vectorizor</span><span class="o">=</span><span class="n">tf_idf_vectorizer</span><span class="p">,</span> <span class="n">top_k</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="s">""" Vectorizes the `query` via `vectorizor` and calculates the cosine similarity of
+    the `query` and `X` (all the documents) and returns the `top_k` similar documents.
+    """</span>
+
+    <span class="c1"># Vectorize the query to the same length as documents
+</span>    <span class="n">query_vec</span> <span class="o">=</span> <span class="n">vectorizor</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+    <span class="c1"># Compute the cosine similarity between query_vec and all the documents
+</span>    <span class="n">cosine_similarities</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">query_vec</span><span class="p">).</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="c1"># Sort the similar documents from the most similar to less similar and return the indices
+</span>    <span class="n">most_similar_doc_indices</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">cosine_similarities</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[:</span><span class="o">-</span><span class="n">top_k</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">most_similar_doc_indices</span><span class="p">,</span> <span class="n">cosine_similarities</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">show_similar_documents</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cosine_similarities</span><span class="p">,</span> <span class="n">similar_doc_indices</span><span class="p">):</span>
+    <span class="s">""" Prints the most similar documents using indices in the `similar_doc_indices` vector."""</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">similar_doc_indices</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Top-{}, Similarity = {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="n">cosine_similarities</span><span class="p">[</span><span class="n">index</span><span class="p">]))</span>
+        <span class="n">pubmed_id</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="s">'pubmed_id'</span><span class="p">]</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'the pubmed id : {}, '</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">pubmed_id</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'title {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">data_df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s">"title"</span><span class="p">]))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"abstract {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">data_df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s">"abstract"</span><span class="p">][:</span><span class="mi">50</span><span class="p">]))</span>
+        <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">print</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="s">'**=='</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The above code, get our new query, generate it TF-IDF  vector. Then it computes the cosine similarity between the vectors and all our documents in the TF-IDF matrix.</p>
+
+<p>As the result, it returns the top n rows in the matrix which are similar to our query vector.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>pubmed_id</th>
+      <th>title</th>
+      <th>abstract</th>
+      <th>journal</th>
+      <th>authors</th>
+      <th>publish_time</th>
+      <th>abstract_cleaned</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>32165633</td>
+      <td>Acid ceramidase of macrophages traps herpes si…</td>
+      <td>Macrophages have important protective function…</td>
+      <td>Nat Commun</td>
+      <td>Lang, Judith; Bohn, Patrick; Bhat, Hilal; Jast…</td>
+      <td>2020-03-12</td>
+      <td>macrophage  important  protective  function  i…</td>
+    </tr>
+    <tr>
+      <td>18325284</td>
+      <td>Resource Allocation during an Influenza Pandemic</td>
+      <td>Resource Allocation during an Influenza Pandemic</td>
+      <td>Emerg Infect Dis</td>
+      <td>Paranthaman, Karthikeyan; Conlon, Christopher …</td>
+      <td>2008-03-01</td>
+      <td>resource  allocation  influenza  pandemic</td>
+    </tr>
+    <tr>
+      <td>30073452</td>
+      <td>Analysis of pig trading networks and practices…</td>
+      <td>East Africa is undergoing rapid expansion of p…</td>
+      <td>Trop Anim Health Prod</td>
+      <td>Atherstone, C.; Galiwango, R. G.; Grace, D.; A…</td>
+      <td>2018-08-02</td>
+      <td>east  africa  undergo  rapid  expansion  pig  …</td>
+    </tr>
+    <tr>
+      <td>35017151</td>
+      <td>Pembrolizumab and decitabine for refractory or…</td>
+      <td>BACKGROUND: The powerful ‘graft versus leukemi…</td>
+      <td>J Immunother Cancer</td>
+      <td>Goswami, Meghali; Gui, Gege; Dillon, Laura W; …</td>
+      <td>2022-01-11</td>
+      <td>background  powerful  graft  versus  leukemia …</td>
+    </tr>
+    <tr>
+      <td>34504521</td>
+      <td>Performance Evaluation of Enterprise Supply Ch…</td>
+      <td>In order to make up for the shortcomings of cu…</td>
+      <td>Comput Intell Neurosci</td>
+      <td>Bu, Miaoling</td>
+      <td>2021-08-30</td>
+      <td>order  make  shortcoming  current  performance…</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tfidf_df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>aa</th>
+      <th>ab</th>
+      <th>abbott</th>
+      <th>abdomen</th>
+      <th>abdominal</th>
+      <th>abdominal pain</th>
+      <th>abdominal wall</th>
+      <th>ability</th>
+      <th>ability induce</th>
+      <th>ability perform</th>
+      <th>…</th>
+      <th>zip</th>
+      <th>zip code</th>
+      <th>zip code level</th>
+      <th>zone</th>
+      <th>zoonosis</th>
+      <th>zoonotic</th>
+      <th>zoonotic pathogen</th>
+      <th>zoonotic virus</th>
+      <th>μm</th>
+      <th>μm respectively</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>…</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>…</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>…</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.09</td>
+      <td>0.1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>…</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>…</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">time</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span> <span class="o">=</span> <span class="p">[</span><span class="s">'are gorillas responsible of ebola'</span><span class="p">]</span>
+<span class="n">search_start</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">sim_vecs</span><span class="p">,</span> <span class="n">cosine_similarities</span> <span class="o">=</span> <span class="n">calculate_similarity</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="n">search_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">search_start</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"search time: {:.2f} ms"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">search_time</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span>
+<span class="k">print</span><span class="p">()</span>
+<span class="n">show_similar_documents</span><span class="p">(</span><span class="n">data_df</span><span class="p">,</span> <span class="n">cosine_similarities</span><span class="p">,</span> <span class="n">sim_vecs</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>search <span class="nb">time</span>: 7.60 ms
+
+Top-1, Similarity <span class="o">=</span> 0.25484833157402037
+the pubmed <span class="nb">id</span> : 32287784, 
+title Wuhan virus spreads
+abstract We now know the virus responsible <span class="k">for </span>deaths and i
+<span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span>
+Top-2, Similarity <span class="o">=</span> 0.2332808978421972
+the pubmed <span class="nb">id</span> : 32162604, 
+title How Is the World Responding to the Novel Coronavirus Disease <span class="o">(</span>COVID-19<span class="o">)</span> Compared with the 2014 West African Ebola Epidemic? The Importance of China as a Player <span class="k">in </span>the Global Economy
+abstract This article describes similarities and difference
+<span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span>
+Top-3, Similarity <span class="o">=</span> 0.1286925639778678
+the pubmed <span class="nb">id</span> : 19297495, 
+title Aquareovirus effects syncytiogenesis by using a novel member of the FAST protein family translated from a noncanonical translation start site.
+abstract As nonenveloped viruses, the aquareoviruses and or
+<span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span>
+Top-4, Similarity <span class="o">=</span> 0.11561157619559267
+the pubmed <span class="nb">id</span> : 27325914, 
+title Consortia critical role <span class="k">in </span>developing medical countermeasures <span class="k">for </span>re-emerging viral infections: a USA perspective.
+abstract Viral infections, such as Ebola, severe acute resp
+<span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span>
+Top-5, Similarity <span class="o">=</span> 0.10755790364315998
+the pubmed <span class="nb">id</span> : 33360484, 
+title Neuropathological explanation of minimal COVID-19 infection rate <span class="k">in </span>newborns, infants and children – a mystery so far. New insight into the role of Substance P
+abstract Sars-Cov-2 or Novel coronavirus infection <span class="o">(</span>COVID-1
+<span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span><span class="k">**</span><span class="o">==</span>
+</code></pre></div></div>
+
+<p>That is all for the first part of this tutorial , We have learned how to build TF-IDF vectors, and how to leverage the cosine similarity to compute and retrieve documents that matches a query. In the second part of the tutorial we will learn how to use elasticsearch to perform the same task.</p>
+:ET
