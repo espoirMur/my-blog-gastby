@@ -1,6 +1,6 @@
 ---
 title: Setup a new Macbook for software development
-date: "2020-03-08T22:12:03.284Z"
+date: "2020-03-08T00:12:03.284Z"
 description: "how I setup my macbook for development"
 comments: true
 categories: non-tech

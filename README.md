@@ -35,3 +35,12 @@ Template: github.com/nandomoreirame/end2end
 ## to build the site
 
 ` bundle exec jekyll build`
+
+## to run the site locally
+
+`jekyll serve --watch`
+
+
+## to check for broken links
+
+`bundle exec htmlproofer ./_site --only-4xx true --disable-external true --ignore-urls  "/localhost/," --ignore_empty_alt false`

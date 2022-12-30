@@ -12,6 +12,7 @@ gem "jekyll", "~>4.2.2"
 gem "rake", "~>12.3"
 gem "sass", "~>3.4"
 gem "json", "~> 2"
+gem 'html-proofer'
 
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
