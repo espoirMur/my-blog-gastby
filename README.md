@@ -10,8 +10,8 @@ Template: github.com/nandomoreirame/end2end
 
 - [x] Fix the code for highlight one line syntax in markdown
 - [] Fix the code for the pagination and don't let the page go out of range
-- [] When displaying the page site, make sure the post image thumbnail is displayed and they fit the page
-- [] Fix some css in the post that went out of range
+- [] When displaying the page site, make sure the post image thumbnail is displayed and they fit the page. [Check this site](https://www.reddit.com/r/webdev/comments/x903jo/how_to_make_my_website_get_these_things/)
+- [x] Fix some css in the post that went out of range
 - [x] Fix the google analytics issue and make sure the data is reaching googl analytics
 - [] Fix image thumbnail when your are sharing the post on social media
 - [] Add stackoverflow icon in the main page.
@@ -35,3 +35,12 @@ Template: github.com/nandomoreirame/end2end
 ## to build the site
 
 ` bundle exec jekyll build`
+
+## to run the site locally
+
+`jekyll serve --watch`
+
+
+## to check for broken links
+
+`bundle exec htmlproofer ./_site --only-4xx true --disable-external true --ignore-urls  "/localhost/," --ignore_empty_alt false`

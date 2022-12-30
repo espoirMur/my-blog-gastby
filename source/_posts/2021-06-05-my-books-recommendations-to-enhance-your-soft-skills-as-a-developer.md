@@ -6,7 +6,7 @@ comments: false
 categories: non-tech
 layout: post
 ---
-{% include image.html name="./images/cover.png" caption="cover" %}
+{% include image.html name="cover.png" caption="cover" %}
 Three years ago, I decided to part ways with my Facebook account, and I decided to replace the time spent on Facebook with reading developers’ blogs. During that time, I stumbled across [dev](https://dev.to/), medium, and quora. These sites and publications have contributed a lot to the developer I am today.  I decided to dig deeper in my social media detox. Last year, I decided to block WhatsApp status unless Man-City qualified for the Champions League final and spent the time reading books about soft skills to improve my softs skills as a developer.
 
 I am not planning to talk about the pros and cons of not having a social media account here, I will talk about a few books, which I read recently, which improved my soft skills as a developer. 
@@ -38,8 +38,7 @@ The second book is a recent bestseller, and it is not about communication but ra
 The book explains how getting 1% better every day can be beneficial over time.  From the first chapter, I learned how small habits compound over time. 
 
 _As you can see in the picture below :_
-{% include image.html name="./images/atomic_habits_effects.png" caption="atomic habits effects" %}
-
+{% include image.html name="atomic_habits_effects.png" caption="atomic habits effects" %}
 _“The effects of small habits compound over time. For example, if you can get just 1 percent better each day, you’ll end up with results that are nearly 37 times better after one year.”_
 
 The book’s backbone is a four-step model of habits  - cue, craving, response, reward, and the four laws of behavior change that evolve out of these steps. The mastery of those four laws is an essential step for everyone who wants to build better habits. 
@@ -60,7 +59,7 @@ There are numerous lessons I learned from the book, but here is the most importa
 
 _The cone of learning_
 
-{% include image.html name="./images/cone_of_learnings.png" caption="cones of learning" %}
+{% include image.html name="cone_of_learnings.png" caption="cones of learning" %}
     
 *   _Rich don’t work for money. They work to learn how to let money work for them one day_.
 *   The ability to sell—to communicate to another human being, be it a customer, employee, boss, spouse, or child—is the base skill of personal success.
@@ -125,7 +124,8 @@ The book’s author is Uncle Bob, an experienced programmer with more than 42 ye
 That is all about books I read last year. They are not enough in comparison with  books that humans have written on this earth, but in one year it is a lot, and the most important was not to read the book but to put into practice what you read from them. When I get old, I will have a large library like this one, and I can brag about them to my friends. 
 
 
-{% include image.html name="./images/book_shelf.png" caption="book shelve" %}
+{% include image.html name="book_shelf.png" caption="book shelve" %}
+
 How do I manage to find time to read and work full time with endless bugs in a world full of distractions? The secret came from the book Atomic habits. I have made it easy for me. I have a ritual, my morning routine. I know that I have to do two things in the morning; my fitness routine, brushing my teeth, and reading for at least 30 minutes. And as a reward for this routine, I can open my phone and check if I have important emails or any notification that will boost my dopamine. 
 
 And as I said in the introduction, I learned how to gain time from social media and WhatsApp status by making the habits of checking them hard by blocking access to my contacts to WhatsApp and just deleting my Facebook account. I also use Twitter for 10 minutes per day on my laptop and from 7 pm to 10 pm on my phone and only in read-only mode.

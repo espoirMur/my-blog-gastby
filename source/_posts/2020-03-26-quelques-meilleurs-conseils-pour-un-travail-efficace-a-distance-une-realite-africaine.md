@@ -1,6 +1,6 @@
 ---
 title: Quelques meilleurs conseils pour un travail efficace a distance, une realite africaine
-date: "2020-03-26T22:12:03.284Z"
+date: "2020-03-26T00:12:03.284Z"
 description: "Conseils pour le travail à distance en Afrique"
 layout: post
 comments: true

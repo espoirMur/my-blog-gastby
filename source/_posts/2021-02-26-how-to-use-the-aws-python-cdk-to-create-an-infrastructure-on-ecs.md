@@ -1,7 +1,7 @@
 ---
 title: How to use the AWS Python CDK to create an infrastructure on ECS.
 layout: post
-date: "2021-02-26T22:12:03.284Z"
+date: "2021-02-26T00:12:03.284Z"
 comments: true
 categories: tech
 canonical_url: https://www.murhabazi.com/ci-cd-deploy-to-aws-github-actions/

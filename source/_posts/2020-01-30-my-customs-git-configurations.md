@@ -1,7 +1,7 @@
 ---
 title: My Customs Git Configurations
 description: "customizing git settings."
-date: "2020-01-30T22:12:03.284Z"
+date: "2020-01-30T00:12:03.284Z"
 layout: post
 comments: true
 categories: tech
