@@ -11,11 +11,9 @@ published: false
 tags:
 
 ---
-## Part 2 : Information Retrieval Using Elasticsearch 
 
-![Querying with Tf-IDF](images/document-indexing-elastic-search.png)
+{% include image.html name="document-indexing-elastic-search.png" caption="Document Indexing With Elastic Search" %}
 
-<p style="text-align: center;">Document Indexing With Elastic Search</p>
 
 In part one of this tutorial, we cleaned our dataset and searched using TF-IDF similarity. 
 In this part, we will learn how to add our documents in Elastic-search, index them, and query our index. By the end of this second part of this series, you should have a complete working system you can use to make queries to Elasticsearch. 
@@ -29,7 +27,8 @@ To run this second part, make sure you have :
 
 ### Different ways to interact with Elasticsearch
 
-![Rest Protocol](images/rest-protocol.jpeg)
+
+{% include image.html name="rest-protocol.jpeg" caption="Rest protocol" %}
 
 In this section, we will discuss different ways to interact with Elasticsearch, and at the end, we will confirm if we can connect to it from our machine.
 
@@ -108,7 +107,7 @@ article_analyzer  =  analyzer('analyzer',
                               stopwords=['_english_'], filter=['lowercase',  "asciifolding"])
 ```
 
-As you can see this analyzer anyttime we are applying it to a field in our index it will remove english stowords , filter ngrams and only keep bigrams and trigrams , and remove non ascii characters.
+As you can see this analyzer anyttime we are applying it to a field in our index it will remove english stopwords , filter ngrams and only keep bigrams and trigrams , and remove non ascii characters.
 
 A lot have been done already on the preprocessing text, but we could also do the stemmming and all the cleaning process direcly via the analyzer in ElasticSearch.
 
@@ -174,7 +173,6 @@ class  Article(Document):
 
 This will be our model , let us add the attribute to it :
 
-This will be our model , let us add the attribute to it : 
 
 `title = Text(analyzer=article_analyzer)`
 
@@ -332,10 +330,8 @@ We can now move to the final section of this serie , querying .
 
 ### Querying 
 
-![Querying with Tf-IDF](images/query-processing-elastic-search.png)
 
-<p style="text-align: center;">Querying With ElasticSearch</p>
-
+{% include image.html name="query-processing-elastic-search.png" caption="Querying With ElasticSearch" %}
 
 For the querying part of this tutorial we will run two differents types of queries , the text search and keyword search.
 
@@ -614,11 +610,10 @@ run_query_loop()
     ==****==****==****==****==****==****==****==****==****==****
 
 
-### References
+## References
 
 - Sarkar, D., 2022. A Practitioner's Guide to Natural Language Processing (Part I) — Processing & Understanding Text. [online] Medium. Available at: <https://towardsdatascience.com/a-practitioners-guide-to-natural-language-processing-part-i-processing-understanding-text-9f4abfd13e72> [Accessed 1 March 2022]
-- Melanie Walsh, Introduction to Cultural Analytics & Python, Version 1 (2021),
-- Allahyari, M., n.d. Text Search using TF-IDF and Elasticsearch | Machine Learning Tutorial. [online] Sci2lab.github.io. Available at: <https://sci2lab.github.io/ml_tutorial/tfidf/> [Accessed 2 March 2022].
+- Melanie Walsh, Introduction to Cultural Analytics & Python, Version 1 (2021).
+- Allahyari, M., n.d. Text Search using TF-IDF and Elasticsearch, Machine Learning Tutorial. [online] Sci2lab.github.io. Available at: <https://sci2lab.github.io/ml_tutorial/tfidf/> [Accessed 2 March 2022].
 - Manning, C. D., Raghavan, P., & Schutze, H. (2008). Introduction to Information Retrieval. Cambridge University Press.
-
 - SPARCK JONES, K. (1972), "A STATISTICAL INTERPRETATION OF TERM SPECIFICITY AND ITS APPLICATION IN RETRIEVAL", Journal of Documentation, Vol. 28 No. 1, pp. 11-21. https://doi.org/10.1108/eb026526

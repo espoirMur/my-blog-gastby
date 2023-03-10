@@ -39,12 +39,10 @@ Here are some of the alumni from the university I got a chance to interact with 
 
 
 -  [Oluwafunmilola Kesa](https://www.linkedin.com/in/kesaoluwafunmilola/), Software Engineer at Microsoft, Vancouver Canada
--  [Daniel Omeiza](https://www.cs.ox.ac.uk/people/daniel.omeiza/), Ph.D. Student at University of Oxford, Oxford UK
-    
-- [Azeez Oluwafemi](https://ng.linkedin.com/in/azeez-oluwafemi), Research Engineer at Borealis AI, Vancouver Canada.
-    
+-  [Daniel Omeiza](https://www.cs.ox.ac.uk/people/daniel.omeiza/), Ph.D. Student at University of Oxford, Oxford UK 
+-  [Azeez Oluwafemi](https://ng.linkedin.com/in/azeez-oluwafemi), Research Engineer at Borealis AI, Vancouver Canada. 
 -  [Joan Kirunga](https://ug.linkedin.com/in/joan-kirunga) , Senior Data Scientist at BBox, Kigali Rwanda
-- [Victor Akinwande](https://www.linkedin.com/in/victorakinwande/), Phd Student, at the main CMU in Pennsylvania, USA
+-  [Victor Akinwande](https://www.linkedin.com/in/victorakinwande/), Phd Student, at the main CMU in Pennsylvania, USA
     
 
 ### What are the costs:

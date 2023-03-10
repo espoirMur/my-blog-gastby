@@ -6,7 +6,7 @@ Buidl with the following template
 
 Template: github.com/nandomoreirame/end2end
 
-### Todos for new change
+### Todos for new changes
 
 - [x] Fix the code for highlight one line syntax in markdown
 - [] Fix the code for the pagination and don't let the page go out of range
@@ -22,7 +22,8 @@ Template: github.com/nandomoreirame/end2end
     - check if you can add both dark and light theme
     - add the image background to the post 
 - [] set a note section in the site , where I can post some notes that are not ready to be published into blog posts.  check this site for an idea. https://devopsian.net/notes/
- 
+ - [] Fix the covid part 2 post
+- [] Check the post about applying for uk universities
 
 
 ### Some usefull command 
