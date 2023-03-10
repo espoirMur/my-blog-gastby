@@ -2,9 +2,9 @@
 layout: post
 title: "Getting Started with Seldon-core and Kubernetes, Part 1: My Struggles with Kubernetes"
 permalink: struggles-with-docker
-date: 2022-03-07 10:03:59
+date: 2023-03-07 10:03:59
 comments: true
-description: "Getting start with seldon-core and kubernetes."
+description: "How I fixed  Error: ErrImagePull rpc error: code = Unknown desc = context deadline exceeded code with Kubernetes and minikube and 503 error with kubernetes on seldon core"
 keywords: "Kubernetes, Docker, MLops"
 categories: 
 published: true

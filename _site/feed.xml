@@ -5,9 +5,129 @@
     <description>Murhabazi Buzina Espoir Home on the internet</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 10 Mar 2023 11:19:31 +0000</pubDate>
-    <lastBuildDate>Fri, 10 Mar 2023 11:19:31 +0000</lastBuildDate>
+    <pubDate>Fri, 10 Mar 2023 12:09:09 +0000</pubDate>
+    <lastBuildDate>Fri, 10 Mar 2023 12:09:09 +0000</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>Getting Started with Seldon-core and Kubernetes, Part 1: My Struggles with Kubernetes</title>
+        <description>&lt;p&gt;Learning Kubernetes has been on my bucket list for years. I always said that when I had the time, I would learn it because it is one of those tools missing from my developer toolbox.&lt;/p&gt;
+
+&lt;p&gt;In January, I decided to start my learning journey. I watched this amazing video, which gave me a basic overview of Kubernetes components, and I managed to install it on my local laptop.&lt;/p&gt;
+
+&lt;p&gt;To practice, I used Kubernetes to deploy a machine learning model. After researching, I found out that there are currently two tools used to deploy machine learning models using Kubernetes: Kserve and Seldon-core. After struggling to run Kserve on my machine, I decided to go with Seldon-core because it was well-documented and seemed more mature compared to Kserve. While following the getting started tutorial on Seldon-core, I encountered some bugs that tested my knowledge of Kubernetes. In this post, I will write about some of them, how I encountered them, and the lessons I learned from them.&lt;/p&gt;
+
+&lt;p&gt;The tutorial describes how to create a machine learning service on top of Kubernetes that will be used to make predictions.&lt;/p&gt;
+
+&lt;p&gt;My troubles and bugs started when I ran the following command to create the Seldon deployment:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yaml
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;kubectl apply &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; - &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;END&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;
+apiVersion: machinelearning.seldon.io/v1
+kind: SeldonDeployment
+metadata:
+  name: iris-model
+  namespace: seldon
+spec:
+  name: iris
+  predictors:
+  - graph:
+      implementation: SKLEARN_SERVER
+      modelUri: gs://seldon-models/v1.16.0-dev/sklearn/iris
+      name: classifier
+    name: default
+    replicas: 1
+&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;END
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This command was supposed to start a SeldonDeployment, which consists of a deployment, a service, and a pod running the model. I hoped that the command would run successfully, but it didn’t. Over the past three days, I faced different errors that made me learn more about Kubernetes. Let me talk about the first one.&lt;/p&gt;
+
+&lt;h3 id=&quot;downgrading-kubernetes-version-with-docker-desktop&quot;&gt;Downgrading Kubernetes version with Docker Desktop.&lt;/h3&gt;
+&lt;p&gt;I don’t remember many details about the first bug I faced because I didn’t document it much. I remember using Docker Desktop as a backend for Kubernetes, and it was using Kubernetes 1.26. The fix for the issue was to use a lower version of Kubernetes, such as 1.24, but with Docker Desktop, there is no way to downgrade the version of Kubernetes. I had to switch to using Minikube; with it, I could specify the version of Kubernetes to use. Here is the command I used to downgrade it:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;minikube start &lt;span class=&quot;nt&quot;&gt;--kubernetes-version&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;v1.24.1&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;unable-to-pull-the-large-images-in-the-pod&quot;&gt;Unable to pull the large images in the pod.&lt;/h3&gt;
+
+&lt;p&gt;After solving the first issue, I faced another one. I noticed my pod was not starting, so I decided to debug the pod to find out what was going wrong. When I checked the pod’s status, I found that it was stuck with this message: Error: ImagePullBackOff. I ran the following command:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;kubectl describe pod PodName &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; podNamespace.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And I ended up with the following error message:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+  Normal   Scheduled  13m   default-scheduler  Successfully assigned seldon/xgboost-default-0-classifier-786f456bd4-jxjm6 to minikube
+  Normal   Pulled     13m   kubelet   Container image &lt;span class=&quot;s2&quot;&gt;&quot;seldonio/rclone-storage-initializer:1.15.0&quot;&lt;/span&gt; already present on machine
+  Normal   Created    13m   kubelet   Created container classifier-model-initializer
+  Normal   Started    13m   kubelet   Started container classifier-model-initializer
+  Warning  Failed     10m   kubelet   Error: ErrImagePull
+  Warning  Failed     10m   kubelet   Failed to pull image &lt;span class=&quot;s2&quot;&gt;&quot;seldonio/xgboostserver:1.15.0&quot;&lt;/span&gt;: rpc error: code &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Unknown desc &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; context deadline exceeded
+  Normal   Pulled     10m   kubelet   Container image &lt;span class=&quot;s2&quot;&gt;&quot;docker.io/seldonio/seldon-core-executor:1.15.0&quot;&lt;/span&gt; already present on machine
+  Normal   Created    10m   kubelet   Created container seldon-container-engine
+  Normal   Started    10m   kubelet   Started container seldon-container-engine
+  Normal   BackOff    9m58s &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x2 over 9m59s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;   kubelet   Back-off pulling image &lt;span class=&quot;s2&quot;&gt;&quot;seldonio/xgboostserver:1.15.0&quot;&lt;/span&gt;
+  Warning  Failed     9m58s &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x2 over 9m59s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;   kubelet   Error: ImagePullBackOff
+  Normal   Pulling    9m45s &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x2 over 13m&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;     kubelet   Pulling image &lt;span class=&quot;s2&quot;&gt;&quot;seldonio/xgboostserver:1.15.0&quot;&lt;/span&gt;
+  Warning  Unhealthy  3m14s &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x84 over 9m39s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  kubelet   Readiness probe failed: HTTP probe failed with statuscode: 503
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The first lines of the logs show that Kubernetes could not pull the image for my container:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;kubelet Failed to pull image &lt;span class=&quot;s2&quot;&gt;&quot;seldonio/xgboostserver:1.15.0&quot;&lt;/span&gt;: rpc error: code &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Unknown desc &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; context deadline exceeded&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Initially, I thought that my pod was not connected to the internet because it could not pull the container image, but that was not the case. On closer inspection, I found that the pod could pull the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;docker.io/seldonio/seldon-core-executor:1.15.0&lt;/code&gt; container image and was starting the executor container but not the MLServer image.&lt;/p&gt;
+
+&lt;p&gt;After several hours of debugging, I discovered that the error was due to the size of my image and the timeout while pulling the image for the first time. The container was trying to pull the images, but it took a long time to pull, and the container timed out. After Googling, two possible workarounds were suggested:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Increase the size of the runtime timeout to a larger time and hope it will work.&lt;/li&gt;
+  &lt;li&gt;Download the images with a separate command and run the container once the image is downloaded in the machine.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To apply the first workaround, I had to run the following command:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;minikube ssh &lt;span class=&quot;s2&quot;&gt;&quot;sudo sed -i 's/KUBELET_ARGS=/KUBELET_ARGS=--runtime-request-timeout=TIME /g' /etc/systemd/system/kubelet.service.d/10-kubeadm.conf &amp;amp;&amp;amp; sudo systemctl daemon-reload &amp;amp;&amp;amp; sudo systemctl restart kubelet&quot;&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;I tried it, but it didn’t work in my case, so I had to use the second method, which consists of downloading the image separately inside Minikube. I used the following command:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;minikube image load seldonio/sklearnserver:1.15.0&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The image was large and took approximately 10 minutes to download, maybe because my internet connection this weekend was not at its best. But after that, I passed that issue, but that was not all. There was another bug waiting for me:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;Readiness probe failed&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;When I described my pod, I found that the image was pulled and the container was running for a few seconds, and then it stopped with this message:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;kubelet Readiness probe failed: HTTP probe failed with statuscode: 503&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;When I read about the error message, I found that Kubernetes uses readiness probes to know if a container is ready to accept traffic. The service keeps sending the request to the pod until the pod is ready to accept the traffic. So it was not passing that status. It is an error on the container side. But the container was stopped; how could I log in to a stopped container? I found this command:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;kubectl logs podName &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; ContainerName &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;seldon&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;By checking the log of the container to my satisfaction, I found that the container was failing because of an error with the Python image. I fixed it by changing the container image I used in my deployment. Then I had everything running.&lt;/p&gt;
+
+&lt;p&gt;With the pod running and the service working, how could I connect to the container inside a cluster? I had to create an ingress component connecting to the external service serving my pod on port 9000, where the model was running. I did everything to set up the ingress, but I could not connect to the internal service on my Mac.&lt;/p&gt;
+
+&lt;p&gt;I spent quite some time learning about Kubernetes networking and how services work, but networking is out of the scope of this tutorial. In the short term, I had to use tunneling to access my ingress from outside the container.&lt;/p&gt;
+
+&lt;p&gt;Thanks to this &lt;a href=&quot;https://stackoverflow.com/a/73735009/4683950&quot;&gt;stackoverflow question&lt;/a&gt;, which provided the steps to solve the issue, I finally managed to access the deployment. However, when I attempted to access the URL, I discovered that it was not working and all of the endpoints on the server were returning a 404 error. Although I have not yet solved the issue, I plan to do so soon.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Yes, I did struggles a lot, but this was a good learning lesson for me.  I learned how to debug containers on kubernetes and how minikube works with kuberenetes. I also learn some bit of kubernetes networking. I hope this post will serve my future self if I am facing the same issue as well as anyone else who is struggling with those bugs. My journey is not completed yet, I haven’t managed to deploy a large language model on Kubernetes, I am still struggling with that. In part two of this post I will talk about how I managed to deploy a transformer model with kubernetes.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 07 Mar 2023 10:03:59 +0000</pubDate>
+        <link>http://localhost:4000/struggles-with-docker</link>
+        <guid isPermaLink="true">http://localhost:4000/struggles-with-docker</guid>
+        
+        <category>docker,</category>
+        
+        <category>kubernetes,</category>
+        
+        <category>devops</category>
+        
+        
+      </item>
     
       <item>
         <title>Information Retrieval on the COVID-19 Open Research Dataset (CORD-19)</title>
@@ -911,126 +1031,6 @@ After getting the latest version I installed it with :&lt;/li&gt;
         <pubDate>Sun, 27 Mar 2022 14:36:01 +0100</pubDate>
         <link>http://localhost:4000/install-nvidia-driver</link>
         <guid isPermaLink="true">http://localhost:4000/install-nvidia-driver</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Getting Started with Seldon-core and Kubernetes, Part 1: My Struggles with Kubernetes</title>
-        <description>&lt;p&gt;Learning Kubernetes has been on my bucket list for years. I always said that when I had the time, I would learn it because it is one of those tools missing from my developer toolbox.&lt;/p&gt;
-
-&lt;p&gt;In January, I decided to start my learning journey. I watched this amazing video, which gave me a basic overview of Kubernetes components, and I managed to install it on my local laptop.&lt;/p&gt;
-
-&lt;p&gt;To practice, I used Kubernetes to deploy a machine learning model. After researching, I found out that there are currently two tools used to deploy machine learning models using Kubernetes: Kserve and Seldon-core. After struggling to run Kserve on my machine, I decided to go with Seldon-core because it was well-documented and seemed more mature compared to Kserve. While following the getting started tutorial on Seldon-core, I encountered some bugs that tested my knowledge of Kubernetes. In this post, I will write about some of them, how I encountered them, and the lessons I learned from them.&lt;/p&gt;
-
-&lt;p&gt;The tutorial describes how to create a machine learning service on top of Kubernetes that will be used to make predictions.&lt;/p&gt;
-
-&lt;p&gt;My troubles and bugs started when I ran the following command to create the Seldon deployment:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yaml
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;kubectl apply &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; - &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;END&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;
-apiVersion: machinelearning.seldon.io/v1
-kind: SeldonDeployment
-metadata:
-  name: iris-model
-  namespace: seldon
-spec:
-  name: iris
-  predictors:
-  - graph:
-      implementation: SKLEARN_SERVER
-      modelUri: gs://seldon-models/v1.16.0-dev/sklearn/iris
-      name: classifier
-    name: default
-    replicas: 1
-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;END
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This command was supposed to start a SeldonDeployment, which consists of a deployment, a service, and a pod running the model. I hoped that the command would run successfully, but it didn’t. Over the past three days, I faced different errors that made me learn more about Kubernetes. Let me talk about the first one.&lt;/p&gt;
-
-&lt;h3 id=&quot;downgrading-kubernetes-version-with-docker-desktop&quot;&gt;Downgrading Kubernetes version with Docker Desktop.&lt;/h3&gt;
-&lt;p&gt;I don’t remember many details about the first bug I faced because I didn’t document it much. I remember using Docker Desktop as a backend for Kubernetes, and it was using Kubernetes 1.26. The fix for the issue was to use a lower version of Kubernetes, such as 1.24, but with Docker Desktop, there is no way to downgrade the version of Kubernetes. I had to switch to using Minikube; with it, I could specify the version of Kubernetes to use. Here is the command I used to downgrade it:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;minikube start &lt;span class=&quot;nt&quot;&gt;--kubernetes-version&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;v1.24.1&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;unable-to-pull-the-large-images-in-the-pod&quot;&gt;Unable to pull the large images in the pod.&lt;/h3&gt;
-
-&lt;p&gt;After solving the first issue, I faced another one. I noticed my pod was not starting, so I decided to debug the pod to find out what was going wrong. When I checked the pod’s status, I found that it was stuck with this message: Error: ImagePullBackOff. I ran the following command:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;kubectl describe pod PodName &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; podNamespace.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;And I ended up with the following error message:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-  Normal   Scheduled  13m   default-scheduler  Successfully assigned seldon/xgboost-default-0-classifier-786f456bd4-jxjm6 to minikube
-  Normal   Pulled     13m   kubelet   Container image &lt;span class=&quot;s2&quot;&gt;&quot;seldonio/rclone-storage-initializer:1.15.0&quot;&lt;/span&gt; already present on machine
-  Normal   Created    13m   kubelet   Created container classifier-model-initializer
-  Normal   Started    13m   kubelet   Started container classifier-model-initializer
-  Warning  Failed     10m   kubelet   Error: ErrImagePull
-  Warning  Failed     10m   kubelet   Failed to pull image &lt;span class=&quot;s2&quot;&gt;&quot;seldonio/xgboostserver:1.15.0&quot;&lt;/span&gt;: rpc error: code &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Unknown desc &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; context deadline exceeded
-  Normal   Pulled     10m   kubelet   Container image &lt;span class=&quot;s2&quot;&gt;&quot;docker.io/seldonio/seldon-core-executor:1.15.0&quot;&lt;/span&gt; already present on machine
-  Normal   Created    10m   kubelet   Created container seldon-container-engine
-  Normal   Started    10m   kubelet   Started container seldon-container-engine
-  Normal   BackOff    9m58s &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x2 over 9m59s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;   kubelet   Back-off pulling image &lt;span class=&quot;s2&quot;&gt;&quot;seldonio/xgboostserver:1.15.0&quot;&lt;/span&gt;
-  Warning  Failed     9m58s &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x2 over 9m59s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;   kubelet   Error: ImagePullBackOff
-  Normal   Pulling    9m45s &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x2 over 13m&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;     kubelet   Pulling image &lt;span class=&quot;s2&quot;&gt;&quot;seldonio/xgboostserver:1.15.0&quot;&lt;/span&gt;
-  Warning  Unhealthy  3m14s &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;x84 over 9m39s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;  kubelet   Readiness probe failed: HTTP probe failed with statuscode: 503
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The first lines of the logs show that Kubernetes could not pull the image for my container:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;kubelet Failed to pull image &lt;span class=&quot;s2&quot;&gt;&quot;seldonio/xgboostserver:1.15.0&quot;&lt;/span&gt;: rpc error: code &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Unknown desc &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; context deadline exceeded&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Initially, I thought that my pod was not connected to the internet because it could not pull the container image, but that was not the case. On closer inspection, I found that the pod could pull the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;docker.io/seldonio/seldon-core-executor:1.15.0&lt;/code&gt; container image and was starting the executor container but not the MLServer image.&lt;/p&gt;
-
-&lt;p&gt;After several hours of debugging, I discovered that the error was due to the size of my image and the timeout while pulling the image for the first time. The container was trying to pull the images, but it took a long time to pull, and the container timed out. After Googling, two possible workarounds were suggested:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Increase the size of the runtime timeout to a larger time and hope it will work.&lt;/li&gt;
-  &lt;li&gt;Download the images with a separate command and run the container once the image is downloaded in the machine.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;To apply the first workaround, I had to run the following command:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;minikube ssh &lt;span class=&quot;s2&quot;&gt;&quot;sudo sed -i 's/KUBELET_ARGS=/KUBELET_ARGS=--runtime-request-timeout=TIME /g' /etc/systemd/system/kubelet.service.d/10-kubeadm.conf &amp;amp;&amp;amp; sudo systemctl daemon-reload &amp;amp;&amp;amp; sudo systemctl restart kubelet&quot;&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;I tried it, but it didn’t work in my case, so I had to use the second method, which consists of downloading the image separately inside Minikube. I used the following command:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;minikube image load seldonio/sklearnserver:1.15.0&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The image was large and took approximately 10 minutes to download, maybe because my internet connection this weekend was not at its best. But after that, I passed that issue, but that was not all. There was another bug waiting for me:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;Readiness probe failed&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;When I described my pod, I found that the image was pulled and the container was running for a few seconds, and then it stopped with this message:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;kubelet Readiness probe failed: HTTP probe failed with statuscode: 503&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;When I read about the error message, I found that Kubernetes uses readiness probes to know if a container is ready to accept traffic. The service keeps sending the request to the pod until the pod is ready to accept the traffic. So it was not passing that status. It is an error on the container side. But the container was stopped; how could I log in to a stopped container? I found this command:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;kubectl logs podName &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; ContainerName &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;seldon&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;By checking the log of the container to my satisfaction, I found that the container was failing because of an error with the Python image. I fixed it by changing the container image I used in my deployment. Then I had everything running.&lt;/p&gt;
-
-&lt;p&gt;With the pod running and the service working, how could I connect to the container inside a cluster? I had to create an ingress component connecting to the external service serving my pod on port 9000, where the model was running. I did everything to set up the ingress, but I could not connect to the internal service on my Mac.&lt;/p&gt;
-
-&lt;p&gt;I spent quite some time learning about Kubernetes networking and how services work, but networking is out of the scope of this tutorial. In the short term, I had to use tunneling to access my ingress from outside the container.&lt;/p&gt;
-
-&lt;p&gt;Thanks to this &lt;a href=&quot;https://stackoverflow.com/a/73735009/4683950&quot;&gt;stackoverflow question&lt;/a&gt;, which provided the steps to solve the issue, I finally managed to access the deployment. However, when I attempted to access the URL, I discovered that it was not working and all of the endpoints on the server were returning a 404 error. Although I have not yet solved the issue, I plan to do so soon.&lt;/p&gt;
-
-&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
-
-&lt;p&gt;Yes, I did struggles a lot, but this was a good learning lesson for me.  I learned how to debug containers on kubernetes and how minikube works with kuberenetes. I also learn some bit of kubernetes networking. I hope this post will serve my future self if I am facing the same issue as well as anyone else who is struggling with those bugs. My journey is not completed yet, I haven’t managed to deploy a large language model on Kubernetes, I am still struggling with that. In part two of this post I will talk about how I managed to deploy a transformer model with kubernetes.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 07 Mar 2022 10:03:59 +0000</pubDate>
-        <link>http://localhost:4000/struggles-with-docker</link>
-        <guid isPermaLink="true">http://localhost:4000/struggles-with-docker</guid>
-        
-        <category>docker,</category>
-        
-        <category>kubernetes,</category>
-        
-        <category>devops</category>
         
         
       </item>
