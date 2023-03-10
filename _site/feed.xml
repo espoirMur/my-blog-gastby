@@ -5,15 +5,15 @@
     <description>Murhabazi Buzina Espoir Home on the internet</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 10 Mar 2023 12:40:42 +0000</pubDate>
-    <lastBuildDate>Fri, 10 Mar 2023 12:40:42 +0000</lastBuildDate>
+    <pubDate>Fri, 10 Mar 2023 13:59:52 +0000</pubDate>
+    <lastBuildDate>Fri, 10 Mar 2023 13:59:52 +0000</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
         <title>Getting Started with Seldon-core and Kubernetes, Part 1: My Struggles with Kubernetes</title>
         <description>
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2023-03-07-getting-started-with-seldon-core-and-kubernetes-part-1-my-struggles-with-kubernetes/container-repair.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2023-03-07-struggles-with-docker/container-repair.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt; Mechanic fixing container image by : &lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -28,7 +28,7 @@
 &lt;p&gt;My troubles and bugs started when I ran the following command to create the Seldon deployment:&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2023-03-07-getting-started-with-seldon-core-and-kubernetes-part-1-my-struggles-with-kubernetes/seldon-core.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2023-03-07-struggles-with-docker/seldon-core.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;Overview of Seldon Core Components&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -106,7 +106,7 @@ spec:
 &lt;p&gt;The image was large and took approximately 10 minutes to download, maybe because my internet connection this weekend was not at its best. But after that, I passed that issue, but that was not all. There was another bug waiting for me:&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2023-03-07-getting-started-with-seldon-core-and-kubernetes-part-1-my-struggles-with-kubernetes/car-fails-to-start.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2023-03-07-struggles-with-docker/car-fails-to-start.jpeg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;Car failing to start&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -146,7 +146,7 @@ spec:
       </item>
     
       <item>
-        <title>Information Retrieval on the COVID-19 Open Research Dataset (CORD-19)</title>
+        <title>Information Retrieval on the COVID-19 Open Research Dataset (CORD-19) Part one: TF-IDF and Cosine Similarity</title>
         <description>&lt;h2 id=&quot;scenario&quot;&gt;Scenario&lt;/h2&gt;
 
 &lt;p&gt;In response to the COVID-19 pandemic, the White House and a coalition of leading research groups have prepared the &lt;a href=&quot;https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge&quot;&gt;COVID-19&lt;/a&gt; Open Research Dataset (CORD-19). CORD-19 is a resource of over 181,000 scholarly articles, including over 80,000 with full text, about COVID-19, SARS-CoV-2, and related coronaviruses. This freely available dataset is provided to the global research community to apply recent advances in Information Retrieval and other AI techniques to generate new insights in support of the ongoing fight against this infectious disease. There is a growing urgency for these approaches because of the rapid acceleration in new coronavirus literature, making it difficult for the medical research community to keep up.&lt;/p&gt;
@@ -187,7 +187,7 @@ spec:
 &lt;p&gt;If that is the case for you, let’s get started.&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-07-information-retrieval-on-the-covid-19-open-research-dataset-cord-19/information-retrieval-system.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-07-information-retrieval-on-medical-research-papers-about-covid19/information-retrieval-system.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;Our Information Retrieval pipeline&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -329,7 +329,7 @@ With our pandas dataset in place, let us move to the next part: text processing.
 &lt;h2 id=&quot;text-processing&quot;&gt;Text Processing&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-07-information-retrieval-on-the-covid-19-open-research-dataset-cord-19/text-processing-part.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-07-information-retrieval-on-medical-research-papers-about-covid19/text-processing-part.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;The text Processing Part&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -564,14 +564,14 @@ Once we have sorted and find the top keywords we can save them in a dictionary w
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-07-information-retrieval-on-the-covid-19-open-research-dataset-cord-19/tf-idf-chart.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-07-information-retrieval-on-medical-research-papers-about-covid19/tf-idf-chart.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;each document and top 10 terms&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h4 id=&quot;querying-using-tf-idf&quot;&gt;Querying using tf-idf&lt;/h4&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-07-information-retrieval-on-the-covid-19-open-research-dataset-cord-19/query-processing-tfidf.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-07-information-retrieval-on-medical-research-papers-about-covid19/query-processing-tfidf.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;The text Processing Part&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -610,228 +610,10 @@ Once we have sorted and find the top keywords we can save them in a dictionary w
 
 &lt;p&gt;As the result, it returns the top n rows in the matrix which are similar to our query vector.&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;data_df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;pubmed_id&lt;/th&gt;
-      &lt;th&gt;title&lt;/th&gt;
-      &lt;th&gt;abstract&lt;/th&gt;
-      &lt;th&gt;journal&lt;/th&gt;
-      &lt;th&gt;authors&lt;/th&gt;
-      &lt;th&gt;publish_time&lt;/th&gt;
-      &lt;th&gt;abstract_cleaned&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;32165633&lt;/td&gt;
-      &lt;td&gt;Acid ceramidase of macrophages traps herpes si…&lt;/td&gt;
-      &lt;td&gt;Macrophages have important protective function…&lt;/td&gt;
-      &lt;td&gt;Nat Commun&lt;/td&gt;
-      &lt;td&gt;Lang, Judith; Bohn, Patrick; Bhat, Hilal; Jast…&lt;/td&gt;
-      &lt;td&gt;2020-03-12&lt;/td&gt;
-      &lt;td&gt;macrophage  important  protective  function  i…&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;18325284&lt;/td&gt;
-      &lt;td&gt;Resource Allocation during an Influenza Pandemic&lt;/td&gt;
-      &lt;td&gt;Resource Allocation during an Influenza Pandemic&lt;/td&gt;
-      &lt;td&gt;Emerg Infect Dis&lt;/td&gt;
-      &lt;td&gt;Paranthaman, Karthikeyan; Conlon, Christopher …&lt;/td&gt;
-      &lt;td&gt;2008-03-01&lt;/td&gt;
-      &lt;td&gt;resource  allocation  influenza  pandemic&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;30073452&lt;/td&gt;
-      &lt;td&gt;Analysis of pig trading networks and practices…&lt;/td&gt;
-      &lt;td&gt;East Africa is undergoing rapid expansion of p…&lt;/td&gt;
-      &lt;td&gt;Trop Anim Health Prod&lt;/td&gt;
-      &lt;td&gt;Atherstone, C.; Galiwango, R. G.; Grace, D.; A…&lt;/td&gt;
-      &lt;td&gt;2018-08-02&lt;/td&gt;
-      &lt;td&gt;east  africa  undergo  rapid  expansion  pig  …&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;35017151&lt;/td&gt;
-      &lt;td&gt;Pembrolizumab and decitabine for refractory or…&lt;/td&gt;
-      &lt;td&gt;BACKGROUND: The powerful ‘graft versus leukemi…&lt;/td&gt;
-      &lt;td&gt;J Immunother Cancer&lt;/td&gt;
-      &lt;td&gt;Goswami, Meghali; Gui, Gege; Dillon, Laura W; …&lt;/td&gt;
-      &lt;td&gt;2022-01-11&lt;/td&gt;
-      &lt;td&gt;background  powerful  graft  versus  leukemia …&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;34504521&lt;/td&gt;
-      &lt;td&gt;Performance Evaluation of Enterprise Supply Ch…&lt;/td&gt;
-      &lt;td&gt;In order to make up for the shortcomings of cu…&lt;/td&gt;
-      &lt;td&gt;Comput Intell Neurosci&lt;/td&gt;
-      &lt;td&gt;Bu, Miaoling&lt;/td&gt;
-      &lt;td&gt;2021-08-30&lt;/td&gt;
-      &lt;td&gt;order  make  shortcoming  current  performance…&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;tfidf_df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;aa&lt;/th&gt;
-      &lt;th&gt;ab&lt;/th&gt;
-      &lt;th&gt;abbott&lt;/th&gt;
-      &lt;th&gt;abdomen&lt;/th&gt;
-      &lt;th&gt;abdominal&lt;/th&gt;
-      &lt;th&gt;abdominal pain&lt;/th&gt;
-      &lt;th&gt;abdominal wall&lt;/th&gt;
-      &lt;th&gt;ability&lt;/th&gt;
-      &lt;th&gt;ability induce&lt;/th&gt;
-      &lt;th&gt;ability perform&lt;/th&gt;
-      &lt;th&gt;…&lt;/th&gt;
-      &lt;th&gt;zip&lt;/th&gt;
-      &lt;th&gt;zip code&lt;/th&gt;
-      &lt;th&gt;zip code level&lt;/th&gt;
-      &lt;th&gt;zone&lt;/th&gt;
-      &lt;th&gt;zoonosis&lt;/th&gt;
-      &lt;th&gt;zoonotic&lt;/th&gt;
-      &lt;th&gt;zoonotic pathogen&lt;/th&gt;
-      &lt;th&gt;zoonotic virus&lt;/th&gt;
-      &lt;th&gt;μm&lt;/th&gt;
-      &lt;th&gt;μm respectively&lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;…&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.00&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;…&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.00&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;…&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.09&lt;/td&gt;
-      &lt;td&gt;0.1&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;…&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.00&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;…&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.00&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-      &lt;td&gt;0.0&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;Let us try to check how it works in practice.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'are gorillas responsible of ebola'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'are gorillas responsible of ebola'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;search_start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;sim_vecs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cosine_similarities&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calculate_similarity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;search_time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search_start&lt;/span&gt;
@@ -874,6 +656,16 @@ abstract Sars-Cov-2 or Novel coronavirus infection &lt;span class=&quot;o&quot;&
         <link>http://localhost:4000/information-retrieval-on-medical-research-papers-about-covid19</link>
         <guid isPermaLink="true">http://localhost:4000/information-retrieval-on-medical-research-papers-about-covid19</guid>
         
+        <category>python,</category>
+        
+        <category>information-retrieval,</category>
+        
+        <category>elastic-search,</category>
+        
+        <category>covid19,</category>
+        
+        <category>cord-19</category>
+        
         
       </item>
     
@@ -881,7 +673,7 @@ abstract Sars-Cov-2 or Novel coronavirus infection &lt;span class=&quot;o&quot;&
         <title>Congolese 🇨🇩 , Africans young Software Engineers, and Computer Scientists graduates - let’s get that master's degree! 🚀 🚀🚀🎓</title>
         <description>
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-06-congolese-africans-young-software-engineers-and-computer-scientists-graduates-let-s-get-that-master-s-degree/cmu-africa-graduation.png&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-06-master-options-africans/cmu-africa-graduation.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;CMU Africa Graduation ceremony class of 2019, I need someone to put the 🇨🇩 on that picture next time&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -902,7 +694,7 @@ abstract Sars-Cov-2 or Novel coronavirus infection &lt;span class=&quot;o&quot;&
 &lt;h2 id=&quot;carnegie-mellon-university--africa&quot;&gt;&lt;a href=&quot;https://www.cmu.edu/africa/&quot;&gt;Carnegie Mellon University  AFRICA&lt;/a&gt;&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-06-congolese-africans-young-software-engineers-and-computer-scientists-graduates-let-s-get-that-master-s-degree/cmu-africa-campus.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-06-master-options-africans/cmu-africa-campus.jpeg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;CMU Africa campus, I am sure there are some Europeans universities campuses which are not as beautiful as this campus&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -931,7 +723,7 @@ abstract Sars-Cov-2 or Novel coronavirus infection &lt;span class=&quot;o&quot;&
 &lt;h2 id=&quot;africa-master-of-machine-intelligence&quot;&gt;&lt;a href=&quot;https://aimsammi.org/&quot;&gt;Africa Master of Machine Intelligence&lt;/a&gt;&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-06-congolese-africans-young-software-engineers-and-computer-scientists-graduates-let-s-get-that-master-s-degree/ammi-launch-8.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-06-master-options-africans/ammi-launch-8.jpeg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;AMMI Kigali launch&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -955,7 +747,7 @@ abstract Sars-Cov-2 or Novel coronavirus infection &lt;span class=&quot;o&quot;&
 &lt;h2 id=&quot;chevening-scholarship&quot;&gt;&lt;a href=&quot;https://www.chevening.org/&quot;&gt;Chevening scholarship.&lt;/a&gt;&lt;/h2&gt;
 
 &lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-06-congolese-africans-young-software-engineers-and-computer-scientists-graduates-let-s-get-that-master-s-degree/chevener-from-drc.jpeg&quot; /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2022-04-06-master-options-africans/chevener-from-drc.jpeg&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;Chevener from DRC 2022 cohort , caption me if you can 🤪 &lt;/figcaption&gt;
 &lt;/figure&gt;
 

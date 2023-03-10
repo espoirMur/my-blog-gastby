@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Information retrieval on CORD-19 papers about COVID-19"
+title: "Information retrieval on CORD-19 papers about COVID-19 Part 2: Information Retrieval Using Elasticsearch"
 permalink: information-retrieval-on-medical-research-papers-about-covid19-part-two
 date: 2022-04-06 12:03:59
 comments: true

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Information Retrieval on the COVID-19 Open Research Dataset (CORD-19)"
+title: "Information Retrieval on the COVID-19 Open Research Dataset (CORD-19) Part one: TF-IDF and Cosine Similarity"
 permalink: information-retrieval-on-medical-research-papers-about-covid19
 date: 2022-04-07 12:03:59
 comments: true
@@ -9,7 +9,7 @@ keywords: "Information Retrieval, Medical Research, Covid19, CORD-19 dataset"
 categories:
 published: true
 
-tags:
+tags: python, information-retrieval, elastic-search, covid19, cord-19
 
 ---
 
@@ -452,48 +452,12 @@ def show_similar_documents(df, cosine_similarities, similar_doc_indices):
 
 The above code, get our new query, generate it TF-IDF  vector. Then it computes the cosine similarity between the vectors and all our documents in the TF-IDF matrix. 
 
-As the result, it returns the top n rows in the matrix which are similar to our query vector. 
+As the result, it returns the top n rows in the matrix which are similar to our query vector.
 
-```python
-data_df.head()
-```
-
-| pubmed_id | title    | abstract                                          | journal                                           | authors                | publish_time                                      | abstract_cleaned |
-|-----------|----------|---------------------------------------------------|---------------------------------------------------|------------------------|---------------------------------------------------|------------------|
-| 32165633 | Acid ceramidase of macrophages traps herpes si... | Macrophages have important protective function... | Nat Commun             | Lang, Judith; Bohn, Patrick; Bhat, Hilal; Jast... | 2020-03-12       | macrophage  important  protective  function  i... |
-| 18325284 | Resource Allocation during an Influenza Pandemic  | Resource Allocation during an Influenza Pandemic  | Emerg Infect Dis       | Paranthaman, Karthikeyan; Conlon, Christopher ... | 2008-03-01       | resource  allocation  influenza  pandemic         |
-| 30073452 | Analysis of pig trading networks and practices... | East Africa is undergoing rapid expansion of p... | Trop Anim Health Prod  | Atherstone, C.; Galiwango, R. G.; Grace, D.; A... | 2018-08-02       | east  africa  undergo  rapid  expansion  pig  ... |
-| 35017151 | Pembrolizumab and decitabine for refractory or... | BACKGROUND: The powerful ‘graft versus leukemi... | J Immunother Cancer    | Goswami, Meghali; Gui, Gege; Dillon, Laura W; ... | 2022-01-11       | background  powerful  graft  versus  leukemia ... |
-| 34504521 | Performance Evaluation of Enterprise Supply Ch... | In order to make up for the shortcomings of cu... | Comput Intell Neurosci | Bu, Miaoling                                      | 2021-08-30       | order  make  shortcoming  current  performance... |
-
-
-
-
-
-```python
-tfidf_df.head()
-```
-
-
-
-
-| aa | ab  | abbott | abdomen | abdominal | abdominal pain | abdominal wall | ability | ability induce | ability perform | ... | zip | zip code | zip code level | zone | zoonosis | zoonotic | zoonotic pathogen | zoonotic virus | μm  | μm respectively |
-|----|-----|--------|---------|-----------|----------------|----------------|---------|----------------|-----------------|-----|-----|----------|----------------|------|----------|----------|-------------------|----------------|-----|-----------------|
-| 0  | 0.0 | 0.0    | 0.0     | 0.0       | 0.0            | 0.0            | 0.0     | 0.0            | 0.0             | 0.0 | ... | 0.0      | 0.0            | 0.0  | 0.0      | 0.0      | 0.00              | 0.0            | 0.0 | 0.0             | 0.0 |
-| 1  | 0.0 | 0.0    | 0.0     | 0.0       | 0.0            | 0.0            | 0.0     | 0.0            | 0.0             | 0.0 | ... | 0.0      | 0.0            | 0.0  | 0.0      | 0.0      | 0.00              | 0.0            | 0.0 | 0.0             | 0.0 |
-| 2  | 0.0 | 0.0    | 0.0     | 0.0       | 0.0            | 0.0            | 0.0     | 0.0            | 0.0             | 0.0 | ... | 0.0      | 0.0            | 0.0  | 0.0      | 0.0      | 0.09              | 0.1            | 0.0 | 0.0             | 0.0 |
-| 3  | 0.0 | 0.0    | 0.0     | 0.0       | 0.0            | 0.0            | 0.0     | 0.0            | 0.0             | 0.0 | ... | 0.0      | 0.0            | 0.0  | 0.0      | 0.0      | 0.00              | 0.0            | 0.0 | 0.0             | 0.0 |
-| 4  | 0.0 | 0.0    | 0.0     | 0.0       | 0.0            | 0.0            | 0.0     | 0.0            | 0.0             | 0.0 | ... | 0.0      | 0.0            | 0.0  | 0.0      | 0.0      | 0.00              | 0.0            | 0.0 | 0.0             | 0.0 |
-
-
-
+Let us try to check how it works in practice.
 
 ```python
 import time
-```
-
-
-```python
 query = ['are gorillas responsible of ebola']
 search_start = time.time()
 sim_vecs, cosine_similarities = calculate_similarity(query)

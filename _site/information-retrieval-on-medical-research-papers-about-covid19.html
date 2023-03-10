@@ -11,10 +11,10 @@
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
   type="text/javascript">
 </script>
-<title>Information Retrieval on the COVID-19 Open Research Dataset (CORD-19)</title>
+<title>Information Retrieval on the COVID-19 Open Research Dataset (CORD-19) Part one: TF-IDF and Cosine Similarity</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <meta name="description" content="Information Retrieval on medical research papers about CORD-19 dataset">
-<meta property="og:image" content=/assets/posts/2022-04-07-information-retrieval-on-the-covid-19-open-research-dataset-cord-19/information-retrieval-system.png>
+<meta property="og:image" content=/assets/posts/2022-04-07-information-retrieval-on-medical-research-papers-about-covid19/information-retrieval-system.png>
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="canonical" href="http://localhost:4000/information-retrieval-on-medical-research-papers-about-covid19">
 
@@ -30,9 +30,9 @@
 
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Information Retrieval on the COVID-19 Open Research Dataset (CORD-19) | Espoir Murhabazi ideas’ home</title>
+<title>Information Retrieval on the COVID-19 Open Research Dataset (CORD-19) Part one: TF-IDF and Cosine Similarity | Espoir Murhabazi ideas’ home</title>
 <meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="Information Retrieval on the COVID-19 Open Research Dataset (CORD-19)" />
+<meta property="og:title" content="Information Retrieval on the COVID-19 Open Research Dataset (CORD-19) Part one: TF-IDF and Cosine Similarity" />
 <meta name="author" content="Murhabazi Buzina, Espoir" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Information Retrieval on medical research papers about CORD-19 dataset" />
@@ -43,9 +43,9 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-04-07T13:03:59+01:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Information Retrieval on the COVID-19 Open Research Dataset (CORD-19)" />
+<meta property="twitter:title" content="Information Retrieval on the COVID-19 Open Research Dataset (CORD-19) Part one: TF-IDF and Cosine Similarity" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Murhabazi Buzina, Espoir","url":"https://murhabazi.com/"},"dateModified":"2022-04-07T13:03:59+01:00","datePublished":"2022-04-07T13:03:59+01:00","description":"Information Retrieval on medical research papers about CORD-19 dataset","headline":"Information Retrieval on the COVID-19 Open Research Dataset (CORD-19)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/information-retrieval-on-medical-research-papers-about-covid19"},"url":"http://localhost:4000/information-retrieval-on-medical-research-papers-about-covid19"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Murhabazi Buzina, Espoir","url":"https://murhabazi.com/"},"dateModified":"2022-04-07T13:03:59+01:00","datePublished":"2022-04-07T13:03:59+01:00","description":"Information Retrieval on medical research papers about CORD-19 dataset","headline":"Information Retrieval on the COVID-19 Open Research Dataset (CORD-19) Part one: TF-IDF and Cosine Similarity","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/information-retrieval-on-medical-research-papers-about-covid19"},"url":"http://localhost:4000/information-retrieval-on-medical-research-papers-about-covid19"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -82,7 +82,7 @@
 
   <div class="card">
     <header class="post-header">
-      <h1 class="post-title">Information Retrieval on the COVID-19 Open Research Dataset (CORD-19)</h1>
+      <h1 class="post-title">Information Retrieval on the COVID-19 Open Research Dataset (CORD-19) Part one: TF-IDF and Cosine Similarity</h1>
       <em class="post-meta">
         <time>Apr 7, 2022</time>
       </em>
@@ -130,7 +130,7 @@
 <p>If that is the case for you, let’s get started.</p>
 
 <figure>
-  <p><img src="/assets/posts/2022-04-07-information-retrieval-on-the-covid-19-open-research-dataset-cord-19/information-retrieval-system.png" /></p>
+  <p><img src="/assets/posts/2022-04-07-information-retrieval-on-medical-research-papers-about-covid19/information-retrieval-system.png" /></p>
   <figcaption>Our Information Retrieval pipeline</figcaption>
 </figure>
 
@@ -272,7 +272,7 @@ With our pandas dataset in place, let us move to the next part: text processing.
 <h2 id="text-processing">Text Processing</h2>
 
 <figure>
-  <p><img src="/assets/posts/2022-04-07-information-retrieval-on-the-covid-19-open-research-dataset-cord-19/text-processing-part.png" /></p>
+  <p><img src="/assets/posts/2022-04-07-information-retrieval-on-medical-research-papers-about-covid19/text-processing-part.png" /></p>
   <figcaption>The text Processing Part</figcaption>
 </figure>
 
@@ -507,14 +507,14 @@ Once we have sorted and find the top keywords we can save them in a dictionary w
 </code></pre></div></div>
 
 <figure>
-  <p><img src="/assets/posts/2022-04-07-information-retrieval-on-the-covid-19-open-research-dataset-cord-19/tf-idf-chart.png" /></p>
+  <p><img src="/assets/posts/2022-04-07-information-retrieval-on-medical-research-papers-about-covid19/tf-idf-chart.png" /></p>
   <figcaption>each document and top 10 terms</figcaption>
 </figure>
 
 <h4 id="querying-using-tf-idf">Querying using tf-idf</h4>
 
 <figure>
-  <p><img src="/assets/posts/2022-04-07-information-retrieval-on-the-covid-19-open-research-dataset-cord-19/query-processing-tfidf.png" /></p>
+  <p><img src="/assets/posts/2022-04-07-information-retrieval-on-medical-research-papers-about-covid19/query-processing-tfidf.png" /></p>
   <figcaption>The text Processing Part</figcaption>
 </figure>
 
@@ -553,228 +553,10 @@ Once we have sorted and find the top keywords we can save them in a dictionary w
 
 <p>As the result, it returns the top n rows in the matrix which are similar to our query vector.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
-</code></pre></div></div>
-
-<table>
-  <thead>
-    <tr>
-      <th>pubmed_id</th>
-      <th>title</th>
-      <th>abstract</th>
-      <th>journal</th>
-      <th>authors</th>
-      <th>publish_time</th>
-      <th>abstract_cleaned</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>32165633</td>
-      <td>Acid ceramidase of macrophages traps herpes si…</td>
-      <td>Macrophages have important protective function…</td>
-      <td>Nat Commun</td>
-      <td>Lang, Judith; Bohn, Patrick; Bhat, Hilal; Jast…</td>
-      <td>2020-03-12</td>
-      <td>macrophage  important  protective  function  i…</td>
-    </tr>
-    <tr>
-      <td>18325284</td>
-      <td>Resource Allocation during an Influenza Pandemic</td>
-      <td>Resource Allocation during an Influenza Pandemic</td>
-      <td>Emerg Infect Dis</td>
-      <td>Paranthaman, Karthikeyan; Conlon, Christopher …</td>
-      <td>2008-03-01</td>
-      <td>resource  allocation  influenza  pandemic</td>
-    </tr>
-    <tr>
-      <td>30073452</td>
-      <td>Analysis of pig trading networks and practices…</td>
-      <td>East Africa is undergoing rapid expansion of p…</td>
-      <td>Trop Anim Health Prod</td>
-      <td>Atherstone, C.; Galiwango, R. G.; Grace, D.; A…</td>
-      <td>2018-08-02</td>
-      <td>east  africa  undergo  rapid  expansion  pig  …</td>
-    </tr>
-    <tr>
-      <td>35017151</td>
-      <td>Pembrolizumab and decitabine for refractory or…</td>
-      <td>BACKGROUND: The powerful ‘graft versus leukemi…</td>
-      <td>J Immunother Cancer</td>
-      <td>Goswami, Meghali; Gui, Gege; Dillon, Laura W; …</td>
-      <td>2022-01-11</td>
-      <td>background  powerful  graft  versus  leukemia …</td>
-    </tr>
-    <tr>
-      <td>34504521</td>
-      <td>Performance Evaluation of Enterprise Supply Ch…</td>
-      <td>In order to make up for the shortcomings of cu…</td>
-      <td>Comput Intell Neurosci</td>
-      <td>Bu, Miaoling</td>
-      <td>2021-08-30</td>
-      <td>order  make  shortcoming  current  performance…</td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tfidf_df</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
-</code></pre></div></div>
-
-<table>
-  <thead>
-    <tr>
-      <th>aa</th>
-      <th>ab</th>
-      <th>abbott</th>
-      <th>abdomen</th>
-      <th>abdominal</th>
-      <th>abdominal pain</th>
-      <th>abdominal wall</th>
-      <th>ability</th>
-      <th>ability induce</th>
-      <th>ability perform</th>
-      <th>…</th>
-      <th>zip</th>
-      <th>zip code</th>
-      <th>zip code level</th>
-      <th>zone</th>
-      <th>zoonosis</th>
-      <th>zoonotic</th>
-      <th>zoonotic pathogen</th>
-      <th>zoonotic virus</th>
-      <th>μm</th>
-      <th>μm respectively</th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>…</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>…</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>…</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.09</td>
-      <td>0.1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>…</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>…</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
+<p>Let us try to check how it works in practice.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">time</span>
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span> <span class="o">=</span> <span class="p">[</span><span class="s">'are gorillas responsible of ebola'</span><span class="p">]</span>
+<span class="n">query</span> <span class="o">=</span> <span class="p">[</span><span class="s">'are gorillas responsible of ebola'</span><span class="p">]</span>
 <span class="n">search_start</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">sim_vecs</span><span class="p">,</span> <span class="n">cosine_similarities</span> <span class="o">=</span> <span class="n">calculate_similarity</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 <span class="n">search_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">search_start</span>
