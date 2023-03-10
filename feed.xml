@@ -5,8 +5,8 @@
     <description>Murhabazi Buzina Espoir Home on the internet</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 10 Mar 2023 13:59:52 +0000</pubDate>
-    <lastBuildDate>Fri, 10 Mar 2023 13:59:52 +0000</lastBuildDate>
+    <pubDate>Fri, 10 Mar 2023 14:41:13 +0000</pubDate>
+    <lastBuildDate>Fri, 10 Mar 2023 14:41:13 +0000</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -706,12 +706,8 @@ abstract Sars-Cov-2 or Novel coronavirus infection &lt;span class=&quot;o&quot;&
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/kesaoluwafunmilola/&quot;&gt;Oluwafunmilola Kesa&lt;/a&gt;, Software Engineer at Microsoft, Vancouver Canada&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.cs.ox.ac.uk/people/daniel.omeiza/&quot;&gt;Daniel Omeiza&lt;/a&gt;, Ph.D. Student at University of Oxford, Oxford UK&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://ng.linkedin.com/in/azeez-oluwafemi&quot;&gt;Azeez Oluwafemi&lt;/a&gt;, Research Engineer at Borealis AI, Vancouver Canada.&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cs.ox.ac.uk/people/daniel.omeiza/&quot;&gt;Daniel Omeiza&lt;/a&gt;, Ph.D. Student at University of Oxford, Oxford UK&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ng.linkedin.com/in/azeez-oluwafemi&quot;&gt;Azeez Oluwafemi&lt;/a&gt;, Research Engineer at Borealis AI, Vancouver Canada.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://ug.linkedin.com/in/joan-kirunga&quot;&gt;Joan Kirunga&lt;/a&gt; , Senior Data Scientist at BBox, Kigali Rwanda&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/victorakinwande/&quot;&gt;Victor Akinwande&lt;/a&gt;, Phd Student, at the main CMU in Pennsylvania, USA&lt;/li&gt;
 &lt;/ul&gt;
