@@ -4,12 +4,14 @@ title: "Getting Started with Seldon-core and Kubernetes, Part 1: My Struggles wi
 permalink: struggles-with-docker
 date: 2023-03-07 10:03:59
 comments: true
-description: "How I fixed  Error: ErrImagePull rpc error: code = Unknown desc = context deadline exceeded code with Kubernetes and minikube and 503 error with kubernetes on seldon core"
+description: "How I fixed  Error: ErrImagePull rpc error: code = Unknown desc = context deadline exceeded code with Kubernetes and kubelet Readiness probe failed: HTTP probe failed with statuscode: 503  on Kubernetes and Seldon-core."
 keywords: "Kubernetes, Docker, MLops"
 categories: 
 published: true
 tags: docker, kubernetes, devops
 ---
+
+{% include image.html name="container-repair.png" caption=" Mechanic fixing container image by : " %}
 
 Learning Kubernetes has been on my bucket list for years. I always said that when I had the time, I would learn it because it is one of those tools missing from my developer toolbox.
 
@@ -20,6 +22,8 @@ To practice, I used Kubernetes to deploy a machine learning model. After researc
 The tutorial describes how to create a machine learning service on top of Kubernetes that will be used to make predictions.
 
 My troubles and bugs started when I ran the following command to create the Seldon deployment:
+
+{% include image.html name="seldon-core.png" caption="Overview of Seldon Core Components" %}
 
 ```
 yaml
@@ -43,12 +47,12 @@ END
 
 This command was supposed to start a SeldonDeployment, which consists of a deployment, a service, and a pod running the model. I hoped that the command would run successfully, but it didn't. Over the past three days, I faced different errors that made me learn more about Kubernetes. Let me talk about the first one.
 
-### Downgrading Kubernetes version with Docker Desktop.
+## Downgrading Kubernetes version with Docker Desktop.
 I don't remember many details about the first bug I faced because I didn't document it much. I remember using Docker Desktop as a backend for Kubernetes, and it was using Kubernetes 1.26. The fix for the issue was to use a lower version of Kubernetes, such as 1.24, but with Docker Desktop, there is no way to downgrade the version of Kubernetes. I had to switch to using Minikube; with it, I could specify the version of Kubernetes to use. Here is the command I used to downgrade it:
 
 `minikube start --kubernetes-version=v1.24.1`
 
-### Unable to pull the large images in the pod.
+## Unable to pull the large images in the pod.
 
 After solving the first issue, I faced another one. I noticed my pod was not starting, so I decided to debug the pod to find out what was going wrong. When I checked the pod's status, I found that it was stuck with this message: Error: ImagePullBackOff. I ran the following command:
 
@@ -97,8 +101,8 @@ I tried it, but it didn't work in my case, so I had to use the second method, wh
 
 The image was large and took approximately 10 minutes to download, maybe because my internet connection this weekend was not at its best. But after that, I passed that issue, but that was not all. There was another bug waiting for me:
 
-
-`Readiness probe failed` 
+{% include image.html name="car-fails-to-start.jpeg" caption="Car failing to start" %}
+## Readiness probe failed
 
 When I described my pod, I found that the image was pulled and the container was running for a few seconds, and then it stopped with this message:
 
@@ -119,6 +123,6 @@ I spent quite some time learning about Kubernetes networking and how services wo
 Thanks to this [stackoverflow question](https://stackoverflow.com/a/73735009/4683950), which provided the steps to solve the issue, I finally managed to access the deployment. However, when I attempted to access the URL, I discovered that it was not working and all of the endpoints on the server were returning a 404 error. Although I have not yet solved the issue, I plan to do so soon.
 
 
-### Conclusion
+## Conclusion
 
 Yes, I did struggles a lot, but this was a good learning lesson for me.  I learned how to debug containers on kubernetes and how minikube works with kuberenetes. I also learn some bit of kubernetes networking. I hope this post will serve my future self if I am facing the same issue as well as anyone else who is struggling with those bugs. My journey is not completed yet, I haven't managed to deploy a large language model on Kubernetes, I am still struggling with that. In part two of this post I will talk about how I managed to deploy a transformer model with kubernetes.

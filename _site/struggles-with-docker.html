@@ -13,8 +13,8 @@
 </script>
 <title>Getting Started with Seldon-core and Kubernetes, Part 1: My Struggles with Kubernetes</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<meta name="description" content="My struggles when I started with seldon-core and Kubernetes.">
-<meta property="og:image" content=/assets/images/post-default-cover.jpeg>
+<meta name="description" content="How I fixed  Error: ErrImagePull rpc error: code = Unknown desc = context deadline exceeded code with Kubernetes and kubelet Readiness probe failed: HTTP probe failed with statuscode: 503  on Kubernetes and Seldon-core.">
+<meta property="og:image" content=/assets/posts/2023-03-07-getting-started-with-seldon-core-and-kubernetes-part-1-my-struggles-with-kubernetes/container-repair.png>
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="canonical" href="http://localhost:4000/struggles-with-docker">
 
@@ -35,8 +35,8 @@
 <meta property="og:title" content="Getting Started with Seldon-core and Kubernetes, Part 1: My Struggles with Kubernetes" />
 <meta name="author" content="Murhabazi Buzina, Espoir" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="My struggles when I started with seldon-core and Kubernetes." />
-<meta property="og:description" content="My struggles when I started with seldon-core and Kubernetes." />
+<meta name="description" content="How I fixed Error: ErrImagePull rpc error: code = Unknown desc = context deadline exceeded code with Kubernetes and kubelet Readiness probe failed: HTTP probe failed with statuscode: 503 on Kubernetes and Seldon-core." />
+<meta property="og:description" content="How I fixed Error: ErrImagePull rpc error: code = Unknown desc = context deadline exceeded code with Kubernetes and kubelet Readiness probe failed: HTTP probe failed with statuscode: 503 on Kubernetes and Seldon-core." />
 <link rel="canonical" href="http://localhost:4000/struggles-with-docker" />
 <meta property="og:url" content="http://localhost:4000/struggles-with-docker" />
 <meta property="og:site_name" content="Espoir Murhabazi ideas’ home" />
@@ -45,7 +45,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Getting Started with Seldon-core and Kubernetes, Part 1: My Struggles with Kubernetes" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Murhabazi Buzina, Espoir","url":"https://murhabazi.com/"},"dateModified":"2023-03-07T10:03:59+00:00","datePublished":"2023-03-07T10:03:59+00:00","description":"My struggles when I started with seldon-core and Kubernetes.","headline":"Getting Started with Seldon-core and Kubernetes, Part 1: My Struggles with Kubernetes","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/struggles-with-docker"},"url":"http://localhost:4000/struggles-with-docker"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Murhabazi Buzina, Espoir","url":"https://murhabazi.com/"},"dateModified":"2023-03-07T10:03:59+00:00","datePublished":"2023-03-07T10:03:59+00:00","description":"How I fixed Error: ErrImagePull rpc error: code = Unknown desc = context deadline exceeded code with Kubernetes and kubelet Readiness probe failed: HTTP probe failed with statuscode: 503 on Kubernetes and Seldon-core.","headline":"Getting Started with Seldon-core and Kubernetes, Part 1: My Struggles with Kubernetes","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/struggles-with-docker"},"url":"http://localhost:4000/struggles-with-docker"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -90,7 +90,13 @@
 
     <div class="post-content">
       
-      <p>Learning Kubernetes has been on my bucket list for years. I always said that when I had the time, I would learn it because it is one of those tools missing from my developer toolbox.</p>
+      
+<figure>
+  <p><img src="/assets/posts/2023-03-07-getting-started-with-seldon-core-and-kubernetes-part-1-my-struggles-with-kubernetes/container-repair.png" /></p>
+  <figcaption> Mechanic fixing container image by : </figcaption>
+</figure>
+
+<p>Learning Kubernetes has been on my bucket list for years. I always said that when I had the time, I would learn it because it is one of those tools missing from my developer toolbox.</p>
 
 <p>In January, I decided to start my learning journey. I watched this amazing video, which gave me a basic overview of Kubernetes components, and I managed to install it on my local laptop.</p>
 
@@ -99,6 +105,11 @@
 <p>The tutorial describes how to create a machine learning service on top of Kubernetes that will be used to make predictions.</p>
 
 <p>My troubles and bugs started when I ran the following command to create the Seldon deployment:</p>
+
+<figure>
+  <p><img src="/assets/posts/2023-03-07-getting-started-with-seldon-core-and-kubernetes-part-1-my-struggles-with-kubernetes/seldon-core.png" /></p>
+  <figcaption>Overview of Seldon Core Components</figcaption>
+</figure>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yaml
 <span class="nv">$ </span>kubectl apply <span class="nt">-f</span> - <span class="o">&lt;&lt;</span> <span class="no">END</span><span class="sh">
@@ -121,12 +132,12 @@ spec:
 
 <p>This command was supposed to start a SeldonDeployment, which consists of a deployment, a service, and a pod running the model. I hoped that the command would run successfully, but it didn’t. Over the past three days, I faced different errors that made me learn more about Kubernetes. Let me talk about the first one.</p>
 
-<h3 id="downgrading-kubernetes-version-with-docker-desktop">Downgrading Kubernetes version with Docker Desktop.</h3>
+<h2 id="downgrading-kubernetes-version-with-docker-desktop">Downgrading Kubernetes version with Docker Desktop.</h2>
 <p>I don’t remember many details about the first bug I faced because I didn’t document it much. I remember using Docker Desktop as a backend for Kubernetes, and it was using Kubernetes 1.26. The fix for the issue was to use a lower version of Kubernetes, such as 1.24, but with Docker Desktop, there is no way to downgrade the version of Kubernetes. I had to switch to using Minikube; with it, I could specify the version of Kubernetes to use. Here is the command I used to downgrade it:</p>
 
 <p><code class="language-bash highlighter-rouge">minikube start <span class="nt">--kubernetes-version</span><span class="o">=</span>v1.24.1</code></p>
 
-<h3 id="unable-to-pull-the-large-images-in-the-pod">Unable to pull the large images in the pod.</h3>
+<h2 id="unable-to-pull-the-large-images-in-the-pod">Unable to pull the large images in the pod.</h2>
 
 <p>After solving the first issue, I faced another one. I noticed my pod was not starting, so I decided to debug the pod to find out what was going wrong. When I checked the pod’s status, I found that it was stuck with this message: Error: ImagePullBackOff. I ran the following command:</p>
 
@@ -173,7 +184,12 @@ spec:
 
 <p>The image was large and took approximately 10 minutes to download, maybe because my internet connection this weekend was not at its best. But after that, I passed that issue, but that was not all. There was another bug waiting for me:</p>
 
-<p><code class="language-bash highlighter-rouge">Readiness probe failed</code></p>
+<figure>
+  <p><img src="/assets/posts/2023-03-07-getting-started-with-seldon-core-and-kubernetes-part-1-my-struggles-with-kubernetes/car-fails-to-start.jpeg" /></p>
+  <figcaption>Car failing to start</figcaption>
+</figure>
+
+<h2 id="readiness-probe-failed">Readiness probe failed</h2>
 
 <p>When I described my pod, I found that the image was pulled and the container was running for a few seconds, and then it stopped with this message:</p>
 
@@ -191,7 +207,7 @@ spec:
 
 <p>Thanks to this <a href="https://stackoverflow.com/a/73735009/4683950">stackoverflow question</a>, which provided the steps to solve the issue, I finally managed to access the deployment. However, when I attempted to access the URL, I discovered that it was not working and all of the endpoints on the server were returning a 404 error. Although I have not yet solved the issue, I plan to do so soon.</p>
 
-<h3 id="conclusion">Conclusion</h3>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>Yes, I did struggles a lot, but this was a good learning lesson for me.  I learned how to debug containers on kubernetes and how minikube works with kuberenetes. I also learn some bit of kubernetes networking. I hope this post will serve my future self if I am facing the same issue as well as anyone else who is struggling with those bugs. My journey is not completed yet, I haven’t managed to deploy a large language model on Kubernetes, I am still struggling with that. In part two of this post I will talk about how I managed to deploy a transformer model with kubernetes.</p>
 
