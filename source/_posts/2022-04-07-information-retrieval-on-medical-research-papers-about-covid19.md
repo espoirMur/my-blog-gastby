@@ -280,7 +280,7 @@ For the curious who want to know why we use the log in the IDF, check out [this 
 
 The TF-IDF combines both the Term Frequency and the Inverse Document Frequency. 
 
-$$(tf_idf)_{t,d } = Idf_t * TF_{w, d}$$
+$$(tf_idf)_{t,d} = Idf_t * TF_{w, d}$$
 
 #### Applying TF-IDF to our corpus
 
@@ -357,7 +357,6 @@ Once we have sorted and find the top keywords we can save them in a dictionary w
 ```python
 tfidf_df_stacked  =  tfidf_df_stacked.reset_index().rename(columns={'level_1':'term'})
 document_tfidf  =  tfidf_df_stacked.groupby(['doc_id']).apply(lambda  x:  x[['term',  "tfidf"]].set_index("term").to_dict().get('tfidf'))
-
 ```
 
 With our documents and the top keyword mappings, we can now visualize what our corpus looks like to have an idea on each paper on the document. 

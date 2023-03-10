@@ -29,22 +29,11 @@
 </script>
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-223988765-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-223988765-1');
-</script>
-
-
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Information Retrieval on the COVID-19 Open Research Dataset (CORD-19) | Espoir Murhabazi ideas’ home</title>
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Information Retrieval on the COVID-19 Open Research Dataset (CORD-19)" />
-<meta name="author" content="Espoir Murhabazi Buzina" />
+<meta name="author" content="Murhabazi Buzina, Espoir" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Information Retrieval on medical research papers about CORD-19 dataset" />
 <meta property="og:description" content="Information Retrieval on medical research papers about CORD-19 dataset" />
@@ -52,11 +41,11 @@
 <meta property="og:url" content="http://localhost:4000/information-retrieval-on-medical-research-papers-about-covid19" />
 <meta property="og:site_name" content="Espoir Murhabazi ideas’ home" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-04-07T14:03:59+02:00" />
+<meta property="article:published_time" content="2022-04-07T13:03:59+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Information Retrieval on the COVID-19 Open Research Dataset (CORD-19)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Espoir Murhabazi Buzina","url":"https://murhabazi.com/"},"dateModified":"2022-04-07T14:03:59+02:00","datePublished":"2022-04-07T14:03:59+02:00","description":"Information Retrieval on medical research papers about CORD-19 dataset","headline":"Information Retrieval on the COVID-19 Open Research Dataset (CORD-19)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/information-retrieval-on-medical-research-papers-about-covid19"},"url":"http://localhost:4000/information-retrieval-on-medical-research-papers-about-covid19"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Murhabazi Buzina, Espoir","url":"https://murhabazi.com/"},"dateModified":"2022-04-07T13:03:59+01:00","datePublished":"2022-04-07T13:03:59+01:00","description":"Information Retrieval on medical research papers about CORD-19 dataset","headline":"Information Retrieval on the COVID-19 Open Research Dataset (CORD-19)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/information-retrieval-on-medical-research-papers-about-covid19"},"url":"http://localhost:4000/information-retrieval-on-medical-research-papers-about-covid19"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -400,7 +389,7 @@ This helps to penalize the most common word in a corpus. Those words carry fewer
 
 <p>The TF-IDF combines both the Term Frequency and the Inverse Document Frequency.</p>
 
-\[(tf_idf)_{t,d } = Idf_t * TF_{w, d}\]
+\[(tf_idf)_{t,d} = Idf_t * TF_{w, d}\]
 
 <h4 id="applying-tf-idf-to-our-corpus">Applying TF-IDF to our corpus</h4>
 
@@ -465,7 +454,6 @@ Once we have sorted and find the top keywords we can save them in a dictionary w
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tfidf_df_stacked</span>  <span class="o">=</span>  <span class="n">tfidf_df_stacked</span><span class="p">.</span><span class="n">reset_index</span><span class="p">().</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s">'level_1'</span><span class="p">:</span><span class="s">'term'</span><span class="p">})</span>
 <span class="n">document_tfidf</span>  <span class="o">=</span>  <span class="n">tfidf_df_stacked</span><span class="p">.</span><span class="n">groupby</span><span class="p">([</span><span class="s">'doc_id'</span><span class="p">]).</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span>  <span class="n">x</span><span class="p">:</span>  <span class="n">x</span><span class="p">[[</span><span class="s">'term'</span><span class="p">,</span>  <span class="s">"tfidf"</span><span class="p">]].</span><span class="n">set_index</span><span class="p">(</span><span class="s">"term"</span><span class="p">).</span><span class="n">to_dict</span><span class="p">().</span><span class="n">get</span><span class="p">(</span><span class="s">'tfidf'</span><span class="p">))</span>
-
 </code></pre></div></div>
 
 <p>With our documents and the top keyword mappings, we can now visualize what our corpus looks like to have an idea on each paper on the document.</p>
@@ -862,12 +850,12 @@ abstract Sars-Cov-2 or Novel coronavirus infection <span class="o">(</span>COVID
     <ul class="social">
   <li><a href="https://github.com/espoirMur" target="_blank"><i class="icon icon-github"></i></a></li>
   <li><a href="https://twitter.com/esp_py" target="_blank"><i class="icon icon-twitter"></i></a></li>
-  <li><a href="https://www.linkedin.com/in/espoir-murhabazi-buzina-7849b1b1/" target="_blank"><i class="icon icon-linkedin"></i></a></li>
+  <li><a href="https://www.linkedin.com/in/espoirMur" target="_blank"><i class="icon icon-linkedin"></i></a></li>
   <li><a href="https://stackoverflow.com/users/4683950/espoir-murhabazi" target="_blank"><i class="fa-brands fa-stack-overflow"></i></a></li>
 </ul>
 
     <p class="txt-medium-gray">
-      <small>&copy;2022 All rights reserved. Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and ♥</small>
+      <small>&copy;2023 All rights reserved. Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and ♥</small>
     </p>
   </div>
 </footer>
