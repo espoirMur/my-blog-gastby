@@ -14,7 +14,7 @@ Template: github.com/nandomoreirame/end2end
 - [x] Fix some css in the post that went out of range
 - [x] Fix the google analytics issue and make sure the data is reaching googl analytics
 - [] Fix image thumbnail when your are sharing the post on social media
-- [] Add stackoverflow icon in the main page.
+- [x] Add stackoverflow icon in the main page.
 - [] setup a ci/cd pipeline to directly deploy the site on github pages using github actions
 - [] change the code of the highlighting and make sure the look like [this site](https://sergiokopplin.github.io/indigo/markdown-extra-components/#side-by-side)
 - [] Bonus : 
