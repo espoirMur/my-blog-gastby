@@ -13,4 +13,6 @@ I was born in Bukavu and grew up in Goma, DRCongo. I am the firstborn of a famil
 I define myself as a meloman and enjoy listening to Congolese beats when writing code.
 I am a huge Manchester City fan, I play FPL and cycle sometimes.
 
+Well, If you are somehow interested in learning about my dreams, heads up [here]({% link _posts/2024-01-17-my-dreams.md %})
+
 You can reach me by email at [my_first_name] . [mur] @ gmail.com.

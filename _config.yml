@@ -62,10 +62,10 @@ navbar:
     title: whoami();
   - slug: blog
     title: read();
-  - slug: dreams
-    title: dreams();
-  - slug: research
-    title: research();
+  - slug: drafts
+    title: drafts();
+  - slug: learnings
+    title: learnings();
 
 
 exclude: ["config.rb", "src", "Gemfile", "Gemfile.lock", "package.json","README.md", "Rakefile", 'vendor']

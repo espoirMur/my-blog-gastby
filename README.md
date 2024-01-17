@@ -1,8 +1,8 @@
 ### Welcome to my personal website
 
-This site is still under construction , come back after few days you will see some coll stuff
+This site is still under construction, come back after few days you will see some coll stuff
 
-Buidl with the following template
+Build with the following template
 
 Template: github.com/nandomoreirame/end2end
 
@@ -12,7 +12,7 @@ Template: github.com/nandomoreirame/end2end
 - [] Fix the code for the pagination and don't let the page go out of range
 - [] When displaying the page site, make sure the post image thumbnail is displayed and they fit the page. [Check this site](https://www.reddit.com/r/webdev/comments/x903jo/how_to_make_my_website_get_these_things/)
 - [x] Fix some css in the post that went out of range
-- [x] Fix the google analytics issue and make sure the data is reaching googl analytics
+- [x] Fix the google analytics issue and make sure the data is reaching google analytics
 - [] Fix image thumbnail when your are sharing the post on social media
 - [x] Add stackoverflow icon in the main page.
 - [] setup a ci/cd pipeline to directly deploy the site on github pages using github actions
@@ -32,6 +32,15 @@ Template: github.com/nandomoreirame/end2end
 
 `bundle exec rake post title="the title"`
 
+## Install the bundler
+
+If you are starting from scratch please use this command to install the bundler:
+
+`gem install bundler:2.3.17 --user-install`
+
+Then run :
+
+`bundle install `
 
 ## to build the site
 
@@ -39,7 +48,7 @@ Template: github.com/nandomoreirame/end2end
 
 ## to run the site locally
 
-`jekyll serve --watch`
+`bundle exec jekyll serve --watch`
 
 
 ## to check for broken links

@@ -128,6 +128,7 @@ task :page do
     post.puts "slug: \"#{slug}\""
     post.puts "---"
     post.puts "{% include JB/setup %}"
+    post.puts 'published: "false"'
   end
 end # task :page
 
