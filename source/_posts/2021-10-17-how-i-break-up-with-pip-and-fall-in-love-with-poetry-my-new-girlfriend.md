@@ -5,6 +5,7 @@ description: How to migrate a python project from pip to poetry
 layout: post
 comments: true
 categories: tech
+published: true
 ---
 
 I have recently stumbled across [poetry](https://python-poetry.org/) new dependency management for python and decided to give it a try.

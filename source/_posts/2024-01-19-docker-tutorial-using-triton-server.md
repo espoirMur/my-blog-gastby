@@ -7,13 +7,9 @@ comments: true
 description: "How to deploy a transformer models in production using the triton server"
 keywords: "triton, Docker, Machine-Translation"
 categories: 
-published: true
 tags: docker, transformer, devops, translation
+published: false
 ---
-
-### How to prepare an encoder decoder transformer model to production.
-
-#### Optimize the M2M100 model with ONNX
 
 
 In this series of posts, we will learn how to productionalize  a machine translation model. We will start from a HuggingFace transformer model and learn how to deploy it in a production setting and make it accessible to users.
@@ -24,13 +20,13 @@ In the second post,  we will learn how to scale the model using Kserve and how t
 
 This post is for Machine Learning Engineers/Enthusiasts with some knowledge of transformers models and Docker and who would like to learn how to deploy an encoder-decoder model in a production setting.
 
-## Environment requirements
+# Environment requirements
 
 To run this code, you need to have `python 3.11` installed on your local machine. 
 
 You can install these libraries directly from your Python interpreter, or you can create a virtual environment to run Python. I would rather recommend using a Python interpreter from a virtual environment.
 
-### Install libraries
+## Install libraries
 
 To install the useful libraries, you can use the following code: 
 
@@ -38,7 +34,7 @@ To install the useful libraries, you can use the following code:
 
 # A brief history of the M2M100 Model
 
-### Encoder-Decoder model 
+## Encoder-Decoder model 
 
 Encoder-decoder models are large language models built with two components: the encoder and the decoder. They are used for natural language processing tasks that involve understanding input sequences and generating output sequences with different lengths and structures.
 
@@ -46,24 +42,23 @@ The encoder is a neural network that takes a variable-length sequence as an inpu
 
 The decoder, on the other hand, is also a neural network  that takes the vector representation of the source text and generates the translation in the target language.
 
-IMAGE HERE 
+{% include image.html name="encoder-decoder-model.jpeg" caption="Illustration of the original transformer architecture proposed in [Attention Is All You Need, 2017](https://arxiv.org/abs/1706.03762)
+" %}
 
-You can learn more about transformer models and encoder-decoder models, particularly [here](https://jalammar.github.io/illustrated-transformer/).
+You can learn more about transformer models and encoder-decoder models [here](https://jalammar.github.io/illustrated-transformer/)  and [here](https://magazine.sebastianraschka.com/p/understanding-encoder-and-decoder)
 
 
-### The M2M100 model:
+## The M2M100 model:
 
 
 The M2M100 stands for Many to Many multilingual translation model that can translate between any pair of 100 languages it was trained on. It helps to alleviate the fact that most machine translation training is done from or to English. You can learn more about the M2M100 model [here](https://huggingface.co/docs/transformers/model_doc/m2m_100).
 
 It was trained to translate English to Swahili. Why did I pick Swahili? Because I am a native Swahili speaker. 
 
-## Testing the raw model
+# Testing the raw model
 
 We will start by loading our model from the huggingface repository!
 The below code will load the model from the HuggingFace library and perform a translation inference by using the generate method.
-
-**Briefly talk about the encoder-decoder architecture and particularity  of M2M100.**
 
 
 ```python
@@ -109,23 +104,20 @@ At this point our model have generate the translation token, the next step is to
 
 ```python
 translated_text = tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
-
+print(translated_text)
 ```
 
-
-```python
-translated_text
-
-```
 
 The translated test shows us that the model is working. The next step is to prepare the production model. 
 To productionalize our model, we will deploy it to ONNX format.
 
-#### What is the ONNX format?
+# Preparing the model for Production.
+
+## What is the ONNX format?
 
 ONNX stands for Open Neural Network Exchange. It is an open format built to represent machine learning models in a framework-agnostic way.
 
-As you may know, neural networks are computation graphs with input, weights, and operations. [Cite the source here.]
+As you may know, neural networks are computation graphs with input, weights, and operations.
 
 ONNX format is a way of saving neural networks as computation graphs. That  computational graph represents the flow of data through the neural network.
 
@@ -147,9 +139,6 @@ To export the model to onnx format we will be using the optimum cli from Hugging
 ! optimum-cli export onnx --model masakhane/m2m100_418M_en_swa_rel_news --task seq2seq-lm-with-past --for-ort onnx/m2m100_418M_en_swa_rel_news
 
 ```
-
-check if the model is correct
-
 If the previous command was run successfully, we can see our model saved at `onnx/m2m100_418M_en_swa_rel_news`. 
 
 By checking the size we notice data our encoder model have 1.1 Gb, and our decoder model have 1.7Gb which make our model size to 2.8GB. Additionally, in the same folder we have the tokenizer data.
@@ -172,14 +161,13 @@ base_model_onnx_dir.exists()
 
 ```
 
-### Applying Quantization
+## Applying Quantization
 
 Quantization is the process of reducing the model size by using fewer bits to represent its parameters. Instead of using 32-bit precision floating points for most of the models, with quantization, we can use 12 bits to represent a number and consequently reduce the size of the model.
 
 Smaller models resulting from quantization are faster to deploy and have low latency in production.
 
-It has [been shown](https://github.com/huggingface/notebooks/blob/main/examples/onnx-export.ipynb) that you can improve the inference time by 75% by using an ONNX quantized model without a considerable loss in performance. <Find more evidence for this> 
-
+It has [been shown](https://github.com/huggingface/notebooks/blob/main/examples/onnx-export.ipynb) that you can improve the inference time by 75% by using an ONNX quantized model without a considerable loss in performance.
 
 For this tutorial, we will use quantization to reduce the size of our model for inference.
 
@@ -247,7 +235,7 @@ for model in quantized_model_path.glob("*.onnx"):
 
 We can see that we have managed to reduce the size of our initial models by two! From 1.6 Gb without quantization to 800 Mb with quantization. Let us see how to use the quantized model for inference.
 
-### Use the quantized model
+## Using the quantized model
 
 
 ```python
@@ -285,7 +273,7 @@ The quantization has reduced the size of the model, but it gave the same transla
 
 
 
-## Deploy the Model for inference
+# Deploy the Model for inference
 
 At this point, we have our model quantized and saved in ONNX format. We will now deploy it to a production server using the triton inference server. 
 In the first section, we will deploy with the triton server as a docker container, and then we will use Kserve to deploy it to the Kubernetes deployment environment.
@@ -295,10 +283,10 @@ In the first section, we will deploy with the triton server as a docker containe
 Triton is a software tool for deploying machine learning models for inference. It is designed to produce high-quality inference across different hardware platforms, either GPU or CPU. It also supports inference across cloud, data center, and embedded devices.
 One of the advantages of the triton server is that it supports dynamic batching and concurrent model execution.
 
+
 - Dynamic batching, for models that support batching, which is the case for deep learning models, triton implements scheduling and batching algorithms that combine individual requests to improve inference throughput.
 
-**Talk More about dynamic batching here...**
-    
+
 - Concurrency model execution is the capacity to run simultaneously multiple models on the same GPU or various GPUs.
 
 
@@ -313,13 +301,13 @@ In this post, we will be focused on the ONNX and the Python backend.
 
 I decided to go with the Python backend because I struggled to deploy the encoder decode model using an ensemble of the ONNX model. I still have a question in progress on [StackOverlow](https://stackoverflow.com/q/76638766/4683950).  
 
-#### Uploading the Model to Repository.
+### Uploading the Model to Repository.
 
 The first step before using our model is to upload it to the model repository. For this tutorial,   we will be using our local storage as a model repository but later we will use static storage such as google cloud or AWS S3 to host our model.
 
-#### Configuration
+### Configuration
 
-The first step to deploy our model in triton is to configure it.
+After uploading the model ot the repository, we will need to configure it.
 
 The configuration sets up the model and defines the input shape and the output shape of our models.
 
@@ -365,7 +353,7 @@ The input ids and the attention masks are the outputs from the tokenization proc
 
 The configuration file needs to be save at the root folder  of our model repository.
 
-#### Create the load model script
+### Create the load model script
 
 The load model script is the python script that load our model before and run it for inference.
 
@@ -457,7 +445,7 @@ triton_model_repository
 Make sure that you have the file located at the precise location as me in order to be able to run the code.
 
 
-### Launching the docker image
+### Building the docker image
 
 If you look carefully at the code for our Python model, you can see that the model is importing the ONNX runtime! However, that runtime is not installed in the base triton server image. The reason why we decided to build our own image based on the triton server.
 
@@ -497,7 +485,7 @@ With this model we can see that our model is running and we can perform inferenc
 
 At this point, we have got our model running inside the docker container, the next step will be to make inference requests. Let see how we can achieve that.
 
-### Making Inference Requests
+## Making Inference Requests
 
 The model is now updated and saved as a Triton backend model. We will apply tokenization offline and query the model with the tokenized words and the attention mask. 
 The model will return the indices of the translated test; we will use the tokenizer again to decode the indices and produce the output.
@@ -529,7 +517,7 @@ import tritonclient.http as httpclient
 
 ```
 
-#### The HTTP client
+### The HTTP client
 
 
 ```python
@@ -537,7 +525,7 @@ client = httpclient.InferenceServerClient(url="localhost:8000")
 
 ```
 
-#### The inputs
+### The inputs
 
 This line creates the client object we will be using to interact with our server. To create the client object, we are passing the URL of the inference service as parameters.
 
@@ -561,7 +549,7 @@ The above code creates two objects for the input ID and the attention mask, resp
 
 Additionally to our inputs and outputs, we will need some utility function to perform the tokenization. Here are those functions:
 
-#### Utilities Functions
+### Utilities Functions
 
 
 ```python
@@ -683,13 +671,8 @@ decoded_output
 
 With the decoded output, we can see that our inference server is working!
 
-### Conclusion
+## Conclusion
 
 
 In this post, we saw how we can start form a raw translation model from huggingface, we then quantized it to reduce it's size, and finally deployed the model on a triton server to perform inference.
 In the second part of this blog we will learn how to scale the whole prototype and build an end to end pipeline using kubernetes and Kserve.
-
-
-```python
-
-```

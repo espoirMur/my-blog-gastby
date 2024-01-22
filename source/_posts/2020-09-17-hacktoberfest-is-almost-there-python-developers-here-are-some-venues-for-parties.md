@@ -5,6 +5,7 @@ layout: post
 description: Open source projects you can contribute to for hacktoberfest.
 comments: true
 categories: tech
+published: true
 ---
 
 {% include image.html name="festival.jpg" caption="cover image" %}

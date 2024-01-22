@@ -5,6 +5,7 @@ description: "I finally joined spiny ai"
 comments: true
 categories: non-tech
 layout: post
+published: true
 ---
 
 After more than one year with countless job applications  and rejections, I am glad go announce you that I will be joining Spiny.ai as a Software Engineer !
