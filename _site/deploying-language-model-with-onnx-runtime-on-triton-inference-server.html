@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript">
+</script>
+<title>Deploy your language models to production using ONNX runtime and the Triton inference server</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<meta name="description" content="Deploy your language models to production using ONNX runtime and the Triton inference server">
+<meta property="og:image" content=/assets/posts/2024-04-07-deploying-language-model-with-onnx-runtime-on-triton-inference-server/cover-picture.png>
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="canonical" href="http://localhost:4000/deploying-language-model-with-onnx-runtime-on-triton-inference-server">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CJV32Y553Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CJV32Y553Z');
+</script>
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Deploy your language models to production using ONNX runtime and the Triton inference server | Espoir Murhabazi ideas’ home</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Deploy your language models to production using ONNX runtime and the Triton inference server" />
+<meta name="author" content="Murhabazi Buzina, Espoir" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Deploy your language models to production using ONNX runtime and the Triton inference server" />
+<meta property="og:description" content="Deploy your language models to production using ONNX runtime and the Triton inference server" />
+<link rel="canonical" href="http://localhost:4000/deploying-language-model-with-onnx-runtime-on-triton-inference-server" />
+<meta property="og:url" content="http://localhost:4000/deploying-language-model-with-onnx-runtime-on-triton-inference-server" />
+<meta property="og:site_name" content="Espoir Murhabazi ideas’ home" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-04-07T23:12:57+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Deploy your language models to production using ONNX runtime and the Triton inference server" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Murhabazi Buzina, Espoir","url":"https://murhabazi.com/"},"dateModified":"2024-04-07T23:12:57+01:00","datePublished":"2024-04-07T23:12:57+01:00","description":"Deploy your language models to production using ONNX runtime and the Triton inference server","headline":"Deploy your language models to production using ONNX runtime and the Triton inference server","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/deploying-language-model-with-onnx-runtime-on-triton-inference-server"},"url":"http://localhost:4000/deploying-language-model-with-onnx-runtime-on-triton-inference-server"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <header class="site-header">
+  <div class="container">
+    <input type="checkbox" id="toggleNavbar">
+    <h1 class="logo"><a href="/">esp<span>.py</span></a></h1>
+    <label for="toggleNavbar" role="button" class="toggle-navbar-button">
+      <i class="icon icon-menu"></i>
+      <i class="icon icon-cross"></i>
+    </label>
+    <nav class="navbar">
+      <ul>
+        <li><a href="/" title="Home">127.0.0.1</a></li>
+        
+          <li><a href="/about" title="whoami();">whoami();</a></li>
+        
+          <li><a href="/blog" title="read();">read();</a></li>
+        
+          <li><a href="/drafts" title="drafts();">drafts();</a></li>
+        
+          <li><a href="/learnings" title="learnings();">learnings();</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<main class="main-container">
+  <div class="container">
+    <article role="article" class="post">
+
+  <div class="card">
+    <header class="post-header">
+      <h1 class="post-title">Deploy your language models to production using ONNX runtime and the Triton inference server</h1>
+      <em class="post-meta">
+        <time>Apr 7, 2024</time>
+      </em>
+    </header>
+
+    <div class="post-content">
+      
+      
+<figure>
+  <p><img src="/assets/posts/2024-04-07-deploying-language-model-with-onnx-runtime-on-triton-inference-server/cover-picture.png" /></p>
+  <figcaption>Lac Kivu in East DRC</figcaption>
+</figure>
+
+<h2 id="deploy-your-language-models-to-production-using-onnx-runtime-and-the-triton-inference-server">Deploy your language models to production using ONNX runtime and the triton inference server</h2>
+
+<p>You are a Data Scientist who has finally trained a  language model in a jupyter notebook. The model works fine, and you are happy with your results. Now you want to expose it to the users so that they can interact with it.</p>
+
+<p>You have different options to serve your model to your users. You can use the jupyter notebook directly in production. You can wrap the model in a pickle file and serve it using an API. Both options work, but can they handle millions of requests per second in a production environment? In this post, I will show how you can use modern tools to deploy a language model in a scalable way.  We’ll use the ONNX runtime, Triton inference server, and Kubernetes. These tools will help us to deploy  a production-ready language model.</p>
+
+<p>Data scientists and Machine Learning Engineer  and  researchers aiming to use their models in production should read this. It discusses the engineering principles of scalable language models APIs.</p>
+
+<p>It will be divided into two parts. In the first part, we will prepare the model for a production setting. We will use the ONNX runtime and Docker container to achieve that goal. Finally,  in the second part, we will learn how to scale our Apis using Kubernetes.</p>
+
+<p>If I have time later, I’ll explain how to use the embedding API in a  downstream app  like a Retrieval Augmentation Generation (RAG).</p>
+
+<p>Before we dive into the deployment bits of this application, let us first review some theory about language models.</p>
+
+<p>We will be deploying an embedding model, so let start by defining a language model.</p>
+
+<figure>
+  <p><img src="/assets/posts/2024-04-07-deploying-language-model-with-onnx-runtime-on-triton-inference-server/gorilla.png" /></p>
+  <figcaption>Mountain Gorilla, one our similar cousin.</figcaption>
+</figure>
+
+<h2 id="embeddings">Embeddings.</h2>
+
+<p>Embedding models are the backbone of generative AI. They are a major piece of such applications.</p>
+
+<p>Embeddings are representations of words in a vector space. They capture words semantics such as, with them, similar vectors represent similar words.</p>
+
+<p>Contextual embeddings are embeddings such as each word is represented with a vector given its context.</p>
+
+<p>Let’s look at those two examples:</p>
+
+<p><em>The bank of the river Thames is located in south London.</em></p>
+
+<p><em>I am going to withdraw cash at Lloyds Bank.</em></p>
+
+<p>In those two different sentences the word <code class="language-bash highlighter-rouge">bank</code> has two different meanings. In the first,  bank means <em>the land alongside or sloping down to a river or lake.</em> In the second sentence, it means <em>a place where you save money.</em></p>
+
+<p>Embedding models can capture those differences. And  represent words with two different vectors according to the context.</p>
+
+<p>This is not a post to explain how embedding models are built, if you want to learn more about them refer to <a href="https://mccormickml.com/2019/05/14/BERT-word-embeddings-tutorial/">this post.</a></p>
+
+<p>But one thing to know is that embedding models are built with language models or Large language models.</p>
+
+<figure>
+  <p><img src="/assets/posts/2024-04-07-deploying-language-model-with-onnx-runtime-on-triton-inference-server/word-embeddings-representation.webp" /></p>
+  <figcaption>Words Representation in 2D vector Space.</figcaption>
+</figure>
+
+<h2 id="large-language-model">Large Language Model.</h2>
+
+<p>Large language models are neural networks or probabilistic models that can predict the next word given the previous words.</p>
+
+<p>One of the most common neural network architectures to power language models is the transformer model. It was introduced in 2017 by Google researchers. Those models have a powerful capacity when to comes to understanding words and their meanings. Because they are trained on a large corpus of documents.</p>
+
+<p>During their training, transformers’ models can learn contextual word embedding.  Those embeddings are useful in downstream applications such as chatbots, document classification, topic modeling, document clustering  et consort.</p>
+
+<p>Again, this post is not about language models, there  are legions on the internet, my favorite one is the  <a href="https://jalammar.github.io/illustrated-transformer/">illustrated trasnfomer</a>.</p>
+
+<p>If this post is not about word embedding theory, or large language model theory what is it about?</p>
+
+<p>Nice question, this post is about deploying a large language model. We will learn how to create an embedding service, a api that developers can query to generate document embedding.</p>
+
+<p>We will build a scalable API. Developers can query it to get word embeddings of their sentences. They can use the embeddings in downstream applications. This API can be part of a chatbot, or a Retrieval Augmented Generation application.</p>
+
+<p>I made it for educational purposes while learning how to deploy a language model using Kubernetes.  If you want a production-ready application that can support multiple embedding models  <a href="https://github.com/jina-ai/clip-as-service">checkout this repos.</a></p>
+
+<p>In this post, we will learn how to deploy a transformer model that generates embedding vectors on Kubernetes using the triton inference server and the ONNX runtime.</p>
+
+<p>Enough talking let’s show us the code!</p>
+
+<h2 id="the-embedding-models">The embedding models.</h2>
+
+<p>In this post, we will explore the embedding model generated by the BioLinkBert. The bioLinkBert model is a model from the BERT family but it was fine-tuned on documents from the medical domain. The reason I used the Biolink model is that I want to build a chatbot application for the medical domain in the future.</p>
+
+<p>The embedding of words is the last hidden state of a transformer model where the output is the word encoded as text. Let us see how it works  in practice. We will be using a custom Bert model which inherits the base Bert model from Huggingface.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">transformers.onnx</span> <span class="kn">import</span> <span class="n">OnnxConfig</span>
+<span class="kn">from</span> <span class="nn">transformers.utils</span> <span class="kn">import</span> <span class="n">ModelOutput</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">BertModel</span>
+
+<span class="o">@</span><span class="n">dataclass</span>
+<span class="k">class</span> <span class="nc">EmbeddingOutput</span><span class="p">(</span><span class="n">ModelOutput</span><span class="p">):</span>
+    <span class="n">last_hidden_state</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+
+
+<span class="k">class</span> <span class="nc">CustomEmbeddingBertModel</span><span class="p">(</span><span class="n">BertModel</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">input_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">torch</span><span class="p">.</span><span class="n">Tensor</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+        <span class="n">attention_mask</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">torch</span><span class="p">.</span><span class="n">Tensor</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+        <span class="n">head_mask</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">torch</span><span class="p">.</span><span class="n">Tensor</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+        <span class="n">inputs_embeds</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">torch</span><span class="p">.</span><span class="n">Tensor</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EmbeddingOutput</span><span class="p">:</span>
+        <span class="n">embeddings</span> <span class="o">=</span> <span class="nb">super</span><span class="p">().</span><span class="n">forward</span><span class="p">(</span><span class="n">input_ids</span><span class="o">=</span><span class="n">input_ids</span><span class="p">,</span>
+                                     <span class="n">attention_mask</span><span class="o">=</span><span class="n">attention_mask</span><span class="p">,</span>
+                                     <span class="n">head_mask</span><span class="o">=</span><span class="n">head_mask</span><span class="p">,</span>
+                                     <span class="n">inputs_embeds</span><span class="o">=</span><span class="n">inputs_embeds</span><span class="p">,</span>
+                                     <span class="n">output_attentions</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                                     <span class="n">output_hidden_states</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                                     <span class="n">return_dict</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">mean_embedding</span> <span class="o">=</span> <span class="n">embeddings</span><span class="p">.</span><span class="n">last_hidden_state</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">embedding_output</span> <span class="o">=</span> <span class="n">EmbeddingOutput</span><span class="p">(</span><span class="n">last_hidden_state</span><span class="o">=</span><span class="n">mean_embedding</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">embedding_output</span>
+</code></pre></div></div>
+
+<p>Our custom embedding is  a wrapper around the Bert embedding model. It  which take the input ids and return the embedding of a sentence. The input ids are the tokenized version of a sentence. The embeddings of the sentence is the average of the embedding of all words in a  sentence.</p>
+
+<p>Here is how that work in practice.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">embedding_model_id</span> <span class="o">=</span> <span class="s">'michiyasunaga/BioLinkBERT-large'</span>
+<span class="n">base_model</span> <span class="o">=</span> <span class="n">CustomEmbeddingBertModel</span><span class="p">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">embedding_model_id</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>Before passing the text to the embedding the text need to be transformed in a tokenizer.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoTokenizer</span>
+
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="p">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">embedding_model_id</span><span class="p">)</span>
+
+
+<span class="n">test_input</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"what is the cause of Covid"</span>
+<span class="n">encoded_input</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">([</span><span class="n">test_input</span><span class="p">],</span>
+                          <span class="n">return_tensors</span><span class="o">=</span><span class="s">'pt'</span><span class="p">,</span>
+                          <span class="n">max_length</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span>
+                          <span class="n">truncation</span><span class="o">=</span><span class="bp">True</span><span class="p">,)</span>
+</code></pre></div></div>
+
+<p>With our encoded_input and the base model we can generate the text embedding for our text input.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">encoded_input</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">encoded_input</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'token_type_ids'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">embedding_output</span> <span class="o">=</span> <span class="n">base_model</span><span class="p">(</span><span class="o">**</span><span class="n">encoded_input</span><span class="p">)</span>
+<span class="n">text_embeddings</span> <span class="o">=</span> <span class="n">embedding_output</span><span class="p">.</span><span class="n">last_hidden_state</span><span class="p">.</span><span class="n">detach</span><span class="p">().</span><span class="n">numpy</span><span class="p">().</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">text_embeddings</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The text embedding is the embedding representation of the sentence in text_input.
+It can be use in downstream application in different ways.</p>
+
+<p>The next step is save the model in the format we can use to deploy it in production.</p>
+
+<h2 id="exporting-the-model-to-onnx-format">Exporting the Model to Onnx format</h2>
+
+<h3 id="what-is-the-onnx-format">What is the ONNX format?</h3>
+
+<p>ONNX stands for Open Neural Network Exchange. It is an open format built to represent machine learning models in a framework and language-agnostic way.</p>
+
+<p>As you may know, neural networks are computation graphs with input, weights, and operations. ONNX format is a way of saving neural networks as computation graphs. That  computational graph represents the flow of data through the neural network.</p>
+
+<p>The key benefits of saving neural networks in the ONNX format are interoperability and hardware access. Any deep learning platform can read a neural network saved in the ONNX format.  For example, a model trained in Pytorch can be exported to ONNX format and imported in Tensorflow and vice versa.</p>
+
+<p>You don’t need to use Python to read a model saved as ONNX. You can use any programming language of your choice, such as Javascript, C, or C++.</p>
+
+<p>ONNX makes the model easier to access hardware optimizations. You can apply other optimizations, such as quantization, to your ONNX model.</p>
+
+<p>Let us see how we can convert our model to ONNX format to use the full benefits of it.</p>
+
+<p>Let’s see how we can achieve that with the code.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="n">model_repository</span> <span class="o">=</span> <span class="n">Path</span><span class="p">.</span><span class="n">cwd</span><span class="p">().</span><span class="n">parent</span><span class="p">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s">"models_repository"</span><span class="p">)</span>
+<span class="n">embedding_model_path</span> <span class="o">=</span> <span class="n">model_repository</span><span class="p">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s">"retrieval"</span><span class="p">,</span> <span class="s">"embedding_model"</span><span class="p">,</span> <span class="s">"1"</span><span class="p">)</span>
+<span class="n">embedding_model_path</span><span class="p">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model_path</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">ls</span> <span class="p">{</span><span class="n">model_path</span><span class="p">.</span><span class="n">__str__</span><span class="p">()}</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">tuple</span><span class="p">(</span><span class="n">encoded_input</span><span class="p">.</span><span class="n">values</span><span class="p">())</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">torch.onnx</span> <span class="kn">import</span> <span class="n">export</span> <span class="k">as</span> <span class="n">torch_onnx_export</span>
+
+<span class="n">torch_onnx_export</span><span class="p">(</span>
+    <span class="n">base_model</span><span class="p">,</span>
+    <span class="nb">tuple</span><span class="p">(</span><span class="n">encoded_input</span><span class="p">.</span><span class="n">values</span><span class="p">()),</span>
+    <span class="n">f</span><span class="o">=</span><span class="n">embedding_model_path</span><span class="p">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s">'bio-bert-embedder.onnx'</span><span class="p">),</span>
+    <span class="n">input_names</span><span class="o">=</span><span class="p">[</span><span class="s">'input_ids'</span><span class="p">,</span> <span class="s">'attention_mask'</span><span class="p">],</span>
+    <span class="n">dynamic_axes</span><span class="o">=</span><span class="p">{</span><span class="s">'input_ids'</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s">'batch_size'</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s">'sequence'</span><span class="p">},</span>
+                  <span class="s">'attention_mask'</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s">'batch_size'</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s">'sequence'</span><span class="p">},</span>
+                  <span class="s">'last_hidden_state'</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s">'batch_size'</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s">'sequence'</span><span class="p">}},</span>
+    <span class="n">do_constant_folding</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">opset_version</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">base_model</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="n">embedding_model_path</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>With the above code, we have our model exported into onnx format and ready to be deployed in production.</p>
+
+<h2 id="model-deployment-on-docker-with-the-onnx-runtime">Model deployment on Docker with the ONNX Runtime.</h2>
+
+<p>In this section, we will learn how  to use the transformed model in a docker container.</p>
+
+<p>One of the most obvious solutions is to deploy the model and wrap it in with Flask or Fastapi. While this solution can work in practice, it has some latency due to related the fact that the API is written in Python.   For this blog I will try a different approach, I will deploy the model using the onnx runtime which is a C++ backend. We will leverage the fact that our model in ONNX format is platform agnostic and we can deploy on any language backend.</p>
+
+<h3 id="triton-server">Triton Server</h3>
+
+<p>Triton is a software tool for deploying machine learning models for inference. It is designed to produce high-quality inference across different hardware platforms, either GPU or CPU. It also supports inference across cloud, data center, and embedded devices.</p>
+
+<p>One of the advantages of the triton server is that it supports dynamic batching and concurrent model execution.</p>
+
+<ul>
+  <li>Dynamic batching:</li>
+</ul>
+
+<p>For models that support batching, which is the case for deep learning models, triton implements scheduling and batching algorithms.  That approach combines individual requests to improve inference throughput.</p>
+
+<ul>
+  <li>Concurrency model execution is the capacity to run simultaneously multiple models on the same GPU or various GPUs.</li>
+</ul>
+
+<h3 id="triton-server-backend">Triton Server Backend</h3>
+
+<p>Triton supports different backends to execute the model. A backend is a wrapper around a deep learning framework like Pytorch, TensorFlow, TensorRT, or ONNX Runtime.</p>
+
+<p>Two backend types interested us for this post: the Python Backend and the ONNX runtime backend.</p>
+
+<p>The ONNX runtime backend executes ONNX models, and the Python backend allows the writing of the model logic in Python.</p>
+
+<p>In this post, we will be focused on the ONNX and the Python backend.</p>
+
+<h3 id="the-triton-server">The Triton Server</h3>
+
+<p>Let us set up the model repository for the triton inference server</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="err">!</span><span class="n">touch</span> <span class="p">{</span><span class="n">embedding_model_path</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">__str__</span><span class="p">()}</span><span class="o">/</span><span class="n">config</span><span class="p">.</span><span class="n">pbtxt</span>
+
+
+<span class="err">!</span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="p">{</span><span class="n">embedding_model_path</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">__str__</span><span class="p">()}</span><span class="o">/</span><span class="n">ensemble_model</span><span class="o">/</span><span class="mi">1</span>
+<span class="err">!</span><span class="n">touch</span> <span class="p">{</span><span class="n">embedding_model_path</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">__str__</span><span class="p">()}</span><span class="o">/</span><span class="n">ensemble_model</span><span class="o">/</span><span class="n">config</span><span class="p">.</span><span class="n">pbtxt</span>
+
+<span class="err">!</span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="p">{</span><span class="n">embedding_model_path</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">__str__</span><span class="p">()}</span><span class="o">/</span><span class="n">tokenizer</span><span class="o">/</span><span class="mi">1</span>
+<span class="err">!</span><span class="n">touch</span> <span class="p">{</span><span class="n">embedding_model_path</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">__str__</span><span class="p">()}</span><span class="o">/</span><span class="n">tokenizer</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="n">model</span><span class="p">.</span><span class="n">py</span>
+
+<span class="err">!</span><span class="n">touch</span> <span class="p">{</span><span class="n">embedding_model_path</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">__str__</span><span class="p">()}</span><span class="o">/</span><span class="n">tokenizer</span><span class="o">/</span><span class="n">config</span><span class="p">.</span><span class="n">pbtxt</span>
+</code></pre></div></div>
+
+<p>This bash script will create the model repository  for our embedding model. The next section will set up the files in that model repository to run our models.</p>
+
+<p>The model repository should have three components, the tokenizer, the embedding model, and the ensemble model.</p>
+
+<p>The tokenizer is the configuration of our tokenizer model, it uses the Python backend and handles the tokenization of our text input.</p>
+
+<p>The tokenizer repository should have the files from our tokenizer, the model code, and the model configuration.</p>
+
+<p>It should have the following layout:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└── tokenizer
+    ├── 1
+    │   ├── __pycache__
+    │   ├── config.json
+    │   ├── model.py
+    │   ├── special_tokens_map.json
+    │   ├── tokenizer.json
+    │   ├── tokenizer_config.json
+    │   └── vocab.txt
+    └── config.pbtxt
+</code></pre></div></div>
+
+<p>To create the tokenizer file, we will have to save our tokenizer to the tokenizer repository, we will use the following code.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model_repository</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+<span class="n">tokenizer_path</span> <span class="o">=</span> <span class="n">model_repository</span><span class="p">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s">"retrieval"</span><span class="p">,</span> <span class="s">"tokenizer"</span><span class="p">)</span>
+<span class="n">tokenizer_path</span> <span class="o">=</span> <span class="n">tokenizer_path</span><span class="p">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s">"1"</span><span class="p">)</span>
+<span class="n">tokenizer</span><span class="p">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="n">tokenizer_path</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>From that tokenizer we will create the model.py file, which will handle the tokeinization part.</p>
+
+<p>Here is how the model should look like</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">writefile</span>  <span class="p">{</span><span class="n">embedding_model_path</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">__str__</span><span class="p">()}</span><span class="o">/</span><span class="n">tokenizer</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="n">model</span><span class="p">.</span><span class="n">py</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">triton_python_backend_utils</span> <span class="k">as</span> <span class="n">pb_utils</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">PreTrainedTokenizer</span><span class="p">,</span> <span class="n">TensorType</span>
+
+
+<span class="k">class</span> <span class="nc">TritonPythonModel</span><span class="p">:</span>
+    <span class="n">tokenizer</span><span class="p">:</span> <span class="n">PreTrainedTokenizer</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="s">"""
+        Initialize the tokenization process
+        :param args: arguments from Triton config file
+        """</span>
+        <span class="c1"># more variables in https://github.com/triton-inference-server/python_backend/blob/main/src/python.cc
+</span>        <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="n">args</span><span class="p">[</span><span class="s">"model_repository"</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="s">"model_version"</span><span class="p">])</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="p">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">requests</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s">"List[List[pb_utils.Tensor]]"</span><span class="p">:</span>
+        <span class="s">"""
+        Parse and tokenize each request
+        :param requests: 1 or more requests received by Triton server.
+        :return: text as input tensors
+        """</span>
+        <span class="n">responses</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># for loop for batch requests (disabled in our case)
+</span>        <span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="n">requests</span><span class="p">:</span>
+            <span class="c1"># binary data typed back to string
+</span>            <span class="n">query</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">t</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"UTF-8"</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">pb_utils</span><span class="p">.</span><span class="n">get_input_tensor_by_name</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">"TEXT"</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">as_numpy</span><span class="p">()</span>
+                <span class="p">.</span><span class="n">tolist</span><span class="p">()</span>
+            <span class="p">]</span>
+            <span class="n">tokens</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">tokenizer</span><span class="p">(</span>
+                <span class="n">text</span><span class="o">=</span><span class="n">query</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="n">TensorType</span><span class="p">.</span><span class="n">NUMPY</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="bp">True</span>
+            <span class="p">)</span>
+            <span class="c1"># tensorrt uses int32 as input type, ort uses int64
+</span>            <span class="n">tokens</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="p">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int64</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">.</span><span class="n">items</span><span class="p">()}</span>
+            <span class="c1"># communicate the tokenization results to Triton server
+</span>            <span class="n">outputs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">input_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">tokenizer</span><span class="p">.</span><span class="n">model_input_names</span><span class="p">:</span>
+                <span class="n">tensor_input</span> <span class="o">=</span> <span class="n">pb_utils</span><span class="p">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">input_name</span><span class="p">,</span> <span class="n">tokens</span><span class="p">[</span><span class="n">input_name</span><span class="p">])</span>
+                <span class="n">outputs</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">tensor_input</span><span class="p">)</span>
+
+            <span class="n">inference_response</span> <span class="o">=</span> <span class="n">pb_utils</span><span class="p">.</span><span class="n">InferenceResponse</span><span class="p">(</span>
+                <span class="n">output_tensors</span><span class="o">=</span><span class="n">outputs</span><span class="p">)</span>
+            <span class="n">responses</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">inference_response</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">responses</span>
+</code></pre></div></div>
+
+<p>The <code class="language-bash highlighter-rouge">initialize</code> method from this class will create our tokenizer from this folder. All our tokenizer files will be initialized from it.</p>
+
+<p>The <code class="language-bash highlighter-rouge">execute</code> method is the one that handles the request. It can take multiple requests and parse them. Finally,   create the  query from the text, and return the tokenized text.</p>
+
+<p>With our tokenizer setup, let us configure the Python server to use it.</p>
+
+<p>The content of the tokenizer/config.pbxt should look like this.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">writefile</span> <span class="p">{</span><span class="n">embedding_model_path</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">__str__</span><span class="p">()}</span><span class="o">/</span><span class="n">tokenizer</span><span class="o">/</span><span class="n">config</span><span class="p">.</span><span class="n">pbtxt</span>
+
+
+<span class="n">name</span><span class="p">:</span> <span class="s">"tokenizer"</span>
+<span class="n">max_batch_size</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">backend</span><span class="p">:</span> <span class="s">"python"</span>
+
+<span class="nb">input</span> <span class="p">[</span>
+<span class="p">{</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s">"TEXT"</span>
+    <span class="n">data_type</span><span class="p">:</span> <span class="n">TYPE_STRING</span>
+    <span class="n">dims</span><span class="p">:</span> <span class="p">[</span> <span class="o">-</span><span class="mi">1</span> <span class="p">]</span>
+<span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">output</span> <span class="p">[</span>
+<span class="p">{</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s">"input_ids"</span>
+    <span class="n">data_type</span><span class="p">:</span> <span class="n">TYPE_INT64</span>
+    <span class="n">dims</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">},</span>
+<span class="p">{</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s">"attention_mask"</span>
+    <span class="n">data_type</span><span class="p">:</span> <span class="n">TYPE_INT64</span>
+    <span class="n">dims</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">instance_group</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="n">count</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="n">kind</span><span class="p">:</span> <span class="n">KIND_CPU</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>In this file, we specify that our backend is a Python backend.  It will take an input named text, with dimension -1. The dimension -1 which means dynamic, returns the inputs_ids, and the attention_mask and will run on a CPU.</p>
+
+<p>The second component of our model is the embedding model itself, we will it should have the following layout:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── embedding_model
+│   ├── 1
+│   │   ├── bio-bert-embedder.onnx
+│   │   └── config.json
+│   └── config.pbtxt
+
+</code></pre></div></div>
+
+<p>Let look at the <code class="language-bash highlighter-rouge">config.pbtxt</code> for the embedding model</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">embedding_model_path</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">writefile</span> <span class="p">{</span><span class="n">embedding_model_path</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">__str__</span><span class="p">()}</span><span class="o">/</span><span class="n">config</span><span class="p">.</span><span class="n">pbtxt</span>
+
+<span class="n">name</span><span class="p">:</span> <span class="s">"embedding_model"</span>
+<span class="n">platform</span><span class="p">:</span> <span class="s">"onnxruntime_onnx"</span>
+<span class="n">backend</span><span class="p">:</span> <span class="s">"onnxruntime"</span>
+<span class="n">default_model_filename</span><span class="p">:</span> <span class="s">"bio-bert-embedder.onnx"</span>
+<span class="n">max_batch_size</span><span class="p">:</span> <span class="mi">0</span>
+<span class="nb">input</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s">"input_ids"</span>
+    <span class="n">data_type</span><span class="p">:</span> <span class="n">TYPE_INT64</span>
+    <span class="n">dims</span><span class="p">:</span> <span class="p">[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">]</span>
+  <span class="p">},</span>
+<span class="p">{</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s">"attention_mask"</span>
+    <span class="n">data_type</span><span class="p">:</span> <span class="n">TYPE_INT64</span>
+    <span class="n">dims</span><span class="p">:</span> <span class="p">[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+<span class="n">output</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s">"3391"</span>  <span class="c1"># not sure why this is name 3391, need to double check
+</span>    <span class="n">data_type</span><span class="p">:</span> <span class="n">TYPE_FP32</span>
+    <span class="n">dims</span><span class="p">:</span> <span class="p">[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1024</span> <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">instance_group</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="n">count</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="n">kind</span><span class="p">:</span> <span class="n">KIND_CPU</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>It is the configuration file for our embedding model.  We can see that it takes the output from our tokenizer model and produces the embedding vector of shape, -1, 1024. With -1 meaning the dynamic shape, and 1024 is our embedding size.</p>
+
+<p>Note: for some reason, the model output is named <code class="language-bash highlighter-rouge">3391</code> I  don’t know why it is named like that.</p>
+
+<p>We can connect our embedding model and the tokenizer’s input and output with the ensemble model. It should have the following layout:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── ensemble_model
+│   ├── 1
+│   └── config.pbtxt
+</code></pre></div></div>
+
+<p>And the content of the <code class="language-bash highlighter-rouge">config.pbtxt</code> file in the ensemble model should be like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">writefile</span> <span class="p">{</span><span class="n">embedding_model_path</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">parent</span><span class="p">.</span><span class="n">__str__</span><span class="p">()}</span><span class="o">/</span><span class="n">ensemble_model</span><span class="o">/</span><span class="n">config</span><span class="p">.</span><span class="n">pbtxt</span>
+<span class="n">name</span><span class="p">:</span> <span class="s">"ensemble_model"</span>
+<span class="c1"># maximum batch size 
+</span><span class="n">max_batch_size</span><span class="p">:</span> <span class="mi">0</span> 
+<span class="n">platform</span><span class="p">:</span> <span class="s">"ensemble"</span>
+
+<span class="c1">#input to the model 
+</span><span class="nb">input</span> <span class="p">[</span>
+<span class="p">{</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s">"TEXT"</span>
+    <span class="n">data_type</span><span class="p">:</span> <span class="n">TYPE_STRING</span>
+    <span class="n">dims</span><span class="p">:</span> <span class="p">[</span> <span class="o">-</span><span class="mi">1</span> <span class="p">]</span> 
+    <span class="c1"># -1 means dynamic axis, aka this dimension may change 
+</span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="c1">#output of the model 
+</span><span class="n">output</span> <span class="p">{</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s">"3391"</span>
+    <span class="n">data_type</span><span class="p">:</span> <span class="n">TYPE_FP32</span>
+    <span class="n">dims</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1024</span><span class="p">]</span> 
+    <span class="c1"># two dimensional tensor, where 1st dimension: batch-size, 2nd dimension: #classes, not sure why name is 3391.
+</span><span class="p">}</span>
+
+<span class="c1">#Type of scheduler to be used
+</span><span class="n">ensemble_scheduling</span> <span class="p">{</span>
+    <span class="n">step</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="n">model_name</span><span class="p">:</span> <span class="s">"tokenizer"</span>
+            <span class="n">model_version</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="n">input_map</span> <span class="p">{</span>
+            <span class="n">key</span><span class="p">:</span> <span class="s">"TEXT"</span>
+            <span class="n">value</span><span class="p">:</span> <span class="s">"TEXT"</span>
+        <span class="p">}</span>
+        <span class="n">output_map</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="n">key</span><span class="p">:</span> <span class="s">"input_ids"</span>
+            <span class="n">value</span><span class="p">:</span> <span class="s">"input_ids"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="n">key</span><span class="p">:</span> <span class="s">"attention_mask"</span>
+            <span class="n">value</span><span class="p">:</span> <span class="s">"attention_mask"</span>
+        <span class="p">}</span>
+        <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="n">model_name</span><span class="p">:</span> <span class="s">"embedding_model"</span>
+            <span class="n">model_version</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">input_map</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="n">key</span><span class="p">:</span> <span class="s">"input_ids"</span>
+                <span class="n">value</span><span class="p">:</span> <span class="s">"input_ids"</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="n">key</span><span class="p">:</span> <span class="s">"attention_mask"</span>
+                <span class="n">value</span><span class="p">:</span> <span class="s">"attention_mask"</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+        <span class="n">output_map</span> <span class="p">{</span>
+                <span class="n">key</span><span class="p">:</span> <span class="s">"3391"</span>
+                <span class="n">value</span><span class="p">:</span> <span class="s">"3391"</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>In a nutshell, this config connects our tokenizer and the embedding model. You can easily see that from it the output of the tokenizer model is passed to the embedding model to produce the embedding vector.</p>
+
+<p>If the three components were configured correctly we can have the following layout:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+models_repository/retrieval
+├── embedding_model
+│   ├── 1
+│   │   ├── bio-bert-embedder.onnx
+│   │   └── config.json
+│   └── config.pbtxt
+├── ensemble_model
+│   ├── 1
+│   └── config.pbtxt
+└── tokenizer
+    ├── 1
+    │   ├── __pycache__
+    │   ├── config.json
+    │   ├── model.py
+    │   ├── special_tokens_map.json
+    │   ├── tokenizer.json
+    │   ├── tokenizer_config.json
+    │   └── vocab.txt
+    └── config.pbtxt
+
+</code></pre></div></div>
+
+<p>If you have all the following components we can go to the next stage.</p>
+
+<h3 id="building-the-triton-inference-server-image">Building the triton Inference server image.</h3>
+
+<p>In this section, we will see how to build the triton inference server image. The base triton inference server docker image is huge and can weigh up to 10 GB. In the triton inference server there is a way to build a Cpu only image for triton.  I wasn’t able to build it from my Macbook.</p>
+
+<p>We will be using the image <a href="https://github.com/Jackiexiao">Jackie Xiao</a> built for that purpose.</p>
+
+<p>It is a CPU-only image, hence the small size of 500Mb. If you are deploying the model in an infrastructure with a GPU, you will need to use the full Triton Image which is huge.</p>
+
+<p>Here is the docker file used to build this image.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">writefile</span> <span class="p">{</span><span class="n">Path</span><span class="p">.</span><span class="n">cwd</span><span class="p">().</span><span class="n">parent</span><span class="p">.</span><span class="n">__str__</span><span class="p">()}</span><span class="o">/</span><span class="n">Dockerfile</span>
+
+<span class="c1"># Use the base image
+</span><span class="n">FROM</span> <span class="n">jackiexiao</span><span class="o">/</span><span class="n">tritonserver</span><span class="p">:</span><span class="mf">23.12</span><span class="o">-</span><span class="n">onnx</span><span class="o">-</span><span class="n">py</span><span class="o">-</span><span class="n">cpu</span>
+
+
+
+<span class="c1"># Install the required Python packages
+</span><span class="n">RUN</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">transformers</span><span class="o">==</span><span class="mf">4.27</span><span class="p">.</span><span class="mi">1</span> <span class="n">sacremoses</span><span class="o">==</span><span class="mf">0.1</span><span class="p">.</span><span class="mi">1</span>
+
+
+</code></pre></div></div>
+
+<p>You can see that we are pulling the base image and install in it the transformer and the Moses tokenizer.</p>
+
+<p>With that docker image, we can build the docker image.</p>
+
+<p>` docker build -t espymur/triton-onnx-cpu:dev  -f Dockerfile .`</p>
+
+<p>If the image was successfully built we push it to the docker image repository:</p>
+
+<p><code class="language-bash highlighter-rouge">docker push espymur/triton-onnx-cpu:dev</code></p>
+
+<p>After pushing the image to the repository, you can start your docker container with the triton server in it.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+ docker run <span class="nt">--rm</span> <span class="nt">-p</span> 8000:8000 <span class="nt">-p</span> 8001:8001 <span class="nt">-p</span> 8002:8002  <span class="nt">-v</span> <span class="k">${</span><span class="nv">PWD</span><span class="k">}</span>/models_repository/retrieval:/models  espymur/triton-onnx-cpu:dev tritonserver <span class="nt">--model-repository</span><span class="o">=</span>/models
+
+</code></pre></div></div>
+
+<p>This command does the following:</p>
+
+<p>It starts the docker container with the triton-onnx-cpu:dev image.</p>
+
+<p>It exposes the different ports from the container to the external environment:</p>
+
+<p>For HTTP connection,  it maps the port 8000 from the container to the port 8000 of the external environment.</p>
+
+<p>For GRPC, it maps the port 8001 to the port 8001.</p>
+
+<p>For the metric server, it maps the port 8002 to the port 8002</p>
+
+<p>It maps the local directory, named <code class="language-bash highlighter-rouge">model_repository</code> to the folder named <code class="language-bash highlighter-rouge">/models</code> in the docker container by using volumes.</p>
+
+<p>We specify that the triton server should use the model folder as the model repository.</p>
+
+<p>If everything goes well with that command you should be able to see the following output which tells us which port is used by the model.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+I0329 18:42:18.452806 1 grpc_server.cc:2495] Started GRPCInferenceService at 0.0.0.0:8001
+
+I0329 18:42:18.460674 1 http_server.cc:4619] Started HTTPService at 0.0.0.0:8000
+
+I0329 18:42:18.520315 1 http_server.cc:282] Started Metrics Service at 0.0.0.0:8002
+
+</code></pre></div></div>
+
+<p>With that code, we have our embedding API running and we can now send requests to it.</p>
+
+<h3 id="making-request-to-the-inference-server">Making Request to the inference Server.</h3>
+
+<p>We have now built our model, the next step is to make an inference request to it and analyze the response.</p>
+
+<p>Since the model is deployed as a REST API you can make inference requests to it using any client of your choice in any language</p>
+
+<p>.  The inference server is very strict in terms of what it expects as input, and how to build it. Fortunately, they have described different clients to use to build the inputs.</p>
+
+<p>For demonstration purposes, I will be using the Python HTTP client to make inference requests.</p>
+
+<p>But nothing restricted you from using your language to make HTTP requests to the API.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">tritonclient.http</span> <span class="k">as</span> <span class="n">httpclient</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"localhost:8000"</span>
+<span class="n">http_client</span> <span class="o">=</span> <span class="n">httpclient</span><span class="p">.</span><span class="n">InferenceServerClient</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+                  
+</code></pre></div></div>
+
+<p>The above code creates the http client, with our server url, let us define the input and output of it.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text_input</span> <span class="o">=</span> <span class="n">httpclient</span><span class="p">.</span><span class="n">InferInput</span><span class="p">(</span><span class="s">'TEXT'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">datatype</span><span class="o">=</span><span class="s">'BYTES'</span><span class="p">)</span>
+
+<span class="n">embedding_output</span> <span class="o">=</span> <span class="n">httpclient</span><span class="p">.</span><span class="n">InferRequestedOutput</span><span class="p">(</span><span class="s">"3391"</span><span class="p">,</span> <span class="n">binary_data</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Those are the placeholder for our inputs and output, let us fill them now:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sentences</span> <span class="o">=</span> <span class="p">[</span><span class="s">"what cause covid"</span><span class="p">]</span>
+<span class="n">np_input_data</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">sentences</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np_input_data</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text_input</span><span class="p">.</span><span class="n">set_data_from_numpy</span><span class="p">(</span><span class="n">np_input_data</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span> <span class="o">=</span> <span class="n">http_client</span><span class="p">.</span><span class="n">infer</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="s">"ensemble_model"</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">text_input</span><span class="p">],</span> <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="n">embedding_output</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">results</span>
+</code></pre></div></div>
+
+<p>We can now convert back the output to numpy using</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">inference_output</span> <span class="o">=</span> <span class="n">results</span><span class="p">.</span><span class="n">as_numpy</span><span class="p">(</span><span class="s">'3391'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">inference_output</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>That is all we have our embedding API, which takes the text and produces the embedding vector.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>In this post, we have learned how to deploy an embedding model as an API using the triton inference server. The knowledge learned in this post can be used to deploy any transformer model  with an encoder or decoder using the triton inference server. Any model from the BERT, or GPT family.  It can slightly  be adapted to use with encoder-decoder models such as T5 or M2M.</p>
+
+<p>Once we deploy the model to the production server it will grow with users and need to scale. In the second part of this series, we will learn how to scale the model using Kubernetes.</p>
+
+
+    </div>
+
+    
+<hr>
+
+<aside id="comments" class="disqus">
+  <h3><i class="icon icon-comments-o"></i> Comments</h3>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function() {
+      this.page.url = 'http://localhost:4000/deploying-language-model-with-onnx-runtime-on-triton-inference-server';
+      this.page.identifier = '/deploying-language-model-with-onnx-runtime-on-triton-inference-server';
+    };
+    (function() {
+      var d = document,
+      s = d.createElement('script');
+      s.src = '//nandothemes.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</aside>
+
+
+  </div>
+
+</article>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <ul class="social">
+  <li><a href="https://github.com/espoirMur" target="_blank"><i class="icon icon-github"></i></a></li>
+  <li><a href="https://twitter.com/esp_py" target="_blank"><i class="icon icon-twitter"></i></a></li>
+  <li><a href="https://www.linkedin.com/in/espoirMur" target="_blank"><i class="icon icon-linkedin"></i></a></li>
+  <li><a href="https://stackoverflow.com/users/4683950/espoir-murhabazi" target="_blank"><i class="fa-brands fa-stack-overflow"></i></a></li>
+</ul>
+
+    <p class="txt-medium-gray">
+      <small>&copy;2024 All rights reserved. Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and ♥</small>
+    </p>
+  </div>
+</footer>
+
+
+</body>
+</html>
