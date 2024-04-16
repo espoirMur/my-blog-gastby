@@ -1,0 +1,14 @@
+{
+  "version": "0.1.0",
+  "configurations": [
+    {
+      "name": "Python: Launch Scrapy Spider",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "args": ["source/_posts/2024-01-19-docker-tutorial-using-triton-server.ipynb"],
+      "console": "integratedTerminal",
+      "purpose": ["debug-in-terminal"]
+    }
+  ]
+}

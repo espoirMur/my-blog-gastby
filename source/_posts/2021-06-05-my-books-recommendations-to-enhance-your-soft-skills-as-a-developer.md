@@ -5,6 +5,7 @@ description: Book recommendation for your soft skills as a developer
 comments: false
 categories: non-tech
 layout: post
+published: true
 ---
 {% include image.html name="cover.png" caption="cover" %}
 Three years ago, I decided to part ways with my Facebook account, and I decided to replace the time spent on Facebook with reading developers’ blogs. During that time, I stumbled across [dev](https://dev.to/), medium, and quora. These sites and publications have contributed a lot to the developer I am today.  I decided to dig deeper in my social media detox. Last year, I decided to block WhatsApp status unless Man-City qualified for the Champions League final and spent the time reading books about soft skills to improve my softs skills as a developer.

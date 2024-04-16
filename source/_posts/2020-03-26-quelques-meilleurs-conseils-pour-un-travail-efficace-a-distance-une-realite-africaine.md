@@ -5,6 +5,7 @@ description: "Conseils pour le travail à distance en Afrique"
 layout: post
 comments: true
 categories: non-tech
+published: true
 ---
 
 {% include image.html name="cover_picture_bkv_home.jpg" %}

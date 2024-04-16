@@ -5,6 +5,7 @@ description: "As summary on how my english test was."
 layout: post
 comments: true
 categories: non-tech
+published: true
 ---
 
 {% include image.html name="ielts.png" caption="cover image" %}

@@ -24,6 +24,8 @@ Template: github.com/nandomoreirame/end2end
 - [] set a note section in the site , where I can post some notes that are not ready to be published into blog posts.  check this site for an idea. https://devopsian.net/notes/
  - [] Fix the covid part 2 post
 - [] Check the post about applying for uk universities
+- [] Explore this post to learn how to use jupyter notebooks to deploy websites
+    https://michaelwornow.net/2022/09/13/jupyter-notebook-to-markdown
 
 
 ### Some usefull command 

@@ -1,12 +1,19 @@
 ---
 layout: pages
 pagination:
-  enabled: true
+  enabled: false
+title: drafts();
+permalink: /drafts/
 ---
+<h1 class="page-heading"> Draft Posts</h1>
 
+The post I am working, but not yet ready to be published.
 <section class="post-list">
-{% for post in paginator.posts %}
-  {% include article.html %}
+{% for post in site.posts %}
+    {% unless post.published %}
+      {% include article.html %}
+    {% endunless %}
 {% endfor %}
-{% include pagination.html %}
 </section>
+
+

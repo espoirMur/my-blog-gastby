@@ -5,6 +5,7 @@ date: "2020-01-30T00:12:03.284Z"
 layout: post
 comments: true
 categories: tech
+published: true
 ---
 
 ![Configurations](https://cdn.lynda.com/course/514200/514200-636141225565412095-16x9.jpg)
