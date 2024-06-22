@@ -20,7 +20,7 @@ In my attempt to deploy a Machine Learning model with Kubernetes, I need to find
 
 In this post, you will learn how to mount data in Oracle Cloud Storage or any other cloud object storage to a docker container and Kubernetes pods via Volumes. It is the second post of a series of posts that I am writing on deploying machine learning models on Kubernetes.  [In the first post](https://www.murhabazi.com/deploying-language-model-with-onnx-runtime-on-triton-inference-server), we learned how to use the ONNX runtime, and the triton inference server to deploy our model as a docker container. However, in that post, we saw the need to use a model registry to save our model files.
 
-You will best benefit from this post if you already have some Docker containers and Kubernetes components knowledge. As for the prerequisites,  I suggest that you have Docker and Kubernetes installed on your machine.  Additionally, you need access to a Kubernetes' cluster either via Minikube (local access) or via a cloud provider. In my case, I am using Oracle Cloud.
+You will best benefit from this post if you already have some Docker containers and Kubernetes components knowledge. As for the prerequisites,  I suggest that you have Docker and Kubernetes installed on your machine.  Additionally, you need access to a Kubernetes cluster either via Minikube (local access) or via a cloud provider. In my case, I am using Oracle Cloud.
 
 I have used a cloud storage bucket as my model repository and hosted my machine learning model in it, making this post a more Machine Learning oriented one. Having said that, web developers can use the same approach illustrated in this post to share web static files such as CSS, and images.
 
@@ -29,9 +29,9 @@ Let start by defining what is the Object Storage.
 
 ## <center>What is Object Storage?</center>
 
-An  Object storage is a data storage architecture for storing unstructured data, which sections data into units—objects—and stores them in a structurally flat data environment. Each object includes the data, metadata, and a unique identifier that applications can use for easy access and retrieval. [Source](https://cloud.google.com/learn/what-is-object-storage)
+An  Object Storage is a data storage architecture for storing unstructured data.It sections the data into units—objects and stores them in a structurally flat data environment. Each object includes the data, metadata, and a unique identifier that applications can use for easy access and retrieval. [Source](https://cloud.google.com/learn/what-is-object-storage)
 
-With object storage, the data blocks of a file are kept together as an object, with a custom identifier and relevant metadata about them.
+With Object Storage, the data blocks of a file are kept together as objects, with a custom identifier and relevant metadata about them.
 This type of storage architecture is well suited for unstructured data such as video,  music, and email which is written once and read multiple times.
 
 It is different from File Storage, where data is organized as files, and folders as files in real life. It is also different from Block Storage which is a performance improvement of file storage where files are broken into separate blocks and stored separately.
@@ -88,7 +88,7 @@ For our model container need to access models files, that are are in our registr
 
 ## Mounting Object Storage Bucket in a docker container.
 
-We will be using the [s3fs library](https://github.com/s3fs-fuse/s3fs-fuse), which is a tool that allows Unix/FreeBSD OS to mount object storage buckets via FUSE(Filesystem in UserSpace.) It helps us to operate files and directories in an S3 bucket like a local file system.
+We will be using the [s3fs library](https://github.com/s3fs-fuse/s3fs-fuse), which is a tool that allows Unix/FreeBSD OS to mount object storage buckets via FUSE(Filesystem in UserSpace). It helps us to operate files and directories in an S3 bucket like a local file system.
 
 You can install it in any Unix system and mount the bucket path to your local machine. 
 
