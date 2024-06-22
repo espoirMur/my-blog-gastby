@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript">
+</script>
+<title>Mounting Oracle Cloud Storage as Volume in Containers with Kubernetes.</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<meta name="description" content="Mounting Oracle Cloud Storage as Volume in Containers with Kubernetes.">
+<meta property="og:image" content=/assets/posts/2024-06-19-mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes/containers-in-ship.png>
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="canonical" href="http://localhost:4000/mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CJV32Y553Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CJV32Y553Z');
+</script>
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Mounting Oracle Cloud Storage as Volume in Containers with Kubernetes. | Espoir Murhabazi ideas’ home</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Mounting Oracle Cloud Storage as Volume in Containers with Kubernetes." />
+<meta name="author" content="Murhabazi Buzina, Espoir" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Mounting Oracle Cloud Storage as Volume in Containers with Kubernetes." />
+<meta property="og:description" content="Mounting Oracle Cloud Storage as Volume in Containers with Kubernetes." />
+<link rel="canonical" href="http://localhost:4000/mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes" />
+<meta property="og:url" content="http://localhost:4000/mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes" />
+<meta property="og:site_name" content="Espoir Murhabazi ideas’ home" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-06-19T14:20:27+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Mounting Oracle Cloud Storage as Volume in Containers with Kubernetes." />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Murhabazi Buzina, Espoir","url":"https://murhabazi.com/"},"dateModified":"2024-06-19T14:20:27+01:00","datePublished":"2024-06-19T14:20:27+01:00","description":"Mounting Oracle Cloud Storage as Volume in Containers with Kubernetes.","headline":"Mounting Oracle Cloud Storage as Volume in Containers with Kubernetes.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes"},"url":"http://localhost:4000/mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <header class="site-header">
+  <div class="container">
+    <input type="checkbox" id="toggleNavbar">
+    <h1 class="logo"><a href="/">esp<span>.py</span></a></h1>
+    <label for="toggleNavbar" role="button" class="toggle-navbar-button">
+      <i class="icon icon-menu"></i>
+      <i class="icon icon-cross"></i>
+    </label>
+    <nav class="navbar">
+      <ul>
+        <li><a href="/" title="Home">127.0.0.1</a></li>
+        
+          <li><a href="/about" title="whoami();">whoami();</a></li>
+        
+          <li><a href="/blog" title="read();">read();</a></li>
+        
+          <li><a href="/drafts" title="drafts();">drafts();</a></li>
+        
+          <li><a href="/learnings" title="learnings();">learnings();</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<main class="main-container">
+  <div class="container">
+    <article role="article" class="post">
+
+  <div class="card">
+    <header class="post-header">
+      <h1 class="post-title">Mounting Oracle Cloud Storage as Volume in Containers with Kubernetes.</h1>
+      <em class="post-meta">
+        <time>Jun 19, 2024</time>
+      </em>
+    </header>
+
+    <div class="post-content">
+      
+      
+<figure>
+  <p><img src="/assets/posts/2024-06-19-mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes/containers-in-ship.png" /></p>
+  <figcaption>Containers in Ship</figcaption>
+</figure>
+
+<p>In my attempt to deploy a Machine Learning model with Kubernetes, I need to find a way to mount files hosted on Oracle Cloud Storage bucket to a docker container via Docker Volumes and later to Kubernetes using Kubernetes Volumes.</p>
+
+<p>I looked up online and couldn’t find a post that fit my needs hence why I decided to write this guide to highlight my approach and learnings.</p>
+
+<p>In this post, you will learn how to mount data in Oracle Cloud Storage or any other cloud object storage to a docker container and Kubernetes pods via Volumes. It is the second post of a series of posts that I am writing on deploying machine learning models on Kubernetes.  <a href="https://www.murhabazi.com/deploying-language-model-with-onnx-runtime-on-triton-inference-server">In the first post</a>, we learned how to use the ONNX runtime, and the triton inference server to deploy our model as a docker container. However, in that post, we saw the need to use a model registry to save our model files.</p>
+
+<p>You will best benefit from this post if you already have some Docker containers and Kubernetes components knowledge. As for the prerequisites,  I suggest that you have Docker and Kubernetes installed on your machine.  Additionally, you need access to a Kubernetes cluster either via Minikube (local access) or via a cloud provider. In my case, I am using Oracle Cloud.</p>
+
+<p>I have used a cloud storage bucket as my model repository and hosted my machine learning model in it, making this post a more Machine Learning oriented one. Having said that, web developers can use the same approach illustrated in this post to share web static files such as CSS, and images.</p>
+
+<p>Let start by defining what is the Object Storage.</p>
+
+<h2 id="what-is-object-storage"><center>What is Object Storage?</center></h2>
+
+<p>An  Object Storage is a data storage architecture for storing unstructured data.It sections the data into units—objects and stores them in a structurally flat data environment. Each object includes the data, metadata, and a unique identifier that applications can use for easy access and retrieval. <a href="https://cloud.google.com/learn/what-is-object-storage">Source</a></p>
+
+<p>With Object Storage, the data blocks of a file are kept together as objects, with a custom identifier and relevant metadata about them.
+This type of storage architecture is well suited for unstructured data such as video,  music, and email which is written once and read multiple times.</p>
+
+<p>It is different from File Storage, where data is organized as files, and folders as files in real life. It is also different from Block Storage which is a performance improvement of file storage where files are broken into separate blocks and stored separately.</p>
+
+<p>Many cloud storage providers have stores that implement object storage architecture. In that storage, files are saved in buckets. The most common type of object store is Amazon Simple Storage Service (S3). Then comes Google Cloud Storage(GCS). Oracle Cloud, the storage we will be using in this post is one of the other S3 and GCS alternatives. You can check other S3 alternatives <a href="https://github.com/s3fs-fuse/s3fs-fuse/wiki/Non-Amazon-S3">here</a>.</p>
+
+<p>That being said, we can confirm that everything you can do on Amazon S3 can be replicated on other cloud provider object storage.</p>
+
+<p>Now that we know more about object storage , the next concept to grasp is Volumes.</p>
+
+<h2 id="what-are-docker-and-kubernetes-volumes">What are Docker and Kubernetes Volumes?</h2>
+
+<h3 id="docker-volumes">Docker Volumes.</h3>
+
+<figure>
+  <p><img src="/assets/posts/2024-06-19-mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes/docker-volumes.png" /></p>
+  <figcaption>Docker Volumes</figcaption>
+</figure>
+
+<p>Docker containers are stateless components,  at the end of their lifecycle their contents are destroyed. All the data generated by a container and saved inside are deleted on its destruction. Volumes are handy when it comes to sharing data with a container, and to persisting data generated by a container. 
+The most common use cases of docker volumes that I can think of on top of my head in Web Development are :</p>
+
+<ul>
+  <li>Sharing static files with web application</li>
+  <li>Persisting data generated by a database container.</li>
+</ul>
+
+<p>In Machine Learning however, docker volumes mostly share model files with a deployment container, or sharing model training files with a training script.</p>
+
+<p>You can read more about docker volumes <a href="https://docs.docker.com/storage/volumes/">here</a>.</p>
+
+<h3 id="kubernetes-volumes">Kubernetes Volumes.</h3>
+
+<p>Kubernetes volumes are similar to docker volumes. They can be seen as directory containing data accessible by multiple containers in a pod.
+On top of sharing data and persisting data with a pod, Kubernetes volumes help to share data between containers in the same pod.</p>
+
+<p>Kubernetes offers different types of volumes, you can read more about them <a href="https://kubernetes.io/docs/concepts/storage/volumes/">here</a></p>
+
+<p>In this post, we will be interested in two types of them, the <code class="language-bash highlighter-rouge">hostPath</code> and <code class="language-bash highlighter-rouge">PersitantVolume</code>.</p>
+
+<p>A <code class="language-bash highlighter-rouge">hostPath</code> volume mounts a file or directory from the host node’s filesystem into your Pod. This type of volume is not recommended for production-grade applications because it presents many security risks. It is recommended to use <code class="language-bash highlighter-rouge">PersistantVolume</code> and <code class="language-bash highlighter-rouge">PersistantVolumeClaim</code> instead.</p>
+
+<p>Enough theory, let us write code.</p>
+
+<h2 id="our-architecture">Our Architecture.</h2>
+
+<figure>
+  <p><img src="/assets/posts/2024-06-19-mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes/architecture-diagram.png" /></p>
+  <figcaption>Architecture Diagram.</figcaption>
+</figure>
+
+<p>In the figure above, we have the architecture diagram of what we are we will be deploying in this post.</p>
+
+<p>For our model container need to access models files, that are are in our registry.</p>
+
+<h2 id="mounting-object-storage-bucket-in-a-docker-container">Mounting Object Storage Bucket in a docker container.</h2>
+
+<p>We will be using the <a href="https://github.com/s3fs-fuse/s3fs-fuse">s3fs library</a>, which is a tool that allows Unix/FreeBSD OS to mount object storage buckets via FUSE(Filesystem in UserSpace). It helps us to operate files and directories in an S3 bucket like a local file system.</p>
+
+<p>You can install it in any Unix system and mount the bucket path to your local machine.</p>
+
+<p>For our use case, we will install it and use it in a docker container.</p>
+
+<h3 id="first-step--create-the-script">First Step : Create the Script.</h3>
+
+<p>To mount our bucket we will use the following script, let name it <code class="language-bash highlighter-rouge">run.sh</code>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$ACCESS_KEY_ID</span><span class="s2">:</span><span class="nv">$ORACLE_CLOUD_SECRET</span><span class="s2">"</span> <span class="o">&gt;</span> passwd <span class="o">&amp;&amp;</span> <span class="nb">chmod </span>600 passwd
+
+<span class="nv">URL</span><span class="o">=</span>https://<span class="nv">$TENANT_ID</span>.compat.objectstorage.<span class="nv">$REGION</span>.oraclecloud.com
+
+s3fs <span class="nt">-f</span> <span class="nt">-d</span> <span class="nv">$OCI_BUCKET</span> <span class="nv">$MOUNT_POINT</span> <span class="nt">-o</span> <span class="nv">endpoint</span><span class="o">=</span><span class="nv">$REGION</span> <span class="nt">-o</span> <span class="nv">passwd_file</span><span class="o">=</span>passwd <span class="nt">-o</span> <span class="nv">url</span><span class="o">=</span><span class="nv">$URL</span> <span class="nt">-o</span> nomultipart <span class="nt">-o</span> use_path_request_style
+</code></pre></div></div>
+
+<p>Our script expects the following environment variables to work.</p>
+
+<ul>
+  <li><code class="language-bash highlighter-rouge">ACCESS_KEY_ID: </code>: The access key ID</li>
+  <li><code class="language-bash highlighter-rouge">ORACLE_CLOUD_SECRET</code>: The secret key
+Those two are credential pairs from Oracle Cloud. You can grab them from your profile on Oracle Cloud. In case you are using another cloud provider, refer to the documentation to grab those credentials.</li>
+  <li><code class="language-bash highlighter-rouge">TENANT_ID</code>: Your Oracle Cloud tenant ID. is the unique identifier of your Oracle Cloud account.</li>
+  <li><code class="language-bash highlighter-rouge">REGION</code>: The region where your bucket is located.
+With the tenant ID and the region, we can build the bucket format. Oracle cloud storage uses the following URL format: <code class="language-bash highlighter-rouge"><span class="nv">URL</span><span class="o">=</span>https://<span class="nv">$TENANT_ID</span>.compat.objectstorage.<span class="nv">$REGION</span>.oraclecloud.com</code></li>
+</ul>
+
+<p>If you are using a different cloud provider than S3 or OracleCloud, check out <a href="https://github.com/s3fs-fuse/s3fs-fuse/wiki/Non-Amazon-S3">this guide</a>, it illustrates how to define the URL to access the content of your bucket. 
+You can also check the respective cloud provider documentation.</p>
+
+<ul>
+  <li><code class="language-bash highlighter-rouge">OCI_BUCKET</code>: Is the bucket name</li>
+  <li><code class="language-bash highlighter-rouge">MOUNT_POINT</code>: This is the path where we are mounting our files in the container.</li>
+</ul>
+
+<p>The command creates a file called <code class="language-bash highlighter-rouge">passwd</code> and they put the credentials inside it. Then they change the permission of the file. Permission 600 means read and write from the owner and no other permission from the group and others.</p>
+
+<p>The main command  <code class="language-bash highlighter-rouge">s3fs</code> mounts the bucket to the mount point. 
+The flags <code class="language-bash highlighter-rouge"><span class="nt">-f</span></code> and <code class="language-bash highlighter-rouge"><span class="nt">-d</span></code> are for debugging purposes.</p>
+
+<p>Let us create a docker container that uses that script.</p>
+
+<h3 id="second-step--build-the-container-image">Second Step : Build the container image.</h3>
+
+<p>Let us create the docker image using the following DockerFile:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM anujkosambi/s3fs-fuse
+
+ENV MOUNT_POINT /var/s3
+RUN <span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$MOUNT_POINT</span>
+COPY run.sh run.sh
+RUN <span class="nb">chmod</span> +x run.sh
+CMD ./run.sh
+</code></pre></div></div>
+
+<p>The docker container pulls from the <code class="language-bash highlighter-rouge">s3fs-fuse</code> image and copies the <code class="language-bash highlighter-rouge">run.sh script</code>, changes it permission to be executable, and then executes the script.</p>
+
+<p>If you have the docker file saved as <code class="language-bash highlighter-rouge">DockerFile</code> and your <code class="language-bash highlighter-rouge">run</code> script saved as <code class="language-bash highlighter-rouge">run.sh</code> at the same location you can build your container using:</p>
+
+<p><code class="language-bash highlighter-rouge">docker build <span class="nt">-t</span> espymur/s3fs:latest <span class="nt">-f</span> DockerFile <span class="nb">.</span> </code></p>
+
+<ul>
+  <li>
+    <h3 id="third-step-starting-the-docker-container">Third Step: Starting the docker container.</h3>
+  </li>
+</ul>
+
+<p>In order run the container you need the values of your environment variables. Go to your cloud console and collect the environment variables. Then run the following command:</p>
+
+<p><code class="language-bash highlighter-rouge">docker run  <span class="nt">--privileged</span> <span class="nt">-i</span> <span class="nt">-e</span> <span class="nv">ORACLE_CLOUD_SECRET</span><span class="o">=</span>your_secret <span class="nt">-e</span> <span class="nv">OCI_BUCKET</span><span class="o">=</span>bucket_name  <span class="nt">-e</span> <span class="nv">REGION</span><span class="o">=</span>your-region <span class="nt">-e</span> <span class="nv">TENANT_ID</span><span class="o">=</span>your_tenant-id <span class="nt">-e</span> <span class="nv">ACCESS_KEY_ID</span><span class="o">=</span>acces_key_id espymur/s3fs:latest</code></p>
+
+<p>Note the <code class="language-bash highlighter-rouge"><span class="nt">--privileged</span></code> mode. It permits the docker container to write to the container host. You can read more about it <a href="https://stackoverflow.com/questions/75296630/what-does-the-docker-exec-privileged-flag-do">here</a></p>
+
+<p>If everything is fine you should be able to exec a command in your container like this to check if the data in your bucket are there.</p>
+
+<p><code class="language-bash highlighter-rouge">docker <span class="nb">exec</span> <span class="nt">-it</span> container_id <span class="nb">ls</span> /var/s3</code></p>
+
+<p>The command should put the content of your bucket.</p>
+
+<p>Now we can mount the bucket content in our docker container, let us see how to use that in a Kubernetes environment.</p>
+
+<p>With we have achieved what we can see in the following image:</p>
+
+<figure>
+  <p><img src="/assets/posts/2024-06-19-mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes/storage-container.png" /></p>
+  <figcaption>S3 storage mounted inside a docker container</figcaption>
+</figure>
+
+<h2 id="then-comes-kubernetes">Then comes Kubernetes.</h2>
+
+<p>Now that the bucket mounts as in your docker container, let’s see how it would work in practice with Kubernetes.</p>
+
+<p>Our end goal is to deploy a Machine Learning model in a Kubernetes cluster. The bucket will act as our model repository, and It will host our Machine Learning model.</p>
+
+<p>The first component we will create is a <code class="language-bash highlighter-rouge">Secret</code>, then we will create a <code class="language-bash highlighter-rouge">DaemontSet</code>.</p>
+
+<h3 id="kubernetes-secrets">Kubernetes Secrets.</h3>
+
+<blockquote>
+  <p>A Secret is an object that contains a small amount of sensitive data such as a password, a token, or a key. Such information might otherwise be put in a <a href="https://kubernetes.io/docs/concepts/workloads/pods/">Pod</a> specification or in a <a href="https://kubernetes.io/docs/reference/glossary/?all=true#term-image">container image</a>. Using a Secret means that you don’t need to include confidential data in your application code.</p>
+</blockquote>
+
+<p>For our usecase our secret are the Oracle cloud credentials. Please note that kubernetes secret should not be shared with git. We need to add the it path to <code class="language-bash highlighter-rouge">.gitignore</code></p>
+
+<p>Here is how we will defines our kubernetes secrets:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Secret</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">oracle-cloud-credentials</span>
+<span class="na">type</span><span class="pi">:</span> <span class="s">Opaque</span>
+<span class="na">data</span><span class="pi">:</span>
+  <span class="na">ORACLE_CLOUD_SECRET</span><span class="pi">:</span> <span class="s2">"</span><span class="s">secrets</span><span class="nv"> </span><span class="s">hashed</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">base64="</span>
+  <span class="na">OCI_BUCKET</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Your</span><span class="nv"> </span><span class="s">hashed</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">base64="</span>
+  <span class="na">REGION </span><span class="pi">:</span> <span class="s2">"</span><span class="s">region</span><span class="nv"> </span><span class="s">hashed</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">base64="</span>
+  <span class="na">TENANT_ID</span><span class="pi">:</span> <span class="s2">"</span><span class="s">tenant</span><span class="nv"> </span><span class="s">id</span><span class="nv"> </span><span class="s">hashed</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">base64"</span>
+  <span class="na">ACCESS_KEY_ID</span><span class="pi">:</span> <span class="s2">"</span><span class="s">access</span><span class="nv"> </span><span class="s">key</span><span class="nv"> </span><span class="s">hashed</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">base64"</span>
+
+</code></pre></div></div>
+<p>Note that the values in our secrets are the real values of our secrets hashed in base64. Using the following command.</p>
+
+<p><code class="language-bash highlighter-rouge"><span class="nb">echo</span> <span class="nt">-n</span> <span class="s1">'oursecret'</span> | <span class="nb">base64</span></code>.</p>
+
+<p>We create the secrets with <code class="language-bash highlighter-rouge">kubectl apply <span class="nt">-f</span> secret.yaml</code></p>
+
+<h3 id="daemonset-component">DaemonSet Component.</h3>
+
+<blockquote>
+  <p>A <em>DaemonSet</em> ensures that all (or some) Nodes run a copy of a Pod. As nodes are added to the cluster, Pods are added to them. As nodes are removed from the cluster, those Pods are garbage collected. Deleting a DaemonSet will clean up the Pods it created.</p>
+</blockquote>
+
+<p>A DaemonSet is the perfect component for our use case, we want to mount our bucket in all the nodes of our Kubernetes cluster in order to make the storage available to all pods that are running on the node.</p>
+
+<p>The DaemontSet will help us to achieve what we can view on this picture:</p>
+
+<figure>
+  <p><img src="/assets/posts/2024-06-19-mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes/daemonset.png" /></p>
+  <figcaption>What our DaemontSet Achieve</figcaption>
+</figure>
+
+<p>I came across this component type when I was researching this tutorial.</p>
+
+<p>Here is how we create the DaemonSet:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">DaemonSet</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">k8s-app</span><span class="pi">:</span> <span class="s">oracle-cloud-provider</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">oracle-cloud-provider</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">matchLabels</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">oracle-cloud-provider</span>
+  <span class="na">template</span><span class="pi">:</span>
+    <span class="na">metadata</span><span class="pi">:</span>
+      <span class="na">labels</span><span class="pi">:</span>
+        <span class="na">name</span><span class="pi">:</span> <span class="s">oracle-cloud-provider</span>
+    <span class="na">spec</span><span class="pi">:</span>
+      <span class="na">containers</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">oracle-cloud-fuse</span>
+          <span class="na">image</span><span class="pi">:</span>  <span class="s">uk-london-1.ocir.io/lrtfqsmony6u/s3fs:latest</span>
+          <span class="na">imagePullPolicy</span><span class="pi">:</span> <span class="s">Always</span>
+          <span class="na">securityContext</span><span class="pi">:</span>
+            <span class="na">privileged</span><span class="pi">:</span> <span class="no">true</span>
+          <span class="na">envFrom</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">secretRef</span><span class="pi">:</span>
+                <span class="na">name</span><span class="pi">:</span> <span class="s">oracle-cloud-credentials</span>
+          <span class="na">volumeMounts</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">devfuse</span>
+              <span class="na">mountPath</span><span class="pi">:</span> <span class="s">/dev/fuse</span>
+            <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">oracle-cloud-fs</span>
+              <span class="na">mountPath</span><span class="pi">:</span> <span class="s">/var/s3</span>
+              <span class="na">mountPropagation</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Bidirectional"</span> <span class="c1"># this was the key to make it work.</span>
+      <span class="na">volumes</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">devfuse</span>
+          <span class="na">hostPath</span><span class="pi">:</span>
+            <span class="na">path</span><span class="pi">:</span> <span class="s">/dev/fuse</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">oracle-cloud-fs</span>
+          <span class="na">hostPath</span><span class="pi">:</span>
+            <span class="na">path</span><span class="pi">:</span> <span class="s">/tmp/s3</span>
+
+</code></pre></div></div>
+
+<p>As you can see the Daemonset syntax is familiar to the Deployment syntax, they both define pods and volumes.</p>
+
+<p>This Daemonset defines the container, this is the container we defined previously and it runs the s3fs code that mounts the bucket. You can check, we are running it with SecurityContext <code class="language-bash highlighter-rouge">privileged</code> which is the equivalent of the docker mode <code class="language-bash highlighter-rouge"><span class="nt">--privileged</span></code></p>
+
+<p>The <code class="language-bash highlighter-rouge">VolumeMounts</code> argument defines the original path of the content  (files ) we want to mount in <strong>our container</strong>.<br />
+The <code class="language-bash highlighter-rouge">Volume</code> definition, on the other hand, defines the volume mount path in the host system, for this case our Kubernetes nodes.</p>
+
+<p>This means that the content of the <code class="language-bash highlighter-rouge">/var/s3</code> folder in our container will be mounted to the <code class="language-bash highlighter-rouge">/tmp/s3</code> folder in our docker container. The hostPath argument needs to be a writeable folder in our docker container.</p>
+
+<p>The <code class="language-bash highlighter-rouge">mount propagation</code> argument is important to make the mapping work, I spent hours trying to figure out this parameter to make my mount work.</p>
+
+<p>From the <a href="https://kubernetes.io/docs/concepts/storage/volumes/#mount-propagation">Kubernetes documentation</a> we can read that:</p>
+
+<ul>
+  <li><code class="language-bash highlighter-rouge">HostToContainer</code> - This volume mount will receive all subsequent mounts that are mounted to this volume or any of its subdirectories.</li>
+  <li>
+    <p>In other words, if the host mounts anything inside the volume mount, the container will see it mounted there.</p>
+
+    <p>Similarly, if any Pod with <code class="language-bash highlighter-rouge">Bidirectional</code> mount propagation to the same volume mounts anything there, the container with <code class="language-bash highlighter-rouge">HostToContainer</code> mount propagation will see it.</p>
+  </li>
+  <li>
+    <p><code class="language-bash highlighter-rouge">Bidirectional</code> - This volume mount behaves the same the <code class="language-bash highlighter-rouge">HostToContainer</code> mount. In addition, all volume mounts created by the container will be propagated back to the host and to all containers of all pods that use the same volume.</p>
+
+    <p>#### Warning:</p>
+
+    <p><code class="language-bash highlighter-rouge">Bidirectional</code> mount propagation can be dangerous. It can damage the host operating system and therefore it is allowed only in privileged containers. Familiarity with Linux kernel behavior is strongly recommended. In addition, any volume mounts created by containers in pods must be destroyed (unmounted) by the containers on termination.</p>
+  </li>
+</ul>
+
+<p>PS: I had some issues dealing with the container termination. If the Dameonset is not terminated properly the volume path will not work in the subsequent run. You have to change the path when you run it again to make it work.
+We will create our Daemonset with</p>
+
+<p><code class="language-bash highlighter-rouge">kubectl apply <span class="nt">-f</span> daemonset.yaml</code></p>
+
+<p>The Daemonset will create a pod in each node of our cluster, you can check the pods with</p>
+
+<p><code class="language-bash highlighter-rouge">kubectl get pods</code></p>
+
+<p>You will see the pod running.</p>
+
+<p>To check if the mount is working, you can ssh into your nodes and list the content of <code class="language-bash highlighter-rouge">/tmp/s3</code>. Should everything works correctly, you should be able to see the content of the bucket.</p>
+
+<p>If not check the logs our your pod to see what went wrong.</p>
+
+<p>To ssh nodes in the cluster, you can use this <a href="https://github.com/luksa/kubectl-plugins">kubernetes plugin</a>.</p>
+
+<p>If the Daemonset is working, go to the next step which is using it with the deployment to deploy models.</p>
+
+<p>I have read that using a docker container with <code class="language-bash highlighter-rouge">privileged </code> mode offers security risk and may not be advised in a high-security environment. If that is your use case you can try to use Persisent Volume to achieve the same results.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>To summarise, this posts has shown us how to mount the content of Object Storage like S3 in docker volume.  We leverage the <code class="language-bash highlighter-rouge">s3fs</code> library and we mounted the strorage inside container. Finally, we used a Daemonset pod to share the content of our container with the nodes in our Kubernetes cluster.</p>
+
+<p>To know how this is done, go ahead and read part 3 of these series of posts where I will show how to deploy Machine Learning model using the created volume.</p>
+
+<p>In the next post, we will learn how to use that volume in a Machine Learning application.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>
+    <p><a href="https://dev.to/otomato_io/mount-s3-objects-to-kubernetes-pods-12f5">Mount S3 Objects to Kubernetes Pods.</a></p>
+  </li>
+  <li>
+    <p><a href="https://blog.meain.io/2020/mounting-s3-bucket-kube/">Mounting S3 bucket in docker containers on kubernetes.</a></p>
+  </li>
+</ul>
+
+    </div>
+
+    
+<hr>
+
+<aside id="comments" class="disqus">
+  <h3><i class="icon icon-comments-o"></i> Comments</h3>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function() {
+      this.page.url = 'http://localhost:4000/mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes';
+      this.page.identifier = '/mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes';
+    };
+    (function() {
+      var d = document,
+      s = d.createElement('script');
+      s.src = '//nandothemes.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</aside>
+
+
+  </div>
+
+</article>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <ul class="social">
+  <li><a href="https://github.com/espoirMur" target="_blank"><i class="icon icon-github"></i></a></li>
+  <li><a href="https://twitter.com/esp_py" target="_blank"><i class="icon icon-twitter"></i></a></li>
+  <li><a href="https://www.linkedin.com/in/espoirMur" target="_blank"><i class="icon icon-linkedin"></i></a></li>
+  <li><a href="https://stackoverflow.com/users/4683950/espoir-murhabazi" target="_blank"><i class="fa-brands fa-stack-overflow"></i></a></li>
+</ul>
+
+    <p class="txt-medium-gray">
+      <small>&copy;2024 All rights reserved. Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and ♥</small>
+    </p>
+  </div>
+</footer>
+
+
+</body>
+</html>
