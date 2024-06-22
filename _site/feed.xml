@@ -5,9 +5,352 @@
     <description>Murhabazi Buzina Espoir Home on the internet</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 16 Apr 2024 08:49:45 +0100</pubDate>
-    <lastBuildDate>Tue, 16 Apr 2024 08:49:45 +0100</lastBuildDate>
+    <pubDate>Sat, 22 Jun 2024 22:30:17 +0100</pubDate>
+    <lastBuildDate>Sat, 22 Jun 2024 22:30:17 +0100</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>Mounting Oracle Cloud Storage as Volume in Containers with Kubernetes.</title>
+        <description>
+&lt;figure&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2024-06-19-mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes/containers-in-ship.png&quot; /&gt;&lt;/p&gt;
+  &lt;figcaption&gt;Containers in Ship&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;In my attempt to deploy a Machine Learning model with Kubernetes, I need to find a way to mount files hosted on Oracle Cloud Storage bucket to a docker container via Docker Volumes and later to Kubernetes using Kubernetes Volumes.&lt;/p&gt;
+
+&lt;p&gt;I looked up online and couldn’t find a post that fit my needs hence why I decided to write this guide to highlight my approach and learnings.&lt;/p&gt;
+
+&lt;p&gt;In this post, you will learn how to mount data in Oracle Cloud Storage or any other cloud object storage to a docker container and Kubernetes pods via Volumes. It is the second post of a series of posts that I am writing on deploying machine learning models on Kubernetes.  &lt;a href=&quot;https://www.murhabazi.com/deploying-language-model-with-onnx-runtime-on-triton-inference-server&quot;&gt;In the first post&lt;/a&gt;, we learned how to use the ONNX runtime, and the triton inference server to deploy our model as a docker container. However, in that post, we saw the need to use a model registry to save our model files.&lt;/p&gt;
+
+&lt;p&gt;You will best benefit from this post if you already have some Docker containers and Kubernetes components knowledge. As for the prerequisites,  I suggest that you have Docker and Kubernetes installed on your machine.  Additionally, you need access to a Kubernetes cluster either via Minikube (local access) or via a cloud provider. In my case, I am using Oracle Cloud.&lt;/p&gt;
+
+&lt;p&gt;I have used a cloud storage bucket as my model repository and hosted my machine learning model in it, making this post a more Machine Learning oriented one. Having said that, web developers can use the same approach illustrated in this post to share web static files such as CSS, and images.&lt;/p&gt;
+
+&lt;p&gt;Let start by defining what is the Object Storage.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-object-storage&quot;&gt;&lt;center&gt;What is Object Storage?&lt;/center&gt;&lt;/h2&gt;
+
+&lt;p&gt;An  Object Storage is a data storage architecture for storing unstructured data.It sections the data into units—objects and stores them in a structurally flat data environment. Each object includes the data, metadata, and a unique identifier that applications can use for easy access and retrieval. &lt;a href=&quot;https://cloud.google.com/learn/what-is-object-storage&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;With Object Storage, the data blocks of a file are kept together as objects, with a custom identifier and relevant metadata about them.
+This type of storage architecture is well suited for unstructured data such as video,  music, and email which is written once and read multiple times.&lt;/p&gt;
+
+&lt;p&gt;It is different from File Storage, where data is organized as files, and folders as files in real life. It is also different from Block Storage which is a performance improvement of file storage where files are broken into separate blocks and stored separately.&lt;/p&gt;
+
+&lt;p&gt;Many cloud storage providers have stores that implement object storage architecture. In that storage, files are saved in buckets. The most common type of object store is Amazon Simple Storage Service (S3). Then comes Google Cloud Storage(GCS). Oracle Cloud, the storage we will be using in this post is one of the other S3 and GCS alternatives. You can check other S3 alternatives &lt;a href=&quot;https://github.com/s3fs-fuse/s3fs-fuse/wiki/Non-Amazon-S3&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;That being said, we can confirm that everything you can do on Amazon S3 can be replicated on other cloud provider object storage.&lt;/p&gt;
+
+&lt;p&gt;Now that we know more about object storage , the next concept to grasp is Volumes.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-are-docker-and-kubernetes-volumes&quot;&gt;What are Docker and Kubernetes Volumes?&lt;/h2&gt;
+
+&lt;h3 id=&quot;docker-volumes&quot;&gt;Docker Volumes.&lt;/h3&gt;
+
+&lt;figure&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2024-06-19-mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes/docker-volumes.png&quot; /&gt;&lt;/p&gt;
+  &lt;figcaption&gt;Docker Volumes&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Docker containers are stateless components,  at the end of their lifecycle their contents are destroyed. All the data generated by a container and saved inside are deleted on its destruction. Volumes are handy when it comes to sharing data with a container, and to persisting data generated by a container. 
+The most common use cases of docker volumes that I can think of on top of my head in Web Development are :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sharing static files with web application&lt;/li&gt;
+  &lt;li&gt;Persisting data generated by a database container.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In Machine Learning however, docker volumes mostly share model files with a deployment container, or sharing model training files with a training script.&lt;/p&gt;
+
+&lt;p&gt;You can read more about docker volumes &lt;a href=&quot;https://docs.docker.com/storage/volumes/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;kubernetes-volumes&quot;&gt;Kubernetes Volumes.&lt;/h3&gt;
+
+&lt;p&gt;Kubernetes volumes are similar to docker volumes. They can be seen as directory containing data accessible by multiple containers in a pod.
+On top of sharing data and persisting data with a pod, Kubernetes volumes help to share data between containers in the same pod.&lt;/p&gt;
+
+&lt;p&gt;Kubernetes offers different types of volumes, you can read more about them &lt;a href=&quot;https://kubernetes.io/docs/concepts/storage/volumes/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In this post, we will be interested in two types of them, the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;hostPath&lt;/code&gt; and &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;PersitantVolume&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;A &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;hostPath&lt;/code&gt; volume mounts a file or directory from the host node’s filesystem into your Pod. This type of volume is not recommended for production-grade applications because it presents many security risks. It is recommended to use &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;PersistantVolume&lt;/code&gt; and &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;PersistantVolumeClaim&lt;/code&gt; instead.&lt;/p&gt;
+
+&lt;p&gt;Enough theory, let us write code.&lt;/p&gt;
+
+&lt;h2 id=&quot;our-architecture&quot;&gt;Our Architecture.&lt;/h2&gt;
+
+&lt;figure&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2024-06-19-mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes/architecture-diagram.png&quot; /&gt;&lt;/p&gt;
+  &lt;figcaption&gt;Architecture Diagram.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;In the figure above, we have the architecture diagram of what we are we will be deploying in this post.&lt;/p&gt;
+
+&lt;p&gt;For our model container need to access models files, that are are in our registry.&lt;/p&gt;
+
+&lt;h2 id=&quot;mounting-object-storage-bucket-in-a-docker-container&quot;&gt;Mounting Object Storage Bucket in a docker container.&lt;/h2&gt;
+
+&lt;p&gt;We will be using the &lt;a href=&quot;https://github.com/s3fs-fuse/s3fs-fuse&quot;&gt;s3fs library&lt;/a&gt;, which is a tool that allows Unix/FreeBSD OS to mount object storage buckets via FUSE(Filesystem in UserSpace). It helps us to operate files and directories in an S3 bucket like a local file system.&lt;/p&gt;
+
+&lt;p&gt;You can install it in any Unix system and mount the bucket path to your local machine.&lt;/p&gt;
+
+&lt;p&gt;For our use case, we will install it and use it in a docker container.&lt;/p&gt;
+
+&lt;h3 id=&quot;first-step--create-the-script&quot;&gt;First Step : Create the Script.&lt;/h3&gt;
+
+&lt;p&gt;To mount our bucket we will use the following script, let name it &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;run.sh&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ACCESS_KEY_ID&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ORACLE_CLOUD_SECRET&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; passwd &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;chmod &lt;/span&gt;600 passwd
+
+&lt;span class=&quot;nv&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;https://&lt;span class=&quot;nv&quot;&gt;$TENANT_ID&lt;/span&gt;.compat.objectstorage.&lt;span class=&quot;nv&quot;&gt;$REGION&lt;/span&gt;.oraclecloud.com
+
+s3fs &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$OCI_BUCKET&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$MOUNT_POINT&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;endpoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$REGION&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;passwd_file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;passwd &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$URL&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; nomultipart &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; use_path_request_style
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Our script expects the following environment variables to work.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;ACCESS_KEY_ID: &lt;/code&gt;: The access key ID&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;ORACLE_CLOUD_SECRET&lt;/code&gt;: The secret key
+Those two are credential pairs from Oracle Cloud. You can grab them from your profile on Oracle Cloud. In case you are using another cloud provider, refer to the documentation to grab those credentials.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;TENANT_ID&lt;/code&gt;: Your Oracle Cloud tenant ID. is the unique identifier of your Oracle Cloud account.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;REGION&lt;/code&gt;: The region where your bucket is located.
+With the tenant ID and the region, we can build the bucket format. Oracle cloud storage uses the following URL format: &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;span class=&quot;nv&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;https://&lt;span class=&quot;nv&quot;&gt;$TENANT_ID&lt;/span&gt;.compat.objectstorage.&lt;span class=&quot;nv&quot;&gt;$REGION&lt;/span&gt;.oraclecloud.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you are using a different cloud provider than S3 or OracleCloud, check out &lt;a href=&quot;https://github.com/s3fs-fuse/s3fs-fuse/wiki/Non-Amazon-S3&quot;&gt;this guide&lt;/a&gt;, it illustrates how to define the URL to access the content of your bucket. 
+You can also check the respective cloud provider documentation.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;OCI_BUCKET&lt;/code&gt;: Is the bucket name&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;MOUNT_POINT&lt;/code&gt;: This is the path where we are mounting our files in the container.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The command creates a file called &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;passwd&lt;/code&gt; and they put the credentials inside it. Then they change the permission of the file. Permission 600 means read and write from the owner and no other permission from the group and others.&lt;/p&gt;
+
+&lt;p&gt;The main command  &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;s3fs&lt;/code&gt; mounts the bucket to the mount point. 
+The flags &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt;&lt;/code&gt; and &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;&lt;/code&gt; are for debugging purposes.&lt;/p&gt;
+
+&lt;p&gt;Let us create a docker container that uses that script.&lt;/p&gt;
+
+&lt;h3 id=&quot;second-step--build-the-container-image&quot;&gt;Second Step : Build the container image.&lt;/h3&gt;
+
+&lt;p&gt;Let us create the docker image using the following DockerFile:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM anujkosambi/s3fs-fuse
+
+ENV MOUNT_POINT /var/s3
+RUN &lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$MOUNT_POINT&lt;/span&gt;
+COPY run.sh run.sh
+RUN &lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x run.sh
+CMD ./run.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The docker container pulls from the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;s3fs-fuse&lt;/code&gt; image and copies the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;run.sh script&lt;/code&gt;, changes it permission to be executable, and then executes the script.&lt;/p&gt;
+
+&lt;p&gt;If you have the docker file saved as &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;DockerFile&lt;/code&gt; and your &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;run&lt;/code&gt; script saved as &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;run.sh&lt;/code&gt; at the same location you can build your container using:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;docker build &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; espymur/s3fs:latest &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; DockerFile &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h3 id=&quot;third-step-starting-the-docker-container&quot;&gt;Third Step: Starting the docker container.&lt;/h3&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In order run the container you need the values of your environment variables. Go to your cloud console and collect the environment variables. Then run the following command:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;docker run  &lt;span class=&quot;nt&quot;&gt;--privileged&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ORACLE_CLOUD_SECRET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;your_secret &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;OCI_BUCKET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;bucket_name  &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;REGION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;your-region &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;TENANT_ID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;your_tenant-id &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ACCESS_KEY_ID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;acces_key_id espymur/s3fs:latest&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Note the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;--privileged&lt;/span&gt;&lt;/code&gt; mode. It permits the docker container to write to the container host. You can read more about it &lt;a href=&quot;https://stackoverflow.com/questions/75296630/what-does-the-docker-exec-privileged-flag-do&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If everything is fine you should be able to exec a command in your container like this to check if the data in your bucket are there.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; container_id &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; /var/s3&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The command should put the content of your bucket.&lt;/p&gt;
+
+&lt;p&gt;Now we can mount the bucket content in our docker container, let us see how to use that in a Kubernetes environment.&lt;/p&gt;
+
+&lt;p&gt;With we have achieved what we can see in the following image:&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2024-06-19-mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes/storage-container.png&quot; /&gt;&lt;/p&gt;
+  &lt;figcaption&gt;S3 storage mounted inside a docker container&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;then-comes-kubernetes&quot;&gt;Then comes Kubernetes.&lt;/h2&gt;
+
+&lt;p&gt;Now that the bucket mounts as in your docker container, let’s see how it would work in practice with Kubernetes.&lt;/p&gt;
+
+&lt;p&gt;Our end goal is to deploy a Machine Learning model in a Kubernetes cluster. The bucket will act as our model repository, and It will host our Machine Learning model.&lt;/p&gt;
+
+&lt;p&gt;The first component we will create is a &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;Secret&lt;/code&gt;, then we will create a &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;DaemontSet&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;kubernetes-secrets&quot;&gt;Kubernetes Secrets.&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A Secret is an object that contains a small amount of sensitive data such as a password, a token, or a key. Such information might otherwise be put in a &lt;a href=&quot;https://kubernetes.io/docs/concepts/workloads/pods/&quot;&gt;Pod&lt;/a&gt; specification or in a &lt;a href=&quot;https://kubernetes.io/docs/reference/glossary/?all=true#term-image&quot;&gt;container image&lt;/a&gt;. Using a Secret means that you don’t need to include confidential data in your application code.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For our usecase our secret are the Oracle cloud credentials. Please note that kubernetes secret should not be shared with git. We need to add the it path to &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is how we will defines our kubernetes secrets:&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;apiVersion&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;v1&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;kind&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Secret&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;oracle-cloud-credentials&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Opaque&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;ORACLE_CLOUD_SECRET&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;secrets&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;hashed&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;base64=&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;OCI_BUCKET&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Your&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;hashed&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;base64=&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;REGION &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;region&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;hashed&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;base64=&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;TENANT_ID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;tenant&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;hashed&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;base64&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;ACCESS_KEY_ID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;access&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;hashed&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;base64&quot;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Note that the values in our secrets are the real values of our secrets hashed in base64. Using the following command.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'oursecret'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;base64&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;We create the secrets with &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;kubectl apply &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; secret.yaml&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;daemonset-component&quot;&gt;DaemonSet Component.&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A &lt;em&gt;DaemonSet&lt;/em&gt; ensures that all (or some) Nodes run a copy of a Pod. As nodes are added to the cluster, Pods are added to them. As nodes are removed from the cluster, those Pods are garbage collected. Deleting a DaemonSet will clean up the Pods it created.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A DaemonSet is the perfect component for our use case, we want to mount our bucket in all the nodes of our Kubernetes cluster in order to make the storage available to all pods that are running on the node.&lt;/p&gt;
+
+&lt;p&gt;The DaemontSet will help us to achieve what we can view on this picture:&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2024-06-19-mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes/daemonset.png&quot; /&gt;&lt;/p&gt;
+  &lt;figcaption&gt;What our DaemontSet Achieve&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I came across this component type when I was researching this tutorial.&lt;/p&gt;
+
+&lt;p&gt;Here is how we create the DaemonSet:&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;apiVersion&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;apps/v1&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;kind&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;DaemonSet&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;k8s-app&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;oracle-cloud-provider&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;oracle-cloud-provider&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;matchLabels&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;oracle-cloud-provider&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;oracle-cloud-provider&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;containers&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;oracle-cloud-fuse&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;uk-london-1.ocir.io/lrtfqsmony6u/s3fs:latest&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;imagePullPolicy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Always&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;securityContext&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;privileged&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;envFrom&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;secretRef&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;oracle-cloud-credentials&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;volumeMounts&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;devfuse&lt;/span&gt;
+              &lt;span class=&quot;na&quot;&gt;mountPath&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/dev/fuse&lt;/span&gt;
+            &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;oracle-cloud-fs&lt;/span&gt;
+              &lt;span class=&quot;na&quot;&gt;mountPath&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/var/s3&lt;/span&gt;
+              &lt;span class=&quot;na&quot;&gt;mountPropagation&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Bidirectional&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# this was the key to make it work.&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;devfuse&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;hostPath&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/dev/fuse&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;oracle-cloud-fs&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;hostPath&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/tmp/s3&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;As you can see the Daemonset syntax is familiar to the Deployment syntax, they both define pods and volumes.&lt;/p&gt;
+
+&lt;p&gt;This Daemonset defines the container, this is the container we defined previously and it runs the s3fs code that mounts the bucket. You can check, we are running it with SecurityContext &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;privileged&lt;/code&gt; which is the equivalent of the docker mode &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;--privileged&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;VolumeMounts&lt;/code&gt; argument defines the original path of the content  (files ) we want to mount in &lt;strong&gt;our container&lt;/strong&gt;.&lt;br /&gt;
+The &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;Volume&lt;/code&gt; definition, on the other hand, defines the volume mount path in the host system, for this case our Kubernetes nodes.&lt;/p&gt;
+
+&lt;p&gt;This means that the content of the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;/var/s3&lt;/code&gt; folder in our container will be mounted to the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;/tmp/s3&lt;/code&gt; folder in our docker container. The hostPath argument needs to be a writeable folder in our docker container.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;mount propagation&lt;/code&gt; argument is important to make the mapping work, I spent hours trying to figure out this parameter to make my mount work.&lt;/p&gt;
+
+&lt;p&gt;From the &lt;a href=&quot;https://kubernetes.io/docs/concepts/storage/volumes/#mount-propagation&quot;&gt;Kubernetes documentation&lt;/a&gt; we can read that:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;HostToContainer&lt;/code&gt; - This volume mount will receive all subsequent mounts that are mounted to this volume or any of its subdirectories.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In other words, if the host mounts anything inside the volume mount, the container will see it mounted there.&lt;/p&gt;
+
+    &lt;p&gt;Similarly, if any Pod with &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;Bidirectional&lt;/code&gt; mount propagation to the same volume mounts anything there, the container with &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;HostToContainer&lt;/code&gt; mount propagation will see it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;Bidirectional&lt;/code&gt; - This volume mount behaves the same the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;HostToContainer&lt;/code&gt; mount. In addition, all volume mounts created by the container will be propagated back to the host and to all containers of all pods that use the same volume.&lt;/p&gt;
+
+    &lt;p&gt;#### Warning:&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;Bidirectional&lt;/code&gt; mount propagation can be dangerous. It can damage the host operating system and therefore it is allowed only in privileged containers. Familiarity with Linux kernel behavior is strongly recommended. In addition, any volume mounts created by containers in pods must be destroyed (unmounted) by the containers on termination.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;PS: I had some issues dealing with the container termination. If the Dameonset is not terminated properly the volume path will not work in the subsequent run. You have to change the path when you run it again to make it work.
+We will create our Daemonset with&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;kubectl apply &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; daemonset.yaml&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The Daemonset will create a pod in each node of our cluster, you can check the pods with&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;kubectl get pods&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You will see the pod running.&lt;/p&gt;
+
+&lt;p&gt;To check if the mount is working, you can ssh into your nodes and list the content of &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;/tmp/s3&lt;/code&gt;. Should everything works correctly, you should be able to see the content of the bucket.&lt;/p&gt;
+
+&lt;p&gt;If not check the logs our your pod to see what went wrong.&lt;/p&gt;
+
+&lt;p&gt;To ssh nodes in the cluster, you can use this &lt;a href=&quot;https://github.com/luksa/kubectl-plugins&quot;&gt;kubernetes plugin&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If the Daemonset is working, go to the next step which is using it with the deployment to deploy models.&lt;/p&gt;
+
+&lt;p&gt;I have read that using a docker container with &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;privileged &lt;/code&gt; mode offers security risk and may not be advised in a high-security environment. If that is your use case you can try to use Persisent Volume to achieve the same results.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;To summarise, this posts has shown us how to mount the content of Object Storage like S3 in docker volume.  We leverage the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;s3fs&lt;/code&gt; library and we mounted the strorage inside container. Finally, we used a Daemonset pod to share the content of our container with the nodes in our Kubernetes cluster.&lt;/p&gt;
+
+&lt;p&gt;To know how this is done, go ahead and read part 3 of these series of posts where I will show how to deploy Machine Learning model using the created volume.&lt;/p&gt;
+
+&lt;p&gt;In the next post, we will learn how to use that volume in a Machine Learning application.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dev.to/otomato_io/mount-s3-objects-to-kubernetes-pods-12f5&quot;&gt;Mount S3 Objects to Kubernetes Pods.&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://blog.meain.io/2020/mounting-s3-bucket-kube/&quot;&gt;Mounting S3 bucket in docker containers on kubernetes.&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 19 Jun 2024 14:20:27 +0100</pubDate>
+        <link>http://localhost:4000/mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes</link>
+        <guid isPermaLink="true">http://localhost:4000/mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes</guid>
+        
+        
+      </item>
     
       <item>
         <title>Deploy your language models to production using ONNX runtime and the Triton inference server</title>
@@ -19,13 +362,13 @@
 
 &lt;h2 id=&quot;deploy-your-language-models-to-production-using-onnx-runtime-and-the-triton-inference-server&quot;&gt;Deploy your language models to production using ONNX runtime and the triton inference server&lt;/h2&gt;
 
-&lt;p&gt;You are a Data Scientist who has finally trained a  language model in a jupyter notebook. The model works fine, and you are happy with your results. Now you want to expose it to the users so that they can interact with it.&lt;/p&gt;
+&lt;p&gt;You are a Data Scientist who has finally trained a language model in a jupyter notebook. The model works fine, and you are happy with your results. Now you want to expose it to the users so that they can interact with it.&lt;/p&gt;
 
 &lt;p&gt;You have different options to serve your model to your users. You can use the jupyter notebook directly in production. You can wrap the model in a pickle file and serve it using an API. Both options work, but can they handle millions of requests per second in a production environment? In this post, I will show how you can use modern tools to deploy a language model in a scalable way.  We’ll use the ONNX runtime, Triton inference server, and Kubernetes. These tools will help us to deploy  a production-ready language model.&lt;/p&gt;
 
-&lt;p&gt;Data scientists and Machine Learning Engineer  and  researchers aiming to use their models in production should read this. It discusses the engineering principles of scalable language models APIs.&lt;/p&gt;
+&lt;p&gt;Data scientists, Machine Learning Engineer and researchers aiming to use their models in production should read this. It discusses the engineering principles of scalable language models APIs.&lt;/p&gt;
 
-&lt;p&gt;It will be divided into two parts. In the first part, we will prepare the model for a production setting. We will use the ONNX runtime and Docker container to achieve that goal. Finally,  in the second part, we will learn how to scale our Apis using Kubernetes.&lt;/p&gt;
+&lt;p&gt;It will be divided into two parts. In the first part, we will prepare the model for a production setting. We will use the ONNX runtime and Docker container to achieve that goal. Finally, in the second part, we will learn how to scale our Apis using Kubernetes.&lt;/p&gt;
 
 &lt;p&gt;If I have time later, I’ll explain how to use the embedding API in a  downstream app  like a Retrieval Augmentation Generation (RAG).&lt;/p&gt;
 
@@ -40,21 +383,20 @@
 
 &lt;h2 id=&quot;embeddings&quot;&gt;Embeddings.&lt;/h2&gt;
 
-&lt;p&gt;Embedding models are the backbone of generative AI. They are a major piece of such applications.&lt;/p&gt;
-
-&lt;p&gt;Embeddings are representations of words in a vector space. They capture words semantics such as, with them, similar vectors represent similar words.&lt;/p&gt;
+&lt;p&gt;Embedding models are the backbone of generative AI. 
+Embeddings are representations of words in a vector space. They capture words semantics such as, with them similar vectors represent similar words.&lt;/p&gt;
 
 &lt;p&gt;Contextual embeddings are embeddings such as each word is represented with a vector given its context.&lt;/p&gt;
 
 &lt;p&gt;Let’s look at those two examples:&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;The bank of the river Thames is located in south London.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The bank of the river Thames is located in South London.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;I am going to withdraw cash at Lloyds Bank.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;In those two different sentences the word &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;bank&lt;/code&gt; has two different meanings. In the first,  bank means &lt;em&gt;the land alongside or sloping down to a river or lake.&lt;/em&gt; In the second sentence, it means &lt;em&gt;a place where you save money.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In those two different sentences the word &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;bank&lt;/code&gt; has two different meanings. In the first, bank means &lt;em&gt;the land alongside or sloping down to a river or lake.&lt;/em&gt; In the second sentence, it means &lt;em&gt;a place where you save money.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Embedding models can capture those differences. And  represent words with two different vectors according to the context.&lt;/p&gt;
+&lt;p&gt;Embedding models can capture those differences and represent words with two different vectors according to the context.&lt;/p&gt;
 
 &lt;p&gt;This is not a post to explain how embedding models are built, if you want to learn more about them refer to &lt;a href=&quot;https://mccormickml.com/2019/05/14/BERT-word-embeddings-tutorial/&quot;&gt;this post.&lt;/a&gt;&lt;/p&gt;
 
@@ -69,17 +411,17 @@
 
 &lt;p&gt;Large language models are neural networks or probabilistic models that can predict the next word given the previous words.&lt;/p&gt;
 
-&lt;p&gt;One of the most common neural network architectures to power language models is the transformer model. It was introduced in 2017 by Google researchers. Those models have a powerful capacity when to comes to understanding words and their meanings. Because they are trained on a large corpus of documents.&lt;/p&gt;
+&lt;p&gt;One of the most common neural network architectures that power language models is the Transformer model. It was introduced in 2017 by Google researchers. Those models have a powerful capacity when to comes to understanding words and their meanings because they are trained on a large corpus of documents.&lt;/p&gt;
 
-&lt;p&gt;During their training, transformers’ models can learn contextual word embedding.  Those embeddings are useful in downstream applications such as chatbots, document classification, topic modeling, document clustering  et consort.&lt;/p&gt;
+&lt;p&gt;During their training, transformers’ models can learn contextual word embeddings.  Those embeddings are useful in downstream applications such as chatbots, documents classification, topic modeling, documents clustering  et consort.&lt;/p&gt;
 
 &lt;p&gt;Again, this post is not about language models, there  are legions on the internet, my favorite one is the  &lt;a href=&quot;https://jalammar.github.io/illustrated-transformer/&quot;&gt;illustrated trasnfomer&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;If this post is not about word embedding theory, or large language model theory what is it about?&lt;/p&gt;
 
-&lt;p&gt;Nice question, this post is about deploying a large language model. We will learn how to create an embedding service, a api that developers can query to generate document embedding.&lt;/p&gt;
+&lt;p&gt;Nice question, this post is about deploying a large language model. We will learn how to create an embedding service, a api that developers can query to generate document embeddings.&lt;/p&gt;
 
-&lt;p&gt;We will build a scalable API. Developers can query it to get word embeddings of their sentences. They can use the embeddings in downstream applications. This API can be part of a chatbot, or a Retrieval Augmented Generation application.&lt;/p&gt;
+&lt;p&gt;We will build a scalable API developers can query it to get word embeddings of their sentences. They can use the embeddings in downstream applications. This API can be part of a chatbot, or a Retrieval Augmented Generation application.&lt;/p&gt;
 
 &lt;p&gt;I made it for educational purposes while learning how to deploy a language model using Kubernetes.  If you want a production-ready application that can support multiple embedding models  &lt;a href=&quot;https://github.com/jina-ai/clip-as-service&quot;&gt;checkout this repos.&lt;/a&gt;&lt;/p&gt;
 
@@ -89,9 +431,9 @@
 
 &lt;h2 id=&quot;the-embedding-models&quot;&gt;The embedding models.&lt;/h2&gt;
 
-&lt;p&gt;In this post, we will explore the embedding model generated by the BioLinkBert. The bioLinkBert model is a model from the BERT family but it was fine-tuned on documents from the medical domain. The reason I used the Biolink model is that I want to build a chatbot application for the medical domain in the future.&lt;/p&gt;
+&lt;p&gt;In this post, we will explore the embedding model generated by the BioLinkBert. The BioLinkBert model is a model from the BERT family but it was fine-tuned on documents from the medical domain. The reason I used the Biolink model is that I want to build a chatbot application for the medical domain in the future.&lt;/p&gt;
 
-&lt;p&gt;The embedding of words is the last hidden state of a transformer model where the output is the word encoded as text. Let us see how it works  in practice. We will be using a custom Bert model which inherits the base Bert model from Huggingface.&lt;/p&gt;
+&lt;p&gt;The embedding of words is the last hidden state of a transformer model where the input is the word encoded as text. Let us see how it works  in practice. We will be using a custom Bert model which inherits the base Bert model from Huggingface.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;dataclasses&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dataclass&lt;/span&gt;
@@ -134,7 +476,7 @@
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Before passing the text to the embedding the text need to be transformed in a tokenizer.&lt;/p&gt;
+&lt;p&gt;Before passing the text to the embedding, it needs to be transformed in a tokenizer.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;transformers&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AutoTokenizer&lt;/span&gt;
 
@@ -166,7 +508,7 @@ It can be use in downstream application in different ways.&lt;/p&gt;
 
 &lt;p&gt;The next step is save the model in the format we can use to deploy it in production.&lt;/p&gt;
 
-&lt;h2 id=&quot;exporting-the-model-to-onnx-format&quot;&gt;Exporting the Model to Onnx format&lt;/h2&gt;
+&lt;h2 id=&quot;exporting-the-model-to-onnx-format&quot;&gt;Exporting the Model to Onnx format.&lt;/h2&gt;
 
 &lt;h3 id=&quot;what-is-the-onnx-format&quot;&gt;What is the ONNX format?&lt;/h3&gt;
 
@@ -221,9 +563,9 @@ It can be use in downstream application in different ways.&lt;/p&gt;
 
 &lt;h2 id=&quot;model-deployment-on-docker-with-the-onnx-runtime&quot;&gt;Model deployment on Docker with the ONNX Runtime.&lt;/h2&gt;
 
-&lt;p&gt;In this section, we will learn how  to use the transformed model in a docker container.&lt;/p&gt;
+&lt;p&gt;In this section, we will learn how  to use the model in a docker container.&lt;/p&gt;
 
-&lt;p&gt;One of the most obvious solutions is to deploy the model and wrap it in with Flask or Fastapi. While this solution can work in practice, it has some latency due to related the fact that the API is written in Python.   For this blog I will try a different approach, I will deploy the model using the onnx runtime which is a C++ backend. We will leverage the fact that our model in ONNX format is platform agnostic and we can deploy on any language backend.&lt;/p&gt;
+&lt;p&gt;One of the most obvious solutions is to deploy the model and wrap it in with Flask or Fastapi. While this solution can work in practice, it has some latency due to related the fact that the API is written in Python. For this blog I will try a different approach, I will deploy the model using the onnx runtime which is a C++ backend. We will leverage the fact that our model in ONNX format is platform agnostic and we can deploy on any language backend.&lt;/p&gt;
 
 &lt;h3 id=&quot;triton-server&quot;&gt;Triton Server&lt;/h3&gt;
 
@@ -253,7 +595,7 @@ It can be use in downstream application in different ways.&lt;/p&gt;
 
 &lt;h3 id=&quot;the-triton-server&quot;&gt;The Triton Server&lt;/h3&gt;
 
-&lt;p&gt;Let us set up the model repository for the triton inference server&lt;/p&gt;
+&lt;p&gt;Let us set up the model repository for the triton inference server.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &lt;span class=&quot;err&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;touch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;embedding_model_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__str__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pbtxt&lt;/span&gt;
@@ -270,11 +612,9 @@ It can be use in downstream application in different ways.&lt;/p&gt;
 
 &lt;p&gt;This bash script will create the model repository  for our embedding model. The next section will set up the files in that model repository to run our models.&lt;/p&gt;
 
-&lt;p&gt;The model repository should have three components, the tokenizer, the embedding model, and the ensemble model.&lt;/p&gt;
-
-&lt;p&gt;The tokenizer is the configuration of our tokenizer model, it uses the Python backend and handles the tokenization of our text input.&lt;/p&gt;
-
-&lt;p&gt;The tokenizer repository should have the files from our tokenizer, the model code, and the model configuration.&lt;/p&gt;
+&lt;p&gt;The model repository should have three components, the tokenizer, the embedding model, and the ensemble model.
+The tokenizer is the configuration of our tokenizer model, it uses the Python backend and handles the tokenization of our text input.
+The tokenizer repository should have the files from our tokenizer, the model code, and the model configuration.&lt;/p&gt;
 
 &lt;p&gt;It should have the following layout:&lt;/p&gt;
 
@@ -303,7 +643,7 @@ It can be use in downstream application in different ways.&lt;/p&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;From that tokenizer we will create the model.py file, which will handle the tokeinization part.&lt;/p&gt;
+&lt;p&gt;From that tokenizer we will create the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;model.py&lt;/code&gt; file, which will handle the tokeinization part.&lt;/p&gt;
 
 &lt;p&gt;Here is how the model should look like&lt;/p&gt;
 
@@ -369,7 +709,7 @@ It can be use in downstream application in different ways.&lt;/p&gt;
 
 &lt;p&gt;With our tokenizer setup, let us configure the Python server to use it.&lt;/p&gt;
 
-&lt;p&gt;The content of the tokenizer/config.pbxt should look like this.&lt;/p&gt;
+&lt;p&gt;The content of the &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;tokenizer/config.pbxt&lt;/code&gt; should look like this.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;%%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;writefile&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;embedding_model_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__str__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tokenizer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pbtxt&lt;/span&gt;
 
@@ -2176,151 +2516,6 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
         <pubDate>Fri, 23 Jul 2021 14:57:09 +0100</pubDate>
         <link>http://localhost:4000/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation</link>
         <guid isPermaLink="true">http://localhost:4000/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation</guid>
-        
-        
-        <category>non-tech</category>
-        
-      </item>
-    
-      <item>
-        <title>My books recommendations to enhance your Soft Skills as a developer</title>
-        <description>
-&lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/cover.png&quot; /&gt;&lt;/p&gt;
-  &lt;figcaption&gt;cover&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Three years ago, I decided to part ways with my Facebook account, and I decided to replace the time spent on Facebook with reading developers’ blogs. During that time, I stumbled across &lt;a href=&quot;https://dev.to/&quot;&gt;dev&lt;/a&gt;, medium, and quora. These sites and publications have contributed a lot to the developer I am today.  I decided to dig deeper in my social media detox. Last year, I decided to block WhatsApp status unless Man-City qualified for the Champions League final and spent the time reading books about soft skills to improve my softs skills as a developer.&lt;/p&gt;
-
-&lt;p&gt;I am not planning to talk about the pros and cons of not having a social media account here, I will talk about a few books, which I read recently, which improved my soft skills as a developer.&lt;/p&gt;
-
-&lt;h2 id=&quot;dale-carnegie-how-to-win-friends--influence-people-1998-edition&quot;&gt;&lt;a href=&quot;https://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034&quot;&gt;Dale Carnegie, How to Win Friends &amp;amp; Influence People, 1998 Edition&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;After the Bible, this is the best and essential book in my life. It has improved my life, not only as a developer but also as a person in general. It helps me improve my communication skills, communicate with anyone, avoid arguments, and be a good leader.&lt;/p&gt;
-
-&lt;p&gt;The first aspect I appreciate from this book comes from the introduction, where the author explains how we should read the book to gain most of it. Those pieces of advice were very useful for every other book I read after this one.&lt;/p&gt;
-
-&lt;p&gt;After reading this book, my communication skills got better, and I was able to land a job with a triple of my previous salary.&lt;/p&gt;
-
-&lt;p&gt;My favorite quote from the book is :&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;The highest-paid personnel in engineering are frequently not those who know the most about engineering. The person who has technical knowledge plus the ability to express ideas, assume leadership, and arouse enthusiasm among people – that person is headed for higher earning power.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;If you would like to improve your soft skills and be better at communication, I recommend this book.&lt;/p&gt;
-
-&lt;p&gt;There are numerous benefits of reading this book; I remember in the third chapter where the author wrote: “the best way to win your friend into your way of thinking is to talk about the other person’s interest.” Later in the chapter about arguments when the author &lt;em&gt;&lt;strong&gt;said you “can’t win an argument. A man convinced against his will is of the same opinion still”.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;james-clear-atomic-habits-an-easy--proven-way-to-build-good-habits--break-bad-ones-2018-edition-&quot;&gt;&lt;a href=&quot;https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299&quot;&gt;James Clear, Atomic Habits: An Easy &amp;amp; Proven Way to Build Good Habits &amp;amp; Break Bad Ones, 2018 Edition &lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;The second book is a recent bestseller, and it is not about communication but rather about building good habits. Have you ever found yourself in the bad habit of checking social media every time you are working? Are you constantly failing to start a habit of something you care about and know is essential for your health, such as reading a book or exercising every day? I recommend the book Atomic Habits by James Clear.&lt;/p&gt;
-
-&lt;p&gt;The book explains how getting 1% better every day can be beneficial over time.  From the first chapter, I learned how small habits compound over time.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;As you can see in the picture below :&lt;/em&gt;&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/atomic_habits_effects.png&quot; /&gt;&lt;/p&gt;
-  &lt;figcaption&gt;atomic habits effects&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;&lt;em&gt;“The effects of small habits compound over time. For example, if you can get just 1 percent better each day, you’ll end up with results that are nearly 37 times better after one year.”&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The book’s backbone is a four-step model of habits  - cue, craving, response, reward, and the four laws of behavior change that evolve out of these steps. The mastery of those four laws is an essential step for everyone who wants to build better habits.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Make it obvious, Make it attractive, Make it easy and Make it satisfying.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;By understanding those laws, on the one hand, you will learn how addictive products such as video games or social media applications are built. On the other hand, you can learn how to use the same psychological tips in those products to your favor when building solid habits. Lessons learned from that book can easily be applied to a software development career, especially if you want to develop strong habits within your software development team.&lt;/p&gt;
-
-&lt;h2 id=&quot;robert-kiyosaki-rich-dad-poor-dad-what-the-rich-teach-their-kids-about-money-that-the-poor-and-middle-class-do-not-2017-edition&quot;&gt;&lt;a href=&quot;https://www.amazon.com/Rich-Dad-Poor-Teach-Middle/dp/1612680194&quot;&gt;Robert Kiyosaki, Rich Dad Poor Dad: What the Rich Teach Their Kids About Money That the Poor and Middle Class Do Not 2017 Edition&lt;/a&gt;.&lt;/h2&gt;
-
-&lt;p&gt;The third book is neither on leadership nor habits, but it is a financial best-seller  Rich Dad, Poor Dad.  Do you want to be financially free, never to be broke again? This book is for you. The author of the book exposes two contrasting views about money from his two dads; the one he called poor dad, his real dad who was working for the government and taught him to work for money, and his rich dad, who was his best friend’s dad who taught him how to let the money work for him. From the book, I learned the difference between assets and liability and why we should buy assets instead of liabilities.&lt;/p&gt;
-
-&lt;p&gt;There are numerous lessons I learned from the book, but here is the most important one :&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;The cone of learning&lt;/em&gt;&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/cone_of_learnings.png&quot; /&gt;&lt;/p&gt;
-  &lt;figcaption&gt;cones of learning&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;Rich don’t work for money. They work to learn how to let money work for them one day&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;The ability to sell—to communicate to another human being, be it a customer, employee, boss, spouse, or child—is the base skill of personal success.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Never Say I can’t afford it, or I can do it, instead ask yourself how I can afford it or do it&lt;/em&gt;?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;By completing this book, I realized how important it is to be financially free, and I decided to start thinking about building my own company.&lt;/p&gt;
-
-&lt;h2 id=&quot;napoleon-hill-think-and-grow-rich-1937&quot;&gt;Napoleon Hill, &lt;em&gt;Think and Grow Rich,&lt;/em&gt; 1937.&lt;/h2&gt;
-
-&lt;p&gt;Another interesting book I read which is similar to this one is: Think and  Grow Rich by Napoleon Hill.&lt;/p&gt;
-
-&lt;p&gt;I haven’t yet finished the book, but it has numerous lessons on how to get rich from what I am reading. And from the author’s perspective, the book is not only about being rich in terms of money but being rich in other aspects of your life such as marriage, health, or studies. The book highlighted 14 key success factors. The book contains stories and extracts of the most successful person on the planet bibliographies such as T. Edinson, H.Ford or Andrew Carnegie. The key concept from the book is that the rich start from someone’s mind. The author gives six key steps in which desires of riches can be transmuted to this physical equivalent. I think those steps are easy to apply, and I have started seeing their benefits in my current life.&lt;/p&gt;
-
-&lt;p&gt;Here is my favorite quote from the book :&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;“If you think you are beaten, you are&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;If you think you dare not, you don’t,&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;If you like to win, but you think you can’t&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;It is almost certain you won’t.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;If you think you’ll lose, you’re lost&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;For out of the world we find,&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Success begins with a fellow’s will&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;It’s all in the state of mind.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;If you think you are outclassed, you are&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;You’ve got to think high to rise,&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;You’ve got to be sure of yourself before&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;You can ever win a prize.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Life’s battles don’t always go&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;To the stronger or faster man,&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;But soon or late the man who wins&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Is the man WHO THINKS HE CAN!”&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;I haven’t yet finished the book, but the lessons in my life are enormous.&lt;/p&gt;
-
-&lt;h2 id=&quot;robert-c-martin-clean-coder-the-a-code-of-conduct-for-professional-programmers-2011&quot;&gt;&lt;a href=&quot;https://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers/dp/0137081073&quot;&gt;Robert C. Martin, Clean Coder, The: A Code of Conduct for Professional Programmers, 2011.&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;Last but not least is the book I am currently reading and the book I wish I read when I started my software development career—the Clean Coder.&lt;/p&gt;
-
-&lt;p&gt;The book’s author is Uncle Bob, an experienced programmer with more than 42 years of coding experience. The book is all about professionalism for software developers. It describes the actions and disciplines you should consider to be a professional developer. Most of the lessons you find from the book came from his experience and are very useful for today’s developers. From the book, you can learn how to say No and say Yes in your day-to-day job as a software engineer. How testing can help you become a professional developer. It talks about work ethics and how you should keep learning to stay updated on your skills. How to become a better team player. How to handle meetings at work and avoid working overtime and, more importantly, improving your productivity as a developer. I haven’t yet completed the book, but after reading the first two chapters of this book, I had concluded that this is the book I wish I had read when I started coding. I recommend it for every teacher who is teaching software engineering to school. It is the handbook for professionalism as a Software Engineer.&lt;/p&gt;
-
-&lt;h2 id=&quot;final-thoughts&quot;&gt;Final thoughts&lt;/h2&gt;
-
-&lt;p&gt;That is all about books I read last year. They are not enough in comparison with  books that humans have written on this earth, but in one year it is a lot, and the most important was not to read the book but to put into practice what you read from them. When I get old, I will have a large library like this one, and I can brag about them to my friends.&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2021-06-05-my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/book_shelf.png&quot; /&gt;&lt;/p&gt;
-  &lt;figcaption&gt;book shelve&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;How do I manage to find time to read and work full time with endless bugs in a world full of distractions? The secret came from the book Atomic habits. I have made it easy for me. I have a ritual, my morning routine. I know that I have to do two things in the morning; my fitness routine, brushing my teeth, and reading for at least 30 minutes. And as a reward for this routine, I can open my phone and check if I have important emails or any notification that will boost my dopamine.&lt;/p&gt;
-
-&lt;p&gt;And as I said in the introduction, I learned how to gain time from social media and WhatsApp status by making the habits of checking them hard by blocking access to my contacts to WhatsApp and just deleting my Facebook account. I also use Twitter for 10 minutes per day on my laptop and from 7 pm to 10 pm on my phone and only in read-only mode.&lt;/p&gt;
-
-&lt;p&gt;I hope you learned something from this, and I can guarantee that you will learn more from the book I shared.&lt;/p&gt;
-
-&lt;p&gt;Do you have similar books to recommend to me? Feel free to leave them as a  comment. Otherwise, take care and enjoy life. Cheers.&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 05 Jun 2021 14:57:09 +0100</pubDate>
-        <link>http://localhost:4000/blog/2021/my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2021/my-books-recommendations-to-enhance-your-soft-skills-as-a-developer/</guid>
         
         
         <category>non-tech</category>
