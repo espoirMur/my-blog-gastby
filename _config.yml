@@ -14,7 +14,7 @@ kramdown:
       start_line: 1
 
 
-plugins: [jekyll-paginate-v2, jekyll-seo-tag, match_regex]
+plugins: [jekyll-paginate-v2, jekyll-seo-tag, match_regex, jekyll-feed]
 
 pagination:
   enabled: true
@@ -46,7 +46,7 @@ disqus_site_shortname: "nandothemes"
 author:
   name: Murhabazi Buzina, Espoir
   job: Machine Learning Engineer
-  bio: "A Software Engineer lost in Data Science"
+  bio: "Congolese Machine Learning Engineer"
   thumb: /assets/images/me.jpg
   profile-pic: /assets/images/me-official-speaker.jpg
   email: espoir.mur on gmail
