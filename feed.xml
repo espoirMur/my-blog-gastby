@@ -5,9 +5,182 @@
     <description>Murhabazi Buzina Espoir Home on the internet</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 25 Jun 2024 09:01:43 +0100</pubDate>
-    <lastBuildDate>Tue, 25 Jun 2024 09:01:43 +0100</lastBuildDate>
+    <pubDate>Thu, 27 Jun 2024 15:38:00 +0100</pubDate>
+    <lastBuildDate>Thu, 27 Jun 2024 15:38:00 +0100</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>Deploying a Language Model with Triton Inference Server on Kubernetes.</title>
+        <description>&lt;h1 id=&quot;deploying-a-language-model-with-triton-inference-server-on-kubernetes&quot;&gt;Deploying a Language Model with Triton Inference Server on Kubernetes.&lt;/h1&gt;
+
+&lt;figure&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2024-06-26-deploying-a-language-model-with-triton-inference-server-on-kubernetes/Kubernetes.png&quot; /&gt;&lt;/p&gt;
+  &lt;figcaption&gt;Navigator &amp;lt;\br&amp;gt; Source: [PixelBay](https://pixabay.com/photos/boat-clouds-rustic-rusty-sky-1834397/)&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This is my third post on Machine Learning with Kubernetes. In the first one, we built, prepare an embedding model for production using ONNX runtime, Triton Inference Server and Docker. In the second we learned how to mount a Model repository on an Object Storage as Volume with Docker and Kubernetes. In this post, we will learn how to host our machine learning model on Kubernetes.&lt;/p&gt;
+
+&lt;p&gt;In this post we will learn how to deploy the machine learning model on Kubernetes. The reader is expected to:
+	- Have some basic knowledge of docker and Kubernetes.
+	- To have a kubernetes cluster running on his machine either via &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;minikube&lt;/code&gt; or a cloud provider of his choice.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-we-have-so-far&quot;&gt;What we have so far:&lt;/h3&gt;
+
+&lt;figure&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2024-06-26-deploying-a-language-model-with-triton-inference-server-on-kubernetes/daemonset.png&quot; /&gt;&lt;/p&gt;
+  &lt;figcaption&gt;what we have build so far&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;With the two post we have managed to build our docker container with triton inference server with docker and we run our container on our local machine. In the second we learned how to mount our model repository as docker volumes. Now let use the two components to deploy our machine learning model on a Kubernetes cluster.&lt;/p&gt;
+
+&lt;h3 id=&quot;first-component-the-deployment&quot;&gt;First Component: The deployment.&lt;/h3&gt;
+
+&lt;p&gt;A Deployment is a Kubernetes object that manages the pod  creation by using ReplicatSet. A ReplicatSet as the name imply, specify how many replication or container instance of a pod we need to run. This can be a little bit abstract for now, but wwe will see how it works in practice.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2024-06-26-deploying-a-language-model-with-triton-inference-server-on-kubernetes/replicat-set.png&quot; /&gt;&lt;/p&gt;
+  &lt;figcaption&gt; A deployment with replica set that deploy n instance of a pod. Source: [Kubernetes in Action](https://www.manning.com/books/kubernetes-in-action)&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;For our work we need a deployment, where we want to define our many replicas we want for our application, the container that will be running our application with the port where our application can be accessed. Then we will use the volume mount, to mount our model repostiory storage inside our docker container. For this, note that our volume hostpath should be the path where our bucket is mounted in our host machine, &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;/tmp/s3&lt;/code&gt; for this case. Finally we will defines the resources requests four our model. As our model is relatively small we will be running it with 1 CPU and 2Gi of memory.&lt;/p&gt;
+
+&lt;p&gt;The final deployment for our model will look like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;apiVersion&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;apps/v1&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;kind&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Deployment&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;biogpt&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;biogpt&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;replicas&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;matchLabels&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;biogpt&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+         &lt;span class=&quot;na&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;biogpt&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;oracle-cloud-fs&lt;/span&gt;
+         &lt;span class=&quot;na&quot;&gt;hostPath&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+           &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;/tmp/s3&lt;/span&gt;
+
+       &lt;span class=&quot;na&quot;&gt;containers&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+         &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;embedding-models&lt;/span&gt;
+           &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+           &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;containerPort&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;8000&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http-triton&lt;/span&gt;
+           &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;containerPort&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;8001&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;grpc-triton&lt;/span&gt;
+           &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;containerPort&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;8002&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;metrics-triton&lt;/span&gt;
+           &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;espymur/triton-onnx-cpu:dev&quot;&lt;/span&gt;
+           &lt;span class=&quot;na&quot;&gt;securityContext&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;privileged&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+           &lt;span class=&quot;na&quot;&gt;volumeMounts&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+           &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;mountPath&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/models&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;oracle-cloud-fs&lt;/span&gt;
+           &lt;span class=&quot;na&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/bin/sh&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;-c&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+           &lt;span class=&quot;na&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;tritonserver&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;--model-repository=/models&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#  put the model in a cloud storage and pull it from here.&lt;/span&gt;
+           &lt;span class=&quot;na&quot;&gt;resources&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;cpu&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;memory&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2Gi&lt;/span&gt;
+               
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Before running, the deployment, make sure we have the DaemontSet we create in the previous post that mount the volume in our local machine running.&lt;/p&gt;
+
+&lt;p&gt;With the deployment set we can create the pods with &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;kubectl apply &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; deployment.yaml&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;If the deployment is deployed successfully, we can run check our container log to see if the triton inference server is running without any issue. You should be able to see our tree components of our model  running. The embedding_model, the ensemble model and the tokenizer. 
+Sometimes, if the model repository is not mounted correctly the triton inference server will run but without any component displayed.&lt;/p&gt;
+
+&lt;p&gt;With this deployment, we will have all the component in the bellow architecture:&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2024-06-26-deploying-a-language-model-with-triton-inference-server-on-kubernetes/architecture-diagram.png&quot; /&gt;&lt;/p&gt;
+  &lt;figcaption&gt;What we have deployed so far.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;With our model running, we need to expose it to the final users for interaction, we will do that with the Kubernetes service.&lt;/p&gt;
+
+&lt;h3 id=&quot;kubernetes-services&quot;&gt;Kubernetes Services&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;image.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/posts/2024-06-26-deploying-a-language-model-with-triton-inference-server-on-kubernetes/services-load-balancer.png&quot; /&gt;&lt;/p&gt;
+  &lt;figcaption&gt;Our architecture with a LoadBalancer Service&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;In the previous section we build our model deployment, but the deployment run the pods in a isolated network, we need to find a way to expose the model api end points to the public for interaction. To achieve that we need a Kubernetes service.&lt;/p&gt;
+
+&lt;p&gt;A Kubernetes Service, is a method to expose pods running to the network so that client can interact with it.&lt;/p&gt;
+
+&lt;p&gt;For this post, we ill use a service of type LoadBalancer. Our service will expose port 8000, 8001, 8002 of our model to the external via a public IP.&lt;/p&gt;
+
+&lt;p&gt;Here is how it looked&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;na&quot;&gt;apiVersion&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;v1&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;kind&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Service&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;biogpt-embedding-service&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;biogpt&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;biogpt&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;protocol&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;TCP&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;8000&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;targetPort&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;8000&lt;/span&gt;
+     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;protocol&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;TCP&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;8001&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;grpc&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;targetPort&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;8001&lt;/span&gt;
+     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;protocol&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;TCP&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;8002&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;metrics&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;targetPort&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;8002&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;LoadBalancer&lt;/span&gt; 
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can apply the service using &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;kubectl apply &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; service.yaml&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;With the service applied, you can check the public IP mapping like this &lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;kubectl get svc&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;It will give us a public IP we need for the interaction with our model.&lt;/p&gt;
+
+&lt;p&gt;If you are using minikube, you can get the api url by running.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-bash highlighter-rouge&quot;&gt;minikube service service-name &lt;span class=&quot;nt&quot;&gt;--url&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The service was the last component we need to have a running application on Kubernetes. 
+With that working we can say that we have successfully deployed our application on Kubernetes.&lt;/p&gt;
+
+&lt;p&gt;With the service deployed, you can interact with our model using the service public IP and the Port and by following the step illustrated in &lt;a href=&quot;https://www.murhabazi.com/deploying-language-model-with-onnx-runtime-on-triton-inference-server&quot;&gt;### Making Request to the inference Server section&lt;/a&gt; of our first blog post.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;This was the third post of our series of tutorials on how to deploy a machine learning model on kubernetes.&lt;/p&gt;
+
+&lt;p&gt;We learned how to create a deployment and a service for our model. There still a lot that need to be done  on top of that to have a fully working production ready Kubernetes application. We still need to implement monitoring, setup the CI/CD pipeline, explore canary deployment solution, etc&lt;/p&gt;
+
+&lt;p&gt;Depending to my mood and courage I will keep on adding those aspects to this blog.t&lt;/p&gt;
+</description>
+        <pubDate>Wed, 26 Jun 2024 09:59:18 +0100</pubDate>
+        <link>http://localhost:4000/deploying-a-language-model-with-triton-inference-server-on-kubernetes</link>
+        <guid isPermaLink="true">http://localhost:4000/deploying-a-language-model-with-triton-inference-server-on-kubernetes</guid>
+        
+        
+      </item>
     
       <item>
         <title>Mounting Oracle Cloud Storage as Volume in Containers with Kubernetes.</title>
@@ -2360,165 +2533,6 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
         
         
         <category>tech</category>
-        
-      </item>
-    
-      <item>
-        <title>Mots d'un grand frère  à ses petits frère qui debutent avec la programmation</title>
-        <description>
-&lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2021-07-23-mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/andela-guys.jpg&quot; /&gt;&lt;/p&gt;
-  &lt;figcaption&gt;cover&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;&lt;em&gt;Caption : My crew , un groupe des developeur qui m’ont fait plaisir: &lt;a href=&quot;https://github.com/Karlmusingo&quot;&gt;Karl Musingo&lt;/a&gt;: G3 ULPGL, &lt;a href=&quot;https://www.linkedin.com/in/hadad-bwenge-345ba7103&quot;&gt;Hadad Bwenge&lt;/a&gt; : , &lt;a href=&quot;https://www.linkedin.com/in/glody-mutombo&quot;&gt;Jean Vincent Mutombo&lt;/a&gt; (UTB - Gisenyi), &lt;a href=&quot;https://rw.linkedin.com/in/grace-lungu-262306190&quot;&gt;Grace Lungu&lt;/a&gt; (International University of East Africa Kampala) among the best Engineer we had back in the days at Andela.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Je me rappelle il y a cinq ans, je finissais mes études universitaires et à l’époque je rêvais de travailler dans une soi-disant Startup, car je lisais sur les réseaux sociaux que les startups faisaient le buzz à Kigali. À l’époque Je n’avais rien à mettre sur mon CV, je n’avais même pas suffisamment de connaissances dans des langages de programmation, que ce soit en Java ou en aucun autre d’ailleurs, et Dieu merci, c’est avec ce peu de connaissances que j’ai débuté ma carrière en développement informatique, mais je présume que cela n’est pas le cas pour mes petits frères et sœurs qui sont en train de finir leurs études aujourd’hui : c’est la raison pour laqu­elle Je me suis décidé d’écrire cet article, pour aider ceux qui cherchent à se faire une carrière dans notre domaine.&lt;/p&gt;
-
-&lt;p&gt;Il sera structuré de la manière suivante :&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Que faire lorsqu’on est encore l’université ?&lt;/li&gt;
-  &lt;li&gt;Que  faire après ses études universitaires ?&lt;/li&gt;
-  &lt;li&gt;Que  faire après son premier travail ?&lt;/li&gt;
-  &lt;li&gt;Quel profil les entreprises recherchent parmi les candidats ?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Bien que la plupart des conseils de cet article soient valables pour le domaine de l’informatique et de la programmation en particulier, certains d’entre eux sont également applicables pour n’importe quelle autre carrière.&lt;/p&gt;
-
-&lt;h2 id=&quot;first-thing-first-&quot;&gt;First Thing First :&lt;/h2&gt;
-
-&lt;p&gt;Pour vous rassurer j’aimerais vous dire une réalité fondamentale :&lt;/p&gt;
-
-&lt;p&gt;Les entreprises ont besoin des personnels qualifiés,  de bons développeurs et ces derniers sont et resteront rares pour les jours  à venir. Une chose est sûre, soyez confiant, si vous êtes qualifié les entreprises vous chercheront.&lt;/p&gt;
-
-&lt;p&gt;La grande question est comment se qualifier ?&lt;/p&gt;
-
-&lt;h2 id=&quot;langlais-langage-par-excellence&quot;&gt;L’Anglais Langage Par Excellence&lt;/h2&gt;
-
-&lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2021-07-23-mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/learn-english.png&quot; /&gt;&lt;/p&gt;
-  &lt;figcaption&gt;learn english please&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Avant tout, pour une bonne carrière en développement informatique, ou en informatique en général, pour l’amour du ciel, je le répète pour l’amour du Ciel : APPRENEZ L’ANGLAIS, APPRENEZ L’ANGLAIS, LEARN ENGLISH PEOPLE.&lt;/p&gt;
-
-&lt;p&gt;Vous n’irez nulle part avec la langue Française en informatique. Même les Français et les Belges qui nous ont appris cette langue, utilisent l’anglais comme langue d’apprentissage de l’informatique.&lt;/p&gt;
-
-&lt;p&gt;Que faire si vous n’êtes pas  à l’aise avec la langue de Shakespeare ? :&lt;/p&gt;
-
-&lt;p&gt;Pour ceux qui ont eu la chance de faire de bonnes écoles secondaires comme moi, nous avons déjà une bonne base en anglais, c’est déjà un bon départ.&lt;/p&gt;
-
-&lt;p&gt;Néanmoins, pour tout le monde, le mieux à faire c’est de chercher des clubs d’anglais et de les rejoindre. Là vous allez rencontrer des gens qui vont vous stimuler à apprendre et parler couramment l’anglais. Il y en a plein, presque dans toutes les universités du pays(RDC).&lt;/p&gt;
-
-&lt;p&gt;À la limite, soyez à l’aise pour lire et comprendre un tutoriel en anglais. Le reste viendra avec un processus continu de pratique quotidienne. Personnellement cela m’a pris trois ans pour être à l’aise avec l’anglais.&lt;/p&gt;
-
-&lt;h2 id=&quot;tirez-profits-de-vos-cours-à-luniversité&quot;&gt;Tirez profits de vos Cours à l’université&lt;/h2&gt;
-
-&lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2021-07-23-mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/please-graduate.jpg&quot; /&gt;&lt;/p&gt;
-  &lt;figcaption&gt;obtenez ce diplome svp...&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;On aura beau dire que nos programmes universitaires ne sont pas à jour, ou même qu’ils ne sont pas adaptés, mais ce sont ces mêmes programmes qui nous donnent une bonne base. Je suis toujours  reconnaissant pour les cours que j’ai appris à l’université en RDC.&lt;/p&gt;
-
-&lt;p&gt;Mes cours d’Algorithmiques, de programmation orientée objet en Java, des bases des données en général, de génie logiciel, ont été une bonne fondation pour ma carrière en développement informatique.&lt;/p&gt;
-
-&lt;p&gt;Et au-delà de ces cours, soyez curieux, ne vous limitez pas à apprendre pour avoir des pourcentages élevés ou pour vous limiter à passer un examen, lisez ici et là pour apprendre plus de ce que les autres apprennent.&lt;/p&gt;
-
-&lt;p&gt;Plus le temps passera, plus vous serez surpris de ce que vous aurez appris. Défiez vos enseignants en allant au-delà de ce qui vous est transmis à l’université.&lt;/p&gt;
-
-&lt;p&gt;Les cours vous permettront d’avoir ce qu’on appelle les &lt;strong&gt;hard skills&lt;/strong&gt;, mais en plus de hard skills, une des compétences que j’ai acquis après l’université, ce sont les &lt;strong&gt;softs skills&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;les-softs-skills-pour-vous-différencier&quot;&gt;Les Softs Skills pour vous différencier&lt;/h2&gt;
-
-&lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2021-07-23-mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/lukaku-team-work.jpg&quot; /&gt;&lt;/p&gt;
-  &lt;figcaption&gt;le travail en equipe est tres important&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;En plus des cours à l’université, ne sous-estimer jamais les petits clubs qu’on a ici et là, que ça soit à l’église, à la fac ou au sein de la communauté en général.  Elles nous donnent ce qu’on appelle  dans le monde professionnel : le leadership, l’expérience et les soft skills.&lt;/p&gt;
-
-&lt;p&gt;Au sein des organisations estudiantines et des clubs, vous acquérez les softs skills. C’est là où vous pouvez apprendre à travailler en équipe,  à communiquer,  à gérer les conflits ou à gérer toute sorte de personnalité. C’est le genre d’expérience qui vous sera très utile tout au long de votre vie. Apprenez aussi à être discipliné, ponctuel, à communiquer avec les clients, ces genres de petites qualités vous permettront de faire la différence dans un monde ou tout le monde semble les ignorer.&lt;/p&gt;
-
-&lt;p&gt;Avez-vous eu l’occasion de devenir chef de promotion ? Membre du gouvernement estudiantin ? Ne ratez jamais ces genres d’occasions. Elles vous ajouteront quelques lignes à mettre sur votre CV.&lt;/p&gt;
-
-&lt;h2 id=&quot;faites-connaître-votre-travail&quot;&gt;Faites connaître votre travail.&lt;/h2&gt;
-
-&lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2021-07-23-mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/git-configurations.png&quot; /&gt;&lt;/p&gt;
-  &lt;figcaption&gt;get other know your work&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Une fois ces connaissances acquises, hard et soft skills, comment les gens sauront que vous les avez ? Travailler sur votre réputation en ligne.  Si vous n’avez pas un compte Github, s’il vous plait arrêtez de lire ce post et aller en créer un, puis revenez au post.&lt;/p&gt;
-
-&lt;p&gt;Une fois que vous aurez un compte GitHub, que mettre sur celui-ci ? Si vous êtes encore à la fac, travailler sur un TFC ou un mémoire qui vous permettra d’apprendre des projets qui vous seront utiles. Apprenez des plus et soyez curieux, ajoutez tout ce qui vous vient en tête dans le projet. Éviter la paresse et le fait d’écrire un travail juste pour avoir des points. Vos travaux sont les premiers projets que vous présenterez  à vos employeurs. Ayez l’habitude de mettre n’importe quel projet sur lequel vous travaillez en ligne.&lt;/p&gt;
-
-&lt;p&gt;C’est un système de gestion de la boutique de votre tante maternelle que vous avez conçu ? Postez-le, on ne sait jamais.&lt;/p&gt;
-
-&lt;h2 id=&quot;soyez-curieux-et-apprenez-à-googler&quot;&gt;Soyez Curieux et Apprenez à Googler&lt;/h2&gt;
-
-&lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2021-07-23-mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/google-stuff.jpg&quot; /&gt;&lt;/p&gt;
-  &lt;figcaption&gt;learn how to google&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Soyez curieux et apprenez à poser des questions : Voulez vous apprendre quelque chose, une simple requête google peut vous faire tomber sur 2 ou 3 ressources utiles.   Je ne peux pas vous dire comment apprendre à être curieux, car je ne sais pas comment on le fait.&lt;/p&gt;
-
-&lt;h2 id=&quot;limportance-de-la-communauté--networking&quot;&gt;L’importance de la communauté  (Networking)&lt;/h2&gt;
-
-&lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2021-07-23-mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/gdg-comunity.jpg&quot; /&gt;&lt;/p&gt;
-  &lt;figcaption&gt;networking&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Rejoignez les communautés locales ou virtuelles vous y apprendrez beaucoup. Créez  un compte Twitter et rejoignez des groupes de discussion. Mais éviter de passer trop de temps sur des réseaux sociaux lorsque vous travaillez, ce sont de grands bouffeurs de temps.&lt;/p&gt;
-
-&lt;p&gt;Rejoignez Une communauté. Les communautés de développeurs existent partout dans le pays et vous pouvez les rejoindre gratuitement. À Lubumbashi, il y des mouvements tels que &lt;a href=&quot;https://itot.africa/&quot;&gt;ltot Africa&lt;/a&gt;, ou DevsCast. À Goma nous avons&lt;a href=&quot;https://uptodatedevelopers.com/&quot;&gt; Uptodate Developers&lt;/a&gt; et autres. A Kinshasa nous avons &lt;a href=&quot;https://www.kinshasadigital.com/&quot;&gt;Kinshasa Digital Academy&lt;/a&gt; et tant d’autres, récemment à Bukavu nous avons vu Google developer group, etc Nous avons &lt;a href=&quot;https://www.abelmbula.com/&quot;&gt;Abel Mbula&lt;/a&gt; qui f­ait du bon travail à Kisangani.  Il y a aussi diverses communautés en ligne comme freeCodeCamp, &lt;a href=&quot;https://dev.to/&quot;&gt;dev.to&lt;/a&gt;, Codenwebie.&lt;/p&gt;
-
-&lt;p&gt;Ces genres de communautés offrent des opportunités de network, en les côtoyant, Dieu sait ce que vous pouvez avoir comme réseaux. Comme le dit un vieil adage swahili de chez nous, &lt;strong&gt;mutu ni batu&lt;/strong&gt;, Une personne, c’est d’autres personnes.&lt;/p&gt;
-
-&lt;h2 id=&quot;que-cherchent-les-entreprises-&quot;&gt;Que cherchent les entreprises ?&lt;/h2&gt;
-
-&lt;p&gt;Avec des profils en ligne, avec deux ou trois projets en ligne, que ce que les entreprises cherchent d’autre auprès des développeurs ?&lt;/p&gt;
-
-&lt;p&gt;Les entreprises n’ont rien à faire de vos études, de vos projets, de vos connaissances. No one care, Je répète, ils s’en moquent.&lt;/p&gt;
-
-&lt;p&gt;Ce qui les intéresse, c’est comment vos connaissances peuvent résoudre leurs problèmes. C’est  la chose fondamentale à savoir pour avoir une carrière dans ce domaine. Vous devez chercher à savoir les problèmes que les entreprises ont et leur dire comment vos connaissances leur seront utiles. C’est tout.&lt;/p&gt;
-
-&lt;h2 id=&quot;quel-langage-de-programmation-apprendre&quot;&gt;Quel langage de programmation Apprendre&lt;/h2&gt;
-
-&lt;figure&gt;
-  &lt;p&gt;&lt;img src=&quot;/assets/posts/2021-07-23-mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation/today-developers.jpg&quot; /&gt;&lt;/p&gt;
-  &lt;figcaption&gt;don't learn languages learn concepts&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Je ne veux pas me mettre à faire un débat sur les langages dans ce poste ni même dire quel langage est meilleur que l’autre, c’est hors cadre.&lt;/p&gt;
-
-&lt;p&gt;Une chose est sure, le concept de la logique programmation existe depuis toujours et ne changera jamais comme les Algorithmes et les structures des données, les bases du HTTP, les Bases des données ou le Génie logiciel.&lt;/p&gt;
-
-&lt;p&gt;Les langages viennent et partent. Mais ce concept est là depuis des années et reste là. Un bon ouvrier est quelqu’un qui sait utiliser l’outil adapté au problème. Si vous voulez faire dans le développement web, apprenez le  Javascript c’est incontourna­ble, pour les data science le Python est le langage par excellence.&lt;/p&gt;
-
-&lt;p&gt;Le dernier conseil que je peux donner est de maîtriser au moins un langage de programmation et le reste viendra de soi-même.&lt;/p&gt;
-
-&lt;h2 id=&quot;allons-nous-y-arriver&quot;&gt;Allons nous y arriver?&lt;/h2&gt;
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;Soyez sûr que vous  y arriverez, il y a de jeunes formé aux pays qui ont eu la chance d’émerger en tant que développeur au niveau international, la liste est longue, mais je peux citer ceux qui me viennent en tête.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://cd.linkedin.com/in/davidkathoh&quot;&gt;David Kathoh&lt;/a&gt;, &lt;a href=&quot;https://github.com/nkpremices&quot;&gt;Premices Nzanzu&lt;/a&gt;, &lt;a href=&quot;https://github.com/pacyL2K19&quot;&gt;Pacifique ​​LINJANJA &lt;/a&gt; , &lt;a href=&quot;https://ke.linkedin.com/in/makutano-lucien&quot;&gt;Lucien Makutano&lt;/a&gt;, &lt;a href=&quot;https://rw.linkedin.com/in/benjamin-kafirongo-b8b290128&quot;&gt;Benjamin Kafirongo,&lt;/a&gt; my guy &lt;a href=&quot;https://cd.linkedin.com/in/michael-rukamakama-07a45b186&quot;&gt;Michael Rukamakama&lt;/a&gt;, ma bande des gars de Kigali,  toute la bande des gars de Lushi (la liste est longue, mais ils font du bon travail), et tous les autres devs qui trouvent leurs noms dans &lt;a href=&quot;https://commits.top/congo.html&quot;&gt;le top 10 de la liste suivante&lt;/a&gt;. Vous faites la fierté du pays.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion-&quot;&gt;Conclusion :&lt;/h2&gt;
-
-&lt;p&gt;Pendant mes études universitaires je n’ai pas eu des professionnels expérimentés dans mon domaine pour me prodiguer ces genres des conseils, mais vous avez la chance de m’avoir moi. 🤪 j’espère que vous en tirerez profit. Si vous êtes à la fac et avez certaines astuces pour avoir une bonne carrière en programmation, faites nous savoir. S’il y a certains points avec lesquels vous n’êtes pas d’accord dans mon poste faite moi savoir. Si vous avez d’autres points à ajouter dans le blog, veuillez les partager en commentaire.&lt;/p&gt;
-
-&lt;p&gt;Cheers 🤲🏼&lt;/p&gt;
-</description>
-        <pubDate>Fri, 23 Jul 2021 14:57:09 +0100</pubDate>
-        <link>http://localhost:4000/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation</link>
-        <guid isPermaLink="true">http://localhost:4000/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation</guid>
-        
-        
-        <category>non-tech</category>
         
       </item>
     
