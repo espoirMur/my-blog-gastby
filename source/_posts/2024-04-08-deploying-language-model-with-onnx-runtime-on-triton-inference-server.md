@@ -5,8 +5,8 @@ permalink: deploying-language-model-with-onnx-runtime-on-triton-inference-server
 date: 2024-04-07 22:12:57
 comments: true
 published: true 
-description: "Deploy your language models to production using ONNX runtime and the Triton inference server"
-keywords: ""
+description: "Deploy your language models to production using ONNX runtime and the Triton inference server with Docker and Kubernetes"
+keywords: "LLM, Docker, Kubernetes, Triton, ONNX, Transformers"
 categories:
 
 tags:
@@ -16,13 +16,13 @@ tags:
 ## Deploy your language models to production using ONNX runtime and the triton inference server
 
 
-You are a Data Scientist who has finally trained a language model in a jupyter notebook. The model works fine, and you are happy with your results. Now you want to expose it to the users so that they can interact with it.
+You are a Data Scientist who has finally trained a language model and it works in a jupyter notebook and you are happy with your results. Now you want to expose it to the users so that they can interact with it.
 
-You have different options to serve your model to your users. You can use the jupyter notebook directly in production. You can wrap the model in a pickle file and serve it using an API. Both options work, but can they handle millions of requests per second in a production environment? In this post, I will show how you can use modern tools to deploy a language model in a scalable way.  We'll use the ONNX runtime, Triton inference server, and Kubernetes. These tools will help us to deploy  a production-ready language model.
+You have different options to serve your model to your users. You can use the jupyter notebook directly in production 🤣. You can wrap the model in a pickle file and serve it using an API 🤪. Both options work, but can they handle millions of requests per second in a production environment? In this post, I will show how you can use modern tools to deploy a language model in a scalable way.  We will use the ONNX runtime, Triton inference server, Docker and Kubernetes. These tools will help us to deploy  a production-ready language model.
 
-Data scientists, Machine Learning Engineer and researchers aiming to use their models in production should read this. It discusses the engineering principles of scalable language models APIs.
+This guide is addressed to Data scientists, Machine Learning Engineers and researchers aiming to use their Language Models in Production. It discusses the engineering principles of scalable language models APIs.
 
-It will be divided into two parts. In the first part, we will prepare the model for a production setting. We will use the ONNX runtime and Docker container to achieve that goal. Finally, in the second part, we will learn how to scale our Apis using Kubernetes.
+It will be divided into multiple parts. In the first part, we will prepare the model for a production setting. We will use the ONNX runtime and Docker container to achieve that goal. Finally, in the second part, we will learn how to scale our Apis using Kubernetes.
 
 If I have time later, I'll explain how to use the embedding API in a  downstream app  like a Retrieval Augmentation Generation (RAG). 
 
@@ -33,8 +33,7 @@ We will be deploying an embedding model, so let start by defining a language mod
 {% include image.html name="gorilla.png" caption="Mountain Gorilla, one our similar cousin." %}
 ## Embeddings.
 
-Embedding models are the backbone of generative AI. 
-Embeddings are representations of words in a vector space. They capture words semantics such as, with them similar vectors represent similar words. 
+Embedding models are the backbone of generative AI, they are representations of words in a vector space. They capture words semantics such as, with them similar vectors represent similar words. 
 
  Contextual embeddings are embeddings such as each word is represented with a vector given its context. 
 
@@ -44,13 +43,13 @@ _The bank of the river Thames is located in South London._
 
 _I am going to withdraw cash at Lloyds Bank._
 
-In those two different sentences the word `bank` has two different meanings. In the first, bank means _the land alongside or sloping down to a river or lake._ In the second sentence, it means _a place where you save money._
+In those two sentences the word `bank` has two different meanings. In the first, bank means _the land alongside or sloping down to a river or lake._ In the second sentence, it means _a place where you save money._
 
 Embedding models can capture those differences and represent words with two different vectors according to the context.
 
 This is not a post to explain how embedding models are built, if you want to learn more about them refer to [this post.](https://mccormickml.com/2019/05/14/BERT-word-embeddings-tutorial/)
 
-But one thing to know is that embedding models are built with language models or Large language models.
+But one thing to know is that embedding models are built with language models or Large language models for the majority of cases.
 
 {% include image.html name="word-embeddings-representation.webp" caption="Words Representation in 2D vector Space." %}
 
@@ -58,7 +57,7 @@ But one thing to know is that embedding models are built with language models or
 
 Large language models are neural networks or probabilistic models that can predict the next word given the previous words.
 
-One of the most common neural network architectures that power language models is the Transformer model. It was introduced in 2017 by Google researchers. Those models have a powerful capacity when to comes to understanding words and their meanings because they are trained on a large corpus of documents.
+One of the most common neural network architectures that power language models is the Transformer model. It was introduced in 2017 by Google researchers. Those models have a powerful capacity when it comes to understanding words and their meanings because they are trained on a large corpus of documents.
 
 During their training, transformers' models can learn contextual word embeddings.  Those embeddings are useful in downstream applications such as chatbots, documents classification, topic modeling, documents clustering  et consort.
 
@@ -66,20 +65,18 @@ Again, this post is not about language models, there  are legions on the interne
 
 If this post is not about word embedding theory, or large language model theory what is it about?
 
-Nice question, this post is about deploying a large language model. We will learn how to create an embedding service, a api that developers can query to generate document embeddings. 
+Nice question, this post is about deploying a large language model. We assume taht you have a model trained on you want to deploy it. We will learn how to create an embedding service, a api that developers can query to generate document embeddings. 
 
 We will build a scalable API developers can query it to get word embeddings of their sentences. They can use the embeddings in downstream applications. This API can be part of a chatbot, or a Retrieval Augmented Generation application.
 
-I made it for educational purposes while learning how to deploy a language model using Kubernetes.  If you want a production-ready application that can support multiple embedding models  [checkout this repos.](https://github.com/jina-ai/clip-as-service)
-
-In this post, we will learn how to deploy a transformer model that generates embedding vectors on Kubernetes using the triton inference server and the ONNX runtime.
+I made it for educational purposes while learning how to deploy a language model using Kubernetes.  If you want a production-ready application that can support multiple embedding models  [checkout this repository.](https://github.com/jina-ai/clip-as-service)
 
 Enough talking let's show us the code!
 
 
 ## The embedding models.
 
-In this post, we will explore the embedding model generated by the BioLinkBert. The BioLinkBert model is a model from the BERT family but it was fine-tuned on documents from the medical domain. The reason I used the Biolink model is that I want to build a chatbot application for the medical domain in the future.
+In this post, we will explore the embedding model generated by the BioLinkBert. The BioLinkBert model is a model from the BERT family but it was fine-tuned on documents from the medical domain. The reason I used the Biolink model is that I wanted to build a chatbot application for the medical domain in the future.
 
 The embedding of words is the last hidden state of a transformer model where the input is the word encoded as text. Let us see how it works  in practice. We will be using a custom Bert model which inherits the base Bert model from Huggingface.
 
@@ -119,7 +116,7 @@ class CustomEmbeddingBertModel(BertModel):
         return embedding_output
 ```
 
-Our custom embedding is  a wrapper around the Bert embedding model. It  which take the input ids and return the embedding of a sentence. The input ids are the tokenized version of a sentence. The embeddings of the sentence is the average of the embedding of all words in a  sentence.
+Our custom embedding is  a wrapper around the Bert embedding model. It  which take the input ids and return the embedding of a sentence. The input ids are the tokenized version of a sentence. The embeddings of the sentence are the average of the embedding of all words in a  sentence.
 
 Here is how that work in practice.
 
@@ -242,7 +239,7 @@ With the above code, we have our model exported into onnx format and ready to be
 
 In this section, we will learn how  to use the model in a docker container.
 
-One of the most obvious solutions is to deploy the model and wrap it in with Flask or Fastapi. While this solution can work in practice, it has some latency due to related the fact that the API is written in Python. For this blog I will try a different approach, I will deploy the model using the onnx runtime which is a C++ backend. We will leverage the fact that our model in ONNX format is platform agnostic and we can deploy on any language backend.
+One of the most obvious solutions is to deploy a model and wrap it in with Flask or Fastapi. While this solution can work in practice, it has some latency due to related the fact that the API is written in Python. For this blog I will try a different approach, I will deploy the model using the onnx runtime which is a C++ backend. We will leverage the fact that our model in ONNX format is platform agnostic and we can deploy on any language backend.
 
 ### Triton Server
 
@@ -433,9 +430,9 @@ instance_group [
 ]
 ```
 
-In this file, we specify that our backend is a Python backend.  It will take an input named text, with dimension -1. The dimension -1 which means dynamic, returns the inputs_ids, and the attention_mask and will run on a CPU.
+In this file, we specify that our backend is a Python backend.  It will take an input named text, with dimension -1. The dimension -1 which means dynamic or it can be of any size. It returns the inputs_ids, and the attention_mask and will run on a CPU.
 
-The second component of our model is the embedding model itself, we will it should have the following layout:
+The second component of our model is the embedding model itself, it has the following layout:
 ```
 ├── embedding_model
 │   ├── 1
@@ -489,7 +486,7 @@ instance_group [
 ]
 ```
 
-It is the configuration file for our embedding model.  We can see that it takes the output from our tokenizer model and produces the embedding vector of shape, -1, 1024. With -1 meaning the dynamic shape, and 1024 is our embedding size.
+It is the configuration file for our embedding model, we can see that it takes the output from our tokenizer model and produces the embedding vector of shape, -1, 1024. With -1 meaning the dynamic shape, and 1024 is our embedding size.
 
 Note: for some reason, the model output is named `3391` I  don't know why it is named like that.
 
@@ -574,9 +571,9 @@ ensemble_scheduling {
 ```
 
 
-In a nutshell, this config connects our tokenizer and the embedding model. You can easily see that from it the output of the tokenizer model is passed to the embedding model to produce the embedding vector.
+In a nutshell, this config connects our tokenizer and the embedding model. The output of the tokenizer model is passed to the embedding model to produce the embedding vector.
 
-If the three components were configured correctly we can have the following layout:
+If the three components were configured correctly we should have the following layout:
 
 ```
 
@@ -688,11 +685,11 @@ We have now built our model, the next step is to make an inference request to it
 
 Since the model is deployed as a REST API you can make inference requests to it using any client of your choice in any language
 
-.  The inference server is very strict in terms of what it expects as input, and how to build it. Fortunately, they have described different clients to use to build the inputs. 
+.  The inference server is very strict in terms of what it expects as input, and how to interact with it. Fortunately, they have described different clients to use to build the inputs. 
 
-For demonstration purposes, I will be using the Python HTTP client to make inference requests. 
+For demonstration purposes, I will be using the Python HTTP client to make the inference requests. 
 
-But nothing restricted you from using your language to make HTTP requests to the API.
+But nothing restricted you from using your language of choice to make HTTP requests to the API.
 
 
 
