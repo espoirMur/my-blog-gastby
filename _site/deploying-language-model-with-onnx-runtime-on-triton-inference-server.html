@@ -13,7 +13,7 @@
 </script>
 <title>Deploy your language models to production using ONNX runtime and the Triton inference server</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<meta name="description" content="Deploy your language models to production using ONNX runtime and the Triton inference server">
+<meta name="description" content="Deploy your language models to production using ONNX runtime and the Triton inference server with Docker and Kubernetes">
 <meta property="og:image" content=/assets/posts/2024-04-07-deploying-language-model-with-onnx-runtime-on-triton-inference-server/cover-picture.png>
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="canonical" href="http://localhost:4000/deploying-language-model-with-onnx-runtime-on-triton-inference-server">
@@ -35,8 +35,8 @@
 <meta property="og:title" content="Deploy your language models to production using ONNX runtime and the Triton inference server" />
 <meta name="author" content="Murhabazi Buzina, Espoir" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Deploy your language models to production using ONNX runtime and the Triton inference server" />
-<meta property="og:description" content="Deploy your language models to production using ONNX runtime and the Triton inference server" />
+<meta name="description" content="Deploy your language models to production using ONNX runtime and the Triton inference server with Docker and Kubernetes" />
+<meta property="og:description" content="Deploy your language models to production using ONNX runtime and the Triton inference server with Docker and Kubernetes" />
 <link rel="canonical" href="http://localhost:4000/deploying-language-model-with-onnx-runtime-on-triton-inference-server" />
 <meta property="og:url" content="http://localhost:4000/deploying-language-model-with-onnx-runtime-on-triton-inference-server" />
 <meta property="og:site_name" content="Espoir Murhabazi ideas’ home" />
@@ -45,7 +45,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Deploy your language models to production using ONNX runtime and the Triton inference server" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Murhabazi Buzina, Espoir","url":"https://murhabazi.com/"},"dateModified":"2024-04-07T23:12:57+01:00","datePublished":"2024-04-07T23:12:57+01:00","description":"Deploy your language models to production using ONNX runtime and the Triton inference server","headline":"Deploy your language models to production using ONNX runtime and the Triton inference server","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/deploying-language-model-with-onnx-runtime-on-triton-inference-server"},"url":"http://localhost:4000/deploying-language-model-with-onnx-runtime-on-triton-inference-server"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Murhabazi Buzina, Espoir","url":"https://murhabazi.com/"},"dateModified":"2024-04-07T23:12:57+01:00","datePublished":"2024-04-07T23:12:57+01:00","description":"Deploy your language models to production using ONNX runtime and the Triton inference server with Docker and Kubernetes","headline":"Deploy your language models to production using ONNX runtime and the Triton inference server","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/deploying-language-model-with-onnx-runtime-on-triton-inference-server"},"url":"http://localhost:4000/deploying-language-model-with-onnx-runtime-on-triton-inference-server"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -98,13 +98,13 @@
 
 <h2 id="deploy-your-language-models-to-production-using-onnx-runtime-and-the-triton-inference-server">Deploy your language models to production using ONNX runtime and the triton inference server</h2>
 
-<p>You are a Data Scientist who has finally trained a language model in a jupyter notebook. The model works fine, and you are happy with your results. Now you want to expose it to the users so that they can interact with it.</p>
+<p>You are a Data Scientist who has finally trained a language model and it works in a jupyter notebook and you are happy with your results. Now you want to expose it to the users so that they can interact with it.</p>
 
-<p>You have different options to serve your model to your users. You can use the jupyter notebook directly in production. You can wrap the model in a pickle file and serve it using an API. Both options work, but can they handle millions of requests per second in a production environment? In this post, I will show how you can use modern tools to deploy a language model in a scalable way.  We’ll use the ONNX runtime, Triton inference server, and Kubernetes. These tools will help us to deploy  a production-ready language model.</p>
+<p>You have different options to serve your model to your users. You can use the jupyter notebook directly in production 🤣. You can wrap the model in a pickle file and serve it using an API 🤪. Both options work, but can they handle millions of requests per second in a production environment? In this post, I will show how you can use modern tools to deploy a language model in a scalable way.  We will use the ONNX runtime, Triton inference server, Docker and Kubernetes. These tools will help us to deploy  a production-ready language model.</p>
 
-<p>Data scientists, Machine Learning Engineer and researchers aiming to use their models in production should read this. It discusses the engineering principles of scalable language models APIs.</p>
+<p>This guide is addressed to Data scientists, Machine Learning Engineers and researchers aiming to use their Language Models in Production. It discusses the engineering principles of scalable language models APIs.</p>
 
-<p>It will be divided into two parts. In the first part, we will prepare the model for a production setting. We will use the ONNX runtime and Docker container to achieve that goal. Finally, in the second part, we will learn how to scale our Apis using Kubernetes.</p>
+<p>It will be divided into multiple parts. In the first part, we will prepare the model for a production setting. We will use the ONNX runtime and Docker container to achieve that goal. Finally, in the second part, we will learn how to scale our Apis using Kubernetes.</p>
 
 <p>If I have time later, I’ll explain how to use the embedding API in a  downstream app  like a Retrieval Augmentation Generation (RAG).</p>
 
@@ -119,8 +119,7 @@
 
 <h2 id="embeddings">Embeddings.</h2>
 
-<p>Embedding models are the backbone of generative AI. 
-Embeddings are representations of words in a vector space. They capture words semantics such as, with them similar vectors represent similar words.</p>
+<p>Embedding models are the backbone of generative AI, they are representations of words in a vector space. They capture words semantics such as, with them similar vectors represent similar words.</p>
 
 <p>Contextual embeddings are embeddings such as each word is represented with a vector given its context.</p>
 
@@ -130,13 +129,13 @@ Embeddings are representations of words in a vector space. They capture words se
 
 <p><em>I am going to withdraw cash at Lloyds Bank.</em></p>
 
-<p>In those two different sentences the word <code class="language-bash highlighter-rouge">bank</code> has two different meanings. In the first, bank means <em>the land alongside or sloping down to a river or lake.</em> In the second sentence, it means <em>a place where you save money.</em></p>
+<p>In those two sentences the word <code class="language-bash highlighter-rouge">bank</code> has two different meanings. In the first, bank means <em>the land alongside or sloping down to a river or lake.</em> In the second sentence, it means <em>a place where you save money.</em></p>
 
 <p>Embedding models can capture those differences and represent words with two different vectors according to the context.</p>
 
 <p>This is not a post to explain how embedding models are built, if you want to learn more about them refer to <a href="https://mccormickml.com/2019/05/14/BERT-word-embeddings-tutorial/">this post.</a></p>
 
-<p>But one thing to know is that embedding models are built with language models or Large language models.</p>
+<p>But one thing to know is that embedding models are built with language models or Large language models for the majority of cases.</p>
 
 <figure>
   <p><img src="/assets/posts/2024-04-07-deploying-language-model-with-onnx-runtime-on-triton-inference-server/word-embeddings-representation.webp" /></p>
@@ -147,7 +146,7 @@ Embeddings are representations of words in a vector space. They capture words se
 
 <p>Large language models are neural networks or probabilistic models that can predict the next word given the previous words.</p>
 
-<p>One of the most common neural network architectures that power language models is the Transformer model. It was introduced in 2017 by Google researchers. Those models have a powerful capacity when to comes to understanding words and their meanings because they are trained on a large corpus of documents.</p>
+<p>One of the most common neural network architectures that power language models is the Transformer model. It was introduced in 2017 by Google researchers. Those models have a powerful capacity when it comes to understanding words and their meanings because they are trained on a large corpus of documents.</p>
 
 <p>During their training, transformers’ models can learn contextual word embeddings.  Those embeddings are useful in downstream applications such as chatbots, documents classification, topic modeling, documents clustering  et consort.</p>
 
@@ -155,19 +154,17 @@ Embeddings are representations of words in a vector space. They capture words se
 
 <p>If this post is not about word embedding theory, or large language model theory what is it about?</p>
 
-<p>Nice question, this post is about deploying a large language model. We will learn how to create an embedding service, a api that developers can query to generate document embeddings.</p>
+<p>Nice question, this post is about deploying a large language model. We assume taht you have a model trained on you want to deploy it. We will learn how to create an embedding service, a api that developers can query to generate document embeddings.</p>
 
 <p>We will build a scalable API developers can query it to get word embeddings of their sentences. They can use the embeddings in downstream applications. This API can be part of a chatbot, or a Retrieval Augmented Generation application.</p>
 
-<p>I made it for educational purposes while learning how to deploy a language model using Kubernetes.  If you want a production-ready application that can support multiple embedding models  <a href="https://github.com/jina-ai/clip-as-service">checkout this repos.</a></p>
-
-<p>In this post, we will learn how to deploy a transformer model that generates embedding vectors on Kubernetes using the triton inference server and the ONNX runtime.</p>
+<p>I made it for educational purposes while learning how to deploy a language model using Kubernetes.  If you want a production-ready application that can support multiple embedding models  <a href="https://github.com/jina-ai/clip-as-service">checkout this repository.</a></p>
 
 <p>Enough talking let’s show us the code!</p>
 
 <h2 id="the-embedding-models">The embedding models.</h2>
 
-<p>In this post, we will explore the embedding model generated by the BioLinkBert. The BioLinkBert model is a model from the BERT family but it was fine-tuned on documents from the medical domain. The reason I used the Biolink model is that I want to build a chatbot application for the medical domain in the future.</p>
+<p>In this post, we will explore the embedding model generated by the BioLinkBert. The BioLinkBert model is a model from the BERT family but it was fine-tuned on documents from the medical domain. The reason I used the Biolink model is that I wanted to build a chatbot application for the medical domain in the future.</p>
 
 <p>The embedding of words is the last hidden state of a transformer model where the input is the word encoded as text. Let us see how it works  in practice. We will be using a custom Bert model which inherits the base Bert model from Huggingface.</p>
 
@@ -203,7 +200,7 @@ Embeddings are representations of words in a vector space. They capture words se
         <span class="k">return</span> <span class="n">embedding_output</span>
 </code></pre></div></div>
 
-<p>Our custom embedding is  a wrapper around the Bert embedding model. It  which take the input ids and return the embedding of a sentence. The input ids are the tokenized version of a sentence. The embeddings of the sentence is the average of the embedding of all words in a  sentence.</p>
+<p>Our custom embedding is  a wrapper around the Bert embedding model. It  which take the input ids and return the embedding of a sentence. The input ids are the tokenized version of a sentence. The embeddings of the sentence are the average of the embedding of all words in a  sentence.</p>
 
 <p>Here is how that work in practice.</p>
 
@@ -301,7 +298,7 @@ It can be use in downstream application in different ways.</p>
 
 <p>In this section, we will learn how  to use the model in a docker container.</p>
 
-<p>One of the most obvious solutions is to deploy the model and wrap it in with Flask or Fastapi. While this solution can work in practice, it has some latency due to related the fact that the API is written in Python. For this blog I will try a different approach, I will deploy the model using the onnx runtime which is a C++ backend. We will leverage the fact that our model in ONNX format is platform agnostic and we can deploy on any language backend.</p>
+<p>One of the most obvious solutions is to deploy a model and wrap it in with Flask or Fastapi. While this solution can work in practice, it has some latency due to related the fact that the API is written in Python. For this blog I will try a different approach, I will deploy the model using the onnx runtime which is a C++ backend. We will leverage the fact that our model in ONNX format is platform agnostic and we can deploy on any language backend.</p>
 
 <h3 id="triton-server">Triton Server</h3>
 
@@ -483,9 +480,9 @@ The tokenizer repository should have the files from our tokenizer, the model cod
 <span class="p">]</span>
 </code></pre></div></div>
 
-<p>In this file, we specify that our backend is a Python backend.  It will take an input named text, with dimension -1. The dimension -1 which means dynamic, returns the inputs_ids, and the attention_mask and will run on a CPU.</p>
+<p>In this file, we specify that our backend is a Python backend.  It will take an input named text, with dimension -1. The dimension -1 which means dynamic or it can be of any size. It returns the inputs_ids, and the attention_mask and will run on a CPU.</p>
 
-<p>The second component of our model is the embedding model itself, we will it should have the following layout:</p>
+<p>The second component of our model is the embedding model itself, it has the following layout:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── embedding_model
 │   ├── 1
 │   │   ├── bio-bert-embedder.onnx
@@ -534,7 +531,7 @@ The tokenizer repository should have the files from our tokenizer, the model cod
 <span class="p">]</span>
 </code></pre></div></div>
 
-<p>It is the configuration file for our embedding model.  We can see that it takes the output from our tokenizer model and produces the embedding vector of shape, -1, 1024. With -1 meaning the dynamic shape, and 1024 is our embedding size.</p>
+<p>It is the configuration file for our embedding model, we can see that it takes the output from our tokenizer model and produces the embedding vector of shape, -1, 1024. With -1 meaning the dynamic shape, and 1024 is our embedding size.</p>
 
 <p>Note: for some reason, the model output is named <code class="language-bash highlighter-rouge">3391</code> I  don’t know why it is named like that.</p>
 
@@ -615,9 +612,9 @@ The tokenizer repository should have the files from our tokenizer, the model cod
 
 </code></pre></div></div>
 
-<p>In a nutshell, this config connects our tokenizer and the embedding model. You can easily see that from it the output of the tokenizer model is passed to the embedding model to produce the embedding vector.</p>
+<p>In a nutshell, this config connects our tokenizer and the embedding model. The output of the tokenizer model is passed to the embedding model to produce the embedding vector.</p>
 
-<p>If the three components were configured correctly we can have the following layout:</p>
+<p>If the three components were configured correctly we should have the following layout:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 models_repository/retrieval
@@ -719,11 +716,11 @@ I0329 18:42:18.520315 1 http_server.cc:282] Started Metrics Service at 0.0.0.0:8
 
 <p>Since the model is deployed as a REST API you can make inference requests to it using any client of your choice in any language</p>
 
-<p>.  The inference server is very strict in terms of what it expects as input, and how to build it. Fortunately, they have described different clients to use to build the inputs.</p>
+<p>.  The inference server is very strict in terms of what it expects as input, and how to interact with it. Fortunately, they have described different clients to use to build the inputs.</p>
 
-<p>For demonstration purposes, I will be using the Python HTTP client to make inference requests.</p>
+<p>For demonstration purposes, I will be using the Python HTTP client to make the inference requests.</p>
 
-<p>But nothing restricted you from using your language to make HTTP requests to the API.</p>
+<p>But nothing restricted you from using your language of choice to make HTTP requests to the API.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 <span class="kn">import</span> <span class="nn">tritonclient.http</span> <span class="k">as</span> <span class="n">httpclient</span>
