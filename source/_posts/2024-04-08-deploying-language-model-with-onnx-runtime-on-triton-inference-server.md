@@ -13,8 +13,6 @@ tags:
 
 ---
 {% include image.html name="cover-picture.png" caption="Lac Kivu in East DRC" %}
-## Deploy your language models to production using ONNX runtime and the triton inference server
-
 
 You are a Data Scientist who has finally trained a language model and it works in a jupyter notebook and you are happy with your results. Now you want to expose it to the users so that they can interact with it.
 
