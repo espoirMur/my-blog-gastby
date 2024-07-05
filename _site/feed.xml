@@ -5,8 +5,8 @@
     <description>Murhabazi Buzina Espoir Home on the internet</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 04 Jul 2024 23:21:56 +0100</pubDate>
-    <lastBuildDate>Thu, 04 Jul 2024 23:21:56 +0100</lastBuildDate>
+    <pubDate>Fri, 05 Jul 2024 14:06:06 +0100</pubDate>
+    <lastBuildDate>Fri, 05 Jul 2024 14:06:06 +0100</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -359,8 +359,6 @@ We will create our Daemonset with&lt;/p&gt;
   &lt;p&gt;&lt;img src=&quot;/assets/posts/2024-04-07-deploying-language-model-with-onnx-runtime-on-triton-inference-server/cover-picture.png&quot; /&gt;&lt;/p&gt;
   &lt;figcaption&gt;Lac Kivu in East DRC&lt;/figcaption&gt;
 &lt;/figure&gt;
-
-&lt;h2 id=&quot;deploy-your-language-models-to-production-using-onnx-runtime-and-the-triton-inference-server&quot;&gt;Deploy your language models to production using ONNX runtime and the triton inference server&lt;/h2&gt;
 
 &lt;p&gt;You are a Data Scientist who has finally trained a language model and it works in a jupyter notebook and you are happy with your results. Now you want to expose it to the users so that they can interact with it.&lt;/p&gt;
 
