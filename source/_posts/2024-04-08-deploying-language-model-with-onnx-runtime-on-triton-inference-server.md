@@ -6,7 +6,7 @@ date: 2024-04-07 22:12:57
 comments: true
 published: true 
 description: "Deploy your language models to production using ONNX runtime and the Triton inference server with Docker and Kubernetes"
-keywords: "LLM, Docker, Kubernetes, Triton, ONNX, Transformers"
+keywords: "ONNX Runtime, Triton Inference Server, Deploying language models with Docker, NVIDIA Triton, ONNX model deployment, Machine learning deployment, MLOPS, Deep learning inference"
 categories:
 
 tags:
