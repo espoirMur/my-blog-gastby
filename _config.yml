@@ -77,3 +77,7 @@ social:
     -  https://twitter.com/esp_py
     -  https://www.linkedin.com/in/espoirMur/
     -  https://stackoverflow.com/users/4683950/espoir-murhabazi
+
+feed:
+  posts_limit: 20
+  disable_in_development: true
