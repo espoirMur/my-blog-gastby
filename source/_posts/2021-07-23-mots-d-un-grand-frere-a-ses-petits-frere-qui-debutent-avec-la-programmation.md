@@ -1,7 +1,7 @@
 ---
 title : Mots d'un grand frère  à ses petits frère qui debutent avec la programmation
 date : "2021-07-23T14:57:09"
-description: comment faire pour devenir un bon programmeur, developeur ou software engineer si vous etes encore a l'université au Congo ou en Afrique
+description: "comment faire pour devenir un bon programmeur, developeur ou software engineer si vous etes encore a l'université au Congo ou en Afrique"
 layout: post
 comments: true
 categories: non-tech
