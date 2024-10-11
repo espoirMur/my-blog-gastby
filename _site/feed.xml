@@ -3,10 +3,10 @@
   <channel>
     <title>Espoir Murhabazi ideas' home</title>
     <description>Murhabazi Buzina Espoir Home on the internet</description>
-    <link>https://murhabazi.com/</link>
-    <atom:link href="https://murhabazi.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 05 Jul 2024 16:04:03 +0100</pubDate>
-    <lastBuildDate>Fri, 05 Jul 2024 16:04:03 +0100</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 11 Oct 2024 17:52:51 +0100</pubDate>
+    <lastBuildDate>Fri, 11 Oct 2024 17:52:51 +0100</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -346,8 +346,8 @@ We will create our Daemonset with&lt;/p&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 19 Jun 2024 14:20:27 +0100</pubDate>
-        <link>https://murhabazi.com/mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes</link>
-        <guid isPermaLink="true">https://murhabazi.com/mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes</guid>
+        <link>http://localhost:4000/mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes</link>
+        <guid isPermaLink="true">http://localhost:4000/mounting-oracle-cloud-storage-as-volume-in-containers-with-kubernetes</guid>
         
         
       </item>
@@ -1036,8 +1036,8 @@ I0329 18:42:18.520315 1 http_server.cc:282] Started Metrics Service at 0.0.0.0:8
 
 </description>
         <pubDate>Sun, 07 Apr 2024 23:12:57 +0100</pubDate>
-        <link>https://murhabazi.com/deploying-language-model-with-onnx-runtime-on-triton-inference-server</link>
-        <guid isPermaLink="true">https://murhabazi.com/deploying-language-model-with-onnx-runtime-on-triton-inference-server</guid>
+        <link>http://localhost:4000/deploying-language-model-with-onnx-runtime-on-triton-inference-server</link>
+        <guid isPermaLink="true">http://localhost:4000/deploying-language-model-with-onnx-runtime-on-triton-inference-server</guid>
         
         
       </item>
@@ -1166,8 +1166,8 @@ spec:
 &lt;p&gt;Yes, I did struggles a lot, but this was a good learning lesson for me.  I learned how to debug containers on kubernetes and how minikube works with kuberenetes. I also learn some bit of kubernetes networking. I hope this post will serve my future self if I am facing the same issue as well as anyone else who is struggling with those bugs. My journey is not completed yet, I haven’t managed to deploy a large language model on Kubernetes, I am still struggling with that. In part two of this post I will talk about how I managed to deploy a transformer model with kubernetes.&lt;/p&gt;
 </description>
         <pubDate>Tue, 07 Mar 2023 10:03:59 +0000</pubDate>
-        <link>https://murhabazi.com/struggles-with-docker</link>
-        <guid isPermaLink="true">https://murhabazi.com/struggles-with-docker</guid>
+        <link>http://localhost:4000/struggles-with-docker</link>
+        <guid isPermaLink="true">http://localhost:4000/struggles-with-docker</guid>
         
         <category>docker,</category>
         
@@ -1686,8 +1686,8 @@ abstract Sars-Cov-2 or Novel coronavirus infection &lt;span class=&quot;o&quot;&
 &lt;p&gt;That is all for the first part of this tutorial , We have learned how to build TF-IDF vectors, and how to leverage the cosine similarity to compute and retrieve documents that matches a query. In the second part of the tutorial we will learn how to use elasticsearch to perform the same task.&lt;/p&gt;
 </description>
         <pubDate>Thu, 07 Apr 2022 13:03:59 +0100</pubDate>
-        <link>https://murhabazi.com/information-retrieval-on-medical-research-papers-about-covid19</link>
-        <guid isPermaLink="true">https://murhabazi.com/information-retrieval-on-medical-research-papers-about-covid19</guid>
+        <link>http://localhost:4000/information-retrieval-on-medical-research-papers-about-covid19</link>
+        <guid isPermaLink="true">http://localhost:4000/information-retrieval-on-medical-research-papers-about-covid19</guid>
         
         <category>python,</category>
         
@@ -1808,8 +1808,8 @@ Should I get more time and energy in the future, I will post them in part two of
 Until my next feature, stay safe, take care, and see you in part two of this series.&lt;/p&gt;
 </description>
         <pubDate>Wed, 06 Apr 2022 11:22:56 +0100</pubDate>
-        <link>https://murhabazi.com/master-options-africans</link>
-        <guid isPermaLink="true">https://murhabazi.com/master-options-africans</guid>
+        <link>http://localhost:4000/master-options-africans</link>
+        <guid isPermaLink="true">http://localhost:4000/master-options-africans</guid>
         
         
         <category>non-tech</category>
@@ -1866,8 +1866,8 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 </description>
         <pubDate>Sun, 27 Mar 2022 14:36:01 +0100</pubDate>
-        <link>https://murhabazi.com/install-nvidia-driver</link>
-        <guid isPermaLink="true">https://murhabazi.com/install-nvidia-driver</guid>
+        <link>http://localhost:4000/install-nvidia-driver</link>
+        <guid isPermaLink="true">http://localhost:4000/install-nvidia-driver</guid>
         
         
       </item>
@@ -1934,8 +1934,8 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 </description>
         <pubDate>Mon, 27 Dec 2021 18:20:39 +0000</pubDate>
-        <link>https://murhabazi.com/blog/2021/local-boy-visited-the-etihad-stadium-here-is-how-it-went/</link>
-        <guid isPermaLink="true">https://murhabazi.com/blog/2021/local-boy-visited-the-etihad-stadium-here-is-how-it-went/</guid>
+        <link>http://localhost:4000/blog/2021/local-boy-visited-the-etihad-stadium-here-is-how-it-went/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2021/local-boy-visited-the-etihad-stadium-here-is-how-it-went/</guid>
         
         
         <category>non-tech</category>
@@ -2121,8 +2121,8 @@ After getting the latest version I installed it with :&lt;/li&gt;
 
 </description>
         <pubDate>Fri, 05 Nov 2021 23:00:36 +0000</pubDate>
-        <link>https://murhabazi.com/blog/2021/lessons-learned-while-applying-to-masters-degrees-in-the-uk/</link>
-        <guid isPermaLink="true">https://murhabazi.com/blog/2021/lessons-learned-while-applying-to-masters-degrees-in-the-uk/</guid>
+        <link>http://localhost:4000/blog/2021/lessons-learned-while-applying-to-masters-degrees-in-the-uk/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2021/lessons-learned-while-applying-to-masters-degrees-in-the-uk/</guid>
         
         
         <category>non-tech</category>
@@ -2350,8 +2350,8 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;p&gt;And the story of my break up comes to an end. As you may know, all separations are not smooth, sometimes the daemons of your old girlfriend come and start causing troubles in your new relationship. So if you find any issue during this break-up, feel free to let me know in the comment I will try to help you as much as I can 🤔.&lt;/p&gt;
 </description>
         <pubDate>Sun, 17 Oct 2021 16:33:42 +0100</pubDate>
-        <link>https://murhabazi.com/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/</link>
-        <guid isPermaLink="true">https://murhabazi.com/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/</guid>
+        <link>http://localhost:4000/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2021/how-i-break-up-with-pip-and-fall-in-love-with-poetry-my-new-girlfriend/</guid>
         
         
         <category>tech</category>
@@ -2509,8 +2509,8 @@ CMD &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&
 &lt;p&gt;Cheers 🤲🏼&lt;/p&gt;
 </description>
         <pubDate>Fri, 23 Jul 2021 14:57:09 +0100</pubDate>
-        <link>https://murhabazi.com/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation</link>
-        <guid isPermaLink="true">https://murhabazi.com/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation</guid>
+        <link>http://localhost:4000/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation</link>
+        <guid isPermaLink="true">http://localhost:4000/mots-d-un-grand-frere-a-ses-petits-frere-qui-debutent-avec-la-programmation</guid>
         
         
         <category>non-tech</category>

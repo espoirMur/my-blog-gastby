@@ -62,8 +62,8 @@ navbar:
     title: whoami();
   - slug: blog
     title: read();
-  - slug: drafts
-    title: drafts();
+  - slug: schedule
+    title: schedule();
   - slug: learnings
     title: learnings();
 
