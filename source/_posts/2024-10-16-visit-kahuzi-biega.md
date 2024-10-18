@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "How to Visit the Kahuzi-Biega National Park in South Kivu"
+title: "Guide to Exploring Kahuzi-Biega National Park: Gorilla Trekking and Adventures in South Kivu, DRC"
 permalink: visit-kahuzi-biega
 date: 2024-10-16 12:53:10
 comments: true
 description: "Guide on how to visit the Gorilla in the Parc National de Kahuzi-Biega"
-keywords: "Kahuzi-Biega, South-kivu, Parc, visitCongo, Gorilla, Mountain Gorilla"
+keywords: "Kahuzi-Biega National Park, Travel to South Kivu, , visitCongo, Kahuzi-Biega travel guide, Mountain gorilla trekking DRC, Parc National de Kahuzi Biega"
 categories:
 
 tags:
