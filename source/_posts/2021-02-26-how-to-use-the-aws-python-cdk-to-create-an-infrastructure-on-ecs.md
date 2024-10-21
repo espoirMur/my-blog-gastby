@@ -8,6 +8,7 @@ canonical_url: https://www.murhabazi.com/ci-cd-deploy-to-aws-github-actions/
 cover_image: https://dev-to-uploads.s3.amazonaws.com/uploads/articles/192jcpsx4wzh9xolo178.jpeg
 series: Deploy a containerized python to AWS using Github Actions
 published: true
+description: Using the AWS python cdk to create an infrastructure on ECS. ECS, AWS CDK, and Github Actions.
 ---
 
 Recently at work, we decided to build a CI/CD pipeline that deploys our application directly to AWS. I had never worked with AWS, and it was a missing point on my CV which demonstrates that I have some DevOps skills. I decided to search for some tutorials online and I was not lucky to get what we needed at work. I decided to write this guide by getting something working from various tutorials I found online.
