@@ -10,7 +10,7 @@ categories:
 
 tags:
 
-published: "false"
+published: true
 ---
 
 
@@ -172,3 +172,4 @@ If you have any question or comment, please don't hesitate to contact me.
 
 - [Pack official Facebook Page](https://www.facebook.com/kahuzibiega.org/?profile_tab_item_selected=about&_rdr)
 
+-[Another Travel Blog About the parc](https://thetravelersbuddy.com/kahuzi-biega-congo/)
