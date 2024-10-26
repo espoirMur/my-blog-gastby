@@ -49,13 +49,8 @@ author:
   bio: "Congolese Machine Learning Engineer"
   thumb: /assets/images/me.jpg
   profile-pic: /assets/images/me-official-speaker.jpg
-  email: espoir.mur on gmail
-  url: https://murhabazi.com/
-  github: https://github.com/espoirMur
-  twitter: https://twitter.com/esp_py
-  linkedin: https://www.linkedin.com/in/espoirMur
-  stackoverflow: https://stackoverflow.com/users/4683950/espoir-murhabazi
-
+  twitter: esp_py
+  logo: /assets/images/me.ico
 # navbar pages
 navbar:
   - slug: about
