@@ -60,7 +60,7 @@ Our country is not well organized, we don't have a working system for e-visa lik
 
 The first way to apply for a Congolese visa is to go to the nearest Congolese embassy in your region and submit your visa application from there. We have embassies in [UK](https://www.ambardc.london/d/), US, Canada, [and France](https://www.ambardcparis.com/vec_beta.php), and major countries in the world. Please check out with the nearest Congolese embassy in your region to find out about the procedure to get a Congolese visa.
 The last time I checked the DRC embassy in France, they said that it is 85 euros for a single entry and **115 Euros** for multiple entries for one month.
-For those in the UK it says, **£ 135 for 1 month multiple entries**, and it can goes up to £ 350 for six months multiple entries. More about that and the procedure cna be found [here](https://forms.ambardc.london/)
+For those in the UK it says, **£ 135 for 1 month multiple entries**, and it can goes up to £ 350 for six months multiple entries. More about that and the procedure can be found [at he london embassy official site.](https://forms.ambardc.london/)
 
 >Pro tip: Congo is a very corrupt country, and this is not something we are proud of. When you go to an official office and ask for the visa, after paying the official visa fees, you can add some extra fees (transport, or tips ) to the official who registered your application to speed up the application process. It is sometimes called transport buying a drink for the person who processes your application.
 
