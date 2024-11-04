@@ -14,7 +14,7 @@ kramdown:
       start_line: 1
 
 
-plugins: [jekyll-paginate-v2, jekyll-seo-tag, match_regex, jekyll-feed]
+plugins: [jekyll-paginate-v2, jekyll-seo-tag, match_regex, jekyll-feed, jekyll-sitemap]
 
 pagination:
   enabled: true

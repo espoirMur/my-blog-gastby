@@ -31,6 +31,7 @@ group :jekyll_plugins do
   gem 'jekyll-seo-tag'
   gem "match_regex"
   gem "minima"
+  gem "jekyll-sitemap"
 end
 
 gem "rexml", "~> 3.2"
