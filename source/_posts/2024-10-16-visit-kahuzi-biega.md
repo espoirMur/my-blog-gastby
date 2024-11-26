@@ -4,7 +4,7 @@ title: "Guide to Exploring Kahuzi-Biega National Park: Gorilla Trekking and Adve
 permalink: visit-kahuzi-biega
 date: 2024-10-16 12:53:10
 comments: true
-description: "Guide on how to visit the Gorilla in the Parc National de Kahuzi Biega. How to Plan trip to kahuzi-biega"
+description: "Guide on how to visit the Gorilla in the Parc National de Kahuzi Biega. How to Plan trip to kahuzi-biega National Park"
 keywords: "Kahuzi-Biega National Park, visitCongo, Kahuzi-Biega travel guide, Mountain gorilla trekking DRC, Parc National de Kahuzi Biega, Visit Kahuzi Biega"
 categories:
 
