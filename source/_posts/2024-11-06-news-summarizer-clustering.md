@@ -2,7 +2,7 @@
 layout: post
 title: "Clustering french news articles: A case of study of DRCongo news."
 permalink: news-summarizer-clustering
-date: 2024-11-06 22:31:32
+date: 2030-11-06 22:31:32
 comments: true
 description: "news-summarizer-clustering"
 keywords: ""
