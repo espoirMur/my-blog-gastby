@@ -22,7 +22,7 @@ Template: github.com/nandomoreirame/end2end
     - check if you can add both dark and light theme
     - add the image background to the post 
 - [] set a note section in the site , where I can post some notes that are not ready to be published into blog posts.  check this site for an idea. https://devopsian.net/notes/
- - [] Fix the covid part 2 post
+- [] Fix the covid part 2 post
 - [] Check the post about applying for uk universities
 - [] Explore this post to learn how to use jupyter notebooks to deploy websites
     https://michaelwornow.net/2022/09/13/jupyter-notebook-to-markdown
@@ -56,3 +56,16 @@ Then run :
 ## to check for broken links
 
 `bundle exec htmlproofer ./_site --only-4xx true --disable-external true --ignore-urls  "/localhost/," --ignore_empty_alt false`
+
+
+###  To convert a notebook to mardown 
+
+Create a blog first and then convert using the command 
+
+`export title="your blog title" & rake post`
+
+The above command will create a post.
+
+To convert the post to markdown do the following
+
+` jupyter nbconvert --to markdown notebook_to_convert.ipynb --output source/_posts/post-path.md --output_dir=. `

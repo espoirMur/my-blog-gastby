@@ -81,6 +81,10 @@
 <lastmod>2024-10-16T13:53:10+01:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/news-summarizer-clustering</loc>
+<lastmod>2024-11-06T22:31:32+00:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about/</loc>
 </url>
 <url>
@@ -112,5 +116,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/blog/page/5/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/blog/page/6/</loc>
 </url>
 </urlset>
