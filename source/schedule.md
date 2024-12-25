@@ -7,7 +7,7 @@ permalink: /schedule/
 
 Le grand frere de ses petits frères has set up a booking page for himself.
 
-If you'd like to have a 30 to 45-minute conversation with me, please visit [my booking page](https://calendar.app.google/kYGdVQmxuo51wDzo6) and schedule a session. ⏰
+If you'd like to have a 30 to 45-minute conversation with me, please visit [my booking page](https://cal.com/espoir-murhabazi-fq1lv4) and schedule a session. ⏰
 
 We can discuss anything within my knowledge, such as:
 
